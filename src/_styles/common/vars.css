@@ -1,0 +1,77 @@
+:root {
+  /* white-color */
+  --bin-color-white: #fff;
+  --bin-color-white-light: rgba(255, 255, 255, 0.65);
+  --bin-color-white-light2: rgba(255, 255, 255, 0.35);
+  --bin-dark-bg: #001529;
+
+  --colors: (primary: #1089ff, success: #52c41a, warning: #fa8c16, danger: #f5222d, info: #35495e);
+
+  @each $val, $color in var(--colors) {
+    --bin-color-$(val): $(color);
+    --bin-color-$(val)-light1: mix(#fff, $(color), 0.2);
+    --bin-color-$(val)-light2: mix(#fff, $(color), 0.4);
+    --bin-color-$(val)-light3: mix(#fff, $(color), 0.6);
+    --bin-color-$(val)-light4: mix(#fff, $(color), 0.8);
+    --bin-color-$(val)-light5: mix(#fff, $(color), 0.9);
+    --bin-color-$(val)-light6: mix(#fff, $(color), 0.95);
+    --bin-color-$(val)-active: $(color);
+  }
+
+  /* text-color */
+  --bin-color-text-primary: #17233d;
+  --bin-color-text-default: #515a6e;
+  --bin-color-text-secondary: #808695;
+  --bin-color-text-disabled: #c5c8ce;
+  --bin-color-text-placeholder: #c0c4cc;
+  /* bg-color */
+  --bin-color-bg-fa: #fafafa;
+  --bin-color-select-hover: #f5f5f5;
+  --bin-color-input-shadow: rgba(16, 137, 255, 0.2);
+  --bin-color-input-error-shadow: rgba(245, 34, 45, 0.2);
+  /* border */
+  --bin-border-color-base: #dcdfe6;
+  --bin-border-color-light: #f0f0f0;
+  --bin-border-base: 1px solid #dcdfe6;
+  --bin-border-base-light: 1px solid #f0f0f0;
+  --bin-border-table: 1px solid #e8eaec;
+  --bin-border-table-color: #e8eaec;
+  --bin-border-popper-color: #ebeef5;
+  /* radius */
+  --bin-border-base-radius: 2px;
+  /*  font-size */
+  --bin-font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
+    SimSun, sans-serif;
+  --bin-base-font-size: 14px;
+  --bin-base-font-weight: 400;
+  --bin-header-font-size: 16px;
+  /* height */
+  --bin-large-height: 36px;
+  --bin-large-height-2: 34px;
+  --bin-default-height: 32px;
+  --bin-default-height-2: 30px;
+  --bin-small-height: 28px;
+  --bin-small-height-2: 26px;
+  --bin-mini-height: 24px;
+  --bin-mini-height-2: 22px;
+  --bin-base-line-height: 1.5715;
+  /* animation-duration */
+  --bin-animation-duration-slow: 0.35s;
+  --bin-animation-duration-base: 0.25s;
+  /* shadow-duration */
+  --bin-shadow-down: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0px rgba(0, 0, 0, 0.08),
+    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  --bin-shadow-popper: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --bin-scrollbar-width: 6px;
+  --bin-scrollbar-radius: 0;
+  /* tag-style */
+  --bin-tag-height: 22px;
+  --bin-tag-font-size: 12px;
+  --bin-tag-padding: 0 7px;
+
+  /* disabled */
+  --bin-disabled-bg-color: #fff;
+  --bin-disabled-bg-color1: #f5f5f5;
+  --bin-disabled-text-color: #c0c4cc;
+  --bin-disabled-border-color: #ebeef5;
+}

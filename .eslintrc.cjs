@@ -26,6 +26,7 @@ module.exports = {
         'vue/no-lone-template': 0,
         'vue/no-v-model-argument': 0,
         'vue/one-component-per-file': 0,
+        'vue/singleline-html-element-content-newline': 0,
         'import/no-cycle': 1
       }
     },
