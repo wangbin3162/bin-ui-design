@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-const theme = ref<string | null>('dark')
+const theme = ref<string | null>()
 const loading = ref(false)
 function click() {
   console.log('测试按钮')

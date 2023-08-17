@@ -1,13 +1,14 @@
 <script setup lang="ts">
 import TestButton from './button.demo.vue'
 import TestIcon from './icon.demo.vue'
+import TestCollapse from './collapse.demo.vue'
 </script>
 
 <template>
   <div class="main-content p16">
-    <TestButton />
-
+    <!-- <TestButton /> -->
     <!-- <TestIcon /> -->
+    <TestCollapse />
   </div>
 </template>
 

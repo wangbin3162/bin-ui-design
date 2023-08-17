@@ -1,0 +1,163 @@
+.bin-collapse {
+  --b-collapse-border: var(--bin-border-base-light);
+  --b-collapse-bg: var(--bin-color-bg-fa);
+  --b-collapse-header-text-color: var(--bin-color-text-primary);
+  --b-collapse-header-text-color-disabled: var(--bin-color-text-disabled);
+  --b-collapse-content-text-color: var(--bin-color-text-default);
+  --b-collapse-content-bg: var(--bin-color-white);
+}
+.bin-collapse {
+  background-color: var(--b-collapse-bg);
+  border-radius: var(--bin-border-base-radius);
+  border: var(--bin-border-base-light);
+
+  > .bin-collapse-item {
+    border-top: var(--b-collapse-border);
+
+    &:first-child {
+      border-top: none;
+    }
+
+    > .bin-collapse-header {
+      display: flex;
+      align-items: center;
+      line-height: var(--bin-base-line-height);
+      padding: 10px 16px;
+      color: var(--b-collapse-header-text-color);
+      cursor: pointer;
+      position: relative;
+      border-bottom: 1px solid transparent;
+      transition: all var(--bin-animation-duration-base) ease-in-out;
+      > i.b-icon-right {
+        color: var(--b-collapse-header-text-color);
+        transition: transform var(--bin-animation-duration-base) ease-in-out;
+        margin-right: 10px;
+        vertical-align: -1px;
+        font-size: 14px;
+      }
+    }
+
+    &.bin-collapse-item-active {
+      > .bin-collapse-header {
+        border-bottom: var(--b-collapse-border);
+        > i.b-icon-right {
+          -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+        }
+      }
+    }
+    &.is-disabled {
+      > .bin-collapse-header {
+        cursor: not-allowed;
+        --b-collapse-header-text-color: var(--b-collapse-header-text-color-disabled);
+      }
+    }
+  }
+}
+
+.bin-collapse-content {
+  color: var(--b-collapse-content-text-color);
+  padding: 0 16px;
+  background-color: var(--b-collapse-content-bg);
+
+  > .bin-collapse-content-box {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    line-height: 2em;
+  }
+}
+
+.bin-collapse-simple {
+  border-left: none;
+  border-right: none;
+  background-color: #fff;
+  border-radius: 0;
+}
+
+.bin-collapse-wrap {
+  --b-collapse-bg: var(--bin-color-bg-fa);
+  --b-collapse-border: var(--bin-border-base-light);
+  --b-collapse-shadow: 0 0 0 1px var(--bin-border-color-light);
+  --b-collapse-header-text: var(--bin-color-text-primary);
+  --b-collapse-header-size: 14px;
+  --b-collapse-header-height: 40px;
+  --b-collapse-header-weight: 500;
+  --b-collapse-header-tip: var(--bin-color-primary);
+  --b-collapse-content-text-color: var(--bin-color-text-default);
+  --b-collapse-content-bg: var(--bin-color-white);
+
+  background-color: var(--b-collapse-bg);
+  box-shadow: var(--b-collapse-shadow);
+  .header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--b-collapse-header-text);
+    background: var(--b-collapse-bg);
+    transition: var(--bin-animation-duration-base);
+    &.is-collapse {
+      cursor: pointer;
+    }
+    .label {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 16px;
+      line-height: var(--b-collapse-header-height);
+      font-size: var(--b-collapse-header-size);
+      font-weight: var(--b-collapse-header-weight);
+      &:after {
+        content: '';
+        position: absolute;
+        background-color: var(--b-collapse-header-tip);
+        left: 0;
+        top: 12px;
+        bottom: 12px;
+        width: 2px;
+      }
+    }
+    > .title {
+      position: relative;
+      display: inline-block;
+      vertical-align: middle;
+      padding: 0 16px;
+      line-height: 40px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+    .right {
+      padding-right: 16px;
+      &.can-collapse {
+        padding-right: 50px;
+      }
+    }
+    .arrow {
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%);
+      transition: var(--bin-animation-duration-base);
+      .b-iconfont {
+        font-size: 14px;
+        vertical-align: -1px;
+      }
+    }
+  }
+  .content {
+    color: var(--b-collapse-content-text-color);
+    background-color: var(--b-collapse-content-bg);
+  }
+  &-active {
+    .header {
+      box-shadow: var(--b-collapse-shadow);
+      .arrow {
+        transform: translateY(-50%) rotate(180deg);
+      }
+    }
+  }
+  + .bin-collapse-wrap {
+    margin-top: 16px;
+  }
+}

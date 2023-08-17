@@ -31,12 +31,12 @@
   --bin-color-input-shadow: rgba(16, 137, 255, 0.2);
   --bin-color-input-error-shadow: rgba(245, 34, 45, 0.2);
   /* border */
-  --bin-border-color-base: #dcdfe6;
-  --bin-border-color-light: #f0f0f0;
+  --bin-border-color-base: #e0e0e6;
+  --bin-border-color-light: #efeff5;
   --bin-border-color-light-2: rgba(255, 255, 255, 0.24);
   --bin-border-base: 1px solid var(--bin-border-color-base);
   --bin-border-base-light: 1px solid var(--bin-border-color-light);
-  --bin-border-table-color: #e8eaec;
+  --bin-border-table-color: #efeff5;
   --bin-border-table: 1px solid var(--bin-border-table-color);
   --bin-border-popper-color: #ebeef5;
   /* radius */
@@ -64,8 +64,12 @@
   --bin-shadow-down: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0px rgba(0, 0, 0, 0.08),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
   --bin-shadow-popper: 0 2px 8px rgba(0, 0, 0, 0.15);
-  --bin-scrollbar-width: 6px;
-  --bin-scrollbar-radius: 0;
+
+  --bin-scrollbar-width: 5px;
+  --bin-scrollbar-radius: 5px;
+  --bin-scrollbar-color: rgba(0, 0, 0, 0.25);
+  --bin-scrollbar-color-hover: rgba(0, 0, 0, 0.4);
+  --bin-scrollbar-track: rgba(0, 0, 0, 0.05);
   /* tag-style */
   --bin-tag-height: 22px;
   --bin-tag-font-size: 12px;

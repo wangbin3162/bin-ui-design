@@ -19,10 +19,10 @@ function onTransitionEnd(e: Animation) {
 }
 
 export default {
-  beforeMount(el: HTMLElement, binding) {
+  beforeMount(el: HTMLElement) {
     el.addEventListener(
       'click',
-      e => {
+      () => {
         const node = el
         const waveColor =
           getComputedStyle(node).getPropertyValue('border-top-color') || // Firefox Compatible

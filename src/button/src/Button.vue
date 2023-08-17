@@ -39,7 +39,6 @@
       />
     </span>
     <span v-if="$slots.default" class="bin-button__content" :style="textStyle">
-      {{ theme }}
       <slot />
     </span>
   </button>

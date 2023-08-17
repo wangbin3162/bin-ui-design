@@ -44,6 +44,7 @@ export const off = (function () {
 export const once = function (el, event, fn) {
   const listener = function () {
     if (fn) {
+      // eslint-disable-next-line prefer-rest-params
       fn.apply(this, arguments)
     }
     off(el, event, listener)
