@@ -43,14 +43,15 @@
     margin-left: 8px;
   }
   .bin-button__icon {
-    margin: var(--b-icon-margin);
-    margin-left: 0;
     height: var(--b-icon-size);
     width: var(--b-icon-size);
     max-width: var(--b-icon-size);
     font-size: var(--b-icon-size);
     position: relative;
     flex-shrink: 0;
+    + span {
+      margin-left: var(--b-icon-margin);
+    }
     > i {
       height: var(--b-icon-size);
       width: var(--b-icon-size);

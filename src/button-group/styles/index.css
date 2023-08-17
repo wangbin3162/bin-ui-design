@@ -1,0 +1,92 @@
+.bin-button-group {
+  flex-wrap: nowrap;
+  display: inline-flex;
+  position: relative;
+  + .bin-button-group {
+    margin-left: 8px;
+  }
+  &.bin-button-group--vertical {
+    flex-direction: column;
+
+    .bin-button {
+      &:first-child:not(:last-child) {
+        border-bottom-left-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      &:not(:first-child):not(:last-child) {
+        margin-right: 0 !important;
+        border-radius: 0 !important;
+      }
+      &:last-child:not(:first-child) {
+        border-top-left-radius: 0 !important;
+        border-top-right-radius: 0 !important;
+      }
+
+      + .bin-button {
+        margin-top: -1px !important;
+        margin-left: 0 !important;
+      }
+    }
+  }
+  &:not(.bin-button-group--vertical) {
+    flex-direction: row;
+
+    .bin-button {
+      &:first-child:not(:last-child) {
+        border-top-right-radius: 0 !important;
+        border-bottom-right-radius: 0 !important;
+      }
+      &:not(:first-child):not(:last-child) {
+        margin-right: 0 !important;
+        border-radius: 0 !important;
+      }
+      &:last-child:not(:first-child) {
+        border-top-left-radius: 0 !important;
+        border-bottom-left-radius: 0 !important;
+      }
+
+      + .bin-button {
+        margin-left: -1px !important;
+      }
+    }
+  }
+
+  .bin-button {
+    z-index: 0;
+
+    &:hover {
+      z-index: 1;
+    }
+
+    &:active,
+    &:focus {
+      z-index: 1;
+      outline: none;
+    }
+  }
+
+  .bin-button--primary:first-child,
+  .bin-button--info:first-child,
+  .bin-button--success:first-child,
+  .bin-button--warning:first-child,
+  .bin-button--danger:first-child {
+    border-right-color: hsla(0, 0%, 100%, 0.5);
+  }
+
+  .bin-button--primary:last-child,
+  .bin-button--info:last-child,
+  .bin-button--success:last-child,
+  .bin-button--warning:last-child,
+  .bin-button--danger:last-child {
+    border-left-color: hsla(0, 0%, 100%, 0.5);
+  }
+
+  .bin-button--primary:not(:first-child):not(:last-child),
+  .bin-button--info:not(:first-child):not(:last-child),
+  .bin-button--success:not(:first-child):not(:last-child),
+  .bin-button--warning:not(:first-child):not(:last-child),
+  .bin-button--danger:not(:first-child):not(:last-child) {
+    border-left-color: hsla(0, 0%, 100%, 0.5);
+    border-right-color: hsla(0, 0%, 100%, 0.5);
+  }
+}
