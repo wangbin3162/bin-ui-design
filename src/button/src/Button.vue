@@ -19,6 +19,7 @@
     :type="nativeType"
     :autofocus="autofocus"
     :disabled="disabled || loading"
+    :theme-name="theme"
   >
     <span v-if="icon" class="bin-button__icon">
       <i
@@ -38,6 +39,7 @@
       />
     </span>
     <span v-if="$slots.default" class="bin-button__content" :style="textStyle">
+      {{ theme }}
       <slot />
     </span>
   </button>
@@ -47,6 +49,7 @@
 import type { ButtonProps } from './types'
 import { ref, computed } from 'vue'
 import clickAnimation from '../../_directives/click-animation'
+import useTheme from '../../_hooks/use-theme'
 
 defineOptions({
   name: 'BButton',
@@ -56,6 +59,8 @@ defineOptions({
 const props = withDefaults(defineProps<ButtonProps>(), {
   nativeType: 'button'
 })
+
+const theme = useTheme()
 
 const _ref = ref<HTMLButtonElement>()
 

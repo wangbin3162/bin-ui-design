@@ -1,0 +1,3 @@
+.bin-icon[theme-name='dark'] {
+  --b-icon-text-color: var(--bin-color-text-white);
+}

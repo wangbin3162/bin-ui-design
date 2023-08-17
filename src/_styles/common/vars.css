@@ -3,7 +3,7 @@
   --bin-color-white: #fff;
   --bin-color-white-light: rgba(255, 255, 255, 0.65);
   --bin-color-white-light2: rgba(255, 255, 255, 0.35);
-  --bin-dark-bg: #001529;
+  --bin-dark-bg: #000;
 
   --colors: (primary: #1089ff, success: #52c41a, warning: #fa8c16, danger: #f5222d, info: #35495e);
 
@@ -21,6 +21,7 @@
   /* text-color */
   --bin-color-text-primary: #17233d;
   --bin-color-text-default: #515a6e;
+  --bin-color-text-white: rgba(255, 255, 255, 0.82);
   --bin-color-text-secondary: #808695;
   --bin-color-text-disabled: #c5c8ce;
   --bin-color-text-placeholder: #c0c4cc;
@@ -32,10 +33,11 @@
   /* border */
   --bin-border-color-base: #dcdfe6;
   --bin-border-color-light: #f0f0f0;
-  --bin-border-base: 1px solid #dcdfe6;
-  --bin-border-base-light: 1px solid #f0f0f0;
-  --bin-border-table: 1px solid #e8eaec;
+  --bin-border-color-light-2: rgba(255, 255, 255, 0.24);
+  --bin-border-base: 1px solid var(--bin-border-color-base);
+  --bin-border-base-light: 1px solid var(--bin-border-color-light);
   --bin-border-table-color: #e8eaec;
+  --bin-border-table: 1px solid var(--bin-border-table-color);
   --bin-border-popper-color: #ebeef5;
   /* radius */
   --bin-border-base-radius: 2px;

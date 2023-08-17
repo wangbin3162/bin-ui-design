@@ -1,0 +1,25 @@
+.bin-button[theme-name='dark'] {
+  --b-btn-bg-color: var(--bin-dark-bg);
+  --b-btn-text-color: var(--bin-color-text-white);
+  --b-btn-border-color: var(--bin-border-color-light-2);
+  --b-btn-disabled-text-color: var(--bin-disabled-text-color);
+  --b-btn-disabled-bg-color: var(--bin-dark-bg);
+  --b-btn-disabled-border-color: var(--bin-border-color-light-2);
+
+  --b-btn-hover-text-color: var(--bin-color-primary-light1);
+  --b-btn-hover-bg-color: var(--bin-dark-bg);
+  --b-btn-hover-border-color: var(--bin-color-primary-light1);
+
+  &.is-background {
+    --b-btn-text-color: var(--bin-color-text-default);
+  }
+  &.is-disabled,
+  &.is-disabled:focus,
+  &.is-disabled:hover,
+  &[disabled],
+  &[disabled]:focus,
+  &[disabled]:hover {
+    cursor: not-allowed;
+    opacity: 0.85;
+  }
+}
