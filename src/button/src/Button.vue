@@ -1,6 +1,7 @@
 <template>
   <button
     ref="_ref"
+    v-click-animation
     class="bin-button"
     :class="{
       [`bin-button--${btnType}`]: btnType,
@@ -26,9 +27,11 @@
 <script setup lang="ts">
 import type { ButtonProps } from './types'
 import { ref, computed } from 'vue'
+import clickAnimation from '../../_directives/click-animation'
 
 defineOptions({
-  name: 'BButton'
+  name: 'BButton',
+  directives: { clickAnimation }
 })
 
 const props = withDefaults(defineProps<ButtonProps>(), {

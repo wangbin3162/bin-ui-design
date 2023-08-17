@@ -18,5 +18,14 @@
     "target": "ES6",
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM"]
-  }
+  },
+  "include": [
+    "src/**/*.vue",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "demo/**/*.vue",
+    "demo/**/*.ts",
+    "demo/**/*.tsx"
+  ],
+  "exclude": ["node_modules", "dist"]
 }

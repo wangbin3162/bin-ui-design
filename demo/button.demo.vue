@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { BButton } from '../src/button'
-
 function click() {
   console.log('测试按钮')
 }
@@ -9,10 +7,10 @@ function click() {
 <template>
   <div class="test-wrap">
     <div class="demo-button" flex="cross:center">
-      <b-button @click="click()">Default</b-button>
-      <b-button dashed>Dashed</b-button>
+      <b-button v-waves @click="click()">Default</b-button>
+      <b-button v-waves dashed>Dashed</b-button>
       <b-button background>Background</b-button>
-      <b-button type="primary">Primary</b-button>
+      <b-button v-waves type="primary">Primary</b-button>
       <b-button type="success">Success</b-button>
       <b-button type="info">Info</b-button>
       <b-button type="warning">Warning</b-button>
@@ -20,7 +18,7 @@ function click() {
     </div>
     <div class="demo-button">
       <b-button plain>plain</b-button>
-      <b-button type="primary" plain>Primary</b-button>
+      <b-button v-waves type="primary" plain>Primary</b-button>
       <b-button type="success" plain>Success</b-button>
       <b-button type="info" plain>Info</b-button>
       <b-button type="warning" plain>Warning</b-button>
@@ -124,7 +122,6 @@ function click() {
       <b-button size="small" round>Small</b-button>
       <b-button size="mini" round>Mini</b-button>
     </div>
-    <hr />
   </div>
 </template>
 
