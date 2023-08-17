@@ -20,7 +20,26 @@
     :autofocus="autofocus"
     :disabled="disabled || loading"
   >
-    <span v-if="$slots.default" :style="textStyle"><slot /></span>
+    <span v-if="icon" class="bin-button__icon">
+      <i
+        v-if="loading"
+        class="bin-button-loading icon-is-rotating"
+        :class="[
+          'b-iconfont',
+          `b-icon-${loadingIcon || 'loading'}`,
+          { 'has-text': $slots.default }
+        ]"
+        :style="{ ...textStyle, ...iconStyle }"
+      />
+      <i
+        v-if="icon && !loading"
+        :class="['b-iconfont', 'b-icon-' + icon]"
+        :style="{ ...textStyle, ...iconStyle }"
+      />
+    </span>
+    <span v-if="$slots.default" class="bin-button__content" :style="textStyle">
+      <slot />
+    </span>
   </button>
 </template>
 

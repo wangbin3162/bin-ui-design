@@ -175,11 +175,3 @@
   opacity: 0;
   transform: translate3d(0, -20px, 0);
 }
-@keyframes rotating {
-  0% {
-    transform: rotateZ(0deg);
-  }
-  100% {
-    transform: rotateZ(360deg);
-  }
-}

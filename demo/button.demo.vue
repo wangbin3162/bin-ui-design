@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+const loading = ref(false)
 function click() {
   console.log('测试按钮')
 }
@@ -6,6 +8,17 @@ function click() {
 
 <template>
   <div class="test-wrap">
+    <b-button type="primary" :loading="loading" icon="reload" @click="loading = true">
+      Click me!
+    </b-button>
+    <b-button @click="loading = false">stop</b-button>
+
+    <div class="demo-button">
+      <b-button icon="search">search</b-button>
+      <b-button icon="plus-circle">create</b-button>
+      <b-button icon="check-circle" type="primary">check</b-button>
+      <b-button icon="delete" type="danger">delete</b-button>
+    </div>
     <div class="demo-button" flex="cross:center">
       <b-button v-waves @click="click()">Default</b-button>
       <b-button v-waves dashed>Dashed</b-button>

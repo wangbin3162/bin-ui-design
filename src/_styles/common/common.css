@@ -315,8 +315,3 @@
 [v-cloak] {
   display: none;
 }
-.icon-loading,
-.icon-is-rotating:before {
-  display: inline-block;
-  animation: rotating 2s linear infinite;
-}

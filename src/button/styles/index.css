@@ -12,13 +12,17 @@
   --b-btn-active-text-color: var(--bin-color-primary-active);
   --b-btn-active-bg-color: var(--b-btn-hover-bg-color);
   --b-btn-active-border-color: var(--bin-color-primary-active);
+  --b-icon-margin: 6px;
+  --b-icon-size: 16px;
 }
 
 .bin-button {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   height: var(--bin-default-height);
-  line-height: var(--bin-base-line-height);
+  line-height: 1;
   white-space: nowrap;
   cursor: pointer;
   background: var(--b-btn-bg-color);
@@ -37,6 +41,27 @@
   letter-spacing: 0.02857em;
   & + & {
     margin-left: 8px;
+  }
+  .bin-button__icon {
+    margin: var(--b-icon-margin);
+    margin-left: 0;
+    height: var(--b-icon-size);
+    width: var(--b-icon-size);
+    max-width: var(--b-icon-size);
+    font-size: var(--b-icon-size);
+    position: relative;
+    flex-shrink: 0;
+    > i {
+      height: var(--b-icon-size);
+      width: var(--b-icon-size);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   }
   &:hover,
   &:focus {
@@ -100,8 +125,10 @@
   &[disabled],
   &[disabled]:focus,
   &[disabled]:hover {
-    --b-btn-disabled-bg-color: transparent;
-    --b-btn-disabled-border-color: transparent;
+    cursor: not-allowed;
+    color: var(--b-btn-disabled-text-color);
+    border-color: var(--b-btn-disabled-border-color);
+    background-color: var(--b-btn-disabled-bg-color);
   }
 }
 
@@ -129,11 +156,11 @@
     --b-btn-border-color: var(--bin-color-$(val));
 
     --b-btn-hover-text-color: var(--bin-color-$(val)-light1);
-    --b-btn-hover-bg-color: var(--bin-color-$(val)-light6);
+    --b-btn-hover-bg-color: var(--bin-color-white);
     --b-btn-hover-border-color: var(--bin-color-$(val)-light1);
 
-    --b-btn-active-text-color: var(--bin-color-white);
-    --b-btn-active-bg-color: var(--bin-color-$(val)-active);
+    --b-btn-active-text-color: var(--bin-color-$(val)-active);
+    --b-btn-active-bg-color: var(--bin-color-$(val)-light6);
     --b-btn-active-border-color: var(--bin-color-$(val)-active);
 
     --b-btn-disabled-text-color: var(--bin-color-$(val)-light3);
@@ -143,15 +170,15 @@
   .bin-button--$(val).is-plain {
     --b-btn-text-color: var(--bin-color-$(val));
     --b-btn-bg-color: var(--bin-color-$(val)-light5);
-    --b-btn-border-color: var(--bin-color-$(val)-light3);
+    --b-btn-border-color: var(--bin-color-$(val)-light4);
 
     --b-btn-hover-text-color: var(--bin-color-$(val)-light1);
     --b-btn-hover-bg-color: var(--bin-color-$(val)-light5);
-    --b-btn-hover-border-color: var(--bin-color-$(val)-light1);
+    --b-btn-hover-border-color: var(--bin-color-$(val)-light3);
 
-    --b-btn-active-text-color: var(--bin-color-white);
-    --b-btn-active-bg-color: var(--bin-color-$(val)-active);
-    --b-btn-active-border-color: var(--bin-color-$(val)-active);
+    --b-btn-active-text-color: var(--bin-color-$(val)-active);
+    --b-btn-active-bg-color: var(--bin-color-$(val)-light5);
+    --b-btn-active-border-color: var(--bin-color-$(val)-light1);
 
     --b-btn-disabled-text-color: var(--bin-color-$(val)-light3);
     --b-btn-disabled-bg-color: var(--bin-color-$(val)-light5);
@@ -177,7 +204,7 @@
   .bin-button--$(val).is-transparent {
     --b-btn-text-color: var(--bin-color-$(val));
     --b-btn-bg-color: transparent;
-    --b-btn-border-color: var(--bin-color-$(val));
+    --b-btn-border-color: var(--bin-color-$(val)-light1);
 
     --b-btn-hover-text-color: var(--b-btn-text-color);
     --b-btn-hover-bg-color: var(--b-btn-bg-color);
