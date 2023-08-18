@@ -41,9 +41,7 @@ function click() {
         </b-button-group>
       </div>
       <div class="demo-button">
-        <b-button type="primary" :loading="loading" icon="reload" @click="loading = true">
-          Click me!
-        </b-button>
+        <b-button type="primary" :loading="loading" @click="loading = true">Click me!</b-button>
         <b-button @click="loading = false">stop</b-button>
       </div>
 

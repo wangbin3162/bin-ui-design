@@ -21,7 +21,7 @@
     :disabled="disabled || loading"
     :theme-name="theme"
   >
-    <span v-if="icon" class="bin-button__icon">
+    <span v-if="icon || loading" class="bin-button__icon">
       <i
         v-if="loading"
         class="bin-button-loading icon-is-rotating"

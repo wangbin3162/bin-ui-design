@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import TestButton from './button.demo.vue'
-import TestIcon from './icon.demo.vue'
+// import TestButton from './button.demo.vue'
+// import TestIcon from './icon.demo.vue'
 import TestCollapse from './collapse.demo.vue'
 </script>
 
