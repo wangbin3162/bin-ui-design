@@ -39,21 +39,20 @@ const setActiveNames = (actives: NameType[]) => {
   activeNames.value = [...actives]
   const value = props.accordion ? activeNames.value[0] : activeNames.value
   emit(UPDATE_MODEL_EVENT, value)
-  emit(CHANGE_EVENT, value)
+  emit(CHANGE_EVENT, actives)
 }
 
 const handleItemClick = (name: NameType) => {
+  let _activeNames = [...activeNames.value]
   if (props.accordion) {
-    setActiveNames([activeNames.value[0] === name ? '' : name])
-    return
-  }
-  let _activeNames = activeNames.value.slice(0)
-  const index = _activeNames.indexOf(name)
-
-  if (index > -1) {
-    _activeNames.splice(index, 1)
+    _activeNames = [activeNames.value[0] === name ? '' : name]
   } else {
-    _activeNames.push(name)
+    const index = _activeNames.indexOf(name)
+    if (index > -1) {
+      _activeNames.splice(index, 1)
+    } else {
+      _activeNames.push(name)
+    }
   }
   setActiveNames(_activeNames)
 }

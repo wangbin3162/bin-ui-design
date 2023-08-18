@@ -76,7 +76,7 @@ describe('Button.vue', () => {
       //   stubs: ['BIcon']
       // }
     })
-    console.log(wrapper.html())
+    // console.log(wrapper.html())
     expect(wrapper.classes()).toContain('is-loading')
     expect(wrapper.attributes('disabled')).toBeDefined()
   })
