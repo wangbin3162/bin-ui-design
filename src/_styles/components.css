@@ -1,5 +1,7 @@
 @import '../_internal/empty/styles/index.css';
+@import '../_internal/popper/styles/index.css';
 @import '../icon/styles/index.css';
 @import '../button/styles/index.css';
 @import '../button-group/styles/index.css';
 @import '../collapse/styles/index.css';
+@import '../tooltip/styles/index.css';

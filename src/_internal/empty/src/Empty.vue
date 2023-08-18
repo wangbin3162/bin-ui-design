@@ -31,20 +31,13 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
 defineOptions({
   name: 'BEmpty'
 })
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     default: '暂无数据'
   }
 })
-const text = ref(props.title)
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-function setTitle(title: string): void {
-  text.value = props.title
-}
 </script>

@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    // "paths": {
-    //   "naive-ui": ["./src"]
-    // },
+    "paths": {
+      "bin-ui-design": ["./src"]
+    },
     "strict": true,
     "strictNullChecks": true,
     "jsx": "preserve",

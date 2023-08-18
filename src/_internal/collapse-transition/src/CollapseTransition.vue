@@ -11,6 +11,7 @@ defineOptions({
   name: 'BCollapseTransition'
 })
 
+// eslint-disable-next-line no-unused-vars
 const transitionEvents: Record<string, (el: HTMLElement) => void> = {
   beforeEnter(el) {
     addClass(el, 'collapse-transition')

@@ -1,0 +1,4 @@
+.bin-tooltip {
+  line-height: var(--bin-base-line-height);
+  min-width: 20px;
+}

@@ -1,15 +1,17 @@
-import { describe, test, expect, vi } from 'vitest'
+import { describe, test, expect, vi, beforeAll } from 'vitest'
 import { mount } from '@vue/test-utils'
+import type { VueWrapper } from '@vue/test-utils'
 import Collpase from '../src/Collapse.vue'
 import CollpasePanel from '../src/CollapsePanel.vue'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+// eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
 import { h } from 'vue'
 
-describe('Collpase.vue', () => {
-  test('basic collapse', async () => {
-    const onChange = vi.fn()
+let wrapper: VueWrapper
+const onChange = vi.fn()
 
-    const wrapper = mount(
+describe('Collpase.vue', () => {
+  beforeAll(() => {
+    wrapper = mount(
       () => (
         <Collpase modelValue={['a']} onChange={onChange}>
           <CollpasePanel name="a" title="title a">
@@ -30,6 +32,9 @@ describe('Collpase.vue', () => {
         attachTo: document.body
       }
     )
+  })
+
+  test('basic collapse', async () => {
     // console.log(wrapper.html())
     const items = wrapper.findAll('.bin-collapse-item')
     const headers = wrapper.findAll('.bin-collapse-header')

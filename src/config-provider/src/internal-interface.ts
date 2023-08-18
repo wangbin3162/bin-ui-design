@@ -1,4 +1,5 @@
+import type { Ref } from 'vue'
 export interface ConfigProviderInjection {
-  mergedLocaleRef: Ref<NLocale | undefined>
-  mergedThemeRef: Ref<GlobalTheme | undefined>
+  mergedLocaleRef: Ref<string | undefined>
+  mergedThemeRef: Ref<string | undefined>
 }

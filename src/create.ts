@@ -6,6 +6,7 @@ type ComponentType = any
 export interface BUiInstance {
   version: string
   componentPrefix: string
+  // eslint-disable-next-line no-unused-vars
   install: (app: App) => void
 }
 

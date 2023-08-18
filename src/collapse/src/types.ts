@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import type { InjectionKey, Ref } from 'vue'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../_utils/constants'
 
