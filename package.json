@@ -24,7 +24,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/wangbin3162/bin-ui-design"
+    "url": "https://gitee.com/wangbin3162/bin-ui-design.git"
   },
   "scripts": {
     "dev": "vite",
