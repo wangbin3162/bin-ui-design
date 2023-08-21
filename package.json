@@ -1,6 +1,6 @@
 {
   "name": "@bin/ui",
-  "version": "0.0.1",
+  "version": "0.0.2-beta.0",
   "keywords": [
     "bin-ui-design",
     "bin-ui-next",
@@ -17,6 +17,7 @@
     "es",
     "lib"
   ],
+  "private": false,
   "homepage": "https://wangbin3162.gitee.io/bin-ui-design/",
   "type": "module",
   "main": "./lib/src/index.js",
@@ -38,7 +39,7 @@
     "format": "prettier --write src/",
     "gen-version": "node build/gen-version.cjs",
     "release": "release-it",
-    "release-alpha": "release-it patch --preReleaseId=alpha --npm.tag=alpha --github.preRelease"
+    "release-alpha": "release-it patch --preReleaseId=alpha --npm.tag=alpha"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
