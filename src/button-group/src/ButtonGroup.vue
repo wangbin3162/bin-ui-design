@@ -5,6 +5,7 @@
 </template>
 
 <script setup lang="ts">
+import '../styles/index.css'
 import type { ButtonGroupProps } from './types'
 defineOptions({
   name: 'BButtonGroup'

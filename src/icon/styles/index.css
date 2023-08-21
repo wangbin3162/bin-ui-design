@@ -1,4 +1,4 @@
-@import './dark';
+@import './dark.css';
 .bin-icon {
   --b-icon-text-color: var(--bin-color-text-default);
 }

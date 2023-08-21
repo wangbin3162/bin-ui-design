@@ -1,8 +1,15 @@
-@import './common/vars.css';
+@import './base.css';
+@import './icon.css';
+
 @import './common/reset.css';
 @import './common/common.css';
-@import './common/waves.css';
 @import './common/flex.css';
-@import './icon.css';
-@import './transition.css';
-@import './components.css';
+@import './common/scrollbar.css';
+
+@import '../_internal/empty/styles/index.css';
+@import '../_internal/popper/styles/index.css';
+@import '../icon/styles/index.css';
+@import '../button/styles/index.css';
+@import '../button-group/styles/index.css';
+@import '../collapse/styles/index.css';
+@import '../tooltip/styles/index.css';

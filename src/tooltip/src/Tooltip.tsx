@@ -3,6 +3,7 @@ import { UPDATE_MODEL_EVENT } from '../../_utils/constants'
 import { getFirstValidNode } from '../../_utils/vnode'
 import { tooltipProps } from './types'
 import { BPopper } from '../../_internal/popper'
+import '../styles/index.css'
 
 export default defineComponent({
   name: 'BTooltip',

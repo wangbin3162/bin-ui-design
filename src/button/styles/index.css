@@ -68,6 +68,7 @@
   }
   &:hover,
   &:focus {
+    outline: none;
     color: var(--b-btn-hover-text-color);
     border-color: var(--b-btn-hover-border-color);
     background-color: var(--b-btn-hover-bg-color);

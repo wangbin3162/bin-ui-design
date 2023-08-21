@@ -15,7 +15,7 @@
     --bin-color-$(val)-light4: mix(#fff, $(color), 0.8);
     --bin-color-$(val)-light5: mix(#fff, $(color), 0.9);
     --bin-color-$(val)-light6: mix(#fff, $(color), 0.95);
-    --bin-color-$(val)-active: $(color);
+    --bin-color-$(val)-active: mix(#000, $(color), 0.1);
   }
 
   /* text-color */

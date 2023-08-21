@@ -25,12 +25,13 @@
       </slot>
     </div>
     <p class="bin-empty-description">
-      <slot>{{ text }}</slot>
+      <slot>{{ title }}</slot>
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
+import '../styles/index.css'
 defineOptions({
   name: 'BEmpty'
 })
