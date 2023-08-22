@@ -43,7 +43,7 @@
 1、库文件打包依赖于vite的库模式，同时需要进行部分配置。
 2、具体配置参考vite.config.ts
 3、打包时运行命令`pnpm run build`，会同时打包dist，es，lib三个文件夹，分别对应不同环境，同时，样式和声明文件会放置到dist目录
-4、打包完毕后即可进行提交和部署，使用npm登录后，进行npm publish即可或使用命令调用release-it。
+4、打包完毕后即可进行提交和部署，使用npm登录后，进行npm publish即可.
 
 ## 4.文档编辑
 
