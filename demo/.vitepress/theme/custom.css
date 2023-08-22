@@ -1,10 +1,37 @@
 :root {
-  --vp-c-brand: var(--bin-color-priamry);
-  --vp-home-hero-name-color: var(--bin-color-priamry);
-  --vp-button-brand-bg: var(--bin-color-priamry);
+  /* 标题 */
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: linear-gradient(135deg, #3c8ce7 10%, #00eaff 100%);
 
-  /* --vp-c-brand: #646cff;
-  --vp-c-brand-light: #747bff; */
+  /* 图标背景 */
+  --vp-home-hero-image-background-image: linear-gradient(-35deg, #3c8ce7 10%, #00eaff 50%);
+  --vp-home-hero-image-filter: blur(170px);
+
+  /* brand按钮 */
+  --vp-button-brand-border: var(--bin-color-primary);
+  --vp-button-brand-text: #fff;
+  --vp-button-brand-bg: var(--bin-color-primary);
+
+  --vp-button-brand-hover-border: var(--bin-color-primary-light1);
+  --vp-button-brand-hover-text: #fff;
+  --vp-button-brand-hover-bg: var(--bin-color-primary-light1);
+
+  --vp-button-brand-active-border: var(--bin-color-primary-active);
+  --vp-button-brand-active-text: #fff;
+  --vp-button-brand-active-bg: var(--bin-color-primary-active);
+
+  --vp-button-alt-border: var(--vp-button-alt-bg);
+  --vp-button-alt-hover-border: var(--vp-button-alt-border);
+
+  /* 主题基色 */
+  --vp-c-brand: var(--bin-color-primary);
+  --vp-c-brand-light: var(--bin-color-primary);
+  --vp-c-brand-dark: var(--bin-color-primary);
+  /* 顶部导航 */
+  --vp-nav-logo-height: 36px;
+  /* side-bar */
+  --vp-sidebar-width: 280px;
+  --vp-sidebar-bg-color: #fff;
 }
 
 body {
@@ -19,4 +46,102 @@ h5,
 h6,
 p {
   color: var(--vp-c-text-1);
+}
+
+/* 顶部nav导航样式 */
+.VPNav {
+  .VPNavBar {
+    .VPNavBarTitle {
+      .title {
+        background: var(--vp-home-hero-name-background);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: var(--vp-home-hero-name-color);
+        font-size: 20px;
+        border-bottom-color: transparent;
+        padding: 0;
+      }
+    }
+    &.has-sidebar {
+      .curtain {
+        border-top: 1px solid #eee;
+      }
+      .title {
+        border-bottom: 1px solid #eee;
+      }
+    }
+    .VPNavBarMenuLink {
+      font-size: 15px;
+    }
+  }
+
+  .VPSocialLink:hover {
+    > svg {
+      fill: var(--vp-c-text-1);
+    }
+  }
+}
+/* sidebar */
+.Layout .VPSidebar {
+  padding-bottom: 30px;
+  border-right: 1px solid #eee;
+}
+
+.Layout .VPSidebar {
+  .VPSidebarItem.level-0 {
+    padding-bottom: 0;
+    .item {
+      .text {
+        color: #2a3040;
+        font-size: 15px;
+      }
+    }
+  }
+  .VPSidebarItem:not(.level-0) {
+    margin-top: 6px;
+    transition: 0.2s;
+    border-radius: 5px;
+    .item {
+      height: 42px;
+      .text {
+        display: flex;
+        align-items: center;
+        > i {
+          margin-right: 5px;
+        }
+        > span {
+          color: var(--bin-color-text-secondary);
+          margin-left: 5px;
+        }
+      }
+    }
+    &:hover {
+      color: var(--vp-c-text-1);
+      background-color: var(--bin-color-select-hover);
+
+      .item {
+        .text {
+          > span {
+            color: var(--bin-color-primary);
+          }
+        }
+      }
+    }
+    &.is-active {
+      background-color: var(--bin-color-primary-light5);
+      .item {
+        .text {
+          > span {
+            color: var(--bin-color-primary);
+          }
+        }
+      }
+    }
+  }
+  .VPSidebarItem.level-1 {
+    padding-left: 16px;
+  }
+  .group + .group {
+    border-top: none;
+  }
 }
