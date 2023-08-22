@@ -19,6 +19,9 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
+demo/.vitepress/dist
+demo/.vitepress/cache
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

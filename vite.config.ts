@@ -17,25 +17,15 @@ export default defineConfig({
     }),
     terser({
       format: {
-        comments: 'all' // 保留所有注释（为了简单我全部保留了）
+        comments: 'all'
       }
     })
   ],
-  server: {
-    host: '0.0.0.0',
-    port: 5188,
-    open: true
-  },
   resolve: {
-    alias:
-      process.env.NODE_ENV !== 'production'
-        ? [
-            {
-              find: 'bin-ui-view',
-              replacement: resolve(__dirname, './src')
-            }
-          ]
-        : undefined
+    alias: {
+      '@': resolve(__dirname, 'src'),
+      'bin-ui-design': resolve(__dirname, './src')
+    }
   },
   build: {
     rollupOptions: {

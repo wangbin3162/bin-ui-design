@@ -3,7 +3,7 @@
 整个项目的目录结构如下，具体包含内容后续会进行详细介绍和解释
 
     ├── build                      // 打包相关脚本
-    ├── examples                   // 组件示例包
+    ├── demo                       // 组件示例包
     ├── site                       // 组件示例打包后部署文件夹
     ├── dist                       // 组件打包资源
     ├── es                         // es-build打包后资源
@@ -48,3 +48,4 @@
 ## 4.文档编辑
 
 文档使用vitepress进行搭建。
+md 中的table可以使用https://markdown-convert.com/en/tool/table进行转换。

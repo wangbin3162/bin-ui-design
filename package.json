@@ -28,8 +28,9 @@
     "url": "https://gitee.com/wangbin3162/bin-ui-design.git"
   },
   "scripts": {
-    "dev": "vite",
-    "build": "pnpm run gen-version && pnpm clean && pnpm build:lib && pnpm build:style",
+    "dev": "vitepress dev demo",
+    "build:package": "pnpm run gen-version && pnpm clean && pnpm build:lib && pnpm build:style",
+    "build:site": "vitepress build demo",
     "clean": "rimraf dist es lib",
     "build:lib": "vite build",
     "build:style": "gulp --require @esbuild-kit/cjs-loader -f build/build-style.ts",
@@ -56,6 +57,8 @@
     "@types/node": "^18.17.0",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitejs/plugin-vue-jsx": "^3.0.1",
+    "@vitepress-demo-preview/component": "^2.3.2",
+    "@vitepress-demo-preview/plugin": "^1.2.1",
     "@vue/eslint-config-prettier": "^8.0.0",
     "@vue/eslint-config-typescript": "^11.0.3",
     "@vue/runtime-core": "^3.3.4",
@@ -68,7 +71,6 @@
     "eslint-config-standard": "^17.1.0",
     "eslint-config-standard-with-typescript": "^34.0.1",
     "eslint-plugin-import": "^2.28.0",
-    "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-n": "^15.7.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
@@ -93,6 +95,7 @@
     "typescript": "~5.1.6",
     "vite": "^4.4.6",
     "vite-plugin-dts": "^3.5.2",
+    "vitepress": "1.0.0-rc.4",
     "vitest": "^0.34.2",
     "vue-tsc": "^1.8.6"
   }
