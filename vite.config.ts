@@ -69,25 +69,4 @@ export default defineConfig({
       fileName: 'bin-ui-design'
     }
   }
-  // build: {
-  //   outDir: 'lib',
-  //   minify: false,
-  //   lib: {
-  //     // Could also be a dictionary or array of multiple entry points
-  //     entry: resolve(__dirname, 'src/index.ts'),
-  //     name: 'BinUiDesign',
-  //     // the proper extensions will be added
-  //     fileName: format => `bin-ui-design.${format}.js`,
-  //     formats: ['es', 'umd', 'cjs']
-  //   },
-  //   rollupOptions: {
-  //     // 确保外部化处理那些你不想打包进库的依赖
-  //     external: ['vue', /\.css/],
-  //     output: {
-  //       globals: {
-  //         vue: 'Vue'
-  //       }
-  //     }
-  //   }
-  // }
 })

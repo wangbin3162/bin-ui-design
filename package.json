@@ -1,6 +1,6 @@
 {
   "name": "bin-ui-design",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "keywords": [
     "bin-ui-design",
     "bin-ui-next",
@@ -22,7 +22,7 @@
   "type": "module",
   "main": "./lib/src/index.js",
   "module": "./es/src/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/@types/src/index.d.ts",
   "repository": {
     "type": "git",
     "url": "https://gitee.com/wangbin3162/bin-ui-design.git"
