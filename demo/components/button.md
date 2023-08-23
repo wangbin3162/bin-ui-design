@@ -11,7 +11,7 @@ description: Button 组件文档
 
 默认按钮，可设置`dashed`虚线和`background`拟物按钮
 
-<preview path="../demo/Button/Basic.vue"></preview>
+<preview path="./demo/Button/Basic.vue"></preview>
 
 ## Props
 

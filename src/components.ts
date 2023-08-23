@@ -1,5 +1,6 @@
 export * from './_internal/empty'
 export * from './_internal/collapse-transition'
+export * from './_internal/move-transition'
 export * from './config-provider'
 export * from './icon'
 export * from './button'

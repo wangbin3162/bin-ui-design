@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/indent */
 /* eslint-disable @typescript-eslint/restrict-plus-operands */
 import isServer from './isServer'
+
 // 去除空格
 const trim = function (string) {
   return (string || '').replace(/^[\s\uFEFF]+|[\s\uFEFF]+$/g, '')
@@ -197,10 +198,12 @@ export function scrollTop(el, from = 0, to, duration = 500, endCallback) {
   scroll(from, to, step)
 }
 
+// 首字母大写
 export function firstUpperCase(str) {
   return str.toString()[0].toUpperCase() + str.toString().slice(1)
 }
 
+// 是否有滚动条
 export const isScroll = (el, isVertical) => {
   if (isServer) return
   const determinedDirection = isVertical === null || isVertical === undefined
@@ -213,6 +216,7 @@ export const isScroll = (el, isVertical) => {
   return overflow.match(/(scroll|auto)/)
 }
 
+// 获取滚动容器
 export const getScrollContainer = (el, isVertical) => {
   if (isServer) return
 
@@ -229,4 +233,5 @@ export const getScrollContainer = (el, isVertical) => {
   return parent
 }
 
+// 阻止冒泡
 export const stop = e => e.stopPropagation()

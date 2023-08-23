@@ -2,21 +2,84 @@ import isServer from './isServer'
 import { isObject } from './util'
 
 /**
- * Generate random number in range [0, 1000]
- * Maybe replace with [uuid](https://www.npmjs.com/package/uuid)
+ * 随机一个id
+ * @returns id
  */
 export const generateId = () => Math.floor(Math.random() * 10000)
+
+/**
+ * 是否是boolean
+ * @param val
+ * @returns
+ */
 export const isBool = val => typeof val === 'boolean'
+
+/**
+ * 是否是number
+ * @param val
+ * @returns
+ */
 export const isNumber = val => typeof val === 'number'
+
+/**
+ * 是否是string
+ * @param val
+ * @returns
+ */
+export const isString = value => typeof value === 'string'
+
+/**
+ * 是否是HTMLElement
+ * @param val
+ * @returns
+ */
 export const isHTMLElement = val =>
   typeof val === 'object' &&
   val !== null &&
   Object.prototype.toString.call(val).startsWith('[object HTML')
 
+/**
+ * 是否为空
+ */
+export function isEmpty(val) {
+  return (
+    (!val && val !== 0) ||
+    (Array.isArray(val) && !val.length) ||
+    (isObject(val) && !Object.keys(val).length)
+  )
+}
+
+/**
+ * 查找数组元素
+ * @param arr
+ * @param pred
+ * @returns
+ */
+export const arrayFind = (arr, pred) => arr.find(pred)
+
+/**
+ * 查找数组索引
+ * @param arr
+ * @param pred
+ * @returns
+ */
+export const arrayFindIndex = (arr, pred) => arr.findIndex(pred)
+
+/**
+ * 清空计时器
+ * @param val
+ * @returns
+ */
 export const clearTimer = timer => {
   clearTimeout(timer.value)
   timer.value = null
 }
+
+/**
+ * 追加transition前缀
+ * @param style
+ * @returns
+ */
 export const autoprefixer = function (style) {
   const rules = ['transform', 'transition', 'animation']
   const prefixes = ['ms-', 'webkit-']
@@ -30,6 +93,13 @@ export const autoprefixer = function (style) {
   })
   return style
 }
+
+/**
+ * 根据.获取拼接路径
+ * @param obj
+ * @param paths
+ * @returns
+ */
 export const getValueByPath = (obj, paths = '') => {
   let ret = obj
   paths.split('.').map(path => {
@@ -38,6 +108,13 @@ export const getValueByPath = (obj, paths = '') => {
   return ret
 }
 
+/**
+ * 根据路径信息获取prop
+ * @param obj
+ * @param path
+ * @param strict
+ * @returns
+ */
 export function getPropByPath(obj, path, strict) {
   let tempObj = obj
   path = path.replace(/\[(\w+)\]/g, '.$1')
@@ -65,34 +142,57 @@ export function getPropByPath(obj, path, strict) {
   }
 }
 
+/**
+ * 是否是IE
+ * @returns
+ */
 export const isIE = function () {
   return !isServer && !isNaN(Number(document.DOCUMENT_NODE))
 }
 
+/**
+ * 是否是Edge
+ * @returns
+ */
 export const isEdge = function () {
   return !isServer && navigator.userAgent.indexOf('Edge') > -1
 }
-// export const valueEquals
 
+/**
+ * 正则转换
+ * @param value
+ * @returns
+ */
 export const escapeRegexpString = (value = '') =>
   String(value).replace(/[|\\{}()[\]^$+*?.]/g, '\\$&')
 
+/**
+ * 是否存在entries
+ * @param obj
+ * @returns
+ */
 export function entries(obj) {
   return Object.keys(obj).map(key => [key, obj[key]])
 }
 
 /**
- * Unwraps refed value
+ * ref解包
  * @param ref Refed value
  */
 export function $(ref) {
   return ref.value
 }
 
+/** 是否是undefined */
 export function isUndefined(val) {
   return val === void 0
 }
 
+/**
+ * 数组打乱
+ * @param arr
+ * @returns
+ */
 export function arrayFlat(arr) {
   return arr.reduce((acm, item) => {
     const val = Array.isArray(item) ? arrayFlat(item) : item
@@ -104,26 +204,14 @@ export function deduplicate(arr) {
   return Array.from(new Set(arr))
 }
 
-// coerce truthy value to array
+/**
+ * 实际值转换为数组
+ * @param arr
+ * @returns
+ */
 export const coerceTruthyValueToArray = arr => {
   if (!arr && arr !== 0) {
     return []
   }
   return Array.isArray(arr) ? arr : [arr]
 }
-
-export function isEmpty(val) {
-  return (
-    (!val && val !== 0) ||
-    (Array.isArray(val) && !val.length) ||
-    (isObject(val) && !Object.keys(val).length)
-  )
-}
-
-export const arrayFind = function (arr, pred) {
-  return arr.find(pred)
-}
-
-export const arrayFindIndex = (arr, pred) => arr.findIndex(pred)
-
-export const isString = value => typeof value === 'string'

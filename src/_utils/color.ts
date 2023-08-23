@@ -31,7 +31,7 @@ export function getPalette(color) {
     lightColor3,
     lightColor4,
     lightColor5,
-    lightColor6,
+    lightColor6
   ]
 }
 
@@ -61,9 +61,7 @@ export function grayscale(color) {
   return Color(color).grayscale().toString()
 }
 
-/**
- * 两个颜色值比较
- */
+/// 两个颜色值比较
 export function isEqual(color1, color2) {
   return Color(color1).toString() === Color(color2).toString()
 }
@@ -73,38 +71,42 @@ export function isLight(color) {
   return Color(color).isLight()
 }
 
-// 是否是light
+// 是否是dark
 export function isDark(color) {
   return Color(color).isDark()
 }
 
-/**
- * 混合色，浓度
- */
+// 混合色，浓度
 export function mix(mixColor, color, concentration) {
   return Color(color).mix(Color(mixColor), concentration).hex().toLowerCase()
 }
 
+// 混合白色
 export function mixWhite(color, concentration) {
   return mix('#ffffff', color, concentration)
 }
 
+// 混合黑色
 export function mixBlack(color, concentration) {
   return mix('#000000', color, concentration)
 }
 
+// 透明度
 export function alpha(color, alpha) {
   return Color(color).alpha(alpha).toString()
 }
 
+// 渐隐
 export function fade(color, fade) {
   return Color(color).fade(fade).toString()
 }
 
+// 变轻
 export function lighten(color, concentration) {
   return Color(color).lighten(concentration).toString()
 }
 
+// 变深
 export function darken(color, concentration) {
   return Color(color).darken(concentration).toString()
 }

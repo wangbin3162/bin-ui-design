@@ -47,7 +47,6 @@ export default defineConfig({
       light: 'slack-ochin',
       dark: 'rose-pine-moon'
     },
-    lineNumbers: true,
     config(md) {
       md.use(containerPreview)
       md.use(componentPreview)
