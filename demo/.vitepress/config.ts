@@ -13,6 +13,9 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     siteTitle: 'BIN-UI-DESIGN',
+    search: {
+      provider: 'local'
+    },
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '首页', link: '/' },
@@ -34,6 +37,7 @@ export default defineConfig({
       },
       { icon: 'github', link: 'https://github.com/wangbin3162/bin-ui-design' }
     ],
+
     footer: {
       copyright: 'MIT Licensed | Copyright © 2023-present bin-ui-design'
     }
