@@ -4,13 +4,23 @@ import { fileURLToPath, URL } from 'node:url'
 import sidebarDocs from './sidebar-docs'
 import sidebarComps from './sidebar-comps'
 
+const baseUrl = process.env.NODE_ENV === 'production' ? '/bin-ui-design/' : '/'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  base: process.env.NODE_ENV === 'production' ? '/bin-ui-design/' : '/',
+  base: baseUrl,
   outDir: '../site',
   title: 'BIN-UI-DESIGN',
   description: 'A Compontnts Lib for Vue3',
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [
+    [
+      'link',
+      {
+        rel: 'icon',
+        href: `${baseUrl}favicon.ico`
+      }
+    ]
+  ],
   themeConfig: {
     logo: '/logo.png',
     siteTitle: 'BIN-UI-DESIGN',
