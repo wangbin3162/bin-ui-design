@@ -54,7 +54,7 @@
     "@types/gulp": "^4.0.13",
     "@types/gulp-autoprefixer": "^0.0.34",
     "@types/gulp-postcss": "^8.0.3",
-    "@types/node": "^18.17.8",
+    "@types/node": "^18.17.9",
     "@vitejs/plugin-vue": "^4.3.3",
     "@vitejs/plugin-vue-jsx": "^3.0.2",
     "@vitepress-demo-preview/component": "^2.3.2",

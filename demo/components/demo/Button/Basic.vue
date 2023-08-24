@@ -1,7 +1,10 @@
 <template>
-  <div class="demo-button" flex="cross:center">
+  <div class="demo-button">
     <b-button>Default</b-button>
-    <b-button dashed>Dashed</b-button>
-    <b-button background>Background</b-button>
+    <b-button type="primary">Primary</b-button>
+    <b-button type="success">Success</b-button>
+    <b-button type="info">Info</b-button>
+    <b-button type="warning">Warning</b-button>
+    <b-button type="danger">Danger</b-button>
   </div>
 </template>

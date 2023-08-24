@@ -10,6 +10,7 @@ export default defineConfig({
   outDir: '../site',
   title: 'BIN-UI-DESIGN',
   description: 'A Compontnts Lib for Vue3',
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     logo: '/logo.png',
     siteTitle: 'BIN-UI-DESIGN',

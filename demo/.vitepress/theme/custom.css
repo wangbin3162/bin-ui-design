@@ -245,3 +245,7 @@ p {
     }
   }
 }
+
+.vitepress-demo-preview__element-plus__container > .vitepress-demo-preview-preview {
+  padding: 20px;
+}

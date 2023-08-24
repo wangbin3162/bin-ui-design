@@ -66,6 +66,15 @@ const copyComp = name => {
   </li>
 </ul>
 
+## Props
+
+<doc-table type="props" :data="[
+  'name | 图标名称 | string | 图标集合 | —',
+  'size | 尺寸 | number / string | 数字像素 | —',
+  'type | 图标按钮，设置为button时可以悬停点击 | string | button | —',
+  'color | 图标颜色值 | string | — | —',
+]"></doc-table>
+
 <style scoped>
 .demo-icon {
   padding: 20px;

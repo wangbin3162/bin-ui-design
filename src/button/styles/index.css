@@ -110,6 +110,7 @@
     --b-btn-hover-border-color: transparent;
     --b-btn-active-bg-color: transparent;
     --b-btn-active-border-color: transparent;
+    --b-btn-disabled-border-color: transparent;
     padding: 0;
     height: auto;
     &.is-disabled,
