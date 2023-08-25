@@ -2,7 +2,7 @@ import { type PropType } from 'vue'
 
 export interface ConfigProviderProps {
   locale?: string
-  theme?: 'dark'
+  theme?: string
   tag: string
 }
 
