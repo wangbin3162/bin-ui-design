@@ -1,9 +1,13 @@
-/* eslint-disable @typescript-eslint/indent */
-import { h, inject, computed, defineComponent, provide } from 'vue'
-
+import { h, inject, computed, defineComponent, provide, onMounted, watch } from 'vue'
 import { configProviderProps } from './types'
-
 import { configProviderInjectionKey } from './context'
+import { deepCopy, deepMerge } from '../../_utils/util'
+import {
+  convertObjectPropsToCSSVariables,
+  removeAttrVar,
+  setAttrVar,
+  setObjectPropsCSSVariables
+} from '../../_utils/config-util'
 
 export default defineComponent({
   name: 'BConfigProvider',
@@ -12,26 +16,63 @@ export default defineComponent({
   setup(props) {
     const BConfigProvider = inject(configProviderInjectionKey, null)
 
+    // 主题名称注入
+    const mergedThemeNameRef = computed(() => {
+      const { themeName } = props
+      if (themeName === null) return undefined
+      return themeName === undefined ? BConfigProvider?.mergedThemeNameRef.value : themeName
+    })
+
+    // 主题变量注入
     const mergedThemeRef = computed(() => {
       const { theme } = props
       if (theme === null) return undefined
-      const inheritedTheme = BConfigProvider?.mergedThemeRef.value
+      const inheritedTheme = deepCopy(BConfigProvider?.mergedThemeRef.value)
       return theme === undefined
         ? inheritedTheme
         : inheritedTheme === undefined
         ? theme
-        : Object.assign({}, inheritedTheme, theme)
+        : deepMerge(inheritedTheme, theme)
     })
 
     provide(configProviderInjectionKey, {
+      // 语言环境包
       mergedLocaleRef: computed(() => {
         const { locale } = props
         if (locale === null) return undefined
         return locale === undefined ? BConfigProvider?.mergedLocaleRef.value : locale
       }),
-      mergedThemeRef
+      mergedThemeRef,
+      mergedThemeNameRef
     })
+    onMounted(() => {
+      setVariablesToDomNode()
+    })
+
+    function setVariablesToDomNode() {
+      // 如果是虚拟模式，则追加属性至dom节点
+      if (props.abstract) {
+        if (props.themeName) {
+          setAttrVar('theme-name', props.themeName)
+        } else {
+          removeAttrVar('theme-name')
+        }
+      }
+      // 如果禁用样式注入，则需要注入到html
+      if (props.inlineThemeDisabled || props.abstract) {
+        setObjectPropsCSSVariables(mergedThemeRef.value ?? {})
+      }
+    }
+
+    watch(
+      () => [props.themeName, props.theme],
+      () => {
+        setVariablesToDomNode()
+      },
+      { deep: true }
+    )
     return {
+      mergedThemeName: mergedThemeNameRef,
       mergedTheme: mergedThemeRef
     }
   },
@@ -41,7 +82,10 @@ export default defineComponent({
           this.tag,
           {
             class: 'b-config-provider',
-            'theme-name': this.mergedTheme
+            'theme-name': this.mergedThemeName,
+            style: this.inlineThemeDisabled
+              ? {}
+              : convertObjectPropsToCSSVariables(this.mergedTheme ?? {})
           },
           this.$slots.default?.()
         )

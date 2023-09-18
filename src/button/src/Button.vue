@@ -19,7 +19,7 @@
     :type="nativeType"
     :autofocus="autofocus"
     :disabled="disabled || loading"
-    :theme-name="theme"
+    :theme-name="themeName"
   >
     <span v-if="icon || loading" class="bin-button__icon">
       <i
@@ -60,7 +60,7 @@ const props = withDefaults(defineProps<ButtonProps>(), {
   nativeType: 'button'
 })
 
-const theme = useTheme()
+const { themeName } = useTheme()
 
 const _ref = ref<HTMLButtonElement>()
 
