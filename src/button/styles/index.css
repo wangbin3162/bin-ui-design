@@ -3,10 +3,10 @@
 .bin-button {
   --b-btn-font-weight: var(--bin-base-font-weight);
   --b-btn-border-color: var(--bin-border-color-base);
-  --b-btn-bg-color: var(--bin-color-white);
+  --b-btn-bg-color: var(--bin-white-color);
   --b-btn-text-color: var(--bin-color-text-default);
-  --b-btn-disabled-text-color: var(--bin-disabled-text-color);
-  --b-btn-disabled-bg-color: var(--bin-disabled-bg-color);
+  --b-btn-disabled-text-color: var(--bin-color-text-disabled);
+  --b-btn-disabled-bg-color: var(--bin-white-color);
   --b-btn-disabled-border-color: var(--bin-disabled-border-color);
   --b-btn-hover-text-color: var(--bin-color-primary);
   --b-btn-hover-bg-color: var(--bin-color-primary-light6);
@@ -38,8 +38,8 @@
   transition: var(--bin-animation-duration-base);
   user-select: none;
   padding: 0 16px;
-  font-size: var(--bin-base-font-size);
-  border-radius: var(--bin-border-base-radius);
+  font-size: var(--bin-font-size-default);
+  border-radius: var(--bin-border-radius-default);
   letter-spacing: 0.02857em;
   & + & {
     margin-left: 8px;
@@ -97,7 +97,7 @@
     &.is-disabled,
     &.is-disabled:focus,
     &.is-disabled:hover {
-      background-color: var(--bin-disabled-bg-color1);
+      background-color: var(--bin-color-select-hover);
     }
   }
   &.is-dashed {
@@ -138,29 +138,29 @@
 
   @each $val in primary, success, warning, info, danger {
     &.bin-button--$(val) {
-      --b-btn-text-color: var(--bin-color-white);
+      --b-btn-text-color: var(--bin-white-color);
       --b-btn-bg-color: var(--bin-color-$(val));
       --b-btn-border-color: var(--bin-color-$(val));
 
-      --b-btn-hover-text-color: var(--bin-color-white);
+      --b-btn-hover-text-color: var(--bin-white-color);
       --b-btn-hover-bg-color: var(--bin-color-$(val)-light1);
       --b-btn-hover-border-color: var(--bin-color-$(val)-light1);
 
-      --b-btn-active-text-color: var(--bin-color-white);
+      --b-btn-active-text-color: var(--bin-white-color);
       --b-btn-active-bg-color: var(--bin-color-$(val)-active);
       --b-btn-active-border-color: var(--bin-color-$(val)-active);
 
-      --b-btn-disabled-text-color: var(--bin-color-white);
+      --b-btn-disabled-text-color: var(--bin-white-color);
       --b-btn-disabled-bg-color: var(--bin-color-$(val)-light2);
       --b-btn-disabled-border-color: var(--bin-color-$(val)-light2);
     }
     &.bin-button--$(val).is-dashed {
       --b-btn-text-color: var(--bin-color-$(val));
-      --b-btn-bg-color: var(--bin-color-white);
+      --b-btn-bg-color: var(--bin-white-color);
       --b-btn-border-color: var(--bin-color-$(val));
 
       --b-btn-hover-text-color: var(--bin-color-$(val)-light1);
-      --b-btn-hover-bg-color: var(--bin-color-white);
+      --b-btn-hover-bg-color: var(--bin-white-color);
       --b-btn-hover-border-color: var(--bin-color-$(val)-light1);
 
       --b-btn-active-text-color: var(--bin-color-$(val)-active);
@@ -168,7 +168,7 @@
       --b-btn-active-border-color: var(--bin-color-$(val)-active);
 
       --b-btn-disabled-text-color: var(--bin-color-$(val)-light3);
-      --b-btn-disabled-bg-color: var(--bin-color-white);
+      --b-btn-disabled-bg-color: var(--bin-white-color);
       --b-btn-disabled-border-color: var(--bin-color-$(val)-light3);
     }
     &.bin-button--$(val).is-plain {
@@ -228,7 +228,7 @@
 .bin-button--large {
   height: var(--bin-large-height);
   padding: 0 14px;
-  font-size: var(--bin-header-font-size);
+  font-size: var(--bin-font-size-large);
 
   &.is-round {
     padding: 0 14px;

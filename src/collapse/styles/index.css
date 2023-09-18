@@ -4,11 +4,11 @@
   --b-collapse-header-text-color: var(--bin-color-text-primary);
   --b-collapse-header-text-color-disabled: var(--bin-color-text-disabled);
   --b-collapse-content-text-color: var(--bin-color-text-default);
-  --b-collapse-content-bg: var(--bin-color-white);
+  --b-collapse-content-bg: var(--bin-white-color);
 }
 .bin-collapse {
   background-color: var(--b-collapse-bg);
-  border-radius: var(--bin-border-base-radius);
+  border-radius: var(--bin-border-radius-default);
   border: var(--bin-border-base-light);
 
   > .bin-collapse-item {
@@ -84,7 +84,7 @@
   --b-collapse-header-weight: 500;
   --b-collapse-header-tip: var(--bin-color-primary);
   --b-collapse-content-text-color: var(--bin-color-text-default);
-  --b-collapse-content-bg: var(--bin-color-white);
+  --b-collapse-content-bg: var(--bin-white-color);
 
   background-color: var(--b-collapse-bg);
   box-shadow: var(--b-collapse-shadow);

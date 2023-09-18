@@ -2,17 +2,17 @@
   --b-popper-arrow-width: 8px;
   --b-popper-arrow-distance: 8px;
   --b-popper-bg-dark: #303133;
-  --b-popper-bg-light: var(--bin-color-white);
+  --b-popper-bg-light: var(--bin-white-color);
   --b-popper-shadow-color: rgba(0, 0, 0, 0.07);
   --b-popper-padding: 8px 14px;
-  --b-popper-border-radius: var(--bin-border-base-radius);
+  --b-popper-border-radius: var(--bin-border-radius-default);
 }
 
 .bin-popper {
   position: absolute;
   border-radius: var(--b-popper-border-radius);
   padding: var(--b-popper-padding);
-  font-size: var(--bin-base-font-size);
+  font-size: var(--bin-font-size-default);
   line-height: var(--bin-base-line-height);
   min-width: 10px;
   z-index: 2000;

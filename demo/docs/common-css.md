@@ -28,7 +28,7 @@ import 'bin-ui-design/dist/styles/common/scrollbar.css'
 ```css
 body {
   color: var(--bin-color-text-primary);
-  font-size: var(--bin-base-font-size);
+  font-size: var(--bin-font-size-default);
   font-family: var(--bin-font-family);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -115,15 +115,15 @@ h6 {
 }
 
 h1 {
-  font-size: calc(--bin-base-font-size + 6px);
+  font-size: calc(--bin-font-size-default + 6px);
 }
 
 h2 {
-  font-size: calc(--bin-base-font-size + 4px);
+  font-size: calc(--bin-font-size-default + 4px);
 }
 
 h3 {
-  font-size: calc(--bin-base-font-size + 2px);
+  font-size: calc(--bin-font-size-default + 2px);
 }
 
 h4,
@@ -145,11 +145,11 @@ p {
 
 sup,
 sub {
-  font-size: calc(--bin-base-font-size - 1px);
+  font-size: calc(--bin-font-size-default - 1px);
 }
 
 small {
-  font-size: calc(--bin-base-font-size - 2px);
+  font-size: calc(--bin-font-size-default - 2px);
 }
 
 hr {

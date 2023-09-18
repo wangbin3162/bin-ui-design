@@ -2,7 +2,7 @@
   --b-btn-bg-color: var(--bin-dark-bg);
   --b-btn-text-color: var(--bin-color-text-white);
   --b-btn-border-color: var(--bin-border-color-light-2);
-  --b-btn-disabled-text-color: var(--bin-disabled-text-color);
+  --b-btn-disabled-text-color: var(--bin-color-text-disabled);
   --b-btn-disabled-bg-color: var(--bin-dark-bg);
   --b-btn-disabled-border-color: var(--bin-border-color-light-2);
 

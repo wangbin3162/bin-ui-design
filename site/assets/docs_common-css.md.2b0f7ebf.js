@@ -1,4 +1,10 @@
-import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";const d=JSON.parse('{"title":"通用样式","description":"","frontmatter":{"title":"通用样式"},"headers":[],"relativePath":"docs/common-css.md","filePath":"docs/common-css.md"}'),o={name:"docs/common-css.md"},e=n(`<h1 id="通用样式" tabindex="-1">通用样式 <a class="header-anchor" href="#通用样式" aria-label="Permalink to &quot;通用样式&quot;">​</a></h1><p>组件内部导入了部分通用样式，如内外边距，flex等。默认全局样式引入的时候会默认导入，如进行按需加载，部分内容可按需进行导入</p><div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki rose-pine-moon vp-code-dark"><code><span class="line"><span style="color:#908CAA;font-style:italic;">//</span><span style="color:#6E6A86;font-style:italic;"> main.ts</span></span>
+import { _ as a, c as l, o as p, X as n, k as s } from './chunks/framework.0edd707e.js'
+const d = JSON.parse(
+    '{"title":"通用样式","description":"","frontmatter":{"title":"通用样式"},"headers":[],"relativePath":"docs/common-css.md","filePath":"docs/common-css.md"}'
+  ),
+  o = { name: 'docs/common-css.md' },
+  e = n(
+    `<h1 id="通用样式" tabindex="-1">通用样式 <a class="header-anchor" href="#通用样式" aria-label="Permalink to &quot;通用样式&quot;">​</a></h1><p>组件内部导入了部分通用样式，如内外边距，flex等。默认全局样式引入的时候会默认导入，如进行按需加载，部分内容可按需进行导入</p><div class="language-ts vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">ts</span><pre class="shiki rose-pine-moon vp-code-dark"><code><span class="line"><span style="color:#908CAA;font-style:italic;">//</span><span style="color:#6E6A86;font-style:italic;"> main.ts</span></span>
 <span class="line"><span style="color:#908CAA;font-style:italic;">//</span><span style="color:#6E6A86;font-style:italic;"> 全部引入</span></span>
 <span class="line"><span style="color:#3E8FB0;">import </span><span style="color:#F6C177;">&#39;bin-ui-design/dist/styles/index.css&#39;</span></span>
 <span class="line"><span style="color:#908CAA;font-style:italic;">//</span><span style="color:#6E6A86;font-style:italic;"> 按需引入</span></span>
@@ -22,7 +28,7 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"><span style="color:#7B30D0;">import</span><span style="color:#002339;"> </span><span style="color:#A44185;">&#39;bin-ui-design/dist/styles/common/reset.css&#39;</span></span>
 <span class="line"><span style="color:#7B30D0;">import</span><span style="color:#002339;"> </span><span style="color:#A44185;">&#39;bin-ui-design/dist/styles/common/scrollbar.css&#39;</span></span></code></pre></div><h2 id="reset-css" tabindex="-1">reset.css <a class="header-anchor" href="#reset-css" aria-label="Permalink to &quot;reset.css&quot;">​</a></h2><p>基础样式用于初始化默认样式，这里的reset样式已经集成了部分样式变量，更方便使用。使用时直接导入即可。</p><div class="language-css vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">css</span><pre class="shiki rose-pine-moon vp-code-dark"><code><span class="line"><span style="color:#9CCFD8;">body</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
 <span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">color</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">var</span><span style="color:#908CAA;">(</span><span style="color:#E0DEF4;font-style:italic;">--bin-color-text-primary</span><span style="color:#908CAA;">);</span></span>
-<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">var</span><span style="color:#908CAA;">(</span><span style="color:#E0DEF4;font-style:italic;">--bin-base-font-size</span><span style="color:#908CAA;">);</span></span>
+<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">var</span><span style="color:#908CAA;">(</span><span style="color:#E0DEF4;font-style:italic;">--bin-font-size-default</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-family</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">var</span><span style="color:#908CAA;">(</span><span style="color:#E0DEF4;font-style:italic;">--bin-font-family</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">-webkit-font-smoothing</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#F6C177;">antialiased</span><span style="color:#908CAA;">;</span></span>
 <span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">-moz-osx-font-smoothing</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#F6C177;">grayscale</span><span style="color:#908CAA;">;</span></span>
@@ -109,15 +115,15 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"><span style="color:#E0DEF4;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">h1</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
-<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-base-font-size </span><span style="color:#3E8FB0;">+</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">6</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
+<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-font-size-default </span><span style="color:#3E8FB0;">+</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">6</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#908CAA;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">h2</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
-<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-base-font-size </span><span style="color:#3E8FB0;">+</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">4</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
+<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-font-size-default </span><span style="color:#3E8FB0;">+</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">4</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#908CAA;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">h3</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
-<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-base-font-size </span><span style="color:#3E8FB0;">+</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">2</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
+<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-font-size-default </span><span style="color:#3E8FB0;">+</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">2</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#908CAA;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">h4</span><span style="color:#908CAA;">,</span></span>
@@ -139,11 +145,11 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">sup</span><span style="color:#908CAA;">,</span></span>
 <span class="line"><span style="color:#9CCFD8;">sub</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
-<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-base-font-size </span><span style="color:#3E8FB0;">-</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">1</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
+<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-font-size-default </span><span style="color:#3E8FB0;">-</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">1</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#908CAA;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">small</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
-<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-base-font-size </span><span style="color:#3E8FB0;">-</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">2</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
+<span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">font-size</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">calc</span><span style="color:#908CAA;">(</span><span style="color:#F6C177;">--bin-font-size-default </span><span style="color:#3E8FB0;">-</span><span style="color:#F6C177;"> </span><span style="color:#EA9A97;">2</span><span style="color:#3E8FB0;">px</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#908CAA;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#9CCFD8;">hr</span><span style="color:#E0DEF4;"> </span><span style="color:#908CAA;">{</span></span>
@@ -153,7 +159,7 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"><span style="color:#E0DEF4;">  </span><span style="color:#9CCFD8;">border-top</span><span style="color:#908CAA;">:</span><span style="color:#E0DEF4;"> </span><span style="color:#EB6F92;font-style:italic;">var</span><span style="color:#908CAA;">(</span><span style="color:#E0DEF4;font-style:italic;">--bin-border-base-light</span><span style="color:#908CAA;">);</span></span>
 <span class="line"><span style="color:#908CAA;">}</span></span></code></pre><pre class="shiki slack-ochin vp-code-light"><code><span class="line"><span style="color:#0444AC;">body</span><span style="color:#002339;"> {</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">color</span><span style="color:#002339;">: </span><span style="color:#1AB394;">var</span><span style="color:#002339;">(</span><span style="color:#2F86D2;">--bin-color-text-primary</span><span style="color:#002339;">);</span></span>
-<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">var</span><span style="color:#002339;">(</span><span style="color:#2F86D2;">--bin-base-font-size</span><span style="color:#002339;">);</span></span>
+<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">var</span><span style="color:#002339;">(</span><span style="color:#2F86D2;">--bin-font-size-default</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-family</span><span style="color:#002339;">: </span><span style="color:#1AB394;">var</span><span style="color:#002339;">(</span><span style="color:#2F86D2;">--bin-font-family</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">-webkit-font-smoothing</span><span style="color:#002339;">: </span><span style="color:#174781;">antialiased</span><span style="color:#002339;">;</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">-moz-osx-font-smoothing</span><span style="color:#002339;">: </span><span style="color:#174781;">grayscale</span><span style="color:#002339;">;</span></span>
@@ -240,15 +246,15 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"><span style="color:#002339;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">h1</span><span style="color:#002339;"> {</span></span>
-<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-base-font-size </span><span style="color:#7B30D0;">+</span><span style="color:#002339;"> </span><span style="color:#174781;">6</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
+<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-font-size-default </span><span style="color:#7B30D0;">+</span><span style="color:#002339;"> </span><span style="color:#174781;">6</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">h2</span><span style="color:#002339;"> {</span></span>
-<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-base-font-size </span><span style="color:#7B30D0;">+</span><span style="color:#002339;"> </span><span style="color:#174781;">4</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
+<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-font-size-default </span><span style="color:#7B30D0;">+</span><span style="color:#002339;"> </span><span style="color:#174781;">4</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">h3</span><span style="color:#002339;"> {</span></span>
-<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-base-font-size </span><span style="color:#7B30D0;">+</span><span style="color:#002339;"> </span><span style="color:#174781;">2</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
+<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-font-size-default </span><span style="color:#7B30D0;">+</span><span style="color:#002339;"> </span><span style="color:#174781;">2</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">h4</span><span style="color:#002339;">,</span></span>
@@ -270,11 +276,11 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">sup</span><span style="color:#002339;">,</span></span>
 <span class="line"><span style="color:#0444AC;">sub</span><span style="color:#002339;"> {</span></span>
-<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-base-font-size </span><span style="color:#7B30D0;">-</span><span style="color:#002339;"> </span><span style="color:#174781;">1</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
+<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-font-size-default </span><span style="color:#7B30D0;">-</span><span style="color:#002339;"> </span><span style="color:#174781;">1</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">small</span><span style="color:#002339;"> {</span></span>
-<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-base-font-size </span><span style="color:#7B30D0;">-</span><span style="color:#002339;"> </span><span style="color:#174781;">2</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
+<span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">font-size</span><span style="color:#002339;">: </span><span style="color:#1AB394;">calc</span><span style="color:#002339;">(--bin-font-size-default </span><span style="color:#7B30D0;">-</span><span style="color:#002339;"> </span><span style="color:#174781;">2</span><span style="color:#7B30D0;">px</span><span style="color:#002339;">);</span></span>
 <span class="line"><span style="color:#002339;">}</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#0444AC;">hr</span><span style="color:#002339;"> {</span></span>
@@ -290,7 +296,17 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">-webkit-flex-wrap</span><span style="color:#002339;">: </span><span style="color:#174781;">wrap</span><span style="color:#002339;">;</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">-ms-flex-wrap</span><span style="color:#002339;">: </span><span style="color:#174781;">wrap</span><span style="color:#002339;">;</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">flex-wrap</span><span style="color:#002339;">: </span><span style="color:#174781;">wrap</span><span style="color:#002339;">;</span></span>
-<span class="line"><span style="color:#002339;">}</span></span></code></pre></div>`,9),t=s("div",{flex:"main:center cross:center",style:{height:"80px",border:"1px solid #1089ff"}},[s("div",{style:{background:"#fff",padding:"15px"}},"看看我是不是居中的")],-1),c=n(`<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki rose-pine-moon vp-code-dark"><code><span class="line"><span style="color:#908CAA;font-style:italic;">&lt;!--</span></span>
+<span class="line"><span style="color:#002339;">}</span></span></code></pre></div>`,
+    9
+  ),
+  t = s(
+    'div',
+    { flex: 'main:center cross:center', style: { height: '80px', border: '1px solid #1089ff' } },
+    [s('div', { style: { background: '#fff', padding: '15px' } }, '看看我是不是居中的')],
+    -1
+  ),
+  c = n(
+    `<div class="language-html vp-adaptive-theme"><button title="Copy Code" class="copy"></button><span class="lang">html</span><pre class="shiki rose-pine-moon vp-code-dark"><code><span class="line"><span style="color:#908CAA;font-style:italic;">&lt;!--</span></span>
 <span class="line"><span style="color:#6E6A86;font-style:italic;">  将dist目录下的css文件引入到你的页面中，根据你的需要引入</span></span>
 <span class="line"><span style="color:#6E6A86;font-style:italic;">  flex.css 使用flex属性匹配</span></span>
 <span class="line"><span style="color:#6E6A86;font-style:italic;">  data-flex.css 使用data-flex属性匹配（React使用）</span></span>
@@ -1026,4 +1042,12 @@ import{_ as a,c as l,o as p,X as n,k as s}from"./chunks/framework.0edd707e.js";c
 <span class="line"></span>
 <span class="line"><span style="color:#DF8618;font-style:italic;">::-webkit-scrollbar-thumb:hover</span><span style="color:#002339;"> {</span></span>
 <span class="line"><span style="color:#002339;">  </span><span style="color:#DC3EB7;">background</span><span style="color:#002339;">: </span><span style="color:#1AB394;">var</span><span style="color:#002339;">(</span><span style="color:#2F86D2;">--bin-scrollbar-color-hover</span><span style="color:#002339;">);</span></span>
-<span class="line"><span style="color:#002339;">}</span></span></code></pre></div>`,9),r=[e,t,c];function y(i,A,C,E,D,F){return p(),l("div",null,r)}const B=a(o,[["render",y]]);export{d as __pageData,B as default};
+<span class="line"><span style="color:#002339;">}</span></span></code></pre></div>`,
+    9
+  ),
+  r = [e, t, c]
+function y(i, A, C, E, D, F) {
+  return p(), l('div', null, r)
+}
+const B = a(o, [['render', y]])
+export { d as __pageData, B as default }
