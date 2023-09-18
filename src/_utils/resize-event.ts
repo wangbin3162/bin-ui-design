@@ -14,7 +14,7 @@ const resizeHandler = function (entries) {
 }
 
 /* istanbul ignore next */
-export const addResizeListener = function (element: HTMLElement, fn) {
+export const addResizeListener = function (element: HTMLElement | null, fn) {
   if (isServer || !element) return
   if (!element.__resizeListeners__) {
     element.__resizeListeners__ = []
@@ -25,7 +25,7 @@ export const addResizeListener = function (element: HTMLElement, fn) {
 }
 
 /* istanbul ignore next */
-export const removeResizeListener = function (element: HTMLElement, fn) {
+export const removeResizeListener = function (element: HTMLElement | null, fn) {
   if (!element || !element.__resizeListeners__) return
   element.__resizeListeners__.splice(element.__resizeListeners__.indexOf(fn), 1)
   if (!element.__resizeListeners__.length) {

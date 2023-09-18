@@ -12,16 +12,13 @@ export default formatSidebar(
     },
     {
       text: '反馈组件',
-      items: [
-        // { text: '空状态', link: '/components/empty', icon: 'fire', alias: 'Tooltip' },
-        { text: '提示', link: '/components/tooltip', icon: 'info-circle', alias: 'Tooltip' }
-      ]
+      items: [{ text: '提示', link: '/components/tooltip', icon: 'info-circle', alias: 'Tooltip' }]
     },
     {
-      text: '工具组件',
+      text: '内置组件',
       items: [
-        { text: '空状态', link: '/components/empty', icon: 'border', alias: 'Empty' }
-        // { text: '弹层', link: '/components/popper', icon: 'fire', alias: 'Popper' }
+        { text: '空状态', link: '/components/empty', icon: 'border', alias: 'Empty' },
+        { text: '滚动组件', link: '/components/scrollbar', icon: 'container', alias: 'Scrollbar' }
       ]
     },
     {
