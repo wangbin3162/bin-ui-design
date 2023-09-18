@@ -118,7 +118,6 @@ p {
       .item {
         .text {
           color: var(--vp-c-text-1);
-          font-size: 15px;
         }
       }
     }
@@ -182,7 +181,7 @@ p {
         border-top: none;
       }
       .VPSidebarItem {
-        padding: 0 12px;
+        padding: 0 8px;
       }
     }
     .curtain {

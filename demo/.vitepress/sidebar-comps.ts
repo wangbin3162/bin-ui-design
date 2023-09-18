@@ -23,6 +23,17 @@ export default formatSidebar(
         { text: '空状态', link: '/components/empty', icon: 'border', alias: 'Empty' }
         // { text: '弹层', link: '/components/popper', icon: 'fire', alias: 'Popper' }
       ]
+    },
+    {
+      text: '全局配置',
+      items: [
+        {
+          text: '全局配置',
+          link: '/components/config-provider',
+          icon: 'setting',
+          alias: 'ConfigProvider'
+        }
+      ]
     }
   ],
   true
