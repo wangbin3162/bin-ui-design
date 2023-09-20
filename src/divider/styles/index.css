@@ -1,0 +1,47 @@
+.bin-divider {
+  --b-divider-border-color: var(--bin-border-color-base);
+}
+
+.bin-divider {
+  background-color: var(--b-divider-border-color);
+  position: relative;
+  &-horizontal {
+    display: block;
+    height: 1px;
+    width: 100%;
+    margin: 24px 0;
+  }
+  &-vertical {
+    position: relative;
+    margin: 0 8px;
+    display: inline-block;
+    height: 1em;
+    width: 1px;
+    vertical-align: middle;
+    top: -0.06em;
+  }
+  &-dashed {
+    background: 0 0;
+    border-top: 1px dashed var(--b-divider-border-color);
+  }
+  &-inner-text {
+    position: absolute;
+    background-color: #fff;
+    padding: 0 16px;
+    font-weight: 600;
+    color: #303133;
+    font-size: 14px;
+    &.is-left {
+      left: 24px;
+      transform: translateY(-50%);
+    }
+    &.is-center {
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+    }
+    &.is-right {
+      right: 24px;
+      transform: translateY(-50%);
+    }
+  }
+}

@@ -12,7 +12,10 @@ export default formatSidebar(
     },
     {
       text: '布局组件',
-      items: [{ text: '布局组件', link: '/components/layout', icon: 'layout', alias: 'Layout' }]
+      items: [
+        { text: '布局组件', link: '/components/layout', icon: 'layout', alias: 'Layout' },
+        { text: '分割线', link: '/components/divider', icon: 'line', alias: 'Divider' }
+      ]
     },
     {
       text: '反馈组件',
