@@ -23,7 +23,6 @@ function create({
 }: BUiCreateOptions = {}): BUiInstance {
   const installTargets: App[] = []
   function registerComponent(app: App, name: string, component: ComponentType): void {
-    console.log(name, component)
     const newName = componentPrefix + name.slice(1)
     const registered = app.component(newName)
     if (!registered) {

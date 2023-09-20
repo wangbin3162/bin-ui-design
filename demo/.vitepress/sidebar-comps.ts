@@ -11,6 +11,10 @@ export default formatSidebar(
       ]
     },
     {
+      text: '布局组件',
+      items: [{ text: '布局组件', link: '/components/layout', icon: 'layout', alias: 'Layout' }]
+    },
+    {
       text: '反馈组件',
       items: [{ text: '提示', link: '/components/tooltip', icon: 'info-circle', alias: 'Tooltip' }]
     },
