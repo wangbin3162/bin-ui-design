@@ -14,6 +14,18 @@ title: 滚动组件 Scrollbar
 
 注意：如果内容区域不超过容器高度则不会生成滚动条
 
+## 始终显示
+
+使用`always`可以让滚动条始终显示出来
+
+<preview path="./demo/Scrollbar/Always.vue"></preview>
+
+## 定制滚动条的样式
+
+可以借助不同的props来定制滚动条的样式，也可以使用css来实现样式修改。
+
+<preview path="./demo/Scrollbar/Custom.vue"></preview>
+
 ## 注意事项
 
 - b-scrollbar的父层要有固定高度

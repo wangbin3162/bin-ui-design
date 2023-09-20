@@ -42,6 +42,12 @@ export const scrollbarProps = {
     type: String,
     default: 'div'
   },
-  barStyle: {}, // bar的样式
-  barWrapStyle: {} // bar容器样式
+  barStyle: {
+    type: Object,
+    default: () => ({})
+  },
+  barWrapStyle: {
+    type: Object,
+    default: () => ({})
+  }
 }

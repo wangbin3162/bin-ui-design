@@ -1,15 +1,30 @@
-import { h, computed, ref, getCurrentInstance, onUnmounted, inject } from 'vue'
+import { h, computed, ref, getCurrentInstance, onUnmounted, inject, defineComponent } from 'vue'
 import { on, off } from '../../../_utils/dom'
 import { renderThumbStyle, BAR_MAP } from './utils'
 
-export default {
+export default defineComponent({
   name: 'Bar',
   props: {
-    vertical: Boolean,
-    size: String,
-    move: Number,
-    barStyle: {},
-    barWrapStyle: {}
+    vertical: {
+      type: Boolean,
+      default: false
+    },
+    size: {
+      type: String,
+      default: ''
+    },
+    move: {
+      type: Number,
+      default: 0
+    },
+    barStyle: {
+      type: Object,
+      default: () => ({})
+    },
+    barWrapStyle: {
+      type: Object,
+      default: () => ({})
+    }
   },
   setup(props) {
     const instance = getCurrentInstance()
@@ -97,4 +112,4 @@ export default {
         })
       )
   }
-}
+})
