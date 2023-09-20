@@ -137,6 +137,14 @@ p {
             color: var(--bin-color-text-secondary);
             margin-left: 5px;
           }
+          .empty {
+            position: relative;
+            width: 6px;
+            height: 6px;
+            border-radius: 3px;
+            background-color: red;
+            top: -3px;
+          }
         }
       }
       &:hover {
@@ -246,6 +254,11 @@ p {
           font-weight: 500;
         }
         h2 {
+          margin: 16px 0 16px;
+          border-top: none;
+          font-weight: 500;
+        }
+        h3 {
           margin: 16px 0 16px;
           border-top: none;
           font-weight: 500;

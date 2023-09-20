@@ -1,46 +1,51 @@
-# bin-ui-design
+# Bin UI Design
 
-This template should help get you started developing with Vue 3 in Vite.
+Bin UI Design 是一个 Vue3 的组件库。
 
-## Recommended IDE Setup
+要了解如何安装，参见 [安装](/docs/installation.html)
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+它是基于 [bin-ui-next](https://wangbin3162.gitee.io/bin-ui-next/#/guide) 更新而来，可以平滑的过度和切换。
 
-## Type Support for `.vue` Imports in TS
+## 最新版本
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+[![NPM version](https://img.shields.io/npm/v/bin-ui-design.svg)](https://www.npmjs.com/package/bin-ui-design)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## 组件丰富
 
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+我们提供了超过60 个组件，基本可以满足日常开发需求。
 
-## Customize configuration
+顺带一提，基本全都可以 treeshaking。
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+## 使用 TypeScript 编写
 
-## Project Setup
+使用了TypeScript 进行了重构。更快更好。另外，你不需要导入任何 CSS 就能让组件正常工作。
 
-```sh
-pnpm install
-```
+## 主题样式
 
-### Compile and Hot-Reload for Development
+使用了Postcss 重构了样式，增加了更多的主题颜色配置。我们提供了一个使用TypeScript构建的类型安全主题系统。您只需要按需进行配置导出一个配置覆盖对象即可。
 
-```sh
-pnpm dev
-```
+# 安装
 
-### Type-Check, Compile and Minify for Production
+注意，bin-ui-design 仅支持 Vue3。如果你在使用 Vue2，可以使用 [bin-ui](https://wangbin3162.gitee.io/bin-ui/#/guide)。
 
-```sh
-pnpm build
-```
+## 最新版本
 
-### Lint with [ESLint](https://eslint.org/)
+[![NPM version](https://img.shields.io/npm/v/bin-ui-design.svg)](https://www.npmjs.com/package/bin-ui-design)
+
+## npm
+
+推荐使用 pnpm 进行安装，它能更好地和打包工具配合使用。而且可以更好的和 typescript 配合使用。并且支持按需引入
 
 ```sh
-pnpm lint
+npm i bin-ui-design
+# or
+yarn add bin-ui-design
+# or
+pnpm add bin-ui-design
 ```
+
+## 在 SFC 中使用
+
+推荐在 SFC 单文件组件风格（SFC - Single File Component）环境中进行使用，可以选择直接引入或全局安装在 Vue App 中。
+
+参考[在 SFC 中使用](/docs/usage-sfc.html)

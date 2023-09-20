@@ -5,6 +5,7 @@ export default formatSidebar([
     text: '介绍',
     items: [
       { text: 'Bin UI Design', link: '/docs/introduction' },
+      { text: '组件完成状态', link: '/docs/comps-down' },
       { text: '变更日志', link: '/docs/changelog' }
     ]
   },

@@ -15,11 +15,13 @@ interface SidebarType {
 export function formatSidebar(list: SidebarType[], total: boolean = false) {
   return list.map(group => ({
     text: group.text + (total ? ` (${group.items.length})` : ''),
+
     items: group.items.map(i => {
       const item = { text: '', link: i.link }
       if (i.icon) item.text += `<i class="b-iconfont b-icon-${i.icon}"></i>`
       item.text += i.text
       if (i.alias) item.text += `<span>${i.alias}</span>`
+      if (i.link === '') item.text += `<span class="empty"></span>`
       return item
     })
   }))
