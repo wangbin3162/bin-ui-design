@@ -18,6 +18,13 @@ export default formatSidebar(
       ]
     },
     {
+      text: '视图组件',
+      items: [
+        { text: '卡片', link: '/components/card', icon: 'creditcard', alias: 'Card' }
+        // { text: '分割线', link: '/components/divider', icon: 'line', alias: 'Divider' }
+      ]
+    },
+    {
       text: '反馈组件',
       items: [{ text: '提示', link: '/components/tooltip', icon: 'info-circle', alias: 'Tooltip' }]
     },

@@ -172,9 +172,6 @@ p {
         }
       }
     }
-    .VPSidebarItem.level-1 {
-      padding-left: 16px;
-    }
     .group {
       width: 100%;
       + .group {
@@ -182,6 +179,9 @@ p {
       }
       .VPSidebarItem {
         padding: 0 8px;
+      }
+      .VPSidebarItem.level-1 {
+        padding-left: 16px;
       }
     }
     .curtain {
