@@ -19,7 +19,7 @@ export default formatSidebar(
         { text: '布局组件', link: '/components/layout', icon: 'layout', alias: 'Layout' },
         { text: '栅格', link: '', icon: 'appstore', alias: 'Grid' },
         { text: '间距', link: '', icon: 'swap', alias: 'Space' },
-        { text: '分割面板', link: '', icon: 'block', alias: 'Split' }
+        { text: '分割面板', link: '/components/split', icon: 'block', alias: 'Split' }
       ]
     },
     {
@@ -90,7 +90,7 @@ export default formatSidebar(
       items: [
         { text: '空状态', link: '/components/empty', icon: 'border', alias: 'Empty' },
         { text: '滚动组件', link: '/components/scrollbar', icon: 'container', alias: 'Scrollbar' },
-        { text: '弹层', link: '', icon: 'pic-center', alias: 'Popper' }
+        { text: '弹层', link: '/components/popper', icon: 'pic-center', alias: 'Popper' }
       ]
     },
     {

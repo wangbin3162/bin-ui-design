@@ -1,4 +1,4 @@
-import { popperProps } from '../../_internal/popper'
+import { popperProps } from '../../_internal/popper/src/types'
 
 export const tooltipProps = {
   ...popperProps,
