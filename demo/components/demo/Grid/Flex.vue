@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="demo-grid">
     <p>子元素向左排列</p>
     <b-row type="flex" justify="start" class="code-row-bg">
       <b-col span="4">col-4</b-col>
