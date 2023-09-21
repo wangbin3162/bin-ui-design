@@ -17,7 +17,7 @@
       <b-button type="text" text-color="info" disabled>Info</b-button>
       <b-button type="text" text-color="warning" disabled>Warning</b-button>
       <b-button type="text" text-color="danger" disabled>Danger</b-button>
-      <b-button type="text" text-color="#f759ab" disabled>多彩按钮</b-button>
+      <b-button type="text" text-color="#b37feb" disabled>多彩按钮</b-button>
       <b-button type="text" text-color="#f759ab" disabled>多彩按钮2</b-button>
     </div>
   </div>

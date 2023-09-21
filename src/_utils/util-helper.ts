@@ -1,5 +1,5 @@
 import isServer from './isServer'
-import { isObject } from './util'
+import { isObject, typeOf } from './util'
 
 /**
  * 随机一个id
@@ -27,6 +27,13 @@ export const isNumber = val => typeof val === 'number'
  * @returns
  */
 export const isString = value => typeof value === 'string'
+
+/**
+ * 是否是isArray
+ * @param val
+ * @returns
+ */
+export const isArray = value => typeOf(value) === 'array'
 
 /**
  * 是否是HTMLElement

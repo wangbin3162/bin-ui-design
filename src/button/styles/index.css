@@ -104,6 +104,9 @@
     border-style: dashed;
   }
   &.is-text {
+    --b-btn-text-color: var(--bin-color-primary);
+    --b-btn-hover-text-color: var(--bin-color-primary-light1);
+    --b-btn-active-text-color: var(--bin-color-primary-active);
     --b-btn-bg-color: transparent;
     --b-btn-border-color: transparent;
     --b-btn-hover-bg-color: transparent;
@@ -111,8 +114,23 @@
     --b-btn-active-bg-color: transparent;
     --b-btn-active-border-color: transparent;
     --b-btn-disabled-border-color: transparent;
+    border-color: transparent;
+    color: var(--b-btn-text-color);
+    background: transparent;
+    background-image: none;
     padding: 0;
     height: auto;
+    &:focus,
+    &:hover {
+      color: var(--b-btn-hover-text-color);
+      border-color: transparent;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &:active {
+      color: var(--b-btn-active-text-color);
+    }
     &.is-disabled,
     &.is-disabled:focus,
     &.is-disabled:hover,
@@ -121,6 +139,9 @@
     &[disabled]:hover {
       color: var(--b-btn-disabled-text-color);
       background-image: none;
+      cursor: not-allowed;
+      background-color: transparent;
+      border-color: transparent;
       opacity: 0.65;
     }
   }
@@ -250,35 +271,5 @@
 
   &.is-round {
     padding: 0 10px;
-  }
-}
-
-.bin-button--text {
-  border-color: transparent;
-  color: var(--bin-color-primary);
-  background: transparent;
-  background-image: none;
-  padding: 0;
-  height: auto;
-
-  &:focus,
-  &:hover {
-    color: var(--bin-color-primary-light1);
-    border-color: transparent;
-    background-color: transparent;
-    box-shadow: none;
-  }
-
-  &:active {
-    color: var(--bin-color-primary-active);
-  }
-
-  &.is-disabled,
-  &.is-disabled:focus,
-  &.is-disabled:hover {
-    cursor: not-allowed;
-    background-color: transparent;
-    border-color: transparent;
-    opacity: 0.5;
   }
 }
