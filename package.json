@@ -86,6 +86,7 @@
     "postcss-each": "^1.1.0",
     "postcss-each-variables": "^0.3.0",
     "postcss-for": "^2.1.1",
+    "postcss-functions": "^4.0.2",
     "postcss-import": "^15.1.0",
     "postcss-nested": "^6.0.1",
     "prettier": "^3.0.2",

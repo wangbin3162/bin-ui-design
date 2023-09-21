@@ -230,7 +230,7 @@
 
 .bin-radio-group-capsule {
   display: inline-flex;
-  padding: 1.5px;
+  padding: 1px;
   height: var(--bin-default-height);
   background-color: var(--bin-fill-color-2);
   border-radius: var(--bin-border-radius-default);

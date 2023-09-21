@@ -17,7 +17,7 @@ export default formatSidebar(
       text: '布局组件',
       items: [
         { text: '布局组件', link: '/components/layout', icon: 'layout', alias: 'Layout' },
-        { text: '栅格', link: '', icon: 'appstore', alias: 'Grid' },
+        { text: '栅格', link: '/components/grid', icon: 'appstore', alias: 'Grid' },
         { text: '间距', link: '/components/space', icon: 'swap', alias: 'Space' },
         { text: '分割面板', link: '/components/split', icon: 'block', alias: 'Split' }
       ]

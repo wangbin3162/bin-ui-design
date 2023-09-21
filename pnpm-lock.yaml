@@ -136,6 +136,9 @@ devDependencies:
   postcss-for:
     specifier: ^2.1.1
     version: 2.1.1
+  postcss-functions:
+    specifier: ^4.0.2
+    version: 4.0.2(postcss@8.4.28)
   postcss-import:
     specifier: ^15.1.0
     version: 15.1.0(postcss@8.4.28)
@@ -6129,6 +6132,15 @@ packages:
     dependencies:
       postcss: 5.2.18
       postcss-simple-vars: 2.0.0
+    dev: true
+
+  /postcss-functions@4.0.2(postcss@8.4.28):
+    resolution: {integrity: sha512-htDZN6t97uW4GBXquTsz/DVaNVAHtHx5tLCALquVM2u58UwHki+RwHbANKiiI0ImA8T7Iml2MnvLUM7aGtlpqA==}
+    peerDependencies:
+      postcss: ^8.0.0
+    dependencies:
+      postcss: 8.4.28
+      postcss-value-parser: 4.2.0
     dev: true
 
   /postcss-import@15.1.0(postcss@8.4.28):

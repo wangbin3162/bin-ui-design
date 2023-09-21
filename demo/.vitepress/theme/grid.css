@@ -1,0 +1,22 @@
+.vp-doc._components_grid {
+  .bin-col {
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+    background: rgba(0, 153, 229, 0.8);
+    &:nth-child(odd) {
+      background: rgba(0, 153, 229, 0.5);
+    }
+  }
+  .bin-row.gutter {
+    .bin-col {
+      background-color: transparent !important;
+      > div {
+        color: #fff;
+        padding: 10px 0;
+        text-align: center;
+        background: rgba(0, 153, 229, 0.8);
+      }
+    }
+  }
+}
