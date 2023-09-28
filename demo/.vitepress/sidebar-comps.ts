@@ -10,7 +10,8 @@ export default formatSidebar(
         { text: '卡片', link: '/components/card', icon: 'creditcard', alias: 'Card' },
         { text: '折叠面板', link: '/components/collapse', icon: 'interation', alias: 'Collapse' },
         { text: '分割线', link: '/components/divider', icon: 'line', alias: 'Divider' },
-        { text: '下拉菜单', link: '', icon: 'caret-down', alias: 'Dropdown' }
+        { text: '下拉菜单', link: '/components/dropdown', icon: 'caret-down', alias: 'Dropdown' },
+        { text: '标签', link: '', icon: 'tags', alias: 'Tag' }
       ]
     },
     {

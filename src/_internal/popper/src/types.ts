@@ -8,16 +8,17 @@ export const Theme = {
 
 export const DEFAULT_TRIGGER = 'hover'
 
-export type TriggerType = 'hover' | 'click'
+export type TriggerType = 'hover' | 'click' | 'contextmenu' | 'manual'
 export type ThemeType = 'light' | 'dark'
 
 export interface PopperProps {
-  manual?: boolean
+  manualMode?: boolean
   content?: string
   trigger?: TriggerType
   placement?: Placement
   theme?: ThemeType
   zIndex?: number
+  offset?: number
   arrowOffset?: number
   appendToBody?: boolean
   class?: string
@@ -27,6 +28,8 @@ export interface PopperProps {
   popperClass?: string
   popperOptions?: Partial<Options>
   showArrow?: boolean
+  showAfter?: number
+  hideAfter?: number
   transition?: string
   boundariesPadding?: number
   cutoff?: boolean
@@ -39,7 +42,7 @@ export interface PopperProps {
 
 //箭头是三角形，边长10px，第三边长~ 14.1px 一个偏移量应该是5，这解决了箭头溢出的问题。
 export const popperProps = {
-  manual: {
+  manualMode: {
     type: Boolean,
     default: false
   },
@@ -70,10 +73,15 @@ export const popperProps = {
     type: Boolean,
     default: true
   },
+  offset: {
+    type: Number,
+    default: 12
+  },
   class: {
     type: String,
     default: ''
   },
+  style: Object,
   closeDelay: {
     type: Number,
     default: 200
@@ -103,6 +111,14 @@ export const popperProps = {
     default: 'fade-in-linear'
   },
   boundariesPadding: {
+    type: Number,
+    default: 0
+  },
+  showAfter: {
+    type: Number,
+    default: 0
+  },
+  hideAfter: {
     type: Number,
     default: 0
   },

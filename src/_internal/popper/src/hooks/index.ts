@@ -5,7 +5,7 @@ import { generateId, isBool, isHTMLElement, isString, $ } from '../../../../_uti
 
 import usePopperOptions from './use-popper-options'
 import { transferIncrease } from '../../../../_utils/config'
-import { PopperProps } from '../types'
+import type { PopperProps } from '../types'
 
 export const UPDATE_VISIBLE_EVENT = 'update:visible'
 
@@ -20,7 +20,7 @@ export default function (props: PopperProps, ctx) {
   let hideTimer = null
   let triggerFocused = false
 
-  const isManualMode = () => props.manua
+  const isManualMode = () => props.manualMode || props.trigger === 'manual'
 
   const popperStyle = ref({ zIndex: transferIncrease() })
 

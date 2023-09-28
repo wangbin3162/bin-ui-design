@@ -5,6 +5,8 @@ import * as resize from './_utils/resize-event'
 import * as color from './_utils/color'
 import log from './_utils/log'
 
+export { setConfig } from './_utils/config'
+
 export { default, install } from './preset'
 
 export { default as create } from './create'

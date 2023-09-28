@@ -1,0 +1,128 @@
+.bin-dropdown__popper {
+  &.bin-popper[role='tooltip'] {
+    padding: 4px 0;
+    background-color: var(--bin-white-color);
+    max-height: none;
+    box-shadow: var(--bin-shadow-down);
+    border: none;
+
+    &.is-dark {
+      background-color: var(--bin-dark-bg);
+
+      .bin-dropdown-menu .bin-dropdown-item {
+        color: rgba(255, 255, 255, 0.65);
+
+        &:hover,
+        &:focus {
+          outline: none;
+          color: var(--bin-white-color);
+          background-color: transparent;
+        }
+
+        &-selected {
+          background-color: var(--bin-color-primary);
+          color: var(--bin-white-color);
+        }
+
+        &-disabled {
+          color: rgba(255, 255, 255, 0.35) !important;
+          cursor: not-allowed;
+        }
+
+        &-divided {
+          border-top: 1px solid #a0a0a0;
+        }
+      }
+    }
+  }
+
+  .bin-dropdown__popper-selfdefine {
+    outline: 0;
+  }
+  .bin-dropdown-menu {
+    min-width: 100px;
+    margin: 0;
+    padding: 0 var(--bin-popper-padding);
+
+    .bin-dropdown {
+      width: 100%;
+    }
+
+    .bin-dropdown-item {
+      position: relative;
+      margin: 0;
+      padding: 0 10px;
+      line-height: var(--bin-popper-item-height);
+      width: 100%;
+      clear: both;
+      color: var(--bin-color-text-default);
+      font-size: var(--bin-font-size-default) !important;
+      white-space: nowrap;
+      list-style: none;
+      cursor: pointer;
+      transition: background var(--bin-animation-duration-base) ease-in-out;
+      border-radius: var(--bin-popper-radius);
+
+      + .bin-dropdown-item {
+        margin-top: var(--bin-popper-item-margin);
+      }
+
+      + .bin-dropdown-item-divided {
+        margin-top: calc(var(--bin-popper-item-margin) + 4px);
+      }
+
+      &:hover,
+      &:focus {
+        background: var(--bin-fill-color-2);
+        outline: none;
+      }
+
+      &-selected {
+        background: var(--bin-color-primary-light5);
+      }
+
+      &-disabled {
+        color: var(--bin-color-text-disabled) !important;
+        cursor: not-allowed;
+
+        &:hover {
+          color: var(--bin-color-text-disabled) !important;
+          background-color: #fff;
+          cursor: not-allowed;
+        }
+      }
+
+      &-divided {
+        &:before {
+          content: '';
+          position: absolute;
+          top: -4px;
+          left: 0;
+          right: 0;
+          border-top: 1px solid var(--bin-border-color-light);
+        }
+      }
+
+      > .b-iconfont {
+        position: relative;
+        margin-right: 4px;
+      }
+
+      .b-icon-right {
+        position: relative;
+        right: -6px;
+      }
+    }
+  }
+}
+
+.bin-dropdown {
+  display: inline-block;
+  position: relative;
+  color: var(--bin-color-text-default);
+  font-size: var(--bin-font-size-default);
+
+  i.b-iconfont {
+    font-size: var(--bin-font-size-default);
+  }
+}

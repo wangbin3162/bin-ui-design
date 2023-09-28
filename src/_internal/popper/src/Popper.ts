@@ -44,6 +44,7 @@ export default defineComponent({
       $slots,
       appendToBody,
       class: kls,
+      style,
       theme,
       hide,
       onPopperMouseEnter,
@@ -94,6 +95,7 @@ export default defineComponent({
     const triggerProps = {
       'aria-describedby': popperId,
       class: kls,
+      style,
       ref: 'triggerRef',
       ...this.events
     }

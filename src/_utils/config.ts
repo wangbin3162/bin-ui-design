@@ -1,4 +1,4 @@
-let $ELEMENT = {}
+let $ELEMENT = { zIndex: 2000 }
 
 let transferIndex = 0
 
@@ -7,7 +7,7 @@ function transferIncrease() {
 }
 
 const setConfig = option => {
-  $ELEMENT = option
+  $ELEMENT = { ...$ELEMENT, ...option }
 }
 const getConfig = key => {
   return $ELEMENT[key]

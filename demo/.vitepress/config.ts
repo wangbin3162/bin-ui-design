@@ -22,7 +22,7 @@ export default defineConfig({
     ]
   ],
   themeConfig: {
-    logo: '/logo.png',
+    logo: '/logo.svg',
     siteTitle: 'BIN-UI-DESIGN',
     search: {
       provider: 'local'

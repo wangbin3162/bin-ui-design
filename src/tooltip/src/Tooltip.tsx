@@ -31,7 +31,16 @@ export default defineComponent({
     }
   },
   render() {
-    const { $slots, content, manual, openDelay, onUpdateVisible, showArrow, visible } = this
+    const {
+      $slots,
+      content,
+      manualMode,
+      openDelay,
+      onUpdateVisible,
+      showArrow,
+      showAfter,
+      visible
+    } = this
 
     const throwErrorTip = () =>
       console.warn('[BTooltip]  you need to provide a valid default slot.')
@@ -42,7 +51,8 @@ export default defineComponent({
         ...Object.keys(tooltipProps).reduce((result, key) => ({ ...result, [key]: this[key] }), {}),
         ref: 'popper',
         openDelay,
-        manual,
+        manualMode,
+        showAfter: openDelay || showAfter,
         showArrow,
         visible,
         'onUpdate:visible': onUpdateVisible

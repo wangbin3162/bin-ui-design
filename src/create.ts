@@ -1,5 +1,8 @@
 import { type App } from 'vue'
 import version from './version'
+import { setConfig } from './_utils/config'
+import log from './_utils/log'
+import config from '../package.json'
 
 type ComponentType = any
 
@@ -29,7 +32,7 @@ function create({
       app.component(newName, component)
     }
   }
-  function install(app: App): void {
+  function install(app: App, options = {}): void {
     if (installTargets.includes(app)) return
     installTargets.push(app)
     // 全局注册组件
@@ -47,7 +50,15 @@ function create({
       const { name, directive } = item
       app.directive(name, directive)
     })
+
+    // 注册全局函数和属性
+    setConfig({ ...options })
+
+    if (!options.disabledDoc) {
+      log.printVersion(config.name, version, config.homepage)
+    }
   }
+
   return {
     version,
     componentPrefix,
