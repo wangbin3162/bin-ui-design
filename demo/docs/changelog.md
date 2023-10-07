@@ -28,7 +28,7 @@ title: 变更日志
 </div>
 
 <style scoped>
-  .vp-doc._docs_changelog {
+  .vp-doc {
     .change-log {
       margin-top: 24px;
     }
