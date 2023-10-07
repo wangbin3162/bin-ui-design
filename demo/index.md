@@ -8,7 +8,7 @@ hero:
   text: '一个vue3的组件库'
   tagline: 使用Typescript+Vue3，可定制主题
   image:
-    src: /logo.png
+    src: /logo.svg
     alt: Bin UI Logo
   actions:
     - theme: brand
