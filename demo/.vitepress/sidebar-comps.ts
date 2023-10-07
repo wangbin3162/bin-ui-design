@@ -11,7 +11,7 @@ export default formatSidebar(
         { text: '折叠面板', link: '/components/collapse', icon: 'interation', alias: 'Collapse' },
         { text: '分割线', link: '/components/divider', icon: 'line', alias: 'Divider' },
         { text: '下拉菜单', link: '/components/dropdown', icon: 'caret-down', alias: 'Dropdown' },
-        { text: '标签', link: '', icon: 'tags', alias: 'Tag' }
+        { text: '标签', link: '/components/tag', icon: 'tags', alias: 'Tag' }
       ]
     },
     {

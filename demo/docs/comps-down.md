@@ -7,8 +7,8 @@
 - ✅ 卡片 Card
 - ✅ 折叠面板 Collapse
 - ✅ 分割线 Divider
-- ❌ 下拉菜单 Dropdown
-- ❌ 标签 Tag
+- ✅ 下拉菜单 Dropdown
+- ✅ 标签 Tag
 
 ## 布局组件
 

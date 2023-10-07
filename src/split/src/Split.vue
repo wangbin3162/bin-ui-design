@@ -104,28 +104,30 @@ const onMouseDown = () => {
 const onMouseUp = () => {
   status.active = false
 }
-const onMouseMove = e => {
+const onMouseMove = (e: MouseEvent) => {
   if (e.buttons === 0) {
     status.active = false
   }
   if (status.active) {
     status.hasResize = true
     let offset = 0
-    let target = e.currentTarget
+    let target = e.currentTarget as HTMLElement
     if (props.split === 'vertical') {
       while (target) {
         offset += target.offsetLeft
-        target = target.offsetParent
+        target = target.offsetParent as HTMLElement
       }
     } else {
       while (target) {
         offset += target.offsetTop
-        target = target.offsetParent
+        target = target.offsetParent as HTMLElement
       }
     }
     const currentPage = props.split === 'vertical' ? e.pageX : e.pageY
     const targetOffset =
-      props.split === 'vertical' ? e.currentTarget.offsetWidth : e.currentTarget.offsetHeight
+      props.split === 'vertical'
+        ? (e.currentTarget as HTMLElement)?.offsetWidth
+        : (e.currentTarget as HTMLElement)?.offsetHeight
     const px = currentPage - offset
     if (px >= props.min && px < targetOffset - props.min) {
       status.pixel = px
