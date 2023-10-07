@@ -20,7 +20,6 @@
   height: 100%;
 }
 
-// 默认隐藏原生滚动条宽度
 .bin-scrollbar__wrap--hidden-default {
   scrollbar-width: none;
 }
