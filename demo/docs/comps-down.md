@@ -1,5 +1,7 @@
 # 组件库分组和完成状态
 
+剩余 <span style="color:red">41</span> 个组件未完成迁移
+
 ## 通用组件
 
 - ✅ 图标 Icon
