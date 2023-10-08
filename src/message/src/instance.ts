@@ -86,19 +86,25 @@ const Message = (opts: CreateMessageProps | string) => {
   }
 }
 
-;['info', 'success', 'warning', 'error'].forEach(type => {
-  Message[type] = options => {
-    if (typeof options === 'string') {
-      options = {
-        message: options,
-        type
-      }
-    } else {
-      options.type = type
+// 扩展类型调用
+function typeExtend(type: string, opts: CreateMessageProps | string) {
+  if (typeof opts === 'string') {
+    opts = {
+      message: opts,
+      type
     }
-    return Message(options)
+  } else {
+    opts.type = type
   }
-})
+  console.log(opts)
+
+  return Message(opts)
+}
+
+Message.info = options => typeExtend('info', options)
+Message.success = options => typeExtend('success', options)
+Message.warning = options => typeExtend('warning', options)
+Message.error = options => typeExtend('error', options)
 
 Message.closeAll = closeAll
 

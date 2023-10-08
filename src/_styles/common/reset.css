@@ -97,3 +97,9 @@ textarea {
   font-family: inherit;
   line-height: inherit;
 }
+
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}

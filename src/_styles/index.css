@@ -1,10 +1,6 @@
-@import './base.css';
 @import './icon.css';
-
-@import './common/reset.css';
-@import './common/common.css';
-@import './common/flex.css';
-@import './common/scrollbar.css';
+@import './common.css';
+@import './base.css';
 
 @import '../_internal/empty/styles/index.css';
 @import '../_internal/popper/styles/index.css';
