@@ -1,0 +1,69 @@
+.bin-message {
+  position: fixed;
+  left: 50%;
+  top: 20px;
+  pointer-events: all;
+  padding: 8px 16px;
+  height: 42px;
+  border-radius: var(--bin-border-radius-default);
+  box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.15);
+  background: #fff;
+  box-sizing: border-box;
+  transform: translateX(-50%);
+  transition:
+    opacity 0.3s,
+    transform 0.4s,
+    top 0.4s;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+
+  &.is-closable {
+    .bin-message__content {
+      padding-right: 6px;
+    }
+  }
+
+  .b-iconfont.b-icon-close {
+    cursor: pointer;
+    color: var(--bin-color-text-secondary);
+    font-size: var(--bin-font-size-default);
+    vertical-align: middle;
+    line-height: 1;
+
+    &:focus {
+      outline-width: 0;
+    }
+
+    &:hover {
+      color: var(--bin-color-text-primary);
+    }
+  }
+}
+
+.bin-message__icon {
+  margin-right: 10px;
+  font-size: var(--bin-font-size-large);
+
+  &.is-info {
+    color: var(--bin-color-primary);
+  }
+
+  &.is-success {
+    color: var(--bin-color-success);
+  }
+
+  &.is-warning {
+    color: var(--bin-color-warning);
+  }
+
+  &.is-error {
+    color: var(--bin-color-danger);
+  }
+}
+
+.bin-message-fade-enter-from,
+.bin-message-fade-leave-to {
+  opacity: 0;
+  transform: translate(-50%, -100%);
+}

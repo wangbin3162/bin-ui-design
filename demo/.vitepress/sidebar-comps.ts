@@ -74,7 +74,7 @@ export default formatSidebar(
         { text: '警告信息', link: '', icon: 'error-fill', alias: 'Alert' },
         { text: '标记', link: '', icon: 'border', alias: 'Badge' },
         { text: '模态框', link: '', icon: 'idcard', alias: 'Modal' },
-        { text: '消息提示', link: '', icon: 'message', alias: 'Message' },
+        { text: '消息提示', link: '/components/message', icon: 'message', alias: 'Message' },
         { text: '弹框提示', link: '', icon: 'mail', alias: 'MessageBox' },
         { text: '通知', link: '', icon: 'notification', alias: 'Notice' },
         { text: '弹出提示', link: '/components/tooltip', icon: 'info-circle', alias: 'Tooltip' },
