@@ -51,7 +51,7 @@ export default formatSidebar(
         { text: '时间线', link: '', icon: 'arrowdown', alias: 'Timeline' },
         { text: '日历', link: '', icon: 'calendar-fill', alias: 'Calendar' },
         { text: '轮播', link: '', icon: 'appstore-fill', alias: 'Carousel' },
-        { text: '数字动画', link: '', icon: 'orderedlist', alias: 'CountTo' }
+        { text: '数字动画', link: '/components/count-to', icon: 'orderedlist', alias: 'CountTo' }
       ]
     },
     {
@@ -72,7 +72,7 @@ export default formatSidebar(
       text: '反馈组件',
       items: [
         { text: '警告信息', link: '/components/alert', icon: 'error-fill', alias: 'Alert' },
-        { text: '标记', link: '', icon: 'border', alias: 'Badge' },
+        { text: '标记', link: '/components/badge', icon: 'border', alias: 'Badge' },
         { text: '模态框', link: '', icon: 'idcard', alias: 'Modal' },
         { text: '消息提示', link: '/components/message', icon: 'message', alias: 'Message' },
         { text: '弹框提示', link: '', icon: 'mail', alias: 'MessageBox' },

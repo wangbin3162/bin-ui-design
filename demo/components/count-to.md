@@ -14,6 +14,8 @@ title: 数字动画 CountTo
 
 可以设置不同参数来定义时长、前缀、后缀、连接符等来定义显示
 
+<preview path="./demo/CountTo/Options.vue"></preview>
+
 ## Props
 
 | 参数      | 说明                     | 类型    | 可选值 | 默认值 |

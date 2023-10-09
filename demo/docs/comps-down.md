@@ -44,13 +44,13 @@
 - ❌ 时间线 Timeline
 - ❌ 日历 Calendar
 - ❌ 轮播 Carousel
-- ❌ 数字动画 CountTo
+- ✅ 数字动画 CountTo
 
 ## 导航组件
 
 - ❌ 图钉 Affix
 - ❌ 锚点 Anchor
-- ❌ 返回顶部 BackTop
+- ✅ 返回顶部 BackTop
 - ❌ 面包屑 Breadcrumb
 - ❌ 加载条 Loading Bar
 - ❌ 菜单 Menu
@@ -60,8 +60,8 @@
 
 ## 反馈组件
 
-- ❌ 警告信息 Alert
-- ❌ 标记 Badge
+- ✅ 警告信息 Alert
+- ✅ 标记 Badge
 - ❌ 模态框 Modal
 - ✅ 消息提示 Message
 - ❌ 弹框提示 MessageBox
