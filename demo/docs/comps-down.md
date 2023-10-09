@@ -48,7 +48,7 @@
 
 ## 导航组件
 
-- ❌ 图钉 Affix
+- ✅ 图钉 Affix
 - ❌ 锚点 Anchor
 - ✅ 返回顶部 BackTop
 - ❌ 面包屑 Breadcrumb
@@ -70,7 +70,7 @@
 - ❌ 弹出信息 Popover
 - ❌ 抽屉 Drawer
 - ❌ 骨架屏 Skeleton
-- ❌ 加载 Loading
+- ✅ 加载 Loading
 - ❌ 进度条 Progress
 - ❌ 进度环 Circle
 
