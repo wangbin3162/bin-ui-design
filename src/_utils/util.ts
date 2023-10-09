@@ -230,7 +230,7 @@ export function swap(arr, i, j) {
  * @param immediate 是否立即执行 true 则先调用，false不先调用
  * @return {function}             返回客户调用函数
  */
-export function throttle(func, wait, immediate) {
+export function throttle(func, wait, immediate = false) {
   let timeoutID
   let lastExec = 0
 
