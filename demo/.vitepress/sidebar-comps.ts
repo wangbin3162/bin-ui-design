@@ -71,7 +71,7 @@ export default formatSidebar(
     {
       text: '反馈组件',
       items: [
-        { text: '警告信息', link: '', icon: 'error-fill', alias: 'Alert' },
+        { text: '警告信息', link: '/components/alert', icon: 'error-fill', alias: 'Alert' },
         { text: '标记', link: '', icon: 'border', alias: 'Badge' },
         { text: '模态框', link: '', icon: 'idcard', alias: 'Modal' },
         { text: '消息提示', link: '/components/message', icon: 'message', alias: 'Message' },
