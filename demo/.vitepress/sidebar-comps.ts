@@ -81,7 +81,7 @@ export default formatSidebar(
         { text: '弹出信息', link: '', icon: 'question-circle', alias: 'Popover' },
         { text: '抽屉', link: '', icon: 'build', alias: 'Drawer' },
         { text: '骨架屏', link: '', icon: 'sever-fill', alias: 'Skeleton' },
-        { text: '加载', link: '', icon: 'loading', alias: 'Loading' },
+        { text: '加载', link: '/components/loading', icon: 'loading', alias: 'Loading' },
         { text: '进度条', link: '', icon: 'hourglass', alias: 'Progress' },
         { text: '进度环', link: '', icon: 'redo', alias: 'Circle' }
       ]
