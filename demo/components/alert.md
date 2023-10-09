@@ -40,9 +40,9 @@ title: 警告提示 Alert
 
 | 参数      | 说明         | 类型    | 可选值                        | 默认值 |
 | --------- | ------------ | ------- | ----------------------------- | ------ |
-| type      | 警告提示样式 | string  | info、success、warning、error | info   |
-| closable  | 是否可关闭   | boolean | —                             | false  |
-| show-icon | 是否显示图标 | boolean | —                             | false  |
+| type      | 警告提示样式 | String  | info、success、warning、error | info   |
+| closable  | 是否可关闭   | Boolean | —                             | false  |
+| show-icon | 是否显示图标 | Boolean | —                             | false  |
 
 ## Events
 

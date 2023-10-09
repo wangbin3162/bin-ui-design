@@ -40,14 +40,14 @@ title: 间距 Space
 
 | 参数      | 说明                      | 类型                                      | 可选值              | 默认值     |
 | --------- | ------------------------- | ----------------------------------------- | ------------------- | ---------- |
-| alignment | 对齐的方式                | string                                    | -                   | 'center'   |
-| class     | 类名                      | string / Array<Object \| String> / Object | -                   | -          |
-| direction | 排列的方向                | string                                    | vertical/horizontal | horizontal |
-| prefixCls | 给 space-items 的类名前缀 | string                                    | bin-space           | -          |
-| style     | 额外样式                  | string / Array<Object \| String> / Object | -                   | -          |
-| spacer    | 间隔符                    | string / number / VNode                   | -                   | -          |
-| size      | 间隔大小                  | string / number / [number, number]        | -                   | 'small'    |
-| wrap      | 设置是否自动折行          | boolean                                   | true / false        | false      |
+| alignment | 对齐的方式                | String                                    | -                   | 'center'   |
+| class     | 类名                      | String / Array<Object \| String> / Object | -                   | -          |
+| direction | 排列的方向                | String                                    | vertical/horizontal | horizontal |
+| prefixCls | 给 space-items 的类名前缀 | String                                    | bin-space           | -          |
+| style     | 额外样式                  | String / Array<Object \| String> / Object | -                   | -          |
+| spacer    | 间隔符                    | String / Number / VNode                   | -                   | -          |
+| size      | 间隔大小                  | String / Number / [Number, Number]        | -                   | 'small'    |
+| wrap      | 设置是否自动折行          | Boolean                                   | true / false        | false      |
 
 ## Space Slot
 

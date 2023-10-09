@@ -40,14 +40,14 @@ title: 提示 Tooltip
 
 | 参数            | 说明                     | 类型    | 可选值                                                                                                    | 默认值         |
 | --------------- | ------------------------ | ------- | --------------------------------------------------------------------------------------------------------- | -------------- |
-| v-model:visible | 状态是否可见             | boolean | —                                                                                                         | false          |
-| content         | 显示的内容               | string  | —                                                                                                         | —              |
-| placement       | 提示框出现的位置         | string  | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | —              |
-| disabled        | 是否禁用提示框           | boolean | —                                                                                                         | false          |
-| transition      | 自定义渐变动画           | string  | —                                                                                                         | fade-in-linear |
-| show-arrow      | 是否显示箭头             | boolean | —                                                                                                         | true           |
-| theme           | 主题                     | string  | dark 或 light                                                                                             | dark           |
-| open-delay      | 延迟出现，单位毫秒       | number  | —                                                                                                         | 0              |
-| hide-delay      | 延迟消失，单位毫秒       | number  | —                                                                                                         | 0              |
-| offset          | 出现位置的偏移量         | number  | —                                                                                                         | 12             |
-| appendToBody    | 是否将弹层放置于 body 内 | boolean | —                                                                                                         | true           |
+| v-model:visible | 状态是否可见             | Boolean | —                                                                                                         | false          |
+| content         | 显示的内容               | String  | —                                                                                                         | —              |
+| placement       | 提示框出现的位置         | String  | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | —              |
+| disabled        | 是否禁用提示框           | Boolean | —                                                                                                         | false          |
+| transition      | 自定义渐变动画           | String  | —                                                                                                         | fade-in-linear |
+| show-arrow      | 是否显示箭头             | Boolean | —                                                                                                         | true           |
+| theme           | 主题                     | String  | dark 或 light                                                                                             | dark           |
+| open-delay      | 延迟出现，单位毫秒       | Number  | —                                                                                                         | 0              |
+| hide-delay      | 延迟消失，单位毫秒       | Number  | —                                                                                                         | 0              |
+| offset          | 出现位置的偏移量         | Number  | —                                                                                                         | 12             |
+| appendToBody    | 是否将弹层放置于 body 内 | Boolean | —                                                                                                         | true           |

@@ -26,7 +26,7 @@ title: 下拉菜单 Dropdown
 
 | 参数          | 说明                                                                                                                  | 类型    | 可选值                                                                                                    | 默认值 |
 | ------------- | --------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- | ------ |
-| trigger       | 触发方式                                                                                                              | string  | hover（悬停）click（点击）contextMenu（右键）                                                             | click  |
+| trigger       | 触发方式                                                                                                              | String  | hover（悬停）click（点击）contextMenu（右键）                                                             | click  |
 | placement     | 下拉菜单出现的位置                                                                                                    | String  | top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end | bottom |
 | appendToBody  | 是否放置于 body 内, 在 Tabs、带有 fixed 的 Table 列内使用时，建议添加此属性，它将不受父级样式影响，从而达到更好的效果 | Boolean |                                                                                                           | true   |
 | hide-on-click | 是否在点击菜单项后隐藏菜单                                                                                            | Boolean | -                                                                                                         | true   |

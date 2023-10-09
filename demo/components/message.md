@@ -49,10 +49,10 @@ Message.error(options)
 
 | 函数      | 说明                                                                         | 类型     | 默认值 |
 | --------- | ---------------------------------------------------------------------------- | -------- | ------ |
-| message   | 通知提醒的内容                                                               | string   | —      |
-| duration  | 自动关闭的延时，单位秒，不关闭可以写 0                                       | number   | 3      |
-| onClose   | 关闭时的回调                                                                 | function | —      |
-| showClose | 是否显示关闭按钮                                                             | boolean  | true   |
-| useHTML   | 是否将message转换成HTML片段插入，此操作需谨慎                                | boolean  | false  |
-| offset    | 距离顶部的偏移量，设置后可以固定某个消息距离窗口顶部的位置（不进行向下追加） | number   | —      |
+| message   | 通知提醒的内容                                                               | String   | —      |
+| duration  | 自动关闭的延时，单位秒，不关闭可以写 0                                       | Number   | 3      |
+| onClose   | 关闭时的回调                                                                 | Function | —      |
+| showClose | 是否显示关闭按钮                                                             | Boolean  | true   |
+| useHTML   | 是否将message转换成HTML片段插入，此操作需谨慎                                | Boolean  | false  |
+| offset    | 距离顶部的偏移量，设置后可以固定某个消息距离窗口顶部的位置（不进行向下追加） | Number   | —      |
 | zIndex    | 层级，默认2000以后追加                                                       | Number   | —      |

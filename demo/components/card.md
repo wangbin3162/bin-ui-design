@@ -32,12 +32,12 @@ title: 卡片 Card
 
 | 参数       | 说明                              | 类型    | 可选值                 | 默认值 |
 | ---------- | --------------------------------- | ------- | ---------------------- | ------ |
-| header     | 设置 header，也可以已插槽形式插入 | string  | —                      | —      |
-| body-style | 设置 body 的样式                  | object  | —                      | —      |
-| shadow     | 阴影的显示                        | string  | always / hover / never | hover  |
+| header     | 设置 header，也可以已插槽形式插入 | String  | —                      | —      |
+| body-style | 设置 body 的样式                  | Object  | —                      | —      |
+| shadow     | 阴影的显示                        | String  | always / hover / never | hover  |
 | bordered   | 设置是否有边框                    | Boolean | false                  | true   |
-| width      | 设置卡片默认宽度                  | string  | —                      | 100%   |
-| radius     | 设置圆角值                        | string  | 0 / 百分比 / 像素      | 4px    |
-| divider    | header和body之间的分割线          | string  | no / has               | has    |
+| width      | 设置卡片默认宽度                  | String  | —                      | 100%   |
+| radius     | 设置圆角值                        | String  | 0 / 百分比 / 像素      | 4px    |
+| divider    | header和body之间的分割线          | String  | no / has               | has    |
 | head-tip   | 头部的高亮提示                    | Boolean | true / false           | false  |
-| bg-color   | 整体的背景色                      | string  | —                      | #fff   |
+| bg-color   | 整体的背景色                      | String  | —                      | #fff   |

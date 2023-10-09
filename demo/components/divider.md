@@ -28,6 +28,6 @@ align属性可以设置标题位置 使用 align="left" 设置为行内的垂直
 
 | 参数   | 说明             | 类型    | 可选值                | 默认值     |
 | ------ | ---------------- | ------- | --------------------- | ---------- |
-| type   | 水平还是垂直类型 | string  | horizontal / vertical | horizontal |
-| align  | 分割线标题的位置 | string  | left / right / center | center     |
-| dashed | 是否虚线         | boolean | false / true          | false      |
+| type   | 水平还是垂直类型 | String  | horizontal / vertical | horizontal |
+| align  | 分割线标题的位置 | String  | left / right / center | center     |
+| dashed | 是否虚线         | Boolean | false / true          | false      |

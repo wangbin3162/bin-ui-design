@@ -48,10 +48,10 @@ title: 标签 Tag
 
 | 参数       | 说明                             | 类型    | 可选值                      | 默认值 |
 | ---------- | -------------------------------- | ------- | --------------------------- | ------ |
-| closable   | 是否可关闭                       | boolean | —                           | false  |
-| type       | 主题                             | string  | success/info/warning/danger | —      |
-| dot        | 是否显示是小圆点                 | boolean | —                           | false  |
-| no-border  | 是否关闭边框                     | boolean | —                           | false  |
+| closable   | 是否可关闭                       | Boolean | —                           | false  |
+| type       | 主题                             | String  | success/info/warning/danger | —      |
+| dot        | 是否显示是小圆点                 | Boolean | —                           | false  |
+| no-border  | 是否关闭边框                     | Boolean | —                           | false  |
 | color      | 背景颜色(可自定义)               | String  | —                           | —      |
 | fontSize   | 字体大小                         | String  | —                           | —      |
 | tag-style  | 标签样式(完全控制，尽量不要设置) | String  | —                           | —      |

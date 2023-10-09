@@ -69,10 +69,10 @@ const copyComp = name => {
 ## Props
 
 <doc-table type="props" :data="[
-  'name | 图标名称 | string | 图标集合 | —',
-  'size | 尺寸 | number / string | 数字像素 | —',
-  'type | 图标按钮，设置为button时可以悬停点击 | string | button | —',
-  'color | 图标颜色值 | string | — | —',
+  'name | 图标名称 | String | 图标集合 | —',
+  'size | 尺寸 | Number / string | 数字像素 | —',
+  'type | 图标按钮，设置为button时可以悬停点击 | String | button | —',
+  'color | 图标颜色值 | String | — | —',
 ]"></doc-table>
 
 <style scoped>
