@@ -15,6 +15,8 @@ export * from './components'
 
 export * from './_directives'
 
+export { LoadingBar } from './loading-bar'
+
 export const Utils = {
   util,
   helper,

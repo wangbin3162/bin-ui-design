@@ -1,8 +1,5 @@
-import BMessage from './src/Message.vue'
-import Message from './src/instance'
+export { default as BMessage } from './src/Message.vue'
 
-export default BMessage
-
-export { Message }
+export { default as Message } from './src/instance'
 
 export * from './src/types'
