@@ -64,6 +64,11 @@ export default defineConfig({
     }
   },
   vite: {
+    server: {
+      host: '0.0.0.0',
+      port: 9004,
+      open: true
+    },
     resolve: {
       alias: {
         'bin-ui-design': fileURLToPath(new URL('../../src', import.meta.url))

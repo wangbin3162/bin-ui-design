@@ -71,8 +71,8 @@
 - ❌ 抽屉 Drawer
 - ❌ 骨架屏 Skeleton
 - ✅ 加载 Loading
-- ❌ 进度条 Progress
-- ❌ 进度环 Circle
+- ✅ 进度条 Progress
+- ✅ 进度环 Circle
 
 ## 内置组件
 
