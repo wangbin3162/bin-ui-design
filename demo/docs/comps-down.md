@@ -52,7 +52,7 @@
 - ❌ 锚点 Anchor
 - ✅ 返回顶部 BackTop
 - ❌ 面包屑 Breadcrumb
-- ❌ 加载条 Loading Bar
+- ✅ 加载条 Loading Bar
 - ❌ 菜单 Menu
 - ❌ 标签页 Tabs
 - ❌ 步骤 Steps
@@ -69,7 +69,7 @@
 - ✅ 弹出提示 Tooltip
 - ❌ 弹出信息 Popover
 - ❌ 抽屉 Drawer
-- ❌ 骨架屏 Skeleton
+- ✅ 骨架屏 Skeleton
 - ✅ 加载 Loading
 - ✅ 进度条 Progress
 - ✅ 进度环 Circle

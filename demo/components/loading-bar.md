@@ -33,15 +33,34 @@ router.afterEach(() => {
 
 <preview path="./demo/LoadingBar/Basic.vue"></preview>
 
-## Props
+## API
 
-| 参数  | 说明     | 类型   | 可选值 | 默认值   |
-| ----- | -------- | ------ | ------ | -------- |
-| title | 显示文字 | String | —      | 暂无数据 |
+通过直接调用以下方法来使用组件：
 
-## Slot
+```ts
+import { LoadingBar } from 'bin-ui-next'
 
-| 名称    | 说明                         |
-| ------- | ---------------------------- |
-| icon    | 可插入图标                   |
-| default | 默认插槽，可替换文字显示位置 |
+LoadingBar.start()
+
+LoadingBar.finish()
+
+LoadingBar.error()
+
+LoadingBar.update(percent)
+
+LoadingBar.config(cfg)
+
+LoadingBar.resetConfig(cfg)
+```
+
+以上方法隐式的创建及维护Vue组件。函数及参数说明如下：
+
+## Options
+
+| 函数        | 说明                             |
+| ----------- | -------------------------------- |
+| color       | 默认颜色 ，primary               |
+| duration    | 动画执行时间 ，默认800           |
+| failedColor | 错误颜色，默认error              |
+| height      | 进度条高度，默认2                |
+| icon        | 可以设置icon开启右侧loading icon |
