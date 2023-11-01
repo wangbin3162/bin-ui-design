@@ -3,8 +3,8 @@
     <b-button class="button-new-tag" size="small" icon="plus" @click="addOne">New Tag</b-button>
     <p>
       <b-tag
-        :key="tag"
         v-for="tag in data.dynamicTags"
+        :key="tag"
         type="primary"
         closable
         @close="handleCloseTag(tag)"

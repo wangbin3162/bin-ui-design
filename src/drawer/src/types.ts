@@ -1,3 +1,5 @@
+import { StyleValue } from 'vue'
+
 export interface DrawerProps {
   modelValue?: boolean
   title?: string
@@ -6,7 +8,7 @@ export interface DrawerProps {
   showClose?: boolean
   maskClosable?: boolean
   mask?: boolean
-  styles?: HTMLAttributes
+  styles?: StyleValue
   placement?: 'left' | 'right'
   zIndex?: number
   appendToBody?: boolean

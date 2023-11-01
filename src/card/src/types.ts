@@ -1,6 +1,8 @@
+import { StyleValue } from 'vue'
+
 export interface CardProps {
   header?: string
-  bodyStyle?: object
+  bodyStyle?: StyleValue
   shadow?: string
   bordered?: boolean
   width?: string

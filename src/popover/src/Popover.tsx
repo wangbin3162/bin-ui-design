@@ -9,8 +9,6 @@ import {
   h,
   defineComponent
 } from 'vue'
-import { UPDATE_MODEL_EVENT } from '../../_utils/constants'
-import { getFirstValidNode } from '../../_utils/vnode'
 import { popoverProps } from './types'
 import { BPopper, renderArrow, renderPopper, renderTrigger } from '../../_internal/popper'
 import { Theme } from '../../_internal/popper/src/types'
@@ -60,7 +58,7 @@ export default defineComponent({
 
     const kls = [this.content ? 'bin-popover--plain' : '', 'bin-popover', popperClass].join(' ')
 
-    let popover = renderPopper(
+    const popover = renderPopper(
       {
         theme: Theme.LIGHT,
         name: transition,

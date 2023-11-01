@@ -3,23 +3,23 @@
     <div class="bin-drawer-root">
       <transition name="fade-in">
         <div
-          :class="maskClasses"
-          :style="wrapStyles"
           v-show="visible"
           v-if="mask"
+          :class="maskClasses"
+          :style="wrapStyles"
           @click="handleMask"
         ></div>
       </transition>
-      <div :class="wrapClasses" :style="wrapStyles" ref="wrapRef" @click="handleWrapClick">
+      <div ref="wrapRef" :class="wrapClasses" :style="wrapStyles" @click="handleWrapClick">
         <transition :name="'move-' + placement" @after-leave="wrapShow = false">
-          <div :class="classes" :style="mainStyles" v-show="visible">
-            <div :class="contentClasses" ref="content">
-              <a class="bin-drawer-close" v-if="showClose" @click="close">
+          <div v-show="visible" :class="classes" :style="mainStyles">
+            <div ref="content" :class="contentClasses">
+              <a v-if="showClose" class="bin-drawer-close" @click="close">
                 <slot name="close">
                   <i class="b-iconfont b-icon-close"></i>
                 </slot>
               </a>
-              <div class="bin-drawer-header" v-if="$slots.header || title">
+              <div v-if="$slots.header || title" class="bin-drawer-header">
                 <slot name="header">
                   <div class="bin-drawer-header-inner">{{ title }}</div>
                 </slot>
@@ -27,16 +27,16 @@
               <div class="bin-drawer-body" :style="styles">
                 <slot></slot>
               </div>
-              <div class="bin-drawer-footer" v-if="$slots.footer">
+              <div v-if="$slots.footer" class="bin-drawer-footer">
                 <div style="text-align: right">
                   <slot name="footer"></slot>
                 </div>
               </div>
             </div>
             <div
+              v-if="draggable"
               class="bin-drawer-drag"
               :class="{ 'bin-drawer-drag-left': placement === 'left' }"
-              v-if="draggable"
               @mousedown="handleTriggerMousedown"
             >
               <slot name="trigger">
@@ -60,7 +60,7 @@
 
 <script setup lang="ts">
 import '../styles/index.css'
-import { ref, watch, onMounted, onBeforeUnmount, computed } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount, computed, HTMLAttributes } from 'vue'
 import { on, off } from '../../_utils/dom'
 import { transferIncrease } from '../../_utils/config'
 import { useLockScreen } from '../../_hooks'
@@ -171,12 +171,12 @@ function handleWrapClick(e: MouseEvent) {
 
 function handleSetWrapperWidth() {
   if (!wrapRef.value) return
-  const { width, left } = wrapRef.value?.getBoundingClientRect()
+  const { width, left } = wrapRef.value.getBoundingClientRect()
   wrapperWidth.value = width
   wrapperLeft.value = left
 }
 
-function handleMousemove(e) {
+function handleMousemove(e: MouseEvent) {
   if (!canMove.value || !props.draggable) return
   // 更新容器宽度和距离左侧页面距离，如果是window则距左侧距离为0
   handleSetWrapperWidth()
@@ -185,7 +185,7 @@ function handleMousemove(e) {
   let width = props.placement === 'right' ? +wrapperWidth.value - left : left
   // 限定最小宽度
   width = Math.max(width, +props.minWidth)
-  e.atMin = width === +props.minWidth
+  // e.atMin = width === +props.minWidth
   // 如果当前width不大于100，视为百分比
   if (width <= 100) width = (width / +wrapperWidth.value) * 100
   dragWidth.value = width
