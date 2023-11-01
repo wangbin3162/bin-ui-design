@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">41</span> 个组件未完成迁移
+剩余 <span style="color:red">29</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -67,7 +67,7 @@
 - ❌ 弹框提示 MessageBox
 - ❌ 通知 Notice
 - ✅ 弹出提示 Tooltip
-- ❌ 弹出信息 Popover
+- ✅ 弹出信息 Popover
 - ✅ 抽屉 Drawer
 - ✅ 骨架屏 Skeleton
 - ✅ 加载 Loading
