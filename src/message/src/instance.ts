@@ -96,7 +96,6 @@ function typeExtend(type: string, opts: CreateMessageProps | string) {
   } else {
     opts.type = type
   }
-  console.log(opts)
 
   return Message(opts)
 }
