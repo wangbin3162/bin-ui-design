@@ -45,11 +45,12 @@ export default formatSidebar(
     {
       text: '数据展示组件',
       items: [
+        { text: '树结构', link: '', icon: 'branches', alias: 'Tree' },
         { text: '表格', link: '', icon: 'table', alias: 'Table' },
-        { text: '树', link: '', icon: 'branches', alias: 'Tree' },
+        { text: '分页', link: '', icon: 'read', alias: 'Page' },
         { text: '描述', link: '', icon: 'unorderedlist', alias: 'Desc' },
         { text: '时间线', link: '', icon: 'arrowdown', alias: 'Timeline' },
-        { text: '日历', link: '', icon: 'calendar-fill', alias: 'Calendar' },
+        { text: '日历', link: '/components/calendar', icon: 'calendar-fill', alias: 'Calendar' },
         { text: '轮播', link: '', icon: 'appstore-fill', alias: 'Carousel' },
         { text: '数字动画', link: '/components/count-to', icon: 'orderedlist', alias: 'CountTo' }
       ]
@@ -64,8 +65,7 @@ export default formatSidebar(
         { text: '加载条', link: '/components/loading-bar', icon: 'minus', alias: 'Loading Bar' },
         { text: '菜单', link: '', icon: 'menu', alias: 'Menu' },
         { text: '标签页', link: '', icon: 'project', alias: 'Tabs' },
-        { text: '步骤', link: '', icon: 'arrowright', alias: 'Steps' },
-        { text: '分页', link: '', icon: 'read', alias: 'Page' }
+        { text: '步骤', link: '', icon: 'arrowright', alias: 'Steps' }
       ]
     },
     {
