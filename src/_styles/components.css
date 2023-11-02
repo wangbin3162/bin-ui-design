@@ -17,6 +17,7 @@
 @import '../dropdown/styles/index.css';
 @import '../tag/styles/index.css';
 @import '../message/styles/index.css';
+@import '../message-box/styles/index.css';
 @import '../notice/styles/index.css';
 @import '../alert/styles/index.css';
 @import '../back-top/styles/index.css';
@@ -28,3 +29,4 @@
 @import '../skeleton/styles/index.css';
 @import '../drawer/styles/index.css';
 @import '../popover/styles/index.css';
+@import '../modal/styles/index.css';

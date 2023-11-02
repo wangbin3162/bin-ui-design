@@ -1,5 +1,7 @@
-export { default as BNotice } from './src/Notice.vue'
+import Notice from './src/instance'
 
-export { default as Notice } from './src/instance'
+Notice.install = app => {
+  app.config.globalProperties.$notice = Notice
+}
 
-export * from './src/types'
+export default Notice

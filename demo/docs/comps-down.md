@@ -62,9 +62,9 @@
 
 - ✅ 警告信息 Alert
 - ✅ 标记 Badge
-- ❌ 模态框 Modal
+- ✅ 模态框 Modal
 - ✅ 消息提示 Message
-- ❌ 弹框提示 MessageBox
+- ✅ 弹框提示 MessageBox
 - ✅ 通知 Notice
 - ✅ 弹出提示 Tooltip
 - ✅ 弹出信息 Popover

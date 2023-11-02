@@ -47,7 +47,7 @@ export function closeAll() {
   }
 }
 
-const Notice = function (options: CreateNoticeProps) {
+const Notice = (options: CreateNoticeProps) => {
   if (isServer) return
   const position = options.position || 'top-right'
 

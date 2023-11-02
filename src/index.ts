@@ -7,7 +7,7 @@ import log from './_utils/log'
 
 export { setConfig } from './_utils/config'
 
-export { default, install } from './preset'
+export { default, LoadingBar, Message, MessageBox, Notice } from './preset'
 
 export { default as create } from './create'
 
@@ -15,7 +15,7 @@ export * from './components'
 
 export * from './_directives'
 
-export { LoadingBar } from './loading-bar'
+export { default as version } from './version'
 
 export const Utils = {
   util,
@@ -25,5 +25,3 @@ export const Utils = {
   dom,
   log
 }
-
-export { default as version } from './version'

@@ -22,7 +22,8 @@ interface BUiCreateOptions {
 function create({
   componentPrefix = 'B',
   components = [],
-  directives = []
+  directives = [],
+  plugins = []
 }: BUiCreateOptions = {}): BUiInstance {
   const installTargets: App[] = []
   function registerComponent(app: App, name: string, component: ComponentType): void {
@@ -49,6 +50,10 @@ function create({
     directives.forEach(item => {
       const { name, directive } = item
       app.directive(name, directive)
+    })
+    // 注册全局install
+    plugins.forEach(plugin => {
+      app.use(plugin)
     })
 
     // 注册全局函数和属性

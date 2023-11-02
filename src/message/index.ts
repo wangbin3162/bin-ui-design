@@ -1,5 +1,7 @@
-export { default as BMessage } from './src/Message.vue'
+import Message from './src/instance'
 
-export { default as Message } from './src/instance'
+Message.install = app => {
+  app.config.globalProperties.$message = Message
+}
 
-export * from './src/types'
+export default Message

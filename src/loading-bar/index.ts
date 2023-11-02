@@ -1,3 +1,7 @@
-export { default as LoadingBar } from './src/instance'
+import LoadingBar from './src/instance'
 
-export type { LoadingBarProps } from './src/types.ts'
+LoadingBar.install = app => {
+  app.config.globalProperties.$loadingBar = LoadingBar
+}
+
+export default LoadingBar

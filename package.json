@@ -45,6 +45,7 @@
     "color": "^4.2.3",
     "dayjs": "^1.11.10",
     "resize-observer-polyfill": "^1.5.1",
+    "sortablejs": "^1.15.0",
     "vue": "^3.3.7"
   },
   "devDependencies": {
