@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">26</span> 个组件未完成迁移
+剩余 <span style="color:red">23</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -41,7 +41,7 @@
 - ❌ 表格 Table
 - ❌ 树 Tree
 - ❌ 描述 Desc
-- ❌ 时间线 Timeline
+- ✅ 时间线 Timeline
 - ✅ 日历 Calendar
 - ❌ 轮播 Carousel
 - ✅ 数字动画 CountTo

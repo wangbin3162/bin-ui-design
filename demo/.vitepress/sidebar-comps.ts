@@ -49,7 +49,7 @@ export default formatSidebar(
         { text: '表格', link: '', icon: 'table', alias: 'Table' },
         { text: '分页', link: '', icon: 'read', alias: 'Page' },
         { text: '描述', link: '', icon: 'unorderedlist', alias: 'Desc' },
-        { text: '时间线', link: '', icon: 'arrowdown', alias: 'Timeline' },
+        { text: '时间线', link: '/components/timeline', icon: 'arrowdown', alias: 'Timeline' },
         { text: '日历', link: '/components/calendar', icon: 'calendar-fill', alias: 'Calendar' },
         { text: '轮播', link: '', icon: 'appstore-fill', alias: 'Carousel' },
         { text: '数字动画', link: '/components/count-to', icon: 'orderedlist', alias: 'CountTo' }
