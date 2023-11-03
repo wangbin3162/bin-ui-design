@@ -54,7 +54,7 @@
 - ❌ 面包屑 Breadcrumb
 - ✅ 加载条 Loading Bar
 - ❌ 菜单 Menu
-- ❌ 标签页 Tabs
+- ✅ 标签页 Tabs
 - ❌ 步骤 Steps
 - ❌ 分页 Page
 

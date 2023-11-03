@@ -64,7 +64,7 @@ export default formatSidebar(
         { text: '面包屑', link: '', icon: 'right', alias: 'Breadcrumb' },
         { text: '加载条', link: '/components/loading-bar', icon: 'minus', alias: 'Loading Bar' },
         { text: '菜单', link: '', icon: 'menu', alias: 'Menu' },
-        { text: '标签页', link: '', icon: 'project', alias: 'Tabs' },
+        { text: '标签页', link: '/components/tabs', icon: 'project', alias: 'Tabs' },
         { text: '步骤', link: '', icon: 'arrowright', alias: 'Steps' }
       ]
     },
