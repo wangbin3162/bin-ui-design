@@ -3,17 +3,17 @@
     class="bin-menu-wrapper"
     :class="{
       'is-horizontal': mode === 'horizontal',
-      'is-collapse': props.collapse
+      'is-collapse': collapse
     }"
-    :style="{ backgroundColor: props.backgroundColor || '' }"
+    :style="{ backgroundColor: backgroundColor || '' }"
   >
     <ul
-      :key="+props.collapse"
+      :key="+collapse"
       role="menubar"
       :class="{
         'bin-menu': true,
         'bin-menu--horizontal': mode === 'horizontal',
-        'bin-menu--collapse': props.collapse
+        'bin-menu--collapse': collapse
       }"
     >
       <slot></slot>
@@ -50,8 +50,8 @@ export default defineComponent({
     )
     const instance = getCurrentInstance()
     const activeIndex = ref(props.defaultActive)
-    const items = ref({})
-    const submenus = ref({})
+    const items: { [key: string]: any } = ref({})
+    const submenus: { [key: string]: any } = ref({})
     const alteredCollapse = ref(false)
     const rootMenuEmitter = mitt()
     const router = instance?.appContext.config.globalProperties.$router
@@ -73,57 +73,58 @@ export default defineComponent({
 
       // 展开该菜单项的路径上所有子菜单
       // expand all submenus of the menu item
-      indexPath.forEach(index => {
+      indexPath.forEach((index: string | number) => {
         let submenu = submenus.value[index]
         submenu && openMenu(index, submenu?.indexPath)
       })
     }
 
-    const addSubMenu = item => {
+    const addSubMenu = (item: { index: string | number }) => {
       submenus.value[item.index] = item
     }
 
-    const removeSubMenu = item => {
+    const removeSubMenu = (item: { index: string | number }) => {
       delete submenus.value[item.index]
     }
 
-    const addMenuItem = item => {
+    const addMenuItem = (item: { index: string | number }) => {
       items.value[item.index] = item
     }
 
-    const removeMenuItem = item => {
+    const removeMenuItem = (item: { index: string | number }) => {
       delete items.value[item.index]
     }
 
-    const openMenu = (index, indexPath) => {
+    const openMenu = (index: unknown, indexPath: unknown) => {
       if (openedMenus.value.includes(index)) return
       // 将不在该菜单路径下的其余菜单收起
       // collapse all menu that are not under current menu item
       if (props.uniqueOpened) {
         openedMenus.value = openedMenus.value.filter(index => {
+          // @ts-ignore
           return (isRef(indexPath) ? indexPath.value : indexPath).indexOf(index) !== -1
         })
       }
       openedMenus.value.push(index)
     }
 
-    const closeMenu = index => {
+    const closeMenu = (index: unknown) => {
       const i = openedMenus.value.indexOf(index)
       if (i !== -1) {
         openedMenus.value.splice(i, 1)
       }
     }
 
-    const open = index => {
+    const open = (index: { toString: () => string | number }) => {
       const { indexPath } = submenus.value[index.toString()]
-      indexPath.forEach(i => openMenu(i, indexPath))
+      indexPath.forEach((i: any) => openMenu(i, indexPath))
     }
 
-    const close = index => {
+    const close = (index: any) => {
       closeMenu(index)
     }
 
-    const handleSubmenuClick = submenu => {
+    const handleSubmenuClick = (submenu: { index: any; indexPath: any }) => {
       const { index, indexPath } = submenu
       let isOpened = openedMenus.value.includes(index)
 
@@ -136,7 +137,7 @@ export default defineComponent({
       }
     }
 
-    const handleItemClick = item => {
+    const handleItemClick = (item: { index: any; indexPath?: any }) => {
       const { index, indexPath } = item
       const hasIndex = item.index !== null
       const oldActiveIndex = activeIndex.value
@@ -152,7 +153,7 @@ export default defineComponent({
       }
 
       if (props.router && router && hasIndex) {
-        routeToItem(item, error => {
+        routeToItem(item, (error: { name: string }) => {
           activeIndex.value = oldActiveIndex
           if (error) {
             // vue-router 3.1.0+ push/replace cause NavigationDuplicated error
@@ -164,7 +165,8 @@ export default defineComponent({
       }
     }
 
-    const routeToItem = (item, onError) => {
+    // eslint-disable-next-line no-unused-vars
+    const routeToItem = (item: { route: any; index: any }, onError: (error: any) => void) => {
       let route = item.route || item.index
       try {
         router?.push(route, () => null, onError)
@@ -173,9 +175,11 @@ export default defineComponent({
       }
     }
 
-    const updateActiveIndex = val => {
+    const updateActiveIndex = (val: string | undefined) => {
       const itemsInData = items.value
+
       const item =
+        // @ts-ignore
         itemsInData[val] || itemsInData[activeIndex.value] || itemsInData[props.defaultActive]
 
       if (item) {
@@ -247,11 +251,11 @@ export default defineComponent({
       removeSubMenu
     })
 
-    // lifecycle
-
     onMounted(() => {
       initializeMenu()
+      // @ts-ignore
       rootMenuEmitter.on('menuItem:item-click', handleItemClick)
+      // @ts-ignore
       rootMenuEmitter.on('submenu:submenu-click', handleSubmenuClick)
       if (props.mode === 'horizontal') {
         new Menubar(instance?.vnode.el)
@@ -261,7 +265,6 @@ export default defineComponent({
     return {
       hoverBackground,
       isMenuPopup,
-      props,
       open,
       close
     }

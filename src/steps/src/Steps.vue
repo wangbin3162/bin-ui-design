@@ -17,7 +17,7 @@ export default defineComponent({
     const stepsMitt = mitt()
     const stepChild = ref<any[]>([]) // 用于获取所有子组件示例
 
-    const updateChildProps = isInit => {
+    const updateChildProps = (isInit: boolean = false) => {
       const total = stepChild.value.length
       stepChild.value.forEach((child, index) => {
         child.stepNumber = index + 1
@@ -56,7 +56,7 @@ export default defineComponent({
       })
     }
 
-    const updateCurrent = isInit => {
+    const updateCurrent = (isInit: boolean = false) => {
       // 防止溢出边界
       if (props.current < 0 || props.current >= stepChild.value.length) {
         return

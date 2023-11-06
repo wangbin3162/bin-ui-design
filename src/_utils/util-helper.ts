@@ -36,6 +36,13 @@ export const isString = value => typeof value === 'string'
 export const isArray = value => typeOf(value) === 'array'
 
 /**
+ * 是否是Promise
+ * @param fn
+ * @returns
+ */
+export const isPromise = (fn: any): boolean => fn instanceof Promise
+
+/**
  * 是否是HTMLElement
  * @param val
  * @returns

@@ -3,3 +3,4 @@ lib
 test/unit/coverage
 dist
 es
+site

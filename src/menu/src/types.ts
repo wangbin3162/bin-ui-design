@@ -7,15 +7,33 @@ export const menuProps = {
     type: String,
     default: ''
   },
-  defaultOpeneds: Array,
-  uniqueOpened: Boolean,
-  router: Boolean,
+  defaultOpeneds: {
+    type: Array,
+    default: () => []
+  },
+  uniqueOpened: {
+    type: Boolean,
+    default: false
+  },
+  router: {
+    type: Boolean,
+    default: false
+  },
   menuTrigger: {
     type: String,
     default: 'hover'
   },
   collapse: Boolean,
-  backgroundColor: { type: String },
-  textColor: { type: String },
-  activeTextColor: { type: String }
+  backgroundColor: {
+    type: String,
+    default: ''
+  },
+  textColor: {
+    type: String,
+    default: ''
+  },
+  activeTextColor: {
+    type: String,
+    default: ''
+  }
 }

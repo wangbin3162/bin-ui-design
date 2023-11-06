@@ -70,14 +70,14 @@ const activeColorStr = computed(() => {
     warning: '#fa8c16',
     danger: '#f5222d'
   }
-  return props.activeColor
-    ? colorMap[props.activeColor]
+  return props.activeColor // @ts-ignore
+    ? colorMap[props.activeColor] // @ts-ignore
       ? colorMap[props.activeColor]
       : props.activeColor
     : null
 })
 
-const chooseLink = current => {
+const chooseLink = (current: string) => {
   data.currentLink = current
   data.currentId = current.slice(1)
   emit('select', data.currentLink)
@@ -102,7 +102,7 @@ const updateTitleOffset = () => {
   // @ts-ignore
   const links = linksRef.value.map(link => link.href)
   const idArr = links.map(link => link.split('#')[1])
-  let offsetArr = []
+  let offsetArr: { link: string; offset: number }[] = []
   idArr.forEach(id => {
     const titleEle = document.getElementById(id)
     if (titleEle) {
@@ -113,10 +113,11 @@ const updateTitleOffset = () => {
       })
     }
   })
+  // @ts-ignore
   data.titlesOffsetArr = offsetArr
 }
 
-const getCurrentScrollAtTitleId = scrollTop => {
+const getCurrentScrollAtTitleId = (scrollTop: number) => {
   let i = -1
   let len = data.titlesOffsetArr.length
   let titleItem = { link: '#', offset: 0 }
@@ -143,7 +144,7 @@ const handleSetInkTop = () => {
   data.inkTop = elementATop < 0 ? props.offsetTop : elementATop
 }
 
-const handleScrollTo = to => {
+const handleScrollTo = (to: number) => {
   const offsetTop = to - props.scrollOffset
   animating = true
   // @ts-ignore

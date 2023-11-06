@@ -93,8 +93,9 @@ export default defineComponent({
   watch: {
     status(val) {
       this.currentStatus = val
-      if (this.currentStatus === 'error') {
-        this.$parent.setNextError()
+      if (val === 'error') {
+        // @ts-ignore
+        this.$parent?.setNextError()
       }
     }
   }

@@ -30,7 +30,7 @@ export default formatSidebar(
         { text: '数字输入', link: '', icon: 'shake', alias: 'InputNumber' },
         { text: '单选框', link: '/components/radio', icon: 'plus-circle', alias: 'Radio' },
         { text: '多选框', link: '', icon: 'check-square', alias: 'Checkbox' },
-        { text: '开关', link: '', icon: 'build', alias: 'Switch' },
+        { text: '开关', link: '/components/switch', icon: 'build', alias: 'Switch' },
         { text: '选择器', link: '', icon: 'unorderedlist', alias: 'Select' },
         { text: '级联选择', link: '', icon: 'pic-left', alias: 'Cascader' },
         { text: '日期选择器', link: '', icon: 'calendar', alias: 'DatePicker' },
