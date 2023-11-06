@@ -31,7 +31,7 @@ title: 弹框提示 MessageBox
 vue3中引入Message并进行函数调用，同时Message入参可为`string`类型或者是 `CreateMessageProps`对象类型，同时，为方便调用，也扩展了四种 type 的调用
 
 ```ts
-import { MessageBox } from 'bin-ui-next'
+import { MessageBox } from 'bin-ui-design'
 
 // options 可 直接传入字符串，如入参是字符串，则代表使用默认配置，入参填入message属性中进行调用
 MessageBox(options)

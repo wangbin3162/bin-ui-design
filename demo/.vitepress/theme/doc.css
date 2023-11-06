@@ -1,0 +1,40 @@
+.vp-doc {
+  color: var(--bin-color-text-default);
+  p {
+    line-height: 1.6;
+  }
+  h1 {
+    font-weight: 500;
+  }
+  h2 {
+    margin: 16px 0 16px;
+    border-top: none;
+    font-weight: 500;
+  }
+  h3 {
+    margin: 16px 0 16px;
+    border-top: none;
+    font-weight: 500;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  table {
+    display: table;
+    margin: 0;
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+  ul,
+  ol {
+    padding-left: 0;
+    margin: 0;
+  }
+  li + li {
+    margin: 0;
+  }
+  tr {
+    border-top: none;
+  }
+}

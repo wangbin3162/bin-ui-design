@@ -4,8 +4,8 @@ import BinUI from 'bin-ui-design'
 // import DocTable from '../src/DocTable.vue'
 
 import '@vitepress-demo-preview/component/dist/style.css'
-import 'bin-ui-design/_styles/index.css'
 import './index.css'
+import 'bin-ui-design/_styles/index.css'
 
 export default {
   ...DefaultTheme,

@@ -246,27 +246,6 @@ p {
     .content-container {
       max-width: unset;
       width: 100%;
-      .vp-doc {
-        p {
-          line-height: 1.6;
-        }
-        h1 {
-          font-weight: 500;
-        }
-        h2 {
-          margin: 16px 0 16px;
-          border-top: none;
-          font-weight: 500;
-        }
-        h3 {
-          margin: 16px 0 16px;
-          border-top: none;
-          font-weight: 500;
-        }
-        a:hover {
-          text-decoration: none;
-        }
-      }
     }
   }
 }

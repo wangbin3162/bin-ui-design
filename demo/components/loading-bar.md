@@ -16,7 +16,7 @@ LoadingBar 只会在全局创建一个，因此在任何位置调用的方法都
 ## 在路由中使用
 
 ```ts
-import { LoadingBar } from 'bin-ui-next'
+import { LoadingBar } from 'bin-ui-design'
 
 router.beforeEach((to, from, next) => {
   LoadingBar.start()
@@ -40,7 +40,7 @@ router.afterEach(() => {
 通过直接调用以下方法来使用组件：
 
 ```ts
-import { LoadingBar } from 'bin-ui-next'
+import { LoadingBar } from 'bin-ui-design'
 
 LoadingBar.start()
 

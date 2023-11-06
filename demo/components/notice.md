@@ -35,7 +35,7 @@ title: 通知 Notice
 vue3中引入 Notice 并进行函数调用，同时 Notice 入参可为`string`类型或者是 `CreateNoticeProps`对象类型，同时，为方便调用，也扩展了四种 type 的调用
 
 ```ts
-import { Notice } from 'bin-ui-next'
+import { Notice } from 'bin-ui-design'
 
 // options 可 直接传入字符串，如入参是字符串，则代表使用默认配置，入参填入message属性中进行调用
 Notice(options)
