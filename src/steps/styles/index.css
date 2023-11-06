@@ -382,7 +382,6 @@
     visibility: hidden;
   }
   .bin-steps-content {
-    //max-width: 100px;
     padding-left: 35px;
   }
   .bin-steps-item:not(:first-child) .bin-steps-head {
