@@ -80,18 +80,20 @@ title: 按钮 Button
 
 ## Props
 
-<doc-table type="props" :data=" [
-  'size | 尺寸 | String | large / small / mini | —',
-  'type | 类型 | String | primary / success / warning / danger / info / text | —',
-  'plain | 简单按钮 | Boolean | — | false',
-  'round | 圆角按钮 | Boolean | — | false',
-  'transparent | 透明按钮 | Boolean | — | false',
-  'background | 拟物背景（仅供默认按钮使用） | Boolean | — | false',
-  'loading | 加载中 | Boolean | — | false',
-  'disabled | 禁用状态 | Boolean | — | false',
-  'icon | 图标 | String | — | —',
-  'text-color | 文字按钮颜色 | String | primary / success / warning / danger / info / text / 自定义色值 | —',
-  'icon-style | 可设置图标大小 | Object | — | —',
-  'autofocus | 是否默认聚焦 | Boolean | — | false',
-  'native-type | 原生 type 属性 | String | button / submit / reset | button',
-]"></doc-table>
+## Props
+
+| 参数        | 说明                         | 类型    | 可选值                                                          | 默认值 |
+| ----------- | ---------------------------- | ------- | --------------------------------------------------------------- | ------ |
+| size        | 尺寸                         | String  | large / small / mini                                            | —      |
+| type        | 类型                         | String  | primary / success / warning / danger / info / text              | —      |
+| plain       | 简单按钮                     | Boolean | —                                                               | false  |
+| round       | 圆角按钮                     | Boolean | —                                                               | false  |
+| transparent | 透明按钮                     | Boolean | —                                                               | false  |
+| loading     | 加载中                       | Boolean | —                                                               | false  |
+| disabled    | 禁用状态                     | Boolean | —                                                               | false  |
+| background  | 拟物背景（仅供默认按钮使用） | Boolean | —                                                               | false  |
+| icon        | 图标                         | String  | —                                                               | —      |
+| icon-style  | 可设置图标大小               | Object  | —                                                               | —      |
+| text-color  | 文字按钮颜色                 | String  | primary / success / warning / danger / info / text / 自定义色值 | —      |
+| autofocus   | 是否默认聚焦                 | Boolean | —                                                               | false  |
+| native-type | 原生 type 属性               | String  | button / submit / reset                                         | button |

@@ -51,13 +51,3 @@ const columns = {
 
 const cols = (row: string) => row.split(' | ')
 </script>
-
-<style>
-.vp-doc table {
-  table-layout: auto;
-  width: 100%;
-}
-.vp-doc tr:nth-child(2n) {
-  background-color: #fff;
-}
-</style>

@@ -68,12 +68,12 @@ const copyComp = name => {
 
 ## Props
 
-<doc-table type="props" :data="[
-  'name | 图标名称 | String | 图标集合 | —',
-  'size | 尺寸 | Number / string | 数字像素 | —',
-  'type | 图标按钮，设置为button时可以悬停点击 | String | button | —',
-  'color | 图标颜色值 | String | — | —',
-]"></doc-table>
+| 参数  | 说明                       | 类型            | 可选值   | 默认值 |
+| ----- | -------------------------- | --------------- | -------- | ------ |
+| name  | 图标名称                   | String          | 图标集合 | —      |
+| size  | 尺寸                       | Number / String | 数字像素 | —      |
+| type  | 设置为button时可以悬停点击 | String          | button   | —      |
+| color | 图标颜色值                 | String          | —        | —      |
 
 <style scoped>
 .demo-icon {
