@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">23</span> 个组件未完成迁移
+剩余 <span style="color:red">20</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -39,11 +39,12 @@
 ## 数据展示组件
 
 - ❌ 表格 Table
+- ❌ 分页 Page
 - ❌ 树 Tree
-- ❌ 描述 Desc
+- ✅ 描述 Desc
 - ✅ 时间线 Timeline
 - ✅ 日历 Calendar
-- ❌ 轮播 Carousel
+- ✅ 轮播 Carousel
 - ✅ 数字动画 CountTo
 
 ## 导航组件
@@ -51,12 +52,11 @@
 - ✅ 图钉 Affix
 - ❌ 锚点 Anchor
 - ✅ 返回顶部 BackTop
-- ❌ 面包屑 Breadcrumb
+- ✅ 面包屑 Breadcrumb
 - ✅ 加载条 Loading Bar
 - ❌ 菜单 Menu
 - ✅ 标签页 Tabs
 - ❌ 步骤 Steps
-- ❌ 分页 Page
 
 ## 反馈组件
 
