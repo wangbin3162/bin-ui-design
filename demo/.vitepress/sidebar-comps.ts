@@ -59,7 +59,7 @@ export default formatSidebar(
       text: '导航组件',
       items: [
         { text: '图钉', link: '/components/affix', icon: 'pushpin', alias: 'Affix' },
-        { text: '锚点', link: '', icon: 'attachment', alias: 'Anchor' },
+        { text: '锚点', link: '/components/anchor', icon: 'attachment', alias: 'Anchor' },
         { text: '返回顶部', link: '/components/back-top', icon: 'up', alias: 'BackTop' },
         { text: '面包屑', link: '/components/breadcrumb', icon: 'right', alias: 'Breadcrumb' },
         { text: '加载条', link: '/components/loading-bar', icon: 'minus', alias: 'Loading Bar' },
