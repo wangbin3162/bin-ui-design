@@ -38,7 +38,7 @@ export default formatSidebar(
         { text: '颜色选择器', link: '', icon: 'bg-colors', alias: 'ColorPicker' },
         { text: '评分', link: '/components/rate', icon: 'star', alias: 'Rate' },
         { text: '滑块', link: '', icon: 'minus', alias: 'Slider' },
-        { text: '上传', link: '', icon: 'cloud-upload', alias: 'Upload' },
+        { text: '上传', link: '/components/upload', icon: 'cloud-upload', alias: 'Upload' },
         { text: '表单', link: '', icon: 'reconciliation', alias: 'Form' }
       ]
     },

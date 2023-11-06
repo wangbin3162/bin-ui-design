@@ -51,16 +51,14 @@
     font-size: var(--b-icon-size);
     position: relative;
     flex-shrink: 0;
+    line-height: 1;
     + span {
       margin-left: var(--b-icon-margin);
     }
     > i {
       height: var(--b-icon-size);
       width: var(--b-icon-size);
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
+      line-height: 1;
       display: flex;
       align-items: center;
       justify-content: center;
