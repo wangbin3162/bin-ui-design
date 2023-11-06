@@ -51,7 +51,7 @@ export default formatSidebar(
         { text: '描述', link: '/components/desc', icon: 'unorderedlist', alias: 'Desc' },
         { text: '时间线', link: '/components/timeline', icon: 'arrowdown', alias: 'Timeline' },
         { text: '日历', link: '/components/calendar', icon: 'calendar-fill', alias: 'Calendar' },
-        { text: '轮播', link: '', icon: 'appstore-fill', alias: 'Carousel' },
+        { text: '轮播', link: '/components/carousel', icon: 'appstore-fill', alias: 'Carousel' },
         { text: '数字动画', link: '/components/count-to', icon: 'orderedlist', alias: 'CountTo' }
       ]
     },
