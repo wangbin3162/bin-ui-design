@@ -2,6 +2,8 @@
 title: 弹框提示 MessageBox
 ---
 
+<b-back-top></b-back-top>
+
 # 弹框提示 MessageBox
 
 空显示状态，用于给内部无数据情况的展示。十分简单

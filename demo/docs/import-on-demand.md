@@ -2,6 +2,8 @@
 title: 按需引入
 ---
 
+<b-back-top></b-back-top>
+
 # 按需引入（Tree Shaking）
 
 Bin UI Design 支持 tree shaking，组件、语言、主题均可 tree-shaking。

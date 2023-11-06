@@ -2,6 +2,8 @@
 title: 消息提示 Message
 ---
 
+<b-back-top></b-back-top>
+
 # 消息提示 Message
 
 轻量级的信息反馈组件，在顶部居中显示，并自动消失。有多种不同的提示状态可选择。

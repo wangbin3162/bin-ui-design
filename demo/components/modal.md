@@ -2,6 +2,8 @@
 title: 模态框 Modal
 ---
 
+<b-back-top></b-back-top>
+
 # 模态框 Modal
 
 对话框/弹窗，在浮层中显示，引导用户进行相关操作。

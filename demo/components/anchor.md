@@ -2,6 +2,8 @@
 title: 锚点 Anchor
 ---
 
+<b-back-top></b-back-top>
+
 # 锚点 Anchor
 
 锚点主要应用于滚动导航

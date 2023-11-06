@@ -2,6 +2,8 @@
 title: 布局组件 Layout
 ---
 
+<b-back-top></b-back-top>
+
 # 布局组件 Layout
 
 ## 基础用法

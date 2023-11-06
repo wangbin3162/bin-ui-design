@@ -2,6 +2,8 @@
 title: 全局配置  ConfigProvider
 ---
 
+<b-back-top></b-back-top>
+
 # 基础用法
 
 可以借助全局配置组件，来进行样式覆盖

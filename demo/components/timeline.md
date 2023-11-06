@@ -2,6 +2,8 @@
 title: 时间线 Timeline
 ---
 
+<b-back-top></b-back-top>
+
 # 时间线 Timeline
 
 时间线组件

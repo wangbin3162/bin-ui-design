@@ -2,6 +2,8 @@
 title: 骨架屏 Skeleton
 ---
 
+<b-back-top></b-back-top>
+
 # 骨架屏 Skeleton
 
 在需要等待加载内容的位置设置一个骨架屏，某些场景下比 Loading 的视觉效果更好。

@@ -2,6 +2,8 @@
 title: 栅格 Grid
 ---
 
+<b-back-top></b-back-top>
+
 # 栅格 Grid
 
 采用了24栅格系统，将区域进行24等分

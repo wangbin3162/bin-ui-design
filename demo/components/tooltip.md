@@ -2,6 +2,8 @@
 title: 提示 Tooltip
 ---
 
+<b-back-top></b-back-top>
+
 # 提示 Tooltip
 
 文字提示气泡框，在鼠标悬停时显示，代替了系统的title提示。tooltip的default slot应该保证是一个dom或者一个component

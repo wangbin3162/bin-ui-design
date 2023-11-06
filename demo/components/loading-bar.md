@@ -2,6 +2,8 @@
 title: 加载条 LoadingBar
 ---
 
+<b-back-top></b-back-top>
+
 # 加载条 LoadingBar
 
 全局创建一个显示页面加载、异步请求、文件上传等的加载进度条。

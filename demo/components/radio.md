@@ -2,6 +2,8 @@
 title: 单选框 Radio
 ---
 
+<b-back-top></b-back-top>
+
 # 单选框 Radio
 
 单选框。主要用于一组可选项单项选择，或者单独用于切换到选中状态。

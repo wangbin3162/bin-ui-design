@@ -2,6 +2,8 @@
 title: 面包屑 Breadcrumb
 ---
 
+<b-back-top></b-back-top>
+
 # 面包屑 Breadcrumb
 
 显示当前页面的路径，快速返回之前的任意页面或者跳转链接

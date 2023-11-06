@@ -2,6 +2,8 @@
 title: 分割面板 Split
 ---
 
+<b-back-top></b-back-top>
+
 # 分割面板 Split
 
 分割面板可自行拖放宽度/高度

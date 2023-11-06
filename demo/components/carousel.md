@@ -2,6 +2,8 @@
 title: 轮播 Carousel
 ---
 
+<b-back-top></b-back-top>
+
 # 轮播 Carousel
 
 轮播组件，用于滚动显示图片等

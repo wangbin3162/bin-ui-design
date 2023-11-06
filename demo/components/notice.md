@@ -2,6 +2,8 @@
 title: 通知 Notice
 ---
 
+<b-back-top></b-back-top>
+
 # 通知 Notice
 
 组件提供通知功能

@@ -2,6 +2,8 @@
 title: 日历组件 Calendar
 ---
 
+<b-back-top></b-back-top>
+
 # 日历组件 Calendar
 
 ## 基础用法

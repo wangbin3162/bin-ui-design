@@ -2,6 +2,8 @@
 title: 进度条 Progress
 ---
 
+<b-back-top></b-back-top>
+
 # 进度条 Progress
 
 展示操作或任务的当前进度，比如上传文件。

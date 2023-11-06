@@ -2,6 +2,8 @@
 title: 弹出信息 Popover
 ---
 
+<b-back-top></b-back-top>
+
 # 弹出信息 Popover
 
 气泡类型的弹窗,用于放置更多信息或询问流程等

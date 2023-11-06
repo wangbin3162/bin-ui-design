@@ -2,6 +2,8 @@
 title: 图钉 Affix
 ---
 
+<b-back-top></b-back-top>
+
 # 图钉 Affix
 
 ## 基础用法

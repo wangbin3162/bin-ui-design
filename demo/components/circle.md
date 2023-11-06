@@ -2,6 +2,8 @@
 title: 进度环 Circle
 ---
 
+<b-back-top></b-back-top>
+
 # 进度环 Circle
 
 显示环形图，可以显示任务百分比或者是统计某些数据的占比情况

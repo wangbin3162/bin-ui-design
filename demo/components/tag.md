@@ -2,6 +2,8 @@
 title: 标签 Tag
 ---
 
+<b-back-top></b-back-top>
+
 # 标签 Tag
 
 ## 基础用法

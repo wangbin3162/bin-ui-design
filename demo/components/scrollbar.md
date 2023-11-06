@@ -2,6 +2,8 @@
 title: 滚动组件 Scrollbar
 ---
 
+<b-back-top></b-back-top>
+
 # 滚动组件 Scrollbar
 
 由于默认浏览器滚动条极为丑陋切不同浏览器之间样式不统一，故封装一个滚动组件用于实现滚动

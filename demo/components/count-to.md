@@ -2,6 +2,8 @@
 title: 数字动画 CountTo
 ---
 
+<b-back-top></b-back-top>
+
 # 数字动画 CountTo
 
 数字动画为常用组件，因此收录至组件库便于使用，整体源码参考vue-count-to实现，props参数也一样，由于纯数字显示，因此所有样式都可以自定义

@@ -2,6 +2,8 @@
 title: 折叠面板 Collapse
 ---
 
+<b-back-top></b-back-top>
+
 # 折叠面板 Collapse
 
 需要进行分段显示时使用折叠面板

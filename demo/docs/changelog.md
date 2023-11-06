@@ -2,6 +2,8 @@
 title: 变更日志
 ---
 
+<b-back-top></b-back-top>
+
 # CHANGELOG
 
 <div class="change-log">

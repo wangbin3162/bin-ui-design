@@ -2,6 +2,8 @@
 title: 加载 Loading
 ---
 
+<b-back-top></b-back-top>
+
 # 加载 Loading
 
 获取数据或加载中时显示，提示用户正在等待中。

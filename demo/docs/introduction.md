@@ -2,6 +2,8 @@
 title: 介绍
 ---
 
+<b-back-top></b-back-top>
+
 # Bin UI Design
 
 Bin UI Design 是一个 Vue3 的组件库。

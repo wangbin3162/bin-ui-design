@@ -2,6 +2,8 @@
 title: 内置动画
 ---
 
+<b-back-top></b-back-top>
+
 # 内置动画
 
 组件提供了如下内置动画,只需要引入base.css 即可包含.

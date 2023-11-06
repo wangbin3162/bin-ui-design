@@ -2,6 +2,8 @@
 title: 按钮 Button
 ---
 
+<b-back-top></b-back-top>
+
 # 按钮 Button
 
 常用的操作按钮。

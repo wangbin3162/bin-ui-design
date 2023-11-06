@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">20</span> 个组件未完成迁移
+剩余 <span style="color:red">17</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -50,13 +50,13 @@
 ## 导航组件
 
 - ✅ 图钉 Affix
-- ❌ 锚点 Anchor
+- ✅ 锚点 Anchor
 - ✅ 返回顶部 BackTop
 - ✅ 面包屑 Breadcrumb
 - ✅ 加载条 Loading Bar
-- ❌ 菜单 Menu
+- ✅ 菜单 Menu
 - ✅ 标签页 Tabs
-- ❌ 步骤 Steps
+- ✅ 步骤 Steps
 
 ## 反馈组件
 

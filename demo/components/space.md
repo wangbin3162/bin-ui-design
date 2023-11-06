@@ -2,6 +2,8 @@
 title: 间距 Space
 ---
 
+<b-back-top></b-back-top>
+
 # 间距 Space
 
 可以设置组件和不同dom之间的间距，用于设置相同间隔，方便使用

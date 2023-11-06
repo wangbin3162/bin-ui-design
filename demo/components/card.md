@@ -2,6 +2,8 @@
 title: 卡片 Card
 ---
 
+<b-back-top></b-back-top>
+
 # 卡片 Card
 
 按照一个区块来展示

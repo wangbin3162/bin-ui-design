@@ -2,6 +2,8 @@
 title: 警告提示 Alert
 ---
 
+<b-back-top></b-back-top>
+
 # 警告提示 Alert
 
 静态的展示一些区块，提示或者警告，可以动态的去删除

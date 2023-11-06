@@ -2,6 +2,8 @@
 title: 描述 Desc
 ---
 
+<b-back-top></b-back-top>
+
 # 描述 Desc
 
 按照一个区块来展示一些描述详情

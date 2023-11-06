@@ -2,6 +2,8 @@
 title: 调整主题
 ---
 
+<b-back-top></b-back-top>
+
 # 调整主题
 
 通过使用 b-config-provider 调整主题。

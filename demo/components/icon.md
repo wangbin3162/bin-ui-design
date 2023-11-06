@@ -2,6 +2,8 @@
 title: 图标 Icon
 ---
 
+<b-back-top></b-back-top>
+
 # 图标 Icon
 
 图标这里使用了阿里[iconfont](https://www.iconfont.cn/)图标库生成了图标，图标来源于开源项目 ionicons，结合整理添加了一些其他的图标。

@@ -2,6 +2,8 @@
 title: 分割线 Divider
 ---
 
+<b-back-top></b-back-top>
+
 # 分割线 Divider
 
 区隔内容的分割线。可以对对不同文本段落进行分割。可以对行内文字/链接进行分割。

@@ -2,6 +2,8 @@
 title: JSX & TSX
 ---
 
+<b-back-top></b-back-top>
+
 # JSX & TSX
 
 ## 启用 JSX & TSX

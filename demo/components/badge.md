@@ -2,6 +2,8 @@
 title: 标记 Badge
 ---
 
+<b-back-top></b-back-top>
+
 # 标记 Badge
 
 空显示状态，用于给内部无数据情况的展示。十分简单

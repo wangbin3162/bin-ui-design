@@ -2,6 +2,8 @@
 title: 抽屉 Drawer
 ---
 
+<b-back-top></b-back-top>
+
 # 抽屉 Drawer
 
 简易的抽屉用于展示或者快速弹出,可以根据是信息展示还是创建动态插入
