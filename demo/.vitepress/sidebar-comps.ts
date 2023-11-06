@@ -36,7 +36,7 @@ export default formatSidebar(
         { text: '日期选择器', link: '', icon: 'calendar', alias: 'DatePicker' },
         { text: '时间选择器', link: '', icon: 'time-circle', alias: 'TimePicker' },
         { text: '颜色选择器', link: '', icon: 'bg-colors', alias: 'ColorPicker' },
-        { text: '评分', link: '', icon: 'star', alias: 'Rate' },
+        { text: '评分', link: '/components/rate', icon: 'star', alias: 'Rate' },
         { text: '滑块', link: '', icon: 'minus', alias: 'Slider' },
         { text: '上传', link: '', icon: 'cloud-upload', alias: 'Upload' },
         { text: '表单', link: '', icon: 'reconciliation', alias: 'Form' }

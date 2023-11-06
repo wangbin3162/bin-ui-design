@@ -29,6 +29,13 @@ export const isNumber = val => typeof val === 'number'
 export const isString = value => typeof value === 'string'
 
 /**
+ * 是否是object
+ * @param val
+ * @returns
+ */
+export { isObject }
+
+/**
  * 是否是isArray
  * @param val
  * @returns
