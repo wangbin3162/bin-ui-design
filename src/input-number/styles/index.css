@@ -1,0 +1,342 @@
+.bin-input-number {
+  display: inline-block;
+  font-size: 12px;
+  color: var(--bin-color-text-default);
+  background-color: var(--bin-white-color);
+  background-image: none;
+  position: relative;
+  transition:
+    border var(--bin-animation-duration-base) ease-in-out,
+    background var(--bin-animation-duration-base) ease-in-out,
+    box-shadow var(--bin-animation-duration-base) ease-in-out;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: var(--bin-default-height);
+  line-height: var(--bin-default-height);
+  vertical-align: middle;
+  border: var(--bin-border-base);
+  border-radius: var(--bin-border-radius-default);
+  overflow: hidden;
+  cursor: default;
+
+  &:hover {
+    border-color: var(--bin-color-primary);
+  }
+
+  &:focus {
+    border-color: var(--bin-color-primary);
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--bin-color-input-shadow);
+  }
+
+  &-always {
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 38px;
+    }
+
+    .bin-input-number-handler-minus,
+    .bin-input-number-handler-plus {
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      width: var(--bin-default-height);
+      height: var(--bin-default-height);
+      line-height: var(--bin-default-height-2);
+      text-align: center;
+      background: var(--bin-fill-color-1);
+      color: var(--bin-text-color-3);
+      cursor: pointer;
+
+      .b-iconfont {
+        font-size: 14px;
+        vertical-align: top;
+      }
+
+      &:hover .b-iconfont {
+        color: var(--bin-color-primary);
+      }
+    }
+
+    .bin-input-number-handler-minus {
+      cursor: pointer;
+      left: 0;
+      border-radius: var(--bin-border-radius-default) 0 0 var(--bin-border-radius-default);
+      border-right: var(--bin-border-base);
+
+      &-disabled {
+        color: var(--bin-color-text-disabled);
+        cursor: not-allowed;
+      }
+    }
+
+    .bin-input-number-handler-plus {
+      cursor: pointer;
+      right: 0;
+      border-radius: 0 var(--bin-border-radius-default) var(--bin-border-radius-default) 0;
+      border-left: var(--bin-border-base);
+
+      &-disabled {
+        color: var(--bin-color-text-disabled);
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .bin-input-number-handler {
+    height: 16px;
+  }
+}
+
+.bin-input-number-input-wrap {
+  overflow: hidden;
+  height: var(--bin-default-height);
+}
+
+.bin-input-number-input {
+  width: 100%;
+  height: var(--bin-default-height);
+  line-height: var(--bin-default-height);
+  padding: 0 11px;
+  text-align: left;
+  outline: 0;
+  -moz-appearance: textfield;
+  color: var(--bin-color-text-default);
+  border: 0;
+  border-radius: var(--bin-border-radius-default);
+  transition: all var(--bin-animation-duration-base) linear;
+}
+
+.bin-input-number-handler-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  width: 22px;
+  height: 100%;
+  border-radius: 0 var(--bin-border-radius-default) var(--bin-border-radius-default) 0;
+  background: var(--bin-white-color);
+}
+
+.bin-input-number-handler {
+  position: absolute;
+  z-index: 1;
+  width: 22px;
+  height: auto;
+  text-align: center;
+  cursor: pointer;
+  font-size: 13px;
+  background: var(--bin-white-color);
+  right: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;
+  overflow: hidden;
+  border-left: var(--bin-border-base);
+  transition: var(--bin-animation-duration-base);
+
+  &.bin-input-number-handler-up {
+    cursor: pointer;
+    border-bottom: var(--bin-border-base);
+    top: 0;
+    color: var(--bin-color-text-secondary);
+
+    &:hover {
+      z-index: 2;
+      border-left-color: var(--bin-color-primary);
+      border-bottom-color: var(--bin-color-primary);
+      color: var(--bin-color-primary);
+    }
+  }
+
+  &.bin-input-number-handler-down {
+    cursor: pointer;
+    border-top: var(--bin-border-base);
+    bottom: 0;
+    color: var(--bin-color-text-secondary);
+
+    &:hover {
+      z-index: 2;
+      border-left-color: var(--bin-color-primary);
+      border-top-color: var(--bin-color-primary);
+      color: var(--bin-color-primary);
+    }
+  }
+
+  &:active {
+    background: var(--bin-color-select-hover);
+  }
+}
+
+.bin-input-number-handler-down-inner,
+.bin-input-number-handler-up-inner {
+  user-select: none;
+  width: 12px;
+  height: 12px;
+  transform: scale(0.8);
+  line-height: 12px;
+  font-size: 12px;
+  transition: all var(--bin-animation-duration-base) linear;
+}
+
+.bin-input-number-disabled {
+  .bin-input-number-handler,
+  .bin-input-number-handler-down-inner,
+  .bin-input-number-handler-up-inner,
+  .bin-input-number-handler-down-disabled .bin-input-number-handler-down-inner,
+  .bin-input-number-handler-down-disabled .bin-input-number-handler-up-inner,
+  .bin-input-number-handler-up-disabled .bin-input-number-handler-down-inner,
+  .bin-input-number-handler-up-disabled .bin-input-number-handler-up-inner {
+    cursor: not-allowed;
+    color: var(--bin-color-text-disabled);
+    background-color: var(--bin-color-bg-disabled);
+  }
+}
+
+.bin-input-number-disabled .bin-input-number-input {
+  cursor: not-allowed;
+  background-color: var(--bin-color-bg-disabled);
+  color: var(--bin-color-text-disabled);
+}
+
+.bin-input-number-input[disabled] {
+  cursor: not-allowed;
+  background-color: var(--bin-color-bg-disabled);
+  color: var(--bin-color-text-disabled);
+}
+
+.bin-input-number-disabled.bin-input-number-always {
+  .bin-input-number-handler-minus {
+    color: var(--bin-color-text-disabled);
+    cursor: not-allowed;
+  }
+
+  .bin-input-number-handler-plus {
+    color: var(--bin-color-text-disabled);
+    cursor: not-allowed;
+  }
+
+  .bin-input-number-handler-minus,
+  .bin-input-number-handler-plus {
+    &:hover .b-iconfont {
+      color: var(--bin-color-text-disabled);
+    }
+  }
+}
+
+.bin-input-number-mini {
+  padding: 0;
+  height: var(--bin-mini-height);
+  border-radius: var(--bin-border-radius-default);
+
+  input {
+    height: var(--bin-mini-height);
+    line-height: var(--bin-mini-height);
+    vertical-align: top;
+  }
+
+  .bin-input-number-handler {
+    height: 12px;
+  }
+
+  .bin-input-number-input-wrap {
+    height: var(--bin-mini-height);
+  }
+
+  &.bin-input-number-always {
+    width: 100px;
+
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 var(--bin-small-height);
+    }
+
+    .bin-input-number-handler-minus,
+    .bin-input-number-handler-plus {
+      width: var(--bin-mini-height);
+      height: var(--bin-mini-height);
+      line-height: var(--bin-mini-height-2);
+    }
+  }
+}
+
+.bin-input-number-small {
+  padding: 0;
+  height: var(--bin-small-height);
+  border-radius: var(--bin-border-radius-default);
+
+  input {
+    height: var(--bin-small-height);
+    line-height: var(--bin-small-height);
+    vertical-align: top;
+  }
+
+  .bin-input-number-handler {
+    height: 14px;
+  }
+
+  .bin-input-number-input-wrap {
+    height: var(--bin-small-height);
+  }
+
+  &.bin-input-number-always {
+    width: 120px;
+
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 var(--bin-default-height);
+    }
+
+    .bin-input-number-handler-minus,
+    .bin-input-number-handler-plus {
+      width: var(--bin-small-height);
+      height: var(--bin-small-height);
+      line-height: var(--bin-small-height-2);
+    }
+  }
+}
+
+.bin-input-number-large {
+  font-size: var(--bin-font-size-large);
+  padding: 0;
+  height: var(--bin-large-height);
+
+  input {
+    height: var(--bin-large-height);
+    line-height: var(--bin-large-height);
+    font-size: var(--bin-font-size-large);
+  }
+
+  .bin-input-number-handler {
+    height: 18px;
+  }
+
+  .bin-input-number-input-wrap {
+    height: var(--bin-large-height);
+  }
+
+  &.bin-input-number-always {
+    width: 160px;
+
+    .bin-input-number-input {
+      text-align: center;
+      padding: 0 40px;
+    }
+
+    .bin-input-number-handler-minus,
+    .bin-input-number-handler-plus {
+      width: var(--bin-large-height);
+      height: var(--bin-large-height);
+      line-height: var(--bin-default-height);
+    }
+  }
+}
+
+.bin-input-number-focused {
+  border-color: var(--bin-color-primary);
+  outline: 0;
+  box-shadow: 0 0 0 2px var(--bin-color-input-shadow);
+}

@@ -42,3 +42,7 @@
 @import '../switch/styles/index.css';
 @import '../rate/styles/index.css';
 @import '../upload/styles/index.css';
+@import '../input-number/styles/index.css';
+@import '../input/styles/index.css';
+@import '../slider/styles/index.css';
+@import '../checkbox/styles/index.css';

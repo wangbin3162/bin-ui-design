@@ -26,10 +26,10 @@ export default formatSidebar(
     {
       text: '数据录入组件',
       items: [
-        { text: '输入框', link: '', icon: 'edit-square', alias: 'Input' },
-        { text: '数字输入', link: '', icon: 'shake', alias: 'InputNumber' },
+        { text: '输入框', link: '/components/input', icon: 'edit-square', alias: 'Input' },
+        { text: '数字输入', link: '/components/input-number', icon: 'shake', alias: 'InputNumber' },
         { text: '单选框', link: '/components/radio', icon: 'plus-circle', alias: 'Radio' },
-        { text: '多选框', link: '', icon: 'check-square', alias: 'Checkbox' },
+        { text: '多选框', link: '/components/checkbox', icon: 'check-square', alias: 'Checkbox' },
         { text: '开关', link: '/components/switch', icon: 'build', alias: 'Switch' },
         { text: '选择器', link: '', icon: 'unorderedlist', alias: 'Select' },
         { text: '级联选择', link: '', icon: 'pic-left', alias: 'Cascader' },
@@ -37,7 +37,7 @@ export default formatSidebar(
         { text: '时间选择器', link: '', icon: 'time-circle', alias: 'TimePicker' },
         { text: '颜色选择器', link: '', icon: 'bg-colors', alias: 'ColorPicker' },
         { text: '评分', link: '/components/rate', icon: 'star', alias: 'Rate' },
-        { text: '滑块', link: '', icon: 'minus', alias: 'Slider' },
+        { text: '滑块', link: '/components/slider', icon: 'minus', alias: 'Slider' },
         { text: '上传', link: '/components/upload', icon: 'cloud-upload', alias: 'Upload' },
         { text: '表单', link: '', icon: 'reconciliation', alias: 'Form' }
       ]

@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">14</span> 个组件未完成迁移
+剩余 <span style="color:red">10</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -21,10 +21,10 @@
 
 ## 数据录入组件
 
-- ❌ 输入框 Input
-- ❌ 数字输入 InputNumber
+- ✅ 输入框 Input
+- ✅ 数字输入 InputNumber
 - ✅ 单选框 Radio
-- ❌ 多选框 Checkbox
+- ✅ 多选框 Checkbox
 - ✅ 开关 Switch
 - ❌ 选择器 Select
 - ❌ 级联选择 Cascader
@@ -32,7 +32,7 @@
 - ❌ 时间选择器 TimePicker
 - ❌ 颜色选择器 ColorPicker
 - ✅ 评分 Rate
-- ❌ 滑块 Slider
+- ✅ 滑块 Slider
 - ✅ 上传 Upload
 - ❌ 表单 Form
 

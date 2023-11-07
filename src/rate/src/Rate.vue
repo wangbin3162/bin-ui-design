@@ -71,6 +71,7 @@ export default defineComponent({
       return result
     })
 
+    // @ts-ignore
     function getValueFromMap(value, map) {
       const matchedKeys = Object.keys(map)
         .filter(key => {
@@ -145,6 +146,7 @@ export default defineComponent({
       }
     )
 
+    // @ts-ignore
     function showDecimalIcon(item) {
       let showWhenDisabled =
         rateDisabled.value &&
@@ -160,6 +162,7 @@ export default defineComponent({
       return showWhenDisabled || showWhenAllowHalf
     }
 
+    // @ts-ignore
     function getIconStyle(item) {
       const voidColor = rateDisabled.value ? props.disabledVoidColor : props.voidColor
       return {
@@ -167,13 +170,14 @@ export default defineComponent({
       }
     }
 
+    // @ts-ignore
     function selectValue(value) {
       if (rateDisabled.value) {
         return
       }
       if (props.allowHalf && pointerAtLeftHalf.value) {
         emit('update:modelValue', currentValue.value)
-        emit('change', this.currentValue)
+        emit('change', currentValue.value)
       } else {
         emit('update:modelValue', value)
         emit('change', value)
@@ -181,6 +185,7 @@ export default defineComponent({
       formEmit('change', value)
     }
 
+    // @ts-ignore
     function handleKey(e) {
       if (rateDisabled.value) {
         return
@@ -213,6 +218,7 @@ export default defineComponent({
 
     const hoverIndex = ref(-1)
 
+    // @ts-ignore
     function setCurrentValue(value, event) {
       if (rateDisabled.value) {
         return
