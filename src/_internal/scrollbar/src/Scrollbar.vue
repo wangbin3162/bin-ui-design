@@ -99,4 +99,9 @@ const style = computed(() => {
   }
   return style
 })
+
+defineExpose({
+  handleScroll,
+  update
+})
 </script>

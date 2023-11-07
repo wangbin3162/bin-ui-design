@@ -67,6 +67,11 @@
   .bin-input-group-append {
     left: -1px;
   }
+  &.is-disabled {
+    i {
+      color: var(--bin-color-text-disabled) !important;
+    }
+  }
 }
 
 .bin-input-wrapper-large {

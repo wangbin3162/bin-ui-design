@@ -46,6 +46,9 @@
 
     .bin-dropdown {
       width: 100%;
+      &:not(:last-child) {
+        margin-bottom: var(--bin-popper-item-margin);
+      }
     }
 
     .bin-dropdown-item {
@@ -62,9 +65,9 @@
       cursor: pointer;
       transition: background var(--bin-animation-duration-base) ease-in-out;
       border-radius: var(--bin-popper-radius);
-
-      + .bin-dropdown-item {
-        margin-top: var(--bin-popper-item-margin);
+      margin-bottom: var(--bin-popper-item-margin);
+      &:last-child {
+        margin-bottom: 0;
       }
 
       + .bin-dropdown-item-divided {

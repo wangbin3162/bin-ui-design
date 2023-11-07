@@ -1,7 +1,14 @@
 import { computed, ref, reactive, watch } from 'vue'
 import { createPopper } from '@popperjs/core'
 import type { Instance as PopperInstance } from '@popperjs/core'
-import { generateId, isBool, isHTMLElement, isString, $ } from '../../../../_utils/util-helper'
+import {
+  generateId,
+  isBool,
+  isHTMLElement,
+  isString,
+  $,
+  isArray
+} from '../../../../_utils/util-helper'
 
 import usePopperOptions from './use-popper-options'
 import { transferIncrease } from '../../../../_utils/config'
@@ -68,12 +75,12 @@ export default function (props: PopperProps, ctx) {
   const show = () => {
     if (isManualMode() || props.disabled) return
     clearTimers()
-    if (props.openDelay === 0) {
+    if (props.showAfter === 0) {
       _show()
     } else {
       showTimer = window.setTimeout(() => {
         _show()
-      }, props.openDelay)
+      }, props.showAfter)
     }
   }
 
@@ -214,7 +221,7 @@ export default function (props: PopperProps, ctx) {
       })
     }
 
-    if (Array.isArray(props.trigger)) {
+    if (isArray(props.trigger)) {
       Object.values(props.trigger).forEach(mapEvents)
     } else {
       mapEvents(props.trigger)

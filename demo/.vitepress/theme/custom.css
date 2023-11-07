@@ -38,6 +38,7 @@
 
 body {
   color: var(--vp-c-text-1);
+  width: unset;
 }
 
 h1,

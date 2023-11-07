@@ -162,7 +162,8 @@ export default defineComponent({
           [`${prefixCls}-group-with-append`]: ctx.slots.append || props.search,
           [`${prefixCls}-hide-icon`]: ctx.slots.append, // #554
           [`${prefixCls}-with-search`]: props.search,
-          [`${prefixCls}-with-word-count`]: props.showWordCount
+          [`${prefixCls}-with-word-count`]: props.showWordCount,
+          [`is-disabled`]: inputDisabled.value
         }
       ]
     })
