@@ -50,3 +50,5 @@
 @import '../select/styles/index.css';
 @import '../page/styles/index.css';
 @import '../cascader/styles/index.css';
+@import '../time-picker/styles/index.css';
+@import '../date-picker/styles/index.css';

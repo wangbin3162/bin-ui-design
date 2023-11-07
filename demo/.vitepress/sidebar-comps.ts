@@ -33,8 +33,18 @@ export default formatSidebar(
         { text: '开关', link: '/components/switch', icon: 'build', alias: 'Switch' },
         { text: '选择器', link: '/components/select', icon: 'unorderedlist', alias: 'Select' },
         { text: '级联选择', link: '/components/cascader', icon: 'pic-left', alias: 'Cascader' },
-        { text: '日期选择器', link: '', icon: 'calendar', alias: 'DatePicker' },
-        { text: '时间选择器', link: '', icon: 'time-circle', alias: 'TimePicker' },
+        {
+          text: '日期选择器',
+          link: '/components/date-picker',
+          icon: 'calendar',
+          alias: 'DatePicker'
+        },
+        {
+          text: '时间选择器',
+          link: '/components/time-picker',
+          icon: 'time-circle',
+          alias: 'TimePicker'
+        },
         {
           text: '颜色选择器',
           link: '/components/color-picker',
