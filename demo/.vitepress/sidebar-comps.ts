@@ -52,7 +52,7 @@ export default formatSidebar(
       items: [
         { text: '树结构', link: '', icon: 'branches', alias: 'Tree' },
         { text: '表格', link: '', icon: 'table', alias: 'Table' },
-        { text: '分页', link: '', icon: 'read', alias: 'Page' },
+        { text: '分页', link: '/components/page', icon: 'read', alias: 'Page' },
         { text: '描述', link: '/components/desc', icon: 'unorderedlist', alias: 'Desc' },
         { text: '时间线', link: '/components/timeline', icon: 'arrowdown', alias: 'Timeline' },
         { text: '日历', link: '/components/calendar', icon: 'calendar-fill', alias: 'Calendar' },
