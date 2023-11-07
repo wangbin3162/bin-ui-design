@@ -287,7 +287,7 @@ const copyColor = color => Utils.util.copy(color)
   </div>
 </div>
 <div class="mt-20" flex="cross:center">
-  <!-- <b-color-picker v-model="custom" style="width: 128px" :colors="colorsList"></b-color-picker> -->
+  <b-color-picker v-model="data.custom" style="width: 128px" :colors="data.colorsList"></b-color-picker>
   <span class="ml-10">{{ data.custom }}</span>
 </div>
 <p class="ml-10 f-color-red f-s-12">注意：亮度和饱和度建议在70以上，以生成更好的效果</p>

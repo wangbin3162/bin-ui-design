@@ -19,8 +19,10 @@
 </template>
 
 <script setup lang="ts">
+import { Message } from 'bin-ui-design'
+
 function handleClick(name) {
   console.log(name)
-  // TODO: this.$message('click on item: ' + JSON.stringify(name))
+  Message('click on item: ' + JSON.stringify(name))
 }
 </script>

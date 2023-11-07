@@ -26,7 +26,6 @@ export default defineComponent({
           child.total = total
         }
         // 如果已存在status,且在初始化时,则略过
-        // todo 如果当前是error,在current改变时需要处理
         if (!(isInit && child.currentStatus)) {
           if (index === props.current) {
             if (props.status !== 'error') {
