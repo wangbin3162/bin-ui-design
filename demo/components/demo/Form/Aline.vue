@@ -8,7 +8,7 @@
         <b-radio label="top">顶部对齐</b-radio>
       </b-radio-group>
       尺寸大小
-      <b-radio-group v-model="size" type="capsule" :size="size">
+      <b-radio-group v-model="size" type="capsule">
         <b-radio label="large">large</b-radio>
         <b-radio label="default">default</b-radio>
         <b-radio label="small">small</b-radio>
