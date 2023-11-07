@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">10</span> 个组件未完成迁移
+剩余 <span style="color:red">6</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -26,7 +26,7 @@
 - ✅ 单选框 Radio
 - ✅ 多选框 Checkbox
 - ✅ 开关 Switch
-- ❌ 选择器 Select
+- ✅ 选择器 Select
 - ❌ 级联选择 Cascader
 - ❌ 日期选择器 DatePicker
 - ❌ 时间选择器 TimePicker
@@ -39,8 +39,8 @@
 ## 数据展示组件
 
 - ❌ 表格 Table
-- ❌ 分页 Page
 - ❌ 树 Tree
+- ✅ 分页 Page
 - ✅ 描述 Desc
 - ✅ 时间线 Timeline
 - ✅ 日历 Calendar
@@ -78,7 +78,7 @@
 
 - ✅ 空状态 Empty
 - ✅ 滚动组件 Scrollbar
-- ❌ 弹层 Popper
+- ✅ 弹层 Popper
 
 ## 配置组件
 

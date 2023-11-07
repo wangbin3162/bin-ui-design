@@ -8,6 +8,13 @@ import { isObject, typeOf } from './util'
 export const generateId = () => Math.floor(Math.random() * 10000)
 
 /**
+ * 是否是一个函数
+ * @param val
+ * @returns
+ */
+export const isFunction = val => typeOf(val) === 'function'
+
+/**
  * 是否是boolean
  * @param val
  * @returns
@@ -235,4 +242,11 @@ export const coerceTruthyValueToArray = arr => {
     return []
   }
   return Array.isArray(arr) ? arr : [arr]
+}
+
+export function capitalize(str: string): string {
+  if (str.length === 0) {
+    return str
+  }
+  return str[0].toUpperCase() + str.slice(1)
 }

@@ -60,6 +60,9 @@
     height: 28px;
     background-color: transparent;
   }
+  .bin-input {
+    cursor: pointer;
+  }
 }
 
 .bin-select__popper {
