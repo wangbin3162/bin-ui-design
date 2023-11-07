@@ -15,12 +15,12 @@ i 标签可以直接设置样式类名为 `b-iconfont b-icon-xxx` 来使用即�
   <b-icon name="read-fill" color="#ff53a5"></b-icon>
   <b-icon name="loading" class="icon-is-rotating"></b-icon>
   <b-icon name="formatpainter" type="button" ></b-icon>
-  <!-- <p flex="cross:center">
+  <p flex="cross:center">
     图标选择器：
   <div style="width: 220px;">
     <b-icon-select></b-icon-select>
   </div>
-  </p> -->
+  </p>
 </div>
 
 ## 所有图标

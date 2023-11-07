@@ -1,4 +1,6 @@
 @import './dark.css';
+@import './select.css';
+
 .bin-icon {
   --b-icon-text-color: inherit;
 }
