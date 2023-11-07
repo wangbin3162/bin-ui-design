@@ -54,7 +54,7 @@ export default formatSidebar(
         { text: '评分', link: '/components/rate', icon: 'star', alias: 'Rate' },
         { text: '滑块', link: '/components/slider', icon: 'minus', alias: 'Slider' },
         { text: '上传', link: '/components/upload', icon: 'cloud-upload', alias: 'Upload' },
-        { text: '表单', link: '', icon: 'reconciliation', alias: 'Form' }
+        { text: '表单', link: '/components/form', icon: 'reconciliation', alias: 'Form' }
       ]
     },
     {

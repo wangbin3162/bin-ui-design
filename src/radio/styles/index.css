@@ -231,7 +231,7 @@
 
 .bin-radio-group-capsule {
   display: inline-flex;
-  padding: 1px;
+  padding: 2px;
   height: var(--bin-default-height);
   background-color: var(--bin-fill-color-2);
   border-radius: var(--bin-border-radius-default);
@@ -240,7 +240,7 @@
     height: var(--bin-large-height);
 
     .bin-radio {
-      line-height: calc(var(--bin-large-height) - 8px);
+      line-height: calc(var(--bin-large-height) - 6px);
     }
   }
 
@@ -248,7 +248,7 @@
     height: var(--bin-small-height);
 
     .bin-radio {
-      line-height: calc(var(--bin-small-height) - 8px);
+      line-height: calc(var(--bin-small-height) - 6px);
     }
   }
 
@@ -257,22 +257,22 @@
 
     .bin-radio {
       font-size: 12px;
-      line-height: calc(var(--bin-mini-height) - 8px);
+      line-height: calc(var(--bin-mini-height) - 4px);
     }
   }
 
   .bin-radio {
     position: relative;
     flex: 1;
-    margin: 1.5px;
+    margin: 0 1px;
     text-align: center;
     color: var(--color-text-2);
-    line-height: calc(var(--bin-default-height) - 8px);
+    line-height: calc(var(--bin-default-height) - 6px);
     font-size: 14px;
     background-color: transparent;
     border-radius: var(--bin-border-radius-default);
     cursor: pointer;
-    transition: all 0.1s cubic-bezier(0, 0, 1, 1);
+    transition: 0.2s;
 
     &__input {
       display: none;

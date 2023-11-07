@@ -1,6 +1,6 @@
 .bin-input-number {
   display: inline-block;
-  font-size: 12px;
+  font-size: 14px;
   color: var(--bin-color-text-default);
   background-color: var(--bin-white-color);
   background-image: none;

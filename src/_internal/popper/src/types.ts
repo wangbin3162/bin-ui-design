@@ -42,6 +42,29 @@ export interface PopperProps {
 
 //箭头是三角形，边长10px，第三边长~ 14.1px 一个偏移量应该是5，这解决了箭头溢出的问题。
 export const popperProps = {
+  manualMode: {
+    type: Boolean,
+    default: false
+  },
+  content: {
+    type: String
+  },
+  trigger: {
+    type: String as PropType<TriggerType>,
+    default: DEFAULT_TRIGGER
+  },
+  theme: {
+    type: String as PropType<ThemeType>,
+    default: Theme.DARK
+  },
+  placement: {
+    type: String as PropType<Placement>,
+    default: 'top'
+  },
+  zIndex: {
+    type: Number,
+    default: 0
+  },
   arrowOffset: {
     type: Number,
     default: 4
@@ -50,13 +73,9 @@ export const popperProps = {
     type: Boolean,
     default: true
   },
-  boundariesPadding: {
+  offset: {
     type: Number,
-    default: 0
-  },
-  content: {
-    type: String,
-    default: ''
+    default: 12
   },
   class: {
     type: String,
@@ -67,51 +86,18 @@ export const popperProps = {
     type: Number,
     default: 200
   },
-  cutoff: {
-    type: Boolean,
-    default: false
+  openDelay: {
+    type: Number,
+    default: 0
   },
   disabled: {
     type: Boolean,
     default: false
   },
-  theme: {
-    type: String,
-    default: Theme.DARK
-  },
-  enterable: {
-    type: Boolean,
-    default: true
-  },
-  hideAfter: {
-    type: Number,
-    default: 0
-  },
-  manualMode: {
-    type: Boolean,
-    default: false
-  },
-  showAfter: {
-    type: Number,
-    default: 0
-  },
-  offset: {
-    type: Number,
-    default: 12
-  },
-  placement: {
-    type: String,
-    default: 'top'
-  },
   popperClass: {
     type: String,
     default: ''
   },
-  pure: {
-    type: Boolean,
-    default: false
-  },
-  // Once this option were given, the entire popper is under the users' control, top priority
   popperOptions: {
     type: Object,
     default: () => null
@@ -120,17 +106,33 @@ export const popperProps = {
     type: Boolean,
     default: true
   },
-  strategy: {
-    type: String,
-    default: 'fixed'
-  },
   transition: {
     type: String,
     default: 'fade-in-linear'
   },
-  trigger: {
-    type: [String, Array],
-    default: DEFAULT_TRIGGER
+  boundariesPadding: {
+    type: Number,
+    default: 0
+  },
+  showAfter: {
+    type: Number,
+    default: 0
+  },
+  hideAfter: {
+    type: Number,
+    default: 0
+  },
+  cutoff: {
+    type: Boolean,
+    default: false
+  },
+  pure: {
+    type: Boolean,
+    default: false
+  },
+  strategy: {
+    type: String,
+    default: 'fixed'
   },
   visible: {
     type: Boolean,
@@ -143,9 +145,5 @@ export const popperProps = {
   gpuAcceleration: {
     type: Boolean,
     default: true
-  },
-  zIndex: {
-    type: Number,
-    default: 0
   }
 }

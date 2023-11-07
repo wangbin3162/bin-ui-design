@@ -1,6 +1,6 @@
 # 组件库分组和完成状态
 
-剩余 <span style="color:red">6</span> 个组件未完成迁移
+剩余 <span style="color:red">2</span> 个组件未完成迁移
 
 ## 通用组件
 
@@ -27,14 +27,14 @@
 - ✅ 多选框 Checkbox
 - ✅ 开关 Switch
 - ✅ 选择器 Select
-- ❌ 级联选择 Cascader
-- ❌ 日期选择器 DatePicker
-- ❌ 时间选择器 TimePicker
+- ✅ 级联选择 Cascader
+- ✅ 日期选择器 DatePicker
+- ✅ 时间选择器 TimePicker
 - ✅ 颜色选择器 ColorPicker
 - ✅ 评分 Rate
 - ✅ 滑块 Slider
 - ✅ 上传 Upload
-- ❌ 表单 Form
+- ✅ 表单 Form
 
 ## 数据展示组件
 
