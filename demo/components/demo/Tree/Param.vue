@@ -97,6 +97,8 @@ function initData() {
     }
   ]
   nextTick(() => {
+    if (!treeRef.value) return
+
     // 获取树结构的拍平数据，查找当前需要选中的节点值
     const flatState = treeRef.value.getFlatState()
     const current = flatState.find(node => node.node.id === defaultId.value)

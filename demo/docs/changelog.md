@@ -7,6 +7,23 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.1.0" class="version">0.1.0</h2>
+  <div class="date">2023-11-08</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>新增alert、back-top、count-to、badge、loading、affix组件</p>
+  <p class="log-item"><i>🍀</i>新增progress、circle、loading-bar骨架屏组件</p>
+  <p class="log-item"><i>🍀</i>新增drawer、popover、notice、modal、message-box、日历、时间线等组件</p>
+  <p class="log-item"><i>🍀</i>新增轮播、面包屑、锚点、菜单等导航组件</p>
+  <p class="log-item"><i>🍀</i>新增所有表单相关组件</p>
+  <p class="log-item"><i>🍀</i>新增树结构、表格等显示数据组件</p>
+  <p class="log-item"><i>🍀</i>新增间距组件space</p>
+  <p class="log-item"><i>🍀</i>完成所有组件迁移，发布默认第一版本用于纠错</p>
+  <div class="type">Fix</div>
+  <p class="log-item"><i>🛠️</i>修改部分配置</p>
+  <div class="type">Docs</div>
+  <p class="log-item"><i>📖</i>完成文档</p>
+</div>
+<div class="change-log">
   <h2 id="0.0.4" class="version">0.0.4</h2>
   <div class="date">2023-10-08</div>
   <div class="type">Feats</div>

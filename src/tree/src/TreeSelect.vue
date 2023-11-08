@@ -182,11 +182,15 @@ export default defineComponent({
       nextTick(() => {
         // 获取全部拍平节点
         //@ts-ignore
-        const flatState = treeRef.value.getFlatState()
-        const matchItem = flatState.find(item => item.node[props.valueKey] === props.modelValue)
+        const flatState = treeRef.value?.getFlatState()
+        if (!flatState) return
+
+        const matchItem = flatState.find(
+          (item: any) => item.node[props.valueKey] === props.modelValue
+        )
         if (matchItem) {
           //@ts-ignore
-          treeRef.value.setSelected([matchItem.nodeKey])
+          treeRef.value?.setSelected([matchItem.nodeKey])
           // changeValue(matchItem.node)
         } else {
           if (showError) console.error(' There is no such data in the tree structure!')
@@ -217,9 +221,10 @@ export default defineComponent({
         nextTick(() => {
           const checkedKeys = []
           //@ts-ignore
-          const flatState = treeRef.value.getFlatState()
+          const flatState = treeRef.value?.getFlatState()
+          if (!flatState) return
           val.forEach(id => {
-            const matchItem = flatState.find(v => v.node[props.valueKey] === id)
+            const matchItem = flatState.find((v: any) => v.node[props.valueKey] === id)
             if (matchItem) {
               //@ts-ignore
               checkedKeys.push(matchItem.nodeKey)
