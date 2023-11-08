@@ -11,7 +11,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/cascader-panel.css'
 import {
   computed,
   defineComponent,

@@ -818,7 +818,9 @@ export default defineComponent({
 
     function dblclickCurrentRow(_index) {
       const _cloneData = cloneData.value
+      if (!_cloneData) return
       highlightCurrentRow(_index)
+      if (!_cloneData[_index]) return
       emit('row-dblclick', JSON.parse(JSON.stringify(_cloneData[_index])), _index)
     }
 

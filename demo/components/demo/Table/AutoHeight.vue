@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="padding: 2px">
     <b-table :columns="columns" :data="data" max-height="200" border>
       <template #ctrl="{ index }">
         <b-button type="danger" size="mini" plain @click="removeRow(index)">删除</b-button>

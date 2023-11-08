@@ -18,8 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/mask.css'
-
 defineOptions({
   name: 'BMask'
 })
