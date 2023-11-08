@@ -25,20 +25,28 @@
       </slot>
     </div>
     <p class="bin-empty-description">
-      <slot>{{ title }}</slot>
+      <slot>{{ text }}</slot>
     </p>
   </div>
 </template>
 
 <script setup lang="ts">
 import '../styles/index.css'
+import { ref } from 'vue'
 defineOptions({
   name: 'BEmpty'
 })
-defineProps({
+const props = defineProps({
   title: {
     type: String,
     default: '暂无数据'
   }
 })
+const text = ref(props.title)
+
+function setTitle(title = '') {
+  text.value = title
+}
+
+defineExpose({ setTitle })
 </script>

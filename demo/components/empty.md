@@ -14,6 +14,12 @@ title: 空状态 Empty
 
 <preview path="./demo/Empty/Basic.vue"></preview>
 
+## 指令方式
+
+可以使用v-no-data指令动态指定，并可以绑定显示文字
+
+<preview path="./demo/Empty/Directive.vue"></preview>
+
 ## Props
 
 | 参数  | 说明     | 类型   | 可选值 | 默认值   |
