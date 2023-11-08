@@ -18,6 +18,7 @@ module.exports = {
   },
   rules: {
     semi: 0,
-    'vue/multi-word-component-names': 0
+    'vue/multi-word-component-names': 0,
+    'vue/no-mutating-props': 0
   }
 }
