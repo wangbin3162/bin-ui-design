@@ -1,6 +1,6 @@
 .bin-collapse {
   --b-collapse-border: var(--bin-border-base-light);
-  --b-collapse-bg: var(--bin-color-bg-fa);
+  --b-collapse-bg: var(--bin-fill-color-1);
   --b-collapse-header-text-color: var(--bin-color-text-primary);
   --b-collapse-header-text-color-disabled: var(--bin-color-text-disabled);
   --b-collapse-content-text-color: var(--bin-color-text-default);
