@@ -75,7 +75,7 @@
 }
 
 .bin-collapse-wrap {
-  --b-collapse-bg: var(--bin-color-bg-fa);
+  --b-collapse-bg: var(--bin-white-color);
   --b-collapse-border: var(--bin-border-base-light);
   --b-collapse-shadow: 0 0 0 1px var(--bin-border-color-light);
   --b-collapse-header-text: var(--bin-color-text-primary);
