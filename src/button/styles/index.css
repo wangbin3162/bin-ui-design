@@ -101,7 +101,29 @@
   &.is-dashed {
     border-style: dashed;
   }
-  &.is-text {
+  &.is-disabled,
+  &.is-disabled:focus,
+  &.is-disabled:hover,
+  &[disabled],
+  &[disabled]:focus,
+  &[disabled]:hover {
+    cursor: not-allowed;
+    color: var(--b-btn-disabled-text-color);
+    border-color: var(--b-btn-disabled-border-color);
+    background-color: var(--b-btn-disabled-bg-color);
+  }
+  &.bin-button--default {
+    &.is-disabled,
+    &.is-disabled:focus,
+    &.is-disabled:hover,
+    &.is-loading {
+      cursor: not-allowed;
+      color: var(--b-btn-disabled-text-color);
+      border-color: var(--b-btn-disabled-border-color);
+      background-color: var(--b-btn-disabled-bg-color);
+    }
+  }
+  &.bin-button--text {
     --b-btn-text-color: var(--bin-color-primary);
     --b-btn-hover-text-color: var(--bin-color-primary-light1);
     --b-btn-active-text-color: var(--bin-color-primary-active);
@@ -143,18 +165,6 @@
       opacity: 0.65;
     }
   }
-  &.is-disabled,
-  &.is-disabled:focus,
-  &.is-disabled:hover,
-  &[disabled],
-  &[disabled]:focus,
-  &[disabled]:hover {
-    cursor: not-allowed;
-    color: var(--b-btn-disabled-text-color);
-    border-color: var(--b-btn-disabled-border-color);
-    background-color: var(--b-btn-disabled-bg-color);
-  }
-
   @each $val in primary, success, warning, info, danger {
     &.bin-button--$(val) {
       --b-btn-text-color: var(--bin-white-color);
@@ -207,23 +217,6 @@
       --b-btn-disabled-bg-color: var(--bin-color-$(val)-light5);
       --b-btn-disabled-border-color: var(--bin-color-$(val)-light3);
     }
-    &.bin-button--$(val).is-text {
-      --b-btn-text-color: var(--bin-color-$(val));
-      --b-btn-bg-color: transparent;
-      --b-btn-border-color: transparent;
-
-      --b-btn-hover-text-color: var(--bin-color-$(val)-light1);
-      --b-btn-hover-bg-color: transparent;
-      --b-btn-hover-border-color: transparent;
-
-      --b-btn-active-text-color: var(--bin-color-$(val)-active);
-      --b-btn-active-bg-color: transparent;
-      --b-btn-active-border-color: transparent;
-
-      --b-btn-disabled-text-color: var(--bin-color-$(val)-light3);
-      --b-btn-disabled-bg-color: transparent;
-      --b-btn-disabled-border-color: transparent;
-    }
     &.bin-button--$(val).is-transparent {
       --b-btn-text-color: var(--bin-color-$(val));
       --b-btn-bg-color: transparent;
@@ -240,6 +233,23 @@
       --b-btn-disabled-text-color: var(--bin-color-$(val)-light2);
       --b-btn-disabled-bg-color: var(--b-btn-bg-color);
       --b-btn-disabled-border-color: var(--bin-color-$(val)-light2);
+    }
+    &.bin-button--$(val).bin-button--text {
+      --b-btn-text-color: var(--bin-color-$(val));
+      --b-btn-bg-color: transparent;
+      --b-btn-border-color: transparent;
+
+      --b-btn-hover-text-color: var(--bin-color-$(val)-light1);
+      --b-btn-hover-bg-color: transparent;
+      --b-btn-hover-border-color: transparent;
+
+      --b-btn-active-text-color: var(--bin-color-$(val)-active);
+      --b-btn-active-bg-color: transparent;
+      --b-btn-active-border-color: transparent;
+
+      --b-btn-disabled-text-color: var(--bin-color-$(val)-light3);
+      --b-btn-disabled-bg-color: transparent;
+      --b-btn-disabled-border-color: transparent;
     }
   }
 }

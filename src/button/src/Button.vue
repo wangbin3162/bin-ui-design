@@ -6,13 +6,13 @@
     :class="{
       [`bin-button--${btnType}`]: btnType,
       [`bin-button--${size}`]: size,
+      [`bin-button--text`]: isNormalTextColor || type === 'text',
       'is-disabled': disabled,
       'is-loading': loading,
       'is-plain': plain,
       'is-round': round,
       'is-dashed': dashed,
       'is-circle': circle,
-      'is-text': isNormalTextColor || type === 'text',
       'is-transparent': transparent,
       'is-background': background
     }"
@@ -75,7 +75,7 @@ const btnType = computed(() => {
     // 判定textColor是否是默认类别
     return isNormalTextColor.value ? props.textColor : null
   }
-  return props.type
+  return props.type || 'default'
 })
 
 const textStyle = computed(() => (isNormalTextColor.value ? {} : { color: props.textColor }))

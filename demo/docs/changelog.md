@@ -7,6 +7,12 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.1.0" class="version">0.3.1</h2>
+  <div class="date">2023-12-05</div>
+  <div class="type">Style</div>
+  <p class="log-item"><i>🛠️</i>修改button组件的默认显示样式</p>
+</div>
+<div class="change-log">
   <h2 id="0.1.0" class="version">0.3.0</h2>
   <div class="date">2023-11-24</div>
   <div class="type">Fix</div>
