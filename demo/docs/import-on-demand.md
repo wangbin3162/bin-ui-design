@@ -70,7 +70,12 @@ import {
 
 const UI = create({
   components: [BButton],
-  directives: [ClickOutside]
+  directives: [
+    {
+      name: 'ClickOutside',
+      directive: ClickOutside
+    }
+  ]
 })
 
 const app = createApp()
