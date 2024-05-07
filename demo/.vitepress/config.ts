@@ -9,7 +9,7 @@ const baseUrl = process.env.NODE_ENV === 'production' ? '/bin-ui-design/' : '/'
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: baseUrl,
-  outDir: '../site',
+  outDir: '../docs',
   title: 'BIN-UI-DESIGN',
   description: 'A Compontnts Lib for Vue3',
   head: [
