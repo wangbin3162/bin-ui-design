@@ -10,7 +10,7 @@ Bin UI Design 是一个 Vue3 的组件库。
 
 要了解如何安装，参见 [安装](/docs/installation.html)
 
-它是基于 [bin-ui-next](https://wangbin3162.gitee.io/bin-ui-next/#/guide) 更新而来，可以平滑的过度和切换。
+它是基于 [bin-ui-next](https://wangbin3162.github.io/bin-ui-next/#/guide) 更新而来，可以平滑的过度和切换。
 
 ## 最新版本
 

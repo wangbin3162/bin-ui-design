@@ -1,6 +1,6 @@
 {
   "name": "bin-ui-design",
-  "version": "0.3.2",
+  "version": "0.4.0",
   "keywords": [
     "bin-ui-design",
     "bin-ui-next",
@@ -18,14 +18,14 @@
     "lib"
   ],
   "private": false,
-  "homepage": "https://wangbin3162.gitee.io/bin-ui-design/",
+  "homepage": "https://wangbin3162.github.io/bin-ui-design/",
   "type": "module",
   "main": "./lib/src/index.js",
   "module": "./es/src/index.mjs",
   "types": "./dist/@types/src/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://gitee.com/wangbin3162/bin-ui-design.git"
+    "url": "https://github.com/wangbin3162/bin-ui-design.git"
   },
   "scripts": {
     "dev": "vitepress dev demo",

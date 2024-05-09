@@ -2,9 +2,9 @@ import { formatSidebar } from './utils/utils'
 
 export default formatSidebar([
   {
-    text: '介绍',
+    text: '开始',
     items: [
-      { text: 'Bin UI Design', link: '/docs/introduction' },
+      { text: '介绍', link: '/docs/introduction' },
       { text: '变更日志', link: '/docs/changelog' }
     ]
   },

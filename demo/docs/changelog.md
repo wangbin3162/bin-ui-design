@@ -7,25 +7,33 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
-  <h2 id="0.1.0" class="version">0.3.2</h2>
+  <h2 id="0.4.0" class="version">0.4.0</h2>
+  <div class="date">2024-05-7</div>
+  <div class="type">Doc</div>
+  <p class="log-item"><i>📖</i>修改文档，增加生态下拉连接</p>
+  <div class="type">Fix</div>
+  <p class="log-item"><i>🛠️</i>修复layout组件自动引入icon组件的问题</p>
+</div>
+<div class="change-log">
+  <h2 id="0.3.2" class="version">0.3.2</h2>
   <div class="date">2024-03-11</div>
   <div class="type">Style</div>
   <p class="log-item"><i>🛠️</i>暂时移除黑色模式的样式</p>
 </div>
 <div class="change-log">
-  <h2 id="0.1.0" class="version">0.3.1</h2>
+  <h2 id="0.3.1" class="version">0.3.1</h2>
   <div class="date">2023-12-05</div>
   <div class="type">Style</div>
   <p class="log-item"><i>🛠️</i>修改button组件的默认显示样式</p>
 </div>
 <div class="change-log">
-  <h2 id="0.1.0" class="version">0.3.0</h2>
+  <h2 id="0.3.0" class="version">0.3.0</h2>
   <div class="date">2023-11-24</div>
   <div class="type">Fix</div>
   <p class="log-item"><i>🛠️</i>修复展开收起组件样式</p>
 </div>
 <div class="change-log">
-  <h2 id="0.1.0" class="version">0.2.0</h2>
+  <h2 id="0.2.0" class="version">0.2.0</h2>
   <div class="date">2023-11-08</div>
   <div class="type">Fix</div>
   <p class="log-item"><i>🛠️</i>修改部分样式属性设置</p>
@@ -79,7 +87,7 @@ title: 变更日志
   <p class="log-item"><i>🍀</i>完成组件文档编写，完成button、icon、tooltip、collapse组件以及文档</p>
 </div>
 <div class="change-log">
-  <h2 id="0.0.3" class="version">0.0.2</h2>
+  <h2 id="0.0.2" class="version">0.0.2</h2>
   <div class="date">2023-8-22</div>
   <div class="type">Feats</div>
   <p class="log-item"><i>📖</i>完成组建文档初始化</p>

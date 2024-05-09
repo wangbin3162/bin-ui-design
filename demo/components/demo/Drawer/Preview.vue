@@ -38,9 +38,9 @@
           <span>手机号: +86 1762516xxxx</span>
         </p>
         <p class="mb-10">
-          gitee:
-          <a href="https://gitee.com/wangbin3162/bin-ui-design" target="_blank">
-            https://gitee.com/wangbin3162/bin-ui-design-design
+          github:
+          <a href="https://github.com/wangbin3162/bin-ui-design" target="_blank">
+            https://github.com/wangbin3162/bin-ui-design-design
           </a>
         </p>
       </div>

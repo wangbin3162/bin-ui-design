@@ -17,9 +17,6 @@ hero:
     - theme: alt
       text: View on GitHub
       link: 'https://github.com/wangbin3162/bin-ui-design'
-    - theme: alt
-      text: View on Gitee
-      link: 'https://gitee.com/wangbin3162/bin-ui-design'
 
 features:
   - icon: ⚡️

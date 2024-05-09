@@ -80,6 +80,17 @@ p {
     }
     .VPNavBarMenuLink {
       font-size: 15px;
+      &.active {
+        position: relative;
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          border-bottom: 2px solid var(--bin-color-primary);
+        }
+      }
     }
   }
 
@@ -87,6 +98,29 @@ p {
     > svg {
       fill: var(--vp-c-text-1);
     }
+  }
+
+  .VPMenuGroup {
+    border-top: 0;
+    padding: 0 !important;
+    margin: 4px 0 4px;
+    .title {
+      font-size: 12px;
+      padding: 0 !important;
+      line-height: 28px;
+      font-size: 12px;
+      font-weight: 600;
+      width: auto !important;
+      color: rgba(60, 60, 60, 0.33);
+    }
+    + .VPMenuLink {
+      border-top: 0;
+      margin: 0;
+      padding: 0;
+    }
+  }
+  .VPMenuLink {
+    line-height: 30px;
   }
 
   @media (min-width: 1440px) {
