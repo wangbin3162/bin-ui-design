@@ -5,6 +5,7 @@ import sidebarDocs from './sidebar-docs'
 import sidebarComps from './sidebar-comps'
 
 const baseUrl = process.env.NODE_ENV === 'production' ? '/bin-ui-design/' : '/'
+const linkBase = 'https://wangbin3162.github.io'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -35,21 +36,25 @@ export default defineConfig({
         text: '生态系统',
         items: [
           { text: '资源' },
-          { text: 'bin-admin-pro', link: '/bin-admin-pro/', target: '_blank' },
-          { text: 'bin-datav', link: '/bin-datav/', target: '_blank' },
-          { text: 'bin-datav-schema', link: '/bin-datav-schema/', target: '_blank' },
+          { text: 'bin-admin-pro', link: `${linkBase}/bin-admin-pro/`, target: '_blank' },
+          { text: 'bin-datav', link: `${linkBase}/bin-datav`, target: '_blank' },
+          { text: 'bin-datav-schema', link: `${linkBase}/bin-datav-schema/`, target: '_blank' },
           { text: '官方库v3' },
-          { text: 'bin-ui-next', link: '/bin-ui-next/', target: '_blank' },
-          { text: 'bin-editor-next', link: '/bin-editor-next/', target: '_blank' },
-          { text: 'bin-charts-next', link: '/bin-charts-next/', target: '_blank' },
+          { text: 'bin-ui-next', link: `${linkBase}/bin-ui-next/`, target: '_blank' },
+          { text: 'bin-editor-next', link: `${linkBase}/bin-editor-next/`, target: '_blank' },
+          { text: 'bin-charts-next', link: `${linkBase}/bin-charts-next/`, target: '_blank' },
           { text: '官方库v2' },
-          { text: 'bin-ui', link: '/bin-ui/', target: '_blank' },
-          { text: 'bin-ace-editor', link: '/bin-ace-editor/', target: '_blank' },
-          { text: 'bin-charts', link: '/bin-charts/', target: '_blank' },
-          { text: 'bin-tree-org', link: '/bin-tree-org/', target: '_blank' },
+          { text: 'bin-ui', link: `${linkBase}/bin-ui/`, target: '_blank' },
+          { text: 'bin-ace-editor', link: `${linkBase}/bin-ace-editor/`, target: '_blank' },
+          { text: 'bin-charts', link: `${linkBase}/bin-charts/`, target: '_blank' },
+          { text: 'bin-tree-org', link: `${linkBase}/bin-tree-org/`, target: '_blank' },
           { text: '动画库' },
-          { text: 'bin-animation', link: '/bin-animation/', target: '_blank' },
-          { text: 'bin-keyframe-animation', link: '/bin-keyframe-animation/', target: '_blank' }
+          { text: 'bin-animation', link: `${linkBase}/bin-animation/`, target: '_blank' },
+          {
+            text: 'bin-keyframe-animation',
+            link: `${linkBase}/bin-keyframe-animation/`,
+            target: '_blank'
+          }
         ]
       }
     ],
