@@ -419,7 +419,7 @@
     }
 
     &.disabled {
-      a {
+      span {
         opacity: 1;
         cursor: not-allowed;
         background-color: var(--bin-color-bg-disabled);
@@ -503,7 +503,7 @@
     }
 
     &.disabled {
-      a {
+      div {
         opacity: 1;
         cursor: not-allowed;
         background-color: var(--bin-color-bg-disabled);
