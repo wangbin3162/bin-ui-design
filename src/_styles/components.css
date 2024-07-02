@@ -55,3 +55,6 @@
 @import '../form/styles/index.css';
 @import '../tree/styles/index.css';
 @import '../table/styles/index.css';
+@import '../image/styles/index.css';
+@import '../image-preview/styles/index.css';
+@import '../trend/styles/index.css';

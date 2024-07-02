@@ -7,6 +7,15 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.4.0" class="version">0.5.0</h2>
+  <div class="date">2024-07-02</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>新增image、image-preview 图片预览组件</p>
+  <p class="log-item"><i>🍀</i>新增trend标记组件</p>
+  <div class="type">Doc</div>
+  <p class="log-item"><i>📖</i>修改文档，更新文档</p>
+</div>
+<div class="change-log">
   <h2 id="0.4.0" class="version">0.4.0</h2>
   <div class="date">2024-05-7</div>
   <div class="type">Doc</div>

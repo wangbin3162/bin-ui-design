@@ -11,7 +11,8 @@ export default formatSidebar(
         { text: '折叠面板', link: '/components/collapse', icon: 'interation', alias: 'Collapse' },
         { text: '分割线', link: '/components/divider', icon: 'line', alias: 'Divider' },
         { text: '下拉菜单', link: '/components/dropdown', icon: 'caret-down', alias: 'Dropdown' },
-        { text: '标签', link: '/components/tag', icon: 'tags', alias: 'Tag' }
+        { text: '标签', link: '/components/tag', icon: 'tags', alias: 'Tag' },
+        { text: '图片', link: '/components/image', icon: 'image', alias: 'Image' }
       ]
     },
     {
@@ -67,7 +68,8 @@ export default formatSidebar(
         { text: '时间线', link: '/components/timeline', icon: 'arrowdown', alias: 'Timeline' },
         { text: '日历', link: '/components/calendar', icon: 'calendar-fill', alias: 'Calendar' },
         { text: '轮播', link: '/components/carousel', icon: 'appstore-fill', alias: 'Carousel' },
-        { text: '数字动画', link: '/components/count-to', icon: 'orderedlist', alias: 'CountTo' }
+        { text: '数字动画', link: '/components/count-to', icon: 'orderedlist', alias: 'CountTo' },
+        { text: '趋势标记', link: '/components/trend', icon: 'caret-up', alias: 'Trend' }
       ]
     },
     {

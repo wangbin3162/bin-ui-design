@@ -27,7 +27,7 @@ i 标签可以直接设置样式类名为 `b-iconfont b-icon-xxx` 来使用即�
 
 <script lang="ts" setup>
 import builtInIcons from '../.vitepress/utils/iconfont.json'
-import { Utils } from 'bin-ui-design'
+import { Utils, Message } from 'bin-ui-design'
 
 const iconList = builtInIcons.glyphs.map(v => v.font_class)
 const  baseIcons = [
@@ -39,12 +39,15 @@ const copy = name =>  {
   const str = name
   Utils.util.copy(str)
   console.log(str)
+   Message.info(`已复制icon图标名称 [ ${str} ]`)
 }
 
 const copyComp = name => {
   const str = `<b-icon name="${name}"></b-icon>`
   Utils.util.copy(str)
   console.log(str)
+  
+   Message.info(`已复制icon组件 [ ${str} ]`)
 }
 
 </script>
