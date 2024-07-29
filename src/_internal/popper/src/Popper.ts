@@ -1,6 +1,5 @@
 import { renderPopper, renderTrigger, renderArrow } from './renderers'
 import { ClickOutside } from '../../../_directives'
-import '../styles/index.css'
 
 import {
   Fragment,

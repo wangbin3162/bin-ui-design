@@ -74,7 +74,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { colorProps } from './types'
 import {
   computed,

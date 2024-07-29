@@ -45,7 +45,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import type { ButtonProps } from './types'
 import { ref, computed } from 'vue'
 import clickAnimation from '../../_directives/click-animation'

@@ -5,7 +5,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { computed, provide, nextTick, toRefs, watch, defineComponent } from 'vue'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../_utils/constants'
 import { useCheckboxGroup } from './useCheckbox'

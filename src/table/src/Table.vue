@@ -130,7 +130,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import Sortable from 'sortablejs'
 import TableHead from './table-head.vue'
 import TableBody from './table-body.vue'
@@ -217,7 +216,9 @@ export default defineComponent({
         `${prefixCls}-wrapper`,
         {
           [`${prefixCls}-hide`]: !read.value,
-          [`${prefixCls}-wrapper-with-border`]: props.border
+          [`${prefixCls}-wrapper-with-border`]: props.border,
+          [`is-edit-table`]: props.editTable,
+          [`is-edit-table-detail`]: props.editTable && props.editTableDetail
         }
       ]
     })

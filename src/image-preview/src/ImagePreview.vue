@@ -230,7 +230,6 @@
 
 <script setup lang="ts">
 import { transferIncrease } from '../../_utils/config'
-import '../styles/index.css'
 import { imagePreviewProps } from './types'
 import { computed, ref, onMounted, onBeforeUnmount, watch } from 'vue'
 import Loading from '../../loading/src/Loading.vue'

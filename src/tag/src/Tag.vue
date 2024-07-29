@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, ref, watch } from 'vue'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../_utils/constants'
 import type { TagProps } from './types'

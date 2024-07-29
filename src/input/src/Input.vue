@@ -106,7 +106,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { inputProps } from './types'
 import calcTextareaHeight from './calcTextareaHeight'
 import { computed, ref, watch, onMounted, reactive, toRefs, nextTick, defineComponent } from 'vue'

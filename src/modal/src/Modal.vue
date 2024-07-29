@@ -9,7 +9,7 @@
       <b-mask
         v-show="visible"
         :mask="mask"
-        :overlay-class="maskClass"
+        :mask-class="screenCenter ? 'screen-center ' + maskClass : maskClass"
         :z-index="modalIndex"
         @click="onModalClick"
       >
@@ -21,7 +21,7 @@
               'bin-modal',
               { 'bin-modal-wrap': draggable },
               { 'is-fullscreen': fullscreen },
-              customClass
+              screenCenter ? 'screen-center ' + customClass : customClass
             ]"
             aria-modal="true"
             role="dialog"
@@ -56,7 +56,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import BMask from './Mask.vue'
 import { defineComponent, nextTick, onMounted, ref, toRefs, watch } from 'vue'
 import {
@@ -210,6 +209,14 @@ export default defineComponent({
     transitionName: {
       type: String,
       default: 'dialog-fade'
+    },
+    screenCenter: {
+      type: Boolean,
+      default: false
+    },
+    maxHeight: {
+      type: String,
+      default: 'calc(100vh - 80px)'
     }
   },
   emits: [OPEN_EVENT, OPENED_EVENT, CLOSE_EVENT, CLOSED_EVENT, UPDATE_MODEL_EVENT],

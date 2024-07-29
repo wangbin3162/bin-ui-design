@@ -50,7 +50,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { inputNumberProps } from './types'
 import { reactive, watch, toRefs, nextTick, computed, defineComponent } from 'vue'
 import { useForm } from '../../_hooks'

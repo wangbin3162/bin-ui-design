@@ -32,7 +32,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { uploadProps } from './types'
 import UploadList from './UploadList.vue'
 import { BButton } from '../../button'

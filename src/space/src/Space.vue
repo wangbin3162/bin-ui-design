@@ -1,5 +1,4 @@
 <script lang="ts">
-import '../styles/index.css'
 import { renderSlot, createVNode, createTextVNode, isVNode, defineComponent } from 'vue'
 import { PatchFlags, isFragment, isValidElementNode } from '../../_utils/vnode'
 import Item from './item.vue'

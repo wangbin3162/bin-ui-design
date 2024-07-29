@@ -56,7 +56,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { reactive, computed, ref, provide, onMounted, onBeforeUnmount, watch, nextTick } from 'vue'
 import { addResizeListener, removeResizeListener } from '../../_utils/resize-event'
 import { throttle } from '../../_utils/util'

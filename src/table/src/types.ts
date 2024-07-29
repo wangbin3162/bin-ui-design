@@ -83,5 +83,13 @@ export const tableProps = {
   loadingText: {
     type: String,
     default: '正在加载'
+  },
+  editTable: {
+    type: Boolean,
+    default: false
+  },
+  editTableDetail: {
+    type: Boolean,
+    default: false
   }
 }

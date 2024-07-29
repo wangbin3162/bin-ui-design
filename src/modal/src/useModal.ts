@@ -29,6 +29,9 @@ export default function (props, emit, targetRef) {
       if (props.width) {
         style.width = props.width
       }
+      if (props.screenCenter) {
+        style.maxHeight = props.maxHeight
+      }
     }
     return style
   })

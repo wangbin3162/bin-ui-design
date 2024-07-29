@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { provide, getCurrentInstance, ref, computed, watch, onMounted } from 'vue'
 import type { ComponentInternalInstance } from 'vue'
 import { on, addClass, removeClass } from '../../_utils/dom'

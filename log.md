@@ -30,7 +30,6 @@
 1、组件编写统一放置与根目录src 文件夹，单独开一个文件夹用于存放组件目录如button，其内部需要包括几个文件夹，见上图。
 2、组件明明一般为大写开头的编写，同时，内部使用defineOptions({name: 'BButton'}) 包裹声明组件名称，组件名称前缀统一为B。
 3、组件样式与styles/index.css 中编写，其中dark.css为深色模式的样式，需要在index.css中引入
-4、组件内部默认导入样式 `import '../styles/index.css'` 用于实现按需加载时样式的自动引入
 5、组件编写完毕后，需要index.ts进行导出，并在src/components.ts 中进行导入使用。
 
 ## 2.样式编写

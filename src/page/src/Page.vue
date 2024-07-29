@@ -137,7 +137,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { pageProps } from './types'
 import { computed, defineComponent, reactive, toRefs } from 'vue'
 import Options from './Options.vue'

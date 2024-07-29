@@ -91,6 +91,12 @@ columns内容可以设置children来分组渲染表头,合并表头和行列时�
 
 <preview path="./demo/Table/Edit.vue"></preview>
 
+## 编辑表格
+
+编辑表格，只需要开启编辑表格样式，即可开启一中隐藏输入边框的样式，方便进行表格编辑
+
+<preview path="./demo/Table/Edit2.vue"></preview>
+
 ## 拖拽调整顺序
 
 可以设置draggable开启拖拽排序

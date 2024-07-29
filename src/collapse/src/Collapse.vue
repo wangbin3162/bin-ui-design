@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { ref, provide, watch } from 'vue'
 import type { NameType, CollapseProps, CollapseEmits } from './types'
 import { collapseContextKey } from './types'

@@ -55,7 +55,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { checkboxProps } from './types'
 import { UPDATE_MODEL_EVENT } from '../../_utils/constants'
 import { useCheckbox } from './useCheckbox'

@@ -31,7 +31,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { treeProps } from './types'
 import TreeNode from './node.vue'
 import { BEmpty } from '../../_internal/empty'

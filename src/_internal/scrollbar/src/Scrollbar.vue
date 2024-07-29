@@ -36,7 +36,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { toObject } from './utils'
 import { addResizeListener, removeResizeListener } from '../../../_utils/resize-event'
 import { on, off } from '../../../_utils/dom'

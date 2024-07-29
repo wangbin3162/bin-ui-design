@@ -6,7 +6,6 @@ import Picker from './common/picker.vue'
 import TimePickPanel from './time-picker-com/panel-time-pick.vue'
 import TimeRangePanel from './time-picker-com/panel-time-range.vue'
 import { defaultProps } from './common/props'
-import '../styles/index.css'
 
 dayjs.extend(customParseFormat)
 

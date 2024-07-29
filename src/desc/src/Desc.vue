@@ -22,7 +22,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, provide } from 'vue'
 import BDescRow from './DescRow.vue'
 import type { DescProps } from './types'

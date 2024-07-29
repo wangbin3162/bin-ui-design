@@ -38,7 +38,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { ref, computed, watch, defineComponent } from 'vue'
 import { hasClass } from '../../_utils/dom'
 import { isObject, isArray } from '../../_utils/util-helper'

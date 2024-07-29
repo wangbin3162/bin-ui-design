@@ -23,7 +23,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed } from 'vue'
 import type { SkeletonProps } from './types'
 import useThrottleRender from './use-throttle'

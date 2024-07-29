@@ -87,6 +87,9 @@ importers:
       autoprefixer:
         specifier: ^10.4.18
         version: 10.4.19(postcss@8.4.38)
+      bin-editor-next:
+        specifier: ^1.1.0
+        version: 1.1.0
       esbuild:
         specifier: ^0.19.12
         version: 0.19.12
@@ -1374,6 +1377,9 @@ packages:
     resolution: {integrity: sha512-5T6P4xPgpp0YDFvSWwEZ4NoE3aM4QBQXDzmVbraCkFj8zHM+mba8SyqB5DbZWyR7mYHo6Y7BdQo3MoA4m0TeQg==}
     engines: {node: '>=0.10.0'}
 
+  bin-editor-next@1.1.0:
+    resolution: {integrity: sha512-5YX9319dS6k8XYA+sqTI959N1jAX8vqaZ5AW5tqXkgheuAQgOLber6yHOErfqpf3SRie3lhVvMHl12C/qGJw2g==}
+
   binary-extensions@1.13.1:
     resolution: {integrity: sha512-Un7MIEDdUC5gNpcGDV97op1Ywk748MpHcFTHoYs6qnj1Z3j7I53VG3nwZhKzoBZmbdRNnb6WRdFlwl7tSDuZGw==}
     engines: {node: '>=0.10.0'}
@@ -1396,6 +1402,9 @@ packages:
 
   brace-expansion@2.0.1:
     resolution: {integrity: sha512-XnAIvQ8eM+kC6aULx6wuQiwVsnzsi9d3WxzV3FpWTGA19F621kwdbsAcFKXgKUHZWsy+mY6iL1sHTxWEFCytDA==}
+
+  brace@0.11.1:
+    resolution: {integrity: sha512-Fc8Ne62jJlKHiG/ajlonC4Sd66Pq68fFwK4ihJGNZpGqboc324SQk+lRvMzpPRuJOmfrJefdG8/7JdWX4bzJ2Q==}
 
   braces@2.3.2:
     resolution: {integrity: sha512-aNdbnj9P8PjdXU4ybaWLK2IF3jc/EoDYbC7AazW6to3TRsfXxscC9UXOB5iDiEQrkyIbWp2SLQda4+QAa7nc3w==}
@@ -5528,6 +5537,10 @@ snapshots:
       mixin-deep: 1.3.2
       pascalcase: 0.1.1
 
+  bin-editor-next@1.1.0:
+    dependencies:
+      brace: 0.11.1
+
   binary-extensions@1.13.1: {}
 
   binary-extensions@2.3.0: {}
@@ -5549,6 +5562,8 @@ snapshots:
   brace-expansion@2.0.1:
     dependencies:
       balanced-match: 1.0.2
+
+  brace@0.11.1: {}
 
   braces@2.3.2:
     dependencies:

@@ -10,7 +10,7 @@
     line-height: 32px;
     text-align: center;
     padding: 0 10px;
-    border-bottom: var(--bin-border-table);
+    border-bottom: var(--bin-table-border);
 
     &-label {
       font-weight: 500;
@@ -59,7 +59,7 @@
 
   &__time-header {
     position: relative;
-    border-bottom: var(--bin-border-table);
+    border-bottom: var(--bin-table-border);
     padding: 5px;
     display: table;
     width: 100%;
@@ -93,7 +93,7 @@
     top: 0;
     bottom: 0;
     width: 110px;
-    border-right: var(--bin-border-table);
+    border-right: var(--bin-table-border);
     box-sizing: border-box;
     padding-top: 6px;
     background-color: #fff;
@@ -168,7 +168,7 @@
     line-height: 32px;
     text-align: center;
     padding: 0 10px;
-    border-bottom: var(--bin-border-table);
+    border-bottom: var(--bin-table-border);
 
     div {
       font-weight: 500;
@@ -185,7 +185,7 @@
     margin: 0;
 
     &.is-left {
-      border-right: var(--bin-border-table);
+      border-right: var(--bin-table-border);
     }
   }
 
@@ -195,7 +195,7 @@
 
   &__time-header {
     position: relative;
-    border-bottom: var(--bin-border-table);
+    border-bottom: var(--bin-table-border);
     padding: 5px;
     display: table;
     width: 100%;

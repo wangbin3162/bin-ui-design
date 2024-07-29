@@ -5,7 +5,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, provide } from 'vue'
 import type { RowProps } from './types'
 const prefixCls = 'bin-row'

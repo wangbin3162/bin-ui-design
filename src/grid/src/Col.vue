@@ -4,7 +4,6 @@
   </div>
 </template>
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, inject } from 'vue'
 import type { RowProps, ColProps } from './types'
 

@@ -51,7 +51,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { ref, computed } from 'vue'
 import type { Ref } from 'vue'
 import { BButton } from '../../button'

@@ -10,7 +10,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import type { LoadingBarProps } from './types'
 import { ref, computed } from 'vue'
 

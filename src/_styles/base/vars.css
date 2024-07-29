@@ -51,8 +51,6 @@
   --bin-border-color-light-2: rgba(255, 255, 255, 0.24);
   --bin-border-base: 1px solid var(--bin-border-color-base);
   --bin-border-base-light: 1px solid var(--bin-border-color-light);
-  --bin-border-table-color: #efeff5;
-  --bin-border-table: 1px solid var(--bin-border-table-color);
   --bin-border-popper-color: #ebeef5;
   /* radius */
   --bin-border-radius-none: 0;
@@ -100,8 +98,9 @@
   /* table */
   --bin-table-header-bg: var(--bin-fill-color-2);
   --bin-table-header-text: var(--bin-text-color-1);
-  --bin-border-table-color: var(--bin-fill-color-3);
-  --bin-border-table: 1px solid var(--bin-border-table-color);
+  --bin-table-border-color: var(--bin-fill-color-3);
+  --bin-table-border: 1px solid var(--bin-table-border-color);
+  --bin-edit-table-border-radius: 8px;
   /* popper */
   --bin-popper-padding: 4px;
   --bin-popper-tooltip-padding: 8px 10px;

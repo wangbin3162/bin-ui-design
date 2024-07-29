@@ -32,7 +32,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { switchProps } from './types'
 import { BPopover } from '../../popover'
 import { BButton } from '../../button'

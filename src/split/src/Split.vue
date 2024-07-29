@@ -29,7 +29,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, reactive } from 'vue'
 import Resizer from './Resizer.vue'
 import Pane from './Pane.vue'

@@ -7,6 +7,16 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.4.0" class="version">0.5.1</h2>
+  <div class="date">2024-07-29</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>扩展弹窗组件，新增居中对齐模式</p>
+  <p class="log-item"><i>🍀</i>新增表格编辑属性</p>
+  <p class="log-item"><i>🍀</i>移除内置样式引用模式</p>
+  <div class="type">Doc</div>
+  <p class="log-item"><i>📖</i>修改文档，更新文档</p>
+</div>
+<div class="change-log">
   <h2 id="0.4.0" class="version">0.5.0</h2>
   <div class="date">2024-07-02</div>
   <div class="type">Feats</div>

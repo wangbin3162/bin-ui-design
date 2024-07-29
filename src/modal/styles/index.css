@@ -29,7 +29,7 @@
       right: 0;
       bottom: 0;
       height: 1px;
-      background-color: var(--bin-border-table-color);
+      background-color: var(--bin-table-border-color);
     }
   }
 
@@ -102,6 +102,20 @@
       flex: auto;
       flex-shrink: 1;
       overflow: auto;
+    }
+  }
+
+  &.screen-center {
+    margin-top: 0 !important;
+    display: flex;
+    flex-direction: column;
+    .bin-modal-body {
+      flex: 1 !important;
+      overflow-y: auto;
+    }
+    .bin-modal-header,
+    .bin-modal-footer {
+      flex-shrink: 0;
     }
   }
 }

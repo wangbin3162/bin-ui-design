@@ -44,7 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { imageProps } from './types'
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import ImagePreview from '../../image-preview/src/ImagePreview.vue'

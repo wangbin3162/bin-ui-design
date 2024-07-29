@@ -27,7 +27,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { EVENT_CODE } from '../../_utils/aria'
 import { on, off } from '../../_utils/dom'

@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import type { IconProps } from './types'
 import { computed, CSSProperties } from 'vue'
 import useTheme from '../../_hooks/use-theme'

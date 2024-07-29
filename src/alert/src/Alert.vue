@@ -18,7 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, onMounted, ref } from 'vue'
 import type { AlertProps } from './types'
 

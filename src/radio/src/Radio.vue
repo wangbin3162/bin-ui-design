@@ -85,7 +85,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, nextTick, ref } from 'vue'
 import { UPDATE_MODEL_EVENT, CHANGE_EVENT } from '../../_utils/constants'
 import { useRadio, useRadioAttrs } from './useRadio'

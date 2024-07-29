@@ -43,12 +43,21 @@ import { BButton } from 'bin-ui-design'
 </script>
 ```
 
-注意：虽然组件样式已经默认进行了按需载入，但对于全局样式和字体样式，仍然需要进行全局引入。
+注意：由于样式的引入依赖基础样式，因此样式已经从组件中进行移除，在使用按需引入时，可以手动引入对应组件样式，也可以全量引入样式。.对于全局样式和字体样式，仍然需要进行全局引入。
 
 ```js
 // main.ts
 import 'bin-ui-design/dist/styles/base.css'
 import 'bin-ui-design/dist/styles/icon.css'
+import 'bin-ui-design/dist/common/flex.css'
+import 'bin-ui-design/components/_internal/empty/styles/index.css'
+import 'bin-ui-design/components/button/styles/index.css'
+import 'bin-ui-design/components/button-group/styles/index.css'
+// or
+import 'bin-ui-design/dist/styles/base.css'
+import 'bin-ui-design/dist/styles/icon.css'
+import 'bin-ui-design/dist/styles/common.css'
+import 'bin-ui-design/dist/styles/components.css'
 ```
 
 ## 使用 unplugin-vue-components 进行自动导入（推荐）

@@ -28,7 +28,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, ref, onMounted, onBeforeUnmount } from 'vue'
 import type { MessageProps } from './types'
 import { EVENT_CODE } from '../../_utils/aria'

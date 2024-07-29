@@ -15,7 +15,6 @@ import { Theme } from '../../_internal/popper/src/types'
 import { ClickOutside } from '../../_directives'
 import { PatchFlags, renderIf } from '../../_utils/vnode'
 import usePopover, { HIDE_EVENT, SHOW_EVENT } from './usePopover'
-import '../styles/index.css'
 
 const _hoist = { key: 0, class: 'bin-popover__title', role: 'title' }
 const _content = { key: 1, class: 'bin-popover__body', role: 'body' }

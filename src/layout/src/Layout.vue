@@ -18,7 +18,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, ref } from 'vue'
 import { BIcon } from '../../icon'
 import type { LayoutProps } from './types'

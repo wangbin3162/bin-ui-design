@@ -7,7 +7,6 @@
 <script setup lang="ts">
 import { onMounted, provide, ref } from 'vue'
 import type { BreadcrumbProps, BreadcrumbInject } from './types'
-import '../styles/index.css'
 
 defineOptions({
   name: 'BBreadcrumb'

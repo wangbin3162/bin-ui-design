@@ -3,7 +3,7 @@ import autoprefixer from 'gulp-autoprefixer'
 import postcss from 'gulp-postcss'
 import cleanCSS from 'gulp-clean-css'
 
-import { compRoot, styleRoot, output, pkgPath } from './util-path'
+import { compRoot, styleRoot, output } from './util-path'
 
 // 复制字体包
 const copyFonts = () => src(`${styleRoot}/fonts/**`).pipe(dest(`${output}/fonts`))
@@ -32,7 +32,6 @@ const buildComponents = () =>
     .pipe(postcss())
     .pipe(cleanCSS())
     .pipe(autoprefixer())
-    .pipe(dest(`${pkgPath}/lib/src`))
-    .pipe(dest(`${pkgPath}/es/src`))
+    .pipe(dest(`${output}/components`))
 
 export default series(buildFull, buildCommon, buildComponents, copyFonts)

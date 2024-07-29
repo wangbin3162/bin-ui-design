@@ -44,7 +44,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import ScrollPane from './ScrollPane.vue'
 import { nextTick, onBeforeUnmount, onMounted, ref, reactive, watch } from 'vue'
 import { throttle, deepCopy } from '../../_utils/util'

@@ -77,7 +77,6 @@
   </div>
 </template>
 <script lang="ts">
-import '../styles/index.css'
 import { sliderProps } from './types'
 import {
   computed,

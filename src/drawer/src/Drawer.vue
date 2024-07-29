@@ -59,8 +59,7 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
-import { ref, watch, onMounted, onBeforeUnmount, computed, HTMLAttributes } from 'vue'
+import { ref, watch, onMounted, onBeforeUnmount, computed } from 'vue'
 import { on, off } from '../../_utils/dom'
 import { transferIncrease } from '../../_utils/config'
 import { useLockScreen } from '../../_hooks'

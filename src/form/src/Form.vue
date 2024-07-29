@@ -11,7 +11,6 @@
 </template>
 
 <script lang="ts">
-import '../styles/index.css'
 import { provide, watch, ref, computed, reactive, toRefs } from 'vue'
 import mitt from 'mitt'
 import { FormKey, FormEvents } from './token'

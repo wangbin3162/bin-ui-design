@@ -14,7 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import type { AnchorLinkProps } from './types'
 import { inject, computed } from 'vue'
 

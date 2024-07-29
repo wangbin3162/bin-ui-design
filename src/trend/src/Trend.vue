@@ -6,7 +6,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import type { TrendProps } from './types'
 import { computed } from 'vue'
 import Icon from '../../icon/src/Icon.vue'

@@ -37,7 +37,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import BIcon from '../../icon/src/Icon.vue'
 import type { ProgressProps } from './types'
 import { computed } from 'vue'

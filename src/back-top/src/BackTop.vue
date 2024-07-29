@@ -20,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
 import { throttle } from '../../_utils/util'
 import { scrollTop, on, off } from '../../_utils/dom'

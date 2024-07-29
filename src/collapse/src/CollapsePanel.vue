@@ -24,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { inject, computed } from 'vue'
 import { BCollapseTransition } from '../../_internal/collapse-transition'
 import { BIcon } from '../../icon'

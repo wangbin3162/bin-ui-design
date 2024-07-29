@@ -7,7 +7,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { computed, onBeforeUnmount, onMounted, reactive, ref, watch, nextTick } from 'vue'
 import { off, on } from '../../_utils/dom'
 import { addResizeListener, removeResizeListener } from '../../_utils/resize-event'

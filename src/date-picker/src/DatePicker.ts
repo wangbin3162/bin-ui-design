@@ -1,4 +1,3 @@
-import '../styles/index.css'
 import { ref } from 'vue'
 import { DEFAULT_FORMATS_DATE, DEFAULT_FORMATS_DATEPICKER } from '../../time-picker/src'
 import { CommonPicker, defaultProps } from '../../time-picker/src'

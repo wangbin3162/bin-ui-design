@@ -21,7 +21,6 @@
 </template>
 
 <script setup lang="ts">
-import '../styles/index.css'
 import { provide, ref, computed, reactive, onMounted, onBeforeUnmount, nextTick } from 'vue'
 import { off, on, scrollTop } from '../../_utils/dom'
 import { BIcon } from '../../icon'

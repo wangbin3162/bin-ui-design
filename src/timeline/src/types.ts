@@ -4,5 +4,5 @@ export interface BTimelineProps {
 
 export interface BTimelineItemProps {
   color?: string
-  dotTop?: boolean
+  dotTop?: string
 }
