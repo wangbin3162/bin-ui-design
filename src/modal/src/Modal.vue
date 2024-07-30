@@ -9,7 +9,7 @@
       <b-mask
         v-show="visible"
         :mask="mask"
-        :mask-class="screenCenter ? 'screen-center ' + maskClass : maskClass"
+        :mask-class="[{ 'screen-center': screenCenter }, maskClass]"
         :z-index="modalIndex"
         @click="onModalClick"
       >
@@ -21,7 +21,8 @@
               'bin-modal',
               { 'bin-modal-wrap': draggable },
               { 'is-fullscreen': fullscreen },
-              screenCenter ? 'screen-center ' + customClass : customClass
+              { 'screen-center': screenCenter },
+              customClass
             ]"
             aria-modal="true"
             role="dialog"
@@ -194,7 +195,7 @@ export default defineComponent({
       default: false
     },
     maskClass: {
-      type: String,
+      type: [String, Array, Object],
       default: ''
     },
     width: {

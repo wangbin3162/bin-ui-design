@@ -29,7 +29,7 @@ const props = defineProps({
     default: true
   },
   maskClass: {
-    type: String,
+    type: [String, Array, Object],
     default: ''
   },
   zIndex: {

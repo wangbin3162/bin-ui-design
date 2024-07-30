@@ -1,6 +1,7 @@
 @import '../_internal/empty/styles/index.css';
 @import '../_internal/popper/styles/index.css';
 @import '../_internal/scrollbar/styles/index.css';
+@import '../_internal/contextmenu/styles/index.css';
 
 @import '../icon/styles/index.css';
 @import '../button/styles/index.css';

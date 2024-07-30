@@ -1,0 +1,49 @@
+.bin-contextmenu {
+  margin: 0;
+  background: #fff;
+  z-index: 9999;
+  position: fixed;
+  left: 0;
+  top: 0;
+  font-size: var(--bin-font-size-default);
+  line-height: var(--bin-base-line-height);
+  min-width: 10px;
+  word-wrap: break-word;
+  visibility: visible;
+  border-radius: var(--bin-border-radius-default);
+  padding: 4px 0;
+  background-color: var(--bin-white-color);
+  max-height: none;
+  box-shadow: var(--bin-shadow-down);
+  border: none;
+  .bin-contextmenu-content {
+    min-width: 100px;
+    margin: 0;
+    padding: 0 var(--bin-popper-padding);
+    > li,
+    .menu-item {
+      position: relative;
+      margin: 0;
+      padding: 0 10px;
+      line-height: var(--bin-popper-item-height);
+      width: 100%;
+      clear: both;
+      color: var(--bin-color-text-default);
+      font-size: var(--bin-font-size-default) !important;
+      white-space: nowrap;
+      list-style: none;
+      cursor: pointer;
+      transition: background var(--bin-animation-duration-base) ease-in-out;
+      border-radius: var(--bin-popper-radius);
+      margin-bottom: var(--bin-popper-item-margin);
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &:hover,
+      &:focus {
+        background: var(--bin-fill-color-2);
+        outline: none;
+      }
+    }
+  }
+}

@@ -7,7 +7,17 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
-  <h2 id="0.4.0" class="version">0.5.1</h2>
+  <h2 id="0.6.0" class="version">0.6.0</h2>
+  <div class="date">2024-07-30</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>扩展通用右键菜单</p>
+  <p class="log-item"><i>🛠️</i>修复弹层传参属性问题</p>
+  <p class="log-item"><i>🛠️</i>修复按钮图标样式动画错位问题</p>
+  <div class="type">Doc</div>
+  <p class="log-item"><i>📖</i>修改文档，更新文档</p>
+</div>
+<div class="change-log">
+  <h2 id="0.5.1" class="version">0.5.1</h2>
   <div class="date">2024-07-29</div>
   <div class="type">Feats</div>
   <p class="log-item"><i>🍀</i>扩展弹窗组件，新增居中对齐模式</p>
@@ -17,7 +27,7 @@ title: 变更日志
   <p class="log-item"><i>📖</i>修改文档，更新文档</p>
 </div>
 <div class="change-log">
-  <h2 id="0.4.0" class="version">0.5.0</h2>
+  <h2 id="0.5.0" class="version">0.5.0</h2>
   <div class="date">2024-07-02</div>
   <div class="type">Feats</div>
   <p class="log-item"><i>🍀</i>新增image、image-preview 图片预览组件</p>

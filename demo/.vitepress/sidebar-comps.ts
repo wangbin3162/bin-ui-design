@@ -113,7 +113,8 @@ export default formatSidebar(
       items: [
         { text: '空状态', link: '/components/empty', icon: 'border', alias: 'Empty' },
         { text: '滚动组件', link: '/components/scrollbar', icon: 'container', alias: 'Scrollbar' },
-        { text: '弹层', link: '/components/popper', icon: 'pic-center', alias: 'Popper' }
+        { text: '弹层', link: '/components/popper', icon: 'pic-center', alias: 'Popper' },
+        { text: '右键菜单', link: '/components/contextmenu', icon: 'menu', alias: 'Contextmenu' }
       ]
     },
     {

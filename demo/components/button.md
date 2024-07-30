@@ -90,6 +90,7 @@ title: 按钮 Button
 | type        | 类型                         | String  | primary / success / warning / danger / info / text              | —      |
 | plain       | 简单按钮                     | Boolean | —                                                               | false  |
 | round       | 圆角按钮                     | Boolean | —                                                               | false  |
+| circle      | 圆形按钮                     | Boolean | —                                                               | false  |
 | transparent | 透明按钮                     | Boolean | —                                                               | false  |
 | loading     | 加载中                       | Boolean | —                                                               | false  |
 | disabled    | 禁用状态                     | Boolean | —                                                               | false  |
