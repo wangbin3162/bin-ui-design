@@ -1,5 +1,8 @@
 # 组件编写规则说明
 
+// 忽略ssl验证证书
+npm config set strict-ssl false
+
 整个项目的目录结构如下，具体包含内容后续会进行详细介绍和解释
 
     ├── build                      // 打包相关脚本
