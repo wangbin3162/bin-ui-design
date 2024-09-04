@@ -23,7 +23,7 @@ router.beforeEach((to, from, next) => {
   next()
 })
 router.afterEach(() => {
-  LoadingBar.finish()
+  LoadingBar.done()
 })
 ```
 

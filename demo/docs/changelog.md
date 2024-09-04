@@ -7,7 +7,13 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
-  <h2 id="0.6.0" class="version">0.6.1</h2>
+  <h2 id="0.6.2" class="version">0.6.2</h2>
+  <div class="date">2024-09-04</div>
+  <div class="type">Fixed</div>
+  <p class="log-item"><i>🛠️</i>修复loadingbar的文档和样式错误</p>
+</div>
+<div class="change-log">
+  <h2 id="0.6.1" class="version">0.6.1</h2>
   <div class="date">2024-08-04</div>
   <div class="type">Feats</div>
   <p class="log-item"><i>🛠️</i>修复radio因浏览器无障碍导致的控制台报错（不影响功能）</p>
