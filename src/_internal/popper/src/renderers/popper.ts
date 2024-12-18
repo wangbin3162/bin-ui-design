@@ -38,7 +38,7 @@ export default function renderPopper(props, children) {
           h(
             'div',
             {
-              'aria-hidden': String(!visibility),
+              // 'aria-hidden': String(!visibility),
               class: kls,
               style: popperStyle ?? {},
               id: popperId,

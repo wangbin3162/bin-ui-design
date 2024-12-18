@@ -5,6 +5,7 @@
       :columns="columns"
       :data="data"
       highlight-row
+      highlight-row-cancel
       @current-change="currentRowChange"
     ></b-table>
     <br />
@@ -114,6 +115,7 @@ const currentRowTable = ref(null)
 const currentRowTable2 = ref(null)
 
 function currentRowChange(currentRow, oldRow, index) {
+  console.log(currentRow, oldRow, index)
   if (index >= 0) {
     Message(`选中了第${index + 1}行`)
   }

@@ -125,26 +125,27 @@ noDataText可以设置无数据状态
 
 ## Table props
 
-| 参数           | 说明                                                                                                          | 类型          | 可选值        | 默认值   |
-| -------------- | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------- | -------- |
-| data           | 显示的结构化数据，字段 cellClassName 用于设置任意单元格的样式名称，因此数据不能使用该字段，详见示例特定样式。 | Array         | —             | []       |
-| columns        | 表格列的配置描述，具体项见后文                                                                                | Array         | —             | []       |
-| stripe         | 间隔斑马纹                                                                                                    | Boolean       | false/true    | false    |
-| border         | 纵向边框                                                                                                      | Boolean       | false/true    | false    |
-| show-header    | 是否显示表头                                                                                                  | Boolean       | false/true    | false    |
-| width          | 表格宽度，单位 px                                                                                             | Number/String | —             | auto     |
-| height         | 表格高度，单位 px，设置后，如果表格内容大于此值，会固定表头                                                   | Number/String | —             | —        |
-| max-height     | 最大表格高度                                                                                                  | Number/String | —             | —        |
-| loading        | 表格加载状态                                                                                                  | Boolean       | —             | false    |
-| disabled-hover | 禁用悬停高亮                                                                                                  | Boolean       | —             | false    |
-| highlight-row  | 是否支持高亮选中的行，即单选                                                                                  | Boolean       | —             | false    |
-| size           | 表格尺寸                                                                                                      | string        | large / small | default  |
-| no-data-text   | 空数据内容                                                                                                    | string        | —             | 暂无数据 |
-| loading-text   | 加载数据文字                                                                                                  | string        | —             | 正在加载 |
-| draggable      | 开启拖拽调整行顺序，同步元数据需要使用v-model:data使用或需配合 @drag-drop 事件更新data都可以                  | Boolean       | —             | false    |
-| drag-handle    | 拖拽的handle图标                                                                                              | String        | —             | —        |
-| row-key        | 是否强制使用内置row-key刷新                                                                                   | Boolean       | —             | false    |
-| merge-method   | 表格合并行列的方法函数                                                                                        | Function      | —             | false    |
+| 参数                 | 说明                                                                                                          | 类型          | 可选值        | 默认值   |
+| -------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------- | -------- |
+| data                 | 显示的结构化数据，字段 cellClassName 用于设置任意单元格的样式名称，因此数据不能使用该字段，详见示例特定样式。 | Array         | —             | []       |
+| columns              | 表格列的配置描述，具体项见后文                                                                                | Array         | —             | []       |
+| stripe               | 间隔斑马纹                                                                                                    | Boolean       | false/true    | false    |
+| border               | 纵向边框                                                                                                      | Boolean       | false/true    | false    |
+| show-header          | 是否显示表头                                                                                                  | Boolean       | false/true    | false    |
+| width                | 表格宽度，单位 px                                                                                             | Number/String | —             | auto     |
+| height               | 表格高度，单位 px，设置后，如果表格内容大于此值，会固定表头                                                   | Number/String | —             | —        |
+| max-height           | 最大表格高度                                                                                                  | Number/String | —             | —        |
+| loading              | 表格加载状态                                                                                                  | Boolean       | —             | false    |
+| disabled-hover       | 禁用悬停高亮                                                                                                  | Boolean       | —             | false    |
+| highlight-row        | 是否支持高亮选中的行，即单选                                                                                  | Boolean       | —             | false    |
+| highlight-row-cancel | 单选高亮是否可以取消，如果是则再次点击选中的行会取消选中                                                      | Boolean       | —             | false    |
+| size                 | 表格尺寸                                                                                                      | string        | large / small | default  |
+| no-data-text         | 空数据内容                                                                                                    | string        | —             | 暂无数据 |
+| loading-text         | 加载数据文字                                                                                                  | string        | —             | 正在加载 |
+| draggable            | 开启拖拽调整行顺序，同步元数据需要使用v-model:data使用或需配合 @drag-drop 事件更新data都可以                  | Boolean       | —             | false    |
+| drag-handle          | 拖拽的handle图标                                                                                              | String        | —             | —        |
+| row-key              | 是否强制使用内置row-key刷新                                                                                   | Boolean       | —             | false    |
+| merge-method         | 表格合并行列的方法函数                                                                                        | Function      | —             | false    |
 
 ## Table events
 

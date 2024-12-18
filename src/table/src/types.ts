@@ -42,6 +42,11 @@ export const tableProps = {
     type: Boolean,
     default: false
   },
+  // 是否可以取消高亮单选
+  highlightRowCancel: {
+    type: Boolean,
+    default: false
+  },
   rowClassName: {
     type: Function,
     default() {

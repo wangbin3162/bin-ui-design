@@ -793,6 +793,10 @@ export default defineComponent({
           _objData[i]._isHighlight = false
         }
       }
+      if (props.highlightRowCancel && _index === -1) {
+        emit('current-change', null, null, _index)
+        return
+      }
       if (type === 'highlight') _objData[_index]._isHighlight = true
       const oldData = oldIndex < 0 ? null : JSON.parse(JSON.stringify(_cloneData[oldIndex]))
       const newData = type === 'highlight' ? JSON.parse(JSON.stringify(_cloneData[_index])) : null
@@ -800,7 +804,10 @@ export default defineComponent({
     }
 
     function highlightCurrentRow(_index) {
-      if (!props.highlightRow || objData.value[_index]._isHighlight) return
+      if (!props.highlightRow || objData.value[_index]._isHighlight) {
+        if (props.highlightRowCancel) handleCurrentRow('highlight', -1)
+        return
+      }
       handleCurrentRow('highlight', _index)
     }
 
