@@ -27,6 +27,9 @@
     "type": "git",
     "url": "https://github.com/wangbin3162/bin-ui-design.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
+  },
   "scripts": {
     "dev": "vitepress dev demo",
     "build:package": "pnpm run gen-version && pnpm clean && pnpm build:lib && pnpm build:style",
