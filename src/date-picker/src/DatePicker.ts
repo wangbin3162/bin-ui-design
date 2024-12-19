@@ -33,6 +33,16 @@ const getPanel = function (type) {
   return DatePickPanel
 }
 
+const getFormatValue = function (value, format) {
+  if (!format || !value) return value
+  if (dayjs(value).isValid()) {
+    return dayjs(value).format(format)
+  } else {
+    console.warn('value-format must be right date string!', value)
+    return value
+  }
+}
+
 export default {
   name: 'BDatePicker',
   install: null,
@@ -41,6 +51,9 @@ export default {
     type: {
       type: String,
       default: 'date'
+    },
+    valueFormat: {
+      type: String
     }
   },
   emits: ['update:modelValue'],
@@ -52,12 +65,14 @@ export default {
         commonPicker.value?.handleFocus()
       }
     }
+    const panel = getPanel(props.type)
     ctx.expose(refProps)
     return () => {
       // since props always have all defined keys on it, {format, ...props} will always overwrite format
       // pick props.format or provide default value here before spreading
       const format =
         props.format ?? (DEFAULT_FORMATS_DATEPICKER[props.type] || DEFAULT_FORMATS_DATE)
+
       return h(
         CommonPicker,
         {
@@ -65,10 +80,26 @@ export default {
           format,
           type: props.type,
           ref: commonPicker,
-          'onUpdate:modelValue': value => ctx.emit('update:modelValue', value)
+          'onUpdate:modelValue': value => {
+            let val = value
+            if (val) {
+              if (props.valueFormat) {
+                const isRange = ['datetimerange', 'daterange', 'monthrange', 'dates'].includes(
+                  props.type
+                )
+                if (isRange) {
+                  val = value.map(item => getFormatValue(item, props.valueFormat))
+                } else {
+                  val = getFormatValue(value, props.valueFormat)
+                }
+              }
+            }
+
+            ctx.emit('update:modelValue', val)
+          }
         },
         {
-          default: scopedProps => h(getPanel(props.type), scopedProps)
+          default: scopedProps => h(panel, scopedProps)
         }
       )
     }

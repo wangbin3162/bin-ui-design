@@ -456,9 +456,9 @@ export default defineComponent({
 
     const formatToString = value => {
       if (selectionMode.value === 'dates') {
-        return value.map(_ => _.format(props.format))
+        return value.map(item => dayjs(item).format(props.format))
       }
-      return value.format(props.format)
+      return dayjs(value).format(props.format)
     }
 
     const parseUserInput = value => {

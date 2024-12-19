@@ -7,6 +7,14 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.6.3" class="version">0.6.3</h2>
+  <div class="date">2024-12-19</div>
+  <div class="type">Fixed</div>
+  <p class="log-item"><i>🛠️</i>修复日期控件的清空显示选项问题</p>
+  <p class="log-item"><i>🍀</i>扩展表格单选时highlight-row-cancel 取消单选支持</p>
+  <p class="log-item"><i>🍀</i>扩展date-picker控件，支持value-format值格式设置，支持直接绑定日期格式字符串</p>
+</div>
+<div class="change-log">
   <h2 id="0.6.2" class="version">0.6.2</h2>
   <div class="date">2024-09-04</div>
   <div class="type">Fixed</div>

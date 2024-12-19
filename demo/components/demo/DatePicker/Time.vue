@@ -19,7 +19,7 @@
         v-model="value3"
         type="datetime"
         placeholder="选择日期时间"
-        :default-time="new Date(2000, 1, 1, 12, 0, 0)"
+        :default-value="new Date(2000, 1, 1, 12, 0, 0)"
       ></b-date-picker>
     </div>
   </div>

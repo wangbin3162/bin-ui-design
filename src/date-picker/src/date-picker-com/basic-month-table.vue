@@ -86,6 +86,7 @@ export default defineComponent({
     const tableRows = ref([[], [], []])
     const lastRow = ref(null)
     const lastColumn = ref(null)
+
     const rows = computed(() => {
       const rows = tableRows.value
       const now = dayjs().startOf('month')
@@ -188,6 +189,7 @@ export default defineComponent({
           style['end-date'] = true
         }
       }
+
       return style
     }
 

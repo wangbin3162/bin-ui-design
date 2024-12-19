@@ -223,7 +223,7 @@ export default defineComponent({
     }
 
     const formatToString = value => {
-      return value.map(_ => _.format(format))
+      return value.map(item => dayjs(item).format(format))
     }
 
     const getDefaultValue = () => {
@@ -272,6 +272,8 @@ export default defineComponent({
           }
         } else {
           const defaultArr = getDefaultValue()
+          minDate.value = null
+          maxDate.value = null
           leftDate.value = defaultArr[0]
           rightDate.value = defaultArr[1]
         }

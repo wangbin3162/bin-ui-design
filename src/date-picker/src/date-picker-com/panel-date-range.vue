@@ -602,7 +602,9 @@ export default defineComponent({
     }
 
     const formatToString = value => {
-      return Array.isArray(value) ? value.map(_ => _.format(format)) : value.format(format)
+      return Array.isArray(value)
+        ? value.map(item => dayjs(item).format(format))
+        : dayjs(value).format(format)
     }
 
     const parseUserInput = value => {

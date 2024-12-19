@@ -12,6 +12,9 @@ export const defaultProps = {
   format: {
     type: String
   },
+  valueFormat: {
+    type: String
+  },
   type: {
     type: String,
     default: ''
