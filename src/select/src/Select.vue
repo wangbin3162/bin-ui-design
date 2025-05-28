@@ -31,18 +31,19 @@
             class="bin-select__tags"
             :style="{ 'max-width': inputWidth - 32 + 'px', width: '100%' }"
           >
-            <span v-if="collapseTags && selected.length">
+            <template v-if="collapseTags && selected.length">
               <b-tag
                 :closable="!selectDisabled && !selected[0].isDisabled"
                 :size="collapseTagSize"
                 type="info"
                 disable-transitions
+                :title="selected[0].currentLabel"
                 @click.stop="toggleMenu"
                 @close="deleteTag($event, selected[0])"
               >
                 <span
                   class="bin-select__tags-text"
-                  :style="{ 'max-width': inputWidth - 123 + 'px' }"
+                  :style="{ 'max-width': inputWidth - (selected.length >= 10 ? 110 : 100) + 'px' }"
                 >
                   {{ selected[0].currentLabel }}
                 </span>
@@ -52,11 +53,12 @@
                 :closable="false"
                 :size="collapseTagSize"
                 type="info"
+                style="padding: 0 4px"
                 @click.stop="toggleMenu"
               >
                 <span class="bin-select__tags-text">+ {{ selected.length - 1 }}</span>
               </b-tag>
-            </span>
+            </template>
 
             <transition @after-leave="resetInputHeight">
               <span
@@ -69,6 +71,7 @@
                   :closable="!selectDisabled && !item.isDisabled"
                   :size="collapseTagSize"
                   type="info"
+                  :title="item.currentLabel"
                   @click.stop="toggleMenu"
                   @close="deleteTag($event, item)"
                 >

@@ -25,9 +25,12 @@ import { ref } from 'vue'
 
 const select = ref([])
 const cityList = [
-  { value: 'beijing', label: '北京' },
+  { value: 'beijing', label: '北京北京北京北京北京北京北京北京北京北京' },
   { value: 'nanjing', label: '南京' },
   { value: 'shanghai', label: '上海' },
+  { value: 'xuzhou', label: '徐州' },
+  { value: 'guangzhou', label: '广州' },
+  { value: 'shenzhen', label: '深圳' },
   { value: 'xuzhou', label: '徐州' },
   { value: 'guangzhou', label: '广州' },
   { value: 'shenzhen', label: '深圳' }
