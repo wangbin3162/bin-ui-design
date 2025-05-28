@@ -7,6 +7,12 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.6.4" class="version">0.6.4</h2>
+  <div class="date">2025-05-28</div>
+  <div class="type">Fixed</div>
+  <p class="log-item"><i>🛠️</i>修复下拉多选时，控件标签点击没有弹出popper的问题</p>
+</div>
+<div class="change-log">
   <h2 id="0.6.3" class="version">0.6.3</h2>
   <div class="date">2024-12-19</div>
   <div class="type">Fixed</div>

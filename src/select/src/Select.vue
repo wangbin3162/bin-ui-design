@@ -37,6 +37,7 @@
                 :size="collapseTagSize"
                 type="info"
                 disable-transitions
+                @click.stop="toggleMenu"
                 @close="deleteTag($event, selected[0])"
               >
                 <span
@@ -51,13 +52,15 @@
                 :closable="false"
                 :size="collapseTagSize"
                 type="info"
+                @click.stop="toggleMenu"
               >
                 <span class="bin-select__tags-text">+ {{ selected.length - 1 }}</span>
               </b-tag>
             </span>
 
-            <transition v-if="!collapseTags" @after-leave="resetInputHeight">
+            <transition @after-leave="resetInputHeight">
               <span
+                v-if="!collapseTags"
                 :style="{ marginLeft: prefixWidth && selected.length ? `${prefixWidth}px` : null }"
               >
                 <b-tag
@@ -66,6 +69,7 @@
                   :closable="!selectDisabled && !item.isDisabled"
                   :size="collapseTagSize"
                   type="info"
+                  @click.stop="toggleMenu"
                   @close="deleteTag($event, item)"
                 >
                   <span
