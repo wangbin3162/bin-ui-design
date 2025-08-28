@@ -10,7 +10,17 @@
     --bin-color-$(val)-light5: mix(#fff, $(color), 0.9);
     --bin-color-$(val)-light6: mix(#fff, $(color), 0.95);
     --bin-color-$(val)-active: mix(#000, $(color), 0.1);
+    --bin-color-$(val)-alpha1: rgb(from $(color) r g b / 0.9);
+    --bin-color-$(val)-alpha2: rgb(from $(color) r g b / 0.8);
+    --bin-color-$(val)-alpha3: rgb(from $(color) r g b / 0.6);
+    --bin-color-$(val)-alpha4: rgb(from $(color) r g b / 0.4);
+    --bin-color-$(val)-alpha5: rgb(from $(color) r g b / 0.2);
+    --bin-color-$(val)-alpha6: rgb(from $(color) r g b / 0.1);
   }
+
+  --bin-color-input-shadow: var(--bin-color-primary-alpha5);
+  --bin-color-input-error-shadow: var(--bin-color-danger-alpha5);
+
   /* 背景色 */
   --bin-bg-color-1: #17171a;
   --bin-bg-color-2: #232324;

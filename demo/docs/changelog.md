@@ -7,6 +7,12 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.6.5" class="version">0.7.0</h2>
+  <div class="date">2025-08-28</div>
+  <div class="type">update</div>
+  <p class="log-item"><i>🛠️</i>更新修复，优化样式，生成多透明度样式变量</p>
+</div>
+<div class="change-log">
   <h2 id="0.6.5" class="version">0.6.5</h2>
   <div class="date">2025-05-28</div>
   <div class="type">Fixed</div>
