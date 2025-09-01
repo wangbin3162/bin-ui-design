@@ -2,13 +2,13 @@
 
 组件发布流程
 
-# 1.获取当前源
-
-npm get registry https://registry.npmmirror.com/
-
-# 2.还原为官方源
+# 1.还原为官方源
 
 npm config set registry https://registry.npmjs.com/
+
+# 2.登录
+
+npm login
 
 # 3.忽略ssl验证证书
 
@@ -21,6 +21,8 @@ npm publish
 # 5.发布成功后，还原为淘宝镜像源
 
 npm config set registry https://registry.npmmirror.com/
+
+npm get registry https://registry.npmmirror.com/
 
 整个项目的目录结构如下，具体包含内容后续会进行详细介绍和解释
 

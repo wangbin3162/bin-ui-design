@@ -8,11 +8,6 @@ module.exports = {
         }
       }
     }),
-    require('postcss-preset-env')({
-      features: {
-        'color-functional-notation': true
-      }
-    }),
     require('postcss-import'),
     require('postcss-each-variables'),
     require('postcss-nested'),
