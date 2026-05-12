@@ -555,6 +555,9 @@
           height: 34px;
           border-radius: 0 0 var(--bin-edit-table-border-radius) var(--bin-edit-table-border-radius) !important;
         }
+        table td {
+          border-right: none;
+        }
         .bin-empty {
           margin: 0;
           .bin-empty-image {

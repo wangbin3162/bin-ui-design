@@ -59,6 +59,11 @@
     border-color: var(--b-btn-active-border-color);
     background-color: var(--b-btn-active-bg-color);
   }
+  .bin-button__content {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+  }
   &.is-circle {
     border-radius: 50%;
     width: var(--bin-default-height);

@@ -1,9 +1,10 @@
-import { series, dest, src } from 'gulp'
+import { series, dest, src, type TaskFunction } from 'gulp'
+import { pathToFileURL } from 'node:url'
 import autoprefixer from 'gulp-autoprefixer'
 import postcss from 'gulp-postcss'
 import cleanCSS from 'gulp-clean-css'
 
-import { compRoot, styleRoot, output } from './util-path'
+import { compRoot, styleRoot, output } from './util-path.ts'
 
 // 复制字体包
 const copyFonts = () => src(`${styleRoot}/fonts/**`).pipe(dest(`${output}/fonts`))
@@ -34,4 +35,16 @@ const buildComponents = () =>
     .pipe(autoprefixer())
     .pipe(dest(`${output}/components`))
 
-export default series(buildFull, buildCommon, buildComponents, copyFonts)
+const buildStyles: TaskFunction = series(buildFull, buildCommon, buildComponents, copyFonts)
+
+export default buildStyles
+
+// Allow running this file directly with Node strip-types.
+if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
+  buildStyles(error => {
+    if (error) {
+      console.error(error)
+      process.exitCode = 1
+    }
+  })
+}

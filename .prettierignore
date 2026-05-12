@@ -1,5 +1,9 @@
 dist
 es
 lib
+docs
 node_modules
+.pnpm-store
 pnpm-lock.yaml
+demo
+ai-docs

@@ -1,24 +1,11 @@
 {
-  "compilerOptions": {
-    "paths": {
-      "bin-ui-design": ["./src"]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
     },
-    "strict": false,
-    "noImplicitAny": false,
-    "strictNullChecks": false,
-    "jsx": "preserve",
-    "jsxFactory": "h",
-    "jsxFragmentFactory": "Fragment",
-    "noUnusedLocals": false,
-    "module": "ES6",
-    "moduleResolution": "Node",
-    "declaration": true,
-    "forceConsistentCasingInFileNames": false,
-    "composite": false,
-    "target": "ES6",
-    "esModuleInterop": false,
-    "lib": ["ESNext", "DOM"]
-  },
-  "include": ["src/**/*.vue", "src/**/*.ts", "src/**/*.tsx", "src/**/*.d.ts"],
-  "exclude": ["node_modules", "dist"]
+    {
+      "path": "./tsconfig.build.json"
+    }
+  ]
 }

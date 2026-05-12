@@ -1,23 +1,37 @@
-import { type App } from 'vue'
+import type { App, Component, Directive, Plugin } from 'vue'
 import version from './version'
 import { setConfig } from './_utils/config'
 import log from './_utils/log'
 import config from '../package.json'
 
-type ComponentType = any
+type ComponentLike = Component & {
+  name: string
+  alias?: string[]
+}
+
+interface DirectiveLike {
+  name: string
+  directive: Directive
+}
+
+export interface InstallOptions {
+  disabledDoc?: boolean
+  [key: string]: unknown
+}
 
 export interface BUiInstance {
   version: string
   componentPrefix: string
-  // eslint-disable-next-line no-unused-vars
-  install: (app: App) => void
+  install: (app: App, options?: InstallOptions) => void
 }
 
 interface BUiCreateOptions {
-  components?: ComponentType[]
+  components?: ComponentLike[]
   componentPrefix?: string
-  directives?: any[]
+  directives?: DirectiveLike[]
+  plugins?: Plugin[]
 }
+
 // 组件自动注册，可以支持扩展前缀
 function create({
   componentPrefix = 'B',
@@ -26,14 +40,14 @@ function create({
   plugins = []
 }: BUiCreateOptions = {}): BUiInstance {
   const installTargets: App[] = []
-  function registerComponent(app: App, name: string, component: ComponentType): void {
+  function registerComponent(app: App, name: string, component: ComponentLike): void {
     const newName = componentPrefix + name.slice(1)
     const registered = app.component(newName)
     if (!registered) {
       app.component(newName, component)
     }
   }
-  function install(app: App, options = {}): void {
+  function install(app: App, options: InstallOptions = {}): void {
     if (installTargets.includes(app)) return
     installTargets.push(app)
     // 全局注册组件
