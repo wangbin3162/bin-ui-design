@@ -31,17 +31,28 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref, watch } from 'vue'
+import useLocale from '../../../_hooks/use-locale'
 defineOptions({
   name: 'BEmpty'
 })
 const props = defineProps({
   title: {
     type: String,
-    default: '暂无数据'
+    default: ''
   }
 })
-const text = ref(props.title)
+const { t, localeRef } = useLocale()
+const defaultTitle = computed(() => t('empty.noData', '暂无数据'))
+const text = ref(props.title || defaultTitle.value)
+
+watch(
+  () => [props.title, localeRef.value],
+  () => {
+    text.value = props.title || defaultTitle.value
+  },
+  { immediate: true }
+)
 
 function setTitle(title = '') {
   text.value = title

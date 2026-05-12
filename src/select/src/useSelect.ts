@@ -8,6 +8,7 @@ import { isKorean } from '../../_utils/isDef'
 import { getValueByPath, isEdge, isIE, isObject } from '../../_utils/util-helper'
 import { debounce, isEqual, typeOf } from '../../_utils/util'
 import { useForm } from '../../_hooks'
+import useLocale from '../../_hooks/use-locale'
 
 export function useSelectStates(props) {
   const selectEmitter = mitt()
@@ -30,7 +31,7 @@ export function useSelectStates(props) {
     previousQuery: null,
     inputHovering: false,
     cachedPlaceHolder: '',
-    currentPlaceholder: '请选择',
+    currentPlaceholder: '',
     menuVisibleOnFocus: false,
     isOnComposition: false,
     isSilentBlur: false,
@@ -41,6 +42,7 @@ export function useSelectStates(props) {
 }
 
 export const useSelect = (props, states, ctx) => {
+  const { t, localeRef } = useLocale()
   // template refs
   const reference = ref(null)
   const input = ref(null)
@@ -74,7 +76,7 @@ export const useSelect = (props, states, ctx) => {
 
   const emptyText = computed(() => {
     if (props.loading) {
-      return props.loadingText || '正在加载'
+      return props.loadingText || t('select.loading', '正在加载')
     } else {
       if (props.remote && states.query === '' && states.options.size === 0) return false
       if (
@@ -83,10 +85,10 @@ export const useSelect = (props, states, ctx) => {
         states.options.size > 0 &&
         states.filteredOptionsCount === 0
       ) {
-        return props.noMatchText || '没有匹配数据'
+        return props.noMatchText || t('select.noMatch', '没有匹配数据')
       }
       if (states.options.size === 0) {
-        return props.noDataText || '暂无数据'
+        return props.noDataText || t('select.noData', '暂无数据')
       }
     }
     return null
@@ -126,10 +128,15 @@ export const useSelect = (props, states, ctx) => {
   )
 
   watch(
-    () => props.placeholder,
-    val => {
-      states.cachedPlaceHolder = states.currentPlaceholder = val
-    }
+    () => [props.placeholder, localeRef.value],
+    () => {
+      const nextPlaceholder = props.placeholder || t('select.placeholder', '请选择')
+      states.cachedPlaceHolder = nextPlaceholder
+      if (!props.multiple || states.selected.length === 0) {
+        states.currentPlaceholder = nextPlaceholder
+      }
+    },
+    { immediate: true }
   )
 
   watch(

@@ -1,3 +1,5 @@
+import { t } from '../../locales'
+
 export const treeProps = {
   data: {
     type: Array,
@@ -12,7 +14,7 @@ export const treeProps = {
   checkDirectly: Boolean,
   emptyText: {
     type: String,
-    default: '暂无数据'
+    default: () => t('tree.empty')
   },
   titleKey: {
     type: String,
@@ -69,7 +71,7 @@ export const bigTreeProps = {
   },
   emptyText: {
     type: String,
-    default: '暂无数据'
+    default: () => t('tree.empty')
   },
   titleKey: {
     type: String,
@@ -127,7 +129,7 @@ export const treeSelectProps = {
   clearable: Boolean,
   placeholder: {
     type: String,
-    default: '请选择'
+    default: () => t('tree.placeholder')
   },
   appendToBody: {
     type: Boolean,
@@ -150,7 +152,7 @@ export const treeSelectProps = {
   checkDirectly: Boolean,
   emptyText: {
     type: String,
-    default: '暂无数据'
+    default: () => t('tree.empty')
   },
   titleKey: {
     type: String,

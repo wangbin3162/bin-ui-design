@@ -1,3 +1,5 @@
+import { getLocaleValue } from '../../locales'
+
 export const rateProps = {
   modelValue: {
     type: Number,
@@ -66,7 +68,9 @@ export const rateProps = {
   texts: {
     type: Array,
     default: () => {
-      return ['极差', '失望', '一般', '满意', '惊喜']
+      return (
+        getLocaleValue<string[]>('rate.texts') || ['极差', '失望', '一般', '满意', '惊喜']
+      )
     }
   },
   scoreTemplate: {

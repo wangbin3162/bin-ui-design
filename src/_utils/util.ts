@@ -1,3 +1,5 @@
+import { getLocale } from '../locales'
+
 /**
  * @description 更新标题
  * @param {String} title 标题
@@ -84,6 +86,9 @@ export function parseTime(time, cFormat = '{y}-{m}-{d} {h}:{i}:{s}', weekArray) 
     if (key === 'a') {
       if (weekArray && weekArray.length === 7) {
         return weekArray[value]
+      }
+      if (getLocale() === 'en-US') {
+        return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'][value]
       }
       return ['日', '一', '二', '三', '四', '五', '六'][value]
     }

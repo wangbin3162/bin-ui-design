@@ -1,6 +1,6 @@
 <template>
   <ul v-if="simple" :class="simpleWrapClasses" :style="styles">
-    <li title="上一页" :class="prevClasses" @click="prev">
+    <li :title="t('page.prevPage', '上一页')" :class="prevClasses" @click="prev">
       <span><i class="b-iconfont b-icon-left"></i></span>
     </li>
     <li :class="simplePagerClasses" :title="currentPage + '/' + allPages">
@@ -18,17 +18,17 @@
       <span>/</span>
       {{ allPages }}
     </li>
-    <li title="下一页" :class="nextClasses" @click="next">
+    <li :title="t('page.nextPage', '下一页')" :class="nextClasses" @click="next">
       <span><i class="b-iconfont b-icon-right"></i></span>
     </li>
   </ul>
   <ul v-else :class="wrapClasses" :style="styles">
     <li v-if="showTotal" :class="[prefixCls + '-total']">
       <span>
-        <slot>共 {{ total }} 条</slot>
+        <slot>{{ t('page.total', '共 {total} 条').replace('{total}', `${total}`) }}</slot>
       </span>
     </li>
-    <li title="上一页" :class="prevClasses" @click="prev">
+    <li :title="t('page.prevPage', '上一页')" :class="prevClasses" @click="prev">
       <span>
         <template v-if="prevText !== ''">{{ prevText }}</template>
         <i v-else class="b-iconfont b-icon-left"></i>
@@ -37,7 +37,7 @@
     <li title="1" :class="firstPageClasses" @click="changePage(1)"><span>1</span></li>
     <li
       v-if="currentPage > 5"
-      title="向前5页"
+      :title="t('page.prev5', '向前5页')"
       :class="[prefixCls + '-item-jump-prev']"
       @click="fastPrev"
     >
@@ -100,7 +100,7 @@
     </li>
     <li
       v-if="allPages - currentPage >= 5"
-      title="向后5页"
+      :title="t('page.next5', '向后5页')"
       :class="[prefixCls + '-item-jump-next']"
       @click="fastNext"
     >
@@ -114,7 +114,7 @@
     >
       <span>{{ allPages }}</span>
     </li>
-    <li title="下一页" :class="nextClasses" @click="next">
+    <li :title="t('page.nextPage', '下一页')" :class="nextClasses" @click="next">
       <span>
         <template v-if="nextText !== ''">{{ nextText }}</template>
         <i v-else class="b-iconfont b-icon-right"></i>
@@ -140,6 +140,7 @@
 import { pageProps } from './types'
 import { computed, defineComponent, reactive, toRefs } from 'vue'
 import Options from './Options.vue'
+import useLocale from '../../_hooks/use-locale'
 
 const prefixCls = 'bin-page'
 
@@ -149,6 +150,7 @@ export default defineComponent({
   props: pageProps,
   emits: ['update:current', 'change', 'size-change'],
   setup(props, ctx) {
+    const { t } = useLocale()
     const states = reactive({
       prefixCls,
       currentPage: props.current,
@@ -251,7 +253,8 @@ export default defineComponent({
       onSize,
       onPage,
       keyDown,
-      keyUp
+      keyUp,
+      t
     }
   },
   computed: {

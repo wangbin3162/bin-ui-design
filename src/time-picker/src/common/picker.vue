@@ -26,7 +26,7 @@
         :name="name"
         :size="pickerSize"
         :disabled="pickerDisabled"
-        :placeholder="placeholder"
+        :placeholder="inputPlaceholder"
         class="bin-date-editor"
         :class="'bin-date-editor--' + type"
         :readonly="!editable || readonly || isDatesPicker || type === 'week'"
@@ -67,7 +67,7 @@
         <input
           autocomplete="off"
           :name="name && name[0]"
-          :placeholder="startPlaceholder"
+          :placeholder="startPlaceholderText"
           :value="displayValue && displayValue[0]"
           :disabled="pickerDisabled"
           :readonly="!editable || readonly"
@@ -82,7 +82,7 @@
         <input
           autocomplete="off"
           :name="name && name[1]"
-          :placeholder="endPlaceholder"
+          :placeholder="endPlaceholderText"
           :value="displayValue && displayValue[1]"
           :disabled="pickerDisabled"
           :readonly="!editable || readonly"
@@ -125,6 +125,7 @@ import { BPopper } from '../../../_internal/popper'
 import { EVENT_CODE } from '../../../_utils/aria'
 import { useForm } from '../../../_hooks'
 import { defaultProps } from './props'
+import useLocale from '../../../_hooks/use-locale'
 
 // Date object and string
 const dateEquals = function (a, b) {
@@ -161,6 +162,7 @@ export default defineComponent({
   props: defaultProps,
   emits: ['update:modelValue', 'change', 'focus', 'blur'],
   setup(props, ctx) {
+    const { t } = useLocale()
     const { BForm, BFormItem, formEmit } = useForm()
 
     const refPopper = ref(null)
@@ -327,6 +329,27 @@ export default defineComponent({
     }
     const isRangeInput = computed(() => {
       return props.type.indexOf('range') > -1
+    })
+
+    const inputPlaceholder = computed(() => {
+      if (props.placeholder) return props.placeholder
+      return props.type.startsWith('time')
+        ? t('datePicker.selectTime', '选择时间')
+        : t('datePicker.selectDate', '选择日期')
+    })
+
+    const startPlaceholderText = computed(() => {
+      if (props.startPlaceholder) return props.startPlaceholder
+      return props.type === 'timerange'
+        ? t('datePicker.startTime', '开始时间')
+        : t('datePicker.startDate', '开始日期')
+    })
+
+    const endPlaceholderText = computed(() => {
+      if (props.endPlaceholder) return props.endPlaceholder
+      return props.type === 'timerange'
+        ? t('datePicker.endTime', '结束时间')
+        : t('datePicker.endDate', '结束日期')
     })
 
     const pickerSize = computed(() => {
@@ -505,6 +528,9 @@ export default defineComponent({
       onClickOutside,
       pickerSize,
       isRangeInput,
+      inputPlaceholder,
+      startPlaceholderText,
+      endPlaceholderText,
       onMouseLeave,
       onMouseEnter,
       onClearIconClick,

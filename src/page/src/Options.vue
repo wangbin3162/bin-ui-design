@@ -12,13 +12,13 @@
           v-for="item in pageSizeOpts"
           :key="item"
           :value="item"
-          :label="`${item} 条/页`"
+          :label="t('page.perPage', '{count} 条/页').replace('{count}', `${item}`)"
           style="text-align: center"
         ></b-option>
       </b-select>
     </div>
     <div v-if="showElevator" class="bin-page-options-elevator">
-      跳至
+      {{ t('page.jumpTo', '跳至') }}
       <label>
         <input
           type="text"
@@ -28,7 +28,7 @@
           @keyup.enter="changePage"
         />
       </label>
-      页
+      {{ t('page.page', '页') }}
     </div>
   </div>
 </template>
@@ -37,6 +37,7 @@
 import { defineComponent, ref, watch } from 'vue'
 import { optionsProps } from './types'
 import { BSelect, BOption } from '../../select'
+import useLocale from '../../_hooks/use-locale'
 
 function isValueNumber(value) {
   return /^[1-9][0-9]*$/.test(value + '')
@@ -48,6 +49,7 @@ export default defineComponent({
   props: optionsProps,
   emits: ['page', 'size'],
   setup(props, ctx) {
+    const { t } = useLocale()
     const currentPageSize = ref(props.pageSize)
     const changeSize = () => {
       ctx.emit('size', currentPageSize.value)
@@ -85,6 +87,7 @@ export default defineComponent({
       }
     )
     return {
+      t,
       currentPageSize,
       changeSize,
       changePage

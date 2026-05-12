@@ -5,7 +5,7 @@
         <span>{{ headerTitle }}</span>
         <b-button-group>
           <b-button size="mini" icon="doubleleft" @click="handlePrevMonth"></b-button>
-          <b-button size="mini" @click="handleToday">今天</b-button>
+          <b-button size="mini" @click="handleToday">{{ t('calendar.today', '今天') }}</b-button>
           <b-button size="mini" icon="doubleright" @click="handleNextMonth"></b-button>
         </b-button-group>
       </template>
@@ -14,18 +14,18 @@
           {{ headerTitle }}
         </div>
         <b-button-group>
-          <b-button size="mini" @click="handlePrevMonth">上个月</b-button>
-          <b-button size="mini" @click="handleToday">今天</b-button>
-          <b-button size="mini" @click="handleNextMonth">下个月</b-button>
+          <b-button size="mini" @click="handlePrevMonth">{{
+            t('calendar.prevMonth', '上个月')
+          }}</b-button>
+          <b-button size="mini" @click="handleToday">{{ t('calendar.today', '今天') }}</b-button>
+          <b-button size="mini" @click="handleNextMonth">{{
+            t('calendar.nextMonth', '下个月')
+          }}</b-button>
         </b-button-group>
       </template>
     </div>
     <ul class="bin-calendar-week">
-      <li
-        v-for="(item, index) in ['一', '二', '三', '四', '五', '六', '日']"
-        :key="index"
-        class="bin-calendar-week-item"
-      >
+      <li v-for="(item, index) in weekDays" :key="index" class="bin-calendar-week-item">
         {{ item }}
       </li>
     </ul>
@@ -56,6 +56,7 @@ import type { Ref } from 'vue'
 import { BButton } from '../../button'
 import { BButtonGroup } from '../../button-group'
 import type { CalendarProps, DateProps } from './types'
+import useLocale from '../../_hooks/use-locale'
 
 defineOptions({
   name: 'BCalendar'
@@ -63,6 +64,7 @@ defineOptions({
 
 const emit = defineEmits(['prev', 'next', 'today', 'selected', 'select-day'])
 const props = defineProps<CalendarProps>()
+const { t } = useLocale()
 
 function getNewDate(date) {
   let year = date.getFullYear()
@@ -117,8 +119,32 @@ const dateViewStyle = computed(() => {
 })
 
 const headerTitle = computed(() =>
-  time.value ? `${time.value.year} 年 ${time.value.month + 1} 月` : ''
+  time.value
+    ? formatHeaderTitle(
+        time.value.year,
+        time.value.month + 1,
+        t('calendar.year', '年'),
+        t('calendar.month', '月')
+      )
+    : ''
 )
+
+const weekDays = computed(() => {
+  return [
+    t('common.weekDays.mon', '一'),
+    t('common.weekDays.tue', '二'),
+    t('common.weekDays.wed', '三'),
+    t('common.weekDays.thu', '四'),
+    t('common.weekDays.fri', '五'),
+    t('common.weekDays.sat', '六'),
+    t('common.weekDays.sun', '日')
+  ]
+})
+
+function formatHeaderTitle(year: number, month: number, yearLabel: string, monthLabel: string): string {
+  if (!yearLabel && !monthLabel) return `${year}-${month}`
+  return `${year}${yearLabel} ${month}${monthLabel}`
+}
 
 const initVisibleCalendar = () => {
   let calendarArr: DateProps[] = []

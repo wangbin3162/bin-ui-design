@@ -2,7 +2,7 @@
   <div v-if="actualVisible" class="bin-time-range-picker bin-picker-panel">
     <div class="bin-time-range-picker__content">
       <div class="bin-time-range-picker__cell">
-        <div class="bin-time-range-picker__header">开始时间</div>
+        <div class="bin-time-range-picker__header">{{ t('timePicker.startTime', '开始时间') }}</div>
         <div
           :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
           class="bin-time-range-picker__body bin-time-panel__content"
@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="bin-time-range-picker__cell">
-        <div class="bin-time-range-picker__header">结束时间</div>
+        <div class="bin-time-range-picker__header">{{ t('timePicker.endTime', '结束时间') }}</div>
         <div
           :class="{ 'has-seconds': showSeconds, 'is-arrow': arrowControl }"
           class="bin-time-range-picker__body bin-time-panel__content"
@@ -47,8 +47,12 @@
       </div>
     </div>
     <div class="bin-time-panel__footer">
-      <b-button type="text" size="mini" @click="handleCancel">取消</b-button>
-      <b-button type="primary" size="mini" @click="handleConfirm()">确定</b-button>
+      <b-button type="text" size="mini" @click="handleCancel">{{
+        t('common.cancel', '取消')
+      }}</b-button>
+      <b-button type="primary" size="mini" @click="handleConfirm()">{{
+        t('common.confirm', '确定')
+      }}</b-button>
     </div>
   </div>
 </template>
@@ -61,6 +65,7 @@ import { EVENT_CODE } from '../../../_utils/aria'
 import TimeSpinner from './basic-time-spinner.vue'
 import { getAvaliableArrs, useOldValue } from './useTimePicker'
 import { BButton } from '../../../button'
+import useLocale from '../../../_hooks/use-locale'
 
 const makeSelectRange = (start, end) => {
   const result = []
@@ -87,6 +92,7 @@ export default {
   },
   emits: ['pick', 'select-range', 'set-picker-option'],
   setup(props, ctx) {
+    const { t } = useLocale()
     //@ts-ignore
     const minDate = computed(() => props.parsedValue[0])
     //@ts-ignore
@@ -316,7 +322,8 @@ export default {
       maxSelectableRange,
       disabledHours_,
       disabledMinutes_,
-      disabledSeconds_
+      disabledSeconds_,
+      t
     }
   }
 }

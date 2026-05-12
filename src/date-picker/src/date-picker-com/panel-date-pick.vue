@@ -25,7 +25,7 @@
         <div v-if="showTime" class="bin-date-picker__time-header">
           <span class="bin-date-picker__editor-wrap">
             <b-input
-              placeholder="选择日期"
+              :placeholder="t('datePicker.selectDate', '选择日期')"
               :model-value="visibleDate"
               size="small"
               @input="val => (userInputDate = val)"
@@ -34,7 +34,7 @@
           </span>
           <span v-click-outside="handleTimePickClose" class="bin-date-picker__editor-wrap">
             <b-input
-              placeholder="选择时间"
+              :placeholder="t('datePicker.selectTime', '选择时间')"
               :model-value="visibleTime"
               size="small"
               @focus="onTimePickerInputFocus"
@@ -59,7 +59,7 @@
         >
           <button
             type="button"
-            aria-label="上一年"
+            :aria-label="t('datePicker.prevYear', '上一年')"
             class="bin-picker-panel__icon-btn bin-date-picker__prev-btn"
             @click="prevYear_"
           >
@@ -68,7 +68,7 @@
           <button
             v-show="currentView === 'date'"
             type="button"
-            aria-label="上个月"
+            :aria-label="t('datePicker.prevMonth', '上个月')"
             class="bin-picker-panel__icon-btn bin-date-picker__prev-btn"
             @click="prevMonth_"
           >
@@ -84,11 +84,11 @@
             :class="{ active: currentView === 'month' }"
             @click="showMonthPicker"
           >
-            {{ `${month + 1} 月` }}
+            {{ `${month + 1}${monthLabelSuffix}` }}
           </span>
           <button
             type="button"
-            aria-label="下一年"
+            :aria-label="t('datePicker.nextYear', '下一年')"
             class="bin-picker-panel__icon-btn bin-date-picker__next-btn"
             @click="nextYear_"
           >
@@ -97,7 +97,7 @@
           <button
             v-show="currentView === 'date'"
             type="button"
-            aria-label="下个月"
+            :aria-label="t('datePicker.nextMonth', '下个月')"
             class="bin-picker-panel__icon-btn bin-date-picker__next-btn"
             @click="nextMonth_"
           >
@@ -138,10 +138,10 @@
         class="bin-picker-panel__link-btn"
         @click="changeToNow"
       >
-        此刻
+        {{ t('common.now', '此刻') }}
       </b-button>
       <b-button type="primary" size="mini" class="bin-picker-panel__link-btn" @click="onConfirm">
-        确定
+        {{ t('common.confirm', '确定') }}
       </b-button>
     </div>
   </div>
@@ -157,6 +157,7 @@ import dayjs from 'dayjs'
 import DateTable from './basic-date-table.vue'
 import MonthTable from './basic-month-table.vue'
 import YearTable from './basic-year-table.vue'
+import useLocale from '../../../_hooks/use-locale'
 
 import { computed, defineComponent, inject, ref, watch } from 'vue'
 
@@ -187,6 +188,7 @@ export default defineComponent({
   },
   emits: ['pick', 'set-picker-option'],
   setup(props, ctx) {
+    const { t } = useLocale()
     const innerDate = ref(dayjs())
 
     const month = computed(() => {
@@ -275,7 +277,7 @@ export default defineComponent({
     const currentView = ref('date')
 
     const yearLabel = computed(() => {
-      const yearTranslation = '年'
+      const yearTranslation = t('datePicker.year', '年')
       if (currentView.value === 'year') {
         const startYear = Math.floor(year.value / 10) * 10
         if (yearTranslation) {
@@ -285,6 +287,7 @@ export default defineComponent({
       }
       return year.value + ' ' + yearTranslation
     })
+    const monthLabelSuffix = computed(() => t('calendar.month', '月'))
 
     const handleShortcutClick = shortcut => {
       if (shortcut.value) {
@@ -588,6 +591,7 @@ export default defineComponent({
       nextMonth_,
       innerDate,
       yearLabel,
+      monthLabelSuffix,
       currentView,
       month,
       handleDatePick,
@@ -595,7 +599,8 @@ export default defineComponent({
       handleVisibleDateChange,
       timeFormat,
       userInputTime,
-      userInputDate
+      userInputDate,
+      t
     }
   }
 })

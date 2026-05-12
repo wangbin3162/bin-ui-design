@@ -27,7 +27,7 @@
             ref="reference"
             v-model="selectedLabel"
             type="text"
-            :placeholder="placeholder"
+            :placeholder="placeholderText"
             :size="inputSize"
             :disabled="disabled"
             :readonly="true"
@@ -57,7 +57,12 @@
       </template>
       <template #default>
         <div class="bin-icon-select-panel__query">
-          <b-input v-model="query" placeholder="输入图标名称搜索" size="small" clearable></b-input>
+          <b-input
+            v-model="query"
+            :placeholder="searchPlaceholder"
+            size="small"
+            clearable
+          ></b-input>
         </div>
         <b-scrollbar
           v-show="visible && showIcons.length"
@@ -76,7 +81,7 @@
             <i :class="['b-iconfont', 'b-icon-' + name]"></i>
           </li>
         </b-scrollbar>
-        <b-empty v-show="showIcons.length === 0">没有匹配图标</b-empty>
+        <b-empty v-show="showIcons.length === 0">{{ noMatchText }}</b-empty>
       </template>
     </b-popper>
   </div>
@@ -94,6 +99,7 @@ import { BButton } from '../../button'
 import { BEmpty } from '../../_internal/empty'
 import BIcon from './Icon.vue'
 import icon from './iconfont.json'
+import useLocale from '../../_hooks/use-locale'
 
 //@ts-ignore
 const iconList = icon.glyphs.map(v => v.font_class)
@@ -113,7 +119,7 @@ export default defineComponent({
     clearable: Boolean,
     placeholder: {
       type: String,
-      default: '选择图标'
+      default: ''
     },
     appendToBody: {
       type: Boolean,
@@ -127,6 +133,7 @@ export default defineComponent({
   },
   emits: [UPDATE_MODEL_EVENT, CHANGE_EVENT, 'clear', 'visible-change', 'focus', 'blur'],
   setup(props, { emit }) {
+    const { t } = useLocale()
     const popper = ref(null)
     const input = ref(null)
     const reference = ref(null)
@@ -150,6 +157,9 @@ export default defineComponent({
     const showIcons = computed(() =>
       query.value ? icons.value.filter(i => i.includes(query.value)) : icons.value
     )
+    const placeholderText = computed(() => props.placeholder || t('iconSelect.placeholder', '选择图标'))
+    const searchPlaceholder = computed(() => t('iconSelect.searchPlaceholder', '输入图标名称搜索'))
+    const noMatchText = computed(() => t('iconSelect.noMatch', '没有匹配图标'))
     const { BForm, formEmit } = useForm()
 
     //@ts-ignore
@@ -199,6 +209,9 @@ export default defineComponent({
       showClose,
       iconClass,
       showIcons,
+      placeholderText,
+      searchPlaceholder,
+      noMatchText,
       inputSize,
       toggleMenu,
       handleSelect,

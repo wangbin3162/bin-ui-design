@@ -18,8 +18,12 @@
         />
       </div>
       <div class="bin-time-panel__footer">
-        <b-button type="text" size="mini" @click="handleCancel">取消</b-button>
-        <b-button type="primary" size="mini" @click="handleConfirm()">确定</b-button>
+        <b-button type="text" size="mini" @click="handleCancel">{{
+          t('common.cancel', '取消')
+        }}</b-button>
+        <b-button type="primary" size="mini" @click="handleConfirm()">{{
+          t('common.confirm', '确定')
+        }}</b-button>
       </div>
     </div>
   </transition>
@@ -32,6 +36,7 @@ import TimeSpinner from './basic-time-spinner.vue'
 import dayjs from 'dayjs'
 import { getAvaliableArrs, useOldValue } from './useTimePicker'
 import { BButton } from '../../../button'
+import useLocale from '../../../_hooks/use-locale'
 
 export default defineComponent({
   components: {
@@ -59,6 +64,7 @@ export default defineComponent({
   },
   emits: ['pick', 'select-range', 'set-picker-option'],
   setup(props, ctx) {
+    const { t } = useLocale()
     // data
     const selectionRange = ref([0, 2])
     const oldValue = useOldValue(props)
@@ -199,7 +205,8 @@ export default defineComponent({
       handleCancel,
       disabledHours,
       disabledMinutes,
-      disabledSeconds
+      disabledSeconds,
+      t
     }
   }
 })

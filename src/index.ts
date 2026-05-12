@@ -12,6 +12,7 @@ export { default, LoadingBar, Message, MessageBox, Notice } from './preset'
 export { default as create } from './create'
 
 export * from './components'
+export * from './locales'
 
 export * from './_directives'
 

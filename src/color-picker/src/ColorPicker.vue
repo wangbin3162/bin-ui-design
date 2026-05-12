@@ -32,7 +32,7 @@
             />
           </span>
           <b-button size="mini" type="text" class="bin-color-dropdown__link-btn" @click="clear">
-            清空
+            {{ t('colorPicker.clear', '清空') }}
           </b-button>
           <b-button
             type="primary"
@@ -40,7 +40,7 @@
             class="bin-color-dropdown__btn"
             @click="confirmValue"
           >
-            确定
+            {{ t('colorPicker.confirm', '确定') }}
           </b-button>
         </div>
       </div>
@@ -99,6 +99,7 @@ import { UPDATE_MODEL_EVENT } from '../../_utils/constants'
 import { useForm } from '../../_hooks'
 import { debounce } from '../../_utils/util'
 import { toHex } from '../../_utils/color'
+import useLocale from '../../_hooks/use-locale'
 
 export const useOptions = () => {
   return inject('ColorPicker', {})
@@ -119,6 +120,7 @@ export default defineComponent({
   props: colorProps,
   emits: ['change', 'active-change', UPDATE_MODEL_EVENT],
   setup(props, { emit }) {
+    const { t } = useLocale()
     const { BForm, BFormItem, formEmit } = useForm()
 
     const hue = ref(null)
@@ -293,6 +295,7 @@ export default defineComponent({
     })
 
     return {
+      t,
       color,
       colorDisabled,
       colorSize,

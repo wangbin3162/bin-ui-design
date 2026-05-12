@@ -100,6 +100,7 @@
 import MonthTable from './basic-month-table.vue'
 import dayjs from 'dayjs'
 import { computed, ref, watch, inject, defineComponent } from 'vue'
+import useLocale from '../../../_hooks/use-locale'
 
 export default defineComponent({
   components: { MonthTable },
@@ -112,6 +113,7 @@ export default defineComponent({
   },
   emits: ['pick', 'set-picker-option'],
   setup(props, ctx) {
+    const { t } = useLocale()
     const leftDate = ref(dayjs())
     const rightDate = ref(dayjs().add(1, 'year'))
 
@@ -149,11 +151,11 @@ export default defineComponent({
       rightDate.value = rightDate.value.subtract(1, 'year')
     }
     const leftLabel = computed(() => {
-      return `${leftDate.value.year()} 年`
+      return `${leftDate.value.year()} ${t('calendar.year', '年')}`
     })
 
     const rightLabel = computed(() => {
-      return `${rightDate.value.year()} 年`
+      return `${rightDate.value.year()} ${t('calendar.year', '年')}`
     })
 
     const leftYear = computed(() => {

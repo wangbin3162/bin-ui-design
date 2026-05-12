@@ -21,11 +21,15 @@
     <template #content>
       <p>
         <i class="b-iconfont b-icon-question-circle" style="color: var(--bin-color-danger)"></i>
-        {{ confirmTxt || '确定切换吗？' }}
+        {{ confirmTxt || t('switch.confirmSwitch', '确定切换吗？') }}
       </p>
       <div style="text-align: right; margin: 0">
-        <b-button size="mini" type="text" @click="visible = false">取消</b-button>
-        <b-button type="primary" size="mini" @click="confirmFun($event)">确定</b-button>
+        <b-button size="mini" type="text" @click="visible = false">{{
+          t('common.cancel', '取消')
+        }}</b-button>
+        <b-button type="primary" size="mini" @click="confirmFun($event)">{{
+          t('common.confirm', '确定')
+        }}</b-button>
       </div>
     </template>
   </b-popover>
@@ -38,6 +42,7 @@ import { BButton } from '../../button'
 import { computed, ref, watch } from 'vue'
 import { useForm } from '../../_hooks'
 import { isBool, isPromise } from '../../_utils/util-helper'
+import useLocale from '../../_hooks/use-locale'
 
 const prefixCls = 'bin-switch'
 
@@ -46,6 +51,7 @@ defineOptions({
 })
 const emit = defineEmits(['update:modelValue', 'change'])
 const props = defineProps(switchProps)
+const { t } = useLocale()
 
 const currentValue = ref(props.modelValue)
 const visible = ref(false)

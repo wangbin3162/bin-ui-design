@@ -9,7 +9,7 @@
   >
     <tbody>
       <tr>
-        <th v-if="showWeekNumber">周次</th>
+        <th v-if="showWeekNumber">{{ t('common.weekLabel', '周次') }}</th>
         <th v-for="(week, key) in WEEKS" :key="key">{{ weeksMap[week] }}</th>
       </tr>
       <tr
@@ -34,6 +34,7 @@
 import { coerceTruthyValueToArray } from '../../../_utils/util-helper'
 import { computed, defineComponent, ref } from 'vue'
 import dayjs from 'dayjs'
+import useLocale from '../../../_hooks/use-locale'
 
 export default defineComponent({
   props: {
@@ -79,19 +80,21 @@ export default defineComponent({
   },
   emits: ['changerange', 'pick', 'select'],
   setup(props, ctx) {
+    const { t } = useLocale()
     // data
     const lastRow = ref(null)
     const lastColumn = ref(null)
     const tableRows = ref([[], [], [], [], [], []])
 
-    // todo better way to get Day.js locale object
     const firstDayOfWeek = 1
-    //@ts-ignore
-    const WEEKS_CONSTANT = props.date
-      .locale('en')
-      .localeData()
-      .weekdaysShort()
-      .map(_ => _.toLowerCase())
+    const WEEKS_CONSTANT = computed(() => {
+      //@ts-ignore
+      return props.date
+        .locale('en')
+        .localeData()
+        .weekdaysShort()
+        .map(_ => _.toLowerCase())
+    })
 
     const offsetDay = computed(() => {
       // Sunday 7(0), cal the left and right offset days, 3217654, such as Monday is -1, the is to adjust the position of the first two rows of dates
@@ -106,17 +109,19 @@ export default defineComponent({
 
     const weeksMap = computed(() => {
       return {
-        mon: '一',
-        tue: '二',
-        wed: '三',
-        thu: '四',
-        fri: '五',
-        sat: '六',
-        sun: '日'
+        mon: t('common.weekDays.mon', '一'),
+        tue: t('common.weekDays.tue', '二'),
+        wed: t('common.weekDays.wed', '三'),
+        thu: t('common.weekDays.thu', '四'),
+        fri: t('common.weekDays.fri', '五'),
+        sat: t('common.weekDays.sat', '六'),
+        sun: t('common.weekDays.sun', '日')
       }
     })
     const WEEKS = computed(() => {
-      return WEEKS_CONSTANT.concat(WEEKS_CONSTANT).slice(firstDayOfWeek, firstDayOfWeek + 7)
+      return WEEKS_CONSTANT.value
+        .concat(WEEKS_CONSTANT.value)
+        .slice(firstDayOfWeek, firstDayOfWeek + 7)
     })
 
     const rows = computed(() => {
@@ -442,6 +447,7 @@ export default defineComponent({
       getCellClasses,
       WEEKS,
       weeksMap,
+      t,
       handleClick
     }
   }

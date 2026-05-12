@@ -75,6 +75,7 @@ import { useModal, useLockScreen, useRestoreActive } from '../../_hooks'
 import { transferIncrease } from '../../_utils/config'
 import { on, off } from '../../_utils/dom'
 import { addEventListenerWrap } from '../../modal/src/addListener'
+import { t } from '../../locales'
 
 let mousePosition: { x: number; y: number } | null = null
 const getClickPosition = (e: MouseEvent) => {
@@ -156,7 +157,7 @@ export default defineComponent({
     },
     cancelText: {
       type: String,
-      default: '取消'
+      default: () => t('messageBox.cancel')
     },
     cancelButtonClass: {
       type: String,
@@ -176,7 +177,7 @@ export default defineComponent({
     },
     confirmText: {
       type: String,
-      default: '确定'
+      default: () => t('messageBox.confirm')
     },
     confirmButtonClass: {
       type: String,

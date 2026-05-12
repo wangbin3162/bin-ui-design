@@ -18,6 +18,7 @@ import { coerceTruthyValueToArray } from '../../../_utils/util-helper'
 import { rangeArr } from '../../../time-picker/src'
 import dayjs from 'dayjs'
 import { computed, defineComponent, ref } from 'vue'
+import useLocale from '../../../_hooks/use-locale'
 
 const datesInMonth = (year, month) => {
   const firstDay = dayjs().startOf('month').month(month).year(year)
@@ -61,28 +62,31 @@ export default defineComponent({
   },
   emits: ['changerange', 'pick', 'select'],
   setup(props, ctx) {
-    const monthMap = ref({
-      jan: '一月',
-      feb: '二月',
-      mar: '三月',
-      apr: '四月',
-      may: '五月',
-      jun: '六月',
-      jul: '七月',
-      aug: '八月',
-      sep: '九月',
-      oct: '十月',
-      nov: '十一月',
-      dec: '十二月'
+    const { t } = useLocale()
+    const monthMap = computed(() => {
+      return {
+        jan: t('common.months.jan', '一月'),
+        feb: t('common.months.feb', '二月'),
+        mar: t('common.months.mar', '三月'),
+        apr: t('common.months.apr', '四月'),
+        may: t('common.months.may', '五月'),
+        jun: t('common.months.jun', '六月'),
+        jul: t('common.months.jul', '七月'),
+        aug: t('common.months.aug', '八月'),
+        sep: t('common.months.sep', '九月'),
+        oct: t('common.months.oct', '十月'),
+        nov: t('common.months.nov', '十一月'),
+        dec: t('common.months.dec', '十二月')
+      }
     })
-    const months = ref(
+    const months = computed(() => {
       //@ts-ignore
-      props.date
+      return props.date
         .locale('en')
         .localeData()
         .monthsShort()
         .map(_ => _.toLowerCase())
-    )
+    })
     const tableRows = ref([[], [], []])
     const lastRow = ref(null)
     const lastColumn = ref(null)

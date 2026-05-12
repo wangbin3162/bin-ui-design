@@ -1,3 +1,5 @@
+import { t } from '../../locales'
+
 export const tableProps = {
   data: {
     type: Array,
@@ -58,7 +60,7 @@ export const tableProps = {
   },
   noDataText: {
     type: String,
-    default: '暂无数据'
+    default: () => t('table.noData')
   },
   disabledHover: {
     type: Boolean
@@ -87,7 +89,7 @@ export const tableProps = {
   },
   loadingText: {
     type: String,
-    default: '正在加载'
+    default: () => t('table.loading')
   },
   editTable: {
     type: Boolean,

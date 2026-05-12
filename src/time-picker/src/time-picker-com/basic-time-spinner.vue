@@ -98,6 +98,7 @@ import { ref, nextTick, computed, onMounted, watch, defineComponent } from 'vue'
 import { debounce } from '../../../_utils/util'
 import { BScrollbar } from '../../../_internal/scrollbar'
 import { getTimeLists } from './useTimePicker'
+import useLocale from '../../../_hooks/use-locale'
 
 export default defineComponent({
   components: { BScrollbar },
@@ -134,6 +135,7 @@ export default defineComponent({
   },
   emits: ['change', 'select-range', 'set-option'],
   setup(props, ctx) {
+    const { t } = useLocale()
     // data
     let isScrolling = false
     const debouncedResetScroll = debounce(type => {
@@ -207,8 +209,8 @@ export default defineComponent({
       let shouldShowAmPm = !!props.amPmMode
       if (!shouldShowAmPm) return ''
       let isCapital = props.amPmMode === 'A'
-      // todo locale
-      let content = hour < 12 ? ' am' : ' pm'
+      let content =
+        hour < 12 ? t('timePicker.am', ' am') : t('timePicker.pm', ' pm')
       if (isCapital) content = content.toUpperCase()
       return content
     }

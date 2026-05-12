@@ -22,7 +22,10 @@ export const configProviderProps = {
   // 语言包
   locale: {
     type: String,
-    default: 'zh-CN'
+    default: 'zh-CN',
+    validator(value: string) {
+      return ['zh-CN', 'en-US'].includes(value)
+    }
   },
   // 主题名称
   themeName: {

@@ -1,7 +1,8 @@
 import DefaultTheme from 'vitepress/theme'
+import { h } from 'vue'
 import { ElementPlusContainer } from '@vitepress-demo-preview/component'
 import BinUI from 'bin-ui-design'
-// import DocTable from '../src/DocTable.vue'
+import LocaleSwitch from '../src/LocaleSwitch.vue'
 
 import '@vitepress-demo-preview/component/dist/style.css'
 import './index.css'
@@ -9,9 +10,13 @@ import 'bin-ui-design/_styles/index.css'
 
 export default {
   ...DefaultTheme,
+  Layout() {
+    return h(DefaultTheme.Layout, null, {
+      'nav-bar-content-after': () => h(LocaleSwitch)
+    })
+  },
   enhanceApp({ app }) {
     app.use(BinUI)
-    // app.component(DocTable.name, DocTable)
     app.component('demo-preview', ElementPlusContainer)
   }
 }

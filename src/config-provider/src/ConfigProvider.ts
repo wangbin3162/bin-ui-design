@@ -2,6 +2,7 @@ import { h, inject, computed, defineComponent, provide, onMounted, watch } from 
 import { configProviderProps } from './types'
 import { configProviderInjectionKey } from './context'
 import { deepCopy, deepMerge } from '../../_utils/util'
+import { normalizeLocale, setLocale } from '../../locales'
 import {
   convertObjectPropsToCSSVariables,
   removeAttrVar,
@@ -40,7 +41,8 @@ export default defineComponent({
       mergedLocaleRef: computed(() => {
         const { locale } = props
         if (locale === null) return undefined
-        return locale === undefined ? BConfigProvider?.mergedLocaleRef.value : locale
+        const inheritedLocale = BConfigProvider?.mergedLocaleRef.value
+        return normalizeLocale(locale === undefined ? inheritedLocale : locale)
       }),
       mergedThemeRef,
       mergedThemeNameRef
@@ -63,6 +65,14 @@ export default defineComponent({
         setObjectPropsCSSVariables(mergedThemeRef.value ?? {})
       }
     }
+
+    watch(
+      () => props.locale,
+      val => {
+        setLocale(val)
+      },
+      { immediate: true }
+    )
 
     watch(
       () => [props.themeName, props.theme],

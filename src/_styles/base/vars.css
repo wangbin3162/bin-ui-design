@@ -64,8 +64,8 @@
   --bin-border-popper-color: #ebeef5;
   /* radius */
   --bin-border-radius-none: 0;
-  --bin-border-radius-default: 2px;
-  --bin-border-radius-medium: 4px;
+  --bin-border-radius-default: 4px;
+  --bin-border-radius-medium: 6px;
   /* font-size */
   --bin-font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
     SimSun, sans-serif;

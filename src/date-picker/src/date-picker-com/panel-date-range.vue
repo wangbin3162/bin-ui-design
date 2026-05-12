@@ -28,7 +28,7 @@
               <b-input
                 size="small"
                 :disabled="rangeState.selecting"
-                placeholder="开始日期"
+                :placeholder="t('datePicker.startDate', '开始日期')"
                 class="bin-date-range-picker__editor"
                 :model-value="minVisibleDate"
                 @input="val => handleDateInput(val, 'min')"
@@ -43,7 +43,7 @@
                 size="small"
                 class="bin-date-range-picker__editor"
                 :disabled="rangeState.selecting"
-                placeholder="开始时间"
+                :placeholder="t('datePicker.startTime', '开始时间')"
                 :model-value="minVisibleTime"
                 @focus="minTimePickerVisible = true"
                 @input="val => handleTimeInput(val, 'min')"
@@ -68,7 +68,7 @@
                 size="small"
                 class="bin-date-range-picker__editor"
                 :disabled="rangeState.selecting"
-                placeholder="结束日期"
+                :placeholder="t('datePicker.endDate', '结束日期')"
                 :model-value="maxVisibleDate"
                 :readonly="!minDate"
                 @input="val => handleDateInput(val, 'max')"
@@ -83,7 +83,7 @@
                 size="small"
                 class="bin-date-range-picker__editor"
                 :disabled="rangeState.selecting"
-                placeholder="结束时间"
+                :placeholder="t('datePicker.endTime', '结束时间')"
                 :model-value="maxVisibleTime"
                 :readonly="!minDate"
                 @focus="minDate && (maxTimePickerVisible = true)"
@@ -210,9 +210,11 @@
       </div>
     </div>
     <div v-if="showTime" class="bin-picker-panel__footer">
-      <b-button size="mini" type="text" @click="handleClear">清空</b-button>
+      <b-button size="mini" type="text" @click="handleClear">{{
+        t('common.clear', '清空')
+      }}</b-button>
       <b-button type="primary" size="mini" :disabled="btnDisabled" @click="handleConfirm(false)">
-        确定
+        {{ t('common.confirm', '确定') }}
       </b-button>
     </div>
   </div>
@@ -227,6 +229,7 @@ import dayjs from 'dayjs'
 import DateTable from './basic-date-table.vue'
 import { BInput } from '../../../input'
 import { BButton } from '../../../button'
+import useLocale from '../../../_hooks/use-locale'
 
 export default defineComponent({
   directives: { ClickOutside },
@@ -244,6 +247,7 @@ export default defineComponent({
   },
   emits: ['pick', 'set-picker-option'],
   setup(props, ctx) {
+    const { t } = useLocale()
     const leftDate = ref(dayjs())
     const rightDate = ref(dayjs().add(1, 'month'))
     const minDate = ref(null)
@@ -257,10 +261,16 @@ export default defineComponent({
       max: null
     })
     const leftLabel = computed(() => {
-      return leftDate.value.year() + ' 年 ' + `${leftDate.value.month() + 1}月`
+      const yearLabel = t('calendar.year', '年')
+      const monthLabel = t('calendar.month', '月')
+      return leftDate.value.year() + yearLabel + ' ' + `${leftDate.value.month() + 1}${monthLabel}`
     })
     const rightLabel = computed(() => {
-      return rightDate.value.year() + ' 年 ' + `${rightDate.value.month() + 1}月`
+      const yearLabel = t('calendar.year', '年')
+      const monthLabel = t('calendar.month', '月')
+      return (
+        rightDate.value.year() + yearLabel + ' ' + `${rightDate.value.month() + 1}${monthLabel}`
+      )
     })
 
     const leftYear = computed(() => {
@@ -730,7 +740,8 @@ export default defineComponent({
       handleMaxTimePick,
       handleClear,
       handleConfirm,
-      timeFormat
+      timeFormat,
+      t
     }
   }
 })

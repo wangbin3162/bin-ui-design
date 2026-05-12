@@ -1,3 +1,5 @@
+import { t } from '../../locales'
+
 export const imageProps = {
   src: {
     type: String,
@@ -69,14 +71,14 @@ export const imageProps = {
   },
   failText: {
     type: String,
-    default: '失败'
+    default: () => t('image.fail')
   },
   loadingText: {
     type: String,
-    default: '加载中'
+    default: () => t('image.loading')
   },
   previewText: {
     type: String,
-    default: '预览'
+    default: () => t('image.preview')
   }
 }
