@@ -20,4 +20,8 @@ title: 全局配置  ConfigProvider
 
 可通过 `locale` 属性切换语言，当前支持 `zh-CN` 和 `en-US`。
 
+国际化能力建议在业务项目外部统一管理（例如由应用层 i18n 方案负责），组件库侧通过 `ConfigProvider` 进行语言注入。
+
+更多说明请参见 [国际化](/en/docs/internationalization.html)。
+
 <preview path="./demo/ConfigProvider/Locale.vue"></preview>

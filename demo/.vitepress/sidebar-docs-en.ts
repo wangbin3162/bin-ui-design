@@ -13,7 +13,8 @@ export default formatSidebar([
     items: [
       { text: 'Installation', link: '/en/docs/installation' },
       { text: 'Use in SFC', link: '/en/docs/usage-sfc' },
-      { text: 'Import on Demand', link: '/en/docs/import-on-demand' }
+      { text: 'Import on Demand', link: '/en/docs/import-on-demand' },
+      { text: 'Internationalization', link: '/en/docs/internationalization' }
     ]
   },
   {

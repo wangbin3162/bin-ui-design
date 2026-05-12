@@ -13,7 +13,8 @@ export default formatSidebar([
     items: [
       { text: '安装', link: '/docs/installation' },
       { text: '在 SFC 中使用', link: '/docs/usage-sfc' },
-      { text: '按需引入', link: '/docs/import-on-demand' }
+      { text: '按需引入', link: '/docs/import-on-demand' },
+      { text: '国际化', link: '/docs/internationalization' }
     ]
   },
   {
