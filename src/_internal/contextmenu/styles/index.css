@@ -1,6 +1,6 @@
 .bin-contextmenu {
   margin: 0;
-  background: #fff;
+  background: var(--bin-white-color);
   z-index: 9999;
   position: fixed;
   left: 0;

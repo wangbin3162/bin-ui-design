@@ -3,12 +3,12 @@
   z-index: 10;
   cursor: pointer;
   .bin-back-top-inner {
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: var(--bin-overlay-backtop-bg);
     border-radius: 2px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--bin-shadow-backtop);
     transition: all var(--bin-animation-duration-base) ease-in-out;
     i {
-      color: #fff;
+      color: var(--bin-color-text-on-primary);
       font-size: 18px;
       padding: 8px 12px;
     }

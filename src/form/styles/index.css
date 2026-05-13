@@ -155,7 +155,7 @@
     display: none;
     height: 14px;
     line-height: 1;
-    background-color: #fff;
+    background-color: var(--bin-white-color);
 
     &.b-icon-loading {
       color: var(--bin-color-primary);

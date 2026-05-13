@@ -114,7 +114,7 @@
     list-style: none;
     text-align: center;
     cursor: pointer;
-    color: #666;
+    color: var(--bin-color-text-default);
     font-family: Arial;
     border: 1px solid var(--b-page-border-color);
     border-radius: var(--bin-border-radius-default);

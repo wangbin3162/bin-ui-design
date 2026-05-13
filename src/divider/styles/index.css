@@ -26,10 +26,10 @@
   }
   &-inner-text {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--bin-white-color);
     padding: 0 16px;
     font-weight: 600;
-    color: #303133;
+    color: var(--bin-color-text-primary);
     font-size: 14px;
     &.is-left {
       left: 24px;

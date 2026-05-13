@@ -16,6 +16,12 @@ title: 全局配置  ConfigProvider
 
 <preview path="./demo/ConfigProvider/Abstract.vue"></preview>
 
+# 黑色模式
+
+通过 `theme-name="dark"` 开启黑色模式，支持运行时切换，并自动同步 Teleport 组件和函数式组件（如 Message、Notice、MessageBox）。
+
+<preview path="./demo/ConfigProvider/Dark.vue"></preview>
+
 # 国际化
 
 可通过 `locale` 属性切换语言，当前支持 `zh-CN` 和 `en-US`。

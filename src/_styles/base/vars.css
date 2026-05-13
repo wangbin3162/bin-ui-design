@@ -44,6 +44,7 @@
   --bin-white-color-light: rgba(255, 255, 255, 0.65);
   --bin-white-color-light2: rgba(255, 255, 255, 0.35);
   --bin-dark-bg: #000;
+  --bin-color-text-on-primary: #fff;
   /* text-color */
   --bin-color-text-primary: var(--bin-text-color-1);
   --bin-color-text-default: var(--bin-text-color-2);
@@ -90,6 +91,12 @@
   --bin-shadow-down: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0px rgba(0, 0, 0, 0.08),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
   --bin-shadow-popper: 0 2px 8px rgba(0, 0, 0, 0.15);
+  --bin-shadow-message: 0 1px 6px 1px rgba(0, 0, 0, 0.15);
+  --bin-shadow-layout-toggle: 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --bin-shadow-popper-edge: 3px 3px 7px rgba(0, 0, 0, 0.07);
+  --bin-shadow-table-fixed: 2px 0 6px -2px rgba(0, 0, 0, 0.2);
+  --bin-shadow-table-fixed-right: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
+  --bin-shadow-table-fixed-line: 1px 0 6px rgba(0, 0, 0, 0.2);
   /* scrollbar */
   --bin-scrollbar-width: 5px;
   --bin-scrollbar-radius: 5px;
@@ -132,4 +139,59 @@
   --bin-menu-bg-color: var(--bin-white-color);
   --bin-menu-bg-hover-color: var(--bin-color-primary-light6);
   --bin-menu-bg-active-color: var(--bin-color-primary-light6);
+  --bin-overlay-mask-bg: rgba(0, 0, 0, 0.45);
+  --bin-overlay-float-bg: rgba(0, 0, 0, 0.3);
+  --bin-overlay-preview-mask-bg: rgba(55, 55, 55, 0.6);
+  --bin-overlay-preview-control-bg: rgba(55, 55, 55, 0.4);
+  --bin-overlay-backtop-bg: rgba(0, 0, 0, 0.6);
+  --bin-drag-trigger-bg: #f3f3f3;
+  --bin-drag-trigger-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  --bin-shadow-backtop: 0 1px 3px rgba(0, 0, 0, 0.2);
+  --bin-carousel-arrow-bg: rgba(31, 45, 61, 0.11);
+  --bin-carousel-arrow-hover-bg: rgba(31, 45, 61, 0.23);
+  --bin-carousel-indicator-outside-bg: #c0c4cc;
+  --bin-carousel-item-mask-bg: var(--bin-white-color);
+  --bin-carousel-item-mask-opacity: 0.24;
+  --bin-table-row-ghost-bg: #9eceff;
+
+  /* tag extended preset colors */
+  --bin-tag-magenta-bg: #fff0f6;
+  --bin-tag-magenta-border: #ffadd2;
+  --bin-tag-magenta-color: #eb2f96;
+  --bin-tag-red-bg: #fff1f0;
+  --bin-tag-red-border: #ffa39e;
+  --bin-tag-red-color: #f5222d;
+  --bin-tag-volcano-bg: #fff2e8;
+  --bin-tag-volcano-border: #ffbb96;
+  --bin-tag-volcano-color: #fa541c;
+  --bin-tag-orange-bg: #fff7e6;
+  --bin-tag-orange-border: #ffd591;
+  --bin-tag-orange-color: #fa8c16;
+  --bin-tag-gold-bg: #fffbe6;
+  --bin-tag-gold-border: #ffe58f;
+  --bin-tag-gold-color: #faad14;
+  --bin-tag-cyan-bg: #e6fffb;
+  --bin-tag-cyan-border: #87e8de;
+  --bin-tag-cyan-color: #13c2c2;
+  --bin-tag-blue-bg: #e6f7ff;
+  --bin-tag-blue-border: #63aee0;
+  --bin-tag-blue-color: #167bd7;
+  --bin-tag-geekblue-bg: #f0f5ff;
+  --bin-tag-geekblue-border: #adc6ff;
+  --bin-tag-geekblue-color: #2f54eb;
+  --bin-tag-purple-bg: #f9f0ff;
+  --bin-tag-purple-border: #d3adf7;
+  --bin-tag-purple-color: #722ed1;
+
+  /* color-picker */
+  --bin-color-picker-overlay-bg: rgba(203, 203, 203, 0.6);
+  --bin-color-picker-thumb-bg: #fff;
+  --bin-color-picker-thumb-border: #f0f0f0;
+  --bin-color-picker-thumb-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
+  --bin-color-picker-cursor-shadow:
+    0 0 0 1.5px #fff,
+    inset 0 0 1px 1px rgba(0, 0, 0, 0.3),
+    0 0 1px 2px rgba(0, 0, 0, 0.4);
+  --bin-color-picker-inner-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
+  --bin-color-picker-value-color: #000;
 }

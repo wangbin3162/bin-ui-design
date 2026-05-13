@@ -22,7 +22,7 @@
 
     &.bin-steps-status-wait {
       .bin-steps-head-inner {
-        background-color: #fff;
+        background-color: var(--bin-white-color);
         > .bin-steps-icon,
         span {
           color: var(--bin-color-text-disabled);
@@ -44,7 +44,7 @@
         background-color: var(--bin-color-primary);
         > .bin-steps-icon,
         span {
-          color: #fff;
+          color: var(--bin-color-text-on-primary);
         }
       }
       .bin-steps-title {
@@ -59,7 +59,7 @@
     }
     &.bin-steps-status-finish {
       .bin-steps-head-inner {
-        background-color: #fff;
+        background-color: var(--bin-white-color);
         border-color: var(--bin-color-primary);
         > .bin-steps-icon,
         span {
@@ -81,7 +81,7 @@
     }
     &.bin-steps-status-success {
       .bin-steps-head-inner {
-        background-color: #fff;
+        background-color: var(--bin-white-color);
         border-color: var(--bin-color-success);
         > .bin-steps-icon {
           color: var(--bin-color-success);
@@ -110,7 +110,7 @@
 
     &.bin-steps-status-error {
       .bin-steps-head-inner {
-        background-color: #fff;
+        background-color: var(--bin-white-color);
         border-color: var(--bin-color-danger);
         > .bin-steps-icon {
           color: var(--bin-color-danger);
@@ -165,7 +165,7 @@
     vertical-align: top;
   }
   .bin-steps-head {
-    background: #fff;
+    background: var(--bin-white-color);
   }
 
   .bin-steps-head-inner {
@@ -209,7 +209,7 @@
     font-size: 14px;
     font-weight: bold;
     color: var(--bin-color-text-primary);
-    background: #fff;
+    background: var(--bin-white-color);
 
     > a:first-child:last-child {
       color: var(--bin-color-text-primary);
@@ -223,7 +223,7 @@
   }
   .bin-steps-content {
     font-size: 12px;
-    color: #999;
+    color: var(--bin-color-text-secondary);
   }
   .bin-steps-tail {
     width: 100%;

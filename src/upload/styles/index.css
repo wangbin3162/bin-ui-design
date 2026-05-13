@@ -10,7 +10,7 @@
 
     &-file {
       padding: 4px;
-      color: #515a6e;
+      color: var(--bin-color-text-default);
       border-radius: 4px;
       line-height: 1.5em;
       font-size: 12px;
@@ -28,17 +28,17 @@
           height: 14px;
           font-size: 16px;
           margin-right: 4px;
-          color: #515a6e;
+          color: var(--bin-color-text-default);
           text-align: center;
         }
       }
 
       &:hover {
-        background: #f3f3f3;
+        background: var(--bin-color-select-hover);
         & > span {
           color: var(--bin-color-primary);
           i {
-            color: #515a6e;
+            color: var(--bin-color-text-default);
           }
         }
         .bin-upload-list-remove {
@@ -52,10 +52,10 @@
       cursor: pointer;
       float: right;
       margin-right: 4px;
-      color: #999;
+      color: var(--bin-color-text-secondary);
       transition: all var(--bin-animation-duration-base) ease;
       &:hover {
-        color: #444;
+        color: var(--bin-color-text-primary);
       }
     }
   }

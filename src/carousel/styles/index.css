@@ -15,8 +15,8 @@
     -webkit-transition: 0.3s;
     transition: 0.3s;
     border-radius: 50%;
-    background-color: rgba(31, 45, 61, 0.11);
-    color: #fff;
+    background-color: var(--bin-carousel-arrow-bg);
+    color: var(--bin-color-text-on-primary);
     position: absolute;
     top: 50%;
     z-index: 10;
@@ -32,7 +32,7 @@
     right: 16px;
   }
   .bin-carousel__arrow:hover {
-    background-color: rgba(31, 45, 61, 0.23);
+    background-color: var(--bin-carousel-arrow-hover-bg);
   }
   .bin-carousel__arrow i {
     cursor: pointer;
@@ -65,8 +65,8 @@
     opacity: 0.64;
   }
   .bin-carousel__indicators--outside button {
-    background-color: #c0c4cc;
-    opacity: 0.24;
+    background-color: var(--bin-carousel-indicator-outside-bg);
+    opacity: var(--bin-carousel-item-mask-opacity);
   }
   .bin-carousel__indicators--labels {
     left: 0;
@@ -112,7 +112,7 @@
     opacity: 0.48;
     width: 30px;
     height: 2px;
-    background-color: #fff;
+    background-color: var(--bin-color-text-on-primary);
     border: none;
     outline: 0;
     padding: 0;
@@ -173,8 +173,8 @@
 }
 .bin-carousel__mask {
   width: 100%;
-  background-color: #fff;
-  opacity: 0.24;
+  background-color: var(--bin-color-text-on-primary);
+  opacity: var(--bin-carousel-item-mask-opacity);
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }

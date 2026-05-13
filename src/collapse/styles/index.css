@@ -70,7 +70,7 @@
 .bin-collapse-simple {
   border-left: none;
   border-right: none;
-  background-color: #fff;
+  background-color: var(--bin-white-color);
   border-radius: 0;
 }
 

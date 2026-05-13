@@ -125,7 +125,7 @@
 
   td {
     word-break: break-all;
-    background-color: #fff;
+    background-color: var(--bin-white-color);
     transition: background-color var(--bin-animation-duration-base) ease-in-out;
   }
 
@@ -342,7 +342,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    box-shadow: 2px 0 6px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--bin-shadow-table-fixed);
     z-index: 0;
 
     &::before {
@@ -361,7 +361,7 @@
     top: 0;
     left: auto;
     right: 0;
-    box-shadow: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--bin-shadow-table-fixed-right);
   }
 
   &-fixed-right-header {
@@ -389,7 +389,7 @@
     position: absolute;
     top: 0;
     right: 0;
-    box-shadow: 1px 0 6px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--bin-shadow-table-fixed-line);
     overflow: hidden;
     z-index: 1;
   }
@@ -449,7 +449,7 @@
 }
 
 .bin-table-row.bin-table-ghost-class td {
-  background: #9eceff;
+  background: var(--bin-table-row-ghost-bg);
 }
 
 .bin-popper-tooltip-content {
@@ -482,7 +482,7 @@
         }
         .bin-table-cell {
           padding: 5px 6px;
-          background-color: #fff;
+          background-color: var(--bin-white-color);
         }
       }
       tbody td {

@@ -5,7 +5,7 @@
 .bin-card {
   border-radius: var(--bin-border-radius-default);
   border: 1px solid var(--b-card-border-color);
-  background-color: #fff;
+  background-color: var(--bin-white-color);
   transition: var(--bin-animation-duration-base);
   width: 100%;
 

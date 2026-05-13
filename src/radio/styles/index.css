@@ -64,11 +64,11 @@
     &.is-disabled {
       .bin-radio__inner {
         cursor: not-allowed;
-        border-color: #dcdee2;
-        background-color: #f3f3f3;
+        border-color: var(--bin-border-color-base);
+        background-color: var(--bin-color-select-hover);
 
         &:after {
-          background-color: #ccc;
+          background-color: var(--bin-color-text-disabled);
         }
       }
     }
@@ -81,7 +81,7 @@
     display: inline-block;
     width: 16px;
     height: 16px;
-    background-color: #fff;
+    background-color: var(--bin-white-color);
     border: var(--bin-border-base);
     border-radius: 50%;
     transition: all var(--bin-animation-duration-base) ease-in-out;
@@ -216,15 +216,15 @@
 
     &:first-child,
     &:hover {
-      border-color: #dcdee2;
-      background-color: #f7f7f7;
-      color: #ccc;
+      border-color: var(--bin-border-color-base);
+      background-color: var(--bin-fill-color-1);
+      color: var(--bin-color-text-disabled);
     }
 
     &.is-checked {
-      color: #fff;
-      background-color: #e6e6e6;
-      border-color: #dcdee2;
+      color: var(--bin-color-text-on-primary);
+      background-color: var(--bin-fill-color-3);
+      border-color: var(--bin-border-color-base);
     }
   }
 }

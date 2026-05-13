@@ -47,7 +47,7 @@
       > .bin-tree-title,
       > .bin-tree-render-title {
         background-color: var(--bin-color-primary);
-        color: #fff;
+        color: var(--bin-color-text-on-primary);
       }
     }
   }

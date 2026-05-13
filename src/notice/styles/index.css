@@ -5,10 +5,7 @@
   border-radius: var(--bin-border-radius-default);
   box-sizing: border-box;
   background-color: var(--bin-white-color);
-  box-shadow:
-    0 3px 6px -4px rgba(0, 0, 0, 0.12),
-    0 6px 16px 0 rgba(0, 0, 0, 0.08),
-    0 9px 28px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: var(--bin-shadow-down);
   transition:
     opacity 0.3s,
     transform 0.3s,

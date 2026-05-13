@@ -20,7 +20,7 @@
 
   &.is-horizontal {
     padding: 0;
-    border-bottom: solid 1px #e6e6e6;
+    border-bottom: solid 1px var(--bin-border-color-base);
   }
 
   &.is-collapse {
@@ -238,7 +238,7 @@
 
       &:not(.is-disabled):hover,
       &:not(.is-disabled):focus {
-        background-color: #fff;
+        background-color: var(--bin-white-color);
       }
 
       &.is-active {
@@ -276,7 +276,7 @@
         padding: 0 20px;
 
         &:hover {
-          background-color: #fff;
+          background-color: var(--bin-white-color);
         }
       }
 
@@ -342,9 +342,9 @@
     top: 0;
     left: 100%;
     z-index: 10;
-    border: 1px solid #e4e7ed;
+    border: 1px solid var(--bin-table-border-color);
     border-radius: 2px;
-    box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: var(--bin-shadow-down);
   }
 
   > .bin-menu-item,

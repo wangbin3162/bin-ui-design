@@ -7,7 +7,7 @@
   overflow: hidden;
   backface-visibility: hidden;
   margin: 100px auto 0;
-  background: #fff;
+  background: var(--bin-white-color);
   border-radius: var(--bin-border-radius-default);
   box-shadow: var(--bin-shadow-down);
   box-sizing: border-box;
@@ -52,7 +52,7 @@
   &__message {
     padding-left: 42px;
     font-size: 14px;
-    color: rgba(0, 0, 0, 0.65);
+    color: var(--bin-color-text-default);
     position: relative;
   }
 

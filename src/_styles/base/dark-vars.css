@@ -1,0 +1,97 @@
+[theme-name='dark'] {
+  --bin-bg-color-1: #141414;
+  --bin-bg-color-2: #1b1f27;
+  --bin-bg-color-3: #242932;
+  --bin-bg-color-4: #2d3440;
+
+  --bin-fill-color-1: #1f242d;
+  --bin-fill-color-2: #2a303b;
+  --bin-fill-color-3: #353c49;
+  --bin-fill-color-4: #4a5160;
+
+  --bin-white-color: var(--bin-bg-color-2);
+  --bin-black-color: #0f1115;
+  --bin-dark-bg: #0f1115;
+
+  --bin-color-text-primary: #eef1f6;
+  --bin-color-text-default: #c9ced8;
+  --bin-color-text-secondary: #9ca4b2;
+  --bin-color-text-disabled: #68707f;
+  --bin-color-text-placeholder: #68707f;
+
+  --bin-disabled-border-color: #3c4351;
+  --bin-color-select-hover: #323947;
+  --bin-color-bg-disabled: #2c313c;
+
+  --bin-border-color-base: #3a4351;
+  --bin-border-color-light: #313947;
+  --bin-border-color-light-2: rgba(255, 255, 255, 0.16);
+  --bin-border-popper-color: #313947;
+
+  --bin-shadow-down: 0 8px 28px rgba(0, 0, 0, 0.5);
+  --bin-shadow-popper: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --bin-shadow-message: 0 8px 20px rgba(0, 0, 0, 0.45);
+  --bin-shadow-layout-toggle: 0 4px 14px rgba(0, 0, 0, 0.45);
+  --bin-shadow-popper-edge: 3px 3px 7px rgba(0, 0, 0, 0.45);
+  --bin-shadow-table-fixed: 2px 0 8px -2px rgba(0, 0, 0, 0.45);
+  --bin-shadow-table-fixed-right: -2px 0 8px -2px rgba(0, 0, 0, 0.45);
+  --bin-shadow-table-fixed-line: 1px 0 8px rgba(0, 0, 0, 0.4);
+
+  --bin-scrollbar-color: rgba(255, 255, 255, 0.22);
+  --bin-scrollbar-color-hover: rgba(255, 255, 255, 0.34);
+  --bin-scrollbar-track: rgba(255, 255, 255, 0.08);
+
+  --bin-page-bg: var(--bin-bg-color-2);
+  --bin-page-hover-bg: var(--bin-fill-color-2);
+  --bin-page-active-bg: var(--bin-color-primary-alpha6);
+
+  --bin-table-header-bg: var(--bin-fill-color-2);
+  --bin-table-header-text: var(--bin-color-text-primary);
+  --bin-table-border-color: var(--bin-border-color-base);
+
+  --bin-popper-bg-light: var(--bin-bg-color-2);
+  --bin-popper-bg-dark: var(--bin-bg-color-1);
+
+  --bin-menu-text-color: var(--bin-color-text-default);
+  --bin-menu-text-hover-color: var(--bin-color-text-primary);
+  --bin-menu-bg-color: var(--bin-bg-color-2);
+  --bin-menu-bg-hover-color: var(--bin-fill-color-2);
+  --bin-menu-bg-active-color: var(--bin-color-primary-alpha6);
+
+  --bin-color-input-shadow: var(--bin-color-primary-alpha4);
+  --bin-color-input-error-shadow: var(--bin-color-danger-alpha4);
+  --bin-overlay-mask-bg: rgba(0, 0, 0, 0.65);
+  --bin-overlay-float-bg: rgba(0, 0, 0, 0.55);
+  --bin-overlay-preview-mask-bg: rgba(0, 0, 0, 0.72);
+  --bin-overlay-preview-control-bg: rgba(0, 0, 0, 0.58);
+  --bin-overlay-backtop-bg: rgba(0, 0, 0, 0.68);
+  --bin-drag-trigger-bg: var(--bin-fill-color-3);
+  --bin-drag-trigger-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.45);
+  --bin-shadow-backtop: 0 2px 10px rgba(0, 0, 0, 0.45);
+  --bin-carousel-arrow-bg: rgba(255, 255, 255, 0.16);
+  --bin-carousel-arrow-hover-bg: rgba(255, 255, 255, 0.24);
+  --bin-carousel-indicator-outside-bg: var(--bin-color-text-disabled);
+  --bin-carousel-item-mask-bg: var(--bin-black-color);
+  --bin-carousel-item-mask-opacity: 0.35;
+  --bin-table-row-ghost-bg: rgba(16, 137, 255, 0.3);
+
+  /* color-picker */
+  --bin-color-picker-overlay-bg: rgba(0, 0, 0, 0.52);
+  --bin-color-picker-thumb-bg: #f0f3f8;
+  --bin-color-picker-thumb-border: #3a4250;
+  --bin-color-picker-thumb-shadow: 0 0 3px rgba(0, 0, 0, 0.55);
+  --bin-color-picker-cursor-shadow:
+    0 0 0 1.5px #f0f3f8,
+    inset 0 0 1px 1px rgba(0, 0, 0, 0.45),
+    0 0 1px 2px rgba(0, 0, 0, 0.55);
+  --bin-color-picker-inner-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.18);
+  --bin-color-picker-value-color: var(--bin-color-text-primary);
+}
+
+[theme-name='dark'] .bin-button.is-background {
+  background-image: linear-gradient(
+    0deg,
+    var(--bin-fill-color-3) 0%,
+    var(--bin-fill-color-2) 100%
+  );
+}

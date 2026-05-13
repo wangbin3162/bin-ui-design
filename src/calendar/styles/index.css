@@ -14,7 +14,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 12px 20px;
-    border-bottom: 1px solid #ebeef5;
+    border-bottom: 1px solid var(--bin-border-popper-color);
 
     &-title {
       color: var(--bin-color-text-primary);

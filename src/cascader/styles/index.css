@@ -59,7 +59,7 @@
       max-width: 100%;
       margin: 2px 0 2px 6px;
       text-overflow: ellipsis;
-      background: #f0f2f5;
+      background: var(--bin-fill-color-2);
       box-sizing: border-box;
       border-color: transparent;
     }
@@ -74,7 +74,7 @@
     margin: 0;
     padding: 6px 0;
     font-size: 14px;
-    color: #606266;
+    color: var(--bin-color-text-default);
     text-align: center;
   }
 
@@ -121,7 +121,7 @@
     outline: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    background-color: #fff;
+    background-color: var(--bin-white-color);
 
     &::placeholder {
       color: var(--bin-color-text-placeholder);

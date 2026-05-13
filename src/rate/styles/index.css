@@ -16,7 +16,7 @@
 .bin-rate__icon {
   font-size: 20px;
   margin-right: 6px;
-  color: #c0c4cc;
+  color: var(--bin-color-text-placeholder);
   transition: var(--bin-animation-duration-base);
   &.hover {
     transform: scale(1.15);

@@ -16,7 +16,7 @@
       display: flex;
 
       i {
-        background-color: #fff;
+        background-color: var(--bin-white-color);
       }
     }
   }
@@ -249,7 +249,7 @@
   cursor: pointer;
   padding: 0 16px !important;
   background: var(--bin-color-primary) !important;
-  color: #fff !important;
+  color: var(--bin-color-text-on-primary) !important;
   border-color: var(--bin-color-primary) !important;
   transition: all var(--bin-animation-duration-base) ease-in-out;
   position: relative;
@@ -281,11 +281,11 @@ fieldset[disabled] .bin-input {
   top: 2px;
   bottom: 2px;
   padding-left: 7px;
-  background: #fff;
+  background: var(--bin-white-color);
   z-index: 0;
   display: inline-flex;
   align-items: center;
-  color: #808695;
+  color: var(--bin-color-text-secondary);
   font-size: 12px;
 }
 

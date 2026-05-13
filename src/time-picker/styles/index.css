@@ -11,7 +11,7 @@
 .bin-picker-panel {
   position: relative;
   color: var(--bin-color-text-default);
-  background: #fff;
+  background: var(--bin-white-color);
   border-radius: var(--bin-font-size-default);
   line-height: 30px;
 }
@@ -50,7 +50,7 @@
     line-height: var(--bin-default-height);
     font-size: var(--bin-font-size-default);
     width: 28px;
-    color: #303133;
+    color: var(--bin-color-text-primary);
   }
 }
 
@@ -62,7 +62,7 @@
   z-index: 1000;
   user-select: none;
   box-sizing: content-box;
-  background-color: #fff;
+  background-color: var(--bin-white-color);
 
   &__content {
     font-size: 0;

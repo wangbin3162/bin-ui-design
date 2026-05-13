@@ -16,6 +16,12 @@ Can be injected using an abstract tag, which will be injected into the HTML by d
 
 <preview path="./demo/ConfigProvider/Abstract.vue"></preview>
 
+# Dark Mode
+
+Enable dark mode with `theme-name="dark"`. Runtime switching is supported, and teleported/function components (such as Message, Notice, MessageBox) will follow the current theme automatically.
+
+<preview path="./demo/ConfigProvider/Dark.vue"></preview>
+
 # Internationalization
 
 You can switch languages via the `locale` property. Currently, `zh-CN` and `en-US` are supported.

@@ -52,7 +52,7 @@
     color: var(--bin-color-text-default);
     border: 1px solid var(--bin-border-color-base);
     background-color: var(--bin-white-color);
-    box-shadow: 0 2px 4px 0px rgba(0, 0, 0, 0.06);
+    box-shadow: var(--bin-shadow-layout-toggle);
     transform: translateX(50%) translateY(-50%);
     opacity: 0;
 

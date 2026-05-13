@@ -19,7 +19,7 @@
       width: 0;
       bottom: 0;
       left: 0;
-      background: #fff;
+      background: var(--bin-color-text-on-primary);
       border-radius: 10px;
       opacity: 0;
       background-size: 400% 100%;
@@ -31,7 +31,7 @@
 .bin-progress-bar__outer {
   height: 8px;
   border-radius: 100px;
-  background-color: #f3f3f3;
+  background-color: var(--bin-color-select-hover);
   overflow: hidden;
   position: relative;
   vertical-align: middle;
@@ -67,7 +67,7 @@
 .bin-progress-bar__innerText {
   display: inline-block;
   vertical-align: middle;
-  color: #fff;
+  color: var(--bin-color-text-on-primary);
   font-size: 12px;
   margin: 0 5px;
 }

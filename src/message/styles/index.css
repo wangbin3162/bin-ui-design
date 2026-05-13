@@ -6,8 +6,8 @@
   padding: 8px 16px;
   height: 42px;
   border-radius: var(--bin-border-radius-default);
-  box-shadow: 0 1px 6px 1px rgba(0, 0, 0, 0.15);
-  background: #fff;
+  box-shadow: var(--bin-shadow-message);
+  background: var(--bin-white-color);
   box-sizing: border-box;
   transform: translateX(-50%);
   transition:
@@ -60,6 +60,10 @@
   &.is-error {
     color: var(--bin-color-danger);
   }
+}
+
+.bin-message__content {
+  color: var(--bin-color-text-default);
 }
 
 .bin-message-fade-enter-from,

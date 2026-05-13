@@ -10,7 +10,7 @@
       background-color: var(--bin-dark-bg);
 
       .bin-dropdown-menu .bin-dropdown-item {
-        color: rgba(255, 255, 255, 0.65);
+        color: var(--bin-white-color-light);
 
         &:hover,
         &:focus {
@@ -25,12 +25,12 @@
         }
 
         &-disabled {
-          color: rgba(255, 255, 255, 0.35) !important;
+          color: var(--bin-white-color-light2) !important;
           cursor: not-allowed;
         }
 
         &-divided {
-          border-top: 1px solid #a0a0a0;
+          border-top: 1px solid var(--bin-border-color-light-2);
         }
       }
     }
@@ -90,7 +90,7 @@
 
         &:hover {
           color: var(--bin-color-text-disabled) !important;
-          background-color: #fff;
+          background-color: var(--bin-white-color);
           cursor: not-allowed;
         }
       }

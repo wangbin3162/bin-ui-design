@@ -1,6 +1,6 @@
 .bin-popover {
   &.bin-popper {
-    background: #fff;
+    background: var(--bin-white-color);
     min-width: 150px;
     border-radius: var(--bin-border-radius-default);
     z-index: 2000;

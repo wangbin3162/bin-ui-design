@@ -57,15 +57,15 @@ const tagStyleBind = computed(() => {
   return props.dot
     ? {
         backgroundColor: 'transparent',
-        color: props.color || 'rgba(0,0,0,.65)',
+        // color: props.color || 'rgba(0,0,0,.65)',
         fontSize: props.fontSize,
-        ...(props.tagStyle ?? {})
+        ...props.tagStyle
       }
     : {
         backgroundColor: props.color,
         color: props.color ? '#fff' : '',
         fontSize: props.fontSize,
-        ...(props.tagStyle ?? {})
+        ...props.tagStyle
       }
 })
 

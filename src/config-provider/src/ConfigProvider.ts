@@ -1,4 +1,4 @@
-import { h, inject, computed, defineComponent, provide, onMounted, watch } from 'vue'
+import { h, inject, computed, defineComponent, provide, onMounted, onBeforeUnmount, watch } from 'vue'
 import { configProviderProps } from './types'
 import { configProviderInjectionKey } from './context'
 import { deepCopy, deepMerge } from '../../_utils/util'
@@ -16,6 +16,7 @@ export default defineComponent({
   props: configProviderProps,
   setup(props) {
     const BConfigProvider = inject(configProviderInjectionKey, null)
+    const isTopLevelProvider = !BConfigProvider
 
     // 主题名称注入
     const mergedThemeNameRef = computed(() => {
@@ -52,10 +53,10 @@ export default defineComponent({
     })
 
     function setVariablesToDomNode() {
-      // 如果是虚拟模式，则追加属性至dom节点
-      if (props.abstract) {
-        if (props.themeName) {
-          setAttrVar('theme-name', props.themeName)
+      // 顶层 provider 负责同步根节点主题，确保 Teleport / 函数式组件可继承
+      if (isTopLevelProvider) {
+        if (mergedThemeNameRef.value) {
+          setAttrVar('theme-name', mergedThemeNameRef.value)
         } else {
           removeAttrVar('theme-name')
         }
@@ -65,6 +66,12 @@ export default defineComponent({
         setObjectPropsCSSVariables(mergedThemeRef.value ?? {})
       }
     }
+
+    onBeforeUnmount(() => {
+      if (isTopLevelProvider) {
+        removeAttrVar('theme-name')
+      }
+    })
 
     watch(
       () => props.locale,

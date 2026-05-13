@@ -20,7 +20,7 @@
         width: 2px;
         height: 100%;
         display: block;
-        background-color: #e8eaec;
+        background-color: var(--bin-border-color-base);
         margin: 0 auto;
       }
       &-ball {
@@ -30,7 +30,7 @@
         height: 10px;
         border-radius: 50%;
         border: 1px solid var(--bin-color-primary);
-        background-color: #fff;
+        background-color: var(--bin-white-color);
         left: 50%;
         transition: top var(--bin-animation-duration-base) ease;
         transform: translate(-50%, 2px);

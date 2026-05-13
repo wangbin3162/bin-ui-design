@@ -15,7 +15,7 @@
       left: 6px;
       top: 3px;
       height: 100%;
-      border-left: 1px solid #e8eaec;
+      border-left: 1px solid var(--bin-border-color-base);
     }
 
     &-pending &-tail {
@@ -27,7 +27,7 @@
       top: 3px;
       width: 13px;
       height: 13px;
-      background-color: #fff;
+      background-color: var(--bin-white-color);
       border-radius: 50%;
       border: 1px solid transparent;
 
@@ -93,7 +93,7 @@
 
   &-pending &-item:nth-last-of-type(2) {
     .bin-timeline-item-tail {
-      border-left: 1px dotted #e8eaec;
+      border-left: 1px dotted var(--bin-border-color-base);
     }
 
     .bin-timeline-item-content {

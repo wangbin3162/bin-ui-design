@@ -34,7 +34,7 @@
     box-shadow: var(--bin-shadow-popper);
 
     .bin-popper__arrow::before {
-      box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+      box-shadow: var(--bin-shadow-popper-edge);
       background: var(--b-popper-bg-light);
       right: 0;
     }
@@ -80,25 +80,25 @@
 }
 
 .bin-popper.is-light[data-popper-placement^='top'] .bin-popper__arrow::before {
-  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--bin-shadow-popper-edge);
   border-top-color: transparent;
   border-left-color: transparent;
 }
 
 .bin-popper.is-light[data-popper-placement^='bottom'] .bin-popper__arrow::before {
-  box-shadow: -3px -3px 7px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--bin-shadow-popper-edge);
   border-bottom-color: transparent;
   border-right-color: transparent;
 }
 
 .bin-popper.is-light[data-popper-placement^='left'] .bin-popper__arrow::before {
-  box-shadow: 3px -3px 7px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--bin-shadow-popper-edge);
   border-left-color: transparent;
   border-bottom-color: transparent;
 }
 
 .bin-popper.is-light[data-popper-placement^='right'] .bin-popper__arrow::before {
-  box-shadow: -3px 3px 7px rgba(0, 0, 0, 0.07);
+  box-shadow: var(--bin-shadow-popper-edge);
   border-right-color: transparent;
   border-top-color: transparent;
 }

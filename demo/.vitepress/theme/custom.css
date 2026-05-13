@@ -1,6 +1,7 @@
 body {
   color: var(--vp-c-text-1);
   background: var(--vp-c-bg);
+  width: auto;
 }
 
 h1,

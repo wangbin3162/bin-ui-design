@@ -34,9 +34,9 @@
     bottom: 0;
   }
   &-mark {
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: var(--bin-overlay-float-bg);
     z-index: 1;
-    color: #fff;
+    color: var(--bin-color-text-on-primary);
     cursor: pointer;
     cursor: pointer;
     opacity: 0;
