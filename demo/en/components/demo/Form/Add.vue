@@ -4,23 +4,23 @@
       <b-form-item
         v-for="(domain, index) in dynamicValidateForm.domains"
         :key="domain.key"
-        :label="'域名' + index"
+        :label="'Domain' + index"
         :prop="'domains.' + index + '.value'"
         :rules="{
           required: true,
-          message: '域名不能为空',
+          message: 'DomainCannot be empty',
           trigger: 'blur'
         }"
       >
         <div flex="box:last">
           <b-input v-model="domain.value"></b-input>
-          <b-button @click="removeDomain(domain)">删除</b-button>
+          <b-button @click="removeDomain(domain)">Delete</b-button>
         </div>
       </b-form-item>
       <b-form-item>
-        <b-button type="primary" @click="submitForm">提交</b-button>
-        <b-button @click="addDomain">新增域名</b-button>
-        <b-button @click="resetForm">重置</b-button>
+        <b-button type="primary" @click="submitForm">Submit</b-button>
+        <b-button @click="addDomain">New增Domain</b-button>
+        <b-button @click="resetForm">Reset</b-button>
       </b-form-item>
     </b-form>
   </div>

@@ -1,16 +1,16 @@
 <template>
   <div>
-    <b-button @click="modal1 = true">显示弹窗一</b-button>
+    <b-button @click="modal1 = true">showModal 1</b-button>
 
-    <b-modal v-model="modal1" title="弹窗一" width="600px">
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
-      <b-button type="primary" @click="modal2 = true">打开嵌套弹窗</b-button>
-      <b-modal v-model="modal2" title="嵌套弹窗">
-        <p>我是弹窗内容...</p>
-        <p>我是弹窗内容...</p>
-        <p>我是弹窗内容...</p>
+    <b-modal v-model="modal1" title="Modal 1" width="600px">
+      <p>This is the dialog content....</p>
+      <p>This is the dialog content....</p>
+      <p>This is the dialog content....</p>
+      <b-button type="primary" @click="modal2 = true">OpenNested Modal</b-button>
+      <b-modal v-model="modal2" title="Nested Modal">
+        <p>This is the dialog content....</p>
+        <p>This is the dialog content....</p>
+        <p>This is the dialog content....</p>
       </b-modal>
     </b-modal>
   </div>

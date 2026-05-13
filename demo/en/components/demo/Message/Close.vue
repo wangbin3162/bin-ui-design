@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-button @click="message">创建三条不会关闭的消息</b-button>
-    <b-button @click="closeAll">关闭所有</b-button>
+    <b-button @click="message">create三条不会Close的Message</b-button>
+    <b-button @click="closeAll">Close所有</b-button>
   </div>
 </template>
 
@@ -9,9 +9,9 @@
 import { Message } from 'bin-ui-design'
 
 function message() {
-  Message.warning({ message: '消息1', duration: 0 })
-  Message.warning({ message: '消息2', duration: 0 })
-  Message.warning({ message: '消息3', duration: 0 })
+  Message.warning({ message: 'Message1', duration: 0 })
+  Message.warning({ message: 'Message2', duration: 0 })
+  Message.warning({ message: 'Message3', duration: 0 })
 }
 
 function closeAll() {

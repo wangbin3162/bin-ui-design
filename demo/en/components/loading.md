@@ -1,42 +1,42 @@
 ---
-title: 加载 Loading
+title: loading Loading
 ---
 
 <b-back-top></b-back-top>
 
-# 加载 Loading
+# loading Loading
 
-获取数据或加载中时显示，提示用户正在等待中。
+Get data or Loading...时Show，Tip用户正在等待中。
 
-## 基础用法
+## Basic Usage
 
 最简单的Loading
 
 <preview path="./demo/Loading/Basic.vue"></preview>
 
-## 居中固定
+## center固定
 
-可以在父级元素中居中固定 默认是剧中固定的，fix设置为false后用于加载类似下拉加载的功能
+可以在父级元素中center固定 Defaults to 剧中固定的，fix设置为false后Used for loading类似下拉loading的功能
 
 <preview path="./demo/Loading/Center.vue"></preview>
 
-## 自定义内容
+## Custom content
 
-可以自定义文字和内容
+可以自定义文字和Content
 
 <preview path="./demo/Loading/Custom.vue"></preview>
 
-## 切换显示状态
+## 切换Show状态
 
-切换显示状态
+切换Show状态
 
 <preview path="./demo/Loading/Ctrl.vue"></preview>
 
 ## Props
 
-| 参数     | 说明               | 类型    | 可选值  | 默认值 |
+| Parameter     | Description               | Type    | Options  | Default |
 | -------- | ------------------ | ------- | ------- | ------ |
-| showIcon | 显示加载图标       | String  | loading | —      |
-| showText | 显示加载的文字     | String  | loading | —      |
-| fix      | 是否固定于父级中心 | Boolean | —       | true   |
-| size     | 文字显示的大小     | Number  | —       | —      |
+| showIcon | Showloadingicon       | String  | loading | —      |
+| showText | Showloading的文字     | String  | loading | —      |
+| fix      | Whether to 固定于父级中心 | Boolean | —       | true   |
+| size     | 文字Show的大小     | Number  | —       | —      |

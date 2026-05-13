@@ -1,11 +1,11 @@
 <template>
   <div flex>
     <div class="block">
-      <span class="demonstration">默认不区分颜色</span>
+      <span class="demonstration">Default (no color distinction)</span>
       <b-rate v-model="value1" allow-half show-text></b-rate>
     </div>
     <div class="block">
-      <span class="demonstration">区分颜色</span>
+      <span class="demonstration">With color distinction</span>
       <b-rate v-model="value2" :colors="colors"></b-rate>
     </div>
   </div>

@@ -2,7 +2,7 @@
   <div>
     <b-dropdown @command="handleClick">
       <b-button>
-        下拉菜单
+        下拉menu
         <b-icon name="down"></b-icon>
       </b-button>
       <template #dropdown>
@@ -10,7 +10,7 @@
           <b-dropdown-item name="驴肉火烧" selected>驴肉火烧</b-dropdown-item>
           <b-dropdown-item name="炸酱面" disabled>炸酱面</b-dropdown-item>
           <b-dropdown-item name="牛肉板面">牛肉板面</b-dropdown-item>
-          <b-dropdown-item :name="['徐州美食', '地锅鸡']" divided>地锅鸡</b-dropdown-item>
+          <b-dropdown-item :name="['Xuzhou美食', '地锅鸡']" divided>地锅鸡</b-dropdown-item>
           <b-dropdown-item :name="{ type: 'info', name: '街边烧烤' }">街边烧烤</b-dropdown-item>
         </b-dropdown-menu>
       </template>

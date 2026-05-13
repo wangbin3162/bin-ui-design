@@ -3,12 +3,12 @@
     <div flex="cross:center">
       <span style="margin: 0 5px">Size:</span>
       <b-radio-group v-model="size">
-        <b-radio label="large">大号</b-radio>
-        <b-radio label="default">默认</b-radio>
-        <b-radio label="small">小型</b-radio>
-        <b-radio label="mini">超小</b-radio>
+        <b-radio label="large">Large</b-radio>
+        <b-radio label="default">Default</b-radio>
+        <b-radio label="small">Small</b-radio>
+        <b-radio label="mini">Mini</b-radio>
       </b-radio-group>
-      <span style="margin: 0 5px">Label宽度:</span>
+      <span style="margin: 0 5px">Label Width:</span>
       <b-input-number
         v-model="labelWidth"
         :min="10"
@@ -21,24 +21,24 @@
       <b-button @click="labelWidth = null">AUTO</b-button>
     </div>
     <b-divider />
-    <b-desc title="带边框列表" :column="3" :size="size" border :label-width="labelWidth">
-      <b-desc-item label="用户名">韩梅梅</b-desc-item>
-      <b-desc-item label="手机号">1769239****</b-desc-item>
-      <b-desc-item label="居住地">徐州市</b-desc-item>
-      <b-desc-item label="备注">
-        <b-tag type="primary" size="mini">学校</b-tag>
+    <b-desc title="Bordered List" :column="3" :size="size" border :label-width="labelWidth">
+      <b-desc-item label="Username">Han Meimei</b-desc-item>
+      <b-desc-item label="Phone">1769239****</b-desc-item>
+      <b-desc-item label="Address">Xuzhou</b-desc-item>
+      <b-desc-item label="Remarks">
+        <b-tag type="primary" size="mini">School</b-tag>
       </b-desc-item>
-      <b-desc-item label="联系地址">江苏省xx市吴中区吴中大道 1245 号</b-desc-item>
+      <b-desc-item label="Contact Address">No. 1245, Wuzhong Avenue, Wuzhong District, Jiangsu Province</b-desc-item>
     </b-desc>
     <b-divider />
-    <b-desc title="无边框列表" :column="3" :size="size" :label-width="labelWidth">
-      <b-desc-item label="用户名">韩梅梅</b-desc-item>
-      <b-desc-item label="手机号">1769239****</b-desc-item>
-      <b-desc-item label="居住地">徐州市</b-desc-item>
-      <b-desc-item label="备注">
-        <b-tag type="primary" size="mini">学校</b-tag>
+    <b-desc title="Borderless List" :column="3" :size="size" :label-width="labelWidth">
+      <b-desc-item label="Username">Han Meimei</b-desc-item>
+      <b-desc-item label="Phone">1769239****</b-desc-item>
+      <b-desc-item label="Address">Xuzhou</b-desc-item>
+      <b-desc-item label="Remarks">
+        <b-tag type="primary" size="mini">School</b-tag>
       </b-desc-item>
-      <b-desc-item label="联系地址">江苏省xx市吴中区吴中大道 1245 号</b-desc-item>
+      <b-desc-item label="Contact Address">No. 1245, Wuzhong Avenue, Wuzhong District, Jiangsu Province</b-desc-item>
     </b-desc>
   </div>
 </template>

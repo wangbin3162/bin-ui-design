@@ -13,7 +13,7 @@
       <b-progress :stroke-width="20" :percent="30" color="#ffcf2f"></b-progress>
     </div>
     <div class="mb-16">
-      <b-progress :percent="60" status="text" active><span>进度60</span></b-progress>
+      <b-progress :percent="60" status="text" active><span>Progress 60</span></b-progress>
     </div>
   </div>
 </template>

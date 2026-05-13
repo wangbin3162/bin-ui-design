@@ -9,7 +9,7 @@
           title-key="text"
           @change="handleChange"
         ></b-tree-select>
-        <b-button @click="defaultSelect">设置默认选中前端组</b-button>
+        <b-button @click="defaultSelect">Set Default: Frontend Team</b-button>
       </div>
       <div flex class="ml-16">
         <b-tree-select
@@ -21,12 +21,12 @@
           show-checkbox
           @change="handleChange"
         ></b-tree-select>
-        <b-button @click="setChecked">设置默认勾选项目部</b-button>
+        <b-button @click="setChecked">Set Default: Project Dept</b-button>
       </div>
     </div>
 
     <div class="pt-8 pb-8">
-      <b-button @click="clear">清空选择</b-button>
+      <b-button @click="clear">Clear Selection</b-button>
     </div>
     <div>currentId：{{ currentId }}</div>
     <div>currentNode：{{ currentNode }}</div>
@@ -40,76 +40,76 @@ import { ref } from 'vue'
 const data = ref([
   {
     id: '001',
-    text: '研发部',
+    text: 'R&D Department',
     deptCode: 'yfb',
     status: '1',
-    desc: '研发中心',
+    desc: 'R&D Center',
     parentId: null,
     children: [
       {
         id: '00101',
-        text: '后端组',
+        text: 'Backend Team',
         deptCode: 'hd',
         status: '1',
-        desc: '后端研发中心',
+        desc: 'Backend R&D Center',
         parentId: '001'
       },
       {
         id: '00102',
-        text: '前端组',
+        text: 'Frontend Team',
         deptCode: 'qd',
         status: '1',
-        desc: '前端研发中心',
+        desc: 'Frontend R&D Center',
         parentId: '001'
       },
       {
         id: '00103',
-        text: 'UI设计',
+        text: 'UI Design',
         deptCode: 'sj',
         status: '1',
-        desc: '交互、ui设计中心',
+        desc: 'Interaction & UI Design Center',
         parentId: '001'
       },
       {
         id: '00104',
-        text: '测试组',
+        text: 'Testing Team',
         deptCode: 'cs',
         status: '1',
-        desc: '测试组',
+        desc: 'Testing Team',
         parentId: '001'
       },
       {
         id: '00105',
-        text: '运维组',
+        text: 'Operations Team',
         deptCode: 'yw',
         status: '1',
-        desc: '运维、服务、巡检',
+        desc: 'Operations, Services, and Inspections',
         parentId: '001'
       }
     ]
   },
   {
     id: '002',
-    text: '项目部',
+    text: 'Project Department',
     deptCode: 'xmb',
     status: '1',
-    desc: '项目服务部',
+    desc: 'Project Services Department',
     parentId: null,
     children: [
       {
         id: '00201',
-        text: '开发组',
+        text: 'Development Team',
         deptCode: 'kf',
         status: '1',
-        desc: '后端项目开发',
+        desc: 'Backend Project Development',
         parentId: '002'
       },
       {
         id: '00202',
-        text: '交付服务组',
+        text: 'Delivery Service Team',
         deptCode: 'jf',
         status: '1',
-        desc: '交付项目，技术服务支持',
+        desc: 'Project Delivery and Technical Service Support',
         parentId: '002'
       }
     ]

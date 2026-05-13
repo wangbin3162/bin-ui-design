@@ -1,12 +1,12 @@
 <template>
   <b-form ref="formRef" :model="list" label-width="85px" label-position="top">
-    <b-collapse-wrap title="编辑表格" shadow="none">
+    <b-collapse-wrap title="Edittable" shadow="none">
       <div style="padding: 10px 24px">
         <b-table
           edit-table
           :columns="columns"
           :data="list"
-          no-data-text="暂无参数"
+          no-data-text="暂无parameter"
           draggable
           drag-handle=".handle"
           max-height="420"
@@ -35,7 +35,7 @@
               <b-date-picker
                 v-model="list[index].birthday"
                 type="date"
-                placeholder="选择日期"
+                placeholder="选择Day期"
               ></b-date-picker>
             </b-form-item>
           </template>
@@ -60,12 +60,12 @@
           </template>
         </b-table>
         <div class="mt-8">
-          <b-button icon="plus" dashed style="width: 100%" @click="handleAdd">新增</b-button>
+          <b-button icon="plus" dashed style="width: 100%" @click="handleAdd">New增</b-button>
         </div>
       </div>
     </b-collapse-wrap>
 
-    <b-collapse-wrap title="只读" shadow="none">
+    <b-collapse-wrap title="Readonly" shadow="none">
       <div style="padding: 10px 24px">
         <b-table :columns="columns2" :data="list" edit-table edit-table-detail>
           <template #hobby="{ row }">
@@ -86,19 +86,19 @@ const tableRef = ref(null)
 const hobbyMap = { 1: '吃饭', 2: '睡觉', 3: '打豆豆' }
 const columns = [
   { title: ' ', slot: 'handle', width: 24, align: 'center' },
-  { title: '姓名', slot: 'name' },
-  { title: '年龄', slot: 'age' },
-  { title: '出生日期', slot: 'birthday' },
-  { title: '爱好', slot: 'hobby' },
-  { title: '地址', slot: 'address' },
+  { title: 'Name', slot: 'name' },
+  { title: 'Age', slot: 'age' },
+  { title: 'Birthday', slot: 'birthday' },
+  { title: 'Hobby', slot: 'hobby' },
+  { title: 'Address', slot: 'address' },
   { title: ' ', slot: 'action', width: 50, align: 'center' }
 ]
 const columns2 = [
-  { title: '姓名', key: 'name' },
-  { title: '年龄', key: 'age' },
-  { title: '出生日期', key: 'birthday' },
-  { title: '爱好', slot: 'hobby' },
-  { title: '地址', key: 'address' }
+  { title: 'Name', key: 'name' },
+  { title: 'Age', key: 'age' },
+  { title: 'Birthday', key: 'birthday' },
+  { title: 'Hobby', slot: 'hobby' },
+  { title: 'Address', key: 'address' }
 ]
 
 const validateRules = reactive({
@@ -115,35 +115,35 @@ const list = ref([
     age: 18,
     birthday: '1990-04-22',
     hobby: '1',
-    address: '北京市朝阳区芍药居'
+    address: 'BeijingCity朝阳区芍药居'
   },
   {
     name: '张小刚',
     age: 25,
     birthday: '1990-11-11',
     hobby: '1',
-    address: '北京市海淀区西二旗'
+    address: 'BeijingCity海淀区西二旗'
   },
   {
     name: '李小红',
     age: 30,
     birthday: '1985-02-05',
     hobby: '3',
-    address: '上海市浦东新区世纪大道'
+    address: 'ShanghaiCity浦东New区世纪大道'
   },
   {
     name: '周小伟',
     age: 26,
     birthday: '1993-07-11',
     hobby: '1',
-    address: '深圳市南山区深南大道'
+    address: 'ShenzhenCity南山区深南大道'
   },
   {
     name: '张小发',
     age: 33,
     birthday: '1999-12-12',
     hobby: '2',
-    address: '南京市龙眠大道'
+    address: 'NanjingCity龙眠大道'
   }
 ])
 

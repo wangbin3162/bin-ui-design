@@ -8,11 +8,11 @@
       <template #desc>Custom error description copywriting.</template>
     </b-alert>
     <b-alert show-icon>
-      自定义icon
+      Customicon
       <template #icon>
         <b-icon name="smile"></b-icon>
       </template>
-      <template #desc>自定义icon描述</template>
+      <template #desc>Customicon描述</template>
     </b-alert>
   </div>
 </template>

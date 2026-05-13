@@ -1,70 +1,70 @@
 ---
-title: 栅格 Grid
+title: Grid
 ---
 
 <b-back-top></b-back-top>
 
-# 栅格 Grid
+# Grid
 
-采用了24栅格系统，将区域进行24等分
+Uses a 24-grid system, dividing the area into 24 equal parts.
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Grid/Basic.vue"></preview>
 
-## 间隔
+## Gutter
 
 <preview path="./demo/Grid/Gutter.vue"></preview>
 
-## 栅格次序
+## Grid Order
 
 <preview path="./demo/Grid/Order.vue"></preview>
 
-## 栅格顺序
+## Grid Sequence
 
-使用push和pull来改变栅格顺序
+Use push and pull to change the grid order.
 
 <preview path="./demo/Grid/Pull.vue"></preview>
 
-## 左右偏移
+## Offset
 
-offset 可以设置偏移量
+Offset can be used to set the offset amount.
 
 <preview path="./demo/Grid/Offset.vue"></preview>
 
-## flex布局
+## Flex Layout
 
 <preview path="./demo/Grid/Flex.vue"></preview>
 
-## 响应式布局
+## Responsive Layout
 
-预设六个响应尺寸：xs sm md lg xl xxl，详见 API。
+Six preset responsive sizes: xs, sm, md, lg, xl, xxl. See the API for details.
 
 <preview path="./demo/Grid/Auto.vue"></preview>
 
 ## Row Props
 
-| 参数       | 说明                         | 类型          | 可选值                                          | 默认值 |
+| Parameter       | Description                         | Type          | Options                                          | Default |
 | ---------- | ---------------------------- | ------------- | ----------------------------------------------- | ------ |
-| gutter     | 栅格间距，单位 px            | Number/String | —                                               | 0      |
-| type       | 布局模式，在现代浏览器下有效 | String        | flex或不选                                      | —      |
-| justify    | lex 布局下的水平排列方式     | String        | —                                               | —      |
-| align      | flex 布局下的垂直对齐方式    | String        | start、end、center、space-around、space-between | —      |
-| class-name | 自定义的class名称            | String        | —                                               | —      |
+| gutter     | Grid spacing, in px            | Number/String | —                                               | 0      |
+| type       | Layout mode, effective in modern browsers | String        | flex, or none                                      | —      |
+| justify    | Horizontal alignment in flex layout     | String        | —                                               | —      |
+| align      | Vertical alignment in flex layout    | String        | start / end / center / space-around / space-between | —      |
+| class-name | Custom class name            | String        | —                                               | —      |
 
 ## Col Props
 
-| 参数       | 说明                                      | 类型          | 可选值 | 默认值 |
+| Parameter       | Description                                      | Type          | Options | Default |
 | ---------- | ----------------------------------------- | ------------- | ------ | ------ |
-| span       | 栅格的占位格数 为0 时，相当于display:none | Number/String | 0~24   | -      |
-| order      | 栅格的顺序 在flex布局模式下有效           | Number/String | -      | -      |
-| offset     | 栅格左侧偏移                              | Number/String | -      | -      |
-| push       | 栅格向右移动格数                          | Number/String | -      | -      |
-| pull       | 栅格向左移动格数                          | Number/String | -      | -      |
-| class-name | 自定义的class                             | String        | -      | -      |
-| xs         | <576px 响应式栅格                         | Number        | -      | -      |
-| sm         | (≥576px < 768px)≥576px 响应式栅格         | Number        | -      | -      |
-| md         | (≥768px < 992px) 响应式栅格               | Number        | -      | -      |
-| lg         | (≥992px < 1200px) 响应式栅格              | Number        | -      | -      |
-| xl         | (≥1200px < 1600px) 响应式栅格             | Number        | -      | -      |
-| xxl        | ≥1600px 响应式栅格                        | Number        | -      | -      |
+| span       | Number of grid cells to occupy. When 0, equivalent to display:none | Number/String | 0~24   | -      |
+| order      | Grid order, effective in flex layout mode           | Number/String | -      | -      |
+| offset     | Left offset of the grid                              | Number/String | -      | -      |
+| push       | Number of cells to push the grid to the right                          | Number/String | -      | -      |
+| pull       | Number of cells to pull the grid to the left                          | Number/String | -      | -      |
+| class-name | Custom class                             | String        | -      | -      |
+| xs         | <576px responsive grid                         | Number        | -      | -      |
+| sm         | (>=576px < 768px) responsive grid         | Number        | -      | -      |
+| md         | (>=768px < 992px) responsive grid               | Number        | -      | -      |
+| lg         | (>=992px < 1200px) responsive grid              | Number        | -      | -      |
+| xl         | (>=1200px < 1600px) responsive grid             | Number        | -      | -      |
+| xxl        | >=1600px responsive grid                        | Number        | -      | -      |

@@ -4,10 +4,10 @@
       v-model="value1"
       style="width: 340px"
       is-range
-      range-separator="至"
-      start-placeholder="开始时间"
-      end-placeholder="结束时间"
-      placeholder="选择时间范围"
+      range-separator="To"
+      start-placeholder="Start Time"
+      end-placeholder="End Time"
+      placeholder="Select Time Range"
     ></b-time-picker>
     &nbsp; &nbsp;
     <b-time-picker
@@ -15,10 +15,10 @@
       style="width: 340px"
       is-range
       arrow-control
-      range-separator="至"
-      start-placeholder="开始时间"
-      end-placeholder="结束时间"
-      placeholder="选择时间范围"
+      range-separator="To"
+      start-placeholder="Start Time"
+      end-placeholder="End Time"
+      placeholder="Select Time Range"
     ></b-time-picker>
   </div>
 </template>

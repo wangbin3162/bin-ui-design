@@ -1,25 +1,25 @@
 ---
-title: 组件指令
+title: Directives
 ---
 
 <b-back-top></b-back-top>
 
-# 组件指令
+# Directives
 
-组件提供了四个指令用于完成组件功能,如果组件是全局引入则会自动注册.如采用自动引入或者按需加载,则需要手动进行引入和注册.
+The library provides four directives for component functionality. If components are imported globally, these are registered automatically. For auto-import or on-demand loading, you need to manually import and register them.
 
 ```typescript
 // main.ts
 import { createApp } from 'vue'
 import {
   create,
-  // 外部点击指令
+  // Click outside directive
   ClickOutside,
-  // 点击动画
+  // Click animation
   ClickAnimation,
-  // 水波纹指令
+  // Ripple wave directive
   Waves,
-  // 重复点击
+  // Repeat click
   RepeatClick
 } from 'bin-ui-design'
 
@@ -32,9 +32,9 @@ app.use(UI)
 app.mount('#app')
 ```
 
-## 点击动画指令
+## Click Animation Directive
 
-在标签中追加`v-click-animation`指令增加点击动画指令，波纹颜色根据border或background颜色创建
+Add the `v-click-animation` directive to elements for a click animation effect. The ripple color is created based on the border or background color.
 
 <div class="demo-button">
   <b-button>Default</b-button>
@@ -45,43 +45,43 @@ app.mount('#app')
   <b-button type="danger">Danger</b-button>
   <span style="border: 1px solid #ffa2d3; 
           padding: 6px 10px;margin: 0 8px;border-radius: 2px;vertical-align: middle;"
-        v-click-animation>自定义</span>
+        v-click-animation>Custom</span>
 </div>
 
-## 水波纹指令
+## Ripple Waves Directive
 
-在标签中追加`v-waves`指令增加水波纹指令,指令可以设置波纹颜色和点击方式, 注意，增加水波纹指令会默认覆盖原有的按钮点击效果
+Add the `v-waves` directive for a ripple effect. You can configure the ripple color and click behavior. Note that adding this directive will override the default button click effect.
 
 ```html
-<b-button v-waves>默认指令</b-button>
-<b-button v-waves="'rgba(255,162,211,0.5)'">设置颜色</b-button>
+<b-button v-waves>Default</b-button>
+<b-button v-waves="'rgba(255,162,211,0.5)'">Custom Color</b-button>
 ```
 
 <div class="demo-button">
-  <b-button v-waves>默认指令</b-button>
-  <b-button v-waves="'rgba(255,162,211,0.5)'">设置颜色</b-button>
+  <b-button v-waves>Default</b-button>
+  <b-button v-waves="'rgba(255,162,211,0.5)'">Custom Color</b-button>
 </div>
 
-## 重复点击指令
+## Repeat Click Directive
 
-可以按住进行重复点击,组件中在数字输入框使用到.按住增加
+Enables repeat click when held down. Used in the InputNumber component for incrementing.
 
 <div class="demo-button">
-  <b-button v-repeat-click="repeatClick">按住查看控制台</b-button>
+  <b-button v-repeat-click="repeatClick">Hold to see console</b-button>
 </div>
 
-## ClickOutside 外部点击指令
+## ClickOutside Directive
 
-通过添加`v-click-outside="clickOutside"`来添加外部点击事件 常用于popper的外部点击关闭.
+Add click-outside detection with `v-click-outside="clickOutside"`. Commonly used to close popper overlays.
 
 <div class="demo-button">
   <div v-click-outside="clickOutside" flex="main:center cross:center"
         style="width: 200px;height:100px;background: #2a85e4;color:#fff;font-size: 20px;">
-    点击外部执行
+    Click outside me
   </div>
 </div>
 
 <script lang="ts" setup>
-const repeatClick = ()=> console.log('不断执行点击事件...')
-const clickOutside = ()=> console.log('点击外部...')
+const repeatClick = ()=> console.log('Repeat click event firing...')
+const clickOutside = ()=> console.log('Clicked outside...')
 </script>

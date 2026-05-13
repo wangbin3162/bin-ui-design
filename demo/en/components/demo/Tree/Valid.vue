@@ -13,8 +13,8 @@
           ></b-tree-select>
         </b-form-item>
         <b-form-item>
-          <b-button type="primary" @click="submitForm">提交</b-button>
-          <b-button @click="resetForm">重置</b-button>
+          <b-button type="primary" @click="submitForm">Submit</b-button>
+          <b-button @click="resetForm">Reset</b-button>
         </b-form-item>
       </b-form>
     </div>
@@ -111,7 +111,7 @@ const obj = ref({
 const ruleFormRef = ref(null)
 const currentNode = ref({})
 const ruleValidate = {
-  currentId: [{ required: true, message: '树不能为空', trigger: 'change' }]
+  currentId: [{ required: true, message: '树Cannot be empty', trigger: 'change' }]
 }
 
 function handleChange(val, node) {

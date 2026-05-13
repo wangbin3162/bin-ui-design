@@ -51,9 +51,9 @@ function loadData(item, callback) {
         }
       ]
     } else if (item.title === 'no-child') {
-      // 按需自行设置是否是叶子节点或者不设置
+      // on-demand自Row设置是否是叶子节点或者不设置
       item['isLeaf'] = true
-      // 不设置会保留箭头可以再次点击
+      // 不设置会保留箭头可以再次click
       // data = []
     }
 

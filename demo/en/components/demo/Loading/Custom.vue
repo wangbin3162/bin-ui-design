@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="demo-loading">
-      <b-loading fix>加载中</b-loading>
+      <b-loading fix>Load中</b-loading>
     </div>
     <div class="demo-loading">
       <b-loading fix show-text="loading"></b-loading>

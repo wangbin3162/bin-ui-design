@@ -8,45 +8,45 @@ title: 描述 Desc
 
 按照一个区块来展示一些描述详情
 
-## 基础用法
+## Basic Usage
 
-日常显示列表的显示组件
+日常Show列表的Showcomponent
 
 <preview path="./demo/Desc/Basic.vue"></preview>
 
-## 不同尺寸
+## Sizes
 
-可以显示不同尺寸的信息
+Can display 不同size的信息
 
 <preview path="./demo/Desc/Size.vue"></preview>
 
 ## Props
 
-| 参数        | 说明                                 | 类型    | 可选值                       | 默认值  |
+| Parameter        | Description                                 | Type    | Options                       | Default  |
 | ----------- | ------------------------------------ | ------- | ---------------------------- | ------- |
-| border      | 是否带有边框                         | Boolean | —                            | false   |
-| column      | 一行显示几个                         | Number  | —                            | 3       |
-| label-width | label宽度(百分比)                    | Number  | —                            | —       |
-| size        | 尺寸                                 | String  | large ，default，small，mini | default |
-| title       | 标题文本                             | String  | —                            | —       |
-| extra       | 操作区文本，显示在右上方，可插槽插入 | String  | —                            | —       |
+| border      | Whether to 带有border                         | Boolean | —                            | false   |
+| column      | 一行Show几个                         | Number  | —                            | 3       |
+| label-width | labelWidth(percentage)                    | Number  | —                            | —       |
+| size        | size                                 | String  | large ，default，small，mini | default |
+| title       | Title文本                             | String  | —                            | —       |
+| extra       | 操作区文本，Show在右上方，可slot插入 | String  | —                            | —       |
 
 ## Slot
 
-| 名称  | 说明         |
+| Name  | Description         |
 | ----- | ------------ |
-| title | 标题文本插槽 |
-| extra | 操作区域插槽 |
+| title | Title文本slot |
+| extra | 操作区域slot |
 
 ## ItemProps
 
-| 参数  | 说明     | 类型   | 可选值 | 默认值 |
+| Parameter  | Description     | Type   | Options | Default |
 | ----- | -------- | ------ | ------ | ------ |
-| label | 标签文本 | String | —      | —      |
+| label | tag文本 | String | —      | —      |
 | span  | 列的数量 | Number | —      | —      |
 
 ## ItemSlot
 
-| 名称  | 说明     |
+| Name  | Description     |
 | ----- | -------- |
-| label | 文本插槽 |
+| label | 文本slot |

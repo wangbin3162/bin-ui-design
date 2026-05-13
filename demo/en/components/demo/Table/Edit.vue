@@ -25,7 +25,7 @@
         v-model="obj.editBirthday"
         size="small"
         type="date"
-        placeholder="选择日期"
+        placeholder="选择Day期"
       ></b-date-picker>
       <span v-else>{{ row.birthday }}</span>
     </template>
@@ -48,11 +48,11 @@
     </template>
     <template #action="{ index, row }">
       <div v-if="obj.editIndex === index">
-        <b-button size="small" type="success" plain @click="handleSave(index)">保存</b-button>
-        <b-button size="small" @click="obj.editIndex = -1">取消</b-button>
+        <b-button size="small" type="success" plain @click="handleSave(index)">save</b-button>
+        <b-button size="small" @click="obj.editIndex = -1">Cancel</b-button>
       </div>
       <div v-else>
-        <b-button size="small" @click="handleEdit(row, index)">操作</b-button>
+        <b-button size="small" @click="handleEdit(row, index)">Actions</b-button>
       </div>
     </template>
   </b-table>
@@ -63,12 +63,12 @@ import { reactive, ref } from 'vue'
 import dayjs from 'dayjs'
 
 const columns = [
-  { title: '姓名', slot: 'name' },
-  { title: '年龄', slot: 'age' },
-  { title: '出生日期', slot: 'birthday' },
-  { title: '爱好', slot: 'hobby' },
-  { title: '地址', slot: 'address' },
-  { title: '操作', slot: 'action' }
+  { title: 'Name', slot: 'name' },
+  { title: 'Age', slot: 'age' },
+  { title: 'Birthday', slot: 'birthday' },
+  { title: 'Hobby', slot: 'hobby' },
+  { title: 'Address', slot: 'address' },
+  { title: 'Actions', slot: 'action' }
 ]
 const hobbyMap = { '1': '吃饭', '2': '睡觉', '3': '打豆豆' }
 const data = ref([
@@ -77,35 +77,35 @@ const data = ref([
     age: 18,
     birthday: '1990-04-22',
     hobby: '1',
-    address: '北京市朝阳区芍药居'
+    address: 'BeijingCity朝阳区芍药居'
   },
   {
     name: '张小刚',
     age: 25,
     birthday: '1990-11-11',
     hobby: '1',
-    address: '北京市海淀区西二旗'
+    address: 'BeijingCity海淀区西二旗'
   },
   {
     name: '李小红',
     age: 30,
     birthday: '1985-02-05',
     hobby: '3',
-    address: '上海市浦东新区世纪大道'
+    address: 'ShanghaiCity浦东New区世纪大道'
   },
   {
     name: '周小伟',
     age: 26,
     birthday: '1993-07-11',
     hobby: '1',
-    address: '深圳市南山区深南大道'
+    address: 'ShenzhenCity南山区深南大道'
   },
   {
     name: '张小发',
     age: 33,
     birthday: '1999-12-12',
     hobby: '2',
-    address: '南京市龙眠大道'
+    address: 'NanjingCity龙眠大道'
   }
 ])
 

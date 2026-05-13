@@ -5,16 +5,16 @@
       flex="main:center cross:center"
       @contextmenu.stop.prevent="show($event)"
     >
-      右键点击菜单
+      Right click for menu
     </div>
     <b-contextmenu ref="contextMenuRef">
       <li>
         <b-icon name="edit" />
-        编辑
+        Edit
       </li>
       <li>
         <b-icon name="delete" />
-        删除
+        Delete
       </li>
     </b-contextmenu>
   </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button @click="handleShowPreview">打开图片预览</b-button>
+    <b-button @click="handleShowPreview">Open Image Preview</b-button>
     <b-image-preview v-model="preview" :preview-list="urlList" />
   </div>
 </template>

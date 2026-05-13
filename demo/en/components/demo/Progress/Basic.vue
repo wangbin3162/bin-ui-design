@@ -4,7 +4,7 @@
       <b-progress :percent="0"></b-progress>
     </div>
     <div class="mb-16">
-      <b-progress :percent="70" status="text" active><span>进度70</span></b-progress>
+      <b-progress :percent="70" status="text" active><span>Progress 70</span></b-progress>
     </div>
     <div class="mb-16">
       <b-progress :percent="100" status="success"></b-progress>

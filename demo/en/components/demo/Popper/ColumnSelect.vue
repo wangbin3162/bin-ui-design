@@ -13,14 +13,14 @@
       >
         <template #default>
           <div style="width: 120px">
-            <div style="padding: 8px 10px 10px; border-bottom: 1px solid #eee">选择列</div>
+            <div style="padding: 8px 10px 10px; border-bottom: 1px solid #eee">Select columns</div>
             <div v-for="(item, index) in list" :key="index" style="padding: 4px 8px">
               <b-checkbox v-model="item.checked">{{ item.name }}</b-checkbox>
             </div>
           </div>
         </template>
         <template #trigger>
-          <b-button>选择列</b-button>
+          <b-button>Select columns</b-button>
         </template>
       </b-popper>
     </div>
@@ -32,11 +32,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const list = ref([
-  { name: '姓名', checked: false },
-  { name: '年龄', checked: false },
-  { name: '电话', checked: false },
-  { name: '性别', checked: false },
-  { name: '地址', checked: false },
-  { name: '备注', checked: false }
+  { name: 'Name', checked: false },
+  { name: 'Age', checked: false },
+  { name: 'Phone', checked: false },
+  { name: 'Gender', checked: false },
+  { name: 'Address', checked: false },
+  { name: 'Remarks', checked: false }
 ])
 </script>

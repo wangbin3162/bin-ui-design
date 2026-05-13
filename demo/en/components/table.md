@@ -1,202 +1,202 @@
 ---
-title: 表格 Table
+title: Table
 ---
 
 <b-back-top></b-back-top>
 
-# 表格 Table
+# Table
 
-基础的表格组件，用于显示列表数据
+A basic table component for displaying list data.
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Table/Basic.vue"></preview>
 
-## 斑马纹
+## Striped Rows
 
-通过设置`stripe`来设置斑马纹显示
+Set `stripe` to enable alternating row colors.
 
 <preview path="./demo/Table/Stripe.vue"></preview>
 
-## 边框
+## Border
 
-通过设置`border`来设置斑马纹显示
+Set `border` to enable vertical borders.
 
 <preview path="./demo/Table/Border.vue"></preview>
 
-## 超出隐藏
+## Text Overflow Tooltip
 
-可以通过给`columns`设置属性`tooltip`来设置超出隐藏并悬停显示, 如仅有一张表格则可以设置`tooltip`皮肤`tooltip-theme`来开启优化样式
-（注意：因表格单元格存在超出隐藏样式所以必须将tooltip标签插入至body元素，会成多余标签，如有多个表格缓存则会插入过多标签造成性能问题，所以是否开启需要根据需求确定）
+Set `tooltip` on columns to truncate text and show full content on hover. If only one table exists, you can also configure the `tooltip-theme` skin for optimized styles.
+(Note: Since table cells have overflow:hidden, tooltip tags must be appended to the body element. Multiple table instances may create too many tags and cause performance issues, so enable this based on your needs.)
 
 <preview path="./demo/Table/Tooltip.vue"></preview>
 
-## 固定表头
+## Fixed Header
 
-height 和 maxHeight 可以设置固定表头
+Use `height` and `maxHeight` to set a fixed table header.
 
 <preview path="./demo/Table/FixedHeader.vue"></preview>
 
-## 固定表头和列
+## Fixed Header and Columns
 
-可以同时固定表头和列
+Both header and columns can be fixed simultaneously.
 
 <preview path="./demo/Table/FixedColumn.vue"></preview>
 
-## 流体高度
+## Auto Height
 
 <preview path="./demo/Table/AutoHeight.vue"></preview>
 
-## 单选表格
+## Single Selection
 
 <preview path="./demo/Table/Select.vue"></preview>
 
-## 多选表格
+## Multiple Selection
 
-通过给 columns 数据设置一项，指定 type: 'selection'，即可自动开启多选功能。
+Enable multi-selection by adding a column with `type: 'selection'`.
 
-给 data 项设置特殊 key \_checked: true 可以默认选中当前项。
+Set the special key `_checked: true` on a data row to pre-select it.
 
-给 data 项设置特殊 key \_disabled: true 可以禁止选择当前项。
+Set the special key `_disabled: true` on a data row to disable its selection.
 
-@select，选中某一项触发，返回值为 selection 和 row，分别为已选项和刚选择的项。@select-all，点击全选时触发，返回值为 selection，已选项。
-@selection-change，只要选中项发生变化时就会触发，返回值为 selection，已选项。
+@select: triggers when a row is selected. Returns `selection` and `row` — the selected rows and the most recently selected row. @select-all: triggers when all items are selected. Returns `selection` — all selected rows.
+@selection-change: triggers whenever the selection changes. Returns `selection` — all selected rows.
 
 <preview path="./demo/Table/MultiplySelect.vue"></preview>
 
-## 可展开
+## Expandable Rows
 
-通过给`columns` 数据设置一项，指定 `type: 'expand'`，即可开启扩展功能。
+Enable expandable rows by adding a column with `type: 'expand'`.
 
 <preview path="./demo/Table/Expand.vue"></preview>
 
-## 表头分组
+## Grouped Header
 
-columns内容可以设置children来分组渲染表头,合并表头和行列时推荐使用border模式
+Use `children` in column definitions to group table headers. For merged headers and cells, the `border` mode is recommended.
 
 <preview path="./demo/Table/GroupHeader.vue"></preview>
 
-## 行列合并
+## Row & Column Merging
 
-可以设置属性`mergeMethod`制定合并行或者列的算法，方法参数为四个对象`row`，`column`，`rowIndex`，`columnIndex`，
-该方法返回一个包含两个元素的数组，第一个表示rowspan，第二个为colspan，用于合并单元格 合并表格最好是使用border模式
+Configure `mergeMethod` to specify row/column merging logic.，methodparameter为四个对象`row`，`column`，`rowIndex`，`columnIndex`，
+The method returns an array of two elements: the first is `rowspan`, the second is `colspan`. It is recommended to use `border` mode for merged cells.
 
 <preview path="./demo/Table/Merge.vue"></preview>
 
-## 排序表格
+## Sortable
 
 <preview path="./demo/Table/Sort.vue"></preview>
 
-## 行内编辑
+## Inline Editing
 
 <preview path="./demo/Table/Edit.vue"></preview>
 
-## 编辑表格
+## Edit Mode
 
-编辑表格，只需要开启编辑表格样式，即可开启一中隐藏输入边框的样式，方便进行表格编辑
+Enable the edit table style to hide input borders, making inline table editing easier.
 
 <preview path="./demo/Table/Edit2.vue"></preview>
 
-## 拖拽调整顺序
+## Drag to Reorder
 
-可以设置draggable开启拖拽排序
+Set `draggable` to enable drag sorting.
 
-注意，设置拖拽排序后，且鼠标拖拽也覆盖了鼠标选中文字，此时可以额外设置也可以设置handle来指定拖拽某一个元素实现
+Note: When drag sorting is enabled, mouse drag also covers text selection. You can set `handle` to specify a drag handle element.
 
-如需要更新数据，则需使用v-model:data来更新,或配合@drag-drop函数来处理更新数据都可以
+To update (Date) data, use `v-model:data` for two-way binding, or handle update (Date)s in the `@drag-drop` event.
 
 <preview path="./demo/Table/Drag.vue"></preview>
 
-## loading状态
+## Loading State
 
 <preview path="./demo/Table/Loading.vue"></preview>
 
-## 大小状态
+## Sizes
 
-通过设置属性 `size` 为 `large` 或 `small` 可以调整表格尺寸为大或小，默认不填或填写 default 。
+Set `size` to `large` or `small` to adjust table size. The default is `default` (same as not specifying).
 
 <preview path="./demo/Table/Size.vue"></preview>
 
-## 无数据
+## Empty Data
 
-noDataText可以设置无数据状态
+Set `noDataText` for the empty data state.
 
 <preview path="./demo/Table/NoData.vue"></preview>
 
 ## Table props
 
-| 参数                 | 说明                                                                                                          | 类型          | 可选值        | 默认值   |
+| Parameter                 | Description                                                                                                          | Type          | Options        | Default   |
 | -------------------- | ------------------------------------------------------------------------------------------------------------- | ------------- | ------------- | -------- |
-| data                 | 显示的结构化数据，字段 cellClassName 用于设置任意单元格的样式名称，因此数据不能使用该字段，详见示例特定样式。 | Array         | —             | []       |
-| columns              | 表格列的配置描述，具体项见后文                                                                                | Array         | —             | []       |
-| stripe               | 间隔斑马纹                                                                                                    | Boolean       | false/true    | false    |
-| border               | 纵向边框                                                                                                      | Boolean       | false/true    | false    |
-| show-header          | 是否显示表头                                                                                                  | Boolean       | false/true    | false    |
-| width                | 表格宽度，单位 px                                                                                             | Number/String | —             | auto     |
-| height               | 表格高度，单位 px，设置后，如果表格内容大于此值，会固定表头                                                   | Number/String | —             | —        |
-| max-height           | 最大表格高度                                                                                                  | Number/String | —             | —        |
-| loading              | 表格加载状态                                                                                                  | Boolean       | —             | false    |
-| disabled-hover       | 禁用悬停高亮                                                                                                  | Boolean       | —             | false    |
-| highlight-row        | 是否支持高亮选中的行，即单选                                                                                  | Boolean       | —             | false    |
-| highlight-row-cancel | 单选高亮是否可以取消，如果是则再次点击选中的行会取消选中                                                      | Boolean       | —             | false    |
-| size                 | 表格尺寸                                                                                                      | string        | large / small | default  |
-| no-data-text         | 空数据内容                                                                                                    | string        | —             | 暂无数据 |
-| loading-text         | 加载数据文字                                                                                                  | string        | —             | 正在加载 |
-| draggable            | 开启拖拽调整行顺序，同步元数据需要使用v-model:data使用或需配合 @drag-drop 事件更新data都可以                  | Boolean       | —             | false    |
-| drag-handle          | 拖拽的handle图标                                                                                              | String        | —             | —        |
-| row-key              | 是否强制使用内置row-key刷新                                                                                   | Boolean       | —             | false    |
-| merge-method         | 表格合并行列的方法函数                                                                                        | Function      | —             | false    |
+| data                 | Structured data to display. The field `cellClassName` is reserved for setting custom cell class names, so do not use it in your data. See examples for specific style usage. | Array         | —             | []       |
+| columns              | Column configuration, see below for details                                                                                | Array         | —             | []       |
+| stripe               | Show stripe rows alternately                                                                                                    | Boolean       | false/true    | false    |
+| border               | Show vertical border                                                                                                      | Boolean       | false/true    | false    |
+| show-header          | Whether to show Table header                                                                                                  | Boolean       | false/true    | false    |
+| width                | Table width in px                                                                                             | Number/String | —             | auto     |
+| height               | Table height in px; if content exceeds this value, the header becomes fixed                                                   | Number/String | —             | —        |
+| max-height           | Max table height                                                                                                  | Number/String | —             | —        |
+| loading              | Table loading state                                                                                                  | Boolean       | —             | false    |
+| disabled-hover       | Disable hover highlight                                                                                                  | Boolean       | —             | false    |
+| highlight-row        | Enable row highlight / single-selection mode.                                                                                  | Boolean       | —             | false    |
+| highlight-row-cancel | 单选高亮Whether to 可以cancel，如果Yes则再次clickselect的行会cancelselect                                                      | Boolean       | —             | false    |
+| size                 | Table size                                                                                                      | string        | large / small | default  |
+| no-data-text         | Empty data placeholder text                                                                                                    | string        | —             | is not data |
+| loading-text         | Loading text                                                                                                  | string        | —             | Loading... |
+| draggable            | Enable drag to reorder rows，同步元数据需要usev-model:datause or 需配合 @drag-drop eventupdatedata都可以                  | Boolean       | —             | false    |
+| drag-handle          | Drag handle icon                                                                                              | String        | —             | —        |
+| row-key              | Whether to 强制use内置row-key刷新                                                                                   | Boolean       | —             | false    |
+| merge-method         | Merge method for row/column spanning                                                                                        | Function      | —             | false    |
 
 ## Table events
 
-| 事件名            | 说明                                                        | 返回值                                                         |
+| Event Name            | Description                                                        | Return Value                                                         |
 | ----------------- | ----------------------------------------------------------- | -------------------------------------------------------------- |
-| current-change    | 开启 highlight-row 后有效，当表格的当前行发生变化的时候会触 | currentRow, oldCurrentRow,index                                |
-| select            | 在多选模式下有效，选中某一项时触发                          | 已选项, 刚选择                                                 |
-| select-cancel     | 在多选模式下有效，取消选中某一项时触发                      | 已选项, 取消选择                                               |
-| select-all        | 全选时触发                                                  | 已选项                                                         |
-| select-all-cancel | 取消全选时触发                                              | 已选项                                                         |
-| selection-change  | 选中项发生变化时就会触发                                    | 已选项                                                         |
-| sort-change       | 排序时有效，当点击排序时触发                                | column：当前列数据 key：排序依据的指标 order(值为 asc 或 desc) |
-| row-click         | 单击某一行时触发                                            | 当前行的数据,index                                             |
-| row-dblclick      | 双击某一行时触发                                            | 当前行的数据,index                                             |
-| expand            | 展开或收起某一行时触                                        | row：当前行的数据,status：当前的状态                           |
-| drag-drop         | 拖拽排序松开时触发                                          | 置换的两行数据索引和更新后的数据 newData, newIndex, oldIndex   |
+| current-change    | Effective when highlight-row is enabled; triggers when the current row changes | currentRow, oldCurrentRow,index                                |
+| select            | Effective in multi-select mode; triggers when an item is selected                          | selected items, recently selected                                                 |
+| select-cancel     | Effective in multi-select mode; triggers when an item is deselected                      | selected items, deselected                                               |
+| select-all        | Triggers when all items are selected                                                  | selected items                                                         |
+| select-all-cancel | cancelTriggers when all items are selected                                              | selected items                                                         |
+| selection-change  | Triggers when the selection changes                                    | selected items                                                         |
+| sort-change       | Effective when sortable; triggers when sorting is clicked                                | column：当前列数据 key：sort依据的指标 order(值为 asc  or  desc) |
+| row-click         | Triggers when a row is clicked                                            | 当前行的数据,index                                             |
+| row-dblclick      | Triggers when a row is double-clicked                                            | 当前行的数据,index                                             |
+| expand            | Triggers when a row is expanded or collapsed                                        | row：当前行的数据,status：当前的状态                           |
+| drag-drop         | Triggers when drag sort is released                                          | 置换的两行数据索引和update后的数据 newData, newIndex, oldIndex   |
 
 ## Table slot
 
-| 名称    | 说明               |
+| Name    | Description               |
 | ------- | ------------------ |
-| header  | 表头               |
-| footer  | 页脚               |
-| loading | 警告提加载中示内容 |
+| header  | Table header               |
+| footer  | Table footer               |
+| loading | Loading content |
 
 ## Table methods
 
-| 方法名          | 说明                 | 参数  |
+| Method Name          | Description                 | Parameter  |
 | --------------- | -------------------- | ----- |
-| clickCurrentRow | 选中某一项           | index |
-| clearCurrentRow | 清除高亮项，仅在开启 | 无    |
-| handleResize    | 刷新表格的宽高       | 无    |
-| getSelection    | 获取已经选中的行     | 无    |
+| clickCurrentRow | Select a row by index           | index |
+| clearCurrentRow | Clear highlighted row | —    |
+| handleResize    | Refresh table dimensions       | —    |
+| getSelection    | Get selected rows     | —    |
 
 ## column
 
-| 参数        | 说明                                                              | 类型              | 可选值                                | 默认值 |
+| Parameter        | Description                                                              | Type              | Options                                | Default |
 | ----------- | ----------------------------------------------------------------- | ----------------- | ------------------------------------- | ------ |
-| type        | 列类型                                                            | String            | index、selection、expand、html String | -      |
-| title       | 列头显示文字                                                      | String            | -                                     | #      |
-| key         | 对应列内容的字段名                                                | String            | -                                     | -      |
-| width       | 列宽                                                              | Number            | -                                     | -      |
-| minWidth    | 最小列宽                                                          | Number            | -                                     | -      |
-| maxWidth    | 最大列宽                                                          | Number            | -                                     | -      |
-| align       | 对齐方式                                                          | String            | right,center                          | left   |
-| className   | 列的样式名称                                                      | String            | -                                     | -      |
-| fixed       | 列是否固定在左侧或者右侧                                          | String            | left,right                            | -      |
-| ellipsis    | 开启后，文本将不换行                                              | Boolean           | -                                     | false  |
-| tooltip     | 开启后，文本将不换行,并用 Tooltip 组件显示完整内容                | Boolean           | -                                     | false  |
-| render      | 自定义渲染列 ,第一个是 h，第二个为对象，包含 row、column 和 index | Function          | -                                     | -      |
-| indexMethod | type 为 index 时可用，自定义序号 ,参数 row 为当前行内容           | Function          | -                                     | -      |
-| sortable    | 对应列是否可以排序                                                | Boolean ,'custom' | -                                     | false  |
-| sortMethod  | 自定义排序使用的方法,三个参数 a 、 b 和 type                      | Function          | -                                     | -      |
-| sortType    | 设置初始化排序。值为 asc 和 desc                                  | String            | -                                     | -      |
+| type        | Column type                                                            | String            | index、selection、expand、html String | -      |
+| title       | Column header text                                                      | String            | -                                     | #      |
+| key         | Field name for column data                                                | String            | -                                     | -      |
+| width       | Column width                                                              | Number            | -                                     | -      |
+| minWidth    | 最小Column width                                                          | Number            | -                                     | -      |
+| maxWidth    | 最大Column width                                                          | Number            | -                                     | -      |
+| align       | Alignment                                                          | String            | right,center                          | left   |
+| className   | CSS class name for the column                                                      | String            | -                                     | -      |
+| fixed       | 列Whether to 固定在左侧 or 者右侧                                          | String            | left,right                            | -      |
+| ellipsis    | When enabled, text will not wrap                                              | Boolean           | -                                     | false  |
+| tooltip     | When enabled, text will not wrap,并用 Tooltip componentShow完整Content                | Boolean           | -                                     | false  |
+| render      | Custom render function for the column ,第一个is h，第二个为对象，包含 row、column 和 index | Function          | -                                     | -      |
+| indexMethod | type 为 index 时可用，Custom index method ,parameter row 为当前行Content           | Function          | -                                     | -      |
+| sortable    | 对应列Whether to 可以sort                                                | Boolean ,'custom' | -                                     | false  |
+| sortMethod  | Custom sort method,三个parameter a 、 b 和 type                      | Function          | -                                     | -      |
+| sortType    | Set initial sort order. Accepted values: asc, desc                                  | String            | -                                     | -      |

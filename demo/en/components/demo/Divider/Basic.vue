@@ -1,9 +1,9 @@
 <template>
-  <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
+  <p>This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...</p>
   <b-divider></b-divider>
-  <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
+  <p>This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...</p>
   <b-divider>With Text</b-divider>
-  <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
+  <p>This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...</p>
   <b-divider dashed></b-divider>
-  <p>这是一段文字...这是一段文字...这是一段文字...这是一段文字...这是一段文字...</p>
+  <p>This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...This is a paragraph...</p>
 </template>

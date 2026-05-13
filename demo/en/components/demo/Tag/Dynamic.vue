@@ -18,7 +18,7 @@
 <script setup lang="ts">
 import { reactive, toRefs } from 'vue'
 const data = reactive({
-  dynamicTags: ['标签一', '标签二', '标签三'],
+  dynamicTags: ['Tag One', 'Tag Two', 'Tag Three'],
   count: 0
 })
 const handleCloseTag = (tag: string) => {

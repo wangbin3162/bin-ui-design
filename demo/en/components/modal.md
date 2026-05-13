@@ -1,100 +1,100 @@
 ---
-title: 模态框 Modal
+title: Modal
 ---
 
 <b-back-top></b-back-top>
 
-# 模态框 Modal
+# Modal
 
-对话框/弹窗，在浮层中显示，引导用户进行相关操作。
+A dialog/modal displayed as a floating layer to guide user interactions.
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Modal/Basic.vue"></preview>
 
-## 自定义样式
+## Custom Styles
 
-Modal 组件提供了灵活的自定义样式 API 和 Slot，可以自由控制整个 Modal 的各个组成部分，比如页头、页脚、关闭按钮。
+The Modal component provides flexible custom styling APIs and slots, allowing full control over each part of the modal, such as header, footer, and close button.
 
 <preview path="./demo/Modal/Custom.vue"></preview>
 
-## 屏幕居中样式
+## Center Alignment
 
-设置属性 `screen-center` 对话框可以居中进行显示，并且，可以设置默认最大高度。
+设置property `screen-center` The dialog can be centered for display，并且，A default max-height can be configured.。
 
 <preview path="./demo/Modal/Center.vue"></preview>
 
-## 弹出动画
+## Open Animation
 
-弹窗动画可以通过 `transition-name` 自定义，默认从点击位置弹出
+The modal animation can be customized via `transition-name`. By default, it animates from the click position.
 
 <preview path="./demo/Modal/Animation.vue"></preview>
 
-## 禁用关闭
+## Disable Close
 
-可以禁用关闭和遮罩层关闭。
+Both the close button and mask close can be disabled.
 
 <preview path="./demo/Modal/DisableClose.vue"></preview>
 
-## 嵌套
+## Nesting
 
-弹窗嵌套一般情况下不推荐嵌套，但也可以这么使用
+Nested modals are generally not recommended, but they can be used.
 
 <preview path="./demo/Modal/Qiantao.vue"></preview>
 
-## 全屏
+## Fullscreen
 
-设置属性 `fullscreen` 可以全屏显示。并且可以设置不同的控制器来自定义控制
+Set `fullscreen` for fullscreen display. Various controls can be customized.
 
 <preview path="./demo/Modal/Fullscreen.vue"></preview>
 
-## 可拖拽
+## Draggable
 
-设置属性 `draggable` 对话框可以进行拖拽移动。
+Set `draggable` to make the dialog draggable.
 
 <preview path="./demo/Modal/Draggable.vue"></preview>
 
 ## Props
 
-| 参数             | 说明                                            | 类型                                                                     | 可选值 | 默认值               |
+| Parameter             | Description                                            | Type                                                                     | Options | Default               |
 | ---------------- | ----------------------------------------------- | ------------------------------------------------------------------------ | ------ | -------------------- |
-| v-model          | 是否显示                                        | Boolean                                                                  | —      | false                |
-| title            | 标题，如果使用 slot 自定义了页头，则 title 无效 | String                                                                   | —      | —                    |
-| width            | 对话框宽度                                      | String                                                                   | —      | 520px                |
-| top              | 对话框距离顶部高度                              | String                                                                   | —      | 100px                |
-| show-close       | 右上角的关闭按钮                                | Boolean                                                                  | —      | true                 |
-| mask-closable    | 是否允许点击遮罩层关闭                          | Boolean                                                                  | —      | true                 |
-| esc-closable     | 是否允许esc键盘关闭                             | Boolean                                                                  | —      | true                 |
-| fullscreen       | 是否全屏显示                                    | Boolean                                                                  | —      | false                |
-| draggable        | 是否可以拖拽移动                                | Boolean                                                                  | —      | false                |
-| mask             | 是否显示遮罩层                                  | Boolean                                                                  | —      | true                 |
-| mask-class       | 自定义遮罩类名                                  | String                                                                   | —      | —                    |
+| v-model          | Whether to show                                         | Boolean                                                                  | —      | false                |
+| title            | Title. If a custom header slot is used, the title prop is ignored. | String                                                                   | —      | —                    |
+| width            | Dialog width                                      | String                                                                   | —      | 520px                |
+| top              | Distance from the top of the viewport                              | String                                                                   | —      | 100px                |
+| show-close       | Show close button in the top-right corner                                | Boolean                                                                  | —      | true                 |
+| mask-closable    | Allow clicking the mask to close                          | Boolean                                                                  | —      | true                 |
+| esc-closable     | Whether to allow closing via ESC key                             | Boolean                                                                  | —      | true                 |
+| fullscreen       | Whether to show in fullscreen                                    | Boolean                                                                  | —      | false                |
+| draggable        | Whether the dialog can be dragged                                | Boolean                                                                  | —      | false                |
+| mask             | Whether to show mask                                  | Boolean                                                                  | —      | true                 |
+| mask-class       | Custom mask class name                                  | String                                                                   | —      | —                    |
 | custom-class     | 自定义类名                                      | String                                                                   | —      | —                    |
-| body-styles      | 自定body的样式style                             | Object                                                                   | —      | —                    |
-| z-index          | 层级                                            | Number，默认为2000，弹窗会自增，如设置了此值，则会从当前设置的值进行自增 | —      | 0                    |
-| append-to-body   | 是否将对话框放置于 body 内                      | Boolean                                                                  | —      | false                |
-| lock-scroll      | 出现modal时锁定滚动                             | Boolean                                                                  | —      | true                 |
-| transition-name  | 弹窗动画                                        | String                                                                   | —      | 'dialog-fade'        |
-| open-delay       | 打开延时（毫秒）                                | Number                                                                   | —      | 0                    |
-| close-delay      | 关闭延时（毫秒）                                | Number                                                                   | —      | 0                    |
-| before-close     | 关闭前回调，会暂停关闭                          | Function(done) done用于关闭                                              | —      | —                    |
-| destroy-on-close | 关闭时销毁内部元素，多用于内部元素需要初始化    | Boolean                                                                  | —      | false                |
-| screen-center    | 屏幕居中弹窗（水平垂直居中）                    | Boolean                                                                  | —      | false                |
-| max-height       | 最大弹窗高度（屏幕居中时生效）                  | String                                                                   | —      | 'calc(100vh - 80px)' |
+| body-styles      | 自定body的stylestyle                             | Object                                                                   | —      | —                    |
+| z-index          | Z-index level                                            | Number，Defaultas2000，dialog会自增，如设置了此值，则会从当前设置的值进行自增 | —      | 0                    |
+| append-to-body   | Whether to 将dialog放置于 body 内                      | Boolean                                                                  | —      | false                |
+| lock-scroll      | appearmodal时锁定滚动                             | Boolean                                                                  | —      | true                 |
+| transition-name  | dialoganimation                                        | String                                                                   | —      | 'dialog-fade'        |
+| open-delay       | open延时（毫秒）                                | Number                                                                   | —      | 0                    |
+| close-delay      | Disable延时（毫秒）                                | Number                                                                   | —      | 0                    |
+| before-close     | Disable前Callback，会暂停Disable                          | Function(done) doneUsed for Disable                                              | —      | —                    |
+| destroy-on-close | Disable时销毁内部元素，多Used for 内部元素需要初始化    | Boolean                                                                  | —      | false                |
+| screen-center    | 屏幕centerdialog（水平垂直center）                    | Boolean                                                                  | —      | false                |
+| max-height       | 最大dialogHeight（屏幕center时生效）                  | String                                                                   | —      | 'calc(100vh - 80px)' |
 
 ## Events
 
-| 事件名 | 说明             | 返回值 |
+| Event Name | Description             | Return Value |
 | ------ | ---------------- | ------ |
-| open   | modal打开回调    | 无     |
-| opened | 打开动画完成回调 | 无     |
-| close  | modal关闭回调    | 无     |
-| closed | 关闭动画结束回调 | 无     |
+| open   | modalopenCallback    | —     |
+| opened | openanimation完成Callback | —     |
+| close  | modalDisableCallback    | —     |
+| closed | Disableanimation结束Callback | —     |
 
 ## Slot
 
-| 名称   | 说明               |
+| Name   | Description               |
 | ------ | ------------------ |
-| title  | 自定义标题         |
-| ctrl   | 关闭按钮左侧控制槽 |
-| footer | 自定义页脚内容     |
+| title  | 自定义Title         |
+| ctrl   | Disablebutton左侧控制槽 |
+| footer | 自定义Table footerContent     |

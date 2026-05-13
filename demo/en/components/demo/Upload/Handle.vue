@@ -30,7 +30,7 @@ function upload() {
   setTimeout(() => {
     file.value = null
     loadingStatus.value = false
-    Message({ type: 'success', message: '上传成功' })
+    Message({ type: 'success', message: '上传Success' })
   }, 1500)
 }
 </script>

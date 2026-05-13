@@ -48,11 +48,11 @@ import { ref } from 'vue'
 
 const select = ref('')
 const cityList = [
-  { value: 'beijing', label: '北京' },
-  { value: 'nanjing', label: '南京' },
-  { value: 'shanghai', label: '上海' },
-  { value: 'xuzhou', label: '徐州' },
-  { value: 'guangzhou', label: '广州' },
-  { value: 'shenzhen', label: '深圳' }
+  { value: 'beijing', label: 'Beijing' },
+  { value: 'nanjing', label: 'Nanjing' },
+  { value: 'shanghai', label: 'Shanghai' },
+  { value: 'xuzhou', label: 'Xuzhou' },
+  { value: 'guangzhou', label: 'Guangzhou' },
+  { value: 'shenzhen', label: 'Shenzhen' }
 ]
 </script>

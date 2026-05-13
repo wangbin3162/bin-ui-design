@@ -1,43 +1,43 @@
 ---
-title: 通知 Notice
+title: notice Notice
 ---
 
 <b-back-top></b-back-top>
 
-# 通知 Notice
+# notice Notice
 
-组件提供通知功能
+component提供notice功能
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Notice/Basic.vue"></preview>
 
-## 带图标
+## 带icon
 
-可以附带提示性的图标进行使用
+可以附带Tip性的icon进行use
 
 <preview path="./demo/Notice/TypeIcon.vue"></preview>
 
 ## 4个方向
 
-可以设置其他参数控制notice位置和显示
+Can set 其他parameter控制noticeposition和Show
 
 <preview path="./demo/Notice/Position.vue"></preview>
 
-## 其他参数
+## 其他parameter
 
-可以设置其他参数控制notice位置和显示
+Can set 其他parameter控制noticeposition和Show
 
 <preview path="./demo/Notice/Other.vue"></preview>
 
 ## API
 
-vue3中引入 Notice 并进行函数调用，同时 Notice 入参可为`string`类型或者是 `CreateNoticeProps`对象类型，同时，为方便调用，也扩展了四种 type 的调用
+vue3中import Notice 并进行函数call，同时 Notice 入参可为`string`Type or 者is `CreateNoticeProps`对象Type，同时，为方便call，也扩展了四种 type 的call
 
 ```ts
 import { Notice } from 'bin-ui-design'
 
-// options 可 直接传入字符串，如入参是字符串，则代表使用默认配置，入参填入message属性中进行调用
+// Options can be passed as a string. If a string is provided, it uses the default configuration and fills the message property.
 Notice(options)
 Notice.info(options)
 Notice.success(options)
@@ -47,16 +47,16 @@ Notice.error(options)
 
 ## Options
 
-函数及参数说明如下：
+函数及parameterDescription如下：
 
-| 函数      | 说明                                                         | 类型     | 默认值    |
+| Function      | Description                                                         | Type     | Default    |
 | --------- | ------------------------------------------------------------ | -------- | --------- |
-| title     | 通知提醒的标题                                               | String   | —         |
-| message   | 通知提醒的内容，为空或不填时，自动应用仅标题模式下的样式     | String   | —         |
-| duration  | 自动关闭的延时，单位秒，不关闭可以写 0                       | Number   | 4.5       |
-| position  | 弹出位置 可选top-right 、top-left、bottom-right、bottom-left | String   | top-right |
-| onClose   | 关闭时的回调                                                 | Function | —         |
-| showClose | 是否显示关闭按钮                                             | Boolean  | true      |
-| useHTML   | 是否将message转换成HTML片段插入，此操作需谨慎                | Boolean  | false     |
-| offset    | 偏移量                                                       | Number   | —         |
-| zIndex    | 层级，默认2000以后追加                                       | Number   | —         |
+| title     | notice提醒的Title                                               | String   | —         |
+| message   | notice提醒的Content，为空 or 不填时，自动应用仅TitleMode下的style     | String   | —         |
+| duration  | 自动Disable的延时，单位秒，不Disable可以写 0                       | Number   | 4.5       |
+| position  | Openposition 可选top-right 、top-left、bottom-right、bottom-left | String   | top-right |
+| onClose   | Disable时的Callback                                                 | Function | —         |
+| showClose | Whether to show Disablebutton                                             | Boolean  | true      |
+| useHTML   | Whether to 将message转换成HTML片段插入，此操作需谨慎                | Boolean  | false     |
+| offset    | offset量                                                       | Number   | —         |
+| zIndex    | Z-index level，Default2000以后追加                                       | Number   | —         |

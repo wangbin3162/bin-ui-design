@@ -10,20 +10,20 @@
         <b-radio label="fade-scale-move"></b-radio>
         <b-radio label="fade-down"></b-radio>
       </b-radio-group>
-      <b-button @click="modal1 = true">弹出</b-button>
+      <b-button @click="modal1 = true">Open</b-button>
     </b-space>
 
     <b-modal
       v-model="modal1"
-      :title="`自定义动画${transitionName}`"
+      :title="`Customanimation${transitionName}`"
       :transition-name="transitionName"
     >
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
-      <p>我是弹窗内容...</p>
+      <p>This is the dialog content....</p>
+      <p>This is the dialog content....</p>
+      <p>This is the dialog content....</p>
       <template #footer>
         <span>
-          <b-button @click="modal1 = false">关闭</b-button>
+          <b-button @click="modal1 = false">Close</b-button>
         </span>
       </template>
     </b-modal>

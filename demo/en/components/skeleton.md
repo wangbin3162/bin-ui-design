@@ -1,58 +1,58 @@
 ---
-title: 骨架屏 Skeleton
+title: Skeleton
 ---
 
 <b-back-top></b-back-top>
 
-# 骨架屏 Skeleton
+# Skeleton
 
-在需要等待加载内容的位置设置一个骨架屏，某些场景下比 Loading 的视觉效果更好。
+在需要等待loadingContent的position设置一个skeleton，某些场景下比 Loading 的视觉效果更好。
 
-## 基础用法
+## Basic Usage
 
 基础的骨架效果
 
 <preview path="./demo/Skeleton/Basic.vue"></preview>
 
-## 更多参数
+## 更多parameter
 
-可以配置骨架屏段落数量，以便更接近真实渲染效果。显示的数量会比传入的数量多 1，首行会被渲染一个长度 33% 的段首。
+可以configurationskeleton段落数量，以便更接近真实render效果。Show的数量会比传入的数量多 1，首行会被render一个长度 33% 的段首。
 
 <preview path="./demo/Skeleton/Rows.vue"></preview>
 
-## 动画效果
+## animation效果
 
-可以显示动画效果
+Can display animation效果
 
 <preview path="./demo/Skeleton/Animation.vue"></preview>
 
-## 自定义
+## Custom
 
-可以使用slot插槽来自己设定模板，可以根据真实dom来构建差不多的骨架
+可以useslotslot来自己设定模板，可以根据真实dom来构建差不多的骨架
 
 <preview path="./demo/Skeleton/Custom.vue"></preview>
 
-## Loading 加载
+## Loading loading
 
-loading结束后加载真实的ui，通过slot设置之后的ui
+loading结束后loading真实的ui，通过slot设置之后的ui
 
 <preview path="./demo/Skeleton/Loading.vue"></preview>
 
 # Skeleton Props
 
-| 参数     | 说明                                        | 类型    | 可选值       | 默认值 |
+| Parameter     | Description                                        | Type    | Options       | Default |
 | -------- | ------------------------------------------- | ------- | ------------ | ------ |
-| animated | 是否使用动画                                | boolean | true / false | false  |
-| count    | 渲染多少个 template, 建议使用尽可能小的数字 | number  | integer      | 1      |
-| loading  | 是否显示真实的 DOM 结构                     | boolean | true / false | false  |
-| rows     | 骨架屏段落数量                              | number  | 正整数       | 3      |
-| throttle | 延迟占位 DOM 渲染的时间, 单位是毫秒         | number  | 正整数       | 0      |
+| animated | Whether to useanimation                                | boolean | true / false | false  |
+| count    | render多少个 template, 建议use尽可能小的数字 | number  | integer      | 1      |
+| loading  | Whether to show 真实的 DOM 结构                     | boolean | true / false | false  |
+| rows     | skeleton段落数量                              | number  | 正整数       | 3      |
+| throttle | 延迟占位 DOM render的时间, 单位Yes毫秒         | number  | 正整数       | 0      |
 
 ## Skeleton Item Attributes
 
-| 参数    | 说明                     | 类型         | 可选值                                                                    | 默认值 |
+| Parameter    | Description                     | Type         | Options                                                                    | Default |
 | ------- | ------------------------ | ------------ | ------------------------------------------------------------------------- | ------ |
-| variant | 当前显示的占位元素的样式 | Enum(string) | p / text / h1 / h2 / h5 / text / caption / button / image / circle / rect | text   |
+| variant | 当前Show的占位元素的style | Enum(string) | p / text / h1 / h2 / h5 / text / caption / button / image / circle / rect | text   |
 
 ## Skeleton Slots
 

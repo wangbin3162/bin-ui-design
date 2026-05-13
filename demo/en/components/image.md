@@ -1,92 +1,92 @@
 ---
-title: 图片组件 Image
+title: Image
 ---
 
 <b-back-top></b-back-top>
 
-# 图片组件 Image
+# Image
 
-可预览的图片容器，并支持懒加载，自定义占位、加载失败等
+An image container that supports preview, lazy loading, custom placeholders, load failure fallback, and more.
 
-## 基础用法
+## Basic Usage
 
-可通过 `fit` 来设置图片在容器的样式，同原生 `object-fit`。
+Use `fit` to set the image fitting style within the container, equivalent to the native `object-fit` property.
 
 <preview path="./demo/Image/Basic.vue"></preview>
 
-## 加载中
+## Loading
 
-可以设置加载中的文字或者占位内容
+Loading placeholder text or content can be customized.
 
 <preview path="./demo/Image/Loading.vue"></preview>
 
-## 加载失败
+## Load Failure
 
-可以设置加载失败占位内容。
+A placeholder can be set for when the image fails to load.
 
 <preview path="./demo/Image/Fail.vue"></preview>
 
-## 懒加载
+## Lazy Loading
 
-设置属性 `lazy` 可以开启图片懒加载功能，当图片可视时才会加载。
+Set `lazy` to enable lazy loading. Images will only load when they become visible.
 
-设置属性 `scroll-container` 可以指定滚动容器，如未设置，会自动寻找最近一个 `overflow` 值为 `auto` 或 `scroll` 的父元素。
+Use `scroll-container` to specify the scroll container. If not set, the closest parent with `overflow: auto` or `overflow: scroll` will be used.
 
 <preview path="./demo/Image/Scroll.vue"></preview>
 
-## 预览
+## Preview
 
-设置属性 `preview` 可以开启图片预览模式，通过属性 `preview-list` 来设置图片列表，`initial-index` 属性设置打开预览时显示图片的索引。
+Set `preview` to enable image preview mode. Use `preview-list` to set the image list, and `initial-index` to set the initial image index when the preview opens.
 
-预览时，可以使用 `←`、`→` 切换图片，`↑`、`↓` 缩放图片，`Space` 显示 `1:1 `图片，`ESC` 退出预览。
+During preview: use `←` / `→` to switch images, `↑` / `↓` to zoom, `Space` to show 1:1 size, `ESC` to exit preview.
 
 <preview path="./demo/Image/Preview.vue"></preview>
 
-## 单独预览组件
+## Standalone Preview Component
 
-图片预览组件 `ImagePreview` 也可以单独使用。
+The `ImagePreview` component can also be used standalone.
 
 <preview path="./demo/Image/ImagePreview.vue"></preview>
 
 ## Props
 
-| 参数             | 说明                                                        | 类型                 | 可选值 | 默认值                                                                     |
+| Parameter             | Description                                                        | Type                 | Options | Default                                                                     |
 | ---------------- | ----------------------------------------------------------- | -------------------- | ------ | -------------------------------------------------------------------------- |
-| src              | 图片地址                                                    | String               | —      | —                                                                          |
-| alt              | 图片描述                                                    | String               | —      | —                                                                          |
-| referrer-policy  | 原生属性                                                    | String               | —      | —                                                                          |
-| width            | 宽度                                                        | String Number        | —      | —                                                                          |
-| height           | 高度                                                        | String Number        | —      | —                                                                          |
-| fit              | 图片适配容器模式包含 fill，contain，cover，none，scale-down | String               |        | —                                                                          |
-| lazy             | 是否懒加载                                                  | Boolean              | —      | false                                                                      |
-| scroll-container | 加载容器                                                    | String , HTMLElement | —      | false                                                                      |
-| append-to-body   | 是否将弹层放置于 body 内                                    | Boolean              | —      | false                                                                      |
-| mask-closable    | 是否允许点击遮罩层关闭                                      | Boolean              | —      | true                                                                       |
-| preview-tip      | 是否显示预览提示和遮罩                                      | Boolean              | —      | true                                                                       |
-| preview          | 是否图片预览                                                | Boolean              | —      | false                                                                      |
-| preview-list     | 图片预览列表                                                | Array                | —      | []                                                                         |
-| infinite         | 是否循环切换                                                | Boolean              | —      | true                                                                       |
-| initial-index    | 打开预览的第一项                                            | Number               | —      | 0                                                                          |
-| toolbar          | 图片预览操作栏选项，按数组顺序排序                          | Array                | —      | ['zoomIn', 'zoomOut', 'original', 'rotateLeft', 'rotateRight', 'download'] |
-| initial-index    | 打开预览的第一项                                            | Number               | —      | 0                                                                          |
+| src              | Image URL                                                    | String               | —      | —                                                                          |
+| alt              | Image description                                                    | String               | —      | —                                                                          |
+| referrer-policy  | Native attribute                                                    | String               | —      | —                                                                          |
+| width            | Width                                                        | String / Number        | —      | —                                                                          |
+| height           | Height                                                        | String / Number        | —      | —                                                                          |
+| fit              | Image fit mode: fill, contain, cover, none, scale-down | String               |        | —                                                                          |
+| lazy             | Enable lazy loading                                                  | Boolean              | —      | false                                                                      |
+| scroll-container | Scroll container                                                    | String , HTMLElement | —      | false                                                                      |
+| append-to-body   | Append the overlay to body                                    | Boolean              | —      | false                                                                      |
+| mask-closable    | Allow clicking the mask to close                                      | Boolean              | —      | true                                                                       |
+| preview-tip      | Whether to show 预览Tip和mask                                      | Boolean              | —      | true                                                                       |
+| preview          | Whether to image预览                                                | Boolean              | —      | false                                                                      |
+| preview-list     | image预览列表                                                | Array                | —      | []                                                                         |
+| infinite         | Whether to 循环切换                                                | Boolean              | —      | true                                                                       |
+| initial-index    | open预览的第一项                                            | Number               | —      | 0                                                                          |
+| toolbar          | image预览操作栏option，按数组顺序sort                          | Array                | —      | ['zoomIn', 'zoomOut', 'original', 'rotateLeft', 'rotateRight', 'download'] |
+| initial-index    | open预览的第一项                                            | Number               | —      | 0                                                                          |
 | failText         | 失败文字                                                    | String               | —      | 失败                                                                       |
-| loadingText      | 加载文字                                                    | String               | —      | 加载中                                                                     |
+| loadingText      | Loading text                                                    | String               | —      | Loading...                                                                     |
 | previewText      | 预览文字                                                    | String               | —      | 预览                                                                       |
 
 ## Events
 
-| 事件名称 | 说明         | 返回值       |
+| Event Name | Description         | Return Value       |
 | -------- | ------------ | ------------ |
-| load     | 图片加载成功 | -            |
-| error    | 图片加载失败 | -            |
-| switch   | 图片预览切换 | -            |
-| close    | 图片预览关闭 | Object       |
-| click    | 图片点击     | initialIndex |
+| load     | imageloading成功 | -            |
+| error    | imageloading失败 | -            |
+| switch   | image预览切换 | -            |
+| close    | image预览Disable | Object       |
+| click    | imageclick     | initialIndex |
 
 ## Slots
 
-| 名称        | 说明               |
+| Name        | Description               |
 | ----------- | ------------------ |
-| placeholder | 自定义图片加载中   |
-| error       | 自定义图片加载失败 |
-| preview     | 自定义图片预览     |
+| placeholder | 自定义imageLoading...   |
+| error       | 自定义imageloading失败 |
+| preview     | 自定义image预览     |

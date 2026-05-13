@@ -8,18 +8,18 @@
       label-width="100px"
       class="demo-ruleForm"
     >
-      <b-form-item label="密码" prop="pass">
+      <b-form-item label="Password" prop="pass">
         <b-input v-model="ruleForm.pass" type="password" autocomplete="off"></b-input>
       </b-form-item>
-      <b-form-item label="确认密码" prop="checkPass">
+      <b-form-item label="ConfirmPassword" prop="checkPass">
         <b-input v-model="ruleForm.checkPass" type="password" autocomplete="off"></b-input>
       </b-form-item>
-      <b-form-item label="年龄" prop="age">
+      <b-form-item label="Age" prop="age">
         <b-input v-model.number="ruleForm.age" type="number"></b-input>
       </b-form-item>
       <b-form-item>
-        <b-button type="primary" @click="submitForm">提交</b-button>
-        <b-button @click="resetForm">重置</b-button>
+        <b-button type="primary" @click="submitForm">Submit</b-button>
+        <b-button @click="resetForm">Reset</b-button>
       </b-form-item>
     </b-form>
   </div>
@@ -30,14 +30,14 @@ import { ref } from 'vue'
 
 const checkAge = (rule, value, callback) => {
   if (!value) {
-    return callback(new Error('年龄不能为空'))
+    return callback(new Error('AgeCannot be empty'))
   }
   setTimeout(() => {
     if (!Number.isInteger(value)) {
-      callback(new Error('请输入数字值'))
+      callback(new Error('Please enter数字值'))
     } else {
       if (value < 18) {
-        callback(new Error('必须年满18岁'))
+        callback(new Error('必须Year满18岁'))
       } else {
         callback()
       }
@@ -46,7 +46,7 @@ const checkAge = (rule, value, callback) => {
 }
 const validatePass = (rule, value, callback) => {
   if (value === '') {
-    callback(new Error('请输入密码'))
+    callback(new Error('Please enterPassword'))
   } else {
     if (ruleForm.value.checkPass !== '') {
       ruleFormRef.value?.validateField('checkPass')
@@ -56,9 +56,9 @@ const validatePass = (rule, value, callback) => {
 }
 const validatePass2 = (rule, value, callback) => {
   if (value === '') {
-    callback(new Error('请再次输入密码'))
+    callback(new Error('请再次输入Password'))
   } else if (value !== ruleForm.value.pass) {
-    callback(new Error('两次输入密码不一致!'))
+    callback(new Error('两次输入Password不一致!'))
   } else {
     callback()
   }

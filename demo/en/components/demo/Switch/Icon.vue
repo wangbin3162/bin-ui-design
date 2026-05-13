@@ -17,7 +17,7 @@
     <br />
     <b-switch size="large">
       <template #open><span>开启</span></template>
-      <template #close><span>关闭</span></template>
+      <template #close><span>Close</span></template>
     </b-switch>
     &nbsp;
     <b-switch size="large">

@@ -2,9 +2,9 @@
   <div>
     <b-checkbox v-model="disabledSingle" disabled>Checkbox</b-checkbox>
     <b-checkbox-group v-model="disabledGroup">
-      <b-checkbox label="香蕉" disabled></b-checkbox>
-      <b-checkbox label="苹果" disabled></b-checkbox>
-      <b-checkbox label="西瓜"></b-checkbox>
+      <b-checkbox label="Banana" disabled></b-checkbox>
+      <b-checkbox label="Apple" disabled></b-checkbox>
+      <b-checkbox label="Watermelon"></b-checkbox>
     </b-checkbox-group>
   </div>
 </template>
@@ -13,5 +13,5 @@
 import { ref } from 'vue'
 
 const disabledSingle = ref(true)
-const disabledGroup = ref(['苹果'])
+const disabledGroup = ref(['Apple'])
 </script>

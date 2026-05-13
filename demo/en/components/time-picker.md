@@ -1,84 +1,84 @@
 ---
-title: 时间选择器 TimePicker
+title: TimePicker
 ---
 
 <b-back-top></b-back-top>
 
-# 时间选择器 TimePicker
+# TimePicker
 
-可以选择时间的picker
+A time picker component.
 
-## 基础用法
+## Basic Usage
 
-使用 b-time-picker 标签，通过 `disabledHours` `disabledMinutes` 和 `disabledSeconds`限制可选时间范围。
+Limit selectable time ranges via `disabledHours`, `disabledMinutes`, and `disabledSeconds`.
 
-提供了两种交互方式：默认情况下通过鼠标滚轮进行选择，打开`arrow-control`属性则通过界面上的箭头进行选择。
+Two interaction modes are provided: by default, use the mouse wheel to select; with `arrow-control`, use the arrow buttons on the interface.
 
 <preview path="./demo/TimePicker/Basic.vue"></preview>
 
-## 任意时间范围
+## Time Range
 
-添加`is-range`属性即可选择时间范围，同样支持`arrow-control`属性。
+Add `is-range` to enable time range selection. Also supports the `arrow-control` prop.
 
 <preview path="./demo/TimePicker/Range.vue"></preview>
 
-## 禁用状态和禁用时间
+## Disabled State and Disabled Time
 
-使用 b-time-picker 标签，通过 `disabledHours` `disabledMinutes` 和 `disabledSeconds`限制可选时间范围。
+Limit selectable time ranges via `disabledHours`, `disabledMinutes`, and `disabledSeconds`.
 
 <preview path="./demo/TimePicker/Disabled.vue"></preview>
 
-## 时间格式
+## Time Format
 
-设置属性 format 可以改变时间的显示格式
+Set the `format` prop to change the display format of the time.
 
-注意， format 只是改变显示的格式，并非改变 value 值
+Note: `format` only changes the display format, not the bound value.
 
 <preview path="./demo/TimePicker/Format.vue"></preview>
 
-## 不同大小
+## Sizes
 
-可以设置不同的大小
+Different sizes can be configured.
 
 <preview path="./demo/TimePicker/Size.vue"></preview>
 
 ## Props
 
-| 参数              | 说明                             | 类型                                   | 可选值                                                | 默认值            |
+| Parameter              | Description                             | Type                                   | Options                                                | Default            |
 | ----------------- | -------------------------------- | -------------------------------------- | ----------------------------------------------------- | ----------------- |
-| value / v-model   | 绑定值                           | date                                   | —                                                     | —                 |
-| readonly          | 完全只读                         | boolean                                | —                                                     | false             |
-| disabled          | 禁用                             | boolean                                | —                                                     | false             |
-| editable          | 文本框可输入                     | boolean                                | —                                                     | true              |
-| clearable         | 是否显示清除按钮                 | boolean                                | —                                                     | true              |
-| size              | 输入框尺寸                       | string                                 | medium / small / mini                                 | —                 |
-| placeholder       | 非范围选择时的占位内容           | string                                 | —                                                     | —                 |
-| start-placeholder | 范围选择时开始日期的占位内容     | string                                 | —                                                     | —                 |
-| end-placeholder   | 范围选择时开始日期的占位内容     | string                                 | —                                                     | —                 |
-| is-range          | 是否为时间范围选择               | boolean                                | —                                                     | false             |
-| arrow-control     | 是否使用箭头进行时间选择         | boolean                                | —                                                     | false             |
-| align             | 对齐方式                         | string                                 | left / center / right                                 | left              |
-| popper-class      | TimePicker 下拉框的类名          | string                                 | —                                                     | —                 |
-| range-separator   | 选择范围时的分隔符               | string                                 | -                                                     | '-'               |
-| format            | 显示在输入框中的格式             | string                                 | -                                                     | HH:mm:ss          |
-| default-value     | 可选，选择器打开时默认显示的时间 | Date(TimePicker) / string(TimeSelect)  | 可被`new Date()`解析(TimePicker) / 可选值(TimeSelect) | —                 |
-| name              | 原生属性                         | string                                 | —                                                     | —                 |
-| prefix-icon       | 自定义头部图标的类名             | string                                 | —                                                     | time-circle       |
-| clear-icon        | 自定义清空图标的类名             | string                                 | —                                                     | close-circle-fill |
-| disabledHours     | 禁止选择部分小时选项             | function                               | —                                                     | -                 |
-| disabledMinutes   | 禁止选择部分分钟选项             | function(selectedHour)                 | —                                                     | -                 |
-| disabledSeconds   | 禁止选择部分秒选项               | function(selectedHour, selectedMinute) | —                                                     | -                 |
+| value / v-model   | Bound value                           | date (Date)                                   | —                                                     | —                 |
+| readonly          | Fully read-only                         | boolean                                | —                                                     | false             |
+| disabled          | Disabled                             | boolean                                | —                                                     | false             |
+| editable          | Text field is editable                     | boolean                                | —                                                     | true              |
+| clearable         | Show clear button                 | boolean                                | —                                                     | true              |
+| size              | Input size                       | string                                 | medium / small / mini                                 | —                 |
+| placeholder       | Placeholder for non-range selection           | string                                 | —                                                     | —                 |
+| start-placeholder | Placeholder for start date in range selection     | string                                 | —                                                     | —                 |
+| end-placeholder   | Placeholder for start date in range selection     | string                                 | —                                                     | —                 |
+| is-range          | Is a time range selection               | boolean                                | —                                                     | false             |
+| arrow-control     | Use arrow buttons for time selection         | boolean                                | —                                                     | false             |
+| align             | Alignment                         | string                                 | left / center / right                                 | left              |
+| popper-class      | TimePicker Dropdown的类名          | string                                 | —                                                     | —                 |
+| range-separator   | Separator for range selection               | string                                 | -                                                     | '-'               |
+| format            | Show在input中的格式             | string                                 | -                                                     | HH:mm:ss          |
+| default-value     | 可选，选择器open时DefaultShow的时间 | Date(TimePicker) / string(TimeSelect)  | 可被`new Date()`解析(TimePicker) / Options(TimeSelect) | —                 |
+| name              | Native attribute                         | string                                 | —                                                     | —                 |
+| prefix-icon       | 自定义Prefix icon的类名             | string                                 | —                                                     | time-circle       |
+| clear-icon        | 自定义Clear icon class name             | string                                 | —                                                     | close-circle-fill |
+| disabledHours     | 禁止选择部分小时option             | function                               | —                                                     | -                 |
+| disabledMinutes   | 禁止选择部分分钟option             | function(selectedHour)                 | —                                                     | -                 |
+| disabledSeconds   | 禁止选择部分秒option               | function(selectedHour, selectedMinute) | —                                                     | -                 |
 
 ## Events
 
-| 事件名 | 说明                    | 参数       |
+| Event Name | Description                    | Parameter       |
 | ------ | ----------------------- | ---------- |
-| change | 用户确认选定的值时触发  | 组件绑定值 |
-| blur   | 当 input 失去焦点时触发 | 组件实例   |
-| focus  | 当 input 获得焦点时触发 | 组件实例   |
+| change | 用户confirm选定的值时Trigger  | componentBound value |
+| blur   | 当 input 失去焦点时Trigger | component实例   |
+| focus  | 当 input 获得焦点时Trigger | component实例   |
 
 ## Methods
 
-| 方法名 | 说明              | 参数 |
+| Method Name | Description              | Parameter |
 | ------ | ----------------- | ---- |
 | focus  | 使 input 获取焦点 | -    |

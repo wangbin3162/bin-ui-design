@@ -2,7 +2,7 @@
   <div>
     <b-dropdown placement="right-start">
       <a href="javascript:void(0)">
-        徐州小吃
+        Xuzhou小吃
         <b-icon name="down"></b-icon>
       </a>
       <template #dropdown>

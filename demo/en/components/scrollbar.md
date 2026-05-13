@@ -1,49 +1,49 @@
 ---
-title: 滚动组件 Scrollbar
+title: 滚动component Scrollbar
 ---
 
 <b-back-top></b-back-top>
 
-# 滚动组件 Scrollbar
+# 滚动component Scrollbar
 
-由于默认浏览器滚动条极为丑陋切不同浏览器之间样式不统一，故封装一个滚动组件用于实现滚动
+由于Default浏览器scrollbar极为丑陋切不同浏览器之间style不统一，故封装一个滚动componentUsed for 实现滚动
 
-## 基础用法
+## Basic Usage
 
-使用`b-scrollbar`进行包裹，默认`slot`为内容显示区域,如当前示例所包含的滚动结构如下:
+use`b-scrollbar`进行包裹，Default`slot`为ContentShow区域,如当前示例所包含的滚动结构如下:
 
 <preview path="./demo/Scrollbar/Basic.vue"></preview>
 
-注意：如果内容区域不超过容器高度则不会生成滚动条
+Note：如果Content区域不超过容器Height则不会生成scrollbar
 
-## 始终显示
+## 始终Show
 
-使用`always`可以让滚动条始终显示出来
+use`always`可以让scrollbar始终Show出来
 
 <preview path="./demo/Scrollbar/Always.vue"></preview>
 
-## 定制滚动条的样式
+## 定制scrollbar的style
 
-可以借助不同的props来定制滚动条的样式，也可以使用css来实现样式修改。
+可以借助不同的props来定制scrollbar的style，也可以usecss来实现stylemodify。
 
 <preview path="./demo/Scrollbar/Custom.vue"></preview>
 
-## 注意事项
+## Note事项
 
-- b-scrollbar的父层要有固定高度
-- b-scrollbar的高度要设成100%
-- 如果出现横滚动条，请添加css（.bin-scrollbar\_\_wrap{overflow-x:hidden;}）
+- b-scrollbar的父层要有固定Height
+- b-scrollbar的Height要设成100%
+- 如果appear横scrollbar，请添加css（.bin-scrollbar\_\_wrap{overflow-x:hidden;}）
 
 ## Props
 
-| 参数         | 说明                                                    | 类型    | 可选值 | 默认值 |
+| Parameter         | Description                                                    | Type    | Options | Default |
 | ------------ | ------------------------------------------------------- | ------- | ------ | ------ |
-| native       | 是否采用原生滚动 (隐藏原生滚动条)                       | Boolean | true   | false  |
-| always       | 是否一直显示，而非悬停显示                              | Boolean | true   | false  |
-| wrapStyle    | 内联方式 自定义wrap容器的样式                           | Object  | -      | {}     |
-| wrapClass    | 类名方式 自定义wrap容器的样式                           | Object  | -      | {}     |
-| viewClass    | 类名方式 自定义view容器的样式                           | Object  | -      | {}     |
-| viewStyle    | 内联方式 自定义view容器的样式                           | Object  | -      | {}     |
-| barStyle     | 滚动条thumb样式                                         | Object  | -      | {}     |
-| barWrapStyle | 滚动条bar样式                                           | Object  | -      | {}     |
-| noresize     | 如果 container 尺寸不会发生变化，最好设置它可以优化性能 | Boolean | true   | false  |
+| native       | Whether to 采用原生滚动 (Hide原生scrollbar)                       | Boolean | true   | false  |
+| always       | Whether to 一直Show，而非hover to show                              | Boolean | true   | false  |
+| wrapStyle    | 内联方式 自定义wrap容器的style                           | Object  | -      | {}     |
+| wrapClass    | 类名方式 自定义wrap容器的style                           | Object  | -      | {}     |
+| viewClass    | 类名方式 自定义view容器的style                           | Object  | -      | {}     |
+| viewStyle    | 内联方式 自定义view容器的style                           | Object  | -      | {}     |
+| barStyle     | scrollbarthumbstyle                                         | Object  | -      | {}     |
+| barWrapStyle | scrollbarbarstyle                                           | Object  | -      | {}     |
+| noresize     | 如果 container size不会发生变化，最好设置它可以优化性能 | Boolean | true   | false  |

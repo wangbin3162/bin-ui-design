@@ -1,102 +1,100 @@
 ---
-title: 按钮 Button
+title: Button
 ---
 
 <b-back-top></b-back-top>
 
-# 按钮 Button
+# Button
 
-常用的操作按钮。
+Commonly used action buttons.
 
-## 基础用法
+## Basic Usage
 
-按钮的 type 分别为 primary、info、success、warning 和 error。
+Button types include primary, info, success, warning, and error.
 
 <preview path="./demo/Button/Basic.vue"></preview>
 
-## 简约按钮
+## Plain Button
 
-可以设置 `plain` 显示简约按钮
+Set `plain` to display a plain button.
 
 <preview path="./demo/Button/Plain.vue"></preview>
 
-## 圆角按钮
+## Round Button
 
-可以设置 `round` 显示圆角按钮
+Set `round` to display a round button.
 
 <preview path="./demo/Button/Round.vue"></preview>
 
-## 虚线按钮
+## Dashed Button
 
-可以设置 `dashed` 显示虚线按钮
+Set `dashed` to display a dashed button.
 
 <preview path="./demo/Button/Dashed.vue"></preview>
 
-## 幽灵按钮
+## Ghost Button
 
-可以设置 `transparent` 开启透明背景的幽灵模式，用于有背景色的位置
+Set `transparent` to enable transparent background ghost mode, useful for areas with background colors.
 
 <preview path="./demo/Button/Ghost.vue"></preview>
 
-## 带图标的按钮
+## Button with Icon
 
-使用 `icon` 给按钮配置图标
+Use the `icon` prop to add an icon to the button.
 
 <preview path="./demo/Button/Icon.vue"></preview>
 
-## 禁用状态
+## Disabled State
 
-使用 `disabled` 设置禁用状态的按钮
+Use `disabled` to set the button to a disabled state.
 
 <preview path="./demo/Button/Disabled.vue"></preview>
 
-## 文字状态按钮
+## Text Button
 
-使用 `type="text"` 设置仅文字的按钮
+Use `type="text"` for a text-only button.
 
 <preview path="./demo/Button/Text.vue"></preview>
 
-## 按钮组
+## Button Group
 
-使用 `button-group` 组件包裹后可显示按钮组
+Wrap buttons with the `button-group` component to display them as a button group.
 
 <preview path="./demo/Button/Group.vue"></preview>
 
-## 不同尺寸
+## Sizes
 
-设置 `size` 不同尺寸
+Set `size` for different sizes.
 
 <preview path="./demo/Button/Size.vue"></preview>
 
-## 加载状态
+## Loading State
 
-设置 `loading` 加载状态
+Set `loading` for a loading state.
 
 <preview path="./demo/Button/Loading.vue"></preview>
 
-## 点击反馈
+## Click Feedback
 
-可以设置 `v-waves` 指令来更改点击反馈动画
+Use the `v-waves` directive to change the click feedback animation.
 
 <preview path="./demo/Button/Waves.vue"></preview>
 
 ## Props
 
-## Props
-
-| 参数        | 说明                         | 类型    | 可选值                                                          | 默认值 |
-| ----------- | ---------------------------- | ------- | --------------------------------------------------------------- | ------ |
-| size        | 尺寸                         | String  | large / small / mini                                            | —      |
-| type        | 类型                         | String  | primary / success / warning / danger / info / text              | —      |
-| plain       | 简单按钮                     | Boolean | —                                                               | false  |
-| round       | 圆角按钮                     | Boolean | —                                                               | false  |
-| circle      | 圆形按钮                     | Boolean | —                                                               | false  |
-| transparent | 透明按钮                     | Boolean | —                                                               | false  |
-| loading     | 加载中                       | Boolean | —                                                               | false  |
-| disabled    | 禁用状态                     | Boolean | —                                                               | false  |
-| background  | 拟物背景（仅供默认按钮使用） | Boolean | —                                                               | false  |
-| icon        | 图标                         | String  | —                                                               | —      |
-| icon-style  | 可设置图标大小               | Object  | —                                                               | —      |
-| text-color  | 文字按钮颜色                 | String  | primary / success / warning / danger / info / text / 自定义色值 | —      |
-| autofocus   | 是否默认聚焦                 | Boolean | —                                                               | false  |
-| native-type | 原生 type 属性               | String  | button / submit / reset                                         | button |
+| Parameter   | Description                          | Type    | Options                                                          | Default |
+| ----------- | ------------------------------------ | ------- | ---------------------------------------------------------------- | ------- |
+| size        | Size                                 | String  | large / small / mini                                             | —       |
+| type        | Type                                 | String  | primary / success / warning / danger / info / text               | —       |
+| plain       | Plain button                         | Boolean | —                                                                | false   |
+| round       | Round button                         | Boolean | —                                                                | false   |
+| circle      | Circle button                        | Boolean | —                                                                | false   |
+| transparent | Transparent button                   | Boolean | —                                                                | false   |
+| loading     | Loading state                        | Boolean | —                                                                | false   |
+| disabled    | Disabled state                       | Boolean | —                                                                | false   |
+| background  | Skeuomorphic background (default button only) | Boolean | —                                                      | false   |
+| icon        | Icon                                 | String  | —                                                                | —       |
+| icon-style  | Icon size configuration              | Object  | —                                                                | —       |
+| text-color  | Text button color                    | String  | primary / success / warning / danger / info / text / custom hex  | —       |
+| autofocus   | Auto focus                           | Boolean | —                                                                | false   |
+| native-type | Native type attribute                | String  | button / submit / reset                                          | button  |

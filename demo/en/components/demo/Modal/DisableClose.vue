@@ -1,12 +1,12 @@
 <template>
   <div>
-    <b-button @click="modal1 = true">禁用右上角关闭</b-button>
-    <b-button @click="modal2 = true">禁用mask关闭</b-button>
-    <b-modal v-model="modal1" title="普通的模态框标题" :show-close="false">
-      <p>禁用右上角关闭</p>
+    <b-button @click="modal1 = true">DisabledRight Top角Close</b-button>
+    <b-button @click="modal2 = true">DisabledmaskClose</b-button>
+    <b-modal v-model="modal1" title="Basic Modal Title" :show-close="false">
+      <p>DisabledRight Top角Close</p>
     </b-modal>
-    <b-modal v-model="modal2" title="普通的模态框标题" :mask-closable="false">
-      <p>禁用mask关闭</p>
+    <b-modal v-model="modal2" title="Basic Modal Title" :mask-closable="false">
+      <p>DisabledmaskClose</p>
     </b-modal>
   </div>
 </template>

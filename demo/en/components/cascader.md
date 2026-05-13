@@ -1,166 +1,165 @@
 ---
-title: 级联选择 Cascader
+title: Cascader
 ---
 
 <b-back-top></b-back-top>
 
-# 级联选择 Cascader
+# Cascader
 
-通用的级联选择器
+A general-purpose cascading selector.
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Cascader/Basic.vue"></preview>
 
-## 禁用状态
+## Disabled State
 
-设置disabled来控制禁用
+Use `disabled` to disable the cascader.
 
 <preview path="./demo/Cascader/Disabled.vue"></preview>
 
-## 可以清空
+## Clearable
 
-可以清空选择
+The selection can be cleared.
 
 <preview path="./demo/Cascader/Clear.vue"></preview>
 
-## 显示最后一级
+## Show Last Level Only
 
-输入框可设置只显示最后一级标签
+The input can be configured to show only the last level label.
 
 <preview path="./demo/Cascader/Last.vue"></preview>
 
-## 多选模式
+## Multiple Selection
 
-可以设置props.multiple来开启多选
+Set `props.multiple` to enable multi-selection.
 
 <preview path="./demo/Cascader/Multiple.vue"></preview>
 
-## 选择任意一级选项
+## Select Any Level
 
-在单选模式下，你只能选择叶子节点；而在多选模式下，勾选父节点真正选中的都是叶子节点。启用该功能后，可让父子节点取消关联，选择任意一级选项
+In single mode, only leaf nodes can be selected. In multi mode, checking a parent node selects its leaf nodes. Enable this feature to decouple parent-child selection and allow selecting any level.
 
-可通过 props.checkStrictly = true 来设置父子节点取消选中关联，从而达到选择任意一级选项的目的。
+Set `props.checkStrictly = true` to decouple parent-child selection, allowing independent selection at any level.
 
 <preview path="./demo/Cascader/Any.vue"></preview>
 
-## 动态加载
+## Dynamic Loading
 
-选中某一级时，动态加载之下的选项, 通过lazy开启动态加载，并通过lazyload来设置加载数据源的方法
+Dynamically load child options when a level is selected. Enable with `lazy` and configure the data source method via `lazyload`.
 
-lazyload方法有两个参数，第一个参数node为当前点击的节点，第二个resolve为数据加载完成的回调(必须调用)。为了更准确的显示节点的状态，还可以对节点数据添加是否为叶子节点的标志位 (
-默认字段为leaf，可通过props.leaf修改)，否则会简单的以有无子节点来判断是否为叶子节点。
+The `lazyload` method has two parameters: the first parameter `node` is the currently clicked node, the second `resolve` is the callback that must be called when data loading is complete. For more accurate display of node status, you can also mark node data with a leaf indicator (the default field is `leaf`, which can be modified via `props.leaf`). Otherwise, it simply checks whether the node has children to determine whether it is a leaf node.
 
 <preview path="./demo/Cascader/Lazy.vue"></preview>
 
-## 可搜索
+## Searchable
 
-可以快捷地搜索选项并选择,将filterable赋值为true即可打开搜索功能，默认会匹配节点的label或所有父节点的label(由show-all-levels决定)中包含输入值的选项。
+Quickly search and select options. Set `filterable` to `true` to enable search. By default, it matches options whose label (or all ancestor labels, depending on `show-all-levels`) contains the search text.
 
-你也可以用filter-method自定义搜索逻辑，接受一个函数，第一个参数是节点node，第二个参数是搜索关键词keyword，通过返回布尔值表示是否匹配
+You can also use `filter-method` to customize the search logic. It accepts a function with two parameters: the node and the search keyword, and returns a boolean to indicate whether it matches.
 
 <preview path="./demo/Cascader/Search.vue"></preview>
 
-## 自定义选项
+## Custom Options
 
-可以自定义选项的内容 , scoped slot会传入两个字段 node 和 data，分别表示当前节点的 Node 对象和数据。
+Option content can be customized. The scoped slot receives two props: `node` (the current Node object) and `data` (the node data).
 
 <preview path="./demo/Cascader/Custom.vue"></preview>
 
-## 不同尺寸
+## Sizes
 
 <preview path="./demo/Cascader/Size.vue"></preview>
 
-## 级联面板
+## Cascader Panel
 
-可以不采用popper弹窗的面板显示。与级联选择器一样使用
+You can use a panel display instead of the popper dialog. Usage is the same as cascader.
 
 <preview path="./demo/Cascader/Panel.vue"></preview>
 
 ## Cascader Props
 
-| 参数            | 说明                                                                                                | 类型                    | 可选值                | 默认值    |
+| Parameter            | Description                                                                                                | Type                    | Options                | Default    |
 | --------------- | --------------------------------------------------------------------------------------------------- | ----------------------- | --------------------- | --------- |
-| value / v-model | 选中项绑定值                                                                                        | -                       | —                     | —         |
-| options         | 可选项数据源，键名可通过 `Props` 属性配置                                                           | array                   | —                     | —         |
-| props           | 配置选项，具体见下表                                                                                | object                  | —                     | —         |
-| size            | 尺寸                                                                                                | string                  | medium / small / mini | —         |
-| placeholder     | 输入框占位文本                                                                                      | string                  | —                     | 请选择    |
-| disabled        | 是否禁用                                                                                            | boolean                 | —                     | false     |
-| clearable       | 是否支持清空选项                                                                                    | boolean                 | —                     | false     |
-| show-all-levels | 输入框中是否显示选中值的完整路径                                                                    | boolean                 | —                     | true      |
-| collapse-tags   | 多选模式下是否折叠Tag                                                                               | boolean                 | -                     | false     |
-| separator       | 选项分隔符                                                                                          | string                  | —                     | 斜杠' / ' |
-| filterable      | 是否可搜索选项                                                                                      | boolean                 | —                     | —         |
-| filter-method   | 自定义搜索逻辑，第一个参数是节点`node`，第二个参数是搜索关键词`keyword`，通过返回布尔值表示是否命中 | function(node, keyword) | -                     | -         |
-| debounce        | 搜索关键词输入的去抖延迟，毫秒                                                                      | number                  | —                     | 300       |
-| before-filter   | 筛选之前的钩子，参数为输入的值，若返回 false 或者返回 Promise 且被 reject，则停止筛选               | function(value)         | —                     | —         |
-| popper-class    | 自定义浮层类名                                                                                      | string                  | —                     | —         |
+| value / v-model | Binding value of the selected item                                                                        | -                       | —                     | —         |
+| options         | Data source for options. Key names can be configured via the `Props` property                              | array                   | —                     | —         |
+| props           | Configuration options, see the table below                                                                | object                  | —                     | —         |
+| size            | Size                                                                                                     | string                  | medium / small / mini | —         |
+| placeholder     | Input placeholder text                                                                                   | string                  | —                     | Please select |
+| disabled        | Disabled                                                                                                 | boolean                 | —                     | false     |
+| clearable       | Whether to support clearing options                                                                       | boolean                 | —                     | false     |
+| show-all-levels | Whether to show the full path of the selected value in the input                                          | boolean                 | —                     | true      |
+| collapse-tags   | Whether to collapse tags in multi-select mode                                                             | boolean                 | -                     | false     |
+| separator       | Option separator                                                                                         | string                  | —                     | ' / '     |
+| filterable      | Whether options are searchable                                                                            | boolean                 | —                     | —         |
+| filter-method   | Custom search logic. The first parameter is the node `node`, the second is the search keyword `keyword`. Returns a boolean indicating whether it matches | function(node, keyword) | -                     | -         |
+| debounce        | Debounce delay for search keyword input, in milliseconds                                                  | number                  | —                     | 300       |
+| before-filter   | Hook before filtering. The parameter is the input value. If it returns false or a rejected Promise, filtering stops | function(value)         | —                     | —         |
+| popper-class    | Custom class name for the overlay                                                                         | string                  | —                     | —         |
 
 ## Cascader Events
 
-| 事件名称       | 说明                        | 回调参数                      |
+| Event Name      | Description                        | Callback Parameters                      |
 | -------------- | --------------------------- | ----------------------------- |
-| change         | 当选中节点变化时触发        | 选中节点的值                  |
-| expand-change  | 当展开节点发生变化时触发    | 各父级选项值组成的数组        |
-| blur           | 当失去焦点时触发            | (event: Event)                |
-| focus          | 当获得焦点时触发            | (event: Event)                |
-| visible-change | 下拉框出现/隐藏时触发       | 出现则为 true，隐藏则为 false |
-| remove-tag     | 在多选模式下，移除Tag时触发 | 移除的Tag对应的节点的值       |
+| change         | Triggered when the selected node changes        | Value of the selected node                  |
+| expand-change  | Triggered when the expanded node changes    | Array of parent option values        |
+| blur           | Triggered when focus is lost            | (event: Event)                |
+| focus          | Triggered when focus is gained            | (event: Event)                |
+| visible-change | Triggered when the dropdown appears/hides       | true when appearing, false when hiding |
+| remove-tag     | Triggered when a tag is removed in multi-select mode | Value of the node corresponding to the removed tag       |
 
 ## Cascader Methods
 
-| 方法名          | 说明           | 参数                                          |
+| Method Name          | Description           | Parameter                                          |
 | --------------- | -------------- | --------------------------------------------- |
-| getCheckedNodes | 获取选中的节点 | (leafOnly) 是否只是叶子节点，默认值为 `false` |
+| getCheckedNodes | Get the selected nodes | (leafOnly) Whether to only return leaf nodes, default is `false` |
 
 ## Cascader Slots
 
-| 名称  | 说明                                                                            |
+| Name  | Description                                                                            |
 | ----- | ------------------------------------------------------------------------------- |
-| -     | 自定义备选项的节点内容，参数为 { node, data }，分别为当前节点的 Node 对象和数据 |
-| empty | 无匹配选项时的内容                                                              |
+| -     | Custom content for option nodes. Parameters are { node, data }, the Node object and data of the current node respectively |
+| empty | Content when no matching options are found                                                              |
 
 ## CascaderPanel Attributes
 
-| 参数            | 说明                                      | 类型   | 可选值 | 默认值 |
+| Parameter            | Description                                      | Type   | Options | Default |
 | --------------- | ----------------------------------------- | ------ | ------ | ------ |
-| value / v-model | 选中项绑定值                              | -      | —      | —      |
-| options         | 可选项数据源，键名可通过 `Props` 属性配置 | array  | —      | —      |
-| props           | 配置选项，具体见下表                      | object | —      | —      |
+| value / v-model | Binding value of the selected item                              | -      | —      | —      |
+| options         | Data source for options. Key names can be configured via the `Props` property | array  | —      | —      |
+| props           | Configuration options, see the table below                      | object | —      | —      |
 
 ## CascaderPanel Events
 
-| 事件名称      | 说明                     | 回调参数               |
+| Event Name      | Description                     | Callback Parameters               |
 | ------------- | ------------------------ | ---------------------- |
-| change        | 当选中节点变化时触发     | 选中节点的值           |
-| expand-change | 当展开节点发生变化时触发 | 各父级选项值组成的数组 |
+| change        | Triggered when the selected node changes     | Value of the selected node           |
+| expand-change | Triggered when the expanded node changes | Array of parent option values |
 
 ## CascaderPanel Methods
 
-| 方法名            | 说明               | 参数                                          |
+| Method Name            | Description               | Parameter                                          |
 | ----------------- | ------------------ | --------------------------------------------- |
-| getCheckedNodes   | 获取选中的节点数组 | (leafOnly) 是否只是叶子节点，默认值为 `false` |
-| clearCheckedNodes | 清空选中的节点     | -                                             |
+| getCheckedNodes   | Get the array of selected nodes | (leafOnly) Whether to only return leaf nodes, default is `false` |
+| clearCheckedNodes | Clear the selected nodes     | -                                             |
 
 ## CascaderPanel Slots
 
-| 名称 | 说明                                                                            |
+| Name | Description                                                                            |
 | ---- | ------------------------------------------------------------------------------- |
-| -    | 自定义备选项的节点内容，参数为 { node, data }，分别为当前节点的 Node 对象和数据 |
+| -    | Custom content for option nodes. Parameters are { node, data }, the Node object and data of the current node respectively |
 
 ## Props
 
-| 参数          | 说明                                                                                               | 类型                                                                                     | 可选值        | 默认值     |
+| Parameter          | Description                                                                                               | Type                                                                                     | Options        | Default     |
 | ------------- | -------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ------------- | ---------- |
-| expandTrigger | 次级菜单的展开方式                                                                                 | string                                                                                   | click / hover | 'click'    |
-| multiple      | 是否多选                                                                                           | boolean                                                                                  | -             | false      |
-| checkStrictly | 是否严格的遵守父子节点不互相关联                                                                   | boolean                                                                                  | -             | false      |
-| emitPath      | 在选中节点改变时，是否返回由该节点所在的各级菜单的值所组成的数组，若设置 false，则只返回该节点的值 | boolean                                                                                  | -             | true       |
-| lazy          | 是否动态加载子节点，需与 lazyLoad 方法结合使用                                                     | boolean                                                                                  | -             | false      |
-| lazyLoad      | 加载动态数据的方法，仅在 lazy 为 true 时有效                                                       | function(node, resolve)，`node`为当前点击的节点，`resolve`为数据加载完成的回调(必须调用) | -             | -          |
-| value         | 指定选项的值为选项对象的某个属性值                                                                 | string                                                                                   | —             | 'value'    |
-| label         | 指定选项标签为选项对象的某个属性值                                                                 | string                                                                                   | —             | 'label'    |
-| children      | 指定选项的子选项为选项对象的某个属性值                                                             | string                                                                                   | —             | 'children' |
-| disabled      | 指定选项的禁用为选项对象的某个属性值                                                               | string                                                                                   | —             | 'disabled' |
-| leaf          | 指定选项的叶子节点的标志位为选项对象的某个属性值                                                   | string                                                                                   | —             | 'leaf'     |
+| expandTrigger | Trigger mode for sub-menus to expand                                                                 | string                                                                                   | click / hover | 'click'    |
+| multiple      | Whether to support multi-select                                                                                           | boolean                                                                                  | -             | false      |
+| checkStrictly | Whether to strictly enforce parent-child node independence                                                                   | boolean                                                                                  | -             | false      |
+| emitPath      | When the selected node changes, whether to return an array composed of values from each menu level where the node is located. If set to false, only the value of that node is returned | boolean                                                                                  | -             | true       |
+| lazy          | Whether to dynamically load child nodes. Must be used with the `lazyLoad` method                                                     | boolean                                                                                  | -             | false      |
+| lazyLoad      | Method for loading dynamic data, only effective when `lazy` is true                                                       | function(node, resolve), `node` is the currently clicked node, `resolve` is the callback that must be called when data loading is complete | -             | -          |
+| value         | Specifies which property of the option object to use as the option value                                                                 | string                                                                                   | —             | 'value'    |
+| label         | Specifies which property of the option object to use as the option label                                                                 | string                                                                                   | —             | 'label'    |
+| children      | Specifies which property of the option object to use as the option's children                                                             | string                                                                                   | —             | 'children' |
+| disabled      | Specifies which property of the option object to use as the option's disabled state                                                               | string                                                                                   | —             | 'disabled' |
+| leaf          | Specifies which property of the option object to use as the leaf node indicator                                                   | string                                                                                   | —             | 'leaf'     |

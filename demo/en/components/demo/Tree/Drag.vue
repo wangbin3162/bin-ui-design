@@ -1,7 +1,7 @@
 <template>
   <div flex>
     <div class="p10" style="width: 300px; border-right: 1px solid #eeeeee">
-      <b-tag type="primary">基础拖拽排序</b-tag>
+      <b-tag type="primary">Basic Drag Sort</b-tag>
       <b-divider style="margin: 8px 0"></b-divider>
       <b-tree
         ref="treeRef"
@@ -16,7 +16,7 @@
       ></b-tree>
     </div>
     <div class="p10" style="width: 300px; border-right: 1px solid #eeeeee">
-      <b-tag type="primary">自定义函数配置</b-tag>
+      <b-tag type="primary">Custom Function Config</b-tag>
       <b-divider style="margin: 8px 0"></b-divider>
       <b-tree
         :allow-drop="allowDrop"
@@ -37,44 +37,44 @@ import { Message, BDropdown, BDropdownMenu, BDropdownItem } from 'bin-ui-design'
 
 const data = ref([
   {
-    title: '一级 1',
+    title: 'Level 1 1',
     children: [
       {
-        title: '二级 1-1',
-        children: [{ title: '三级 1-1-1' }, { title: '三级 1-1-2' }]
+        title: 'Level 2 1-1',
+        children: [{ title: 'Level 3 1-1-1' }, { title: 'Level 3 1-1-2' }]
       },
       {
-        title: '二级 1-2',
-        children: [{ title: '三级 1-2-1' }, { title: '三级 1-2-2' }]
+        title: 'Level 2 1-2',
+        children: [{ title: 'Level 3 1-2-1' }, { title: 'Level 3 1-2-2' }]
       }
     ]
   },
   {
-    title: '一级 2',
+    title: 'Level 1 2',
     children: [
       {
-        title: '二级 2-1',
-        children: [{ title: '三级 2-1-1' }, { title: '三级 2-1-2' }]
+        title: 'Level 2 2-1',
+        children: [{ title: 'Level 3 2-1-1' }, { title: 'Level 3 2-1-2' }]
       },
       {
-        title: '二级 2-2',
-        children: [{ title: '三级 2-2-1' }, { title: '三级 2-2-2' }]
+        title: 'Level 2 2-2',
+        children: [{ title: 'Level 3 2-2-1' }, { title: 'Level 3 2-2-2' }]
       }
     ]
   }
 ])
 const data1 = ref([
   {
-    title: '数据维度',
+    title: 'Data Dimensions',
     nodeType: 'root',
     children: [
       {
-        title: '国家层级',
+        title: 'Country Hierarchy',
         nodeType: 'hierarchy',
         children: [
           {
             field: 'country',
-            title: '国家',
+            title: 'Country',
             dataType: 'STRING',
             type: 'dimension',
             nodeType: 'attribute',
@@ -82,7 +82,7 @@ const data1 = ref([
           },
           {
             field: 'province',
-            title: '省',
+            title: 'Province',
             dataType: 'STRING',
             type: 'dimension',
             nodeType: 'attribute',
@@ -90,7 +90,7 @@ const data1 = ref([
           },
           {
             field: 'city',
-            title: '市',
+            title: 'City',
             dataType: 'STRING',
             type: 'dimension',
             nodeType: 'attribute',
@@ -99,12 +99,12 @@ const data1 = ref([
         ]
       },
       {
-        title: '部门',
+        title: 'Department',
         nodeType: 'folder',
         children: [
           {
             field: 'dept_code',
-            title: '部门编号',
+            title: 'Department Code',
             dataType: 'STRING',
             type: 'dimension',
             nodeType: 'attribute',
@@ -112,7 +112,7 @@ const data1 = ref([
           },
           {
             field: 'dept_name',
-            title: '部门名称',
+            title: 'Department Name',
             dataType: 'STRING',
             type: 'dimension',
             nodeType: 'attribute',
@@ -123,16 +123,16 @@ const data1 = ref([
     ]
   },
   {
-    title: '数据度量',
+    title: 'Data Measures',
     nodeType: 'root',
     children: [
       {
-        title: '默认',
+        title: 'Default',
         nodeType: 'folder',
         children: [
           {
             field: 'count',
-            title: '统计',
+            title: 'Statistics',
             dataType: 'NUMBER',
             type: 'measure',
             nodeType: 'attribute',
@@ -141,12 +141,12 @@ const data1 = ref([
         ]
       },
       {
-        title: '部门',
+        title: 'Department',
         nodeType: 'folder',
         children: [
           {
             field: 'parent_dept',
-            title: '上级部门',
+            title: 'Parent Department',
             dataType: 'NUMBER',
             type: 'measure',
             nodeType: 'attribute',
@@ -154,7 +154,7 @@ const data1 = ref([
           },
           {
             field: 'level',
-            title: '层级',
+            title: 'Level',
             dataType: 'NUMBER',
             type: 'measure',
             nodeType: 'attribute',
@@ -177,7 +177,7 @@ function allowDrop(draggingNode, dropNode, type) {
 }
 
 function allowDrag(draggingNode) {
-  // 限制拖拽节点
+  // Restrict drag nodes
   return draggingNode.nodeType === 'attribute'
 }
 
@@ -230,11 +230,11 @@ function renderContent1({ root, node, data }) {
           h(BDropdownMenu, () => [
             h(BDropdownItem, { name: 'edit' }, () => [
               h('i', { class: 'b-iconfont b-icon-edit-square' }),
-              '编辑'
+              'Edit'
             ]),
             h(BDropdownItem, { name: 'delete' }, () => [
               h('i', { class: 'b-iconfont b-icon-delete' }),
-              '删除'
+              'Delete'
             ])
           ])
       }

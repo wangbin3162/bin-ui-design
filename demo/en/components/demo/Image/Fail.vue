@@ -4,7 +4,7 @@
       <div flex="main:center">
         <b-image width="200px" height="100px" />
       </div>
-      <p class="t-center">默认</p>
+      <p class="t-center">Default</p>
     </b-col>
     <b-col span="12">
       <div flex="main:center">
@@ -14,7 +14,7 @@
           </template>
         </b-image>
       </div>
-      <p class="t-center">插槽</p>
+      <p class="t-center">Slot</p>
     </b-col>
   </b-row>
 </template>

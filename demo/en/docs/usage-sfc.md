@@ -1,18 +1,18 @@
 ---
-title: 在 SFC 中使用
+title: Usage in SFC
 ---
 
 <b-back-top></b-back-top>
 
-# 在 SFC 中使用
+# Usage in SFC
 
-如果你想使用单文件组件风格（SFC - Single File Component），可以选择直接引入或全局安装在 Vue App 中。
+To use Single File Component (SFC) style, you can either import components directly or install them globally in your Vue app.
 
-## 直接引入 （推荐）
+## Direct Import (Recommended)
 
-你可以直接导入组件并进行使用这种情况下，只有导入的组件才会被打包。
+You can directly import and use components. In this case, only the imported components will be bundled.
 
-如果你想知道如何按需引入主题和语言包，请参考 [按需引入](/en/docs/import-on-demand.html)。
+If you want to know how to import themes and language packs on demand, see [On-Demand Imports](/en/docs/import-on-demand.html).
 
 ```vue
 <template>
@@ -31,7 +31,7 @@ export default defineComponent({
 </script>
 ```
 
-如果你可以使用 setup script，你可以用下面的方式使用组件。
+If you can use setup script, you can use components like this:
 
 ```vue
 <template>
@@ -43,7 +43,7 @@ import { BButton } from 'bin-ui-design'
 </script>
 ```
 
-注意：由于样式的引入依赖基础样式，因此样式已经从组件中进行移除，在使用按需引入时，可以手动引入对应组件样式，也可以全量引入样式。.对于全局样式和字体样式，仍然需要进行全局引入。
+Note: Since style imports depend on base styles, styles have been removed from components. When using on-demand imports, you can manually import the corresponding component styles or import all styles at once. Global styles and font styles still require a global import.
 
 ```js
 // main.ts
@@ -60,17 +60,17 @@ import 'bin-ui-design/dist/styles/common.css'
 import 'bin-ui-design/dist/styles/components.css'
 ```
 
-## 使用 unplugin-vue-components 进行自动导入（推荐）
+## Auto Import with unplugin-vue-components (Recommended)
 
-如果你使用vite和ts进行构建，那么你可以借助插件 `unplugin-vue-components` 来自动的进行组件的引入。
+If you're using Vite and TypeScript for your build, you can use the `unplugin-vue-components` plugin to automatically import components.
 
-首先需要安装插件
+First, install the plugin:
 
 ```sh
 pnpm add unplugin-vue-components -D
 ```
 
-然后在 `vite.config.ts` 配置文件中进行使用
+Then configure it in `vite.config.ts`:
 
 ```ts
 // vite.config.ts
@@ -85,7 +85,7 @@ export default defineConfig({
     vueJsx(),
     Components({
       resolvers: [
-        // 自动引入组件
+        // Auto import components
         componentName => ({ name: componentName, from: 'bin-ui-design' })
       ]
     })
@@ -93,7 +93,7 @@ export default defineConfig({
 })
 ```
 
-配置完毕之后，你可以直接在组件中进行使用，此时插件会自动进行导入。而无需任何手动引入。
+Once configured, you can directly use components in your templates. The plugin will automatically import them without any manual imports.
 
 ```vue
 <template>
@@ -102,11 +102,11 @@ export default defineConfig({
 </template>
 ```
 
-## 全量引入 （不推荐）
+## Full Import (Not Recommended)
 
-安装全局组件，会失去 tree-shaking 的能力，打包有冗余代码。
+Installing all components globally loses tree-shaking capability and results in redundant bundle code.
 
-如果你想全局安装但是不想安装全部组件，请参考 [按需引入](/en/docs/import-on-demand.html)。
+If you want to install globally without installing all components, see [On-Demand Imports](/en/docs/import-on-demand.html).
 
 ```javascript
 // main.ts

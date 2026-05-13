@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button type="default" @click="open">打开MessageBox</b-button>
+    <b-button type="default" @click="open">OpenMessageBox</b-button>
   </div>
 </template>
 
@@ -10,9 +10,9 @@ import { h } from 'vue'
 
 function open() {
   MessageBox.confirm({
-    title: '消息',
+    title: 'Message',
     message: h('p', null, [
-      h('span', null, '内容可以是 '),
+      h('span', null, 'Content can be '),
       h('i', { style: 'color: teal' }, 'VNode')
     ]),
     showCancelButton: true,
@@ -21,7 +21,7 @@ function open() {
     beforeClose: (action, instance, done) => {
       if (action === 'confirm') {
         instance.confirmButtonLoading = true
-        instance.confirmText = '执行中... , 三秒关闭'
+        instance.confirmText = '执Row中... , 三SecondClose'
         setTimeout(() => {
           done()
           setTimeout(() => {

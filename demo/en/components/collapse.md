@@ -1,69 +1,69 @@
 ---
-title: 折叠面板 Collapse
+title: Collapse
 ---
 
 <b-back-top></b-back-top>
 
-# 折叠面板 Collapse
+# Collapse
 
-需要进行分段显示时使用折叠面板
+需要进行分段Show时usecollapse面板
 
-## 基础用法
+## Basic Usage
 
-默认可以同时展开多个面板，可以设置默认展开第几个。
+Default可以同时expand多个面板，Can set Defaultexpand第几个。
 
 <preview path="./demo/Collapse/Basic.vue"></preview>
 
-## 手风琴模式
+## Accordion ModeMode
 
-设置 `accordion` 手风琴模式默认只能开启一个
+设置 `accordion` 手风琴ModeDefault只能Enable一个
 
 <preview path="./demo/Collapse/Accordion.vue"></preview>
 
-## 简单模式和自定义头
+## 简单Mode和自定义头
 
-`simple` 设置简单模式，也可以通过 插槽自定义头部
+`simple` 设置简单Mode，也Can be set via  slot自定义头部
 
 <preview path="./demo/Collapse/Simple.vue"></preview>
 
-## 容器组件
+## 容器component
 
-使用 `b-collapse-wrap` 组件可以单独使用独立的折叠面板
+use `b-collapse-wrap` component可以单独use独立的collapse面板
 
 <preview path="./demo/Collapse/Wrap.vue"></preview>
 
 ## Props
 
-| 参数       | 说明                                             | 类型         | 可选值 | 默认值 |
+| Parameter       | Description                                             | Type         | Options | Default |
 | ---------- | ------------------------------------------------ | ------------ | ------ | ------ |
-| modelValue | 当前激活的面板的 name，可以使用 v-model 双向绑定 | Array/String | —      | —      |
-| accordion  | 是否开启手风琴模式，开启后每次至多展开一个面板   | Boolean      | —      | false  |
-| simple     | 是否开启简洁模式                                 | Boolean      | —      | false  |
+| modelValue | 当前激活的面板的 name，可以use v-model 双向绑定 | Array/String | —      | —      |
+| accordion  | Enable 手风琴Mode，Enable后每次至多expand一个面板   | Boolean      | —      | false  |
+| simple     | Enable 简洁Mode                                 | Boolean      | —      | false  |
 
 ## Events
 
-| 事件名 | 说明                                                   | 返回值  |
+| Event Name | Description                                                   | Return Value  |
 | ------ | ------------------------------------------------------ | ------- |
-| change | 切换面板时触发，返回当前已展开的面板的 key，格式为数组 | array[] |
+| change | 切换面板时Trigger，返回Currently expand的面板的 key，格式为数组 | array[] |
 
 ## Slot
 
-| 名称  | 说明       |
+| Name  | Description       |
 | ----- | ---------- |
-| title | 面板头内容 |
+| title | 面板头Content |
 
 ## CollapseWrap Props
 
-| 参数     | 说明                               | 类型    | 可选值            | 默认值 |
+| Parameter     | Description                               | Type    | Options            | Default |
 | -------- | ---------------------------------- | ------- | ----------------- | ------ |
-| value    | 是否展开                           | boolean | —                 | true   |
-| title    | 标题                               | string  | —                 | —      |
-| collapse | 是否可以展开收起                   | boolean | —                 | false  |
-| shadow   | shadow，设置为none可以开启简单模式 | string  | none/自定义shadow | —      |
+| value    | Whether to expand                           | boolean | —                 | true   |
+| title    | Title                               | string  | —                 | —      |
+| collapse | Whether to 可以expand收起                   | boolean | —                 | false  |
+| shadow   | shadow，设置为noneCan enable 简单Mode | string  | none/自定义shadow | —      |
 
 ## CollapseWrap Slot
 
-| 名称  | 说明             |
+| Name  | Description             |
 | ----- | ---------------- |
-| title | 面板头内容       |
-| right | 右侧插入内容区域 |
+| title | 面板头Content       |
+| right | 右侧插入Content区域 |

@@ -5,10 +5,10 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const columns = [
-  { title: '姓名', key: 'name' },
-  { title: '年龄', key: 'age' },
-  { title: '出生日期', key: 'birthday' },
-  { title: '地址', key: 'address' }
+  { title: 'Name', key: 'name' },
+  { title: 'Age', key: 'age' },
+  { title: 'Birthday', key: 'birthday' },
+  { title: 'Address', key: 'address' }
 ]
 const data = ref([])
 </script>

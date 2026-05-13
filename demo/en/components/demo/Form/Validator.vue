@@ -2,36 +2,36 @@
   <div style="width: 500px">
     <b-form ref="ruleForm" :model="formObj" status-icon label-width="100px" :rules="ruleValidate">
       <b-form-item prop="name" label="名称">
-        <b-input v-model="formObj.name" placeholder="用户名"></b-input>
+        <b-input v-model="formObj.name" placeholder="Username"></b-input>
       </b-form-item>
-      <b-form-item prop="mail" label="邮箱">
-        <b-input v-model="formObj.mail" placeholder="邮箱" clearable></b-input>
+      <b-form-item prop="mail" label="Email">
+        <b-input v-model="formObj.mail" placeholder="Email" clearable></b-input>
       </b-form-item>
       <b-row>
         <b-col :span="12">
-          <b-form-item prop="age" label="年龄">
+          <b-form-item prop="age" label="Age">
             <b-input-number v-model="formObj.age" style="width: 100%"></b-input-number>
           </b-form-item>
         </b-col>
         <b-col :span="12">
-          <b-form-item label="户籍地" prop="region">
-            <b-select v-model="formObj.region" placeholder="请选择户籍地" clearable>
-              <b-option label="上海" value="shanghai"></b-option>
-              <b-option label="北京" value="beijing"></b-option>
-              <b-option label="南京" value="nanjing"></b-option>
-              <b-option label="徐州" value="xuzhou"></b-option>
+          <b-form-item label="Hometown" prop="region">
+            <b-select v-model="formObj.region" placeholder="Please selectHometown" clearable>
+              <b-option label="Shanghai" value="shanghai"></b-option>
+              <b-option label="Beijing" value="beijing"></b-option>
+              <b-option label="Nanjing" value="nanjing"></b-option>
+              <b-option label="Xuzhou" value="xuzhou"></b-option>
             </b-select>
           </b-form-item>
         </b-col>
       </b-row>
-      <b-form-item label="出生日期" prop="birthday">
+      <b-form-item label="Birthday" prop="birthday">
         <b-date-picker
           v-model="formObj.birthday"
           type="date"
-          placeholder="出生日期"
+          placeholder="Birthday"
         ></b-date-picker>
       </b-form-item>
-      <b-form-item label="爱好" prop="hobby">
+      <b-form-item label="Hobby" prop="hobby">
         <b-checkbox-group v-model="formObj.hobby">
           <b-checkbox label="打游戏" name="hobby"></b-checkbox>
           <b-checkbox label="看电影" name="hobby"></b-checkbox>
@@ -39,21 +39,21 @@
           <b-checkbox label="看书" name="hobby"></b-checkbox>
         </b-checkbox-group>
       </b-form-item>
-      <b-form-item label="性别" prop="sex">
+      <b-form-item label="Gender" prop="sex">
         <b-radio-group v-model="formObj.sex">
-          <b-radio label="男" value="male"></b-radio>
-          <b-radio label="女" value="female"></b-radio>
+          <b-radio label="Male" value="male"></b-radio>
+          <b-radio label="Female" value="female"></b-radio>
         </b-radio-group>
       </b-form-item>
-      <b-form-item label="状态" prop="status">
+      <b-form-item label="Status" prop="status">
         <b-switch v-model="formObj.status" true-value="enable" false-value="disable" size="large">
-          <template #open><span>启用</span></template>
-          <template #close><span>禁用</span></template>
+          <template #open><span>Enable</span></template>
+          <template #close><span>Disabled</span></template>
         </b-switch>
       </b-form-item>
       <b-form-item>
-        <b-button type="primary" @click="submitForm">提交</b-button>
-        <b-button @click="resetForm">重置</b-button>
+        <b-button type="primary" @click="submitForm">Submit</b-button>
+        <b-button @click="resetForm">Reset</b-button>
       </b-form-item>
     </b-form>
   </div>
@@ -63,18 +63,18 @@
 import { ref } from 'vue'
 
 const ruleValidate = {
-  name: [{ required: true, message: '用户名不能为空', trigger: 'blur' }],
-  region: [{ required: true, message: '户籍地不能为空', trigger: 'change' }],
+  name: [{ required: true, message: 'UsernameCannot be empty', trigger: 'blur' }],
+  region: [{ required: true, message: 'HometownCannot be empty', trigger: 'change' }],
   age: [
-    { required: true, type: 'number', message: '年龄不为空', trigger: 'change' },
-    { type: 'number', min: 18, trigger: 'change', message: '年龄必须在18以上' }
+    { required: true, type: 'number', message: 'Age不为空', trigger: 'change' },
+    { type: 'number', min: 18, trigger: 'change', message: 'Age必须在18以上' }
   ],
-  hobby: [{ type: 'array', required: true, message: '请至少选择一个爱好', trigger: 'change' }],
-  sex: [{ required: true, message: '性别必选', trigger: 'change' }],
-  birthday: [{ required: true, type: 'date', message: '出生日期必选', trigger: 'blur' }],
+  hobby: [{ type: 'array', required: true, message: '请to少选择一个Hobby', trigger: 'change' }],
+  sex: [{ required: true, message: 'Gender必选', trigger: 'change' }],
+  birthday: [{ required: true, type: 'date', message: 'Birthday必选', trigger: 'blur' }],
   mail: [
-    { required: true, message: '邮箱不能为空', trigger: 'blur' },
-    { type: 'email', message: '邮箱格式不正确', trigger: 'blur' }
+    { required: true, message: 'EmailCannot be empty', trigger: 'blur' },
+    { type: 'email', message: 'EmailInvalid format', trigger: 'blur' }
   ]
 }
 

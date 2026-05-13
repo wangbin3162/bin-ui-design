@@ -1,9 +1,9 @@
 <template>
   <div>
-    <b-button @click="open(false)">提醒</b-button>
-    <b-button @click="open(true)">打开提醒(仅标题)</b-button>
-    <b-button @click="open1">render函数渲染</b-button>
-    <b-button @click="time">自定义时长</b-button>
+    <b-button @click="open(false)">Notice</b-button>
+    <b-button @click="open(true)">OpenNotice(仅Title)</b-button>
+    <b-button @click="open1">render function</b-button>
+    <b-button @click="time">Custom时长</b-button>
   </div>
 </template>
 
@@ -13,20 +13,20 @@ import { Notice } from 'bin-ui-design'
 
 function open(hasMessage) {
   Notice({
-    title: 'Notice 标题',
-    message: hasMessage ? '' : '这是通知内容,这是通知内容. 这是通知内容,这是通知内容.'
+    title: 'Notice Title',
+    message: hasMessage ? '' : '这是NoticeContent,这是NoticeContent. 这是NoticeContent,这是NoticeContent.'
   })
 }
 function open1() {
   Notice({
-    title: '标题名称',
-    message: h('i', { style: 'color: red' }, '我是render函数渲染出来的内容')
+    title: 'Title名称',
+    message: h('i', { style: 'color: red' }, 'Content rendered by render function.')
   })
 }
 function time() {
   Notice({
-    title: 'Notice 标题',
-    message: 'duration设置为0则不会自动关闭',
+    title: 'Notice Title',
+    message: 'duration设置为0则不会自动Close',
     duration: 0
   })
 }

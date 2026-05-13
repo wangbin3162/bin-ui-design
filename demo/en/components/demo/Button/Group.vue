@@ -13,15 +13,15 @@
     </b-button-group>
 
     <b-button-group>
-      <b-button type="primary" icon="left">上一页</b-button>
+      <b-button type="primary" icon="left">Prev</b-button>
       <b-button type="primary">
-        下一页
+        Next
         <i class="b-iconfont b-icon-right"></i>
       </b-button>
     </b-button-group>
     <b-button-group>
-      <b-button>上一页</b-button>
-      <b-button>下一页</b-button>
+      <b-button>Prev</b-button>
+      <b-button>Next</b-button>
     </b-button-group>
     <b-button-group>
       <b-button type="success" icon="star"></b-button>

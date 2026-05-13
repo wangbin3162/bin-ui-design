@@ -1,12 +1,12 @@
 <template>
   <div flex>
     <div class="p10" style="width: 300px; border-right: 1px solid #eeeeee">
-      <b-tag type="primary">新增移除</b-tag>
+      <b-tag type="primary">New增移除</b-tag>
       <b-divider style="margin: 8px 0"></b-divider>
       <b-tree ref="tree" :data="data" :render="renderContent"></b-tree>
     </div>
     <div class="p10" style="width: 300px; border-right: 1px solid #eeeeee">
-      <b-tag type="primary">下拉菜单</b-tag>
+      <b-tag type="primary">下拉menu</b-tag>
       <b-divider style="margin: 8px 0"></b-divider>
       <b-tree :data="data1" :render="renderContent1"></b-tree>
     </div>
@@ -48,15 +48,15 @@ const data = ref([
 ])
 const data1 = ref([
   {
-    title: '导航',
+    title: 'navigation',
     icon: 'apartment',
     expand: true,
     children: [
-      { title: '导航菜单', icon: 'menu' },
+      { title: 'navigationmenu', icon: 'menu' },
       { title: '图钉', icon: 'pushpin' },
-      { title: '锚点', icon: 'attachment' },
-      { title: '面包屑', icon: 'right' },
-      { title: '标签页', icon: 'project' }
+      { title: 'anchor', icon: 'attachment' },
+      { title: 'breadcrumb', icon: 'right' },
+      { title: 'Tab', icon: 'project' }
     ]
   }
 ])
@@ -140,11 +140,11 @@ function renderContent1({ root, node, data }) {
           h(BDropdownMenu, () => [
             h(BDropdownItem, { name: 'edit' }, () => [
               h('i', { class: 'b-iconfont b-icon-edit-square' }),
-              '编辑'
+              'Edit'
             ]),
             h(BDropdownItem, { name: 'delete' }, () => [
               h('i', { class: 'b-iconfont b-icon-delete' }),
-              '删除'
+              'Delete'
             ])
           ])
       }

@@ -1,75 +1,75 @@
 ---
-title: 上传 Upload
+title: Upload
 ---
 
 <b-back-top></b-back-top>
 
-# 上传 Upload
+# Upload
 
-文件选择上传按钮，实现简单的上传封装
+A file upload button with a simple upload wrapper.
 
-## 基础用法
+## Basic Usage
 
-最基本用法，点击上传，一次选择一个文件。
+Basic usage: click to upload, selecting one file at a time.
 
 <preview path="./demo/Upload/Basic.vue"></preview>
 
-## 多选
+## Multi-select
 
-可以开启多选模式来一次选择多个
+Enable multi-select mode to select multiple files at once.
 
 <preview path="./demo/Upload/Multiple.vue"></preview>
 
-## 手动上传
+## Manual Upload
 
-绑定 before-upload，并返回false，可以阻止默认上传流程，手动控制文件上传。
+Bind `before-upload` and return `false` to prevent the default upload process, allowing manual control of file upload.
 
-可以自由控制上传逻辑，具体参考api实现
+You can freely control the upload logic. Refer to the API implementation for details.
 
 <preview path="./demo/Upload/Handle.vue"></preview>
 
-## 拖拽上传
+## Drag and Drop Upload
 
-设置属性 type 为 drag，可以拖拽上传。
+Set the `type` property to `drag` to enable drag-and-drop upload.
 
 <preview path="./demo/Upload/Drag.vue"></preview>
 
 ## Attributes
 
-| 参数              | 说明                                                                                                                                           | 类型     | 可选值                           | 默认值 |
+| Parameter              | Description                                                                                                                                           | Type     | Options                           | Default |
 | ----------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- | -------- | -------------------------------- | ------ |
-| action            | 上传的地址，必填                                                                                                                               | string   | —                                | —      |
-| headers           | 上传的请求头                                                                                                                                   | Object   | —                                | {}     |
-| multiple          | 是否支持多选                                                                                                                                   | Boolean  | —                                | false  |
-| paste             | 是否支持粘贴上传                                                                                                                               | Boolean  | —                                | false  |
-| disabled          | 禁用                                                                                                                                           | Boolean  | —                                | false  |
-| data              | 上传时附带的额外参数                                                                                                                           | Object   | —                                | —      |
-| name              | 上传的文件字段名                                                                                                                               | String   | —                                | file   |
-| with-credentials  | 支持发送 cookie 凭证信息                                                                                                                       | Boolean  | —                                | false  |
-| show-upload-list  | 是否显示已上传文件列表                                                                                                                         | Boolean  | —                                | true   |
-| type              | 上传控件的类型                                                                                                                                 | String   | select（选择），drag（支持拖拽） | select |
-| accept            | 接受上传的文件类型,input 标签原生的 accept 属性，会在选择文件时过滤                                                                            | String   | —                                | —      |
-| format            | 支持的文件类型，与 accept 不同的是，format 是识别文件的后缀名                                                                                  | String   | —                                | —      |
-| max-size          | 文件大小限制，单位 kb                                                                                                                          | Number   | —                                | —      |
-| before-upload     | 上传文件之前的钩子，参数为上传的文件,若返回 false 或者 Promise 则停止上传                                                                      | Function | —                                | —      |
-| on-progress       | 文件上传时的钩子，返回字段为 event, file, fileList                                                                                             | Function | —                                | —      |
-| on-success        | 文件上传成功时的钩子，返回字段为 response, file, fileList                                                                                      | Function | —                                | —      |
-| on-error          | 文件上传失败时的钩子，返回字段为 error, file, fileList                                                                                         | Function | —                                | —      |
-| on-preview        | 点击已上传的文件链接时的钩子，返回字段为 file， 可以通过 file.response 拿到服务端返回数据                                                      | Function | —                                | —      |
-| on-remove         | 文件列表移除文件时的钩子，返回字段为 file, fileList                                                                                            | Function | —                                | —      |
-| on-format-error   | 文件格式验证失败时的钩子，返回字段为 file, fileList                                                                                            | Function | —                                | —      |
-| on-exceeded-size  | 文件超出指定大小限制时的钩子，返回字段为 file, fileList                                                                                        | Function | —                                | —      |
-| default-file-list | 默认已上传的文件列表，例如：[{name: 'img1.jpg',url: 'http://www.xxx.com/img1.jpg' }, { name: 'img2.jpg', url: 'http://www.xxx.com/img2.jpg' }] | Array    | —                                | []     |
+| action            | Upload URL. Required                                                                                                                               | string   | —                                | —      |
+| headers           | Upload request headers                                                                                                                                   | Object   | —                                | {}     |
+| multiple          | Whether to support multi-select                                                                                                                                   | Boolean  | —                                | false  |
+| paste             | Whether to support paste upload                                                                                                                               | Boolean  | —                                | false  |
+| disabled          | Disabled                                                                                                                                           | Boolean  | —                                | false  |
+| data              | Additional parameters sent with the upload                                                                                                                           | Object   | —                                | —      |
+| name              | Upload file field name                                                                                                                               | String   | —                                | file   |
+| with-credentials  | Support sending cookie credentials                                                                                                                       | Boolean  | —                                | false  |
+| show-upload-list  | Whether to show the uploaded file list                                                                                                                         | Boolean  | —                                | true   |
+| type              | Upload control type                                                                                                                                 | String   | select / drag | select |
+| accept            | Accepted file types. Native accept attribute of input. Filters files on selection                                                                            | String   | —                                | —      |
+| format            | Supported file types. Unlike accept, format identifies files by their extension                                                                                  | String   | —                                | —      |
+| max-size          | File size limit in KB                                                                                                                          | Number   | —                                | —      |
+| before-upload     | Hook before upload. Receives the file. If it returns false or a rejected Promise, the upload is cancelled                                                                      | Function | —                                | —      |
+| on-progress       | Hook during upload. Returns event, file, fileList                                                                                             | Function | —                                | —      |
+| on-success        | Hook on upload success. Returns response, file, fileList                                                                                      | Function | —                                | —      |
+| on-error          | Hook on upload error. Returns error, file, fileList                                                                                         | Function | —                                | —      |
+| on-preview        | Hook when clicking an uploaded file link. Returns file. Access server response via file.response                                                      | Function | —                                | —      |
+| on-remove         | Hook when a file is removed from the list. Returns file, fileList                                                                                            | Function | —                                | —      |
+| on-format-error   | Hook on file format validation failure. Returns file, fileList                                                                                            | Function | —                                | —      |
+| on-exceeded-size  | Hook when file exceeds size limit. Returns file, fileList                                                                                        | Function | —                                | —      |
+| default-file-list | Default uploaded file list, e.g., [{ name: 'img1.jpg', url: 'http://www.xxx.com/img1.jpg' }, { name: 'img2.jpg', url: 'http://www.xxx.com/img2.jpg' }] | Array    | —                                | []     |
 
 ## Methods
 
-| 方法名     | 说明             | 参数 |
+| Method Name     | Description             | Parameter |
 | ---------- | ---------------- | ---- |
-| clearFiles | 清空已上传的列表 | 无   |
+| clearFiles | Clear the uploaded file list | —   |
 
 ## Slot
 
-| 名称    | 说明                                   |
+| Name    | Description                                   |
 | ------- | -------------------------------------- |
-| default | 触发上传组件的控件，默认是一个按钮     |
-| tip     | 辅助的提示消息，如：单个文件不能超过2M |
+| default | The trigger element for the upload component. Defaults to a button     |
+| tip     | Helper tip message, e.g., "A single file cannot exceed 2MB" |

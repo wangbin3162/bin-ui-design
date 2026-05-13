@@ -1,24 +1,24 @@
 <template>
   <div flex="cross:center box:mean">
     <div style="padding: 0 10px">
-      <div class="demonstration">基础</div>
-      <b-date-picker v-model="value1" type="datetime" placeholder="选择日期时间"></b-date-picker>
+      <div class="demonstration">Basic</div>
+      <b-date-picker v-model="value1" type="datetime" placeholder="Select date time"></b-date-picker>
     </div>
     <div style="padding: 0 10px">
-      <div class="demonstration">带快捷选项</div>
+      <div class="demonstration">With shortcuts</div>
       <b-date-picker
         v-model="value2"
         type="datetime"
-        placeholder="选择日期时间"
+        placeholder="Select date time"
         :shortcuts="shortcuts"
       ></b-date-picker>
     </div>
     <div style="padding: 0 10px">
-      <div class="demonstration">默认时间</div>
+      <div class="demonstration">Default time</div>
       <b-date-picker
         v-model="value3"
         type="datetime"
-        placeholder="选择日期时间"
+        placeholder="Select date time"
         :default-value="new Date(2000, 1, 1, 12, 0, 0)"
       ></b-date-picker>
     </div>
@@ -30,11 +30,11 @@ import { ref } from 'vue'
 
 const shortcuts = [
   {
-    text: '今日',
+    text: 'Today',
     value: new Date()
   },
   {
-    text: '昨天',
+    text: 'Yesterday',
     value: (() => {
       const date = new Date()
       date.setTime(date.getTime() - 3600 * 1000 * 24)
@@ -42,7 +42,7 @@ const shortcuts = [
     })()
   },
   {
-    text: '一周前',
+    text: 'A week ago',
     value: (() => {
       const date = new Date()
       date.setTime(date.getTime() - 3600 * 1000 * 24 * 7)

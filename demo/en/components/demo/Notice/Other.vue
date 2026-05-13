@@ -1,15 +1,15 @@
 <template>
   <div>
     <b-button
-      @click="open({ title: '标题', useHTML: true, message: '我是<i>html</i>片段插入的内容' })"
+      @click="open({ title: 'Title', useHTML: true, message: '我是<i>html</i>片段插入的Content' })"
     >
-      HTML片段
+      HTML Fragment
     </b-button>
-    <b-button @click="open({ title: '标题', showClose: false, message: '隐藏关闭按钮内容' })">
-      隐藏关闭按钮
+    <b-button @click="open({ title: 'Title', showClose: false, message: 'hideClosebuttonContent' })">
+      hideClosebutton
     </b-button>
-    <b-button @click="open({ title: '偏移', message: '这是一条带有偏移的提示消息', offset: 200 })">
-      偏移位置
+    <b-button @click="open({ title: 'Offset', message: '这是一条带有Offset的WarningMessage', offset: 200 })">
+      Offsetposition
     </b-button>
   </div>
 </template>

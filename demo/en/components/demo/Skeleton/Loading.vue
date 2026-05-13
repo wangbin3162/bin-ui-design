@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mb-15">
-      <b-button @click="show">2s 后显示</b-button>
+      <b-button @click="show">Show after 2s</b-button>
     </div>
     <b-skeleton style="width: 350px" :loading="loading" animation>
       <template #template>
@@ -20,11 +20,11 @@
         <div style="width: 350px">
           <div flex="cross:center" style="margin-bottom: 8px">
             <b-skeleton-item variant="circle" style="width: 36px; margin-right: 8px" />
-            <div style="width: 200px">用户信息</div>
+            <div style="width: 200px">用户Info</div>
           </div>
-          <p>用户信息内容</p>
-          <p>用户信息内容</p>
-          <p>用户信息内容</p>
+          <p>用户InfoContent</p>
+          <p>用户InfoContent</p>
+          <p>用户InfoContent</p>
           <p>{{ currentDate }}</p>
         </div>
       </template>

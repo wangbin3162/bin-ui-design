@@ -1,62 +1,62 @@
 ---
-title: 警告提示 Alert
+title: Alert
 ---
 
 <b-back-top></b-back-top>
 
-# 警告提示 Alert
+# Alert
 
-静态的展示一些区块，提示或者警告，可以动态的去删除
+静态的展示一些区块，Tip or 者Warning，可以动态的去delete
 
-## 基础用法
+## Basic Usage
 
-直接用组件默认插槽插入即可
+Simply insert content using the default slot.
 
 <preview path="./demo/Alert/Basic.vue"></preview>
 
 ## 包含描述信息
 
-自定义`#desc`插入描述内容。
+自定义`#desc`插入描述Content。
 
 <preview path="./demo/Alert/Desc.vue"></preview>
 
-## 图标
+## icon
 
-根据 `type` 属性自动添加不同图标，或者自定义图标 `slot` 。
+根据 `type` property自动添加不同icon， or 者自定义icon `slot` 。
 
 <preview path="./demo/Alert/Icon.vue"></preview>
 
-## 可以关闭
+## Can disable 
 
-设置属性 `closable` 可以设置提示可关闭
+设置property `closable` Can set Tip可Disable
 
 <preview path="./demo/Alert/Close.vue"></preview>
 
-## 顶部公告样式
+## 顶部公告style
 
-设置属性 `banner` 可以应用顶部公告的样式。
+设置property `banner` 可以应用顶部公告的style。
 
 <preview path="./demo/Alert/Banner.vue"></preview>
 
 ## Props
 
-| 参数      | 说明         | 类型    | 可选值                        | 默认值 |
+| Parameter      | Description         | Type    | Options                        | Default |
 | --------- | ------------ | ------- | ----------------------------- | ------ |
-| type      | 警告提示样式 | String  | info、success、warning、error | info   |
-| closable  | 是否可关闭   | Boolean | —                             | false  |
-| show-icon | 是否显示图标 | Boolean | —                             | false  |
+| type      | WarningTipstyle | String  | info、success、warning、error | info   |
+| closable  | Whether to 可Disable   | Boolean | —                             | false  |
+| show-icon | Whether to show icon | Boolean | —                             | false  |
 
 ## Events
 
-| 事件名 | 说明       | 返回值 |
+| Event Name | Description       | Return Value |
 | ------ | ---------- | ------ |
-| close  | 关闭时触发 | event  |
+| close  | Disable时Trigger | event  |
 
 ## Slot
 
-| 名称    | 说明                   |
+| Name    | Description                   |
 | ------- | ---------------------- |
-| default | 警告提示内容           |
-| desc    | 警告提示辅助性文字介绍 |
-| icon    | 自定义图标内容         |
-| close   | 自定义关闭内容         |
+| default | Warning/alert content           |
+| desc    | WarningTip辅助性文字介绍 |
+| icon    | 自定义iconContent         |
+| close   | 自定义DisableContent         |

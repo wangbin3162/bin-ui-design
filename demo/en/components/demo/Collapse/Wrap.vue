@@ -1,33 +1,33 @@
 <template>
   <div>
-    <b-collapse-wrap title="标题栏" collapse>
+    <b-collapse-wrap title="Title Bar" collapse>
       <div class="p5">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </div>
     </b-collapse-wrap>
-    <b-collapse-wrap title="收起附加右侧操作" collapse>
+    <b-collapse-wrap title="Collapse with right action" collapse>
       <template #right>
-        <b-button type="primary" plain size="small">编辑</b-button>
+        <b-button type="primary" plain size="small">Edit</b-button>
       </template>
       <div class="p5">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </div>
     </b-collapse-wrap>
     <b-collapse-wrap v-model="value" shadow="none">
       <template #title>
-        <div style="font-size: 16px; padding: 10px">自定义开关和标题</div>
+        <div style="font-size: 16px; padding: 10px">Custom switch and title</div>
       </template>
       <template #right>
-        <b-button type="text" @click="value = !value">{{ value ? '收起' : '展开' }}</b-button>
+        <b-button type="text" @click="value = !value">{{ value ? 'Collapse' : 'Expand' }}</b-button>
       </template>
       <div class="p5">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </div>
     </b-collapse-wrap>
-    <b-collapse-wrap title="标题栏" collapse shadow="none" arrow-icon="caret-down">
-      <template #title><span class="title">自定义label标题</span></template>
+    <b-collapse-wrap title="Title Bar" collapse shadow="none" arrow-icon="caret-down">
+      <template #title><span class="title">Custom label title</span></template>
       <div class="p5">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </div>
     </b-collapse-wrap>
   </div>

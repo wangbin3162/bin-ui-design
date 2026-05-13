@@ -1,5 +1,5 @@
 <template>
-  <b-page v-model:current="current" :total="100" prev-text="上一页" next-text="下一页"></b-page>
+  <b-page v-model:current="current" :total="100" prev-text="Prev" next-text="Next"></b-page>
 </template>
 
 <script setup lang="ts">

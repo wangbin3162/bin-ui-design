@@ -10,8 +10,8 @@
     </div>
     <div style="width: 80px">
       <b-switch v-model="lockSelect" size="large">
-        <template #open>锁定</template>
-        <template #close>解锁</template>
+        <template #open>Lock</template>
+        <template #close>Unlock</template>
       </b-switch>
     </div>
   </div>
@@ -22,21 +22,21 @@ import { ref } from 'vue'
 
 const data = ref([
   {
-    title: '一级 1',
+    title: 'Level 1-1',
     expand: true,
     children: [
       {
-        title: '二级 1-1',
+        title: 'Level 2-1-1',
         expand: true,
         children: [
-          { title: '三级 1-1-1 我是超长字段我是超长字段我是超长字段' },
-          { title: '三级 1-1-2' }
+          { title: 'Level 3-1-1-1 Very Long Field Text Very Long Field Text' },
+          { title: 'Level 3-1-1-2' }
         ]
       },
       {
-        title: '二级 1-2',
+        title: 'Level 2-1-2',
         expand: true,
-        children: [{ title: '三级 1-2-1' }, { title: '三级 1-2-2' }]
+        children: [{ title: 'Level 3-1-2-1' }, { title: 'Level 3-1-2-2' }]
       }
     ]
   }

@@ -1,50 +1,50 @@
 ---
-title: 数字动画 CountTo
+title: CountTo
 ---
 
 <b-back-top></b-back-top>
 
-# 数字动画 CountTo
+# CountTo
 
-数字动画为常用组件，因此收录至组件库便于使用，整体源码参考vue-count-to实现，props参数也一样，由于纯数字显示，因此所有样式都可以自定义
+count animation为常用component，因此收录至component库便于use，整体源码See vue-count-to实现，propsparameter也一样，由于纯数字Show，因此所有style都可以自定义
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/CountTo/Basic.vue"></preview>
 
-## 自定义参数
+## Customparameter
 
-可以设置不同参数来定义时长、前缀、后缀、连接符等来定义显示
+Can set 不同parameter来定义时长、前缀、后缀、连接符等来定义Show
 
 <preview path="./demo/CountTo/Options.vue"></preview>
 
 ## Props
 
-| 参数      | 说明                     | 类型    | 可选值 | 默认值 |
+| Parameter      | Description                     | Type    | Options | Default |
 | --------- | ------------------------ | ------- | ------ | ------ |
 | startVal  | 开始值                   | Number  | —      | -      |
 | endVal    | 结束值                   | Number  | —      | 2000   |
-| duration  | 动画持续时间             | Number  | —      | 2000   |
-| autoplay  | 是否自动播放             | Boolean | —      | true   |
+| duration  | animation持续时间             | Number  | —      | 2000   |
+| autoplay  | Whether to 自动播放             | Boolean | —      | true   |
 | decimals  | 小数点精度               | Number  | —      | 0      |
-| decimal   | 小数点显示               | String  | —      | .      |
+| decimal   | 小数点Show               | String  | —      | .      |
 | separator | 数字分割                 | String  | —      | ，     |
-| prefix    | 前缀，用于显示之前的字符 | String  | —      | —      |
-| suffix    | 后缀，用于显示之后的字符 | String  | —      | —      |
+| prefix    | 前缀，Used for Show之前的字符 | String  | —      | —      |
+| suffix    | 后缀，Used for Show之后的字符 | String  | —      | —      |
 
 ## Events
 
-| 事件名   | 说明     | 返回值 |
+| Event Name   | Description     | Return Value |
 | -------- | -------- | ------ |
-| mounted  | 开始渲染 | 无     |
-| callback | 调用结束 | 无     |
+| mounted  | 开始render | —     |
+| callback | call结束 | —     |
 
 ## Functions
 
-| 事件名      | 说明       | 参数            |
+| Event Name      | Description       | Parameter            |
 | ----------- | ---------- | --------------- |
-| count       | 获取当前值 | timestamp，时间 |
-| start       | 开始       | 无              |
-| pauseResume | 暂停和启动 | 无              |
-| reset       | 重置       | 无              |
-| restart     | 重启       | 无              |
+| count       | Get current value | timestamp，时间 |
+| start       | 开始       | —              |
+| pauseResume | 暂停和启动 | —              |
+| reset       | reset       | —              |
+| restart     | 重启       | —              |

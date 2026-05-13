@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button type="default" @click="open">打开confirm</b-button>
+    <b-button type="default" @click="open">Openconfirm</b-button>
   </div>
 </template>
 
@@ -10,15 +10,15 @@ import { MessageBox, Message } from 'bin-ui-design'
 function open() {
   MessageBox.confirm({
     type: 'warning',
-    title: '提示',
-    message: '<p>此操作将永久<span style="color:red;">删除</span>该文件, 是否继续?</p>',
+    title: 'Warning',
+    message: '<p>此Actions将永久<span style="color:red;">Delete</span>该文件, 是否继续?</p>',
     useHTML: true
   })
     .then(() => {
-      Message({ type: 'success', message: '删除成功!' })
+      Message({ type: 'success', message: 'DeleteSuccess!' })
     })
     .catch(() => {
-      Message({ type: 'info', message: '已取消删除' })
+      Message({ type: 'info', message: '已CancelDelete' })
     })
 }
 </script>

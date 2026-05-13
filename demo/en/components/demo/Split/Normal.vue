@@ -7,7 +7,7 @@
       <template #right>
         <b-split split="horizontal" :default="100" :default-wrap-style="['50%', '50%']">
           <template #left>
-            <div class="left-container">上边容器</div>
+            <div class="left-container">Top容器</div>
           </template>
           <template #right>
             <div class="right-container">下面容器</div>

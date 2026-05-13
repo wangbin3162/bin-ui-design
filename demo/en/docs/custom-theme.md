@@ -1,21 +1,21 @@
 ---
-title: 调整主题
+title: Customizing Themes
 ---
 
 <b-back-top></b-back-top>
 
-# 调整主题
+# Customizing Themes
 
-通过使用 b-config-provider 调整主题。
+Use `b-config-provider` to customize themes.
 
-默认情况下所有组件均为亮色主题，无需任何配置。
+By default, all components use the light theme with no configuration needed.
 
-了解更多关于 b-config-provider 的信息，参见 [全局化配置](/en/components/config-provider.html)。
+Learn more about `b-config-provider` at [ConfigProvider](/en/components/config-provider.html).
 
-## 调整主题变量
+## Customizing Theme Variables
 
-你不需要写任何 CSS（Scss、Less、Stylus...）。
+You don't need to write any CSS (Scss, Less, Stylus...).
 
-配置的全局主题变量会对后代组件生效的主题变量覆盖。
+The configured global theme variables will override theme variables for all descendant components.
 
 <preview path="./demo/Theme/Basic.vue"></preview>

@@ -1,59 +1,59 @@
 ---
-title: 锚点 Anchor
+title: Anchor
 ---
 
 <b-back-top></b-back-top>
 
-# 锚点 Anchor
+# Anchor
 
-锚点主要应用于滚动导航
+anchor主要应Used for 滚动navigation
 
-## 基础用法
+## Basic Usage
 
-默认是window滚动，也可以设置滚动区域的 target，并且可以设置`b-affix`来固定
+Defaults to window滚动，也Can set 滚动区域的 target，并且Can set `b-affix`来固定
 
 <preview path="./demo/Anchor/Basic.vue"></preview>
 
-## 自定义图标
+## Customicon
 
-可以通过设置`icon`来设置小圆点为自定义图标，推荐使用实心图标以达到最好的显示效果
+Can be set via 设置`icon`来设置小圆点为自定义icon，推荐use实心icon以达到最好的Show效果
 
 <preview path="./demo/Anchor/Icon.vue"></preview>
 
-## 自定义颜色
+## Customcolor
 
-可以通过设置`activeColor`来设置自定义图标的颜色
+Can be set via 设置`activeColor`来设置自定义icon的color
 
 <preview path="./demo/Anchor/Color.vue"></preview>
 
 ## 指定滚动容器
 
-可以通过设置`target`来指定滚动区域的标识，设置的滚动容器需要设置定位
+Can be set via 设置`target`来指定滚动区域的标识，设置的滚动容器需要设置定位
 
 <preview path="./demo/Anchor/Target.vue"></preview>
 
 ## Props
 
-| 参数          | 说明                                                             | 类型    | 可选值                                     | 默认值 |
+| Parameter          | Description                                                             | Type    | Options                                     | Default |
 | ------------- | ---------------------------------------------------------------- | ------- | ------------------------------------------ | ------ |
-| icon          | 是否设置自定义图标                                               | string  | —                                          | —      |
-| icon-size     | 自定义图标大小                                                   | Number  | —                                          | —      |
-| active-color  | 选中颜色                                                         | string  | primary,info,success,warning,danger,自定义 | —      |
-| offset-top    | 距离窗口顶部达到指定偏移量后触发                                 | Number  | —                                          | 0      |
-| bounds        | 锚点区域边界                                                     | Number  | —                                          | 5      |
-| showInk       | 是否显示小圆点                                                   | Boolean | —                                          | false  |
-| scroll-offset | 点击滚动的额外距离                                               | Number  | —                                          | 0      |
-| target        | 指定滚动容器的标识，滚动容器需要设置position定位用于计算滚动偏移 | string  | —                                          | —      |
+| icon          | Whether to 设置自定义icon                                               | string  | —                                          | —      |
+| icon-size     | 自定义icon大小                                                   | Number  | —                                          | —      |
+| active-color  | selectcolor                                                         | string  | primary,info,success,warning,danger,自定义 | —      |
+| offset-top    | 距离窗口顶部达到指定offset量后Trigger                                 | Number  | —                                          | 0      |
+| bounds        | anchor区域边界                                                     | Number  | —                                          | 5      |
+| showInk       | Whether to show 小圆点                                                   | Boolean | —                                          | false  |
+| scroll-offset | click滚动的额外距离                                               | Number  | —                                          | 0      |
+| target        | 指定滚动容器的标识，滚动容器需要设置position定位Used for 计算滚动offset | string  | —                                          | —      |
 
 ## Events
 
-| 事件名 | 说明                     | 返回值 |
+| Event Name | Description                     | Return Value |
 | ------ | ------------------------ | ------ |
-| select | 点击锚点时触发，返回链接 | href   |
+| select | clickanchor时Trigger，返回link | href   |
 
 ## AnchorLink Props
 
-| 参数  | 说明     | 类型   | 可选值 | 默认值 |
+| Parameter  | Description     | Type   | Options | Default |
 | ----- | -------- | ------ | ------ | ------ |
-| href  | 锚点链接 | String | —      | —      |
-| title | 文字内容 | String | —      | —      |
+| href  | anchorlink | String | —      | —      |
+| title | Text content | String | —      | —      |

@@ -6,9 +6,9 @@
     <span style="color: #ff4511; margin: 5px 0">{{ checkAllGroup }} - {{ checkAll }}</span>
   </div>
   <b-checkbox-group v-model="checkAllGroup" @change="checkAllGroupChange">
-    <b-checkbox label="香蕉"></b-checkbox>
-    <b-checkbox label="苹果"></b-checkbox>
-    <b-checkbox label="西瓜"></b-checkbox>
+    <b-checkbox label="Banana"></b-checkbox>
+    <b-checkbox label="Apple"></b-checkbox>
+    <b-checkbox label="Watermelon"></b-checkbox>
     <b-checkbox label="草莓"></b-checkbox>
   </b-checkbox-group>
 </template>
@@ -16,11 +16,11 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const all = ['香蕉', '西瓜', '苹果', '草莓']
+const all = ['Banana', 'Watermelon', 'Apple', '草莓']
 
 const indeterminate = ref(false)
 const checkAll = ref(false)
-const checkAllGroup = ref(['香蕉', '西瓜'])
+const checkAllGroup = ref(['Banana', 'Watermelon'])
 
 function handleCheckAll(val) {
   checkAllGroup.value = val ? all : []

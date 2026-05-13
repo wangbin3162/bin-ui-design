@@ -16,9 +16,9 @@
     </b-checkbox-group>
     <p style="color: #ff4511; margin: 5px 0">{{ social }}</p>
     <b-checkbox-group v-model="fruit">
-      <b-checkbox label="香蕉"></b-checkbox>
-      <b-checkbox label="苹果"></b-checkbox>
-      <b-checkbox label="西瓜"></b-checkbox>
+      <b-checkbox label="Banana"></b-checkbox>
+      <b-checkbox label="Apple"></b-checkbox>
+      <b-checkbox label="Watermelon"></b-checkbox>
     </b-checkbox-group>
     <p style="color: #ff4511; margin: 5px 0">{{ fruit }}</p>
   </div>
@@ -27,5 +27,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const social = ref(['facebook', 'github'])
-const fruit = ref(['苹果'])
+const fruit = ref(['Apple'])
 </script>

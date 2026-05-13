@@ -1,28 +1,28 @@
 ---
-title: 面包屑 Breadcrumb
+title: Breadcrumb
 ---
 
 <b-back-top></b-back-top>
 
-# 面包屑 Breadcrumb
+# Breadcrumb
 
-显示当前页面的路径，快速返回之前的任意页面或者跳转链接
+Show当前页面的路径，快速返回之前的任意页面 or 者跳转link
 
-## 基础用法
+## Basic Usage
 
-面包屑的用法，separator设置分隔符 不设置to属性，一切都需要自行在插槽中灵活运用
+breadcrumb的用法，separator设置分隔符 不设置toproperty，一切都需要自行在slot中灵活运用
 
 <preview path="./demo/Breadcrumb/Basic.vue"></preview>
 
-## 分隔符
+## Separator
 
-可以设置分隔符
+Can set 分隔符
 
 <preview path="./demo/Breadcrumb/Separator.vue"></preview>
 
 ## Breadcrumb Props
 
-| 参数           | 说明           | 类型   | 可选值 | 默认值 |
+| Parameter           | Description           | Type   | Options | Default |
 | -------------- | -------------- | ------ | ------ | ------ |
 | separator      | 分隔           | string | —      | '/'    |
-| separator-icon | 图标分隔符icon | string | —      | —      |
+| separator-icon | icon分隔符icon | string | —      | —      |

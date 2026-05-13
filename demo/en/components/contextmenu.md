@@ -1,21 +1,21 @@
 ---
-title: 右键菜单 Contextmenu
+title: Contextmenu
 ---
 
 <b-back-top></b-back-top>
 
-# 右键菜单 Contextmenu
+# Contextmenu
 
-通用的右键菜单组件，只需要插入默认选项即可
+通用的context menucomponent，只需要插入Defaultoption即可
 
-## 基础用法
+## Basic Usage
 
-直接用组件默认插槽插入即可,需要监听属性并进行弹窗调用。注意，这里必须需要传入$event这个参数，否则无法获取正确位置。
+Simply insert content using the default slot.,需要监听property并进行dialogcall。Note，这里必须需要传入$event这个parameter，No则无法获取正确position。
 
 <preview path="./demo/Contextmenu/Basic.vue"></preview>
 
 ## Slot
 
-| 名称    | 说明     |
+| Name    | Description     |
 | ------- | -------- |
-| default | 默认插槽 |
+| default | Defaultslot |

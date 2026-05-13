@@ -13,6 +13,6 @@ const value1 = ref(25)
 const value2 = ref(35)
 
 function format(val) {
-  return '进度: ' + val + '%'
+  return 'Progress: ' + val + '%'
 }
 </script>

@@ -20,7 +20,7 @@ import { ref } from 'vue'
 const options = [
   {
     value: 'nanjing',
-    label: '南京',
+    label: 'Nanjing',
     children: [
       {
         value: 'xuanwu',
@@ -28,7 +28,7 @@ const options = [
       },
       {
         value: 'gulou',
-        label: '鼓楼区'
+        label: 'Gulou District'
       },
       {
         value: 'jianye',
@@ -38,7 +38,7 @@ const options = [
   },
   {
     value: 'xuzhou',
-    label: '徐州',
+    label: 'Xuzhou',
     children: [
       {
         value: 'tongshan',
@@ -46,11 +46,11 @@ const options = [
       },
       {
         value: 'gulou',
-        label: '鼓楼区'
+        label: 'Gulou District'
       },
       {
         value: 'yunlong',
-        label: '云龙区',
+        label: 'Yunlong District',
         children: [
           { value: 'dalonghu', label: '大龙湖街道' },
           { value: 'guozhuanglu', label: '郭庄路街道' },
@@ -60,12 +60,12 @@ const options = [
       },
       {
         value: 'jiawang',
-        label: '贾汪区'
+        label: 'Jiawang District'
       },
       { value: 'peixian', label: '沛县' },
       { value: 'fengxian', label: '丰县' },
-      { value: 'pizhou', label: '邳州市' },
-      { value: 'xinyi', label: '新沂市' }
+      { value: 'pizhou', label: '邳州City' },
+      { value: 'xinyi', label: 'New沂City' }
     ]
   }
 ]

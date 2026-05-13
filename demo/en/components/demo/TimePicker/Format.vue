@@ -3,7 +3,7 @@
     <div style="width: 220px; margin-right: 20px">
       <b-time-picker
         v-model="value1"
-        format="HH点mm分ss秒"
+        format="HH点mm分ssSecond"
         placeholder="任意时间点"
       ></b-time-picker>
     </div>
@@ -14,9 +14,9 @@
         arrow-control
         format="HH’mm’ss"
         range-separator="~"
-        start-placeholder="开始时间"
-        end-placeholder="结束时间"
-        placeholder="选择时间范围"
+        start-placeholder="Start time"
+        end-placeholder="End time"
+        placeholder="选择Time range"
       >
         >
       </b-time-picker>

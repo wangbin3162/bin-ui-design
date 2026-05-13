@@ -1,23 +1,23 @@
 ---
-title: 帮助函数
+title: Utility Functions
 ---
 
 <b-back-top></b-back-top>
 
-# 帮助函数
+# Utility Functions
 
-部分内部的帮助函数已经暴露给外部，可供外部直接导入使用。
+Some internal utility functions are exposed for external use via direct imports.
 
-## 导入
+## Importing
 
-无论是全量引入还是按需引入，扩展工具包只能通过手动引入的方式进行注册。
+Whether you use full or on-demand imports, the utility toolkit must be manually imported.
 
-这里只介绍部分包中的函数.
+Only some utility functions are introduced here.
 
-(推荐开启一个中间文件用于包裹各种导入函数，这样方便管理和区分)
+(We recommend creating an intermediate file to wrap various import functions — this makes management and organization easier.)
 
 ```ts
-// util-helper.ts 这里是你自己定义的
+// util-helper.ts — define this yourself
 import { Utils } from 'bin-ui-design'
 
 export const typeOf = Utils.util.typeOf
@@ -32,24 +32,24 @@ export const removeClass = Utils.dom.removeClass
 export const addResizeListener = Utils.resize.addResizeListener
 export const removeResizeListener = Utils.resize.removeResizeListener
 
-// 或者按分包进行导出也可.
+// Or export by sub-package
 ```
 
 ## Utils.util
 
-通用工具包
+General utility toolkit
 
 ```ts
 /**
- * @description 更新标题
- * @param {String} title 标题
+ * @description Update document title
+ * @param {String} title Title
  */
 export function title(title) {
   // --
 }
 
 /**
- * @description 复制到剪切板
+ * @description Copy to clipboard
  * @param content
  */
 export function copy(content) {
@@ -57,8 +57,8 @@ export function copy(content) {
 }
 
 /**
- * @description 打开新页面
- * @param {String} url 地址
+ * @description Open new page
+ * @param {String} url URL
  * @param target
  */
 export function open(url, target = false) {
@@ -66,7 +66,7 @@ export function open(url, target = false) {
 }
 
 /**
- * @description 日期格式化
+ * @description Date formatting
  * @param time
  * @param cFormat
  * @param weekArray
@@ -76,8 +76,8 @@ export function parseTime(time, cFormat = '{y}-{m}-{d} {h}:{i}:{s}', weekArray) 
 }
 
 /**
- * @description 获取区间范围，如近一周，近三个月，后一个月等
- * @param days 为负值时往前，正为之后的日期
+ * @description Get a date range, e.g., last week, last three months, next month
+ * @param days Negative for past dates, positive for future dates
  * @param mode
  * @returns {*}
  */
@@ -86,7 +86,7 @@ export function rangeTime(days, mode = '{y}-{m}-{d}') {
 }
 
 /**
- * @description 精准判断对象类型
+ * @description Accurately determine object type
  * @param obj
  */
 export function typeOf(obj) {
@@ -94,7 +94,7 @@ export function typeOf(obj) {
 }
 
 /**
- * @description 深拷贝
+ * @description deep copy
  * @param data
  */
 export function deepCopy(data) {
@@ -102,7 +102,7 @@ export function deepCopy(data) {
 }
 
 /**
- * @description 深度合并
+ * @description Deep merge
  * @param target
  * @param merged
  */
@@ -111,9 +111,9 @@ export function deepMerge(target, merged) {
 }
 
 /**
- * @description 在某个区间随机一个整数
- * @param min 最小值
- * @param max 最大值
+ * @description Generate a random integer in a range
+ * @param min Minimum value
+ * @param max Maximum value
  * @return {number}
  */
 export function getRandomInt(min, max) {
@@ -121,7 +121,7 @@ export function getRandomInt(min, max) {
 }
 
 /**
- * @description 打乱某个数组
+ * @description Shuffle an array
  * @return {number}
  */
 export function shuffle(arr) {
@@ -129,7 +129,7 @@ export function shuffle(arr) {
 }
 
 /**
- * @description 交换两个数组内容
+ * @description Swap two array elements
  * @return {number}
  */
 export function swap(arr, i, j) {
@@ -137,30 +137,30 @@ export function swap(arr, i, j) {
 }
 
 /**
- * @description 节流函数，(限制函数的执行频率)返回函数连续调用时，空闲时间必须大于或等于 wait，func 才会执行
+ * @description Throttle function. (Limit function execution frequency)Returns a function that, when called continuously, only executes `func` after the idle time is >= `wait`.
  *
- * @param  {function} func        回调函数
- * @param  {number}   wait        表示时间窗口的间隔
- * @param immediate 是否立即执行 true 则先调用，false不先调用
- * @return {function}             返回客户调用函数
+ * @param  {function} func        Callback function
+ * @param  {number}   wait        Time window interval in milliseconds
+ * @param immediate If true, execute immediately on the first call; if false, wait for the first interval.
+ * @return {function}             Returns the client call function
  */
 export function throttle(func, wait, immediate) {
   // --
 }
 
 /**
- * @description 防抖函数，(限制函数的执行频率) 保证再一系列调用时间内，只调用一次
+ * @description Debounce function. (Limit function execution frequency) Ensures that within a series of calls, the function is only executed once.
  *
- * @param  {function} func        回调函数
- * @param  {number}   wait        表示时间窗口的间隔
- * @return {function}             返回客户调用函数
+ * @param  {function} func        Callback function
+ * @param  {number}   wait        Time window interval in milliseconds
+ * @return {function}             Returns the client call function
  */
 export function debounce(func, wait) {
   // --
 }
 
 /**
- * @description 判断是否是对象或数组
+ * @description Determine if object or array
  * @param obj
  * @returns {boolean}
  */
@@ -169,7 +169,7 @@ export function isObject(obj) {
 }
 
 /**
- * @description 判定对象数组相等
+ * @description Determine if two objects or arrays are equal
  * @param obj1
  * @param obj2
  * @returns {boolean}
@@ -179,8 +179,8 @@ export function isEqual(obj1, obj2) {
 }
 
 /**
- * @description 获取随机uuid
- * @param hasHyphen 是否有连接符
+ * @description Generate a random UUID
+ * @param hasHyphen Whether to include hyphens
  */
 export function uuid(hasHyphen) {
   // --
@@ -189,7 +189,7 @@ export function uuid(hasHyphen) {
 
 ## Utils.resize
 
-resize 借助插件实现容器大小改变的响应实现,实际开发中也偶尔能用到
+Uses a resize plugin to respond to container size changes, which can be useful in real-world development.
 
 ```ts
 import ResizeObserver from 'resize-observer-polyfill'
@@ -212,16 +212,16 @@ export const removeResizeListener = function (element: HTMLElement, fn) {
 
 ## Utils.color
 
-依赖colorjs包,封装部分用法函数
+Depends on the `color` package, wrapping some usage functions
 
 ```ts
 /**
- * 依赖color插件，在此基础上封装部分转换函数
- * 参考文档说明：https://www.npmjs.com/package/color
+ * Depends on the color plugin, wrapping some conversion functions on top.
+ * Reference docs: https://www.npmjs.com/package/color
  */
 import Color from 'color'
 
-// 调色板
+// Color palette
 export function getPalette(color) {
   const normalColor = Color(color).hex().toString().toLowerCase()
   // active
@@ -278,52 +278,52 @@ export function grayscale(color) {
   return Color(color).grayscale().toString()
 }
 
-/// 两个颜色值比较
+/// Compare two color values
 export function isEqual(color1, color2) {
   return Color(color1).toString() === Color(color2).toString()
 }
 
-// 是否是light
+// Check if light color
 export function isLight(color) {
   return Color(color).isLight()
 }
 
-// 是否是light
+// Check if light color
 export function isDark(color) {
   return Color(color).isDark()
 }
 
-// 混合色，浓度
+// Mix colors with concentration
 export function mix(mixColor, color, concentration) {
   return Color(color).mix(Color(mixColor), concentration).hex().toLowerCase()
 }
 
-// 混合白色
+// Mix with white
 export function mixWhite(color, concentration) {
   return mix('#ffffff', color, concentration)
 }
 
-// 混合黑色
+// Mix with black
 export function mixBlack(color, concentration) {
   return mix('#000000', color, concentration)
 }
 
-// 透明度
+// Alpha/opacity
 export function alpha(color, alpha) {
   return Color(color).alpha(alpha).toString()
 }
 
-// 渐隐
+// Fade
 export function fade(color, fade) {
   return Color(color).fade(fade).toString()
 }
 
-// 变轻
+// Lighten
 export function lighten(color, concentration) {
   return Color(color).lighten(concentration).toString()
 }
 
-// 变深
+// Darken
 export function darken(color, concentration) {
   return Color(color).darken(concentration).toString()
 }
@@ -331,40 +331,40 @@ export function darken(color, concentration) {
 
 ## Utils.dom
 
-dom 相关工具包
+DOM-related utility toolkit
 
 ```ts
-// 去除空格
+// Trim whitespace
 const trim = function (string) {
   //--
 }
 
-// 监听事件
+// Add event listener
 export const on = (function () {
   //--
 })()
 
-// 移除事件
+// Remove event listener
 export const off = (function () {
   //--
 })()
 
-// 监听一次事件
+// Add one-time event listener
 export const once = function (el, event, fn) {
   //--
 }
 
-// 是否有class类名
+// Check if element has a CSS class
 export function hasClass(el, cls) {
   //--
 }
 
-// 添加class
+// Add CSS class
 export function addClass(el, cls) {
   //--
 }
 
-// 移除一个class样式
+// Remove a CSS class
 export function removeClass(el, cls) {
   //--
 }
@@ -374,7 +374,7 @@ export function getStyle(element, styleName) {
   //--
 }
 
-// 获取浏览器滚动条宽度
+// Get browser scrollbar width
 export function getScrollBarWidth() {
   //--
 }
@@ -384,35 +384,35 @@ export function scrollTop(el, from = 0, to, duration = 500, endCallback) {
   //--
 }
 
-// 首字母大写
+// Capitalize first letter
 export function firstUpperCase(str) {
   return str.toString()[0].toUpperCase() + str.toString().slice(1)
 }
 
-// 是否有滚动条
+// Check if element has scrollbar
 export const isScroll = (el, isVertical) => {
   //--
 }
 
-// 获取滚动容器
+// Get the scroll container
 export const getScrollContainer = (el, isVertical) => {
   //--
 }
 
-// 阻止冒泡
+// Stop propagation
 export const stop = e => e.stopPropagation()
 ```
 
 ## Utils.log
 
-log 控制台打印函数,用于各种颜色的打印
+Console log functions for colorized output
 
 <preview path="./demo/Console/Demo.vue"></preview>
 
 ```ts
 /**
- * @description 返回这个样式的颜色值
- * @param {String} type 样式名称 [ primary | success | warning | danger | text ]
+ * @description Return the color value for a given style type
+ * @param {String} type Style name [ primary | success | warning | danger | text ]
  */
 export function typeColor(type = 'default') {
   //--
@@ -468,38 +468,38 @@ export const throwWarn = (scope, m) => {
 
 ## Utils.helper
 
-辅助判断方法
+Helper utility methods
 
 ```ts
 /**
- * 随机一个id
+ * Generate a random ID
  * @returns id
  */
 export const generateId = () => Math.floor(Math.random() * 10000)
 
 /**
- * 是否是boolean
+ * Check if boolean
  * @param val
  * @returns
  */
 export const isBool = val => typeof val === 'boolean'
 
 /**
- * 是否是number
+ * Check if number
  * @param val
  * @returns
  */
 export const isNumber = val => typeof val === 'number'
 
 /**
- * 是否是string
+ * Check if string
  * @param val
  * @returns
  */
 export const isString = value => typeof value === 'string'
 
 /**
- * 是否是HTMLElement
+ * Check if HTMLElement
  * @param val
  * @returns
  */
@@ -508,14 +508,14 @@ export const isHTMLElement = val => {
 }
 
 /**
- * 是否为空
+ * Check if empty
  */
 export function isEmpty(val) {
   // --
 }
 
 /**
- * 查找数组元素
+ * Find array element
  * @param arr
  * @param pred
  * @returns
@@ -523,7 +523,7 @@ export function isEmpty(val) {
 export const arrayFind = (arr, pred) => arr.find(pred)
 
 /**
- * 查找数组索引
+ * Find array index
  * @param arr
  * @param pred
  * @returns
@@ -531,7 +531,7 @@ export const arrayFind = (arr, pred) => arr.find(pred)
 export const arrayFindIndex = (arr, pred) => arr.findIndex(pred)
 
 /**
- * 清空计时器
+ * Clear timer
  * @param val
  * @returns
  */
@@ -540,7 +540,7 @@ export const clearTimer = timer => {
 }
 
 /**
- * 追加transition前缀
+ * Add transition prefix
  * @param style
  * @returns
  */
@@ -549,7 +549,7 @@ export const autoprefixer = function (style) {
 }
 
 /**
- * 根据.获取拼接路径
+ * Get nested path by dot notation
  * @param obj
  * @param paths
  * @returns
@@ -559,7 +559,7 @@ export const getValueByPath = (obj, paths = '') => {
 }
 
 /**
- * 根据路径信息获取prop
+ * Get prop by path
  * @param obj
  * @param path
  * @param strict
@@ -570,7 +570,7 @@ export function getPropByPath(obj, path, strict) {
 }
 
 /**
- * 是否是IE
+ * Check if Internet Explorer
  * @returns
  */
 export const isIE = function () {
@@ -578,7 +578,7 @@ export const isIE = function () {
 }
 
 /**
- * 是否是Edge
+ * Check if Microsoft Edge
  * @returns
  */
 export const isEdge = function () {
@@ -586,7 +586,7 @@ export const isEdge = function () {
 }
 
 /**
- * 正则转换
+ * Escape regex string
  * @param value
  * @returns
  */
@@ -595,7 +595,7 @@ export const escapeRegexpString = (value = '') => {
 }
 
 /**
- * 是否存在entries
+ * Get entries if available
  * @param obj
  * @returns
  */
@@ -604,20 +604,20 @@ export function entries(obj) {
 }
 
 /**
- * ref解包
+ * Unwrap ref
  * @param ref Refed value
  */
 export function $(ref) {
   // --
 }
 
-/** 是否是undefined */
+/** Check if undefined */
 export function isUndefined(val) {
   // --
 }
 
 /**
- * 数组打乱
+ * Flatten array
  * @param arr
  * @returns
  */
@@ -630,7 +630,7 @@ export function deduplicate(arr) {
 }
 
 /**
- * 实际值转换为数组
+ * Coerce value to array
  * @param arr
  * @returns
  */

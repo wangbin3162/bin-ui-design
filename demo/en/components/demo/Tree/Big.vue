@@ -4,17 +4,17 @@
       <b-space>
         数据条数：
         <b-input-number v-model="number" style="width: 120px"></b-input-number>
-        <b-button @click="init">渲染</b-button>
+        <b-button @click="init">render</b-button>
         <b-input
           v-model="query"
           search
-          placeholder="输入过滤条件后回车筛选"
+          placeholder="输入filter条件后回车筛选"
           style="width: 230px"
           @search="handleFilter"
         ></b-input>
         <b-button-group>
-          <b-button @click="expandAll">展开所有</b-button>
-          <b-button @click="collapseAll">收起所有</b-button>
+          <b-button @click="expandAll">Expand所有</b-button>
+          <b-button @click="collapseAll">Collapse所有</b-button>
         </b-button-group>
       </b-space>
     </div>
@@ -40,7 +40,7 @@ const treeRef = ref(null)
 
 let maxNode = 10000 // 最大的节点数
 const childNodesNumber = [2, 5] // 子节点数
-const maxLevel = 3 // 最大嵌套层级
+const maxLevel = 3 // 最大嵌套Level
 const childRate = 0.4 // 拥有子节点的概率
 const label = '节点' // 节点label
 let index = 0

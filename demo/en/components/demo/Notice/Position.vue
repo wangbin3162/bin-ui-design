@@ -1,22 +1,22 @@
 <template>
   <div>
     <b-button
-      @click="open({ title: '右上角', message: '右上角弹出notice', position: 'top-right' })"
+      @click="open({ title: 'Right Top角', message: 'Right Top角Opennotice', position: 'top-right' })"
     >
-      右上角
+      Right Top角
     </b-button>
-    <b-button @click="open({ title: '左上角', message: '左上角弹出notice', position: 'top-left' })">
-      左上角
-    </b-button>
-    <b-button
-      @click="open({ title: '右下角', message: '右下角弹出notice', position: 'bottom-right' })"
-    >
-      右下角
+    <b-button @click="open({ title: 'Left Top角', message: 'Left Top角Opennotice', position: 'top-left' })">
+      Left Top角
     </b-button>
     <b-button
-      @click="open({ title: '左下角', message: '左下角弹出notice', position: 'bottom-left' })"
+      @click="open({ title: 'Right Bottom角', message: 'Right Bottom角Opennotice', position: 'bottom-right' })"
     >
-      左下角
+      Right Bottom角
+    </b-button>
+    <b-button
+      @click="open({ title: 'Left Bottom角', message: 'Left Bottom角Opennotice', position: 'bottom-left' })"
+    >
+      Left Bottom角
     </b-button>
   </div>
 </template>

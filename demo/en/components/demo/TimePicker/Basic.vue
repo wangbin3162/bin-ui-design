@@ -6,7 +6,7 @@
         :disabled-hours="disabledHours"
         :disabled-minutes="disabledMinutes"
         :disabled-seconds="disabledSeconds"
-        placeholder="任意时间点"
+        placeholder="Any time point"
       ></b-time-picker>
     </div>
     <div style="width: 220px; margin-right: 20px">
@@ -16,7 +16,7 @@
         :disabled-hours="disabledHours"
         :disabled-minutes="disabledMinutes"
         :disabled-seconds="disabledSeconds"
-        placeholder="任意时间点"
+        placeholder="Any time point"
       ></b-time-picker>
     </div>
   </div>

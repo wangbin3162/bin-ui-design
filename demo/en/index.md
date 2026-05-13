@@ -5,14 +5,14 @@ title: 'Home'
 
 hero:
   name: 'BIN UI DESIGN'
-  text: '一个vue3的组件库'
-  tagline: 使用Typescript+Vue3，可定制主题
+  text: 'A Vue 3 Component Library'
+  tagline: Built with TypeScript + Vue 3, customizable themes
   image:
     src: /logo.svg
     alt: Bin UI Logo
   actions:
     - theme: brand
-      text: 开始使用
+      text: Get Started
       link: /docs/introduction
     - theme: alt
       text: View on GitHub
@@ -20,12 +20,12 @@ hero:
 
 features:
   - icon: ⚡️
-    title: 快速上手，易定制
-    details: 使用typescript开发，支持按需引入，可以定制主题配色。
+    title: Quick Start, Easy Customization
+    details: Built with TypeScript, supports on-demand imports, customizable theme colors.
   - icon: 🖖
-    title: 组件较全，开箱即用
-    details: 60+ 组件和扩展使用，方便快速进行中后台框架搭建。
+    title: Comprehensive Components, Ready to Use
+    details: 60+ components and extensions for quickly building admin and middle-platform applications.
   - icon: 🛠️
-    title: 灵活，可扩展
-    details: 丰富且灵活的API设计，可以支持多种用法，组件可进行组合使用，灵活扩展。
+    title: Flexible and Extensible
+    details: Rich and flexible API design supporting multiple usage patterns. Components can be combined for flexible extension.
 ---

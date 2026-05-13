@@ -1,71 +1,71 @@
 ---
-title: 分页器 Page
+title: Pagination Page
 ---
 
 <b-back-top></b-back-top>
 
-# 分页器 Page
+# Pagination Page
 
-空显示状态，用于给内部无数据情况的展示。十分简单
+A pagination component for navigating between pages. Simple and straightforward.
 
-## 基础用法
+## Basic Usage
 
-直接用组件默认插槽插入即可
+Simply insert content using the component's default slot.
 
 <preview path="./demo/Page/Basic.vue"></preview>
 
-## 每页数量
+## Page Size
 
 <preview path="./demo/Page/Number.vue"></preview>
 
-## 电梯
+## Elevator
 
 <preview path="./demo/Page/Elevator.vue"></preview>
 
-## 总数
+## Total
 
 <preview path="./demo/Page/Total.vue"></preview>
 
-## mini型
+## Mini Size
 
 <preview path="./demo/Page/Mini.vue"></preview>
 
-## 上一页下一页文字
+## Previous/Next Page Text
 
 <preview path="./demo/Page/Text.vue"></preview>
 
-## 简洁模式
+## Simple Mode
 
 <preview path="./demo/Page/Simple.vue"></preview>
 
 ## Props
 
-| 参数           | 说明                                  | 类型    | 可选值        | 默认值           |
+| Parameter           | Description                                  | Type    | Options        | Default           |
 | -------------- | ------------------------------------- | ------- | ------------- | ---------------- |
-| current        | 当前页码 支持v-model:current修饰      | Number  | —             | 1                |
-| total          | 数据总数                              | Number  | —             | 0                |
-| page-size      | 每页条数                              | Number  | —             | 10               |
-| page-size-opts | 每页条数切换的配置                    | Array   | —             | [10, 20, 30, 40] |
-| placement      | 条数切换弹窗的展开方向                | string  | bottom 和 top | bottom           |
-| size           | 可选值为small（迷你版）或不填（默认） | string  | —             | —                |
-| simple         | 简洁版                                | Boolean | —             | false            |
-| show-total     | 显示总数                              | Boolean | —             | false            |
-| show-elevator  | 显示电梯，可以快速切换到某一页        | Boolean | —             | false            |
-| show-sizer     | 显示分页，用来改变page-size           | Boolean | —             | false            |
-| class-name     | 自定义 class 名称                     | String  | —             | —                |
-| styles         | 自定义 style 样式                     | Object  | —             | —                |
-| prev-text      | 替代图标显示的上一页文字              | String  | —             | —                |
-| next-text      | 替代图标显示的下一页文字              | String  | —             | —                |
+| current        | Current page number, supports v-model:current modifier      | Number  | —             | 1                |
+| total          | Total number of items                              | Number  | —             | 0                |
+| page-size      | Number of items per page                              | Number  | —             | 10               |
+| page-size-opts | Configuration for page size switching                    | Array   | —             | [10, 20, 30, 40] |
+| placement      | Expansion direction of the page size switching dropdown                | string  | bottom / top | bottom           |
+| size           | Size, options are small (mini) or none (default) | string  | —             | —                |
+| simple         | Simple mode                                | Boolean | —             | false            |
+| show-total     | Show total count                              | Boolean | —             | false            |
+| show-elevator  | Show elevator for quickly jumping to a specific page        | Boolean | —             | false            |
+| show-sizer     | Show page sizer to change page-size           | Boolean | —             | false            |
+| class-name     | Custom class name                     | String  | —             | —                |
+| styles         | Custom inline styles                     | Object  | —             | —                |
+| prev-text      | Text for the previous page button, replacing the icon              | String  | —             | —                |
+| next-text      | Text for the next page button, replacing the icon              | String  | —             | —                |
 
 ## Events
 
-| 事件名      | 说明                                       | 返回值    |
+| Event Name      | Description                                       | Return Value    |
 | ----------- | ------------------------------------------ | --------- |
-| change      | 页码改变的回调，返回改变后的页码           | 页码      |
-| size-change | 切换每页条数时的回调，返回切换后的每页条数 | page-size |
+| change      | Callback when page number changes, returns the new page number           | page number      |
+| size-change | Callback when page size changes, returns the new page size | page-size |
 
 ## Slot
 
-| 名称    | 说明                 |
+| Name    | Description                 |
 | ------- | -------------------- |
-| default | 自定义显示总数的内容 |
+| default | Custom content for displaying the total count |

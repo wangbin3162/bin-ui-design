@@ -7,7 +7,7 @@
       :bar-style="{ background: 'rgba(110, 23, 122, 0.3)' }"
       :bar-wrap-style="{ background: 'rgba(0, 0, 0, 0.03)' }"
     >
-      <p v-for="i in 40" :key="i">我是填充内容....</p>
+      <p v-for="i in 40" :key="i">I am filler content....</p>
     </b-scrollbar>
   </div>
 </template>

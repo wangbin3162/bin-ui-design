@@ -1,12 +1,12 @@
 <template>
   <div>
-    <b-button @click="modal1 = true">打开弹窗1</b-button>
-    <b-button @click="modal2 = true">打开弹窗2</b-button>
-    <b-modal v-model="modal1" title="弹窗1" draggable>
-      <p>弹窗1内容</p>
+    <b-button @click="modal1 = true">Opendialog1</b-button>
+    <b-button @click="modal2 = true">Opendialog2</b-button>
+    <b-modal v-model="modal1" title="dialog1" draggable>
+      <p>dialog1Content</p>
     </b-modal>
-    <b-modal v-model="modal2" title="弹窗2" draggable :mask="false">
-      <p>弹窗2内容</p>
+    <b-modal v-model="modal2" title="dialog2" draggable :mask="false">
+      <p>dialog2Content</p>
     </b-modal>
   </div>
 </template>

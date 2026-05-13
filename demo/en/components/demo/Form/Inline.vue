@@ -1,18 +1,18 @@
 <template>
   <b-form ref="form" :model="formObj" inline class="demo-form-inline">
-    <b-form-item label="姓名">
-      <b-input v-model="formObj.name" placeholder="输入姓名"></b-input>
+    <b-form-item label="Name">
+      <b-input v-model="formObj.name" placeholder="输入Name"></b-input>
     </b-form-item>
-    <b-form-item label="户籍地">
-      <b-select v-model="formObj.region" placeholder="请选择户籍地">
-        <b-option label="上海" value="shanghai"></b-option>
-        <b-option label="北京" value="beijing"></b-option>
-        <b-option label="南京" value="nanjing"></b-option>
-        <b-option label="徐州" value="xuzhou"></b-option>
+    <b-form-item label="Hometown">
+      <b-select v-model="formObj.region" placeholder="Please selectHometown">
+        <b-option label="Shanghai" value="shanghai"></b-option>
+        <b-option label="Beijing" value="beijing"></b-option>
+        <b-option label="Nanjing" value="nanjing"></b-option>
+        <b-option label="Xuzhou" value="xuzhou"></b-option>
       </b-select>
     </b-form-item>
     <b-form-item>
-      <b-button type="primary" @click="onSubmit">提交</b-button>
+      <b-button type="primary" @click="onSubmit">Submit</b-button>
     </b-form-item>
   </b-form>
 </template>

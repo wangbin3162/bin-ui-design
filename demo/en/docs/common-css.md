@@ -1,22 +1,22 @@
 ---
-title: 通用样式
+title: Common Styles
 ---
 
 <b-back-top></b-back-top>
 
-# 通用样式
+# Common Styles
 
-组件内部导入了部分通用样式，如内外边距，flex等。默认全局样式引入的时候会默认导入，如进行按需加载，部分内容可按需进行导入
+The library includes some common styles such as margin/padding utilities and flex. These are imported by default with the global styles. When using on-demand loading, you can import them as needed.
 
 ```ts
 // main.ts
-// 全部引入
+// Full import
 import 'bin-ui-design/dist/styles/index.css'
-// 按需引入
+// On-demand import
 import 'bin-ui-design/dist/styles/base.css'
 import 'bin-ui-design/dist/styles/icon.css'
 
-// 扩展基础样式
+// Extended base styles
 import 'bin-ui-design/dist/styles/common/common.css'
 import 'bin-ui-design/dist/styles/common/flex.css'
 import 'bin-ui-design/dist/styles/common/reset.css'
@@ -25,7 +25,7 @@ import 'bin-ui-design/dist/styles/common/scrollbar.css'
 
 ## reset.css
 
-基础样式用于初始化默认样式，这里的reset样式已经集成了部分样式变量，更方便使用。使用时直接导入即可。
+Base styles for resetting defaults. The reset styles already integrate some style variables for easier use. Simply import them directly.
 
 ```css
 body {
@@ -164,7 +164,7 @@ hr {
 
 ## flex.css
 
-[flex.css](https://github.com/lzxb/flex.css) 兼容样式 ， `flex.css` 扩展了换行属性`wrap`
+[flex.css](https://github.com/lzxb/flex.css) compatibility styles. `flex.css` extends the wrap attribute with `wrap`.
 
 ```css
 [flex~='wrap:wrap'] {
@@ -175,73 +175,74 @@ hr {
 ```
 
 <!--
-  将dist目录下的css文件引入到你的页面中，根据你的需要引入
-  flex.css 使用flex属性匹配
-  data-flex.css 使用data-flex属性匹配（React使用）
-  如果使用了webpack打包，npm安装后，并且配置了ES6编译器的话，
-  flex 属性匹配可以直接使用：
+  Import the CSS files from the dist directory into your page as needed.
+  flex.css uses flex attribute matching.
+  data-flex.css uses data-flex attribute matching (for React).
+  If using webpack, after npm install and with an ES6 compiler configured,
+  flex attribute matching can be used directly:
     import 'flex.css';
-  data-flex 属性匹配可以直接使用(react使用)
+  data-flex attribute matching can be used directly (for React):
     import 'flex.css/dist/data-flex.css';
   -->
-<!-- flex属性匹配，简单的子元素居中例子： -->
+<!-- flex attribute matching, simple child centering example: -->
 <div flex="main:center cross:center" style="height: 80px; border:1px solid #1089ff">
-  <div style="background: #fff;padding: 15px;">看看我是不是居中的</div>
+  <div style="background: #fff;padding: 15px;">Am I centered?</div>
 </div>
 
 ```html
 <!--
-  将dist目录下的css文件引入到你的页面中，根据你的需要引入
-  flex.css 使用flex属性匹配
-  data-flex.css 使用data-flex属性匹配（React使用）
-  如果使用了webpack打包，npm安装后，并且配置了ES6编译器的话，
-  flex 属性匹配可以直接使用：
+  Import the CSS files from the dist directory into your page as needed.
+  flex.css uses flex attribute matching.
+  data-flex.css uses data-flex attribute matching (for React).
+  If using webpack, after npm install and with an ES6 compiler configured,
+  flex attribute matching can be used directly:
     import 'flex.css';
-  data-flex 属性匹配可以直接使用(react使用)
+  data-flex attribute matching can be used directly (for React):
     import 'flex.css/dist/data-flex.css';
   -->
-<!-- flex属性匹配，简单的子元素居中例子： -->
+<!-- flex attribute matching, simple child centering example: -->
 <div flex="main:center cross:center" style="height: 80px; border:1px solid #1089ff">
-  <div style="background: #fff;padding: 15px;">看看我是不是居中的</div>
+  <div style="background: #fff;padding: 15px;">Am I centered?</div>
 </div>
 ```
 
-flex 属性
+Flex Attributes
 
 ```
-dir：主轴方向
-    top：从上到下
-    right：从右到左
-    bottom：从下到上
-    left：从左到右（默认）
+dir: Main axis direction
+    top: from top to bottom
+    right: from right to left
+    bottom: from bottom to top
+    left: from left to right (default)
 
-main：主轴对齐方式
-    right：从右到左
-    left：从左到右（默认）
-    justify：两端对齐
-    center：居中对齐
+main: Main axis alignment
+    right: from right to left
+    left: from left to right (default)
+    justify: space-between
+    center: center
 
-cross：交叉轴对齐方式
-    top：从上到下（默认）
-    bottom：从上到下
-    baseline：基线对齐
-    center：居中对齐
-    stretch：高度并排铺满
+cross: Cross axis alignment
+    top: from top to bottom (default)
+    bottom: from top to bottom
+    baseline: baseline alignment
+    center: center
+    stretch: stretch to fill height
 
-box：子元素设置
-    mean：子元素平分空间
-    first：第一个子元素不要多余空间，其他子元素平分多余空间
-    last：最后一个子元素不要多余空间，其他子元素平分多余空间
-    justify：两端第一个元素不要多余空间，其他子元素平分多余空间
+box: Child element settings
+    mean: children share space equally
+    first: first child takes no extra space, others share equally
+    last: last child takes no extra space, others share equally
+    justify: first and last children take no extra space, others share equally
 
 flex-box:
-  取值范围(0-10)，单独设置子元素多余空间的如何分配，设置为0，则子元素不占用多余的多余空间
-  多余空间分配 = 当前flex-box值/子元素的flex-box值相加之和
+  Range (0-10). Sets how extra space is distributed for individual child elements.
+  Set to 0 to prevent the child from taking extra space.
+  Space distribution = current flex-box value / sum of all child flex-box values
 ```
 
 ## common.css
 
-边框和部分常用样式
+Border and common utility styles
 
 ```css
 .m0 {
@@ -560,7 +561,7 @@ flex-box:
 
 ## scrollbar.css
 
-用于重置默认滚动条的样式，也可以使用内部scrollbar组件
+Used to reset default scrollbar styles. You can also use the built-in scrollbar component.
 
 ```css
 ::-webkit-scrollbar {

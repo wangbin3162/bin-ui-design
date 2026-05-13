@@ -1,119 +1,119 @@
 ---
-title: 选择器 Select
+title: Select
 ---
 
 <b-back-top></b-back-top>
 
-# 选择器 Select
+# Select
 
-## 基础用法
+## Basic Usage
 
-基本用法。可以使用 v-model 双向绑定数据。
+Basic usage. Use `v-model` for two-way data binding.
 
-单选时，value 只接受字符串和数字类型，多选时，只接受数组类型，组件会自动根据 Option 的 value 来返回选中的数据。
+In single-select mode, value only accepts strings and numbers. In multi-select mode, it only accepts arrays. The component automatically returns selected data based on the Option value.
 
-可以给 Select 添加 style 样式，比如宽度。
+You can add style to the Select, such as width.
 
 <preview path="./demo/Select/Basic.vue"></preview>
 
-## 禁用选项和禁用状态
+## Disabled Options and Disabled State
 
-可以设置禁用状态和选项禁用
+Disabled state and individual option disabling can be configured.
 
 <preview path="./demo/Select/Disabled.vue"></preview>
 
-## 其他状态
+## Other States
 
-可以清空、分组或者自定义模板
+Clearable, grouped, or custom template display.
 
 <preview path="./demo/Select/Status.vue"></preview>
 
-## 搜索模式
+## Search Mode
 
-可以进行搜索查询
+Search and filter options.
 
 <preview path="./demo/Select/Search.vue"></preview>
 
-## 多选和折叠
+## Multi-Select and Collapse
 
-可以进行多选
+Multi-selection is supported.
 
 <preview path="./demo/Select/Multiple.vue"></preview>
 
-## 前缀模式
+## Prefix Mode
 
-可以设置下拉框前缀
+You can set a prefix for the dropdown.
 
 <preview path="./demo/Select/Prefix.vue"></preview>
 
-## 创建新项
+## Create New Item
 
-可以允许创建列表中不存在的条目，使用allow-create可以输入并创建，此时filterable必需为true，
+Allows creating entries not in the list. Use `allow-create` to enable input and creation; `filterable` must be `true`.
 
 <preview path="./demo/Select/Add.vue"></preview>
 
-## 不同大小
+## Sizes
 
-四种默认大小
+Four sizes are available:
 
 <preview path="./demo/Select/Size.vue"></preview>
 
 ## Select props
 
-| 参数                 | 说明                                                                 | 类型                               | 可选值                                                    | 默认值            |
+| Parameter                 | Description                                                                 | Type                               | Options                                                    | Default            |
 | -------------------- | -------------------------------------------------------------------- | ---------------------------------- | --------------------------------------------------------- | ----------------- |
-| v-model              | 指定选中项目的 modelValue 值，可以使用 v-model 双向绑定数据。        | String / Number / Boolean / Object | —                                                         | 无                |
-| multiple             | 多选                                                                 | Boolean                            | —                                                         | false             |
-| disabled             | 是否禁用                                                             | Boolean                            | —                                                         | false             |
-| clearable            | 清空选项，只在单选时有效                                             | Boolean                            | —                                                         | false             |
-| filterable           | 是否支持搜索                                                         | Boolean                            | —                                                         | false             |
-| size                 | 选择框大小                                                           | String                             | large、small、default、mini                               | default           |
-| placeholder          | 选择框默认文字                                                       | String                             | —                                                         | —                 |
-| value-key            | 作为 value 唯一标识的键名，绑定值为对象类型时必填                    | string                             | —                                                         | value             |
-| no-match-text        | 搜索条件无匹配时显示的文字，也可以使用#empty设置                     | String                             | —                                                         | 暂无匹配数据      |
-| no-data-tex          | 选项为空时显示的文字                                                 | String                             | —                                                         | 暂无数据          |
-| allow-create         | 是否允许创建没有的项，需配合 filterable 使用                         | Boolean                            | —                                                         | false             |
-| filter-method        | 自定义搜索方法                                                       | Function                           | —                                                         | —                 |
-| remote               | 是否启用远程搜索                                                     | boolean                            | —                                                         | false             |
-| loading              | 是否正在从远程获取数据                                               | boolean                            | —                                                         | false             |
-| loading-text         | 远程加载文字                                                         | boolean                            | —                                                         | 加载中            |
-| placement            | 弹窗的展开方向                                                       | String                             | top、bottom、top-start、bottom-start、top-end、bottom-end | bottom-start      |
-| append-to-body       | 是否将弹层放置于 body 内                                             | Boolean                            | —                                                         | true              |
-| multiple-limit       | 多选时最多允许选择几个                                               | Number                             | —                                                         | —                 |
-| collapse-tags        | 多选时是否折叠标签                                                   | Boolean                            | —                                                         | false             |
-| popper-class         | 自定义弹出层类名                                                     | String                             | —                                                         | —                 |
-| default-first-option | 在输入框按下回车，选择第一个匹配项。需配合 filterable 或 remote 使用 | Boolean                            | —                                                         | false             |
-| clear-icon           | 清空图标的类名                                                       | String                             | —                                                         | close-circle-fill |
+| v-model              | Specifies the value of the selected item. Supports v-model for two-way binding.        | String / Number / Boolean / Object | —                                                         | —                |
+| multiple             | Multi-select                                                                 | Boolean                            | —                                                         | false             |
+| disabled             | Disable d                                                             | Boolean                            | —                                                         | false             |
+| clearable            | Clear options, only effective in single-select mode                                             | Boolean                            | —                                                         | false             |
+| filterable           | Enable search                                                         | Boolean                            | —                                                         | false             |
+| size                 | Select size                                                           | String                             | large / small / default / mini                               | default           |
+| placeholder          | Placeholder text                                                       | String                             | —                                                         | —                 |
+| value-key            | Key name used as the unique identifier for value. Required when the bound value is an object.                    | string                             | —                                                         | value             |
+| no-match-text        | Text displayed when no search results match, can also use #empty slot to set                     | String                             | —                                                         | No matching data      |
+| no-data-tex          | Text displayed when options are empty                                                 | String                             | —                                                         | No data          |
+| allow-create         | Whether to allow creating new items not in the list. Must be used with filterable                         | Boolean                            | —                                                         | false             |
+| filter-method        | Custom search method                                                       | Function                           | —                                                         | —                 |
+| remote               | Whether to enable remote search                                                     | boolean                            | —                                                         | false             |
+| loading              | Whether data is currently being fetched from remote                                               | boolean                            | —                                                         | false             |
+| loading-text         | Text displayed during remote loading                                                         | boolean                            | —                                                         | Loading...            |
+| placement            | Expansion direction of the dropdown                                                       | String                             | top / bottom / top-start / bottom-start / top-end / bottom-end | bottom-start      |
+| append-to-body       | Append the overlay to body                                             | Boolean                            | —                                                         | true              |
+| multiple-limit       | Maximum number of selections allowed in multi-select mode                                               | Number                             | —                                                         | —                 |
+| collapse-tags        | Whether to collapse tags in multi-select mode                                                   | Boolean                            | —                                                         | false             |
+| popper-class         | Custom class name for the popup                                                     | String                             | —                                                         | —                 |
+| default-first-option | When pressing Enter in the input, select the first matching option. Must be used with filterable or remote | Boolean                            | —                                                         | false             |
+| clear-icon           | Class name for the clear icon                                                       | String                             | —                                                         | close-circle-fill |
 
 ## Select events
 
-| 事件名         | 说明                                   | 返回值                        |
+| Event Name         | Description                                   | Return Value                        |
 | -------------- | -------------------------------------- | ----------------------------- |
-| change         | 选中的Option变化时触发，默认返回 value | 当前选中项                    |
-| clear          | 点击清空按钮时触发                     | 无                            |
-| visible-change | 下拉框出现/隐藏时触发                  | 出现则为 true，隐藏则为 false |
-| remove-tag     | 多选模式下移除tag时触发                | 移除的tag值                   |
-| blur           | 失去焦点触发                           | (event: Event)                |
-| focus          | 获取焦点触发                           | (event: Event)                |
+| change         | Triggered when the selected option changes, returns value by default | Currently selected item                    |
+| clear          | Triggered when the clear button is clicked                     | —                            |
+| visible-change | Triggered when the dropdown appears/hides                  | true when appearing, false when hiding |
+| remove-tag     | Triggered when a tag is removed in multi-select mode                | Value of the removed tag                   |
+| blur           | Triggered when focus is lost                           | (event: Event)                |
+| focus          | Triggered when focus is gained                           | (event: Event)                |
 
 ## Select slot
 
-| 名称   | 说明                     |
+| Name   | Description                     |
 | ------ | ------------------------ |
-| prefix | 自定义 Select 内头部图标 |
-| empty  | 无选项时的列表           |
+| prefix | Custom prefix icon inside the Select |
+| empty  | Content when no options are available           |
 
 ## Option props
 
-| 参数     | 说明                                                                                        | 类型          | 可选值 | 默认值 |
+| Parameter     | Description                                                                                        | Type          | Options | Default |
 | -------- | ------------------------------------------------------------------------------------------- | ------------- | ------ | ------ |
-| value    | 选项值，默认根据此属性值进行筛选，必填                                                      | string/number | —      | 无     |
-| label    | 选项显示的内容，默认会读取 slot，无 slot 时，优先读取该 label 值，无 label 时，读取 value。 | String        | —      | —      |
-| disabled | 是否禁用当前项                                                                              | Boolean       | —      | false  |
+| value    | Option value. Filtering is based on this property value by default. Required.                                                      | string/number | —      | —     |
+| label    | Option display content. By default the slot content is read. If no slot, this label value is read first. If no label, the value is read. | String        | —      | —      |
+| disabled | Disable the current item                                                                              | Boolean       | —      | false  |
 
 ## OptionGroup props
 
-| 参数     | 说明                     | 类型    | 可选值 | 默认值 |
+| Parameter     | Description                     | Type    | Options | Default |
 | -------- | ------------------------ | ------- | ------ | ------ |
-| label    | 分组组名                 | String  | —      | —      |
-| disabled | 该分组下所有选项置为禁用 | Boolean | —      | false  |
+| label    | Group name                 | String  | —      | —      |
+| disabled | Disable all options under this group | Boolean | —      | false  |

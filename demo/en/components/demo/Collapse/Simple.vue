@@ -1,18 +1,18 @@
 <template>
   <div>
     <b-collapse v-model="value" simple>
-      <b-collapse-panel title="面板一标题" name="1">
+      <b-collapse-panel title="Panel 1Title" name="1">
         <template #title>
-          面板一标题
+          Panel 1Title
           <b-icon name="smile" size="18"></b-icon>
         </template>
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+        <p v-for="i in 3" :key="i">我是Content我是Content...</p>
       </b-collapse-panel>
-      <b-collapse-panel title="面板二标题" name="2">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+      <b-collapse-panel title="Panel 2Title" name="2">
+        <p v-for="i in 3" :key="i">我是Content我是Content...</p>
       </b-collapse-panel>
-      <b-collapse-panel title="面板三标题" name="3">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+      <b-collapse-panel title="Panel 3Title" name="3">
+        <p v-for="i in 3" :key="i">我是Content我是Content...</p>
       </b-collapse-panel>
     </b-collapse>
   </div>

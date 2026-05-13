@@ -1,7 +1,7 @@
 <template>
   <div class="demo-grid">
     <b-space>
-      <span>栅格间距：</span>
+      <span>GridGutter：</span>
       <b-radio-group v-model="gutter" size="small" type="capsule">
         <b-radio :label="8">8</b-radio>
         <b-radio :label="16">16</b-radio>

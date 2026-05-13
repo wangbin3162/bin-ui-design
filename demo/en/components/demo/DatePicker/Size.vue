@@ -5,18 +5,18 @@
         v-model="value1"
         type="date"
         size="large"
-        placeholder="选择日期"
+        placeholder="Select date"
       ></b-date-picker>
     </div>
     <div style="padding: 0 10px">
-      <b-date-picker v-model="value1" type="date" placeholder="选择日期"></b-date-picker>
+      <b-date-picker v-model="value1" type="date" placeholder="Select date"></b-date-picker>
     </div>
     <div style="padding: 0 10px">
       <b-date-picker
         v-model="value1"
         size="small"
         type="date"
-        placeholder="选择日期"
+        placeholder="Select date"
       ></b-date-picker>
     </div>
     <div style="padding: 0 10px">
@@ -24,7 +24,7 @@
         v-model="value1"
         size="mini"
         type="date"
-        placeholder="选择日期"
+        placeholder="Select date"
       ></b-date-picker>
     </div>
   </div>

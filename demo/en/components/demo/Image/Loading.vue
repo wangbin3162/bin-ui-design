@@ -2,7 +2,7 @@
   <b-row gutter="20">
     <b-col span="12">
       <b-image src="https://wangbin3162.github.io/bin-files/bg/bg2.jpg" />
-      <p class="t-center">默认</p>
+      <p class="t-center">Default</p>
     </b-col>
     <b-col span="12">
       <b-image src="https://wangbin3162.github.io/bin-files/bg/bg3.jpg">
@@ -10,7 +10,7 @@
           <b-loading fix />
         </template>
       </b-image>
-      <p class="t-center">插槽</p>
+      <p class="t-center">Slot</p>
     </b-col>
   </b-row>
 </template>

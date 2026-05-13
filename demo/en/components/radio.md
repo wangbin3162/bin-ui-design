@@ -1,64 +1,64 @@
 ---
-title: 单选框 Radio
+title: Radio
 ---
 
 <b-back-top></b-back-top>
 
-# 单选框 Radio
+# Radio
 
-单选框。主要用于一组可选项单项选择，或者单独用于切换到选中状态。
+radio。主要Used for 一组可option单项选择， or 者单独Used for 切换到Selected状态。
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Radio/Basic.vue"></preview>
 
-## 组合使用
+## Combo Usage
 
 <preview path="./demo/Radio/Group.vue"></preview>
 
-## 禁用状态
+## Disabled State
 
-设置 `disabled` 可以禁用单选组或者某个单选值
+设置 `disabled` Can disable d单选组 or 者某个单选值
 
 <preview path="./demo/Radio/Disabled.vue"></preview>
 
-## 按钮类型
+## buttonType
 
-设置 `type="button"` 可以设置单选框为按钮类型
+设置 `type="button"` Can set radioasbuttonType
 
 <preview path="./demo/Radio/ButtonType.vue"></preview>
 
-## 胶囊类型
+## 胶囊Type
 
-设置 `type="capsule"` 可以设置单选框为胶囊类型
+设置 `type="capsule"` Can set radioas胶囊Type
 
 <preview path="./demo/Radio/CapsuleType.vue"></preview>
 
 ## Props
 
-| 参数     | 说明                                                            | 类型                  | 可选值 | 默认值 |
+| Parameter     | Description                                                            | Type                  | Options | Default |
 | -------- | --------------------------------------------------------------- | --------------------- | ------ | ------ |
-| value    | 只在单独使用时有效。可以使用 v-model 双向绑定数据               | Boolean               | —      | false  |
-| label    | 组合使用时有效。指定当前选项的 value 值，组合会自动判断是否选中 | String/Number/Boolean | —      | —      |
-| disabled | 是否禁用当前项                                                  | Boolean               | —      | false  |
+| value    | 只在单独use时有效。可以use v-model 双向绑定数据               | Boolean               | —      | false  |
+| label    | 组合use时有效。指定当前option的 value 值，组合会自动判断Whether to Selected | String/Number/Boolean | —      | —      |
+| disabled | Disable d当前项                                                  | Boolean               | —      | false  |
 
 ## Radio events
 
-| 事件名 | 说明                                                                     | 返回值 |
+| Event Name | Description                                                                     | Return Value |
 | ------ | ------------------------------------------------------------------------ | ------ |
-| change | 在选项状态发生改变时触发，返回当前状态。通过修改外部的数据改变时不会触发 | ...    |
+| change | 在option状态发生改变时Trigger，返回Current status。Will not trigger when external data is modified | ...    |
 
 ## RadioGroup props
 
-| 参数     | 说明                                              | 类型           | 可选值                | 默认值 |
+| Parameter     | Description                                              | Type           | Options                | Default |
 | -------- | ------------------------------------------------- | -------------- | --------------------- | ------ |
-| value    | 指定选中项目的集合，可以使用 v-model 双向绑定数据 | String/ Number | —                     | ''     |
-| disabled | 是否禁用所有选项                                  | Boolean        | —                     | false  |
-| type     | 是否开启button模式                                | String         | button /capsule       | —      |
-| size     | 按钮模式单选组的尺寸                              | String         | large、small、default | —      |
+| value    | 指定Selected项目的集合，可以use v-model 双向绑定数据 | String/ Number | —                     | ''     |
+| disabled | Disable d所有option                                  | Boolean        | —                     | false  |
+| type     | Enable buttonMode                                | String         | button /capsule       | —      |
+| size     | buttonMode单选组的size                              | String         | large、small、default | —      |
 
 ### RadioGroup events
 
-| 事件名 | 说明                                                                         | 返回值 |
+| Event Name | Description                                                                         | Return Value |
 | ------ | ---------------------------------------------------------------------------- | ------ |
-| change | 在选项状态发生改变时触发，返回已选中的数组。通过修改外部的数据改变时不会触发 | ...    |
+| change | 在option状态发生改变时Trigger，返回已Selected的数组。Will not trigger when external data is modified | ...    |

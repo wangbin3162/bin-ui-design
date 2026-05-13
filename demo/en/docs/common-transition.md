@@ -1,12 +1,12 @@
 ---
-title: 内置动画
+title: Built-in Transitions
 ---
 
 <b-back-top></b-back-top>
 
-# 内置动画
+# Built-in Transitions
 
-组件提供了如下内置动画,只需要引入base.css 即可包含.
+The library provides the following built-in transitions. Simply import `base.css` to include them.
 
 <script lang="ts" setup>
 import { ref } from 'vue'
@@ -25,12 +25,12 @@ const tabs = ref([
 const activeTab = ref('tab1')
 </script>
 
-## 淡入淡出
+## Fade In / Fade Out
 
-提供 2种 淡入淡出效果 `fade-in-linear` 和 `fade-in`
+Provides 2 fade effects: `fade-in-linear` and `fade-in`
 
 <div class="demo-transition">
-  <b-button @click="show1= !show1">查看效果</b-button>
+  <b-button @click="show1= !show1">Toggle</b-button>
   <div style="display: flex; margin-top: 20px; height: 100px;">
     <transition name="fade-in-linear">
       <div v-show="show1" class="transition-box">fade-in-linear</div>
@@ -41,10 +41,10 @@ const activeTab = ref('tab1')
   </div>
 </div>
 
-## 左右平移
+## Slide Left / Right
 
 <div class="demo-transition">
-  <b-button @click="show2= !show2">查看效果</b-button>
+  <b-button @click="show2= !show2">Toggle</b-button>
   <div style="display: flex; justify-content:center;margin-top: 20px; height: 100px;">
     <transition name="move-left">
       <div v-show="show2" class="transition-box">move-left</div>
@@ -55,12 +55,12 @@ const activeTab = ref('tab1')
   </div>
 </div>
 
-## 缩放
+## Zoom
 
-提供 4种 缩放效果 `zoom-in-center`，`zoom-in-top` ，`zoom-in` 和 `zoom-in-bottom`
+Provides 4 zoom effects: `zoom-in-center`, `zoom-in-top`, `zoom-in`, and `zoom-in-bottom`
 
 <div class="demo-transition">
-  <b-button @click="show3= !show3">查看效果</b-button>
+  <b-button @click="show3= !show3">Toggle</b-button>
   <div style="display: flex; margin-top: 20px; height: 100px;">
     <transition name="zoom-in-center">
       <div v-show="show3" class="transition-box">zoom-in-center</div>
@@ -77,12 +77,12 @@ const activeTab = ref('tab1')
   </div>
 </div>
 
-## 移动渐变
+## Move + Fade
 
-提供 3种 特殊的移动渐变 `fade-transverse` ,`fade-scale` ,`fade-scale-move`
+Provides 3 special move-fade transitions: `fade-transverse`, `fade-scale`, `fade-scale-move`
 
 <div class="demo-transition">
-  <b-button @click="show4= !show4">查看效果</b-button>
+  <b-button @click="show4= !show4">Toggle</b-button>
   <div style="display: flex; margin-top: 20px; height: 100px;">
     <transition name="fade-transverse">
       <div v-show="show4" class="transition-box">fade-transverse</div>
@@ -99,9 +99,9 @@ const activeTab = ref('tab1')
   </div>
 </div>
 
-## 移动变换
+## Move Transition
 
-同等位置的移动变化，会存在位置错位情况，这个动画内置了绝对定位的覆盖，可同时切换一组内容的动画类型
+When elements at the same position change, there may be layout shifts. This transition uses absolute positioning to overlay elements, allowing smooth switching between a group of content.
 
 <div class="demo-transition">
   <b-button v-for="item in tabs" :key="item.key" @click="activeTab = item.key" :type="activeTab === item.key?'primary':null">{{ item.title}}</b-button>
@@ -116,12 +116,12 @@ const activeTab = ref('tab1')
   </div>
 </div>
 
-## 展开折叠
+## Collapse / Expand
 
-展开折叠也作为内部组件实现，直接使用 `<b-collapse-transition>` 包裹替换即可
+Collapse and expand are also implemented as internal components. Simply wrap content with `<b-collapse-transition>` to use.
 
 <div class="demo-transition">
-  <b-button @click="show5= !show5">查看效果</b-button>
+  <b-button @click="show5= !show5">Toggle</b-button>
   <div style="margin-top: 20px; height: 220px;">
     <b-collapse-transition>
       <div v-show="show5">

@@ -1,118 +1,118 @@
 ---
-title: 日期选择器 DatePicker
+title: DatePicker
 ---
 
 <b-back-top></b-back-top>
 
-# 日期选择器 DatePicker
+# DatePicker
 
-可以选择日期的picker
+A date (Date) picker component.
 
-## 基础用法
+## Basic Usage
 
-设置type 为 date 或 daterange 分别显示选择单日和选择范围类型。
+Set `type` to `date (Date)` for single date (Date) selection or `date (Date)range` for date (Date) range selection.
 
-设置属性 placement 可以更改选择器出现的方向
+Set `placement` to control the direction in which the picker appears.
 
 <preview path="./demo/DatePicker/Basic.vue"></preview>
 
-## 不同选择
+## Different Picker Types
 
-可以选择不同的格式选择
+Different date (Date) formats can be selected.
 
 <preview path="./demo/DatePicker/Value.vue"></preview>
 
-## 日期范围
+## Date Range
 
-设置type 为 daterange 设置范围类型。
+Set `type` to `date (Date)range` for range mode.
 
 <preview path="./demo/DatePicker/Range.vue"></preview>
 
-## 月份范围
+## Month Range
 
-可在一个选择器中便捷地选择一个月份范围
+Conveniently select a month range in a single picker.
 
 <preview path="./demo/DatePicker/Range2.vue"></preview>
 
-## 默认值
+## Default Value
 
-如果用户没有选择日期，那默认展示当前日的月份。你可以使用 default-value 来设置成其他的日期
+If the user has not selected a date (Date), the current month is shown by default. Use `default-value` to set a different default date (Date).
 
 <preview path="./demo/DatePicker/Default.vue"></preview>
 
-## 禁用状态
+## Disabled State
 
 <preview path="./demo/DatePicker/Disabled.vue"></preview>
 
-## 日期格式
+## Date Format
 
-使用format指定输入框的格式。 默认情况下，组件接受并返回Date对象。可以参考dayjs支持的format参数
+Use `format` to specify the input display format. By default, the component accepts and returns Date objects. See dayjs for supported format parameters.
 
-使用value-format指定绑定值的格式。默认情况下，组件绑定的是一个Date对象。可以指定绑定值的格式。该格式与返回值格式相同
+Use `value-format` to specify the format of the bound value. By default, the component binds a Date object. The format of the bound value will match the return value format.
 
 <preview path="./demo/DatePicker/Format.vue"></preview>
 
-## 不同尺寸
+## Sizes
 
-和其他控件一样，拥有四种尺寸
+Like other form controls, four sizes are available.
 
 <preview path="./demo/DatePicker/Size.vue"></preview>
 
-## 日期时间
+## Date & Time
 
-可以设置日期时间同时选择
+Date and time can be selected together.
 
 <preview path="./demo/DatePicker/Time.vue"></preview>
 
-## 日期时间范围
+## Date & Time Range
 
-日期时间范围设置
+Date and time range configuration.
 
 <preview path="./demo/DatePicker/TimeRange.vue"></preview>
 
-## 默认的起始结束时间
+## Default Start and End Time
 
-默认的起始结束时间
+Default的起始结束时间
 
 <preview path="./demo/DatePicker/DefaultTime.vue"></preview>
 
 ## Props
 
-| 参数              | 说明                                                                    | 类型                                      | 可选值                                                                                          | 默认值     |
+| Parameter              | Description                                                                    | Type                                      | Options                                                                                          | Default     |
 | ----------------- | ----------------------------------------------------------------------- | ----------------------------------------- | ----------------------------------------------------------------------------------------------- | ---------- |
-| value / v-model   | 绑定值                                                                  | date(DatePicker) / array(DateRangePicker) | —                                                                                               | —          |
-| readonly          | 完全只读                                                                | boolean                                   | —                                                                                               | false      |
-| disabled          | 禁用                                                                    | boolean                                   | —                                                                                               | false      |
-| editable          | 文本框可输入                                                            | boolean                                   | —                                                                                               | true       |
-| clearable         | 是否显示清除按钮                                                        | boolean                                   | —                                                                                               | true       |
-| size              | 输入框尺寸                                                              | string                                    | large/medium/small/mini                                                                         | large      |
-| placeholder       | 非范围选择时的占位内容                                                  | string                                    | —                                                                                               | —          |
-| start-placeholder | 范围选择时开始日期的占位内容                                            | string                                    | —                                                                                               | —          |
-| end-placeholder   | 范围选择时结束日期的占位内容                                            | string                                    | —                                                                                               | —          |
-| type              | 显示类型                                                                | string                                    | year/month/date/dates/ week/datetime/datetimerange/ daterange/monthrange                        | date       |
-| format            | 显示在输入框中的格式                                                    | string                                    | YYYY MM DD hh mm ss                                                                             | YYYY-MM-DD |
-| value-format      | 实际绑定值的格式，注意这里必须是 国际标准化组织 8601 格式解析给定字符串 | string                                    | YYYY MM DD hh mm ss                                                                             | —          |
-| popper-class      | DatePicker 下拉框的类名                                                 | string                                    | —                                                                                               | —          |
-| range-separator   | 选择范围时的分隔符                                                      | string                                    | —                                                                                               | '-'        |
-| default-value     | 可选，选择器打开时默认显示的时间                                        | Date                                      | 可被`new Date()`解析                                                                            | —          |
-| default-time      | 范围选择时选中日期所使用的当日内具体时刻                                | Date[]                                    | 数组，长度为 2，第一项指定开始日期的时刻，第二项指定结束日期的时刻，不指定会使用时刻 `00:00:00` | —          |
-| unlink-panels     | 在范围选择器里取消两个日期面板之间的联动                                | boolean                                   | —                                                                                               | false      |
-| prefix-icon       | 自定义头部图标的类名                                                    | string                                    | —                                                                                               | —          |
-| clear-icon        | 自定义清空图标的类名                                                    | string                                    | —                                                                                               | —          |
-| validate-event    | 输入时是否触发表单的校验                                                | boolean                                   | -                                                                                               | true       |
-| shortcuts         | 设置快捷选项，需要传入数组对象                                          | object[{ text: string, value: Date }]     | —                                                                                               | —          |
-| disabledDate      | 设置禁用状态，参数为当前日期，要求返回 Boolean                          | Function                                  | —                                                                                               | —          |
+| value / v-model   | Bound value                                                                  | date (Date)(DatePicker) / array(DateRangePicker) | —                                                                                               | —          |
+| readonly          | Fully read-only                                                                | boolean                                   | —                                                                                               | false      |
+| disabled          | Disabled                                                                    | boolean                                   | —                                                                                               | false      |
+| editable          | Text field is editable                                                            | boolean                                   | —                                                                                               | true       |
+| clearable         | Show clear button                                                        | boolean                                   | —                                                                                               | true       |
+| size              | Input size                                                              | string                                    | large/medium/small/mini                                                                         | large      |
+| placeholder       | Placeholder for non-range selection                                                  | string                                    | —                                                                                               | —          |
+| start-placeholder | Placeholder for start date in range selection                                            | string                                    | —                                                                                               | —          |
+| end-placeholder   | Placeholder for end date in range selection                                            | string                                    | —                                                                                               | —          |
+| type              | Picker type                                                                | string                                    | year/month/date (Date)/date (Date)s/ week/date (Date)time/date (Date)timerange/ date (Date)range/monthrange                        | date (Date)       |
+| format            | Show在input中的格式                                                    | string                                    | YYYY MM DD hh mm ss                                                                             | YYYY-MM-DD |
+| value-format      | 实际Bound value的格式，Note这里必须is 国际标准化组织 8601 格式解析给定字符串 | string                                    | YYYY MM DD hh mm ss                                                                             | —          |
+| popper-class      | DatePicker Dropdown的类名                                                 | string                                    | —                                                                                               | —          |
+| range-separator   | Separator for range selection                                                      | string                                    | —                                                                                               | '-'        |
+| default-value     | 可选，选择器open时DefaultShow的时间                                        | Date                                      | 可被`new Date()`解析                                                                            | —          |
+| default-time      | 范围选择时select日期所use的当日内具体时刻                                | Date[]                                    | 数组，长度为 2，第一项指定开始日期的时刻，第二项指定结束日期的时刻，不指定会use时刻 `00:00:00` | —          |
+| unlink-panels     | 在范围选择器里cancel两个日期面板之间的联动                                | boolean                                   | —                                                                                               | false      |
+| prefix-icon       | 自定义Prefix icon的类名                                                    | string                                    | —                                                                                               | —          |
+| clear-icon        | 自定义Clear icon class name                                                    | string                                    | —                                                                                               | —          |
+| validate (Date)-event    | 输入时Whether to Triggerform的validation                                                | boolean                                   | -                                                                                               | true       |
+| shortcuts         | 设置快捷option，需要传入数组对象                                          | object[{ text: string, value: Date }]     | —                                                                                               | —          |
+| disabledDate      | 设置Disabled state，parameter为当前日期，要求返回 Boolean                          | Function                                  | —                                                                                               | —          |
 
 ## Events
 
-| 事件名称 | 说明                    | 回调参数   |
+| Event Name | Description                    | Callback Parameters   |
 | -------- | ----------------------- | ---------- |
-| change   | 用户确认选定的值时触发  | 组件绑定值 |
-| blur     | 当 input 失去焦点时触发 | 组件实例   |
-| focus    | 当 input 获得焦点时触发 | 组件实例   |
+| change   | 用户confirm选定的值时Trigger  | componentBound value |
+| blur     | 当 input 失去焦点时Trigger | component实例   |
+| focus    | 当 input 获得焦点时Trigger | component实例   |
 
 ## Methods
 
-| 方法名 | 说明              | 参数 |
+| Method Name | Description              | Parameter |
 | ------ | ----------------- | ---- |
 | focus  | 使 input 获取焦点 | —    |

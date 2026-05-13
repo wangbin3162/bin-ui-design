@@ -1,118 +1,118 @@
 ---
-title: 输入框 Input
+title: Input
 ---
 
 <b-back-top></b-back-top>
 
-# 输入框 Input
+# Input
 
-基本表单组件，支持 input 和 textarea
+Basic form input component, supports both `input` and `textarea`.
 
-## 基础用法
+## Basic Usage
 
 <preview path="./demo/Input/Basic.vue"></preview>
 
-## 图标和清空
+## Icon and Clearable
 
-设置 `clearable` 可以开启清空按钮,icon设置icon图标名称
+Set `clearable` to show a clear button. Use `icon` to set an icon.
 
 <preview path="./demo/Input/Icon.vue"></preview>
 
-## 禁用和只读
+## Disabled and Readonly
 
-设置 `disabled` 可以禁用，设置 `readonly` 可以只读
+Set `disabled` to disable the input. Set `readonly` for read-only mode.
 
 <preview path="./demo/Input/Disabled.vue"></preview>
 
-## 组合使用
+## Combo Usage
 
-提供两种方式来进行插入图标
+Two methods are provided for inserting icons.
 
 <preview path="./demo/Input/Group.vue"></preview>
 
-## 设置search
+## Search
 
-可以设置查询状态
+Search state can be configured.
 
 <preview path="./demo/Input/Search.vue"></preview>
 
-## 密码框
+## Password Input
 
-输入密码的时候默认需要隐藏显示，这里会开启图标提示
+When entering a password, show/hide toggle is usually needed. An icon toggle will be displayed.
 
 <preview path="./demo/Input/Password.vue"></preview>
 
-## 不同尺寸
+## Sizes
 
-提供额外3种尺寸进行配置 `large` `small` 或 `mini`三种尺寸
+Three additional sizes are available: `large`, `small`, and `mini`.
 
 <preview path="./demo/Input/Size.vue"></preview>
 
-## 设置textarea
+## Textarea
 
-可以设置 `type="textarea"`开启文本域模式
+Set `type="textarea"` to enable textarea mode.
 
 <preview path="./demo/Input/Text.vue"></preview>
 
-## 字数统计
+## Word Count
 
-可以设置 `show-word-count`开启字数统计
+Set `show-word-count` to enable the word count display.
 
 <preview path="./demo/Input/Count.vue"></preview>
 
 ## Props
 
-| 参数            | 说明                                                                                  | 类型                        | 可选值                                                  | 默认值  |
+| Parameter            | Description                                                                                  | Type                        | Options                                                  | Default  |
 | --------------- | ------------------------------------------------------------------------------------- | --------------------------- | ------------------------------------------------------- | ------- |
-| type            | 输入框类型                                                                            | string                      | text、password、textarea、url、email、date、number、tel | —       |
-| value           | 绑定的值，可使用 v-model 双向绑定                                                     | String / Number             | —                                                       | —       |
-| size            | 输入框尺寸                                                                            | large、small、default、mini | —                                                       | default |
-| placeholder     | 占位文本                                                                              | String                      | —                                                       | —       |
-| clearable       | 是否显示清空按钮                                                                      | Boolean                     | —                                                       | false   |
-| disabled        | 禁用状态                                                                              | Boolean                     | —                                                       | false   |
-| readonly        | 只读模式                                                                              | Boolean                     | —                                                       | false   |
-| maxlength       | 最大输入长度                                                                          | Number                      | —                                                       | —       |
-| icon            | 输入框尾部图标，仅在 text 类型下有效                                                  | String                      | —                                                       | —       |
-| prefix          | 输入框头部图标                                                                        | String                      | —                                                       | —       |
-| suffix          | 输入框尾部图标                                                                        | String                      | —                                                       | —       |
-| search          | 是否显示为搜索型输入框                                                                | Boolean                     | —                                                       | false   |
-| rows            | 文本域默认行数，仅在 textarea 类型下有效                                              | Number                      | —                                                       | 2       |
-| autosize        | 自适应内容高度，仅在 textarea 类型下有效，可传入对象，如 \{ minRows: 2, maxRows: 6 \} | Boolean/Object              | —                                                       | false   |
-| number          | 将用户的输入转换为 Number 类型                                                        | Boolean                     | —                                                       | false   |
-| autofocus       | 自动获取焦点                                                                          | Boolean                     | —                                                       | false   |
-| autocomplete    | 原生的自动完成功能，可选值为 off 和 on                                                | String                      | —                                                       | off     |
-| element-id      | 给表单元素设置 id，详见 Form 用法。                                                   | String                      | —                                                       | —       |
-| wrap            | 原生的 wrap 属性，可选值为 hard 和 soft，仅在 textarea 下生效                         | String                      | —                                                       | soft    |
-| no-resize       | 禁用文本域resize ，仅在 textarea 下生效                                               | Boolean                     | —                                                       | false   |
-| show-word-count | 显示文本字数统计，仅在 textarea 下生效                                                | Boolean                     | —                                                       | false   |
-| validateEvent   | 是否触发校验，主要为form表单使用，选择框等也使用到input的内部设置为false              | Boolean                     | —                                                       | true    |
+| type            | Input type                                                                            | string                      | text / password / textarea / url / email / date (Date) / number / tel | —       |
+| value           | Bound value, supports v-model two-way binding                                                     | String / Number             | —                                                       | —       |
+| size            | Input size                                                                            | large / small / default / mini | —                                                       | default |
+| placeholder     | Placeholder text                                                                              | String                      | —                                                       | —       |
+| clearable       | Show clear button                                                                      | Boolean                     | —                                                       | false   |
+| disabled        | Disabled state                                                                              | Boolean                     | —                                                       | false   |
+| readonly        | Read-only mode                                                                              | Boolean                     | —                                                       | false   |
+| maxlength       | Maximum input length                                                                          | Number                      | —                                                       | —       |
+| icon            | Suffix icon, only effective in text type                                                  | String                      | —                                                       | —       |
+| prefix          | inputPrefix icon                                                                        | String                      | —                                                       | —       |
+| suffix          | inputSuffix icon                                                                        | String                      | —                                                       | —       |
+| search          | Whether to show as a search input                                                                | Boolean                     | —                                                       | false   |
+| rows            | Default number of rows for textarea. Only effective in textarea mode                                              | Number                      | —                                                       | 2       |
+| autosize        | Auto-resize height based on content. Only effective in textarea mode. Can pass an object, e.g., { minRows: 2, maxRows: 6 } | Boolean/Object              | —                                                       | false   |
+| number          | Convert user input to Number type                                                        | Boolean                     | —                                                       | false   |
+| autofocus       | Auto focus                                                                          | Boolean                     | —                                                       | false   |
+| autocomplete    | Native autocomplete attribute. Accepted values: off, on                                                | String                      | —                                                       | off     |
+| element-id      | Set an id on the form element. See Form usage.                                                   | String                      | —                                                       | —       |
+| wrap            | Native wrap attribute. Accepted values: hard, soft. Only effective in textarea mode                         | String                      | —                                                       | soft    |
+| no-resize       | Disable textarea resize. Only effective in textarea mode                                               | Boolean                     | —                                                       | false   |
+| show-word-count | Show word count. Only effective in textarea mode                                                | Boolean                     | —                                                       | false   |
+| validate (Date)Event   | Whether to trigger validation. Mainly for form usage. Select and other components also use this internally, set to false              | Boolean                     | —                                                       | true    |
 
 ## Input events
 
-| 方法名   | 说明                                           | 返回值 |
+| Method Name   | Description                                           | Return Value |
 | -------- | ---------------------------------------------- | ------ |
-| enter    | 按下回车键时触发                               | 无     |
-| click    | 设置 icon 属性后，点击图标时触发               | 无     |
-| change   | 数据改变时触发                                 | event  |
-| focus    | 输入框聚焦时触发                               | 无     |
-| blur     | 输入框失去焦点时触发                           | 无     |
-| keyup    | 原生的 keyup 事件                              | event  |
-| keydown  | 原生的 keydown 事件                            | event  |
-| keypress | 原生的 keypress 事件                           | event  |
-| search   | 开启 search 时可用，点击搜索或按下回车键时触发 | value  |
-| clear    | 开启 clearable 时可用，点击清空按钮时触发      | 无     |
+| enter    | Triggers when Enter key is pressed                               | —     |
+| click    | Triggers when the icon is clicked (requires icon prop)               | —     |
+| change   | Triggers when data changes                                 | event  |
+| focus    | Triggers when input gains focus                               | —     |
+| blur     | Triggers when input loses focus                           | —     |
+| keyup    | Native keyup event                              | event  |
+| keydown  | Native keydown event                            | event  |
+| keypress | Native keypress event                           | event  |
+| search   | Available when search is enabled. Triggers on search icon click or Enter key press | value  |
+| clear    | Available when clearable is enabled. Triggers when the clear button is clicked      | —     |
 
 ## Input slot
 
-| 名称    | 说明                           |
+| Name    | Description                           |
 | ------- | ------------------------------ |
-| prepend | 前置内容，仅在 text 类型下有效 |
-| append  | 后置内容，仅在 text 类型下有效 |
-| prefix  | 输入框头部图标                 |
-| suffix  | 输入框尾部图标                 |
+| prepend | Prepend content. Only effective in text type |
+| append  | Append content. Only effective in text type |
+| prefix  | inputPrefix icon                 |
+| suffix  | inputSuffix icon                 |
 
 ## Input methods
 
-| 方法名 | 说明           | 返回值 |
+| Method Name | Description           | Return Value |
 | ------ | -------------- | ------ |
-| focus  | 手动聚焦输入框 | 无     |
+| focus  | Manually focus the input | —     |

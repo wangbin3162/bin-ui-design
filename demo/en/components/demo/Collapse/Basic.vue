@@ -1,14 +1,14 @@
 <template>
   <div>
     <b-collapse v-model="value">
-      <b-collapse-panel title="面板一标题" name="1">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+      <b-collapse-panel title="Panel 1 Title" name="1">
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </b-collapse-panel>
-      <b-collapse-panel title="面板二标题" name="2">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+      <b-collapse-panel title="Panel 2 Title" name="2">
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </b-collapse-panel>
-      <b-collapse-panel title="面板三标题" name="3">
-        <p v-for="i in 3" :key="i">我是内容我是内容...</p>
+      <b-collapse-panel title="Panel 3 Title" name="3">
+        <p v-for="i in 3" :key="i">Content goes here...</p>
       </b-collapse-panel>
     </b-collapse>
   </div>

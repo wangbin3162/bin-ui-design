@@ -1,14 +1,14 @@
 <template>
   <div>
-    <b-button @click="open1">自适应高度居中弹窗</b-button>
-    <b-button @click="open2">居中弹窗</b-button>
+    <b-button @click="open1">Auto-height centered modal</b-button>
+    <b-button @click="open2">Centered Modal</b-button>
 
-    <b-modal v-model="visible" title="普通的模态框标题" screen-center>
-      <p v-for="i in rows" :key="i">我是弹窗内容...</p>
+    <b-modal v-model="visible" title="Basic Modal Title" screen-center>
+      <p v-for="i in rows" :key="i">This is the dialog content....</p>
       <template #footer>
         <span>
-          <b-button @click="onClose">取 消</b-button>
-          <b-button type="primary" @click="onClose">确 定</b-button>
+          <b-button @click="onClose">Cancel</b-button>
+          <b-button type="primary" @click="onClose">Confirm</b-button>
         </span>
       </template>
     </b-modal>

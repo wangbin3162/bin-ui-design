@@ -1,6 +1,6 @@
 <template>
   <div class="demo-loading">
-    <div>我是后面的段落我是后面的段落我是后面的段落我是后面的段落</div>
+    <div>I am the paragraph behindI am the paragraph behindI am the paragraph behindI am the paragraph behind</div>
     <b-loading fix></b-loading>
   </div>
 </template>

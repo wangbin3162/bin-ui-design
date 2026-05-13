@@ -3,7 +3,7 @@
     <b-input
       v-model="query"
       search
-      placeholder="输入过滤条件后回车筛选"
+      placeholder="Enter filter criteria and press Enter to search"
       style="width: 230px"
       @search="handleFilter"
     ></b-input>
@@ -20,57 +20,57 @@ import { ref } from 'vue'
 const data = ref([
   {
     id: '1',
-    title: '江苏省',
+    title: 'Jiangsu Province',
     children: [
       {
         id: '1-1',
-        title: '南京市',
+        title: 'Nanjing',
         children: [
-          { id: '1-1-1', title: '玄武区' },
-          { id: '1-1-2', title: '鼓楼区' },
-          { id: '1-1-3', title: '建邺区' },
-          { id: '1-1-4', title: '秦淮区' }
+          { id: '1-1-1', title: 'Xuanwu District' },
+          { id: '1-1-2', title: 'Gulou District' },
+          { id: '1-1-3', title: 'Jianye District' },
+          { id: '1-1-4', title: 'Qinhuai District' }
         ]
       },
       {
         id: '1-2',
-        title: '无锡市',
+        title: 'Wuxi',
         children: [
-          { id: '1-2-1', title: '锡山区' },
-          { id: '1-2-2', title: '惠山区' },
-          { id: '1-2-3', title: '滨湖区' },
-          { id: '1-2-4', title: '梁溪区' }
+          { id: '1-2-1', title: 'Xishan District' },
+          { id: '1-2-2', title: 'Huishan District' },
+          { id: '1-2-3', title: 'Binhu District' },
+          { id: '1-2-4', title: 'Liangxi District' }
         ]
       },
       {
         id: '1-3',
-        title: '徐州市',
+        title: 'Xuzhou',
         children: [
-          { id: '1-3-1', title: '鼓楼区' },
-          { id: '1-3-2', title: '云龙区' },
-          { id: '1-3-3', title: '泉山区' },
-          { id: '1-3-4', title: '铜山区' },
-          { id: '1-3-5', title: '贾汪区' },
-          { id: '1-3-6', title: '沛县' },
-          { id: '1-3-7', title: '丰县' },
-          { id: '1-3-8', title: '睢宁县' },
-          { id: '1-3-9', title: '新沂市' },
-          { id: '1-3-10', title: '邳州市' }
+          { id: '1-3-1', title: 'Gulou District' },
+          { id: '1-3-2', title: 'Yunlong District' },
+          { id: '1-3-3', title: 'Quanshan District' },
+          { id: '1-3-4', title: 'Tongshan District' },
+          { id: '1-3-5', title: 'Jiawang District' },
+          { id: '1-3-6', title: 'Pei County' },
+          { id: '1-3-7', title: 'Feng County' },
+          { id: '1-3-8', title: 'Suining County' },
+          { id: '1-3-9', title: 'Xinyi City' },
+          { id: '1-3-10', title: 'Pizhou City' }
         ]
       }
     ]
   },
   {
     id: '2',
-    title: '河北省',
+    title: 'Hebei Province',
     children: [
       {
         id: '2-1',
-        title: '石家庄',
+        title: 'Shijiazhuang',
         children: [
-          { id: '2-1-1', title: '长安区' },
-          { id: '2-1-2', title: '新华区' },
-          { id: '2-1-3', title: '鼓楼区' }
+          { id: '2-1-1', title: "Chang'an District" },
+          { id: '2-1-2', title: 'Xinhua District' },
+          { id: '2-1-3', title: 'Gulou District' }
         ]
       }
     ]

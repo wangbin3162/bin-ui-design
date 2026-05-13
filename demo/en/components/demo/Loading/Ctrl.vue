@@ -1,12 +1,12 @@
 <template>
   <div>
     <div class="demo-loading">
-      <div>我是后面的段落我是后面的段落我是后面的段落我是后面的段落</div>
+      <div>I am the paragraph behindI am the paragraph behindI am the paragraph behindI am the paragraph behind</div>
       <b-loading v-show="loading" fix></b-loading>
     </div>
     <div>
-      <b-button v-if="loading" type="danger" @click="loading = false">停止</b-button>
-      <b-button v-else @click="loading = true">加载</b-button>
+      <b-button v-if="loading" type="danger" @click="loading = false">Stop</b-button>
+      <b-button v-else @click="loading = true">Load</b-button>
     </div>
   </div>
 </template>

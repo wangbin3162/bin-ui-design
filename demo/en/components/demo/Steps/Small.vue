@@ -1,10 +1,10 @@
 <template>
   <div>
     <b-steps :current="current" size="small">
-      <b-step title="已完成"></b-step>
-      <b-step title="进行中"></b-step>
-      <b-step title="待进行"></b-step>
-      <b-step title="待进行"></b-step>
+      <b-step title="Completed"></b-step>
+      <b-step title="进Row中"></b-step>
+      <b-step title="待进Row"></b-step>
+      <b-step title="待进Row"></b-step>
     </b-steps>
     <b-button type="primary" @click="next">下一步</b-button>
   </div>

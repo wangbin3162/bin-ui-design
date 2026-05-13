@@ -34,7 +34,7 @@
         Log.printVersion('bin-ui-design', '1.0.0', 'https://wangbin3162.github.io/bin-ui-design/')
       "
     >
-      打印版本号连接
+      Print版本号连接
     </b-button>
   </div>
 </template>

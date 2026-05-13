@@ -2,19 +2,19 @@
   <div>
     <b-button
       type="primary"
-      @click="alert({ type: 'info', title: '标题', message: '我是弹窗内容', width: '500px' })"
+      @click="alert({ type: 'info', title: 'Title', message: 'This is the dialog content.', width: '500px' })"
     >
       Info
     </b-button>
     <b-button
       type="success"
-      @click="alert({ type: 'success', title: '标题', message: '我是弹窗内容' })"
+      @click="alert({ type: 'success', title: 'Title', message: 'This is the dialog content.' })"
     >
       Success
     </b-button>
     <b-button
       type="warning"
-      @click="alert({ type: 'warning', title: '标题', message: '我是弹窗内容' })"
+      @click="alert({ type: 'warning', title: 'Title', message: 'This is the dialog content.' })"
     >
       Warning
     </b-button>
@@ -32,8 +32,8 @@ function alert(opt) {
 function showAlert() {
   MessageBox.alert({
     type: 'error',
-    title: '标题',
-    message: '我是弹窗内容',
+    title: 'Title',
+    message: 'This is the dialog content.',
     callback: action => {
       Message({
         type: 'info',

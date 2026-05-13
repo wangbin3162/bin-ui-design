@@ -1,12 +1,12 @@
 ---
-title: 国际化
+title: Internationalization
 ---
 
 <b-back-top></b-back-top>
 
-# 国际化
+# Internationalization
 
-Bin UI Design 通过 `ConfigProvider` 的 `locale` 属性提供语言注入能力，当前支持：
+Bin UI Design provides language injection via the `locale` prop of `ConfigProvider`, currently supporting:
 
 - `zh-CN`
 - `en-US`
@@ -56,12 +56,12 @@ const time = ref(new Date())
 </style>
 
 ```
-## 推荐实践
+## Recommended Practice
 
-国际化建议在业务项目外部统一管理（例如应用层 i18n 方案维护语言资源、切换逻辑与文案组织），组件库侧只负责消费当前语言配置。
+Internationalization should be managed externally at the application level (e.g., using an app-level i18n solution to maintain language resources, switching logic, and copy organization). The component library only consumes the current language configuration.
 
-这样可以避免在组件库文档或组件内部重复维护业务文案，也更方便在项目级做多语言扩展。
+This avoids duplicating business copy within component library documentation or internals, and makes it easier to extend multi-language support at the project level.
 
-## 与 ConfigProvider 配合
+## Using with ConfigProvider
 
-你可以通过全局配置组件向后代组件注入语言配置，具体示例参见 [全局配置 ConfigProvider](/en/components/config-provider.html)。
+You can inject language configuration into descendant components via the global config provider component. See [ConfigProvider](/en/components/config-provider.html) for examples.

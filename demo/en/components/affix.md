@@ -6,35 +6,35 @@ title: 图钉 Affix
 
 # 图钉 Affix
 
-## 基础用法
+## Basic Usage
 
-原生滚动相对于window窗口固定，也可以结合scrollbar进行配置
+原生滚动相对于window窗口固定，也可以结合scrollbar进行configuration
 
 <preview path="./demo/Affix/Basic.vue"></preview>
 
-## 固定位置
+## 固定position
 
-可以设置固定距离底部的位置
+Can set 固定距离底部的position
 
 <preview path="./demo/Affix/Position.vue"></preview>
 
 ## Props
 
-| 参数     | 说明                 | 类型   | 可选值      | 默认值 |
+| Parameter     | Description                 | Type   | Options      | Default |
 | -------- | -------------------- | ------ | ----------- | ------ |
-| offset   | 距离窗口位置触发     | Number | —           | 0      |
-| position | 可设置距离顶部或底部 | String | top、bottom | top    |
-| z-index  | 层级                 | Number | —           | 10     |
+| offset   | 距离窗口positionTrigger     | Number | —           | 0      |
+| position | 可设置距离顶部 or 底部 | String | top、bottom | top    |
+| z-index  | Z-index level                 | Number | —           | 10     |
 
 ## Events
 
-| 事件名 | 说明                                       | 返回值     |
+| Event Name | Description                                       | Return Value     |
 | ------ | ------------------------------------------ | ---------- |
-| change | 在固定状态发生改变时触发                   | true/false |
-| scroll | 滚动响应事件 ,返回对象包含scrollTop, fixed | Object     |
+| change | 在固定状态发生改变时Trigger                   | true/false |
+| scroll | 滚动响应event ,返回对象包含scrollTop, fixed | Object     |
 
 ## Slot
 
-| 名称    | 说明         |
+| Name    | Description         |
 | ------- | ------------ |
-| default | 警告提示内容 |
+| default | Warning/alert content |

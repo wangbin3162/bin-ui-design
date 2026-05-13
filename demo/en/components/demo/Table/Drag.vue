@@ -1,14 +1,14 @@
 <template>
   <div>
     <div>
-      <p>默认拖拽</p>
+      <p>Default Drag</p>
       <b-table v-model:data="data1" :columns="columns1" draggable></b-table>
-      <p>实际数据：{{ data1.map(v => v.id + '-' + v.name) }}</p>
+      <p>Actual Data: {{ data1.map(v => v.id + '-' + v.name) }}</p>
     </div>
     <b-divider></b-divider>
     <div>
-      <p>如需和单选结合使用，推荐使用drag-drop函数来自定义控制，这样可以更好的实现自定义选中效果</p>
-      <p>drag-handle</p>
+      <p>When combined with single selection, it is recommended to use the drag-drop function for custom control, which better implements custom selection effects</p>
+      <p>Drag Handle</p>
       <b-table
         ref="currentRowTable"
         :columns="columns2"
@@ -23,12 +23,12 @@
           <span class="drag-handle" style="cursor: grab"><b-icon name="drag" size="20" /></span>
         </template>
         <template #ctrl="{ row, index }">
-          <b-button type="text" @click.stop="handleEdit(row, index)">编辑</b-button>
-          <b-button type="text" text-color="danger" @click.stop="removeRow(index)">删除</b-button>
+          <b-button type="text" @click.stop="handleEdit(row, index)">Edit</b-button>
+          <b-button type="text" text-color="danger" @click.stop="removeRow(index)">Delete</b-button>
         </template>
       </b-table>
-      <p>实际数据：{{ data2.map(v => v.id + '-' + v.name) }}</p>
-      <p>选中行：{{ currentRow }}</p>
+      <p>Actual Data: {{ data2.map(v => v.id + '-' + v.name) }}</p>
+      <p>Selected Row: {{ currentRow }}</p>
     </div>
   </div>
 </template>
@@ -37,92 +37,92 @@
 import { ref, nextTick } from 'vue'
 const columns1 = [
   { title: 'ID', key: 'id', width: 70 },
-  { title: '姓名', key: 'name' },
-  { title: '年龄', key: 'age' },
-  { title: '出生日期', key: 'birthday' },
-  { title: '地址', key: 'address' }
+  { title: 'Name', key: 'name' },
+  { title: 'Age', key: 'age' },
+  { title: 'Date of Birth', key: 'birthday' },
+  { title: 'Address', key: 'address' }
 ]
 const columns2 = [
   { slot: 'handle', width: 70 },
   { title: 'ID', key: 'id', width: 70 },
-  { title: '姓名', key: 'name' },
-  { title: '年龄', key: 'age' },
-  { title: '出生日期', key: 'birthday' },
-  { title: '地址', key: 'address' },
-  { title: '操作', slot: 'ctrl', width: 120 }
+  { title: 'Name', key: 'name' },
+  { title: 'Age', key: 'age' },
+  { title: 'Date of Birth', key: 'birthday' },
+  { title: 'Address', key: 'address' },
+  { title: 'Actions', slot: 'ctrl', width: 120 }
 ]
 const data1 = ref([
   {
     id: 1,
-    name: '王小明',
+    name: 'John Brown',
     age: 18,
     birthday: '1990-04-22',
-    address: '北京市朝阳区芍药居'
+    address: 'New York No. 1 Lake Park'
   },
   {
     id: 2,
-    name: '张小刚',
+    name: 'Jim Green',
     age: 25,
     birthday: '1990-11-11',
-    address: '北京市海淀区西二旗'
+    address: 'London No. 1 Lake Park'
   },
   {
     id: 3,
-    name: '李小红',
+    name: 'Joe Black',
     age: 30,
     birthday: '1985-02-05',
-    address: '上海市浦东新区世纪大道'
+    address: 'Sydney No. 1 Lake Park'
   },
   {
     id: 4,
-    name: '周小伟',
+    name: 'Jon Snow',
     age: 26,
     birthday: '1993-07-11',
-    address: '深圳市南山区深南大道'
+    address: 'Ottawa No. 2 Lake Park'
   },
   {
     id: 5,
-    name: '张小发',
+    name: 'Jim Raynor',
     age: 33,
     birthday: '1999-12-12',
-    address: '南京市龙眠大道'
+    address: 'Moscow No. 3 Lake Park'
   }
 ])
 const data2 = ref([
   {
     id: 1,
-    name: '王小明',
+    name: 'John Brown',
     age: 18,
     birthday: '1990-04-22',
-    address: '北京市朝阳区芍药居'
+    address: 'New York No. 1 Lake Park'
   },
   {
     id: 2,
-    name: '张小刚',
+    name: 'Jim Green',
     age: 25,
     birthday: '1990-11-11',
-    address: '北京市海淀区西二旗'
+    address: 'London No. 1 Lake Park'
   },
   {
     id: 3,
-    name: '李小红',
+    name: 'Joe Black',
     age: 30,
     birthday: '1985-02-05',
-    address: '上海市浦东新区世纪大道'
+    address: 'Sydney No. 1 Lake Park'
   },
   {
     id: 4,
-    name: '周小伟',
+    name: 'Jon Snow',
     age: 26,
     birthday: '1993-07-11',
-    address: '深圳市南山区深南大道'
+    address: 'Ottawa No. 2 Lake Park'
   },
   {
     id: 5,
-    name: '张小发',
+    name: 'Jim Raynor',
     age: 33,
     birthday: '1999-12-12',
-    address: '南京市龙眠大道'
+    address: 'Moscow No. 3 Lake Park'
   }
 ])
 const currentRow = ref({})

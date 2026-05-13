@@ -1,10 +1,10 @@
 <template>
   <b-space direction="vertical" alignment="start" :size="30">
     <b-radio-group v-model="size" type="capsule">
-      <b-radio :label="'mini'">迷你</b-radio>
+      <b-radio :label="'mini'">Mini</b-radio>
       <b-radio :label="'small'">小</b-radio>
-      <b-radio :label="'default'">默认</b-radio>
-      <b-radio :label="'large'">大号</b-radio>
+      <b-radio :label="'default'">Default</b-radio>
+      <b-radio :label="'large'">Large</b-radio>
     </b-radio-group>
 
     <b-space :size="size">

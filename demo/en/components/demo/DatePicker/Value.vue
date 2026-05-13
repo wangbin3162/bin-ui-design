@@ -1,8 +1,8 @@
 <template>
   <div flex="box:mean">
     <div style="padding: 0 10px">
-      <div class="demonstration">年</div>
-      <b-date-picker v-model="value1" type="year" placeholder="选择年"></b-date-picker>
+      <div class="demonstration">Year</div>
+      <b-date-picker v-model="value1" type="year" placeholder="选择Year"></b-date-picker>
     </div>
     <div style="padding: 0 10px">
       <div class="demonstration">周</div>
@@ -14,12 +14,12 @@
       ></b-date-picker>
     </div>
     <div style="padding: 0 10px">
-      <div class="demonstration">月</div>
-      <b-date-picker v-model="value3" type="month" placeholder="选择月"></b-date-picker>
+      <div class="demonstration">Month</div>
+      <b-date-picker v-model="value3" type="month" placeholder="选择Month"></b-date-picker>
     </div>
     <div style="padding: 0 10px">
-      <div class="demonstration">多个日期</div>
-      <b-date-picker v-model="value4" type="dates" placeholder="选择一个或多个日期"></b-date-picker>
+      <div class="demonstration">多个Day期</div>
+      <b-date-picker v-model="value4" type="dates" placeholder="选择一个或多个Day期"></b-date-picker>
     </div>
   </div>
 </template>

@@ -1,5 +1,5 @@
 ---
-title: 变更日志
+title: Changelog
 ---
 
 <b-back-top></b-back-top>
@@ -10,157 +10,157 @@ title: 变更日志
   <h2 id="0.7.1" class="version">0.7.1</h2>
   <div class="date">2025-09-01</div>
   <div class="type">update</div>
-  <p class="log-item"><i>🛠️</i>更新修复，优化样式，生成多透明度样式变量</p>
+  <p class="log-item"><i>🛠️</i>Update & fix, optimize styles, generate multi-opacity style variables</p>
 </div>
 <div class="change-log">
   <h2 id="0.6.5" class="version">0.6.5</h2>
   <div class="date">2025-05-28</div>
   <div class="type">Fixed</div>
-  <p class="log-item"><i>🛠️</i>修复下拉多选时，控件标签点击没有弹出popper的问题</p>
+  <p class="log-item"><i>🛠️</i>Fix dropdown multi-select tag click not opening the popper</p>
 </div>
 <div class="change-log">
   <h2 id="0.6.3" class="version">0.6.3</h2>
   <div class="date">2024-12-19</div>
   <div class="type">Fixed</div>
-  <p class="log-item"><i>🛠️</i>修复日期控件的清空显示选项问题</p>
-  <p class="log-item"><i>🍀</i>扩展表格单选时highlight-row-cancel 取消单选支持</p>
-  <p class="log-item"><i>🍀</i>扩展date-picker控件，支持value-format值格式设置，支持直接绑定日期格式字符串</p>
+  <p class="log-item"><i>🛠️</i>Fix date picker clear options display issue</p>
+  <p class="log-item"><i>🍀</i>Extend table single-selection highlight-row-cancel support</p>
+  <p class="log-item"><i>🍀</i>Extend date-picker to support value-format setting and direct date string binding</p>
 </div>
 <div class="change-log">
   <h2 id="0.6.2" class="version">0.6.2</h2>
   <div class="date">2024-09-04</div>
   <div class="type">Fixed</div>
-  <p class="log-item"><i>🛠️</i>修复loadingbar的文档和样式错误</p>
+  <p class="log-item"><i>🛠️</i>Fix loading-bar documentation and style errors</p>
 </div>
 <div class="change-log">
   <h2 id="0.6.1" class="version">0.6.1</h2>
   <div class="date">2024-08-04</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>🛠️</i>修复radio因浏览器无障碍导致的控制台报错（不影响功能）</p>
+  <p class="log-item"><i>🛠️</i>Fix radio browser accessibility console warning (does not affect functionality)</p>
 </div>
 <div class="change-log">
   <h2 id="0.6.0" class="version">0.6.0</h2>
   <div class="date">2024-07-30</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>🍀</i>扩展通用右键菜单</p>
-  <p class="log-item"><i>🛠️</i>修复弹层传参属性问题</p>
-  <p class="log-item"><i>🛠️</i>修复按钮图标样式动画错位问题</p>
+  <p class="log-item"><i>🍀</i>Extend context menu component</p>
+  <p class="log-item"><i>🛠️</i>Fix overlay prop passing issue</p>
+  <p class="log-item"><i>🛠️</i>Fix button icon style animation offset issue</p>
   <div class="type">Doc</div>
-  <p class="log-item"><i>📖</i>修改文档，更新文档</p>
+  <p class="log-item"><i>📖</i>Update documentation</p>
 </div>
 <div class="change-log">
   <h2 id="0.5.1" class="version">0.5.1</h2>
   <div class="date">2024-07-29</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>🍀</i>扩展弹窗组件，新增居中对齐模式</p>
-  <p class="log-item"><i>🍀</i>新增表格编辑属性</p>
-  <p class="log-item"><i>🍀</i>移除内置样式引用模式</p>
+  <p class="log-item"><i>🍀</i>Extend modal component, add center alignment mode</p>
+  <p class="log-item"><i>🍀</i>Add table edit properties</p>
+  <p class="log-item"><i>🍀</i>Remove built-in style reference mode</p>
   <div class="type">Doc</div>
-  <p class="log-item"><i>📖</i>修改文档，更新文档</p>
+  <p class="log-item"><i>📖</i>Update documentation</p>
 </div>
 <div class="change-log">
   <h2 id="0.5.0" class="version">0.5.0</h2>
   <div class="date">2024-07-02</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>🍀</i>新增image、image-preview 图片预览组件</p>
-  <p class="log-item"><i>🍀</i>新增trend标记组件</p>
+  <p class="log-item"><i>🍀</i>Add image, image-preview components</p>
+  <p class="log-item"><i>🍀</i>Add trend marker component</p>
   <div class="type">Doc</div>
-  <p class="log-item"><i>📖</i>修改文档，更新文档</p>
+  <p class="log-item"><i>📖</i>Update documentation</p>
 </div>
 <div class="change-log">
   <h2 id="0.4.0" class="version">0.4.0</h2>
   <div class="date">2024-05-7</div>
   <div class="type">Doc</div>
-  <p class="log-item"><i>📖</i>修改文档，增加生态下拉连接</p>
+  <p class="log-item"><i>📖</i>Update documentation, add ecosystem dropdown links</p>
   <div class="type">Fix</div>
-  <p class="log-item"><i>🛠️</i>修复layout组件自动引入icon组件的问题</p>
+  <p class="log-item"><i>🛠️</i>Fix layout component auto-importing icon component issue</p>
 </div>
 <div class="change-log">
   <h2 id="0.3.2" class="version">0.3.2</h2>
   <div class="date">2024-03-11</div>
   <div class="type">Style</div>
-  <p class="log-item"><i>🛠️</i>暂时移除黑色模式的样式</p>
+  <p class="log-item"><i>🛠️</i>Temporarily remove dark mode styles</p>
 </div>
 <div class="change-log">
   <h2 id="0.3.1" class="version">0.3.1</h2>
   <div class="date">2023-12-05</div>
   <div class="type">Style</div>
-  <p class="log-item"><i>🛠️</i>修改button组件的默认显示样式</p>
+  <p class="log-item"><i>🛠️</i>Update button component default display styles</p>
 </div>
 <div class="change-log">
   <h2 id="0.3.0" class="version">0.3.0</h2>
   <div class="date">2023-11-24</div>
   <div class="type">Fix</div>
-  <p class="log-item"><i>🛠️</i>修复展开收起组件样式</p>
+  <p class="log-item"><i>🛠️</i>Fix collapse component styles</p>
 </div>
 <div class="change-log">
   <h2 id="0.2.0" class="version">0.2.0</h2>
   <div class="date">2023-11-08</div>
   <div class="type">Fix</div>
-  <p class="log-item"><i>🛠️</i>修改部分样式属性设置</p>
+  <p class="log-item"><i>🛠️</i>Update some style property settings</p>
   <div class="type">Docs</div>
-  <p class="log-item"><i>📖</i>编辑文档</p>
+  <p class="log-item"><i>📖</i>Edit documentation</p>
 </div>
 <div class="change-log">
   <h2 id="0.1.0" class="version">0.1.0</h2>
   <div class="date">2023-11-08</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>🍀</i>新增alert、back-top、count-to、badge、loading、affix组件</p>
-  <p class="log-item"><i>🍀</i>新增progress、circle、loading-bar骨架屏组件</p>
-  <p class="log-item"><i>🍀</i>新增drawer、popover、notice、modal、message-box、日历、时间线等组件</p>
-  <p class="log-item"><i>🍀</i>新增轮播、面包屑、锚点、菜单等导航组件</p>
-  <p class="log-item"><i>🍀</i>新增所有表单相关组件</p>
-  <p class="log-item"><i>🍀</i>新增树结构、表格等显示数据组件</p>
-  <p class="log-item"><i>🍀</i>新增间距组件space</p>
-  <p class="log-item"><i>🍀</i>完成所有组件迁移，发布默认第一版本用于纠错</p>
+  <p class="log-item"><i>🍀</i>Add alert, back-top, count-to, badge, loading, affix components</p>
+  <p class="log-item"><i>🍀</i>Add progress, circle, loading-bar skeleton components</p>
+  <p class="log-item"><i>🍀</i>Add drawer, popover, notice, modal, message-box, calendar, timeline components</p>
+  <p class="log-item"><i>🍀</i>Add carousel, breadcrumb, anchor, menu navigation components</p>
+  <p class="log-item"><i>🍀</i>Add all form-related components</p>
+  <p class="log-item"><i>🍀</i>Add tree, table data display components</p>
+  <p class="log-item"><i>🍀</i>Add space layout component</p>
+  <p class="log-item"><i>🍀</i>Complete all component migration, release first default version for testing</p>
   <div class="type">Fix</div>
-  <p class="log-item"><i>🛠️</i>修改部分配置</p>
+  <p class="log-item"><i>🛠️</i>Update configuration</p>
   <div class="type">Docs</div>
-  <p class="log-item"><i>📖</i>完成文档</p>
+  <p class="log-item"><i>📖</i>Complete documentation</p>
 </div>
 <div class="change-log">
   <h2 id="0.0.4" class="version">0.0.4</h2>
   <div class="date">2023-10-08</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>🍀</i>新增全局配置组件</p>
-  <p class="log-item"><i>🍀</i>新增滚动组件</p>
-  <p class="log-item"><i>🍀</i>新增布局layout组件</p>
-  <p class="log-item"><i>🍀</i>新增卡片组件card</p>
-  <p class="log-item"><i>🍀</i>新增单选组件radio</p>
-  <p class="log-item"><i>🍀</i>新增分割面板组件split</p>
-  <p class="log-item"><i>🍀</i>新增间距组件space</p>
-  <p class="log-item"><i>🍀</i>新增栅格布局组件grid</p>
-  <p class="log-item"><i>🍀</i>新增下拉菜单组件dropdown</p>
-  <p class="log-item"><i>🍀</i>新增标签组件tag</p>
-  <p class="log-item"><i>🍀</i>新增消息组件message</p>
+  <p class="log-item"><i>🍀</i>Add global config provider component</p>
+  <p class="log-item"><i>🍀</i>Add scrollbar component</p>
+  <p class="log-item"><i>🍀</i>Add layout component</p>
+  <p class="log-item"><i>🍀</i>Add card component</p>
+  <p class="log-item"><i>🍀</i>Add radio component</p>
+  <p class="log-item"><i>🍀</i>Add split panel component</p>
+  <p class="log-item"><i>🍀</i>Add space component</p>
+  <p class="log-item"><i>🍀</i>Add grid layout component</p>
+  <p class="log-item"><i>🍀</i>Add dropdown menu component</p>
+  <p class="log-item"><i>🍀</i>Add tag component</p>
+  <p class="log-item"><i>🍀</i>Add message component</p>
   <div class="type">Fix</div>
-  <p class="log-item"><i>🛠️</i>修改部分配置</p>
+  <p class="log-item"><i>🛠️</i>Update configuration</p>
   <div class="type">Docs</div>
-  <p class="log-item"><i>📖</i>文档库完成优化，修改整体文档样式</p>
-  <p class="log-item"><i>📖</i>完成文档日志部分的样式优化</p>
-  <p class="log-item"><i>📖</i>新增组件迁移进度统计文档</p>
+  <p class="log-item"><i>📖</i>Optimize documentation site, update overall doc styles</p>
+  <p class="log-item"><i>📖</i>Complete changelog style optimization</p>
+  <p class="log-item"><i>📖</i>Add component migration progress tracking doc</p>
 </div>
 <div class="change-log">
   <h2 id="0.0.3" class="version">0.0.3</h2>
   <div class="date">2023-8-23</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>📖</i>完成基础文档搭建</p>
-  <p class="log-item"><i>🍀</i>完成组件文档编写，完成button、icon、tooltip、collapse组件以及文档</p>
+  <p class="log-item"><i>📖</i>Complete basic documentation setup</p>
+  <p class="log-item"><i>🍀</i>Complete component documentation for button, icon, tooltip, collapse</p>
 </div>
 <div class="change-log">
   <h2 id="0.0.2" class="version">0.0.2</h2>
   <div class="date">2023-8-22</div>
   <div class="type">Feats</div>
-  <p class="log-item"><i>📖</i>完成组建文档初始化</p>
-  <p class="log-item"><i>🍀</i>完成编译环境</p>
-  <p class="log-item"><i>🍀</i>新增按钮组件</p>
+  <p class="log-item"><i>📖</i>Complete component documentation initialization</p>
+  <p class="log-item"><i>🍀</i>Complete build environment</p>
+  <p class="log-item"><i>🍀</i>Add button component</p>
 </div>
 <div class="change-log">
   <h2 id="0.0.1" class="version">0.0.1</h2>
   <div class="date">2023-8-21</div>
   <div class="type">Feats</div>
-  <p class="log-item">初始化工程</p>
-  <p class="log-item">初始化文档</p>
+  <p class="log-item">Initialize project</p>
+  <p class="log-item">Initialize documentation</p>
 </div>
 
 <style scoped>

@@ -1,23 +1,23 @@
 <template>
   <div flex="cross:center box:mean" style="width: 800px">
     <div style="padding: 0 10px">
-      <div class="demonstration">基础</div>
+      <div class="demonstration">Basic</div>
       <b-date-picker
         v-model="value1"
         type="datetimerange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
+        range-separator="to"
+        start-placeholder="开始Day期"
+        end-placeholder="结束Day期"
       ></b-date-picker>
     </div>
     <div style="padding: 0 10px">
-      <div class="demonstration">带快捷选项</div>
+      <div class="demonstration">带快捷option</div>
       <b-date-picker
         v-model="value2"
         type="datetimerange"
-        range-separator="至"
-        start-placeholder="开始日期"
-        end-placeholder="结束日期"
+        range-separator="to"
+        start-placeholder="开始Day期"
+        end-placeholder="结束Day期"
         :shortcuts="shortcuts"
       ></b-date-picker>
     </div>
@@ -38,7 +38,7 @@ const shortcuts = [
     })()
   },
   {
-    text: '最近一个月',
+    text: '最近一个Month',
     value: (() => {
       const end = new Date()
       const start = new Date()
@@ -47,7 +47,7 @@ const shortcuts = [
     })()
   },
   {
-    text: '最近三个月',
+    text: '最近三个Month',
     value: (() => {
       const end = new Date()
       const start = new Date()

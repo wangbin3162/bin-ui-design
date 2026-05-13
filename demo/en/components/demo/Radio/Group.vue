@@ -16,9 +16,9 @@
     </b-radio-group>
     <p style="color: #ff4511; margin: 5px 0">{{ social }}</p>
     <b-radio-group v-model="fruit">
-      <b-radio label="香蕉"></b-radio>
-      <b-radio label="苹果"></b-radio>
-      <b-radio label="西瓜"></b-radio>
+      <b-radio label="Banana"></b-radio>
+      <b-radio label="Apple"></b-radio>
+      <b-radio label="Watermelon"></b-radio>
     </b-radio-group>
     <p style="color: #ff4511; margin: 5px 0">{{ fruit }}</p>
   </div>
@@ -27,5 +27,5 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 const social = ref('facebook')
-const fruit = ref('苹果')
+const fruit = ref('Apple')
 </script>

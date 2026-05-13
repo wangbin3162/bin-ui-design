@@ -1,19 +1,18 @@
 ---
-title: 色彩设计
+title: Color Design
 ---
 
 <b-back-top></b-back-top>
 
-# 色彩设计
+# Color Design
 
-Bin-UI 默认具有一套较为美观的配色方案，在开发中也推荐使用一下色板来达到视觉统一效果
+Bin-UI comes with a well-designed color scheme by default. We recommend using these color palettes to achieve visual consistency in your development.
 
-## 设计原则
+## Design Principles
 
-默认的色彩样式有5个主色调，并根据白色混入得到了若干个色板值，这些颜色基本可以满足中后台设计中对于颜色的要求
+The default color scheme has 5 primary hues, each with multiple palette values derived from mixing with white. These colors should cover the color needs of most admin and middle-platform designs.
 
-颜色值的取值混合主要参考stylus的mix混合，js部分借助 [color.js](https://www.npmjs.com/package/color)
-这个第三方库实现，组件中提供了部分转化函数，可以按需引入。
+The color value mixing primarily references Stylus's mix function, with the JavaScript side implemented using the [color.js](https://www.npmjs.com/package/color) library. The library provides some conversion functions that can be imported on demand.
 
 <script setup lang="ts">
 import { reactive } from 'vue'
@@ -144,9 +143,9 @@ const copyColor = color => Utils.util.copy(color)
   </div>
 </div>
 
-## 自定义色板
+## Custom Color Palettes
 
-如果自定的配色不能满足要求，则可以取如下色板，默认会给生成不同的色板值，可供使用
+If the default color scheme doesn't meet your needs, you can use the following palettes. Different palette values are generated automatically for each base color.
 
 <div class="color-wrap">
   <div
@@ -232,9 +231,9 @@ const copyColor = color => Utils.util.copy(color)
   </div>
 </div>
 
-## 中性色
+## Neutral Colors
 
-中性色包含了黑、白、灰。在后台设计中被大量使用到，合理地选择中性色能够令页面信息具备良好的主次关关系。
+Neutral colors include black, white, and gray. They are widely used in admin interface design. Choosing neutral colors wisely helps establish a clear visual hierarchy for page content.
 
 <div class="main-color">
   <div
@@ -250,9 +249,9 @@ const copyColor = color => Utils.util.copy(color)
   </div>
 </div>
 
-## 文字
+## Text Colors
 
-提供了几个文字颜色，色板中可自己定义使用
+Several text colors are provided. You can define your own in the palette.
 
 <div class="main-color">
   <div
@@ -268,11 +267,11 @@ const copyColor = color => Utils.util.copy(color)
   </div>
 </div>
 
-## 色板工具
+## Color Palette Tool
 
-如果上面的色板还不能满足你的需求，你可以选择一个主色，这里会生成一个色板。
+If the palettes above don't meet your needs, you can pick a primary color and a palette will be generated for you.
 
-<div class="color-palette-pick t-center f-s-22 mb-20">选择你的主色</div>
+<div class="color-palette-pick t-center f-s-22 mb-20">Pick your primary color</div>
 <div class="main-color">
   <div
     class="main-color-item"
@@ -290,7 +289,7 @@ const copyColor = color => Utils.util.copy(color)
   <b-color-picker v-model="data.custom" style="width: 128px" :colors="data.colorsList"></b-color-picker>
   <span class="ml-10">{{ data.custom }}</span>
 </div>
-<p class="ml-10 f-color-red f-s-12">注意：亮度和饱和度建议在70以上，以生成更好的效果</p>
+<p class="ml-10 f-color-red f-s-12">Note: Brightness and saturation are recommended to be above 70 for better results.</p>
 <div style="height: 100px"></div>
 
 <style scoped>

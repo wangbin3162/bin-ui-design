@@ -39,7 +39,7 @@ const beforeChange2 = () => {
   return new Promise((_, reject) => {
     setTimeout(() => {
       loading2.value = false
-      return reject(new Error('调用出错！'))
+      return reject(new Error('call出错！'))
     }, 1000)
   })
 }

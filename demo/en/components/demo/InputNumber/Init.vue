@@ -3,15 +3,15 @@
     <b-row :gutter="16">
       <b-col span="6">
         <b-input-number v-model="obj.num1"></b-input-number>
-        初始化值为null(绑定属性存在）
+        Initial value: null (bound prop exists)
       </b-col>
       <b-col span="6">
         <b-input-number v-model="obj.num2" :min="1" :max="10"></b-input-number>
-        初始化值为字符串
+        Initial value: string
       </b-col>
       <b-col span="6">
         <b-input-number v-model="obj.num3"></b-input-number>
-        初始化值为undefined(绑定属性不存在）
+        Initial value: undefined (bound prop does not exist)
       </b-col>
     </b-row>
     <p>{{ obj }}</p>

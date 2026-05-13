@@ -1,69 +1,69 @@
 ---
-title: 标签 Tag
+title: Tag
 ---
 
 <b-back-top></b-back-top>
 
-# 标签 Tag
+# Tag
 
-## 基础用法
+## Basic Usage
 
-直接使用默认插槽即可
+直接useDefaultslot即可
 
 <preview path="./demo/Tag/Basic.vue"></preview>
 
-## 多种颜色
+## 多种color
 
-由`dark`属性来设置深色模式,并可以设置更多颜色类型的标签
+由`dark`property来设置深色Mode,并Can set 更多colorType的tag
 
 <preview path="./demo/Tag/Colors.vue"></preview>
 
-## 可选择标签
+## 可选择tag
 
-设置`checkable`属性可以定义一个标签是否可可选择。
+设置`checkable`property可以定义一个tagWhether to 可可选择。
 
 <preview path="./demo/Tag/Checked.vue"></preview>
 
-## 可移除标签
+## 可移除tag
 
-设置`closable`属性可以定义一个标签是否可移除。
+设置`closable`property可以定义一个tagWhether to 可移除。
 
 <preview path="./demo/Tag/Closed.vue"></preview>
 
-## 小圆点模式
+## 小圆点Mode
 
-设置 `dot` 模式可以简单显示带有提示小圆点等内容
+设置 `dot` Mode可以简单Show带有Tip小圆点等Content
 
 <preview path="./demo/Tag/Dots.vue"></preview>
 
-## 动态编辑标签
+## Dynamictag
 
 <preview path="./demo/Tag/Dynamic.vue"></preview>
 
-## 自定义样式
+## Custom Styles
 
-具有多种自定义样式的方式可供选择
+具有多种自定义style的方式可供选择
 
 <preview path="./demo/Tag/Custom.vue"></preview>
 
 ## Props
 
-| 参数       | 说明                             | 类型    | 可选值                      | 默认值 |
+| Parameter       | Description                             | Type    | Options                      | Default |
 | ---------- | -------------------------------- | ------- | --------------------------- | ------ |
-| closable   | 是否可关闭                       | Boolean | —                           | false  |
-| type       | 主题                             | String  | success/info/warning/danger | —      |
-| dot        | 是否显示是小圆点                 | Boolean | —                           | false  |
-| no-border  | 是否关闭边框                     | Boolean | —                           | false  |
-| color      | 背景颜色(可自定义)               | String  | —                           | —      |
+| closable   | Whether to 可Disable                       | Boolean | —                           | false  |
+| type       | theme                             | String  | success/info/warning/danger | —      |
+| dot        | Whether to show Yes小圆点                 | Boolean | —                           | false  |
+| no-border  | Disable border                     | Boolean | —                           | false  |
+| color      | backgroundcolor(可自定义)               | String  | —                           | —      |
 | fontSize   | 字体大小                         | String  | —                           | —      |
-| tag-style  | 标签样式(完全控制，尽量不要设置) | String  | —                           | —      |
-| checkable  | 是否可选中                       | Boolean | —                           | false  |
-| modelValue | 选中状态可以使用v-model双向绑定  | Boolean | —                           | true   |
+| tag-style  | tagstyle(完全控制，尽量不要设置) | String  | —                           | —      |
+| checkable  | Whether to 可select                       | Boolean | —                           | false  |
+| modelValue | select状态可以usev-model双向绑定  | Boolean | —                           | true   |
 
 ## Events
 
-| 事件名 | 说明                              | 返回值       |
+| Event Name | Description                              | Return Value       |
 | ------ | --------------------------------- | ------------ |
-| close  | 关闭事件回调                      | event        |
-| click  | 点击事件回调                      | event        |
-| change | 选中事件回调,第二项需要设置name值 | checked,name |
+| close  | DisableeventCallback                      | event        |
+| click  | clickeventCallback                      | event        |
+| change | selecteventCallback,第二项需要设置name值 | checked,name |

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-button @click="initData">初始化数据并默认选中前端组</b-button>
+    <b-button @click="initData">初始化数据并Defaultselect前端组</b-button>
     <div flex class="mt-10">
       <div style="width: 300px">
         <b-tree ref="treeRef" :data="data" title-key="text" @select-change="handleSelect"></b-tree>
@@ -99,7 +99,7 @@ function initData() {
   nextTick(() => {
     if (!treeRef.value) return
 
-    // 获取树结构的拍平数据，查找当前需要选中的节点值
+    // 获取树结构的拍平数据，查找当前需要select的节点值
     const flatState = treeRef.value.getFlatState()
     const current = flatState.find(node => node.node.id === defaultId.value)
     if (current && current) {

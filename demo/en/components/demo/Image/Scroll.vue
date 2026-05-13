@@ -4,7 +4,7 @@
       <div class="demo-image-lazy-vertical">
         <b-image v-for="url in vUrlList" :key="url" :src="url" lazy />
       </div>
-      <p class="t-center">纵向</p>
+      <p class="t-center">Vertical</p>
     </b-col>
     <b-col span="12">
       <div flex="main:center">
@@ -14,7 +14,7 @@
           </div>
         </div>
       </div>
-      <p class="t-center">横向</p>
+      <p class="t-center">Horizontal</p>
     </b-col>
   </b-row>
 </template>

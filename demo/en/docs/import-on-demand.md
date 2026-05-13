@@ -1,16 +1,16 @@
 ---
-title: 按需引入
+title: On-Demand Imports
 ---
 
 <b-back-top></b-back-top>
 
-# 按需引入（Tree Shaking）
+# On-Demand Imports (Tree Shaking)
 
-Bin UI Design 支持 tree shaking，组件、语言、主题均可 tree-shaking。
+Bin UI Design supports tree shaking. Components, languages, and themes can all be tree-shaken.
 
-了解更多关于主题设定的信息，参见 [调整主题](/en/docs/custom-theme.html)。
+Learn more about theme configuration at [Customizing Themes](/en/docs/custom-theme.html).
 
-## 手动引入
+## Manual Import
 
 ```vue
 <script setup lang="ts">
@@ -25,9 +25,9 @@ import { BButton } from 'bin-ui-design'
 </template>
 ```
 
-## 自动引入
+## Auto Import
 
-可以借助插件 `unplugin-vue-components` 来自动的进行组件的引入。
+You can use the `unplugin-vue-components` plugin to automatically import components.
 
 ```ts
 // vite.config.ts
@@ -42,7 +42,7 @@ export default defineConfig({
     vueJsx(),
     Components({
       resolvers: [
-        // 自动引入组件
+        // Auto import components
         componentName => ({ name: componentName, from: 'bin-ui-design' })
       ]
     })
@@ -50,21 +50,21 @@ export default defineConfig({
 })
 ```
 
-## 按需全局安装组件（手动）
+## On-Demand Global Component Installation (Manual)
 
-组件库暴露了全部组件，指令，公共函数等。可以在配合自动引入，将公共的指令和帮助函数引入。便于管理
+The component library exports all components, directives, and utility functions. You can combine them with auto imports to bring in common directives and helper functions for easier management.
 
 ```ts
 // main.ts
 import { createApp } from 'vue'
 import {
-  // create UI 全局组件和指令安装器
+  // create UI global component and directive installer
   create,
-  // 部分指令
+  // directives
   ClickOutside,
-  // 组件
+  // components
   BButton,
-  // 工具包
+  // utilities
   Utils
 } from 'bin-ui-design'
 
@@ -83,7 +83,7 @@ app.use(UI)
 app.mount('#app')
 ```
 
-这时候你就可以愉快的进行组件使用啦。
+Now you can happily use the components!
 
 ```vue
 <template>

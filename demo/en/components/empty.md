@@ -1,34 +1,34 @@
 ---
-title: 空状态 Empty
+title: Empty
 ---
 
 <b-back-top></b-back-top>
 
-# 空状态 Empty
+# Empty
 
-空显示状态，用于给内部无数据情况的展示。十分简单
+Used for displaying empty data state.
 
-## 基础用法
+## Basic Usage
 
-直接用组件默认插槽插入即可
+Simply insert content using the default slot.
 
 <preview path="./demo/Empty/Basic.vue"></preview>
 
-## 指令方式
+## directive方式
 
-可以使用v-no-data指令动态指定，并可以绑定显示文字
+可以usev-no-datadirective动态指定，并可以绑定Show文字
 
 <preview path="./demo/Empty/Directive.vue"></preview>
 
 ## Props
 
-| 参数  | 说明     | 类型   | 可选值 | 默认值   |
+| Parameter  | Description     | Type   | Options | Default   |
 | ----- | -------- | ------ | ------ | -------- |
-| title | 显示文字 | String | —      | 暂无数据 |
+| title | Show文字 | String | —      | is not data |
 
 ## Slot
 
-| 名称    | 说明                         |
+| Name    | Description                         |
 | ------- | ---------------------------- |
-| icon    | 可插入图标                   |
-| default | 默认插槽，可替换文字显示位置 |
+| icon    | 可插入icon                   |
+| default | Defaultslot，可替换文字Showposition |

@@ -8,8 +8,8 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const value = ref('禁用的文字')
-const value1 = ref('只读的输入')
+const value = ref('Disabled的文字')
+const value1 = ref('Readonly的输入')
 </script>
 
 <style scoped>

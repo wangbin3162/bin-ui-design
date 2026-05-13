@@ -11,15 +11,15 @@
 import { Message } from 'bin-ui-design'
 
 function message1() {
-  Message.info('我是普通消息提示')
+  Message.info('我是普通MessageWarning')
 }
 function message2() {
-  Message.success('成功的提示消息')
+  Message.success('Success的WarningMessage')
 }
 function message3() {
-  Message.warning('警告的提示消息')
+  Message.warning('Warning的WarningMessage')
 }
 function message4() {
-  Message.error('错误的提示消息')
+  Message.error('Error的WarningMessage')
 }
 </script>

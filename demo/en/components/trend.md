@@ -1,48 +1,48 @@
 ---
-title: 趋势标记 Trend
+title: Trend
 ---
 
 <b-back-top></b-back-top>
 
-# 趋势标记 Trend
+# Trend
 
-趋势符号，标记上升和下降趋势。通常用绿色代表“好”，红色代表“不好”，股票涨跌场景除外。
+trend符号，标记上升和下降trend。通常用绿色代表“好”，红色代表“不好”，股票涨跌场景除外。
 
-## 基础用法
+## Basic Usage
 
-在数值背后添加一个小图标来标识涨跌情况。
+在数值背后添加一个小icon来标识涨跌情况。
 
 <preview path="./demo/Trend/Basic.vue"></preview>
 
-## 颜色反转
+## color反转
 
-设置属性 `reverse-color` 可以颠倒上升和下降的图标颜色。比如负值设置为红色，正值设置为绿色。
+设置property `reverse-color` 可以颠倒上升和下降的iconcolor。比如负值设置为红色，正值设置为绿色。
 
 <preview path="./demo/Trend/Reverse.vue"></preview>
 
-## 文字颜色
+## Textcolor
 
-设置属性 `text-color` 文字也可以显示颜色，该属性受 `colorful` 和 `reverse-color` 的影响 。
+设置property `text-color` 文字也Can display color，该property受 `colorful` 和 `reverse-color` 的影响 。
 
 <preview path="./demo/Trend/Text.vue"></preview>
 
-## 自定义样式
+## Custom Styles
 
-可以通过样式覆盖，设置 up 和 down 的颜色，或者覆盖文字大小
+Can be set via style覆盖，设置 up 和 down 的color， or 者覆盖文字大小
 
 <preview path="./demo/Trend/Color.vue"></preview>
 
-## 自定义图标
+## Customicon
 
-可以设置图标的icon
+Can set icon的icon
 
 <preview path="./demo/Trend/Icon.vue"></preview>
 
 ## Props
 
-| 参数          | 说明                                                    | 类型    | 可选值     | 默认值 |
+| Parameter          | Description                                                    | Type    | Options     | Default |
 | ------------- | ------------------------------------------------------- | ------- | ---------- | ------ |
-| title         | 上升下降标识                                            | String  | up 或 down | -      |
-| colorful      | 是否以彩色显示                                          | Boolean | -          | true   |
-| reverse-color | 是否颜色反转                                            | Boolean | -          | false  |
-| text-color    | 文字是否显示颜色（受 colorful 和 reverse-color 的影响） | Boolean | -          | false  |
+| title         | 上升下降标识                                            | String  | up  or  down | -      |
+| colorful      | Whether to 以彩色Show                                          | Boolean | -          | true   |
+| reverse-color | Whether to color反转                                            | Boolean | -          | false  |
+| text-color    | 文字Whether to show color（受 colorful 和 reverse-color 的影响） | Boolean | -          | false  |

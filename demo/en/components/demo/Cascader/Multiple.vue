@@ -1,7 +1,7 @@
 <template>
   <div flex>
     <div class="block" style="width: 220px; margin-right: 20px">
-      <span class="demonstration">默认 显示所有tag</span>
+      <span class="demonstration">Default show所有tag</span>
       <b-cascader
         v-model="selected"
         :options="options"
@@ -10,7 +10,7 @@
       ></b-cascader>
     </div>
     <div class="block" style="width: 220px; margin-right: 20px">
-      <span class="demonstration">折叠显示tag</span>
+      <span class="demonstration">collapseshowtag</span>
       <b-cascader
         v-model="selected"
         :options="options"
@@ -20,7 +20,7 @@
       ></b-cascader>
     </div>
     <div class="block" style="width: calc(100% - 500px); margin-right: 20px">
-      <span class="demonstration">选项值</span>
+      <span class="demonstration">option值</span>
       <div class="mt-5">{{ selected }}</div>
     </div>
   </div>
@@ -32,7 +32,7 @@ import { ref } from 'vue'
 const options = [
   {
     value: 'nanjing',
-    label: '南京',
+    label: 'Nanjing',
     children: [
       {
         value: 'xuanwu',
@@ -40,7 +40,7 @@ const options = [
       },
       {
         value: 'gulou',
-        label: '鼓楼区'
+        label: 'Gulou District'
       },
       {
         value: 'jianye',
@@ -50,7 +50,7 @@ const options = [
   },
   {
     value: 'xuzhou',
-    label: '徐州',
+    label: 'Xuzhou',
     children: [
       {
         value: 'tongshan',
@@ -58,11 +58,11 @@ const options = [
       },
       {
         value: 'gulou',
-        label: '鼓楼区'
+        label: 'Gulou District'
       },
       {
         value: 'yunlong',
-        label: '云龙区',
+        label: 'Yunlong District',
         children: [
           { value: 'dalonghu', label: '大龙湖街道' },
           { value: 'guozhuanglu', label: '郭庄路街道' },
@@ -72,12 +72,12 @@ const options = [
       },
       {
         value: 'jiawang',
-        label: '贾汪区'
+        label: 'Jiawang District'
       },
       { value: 'peixian', label: '沛县' },
       { value: 'fengxian', label: '丰县' },
-      { value: 'pizhou', label: '邳州市' },
-      { value: 'xinyi', label: '新沂市' }
+      { value: 'pizhou', label: '邳州City' },
+      { value: 'xinyi', label: 'New沂City' }
     ]
   }
 ]

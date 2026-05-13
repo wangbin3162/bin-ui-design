@@ -10,12 +10,12 @@ import { h } from 'vue'
 import { Message } from 'bin-ui-design'
 
 function message1() {
-  Message('普通的消息提示！')
+  Message('普通的MessageWarning！')
 }
 
 function message2() {
   Message.info({
-    message: h('i', { style: 'color: red' }, '我是render函数渲染出来的内容')
+    message: h('i', { style: 'color: red' }, 'Content rendered by render function.')
   })
 }
 </script>

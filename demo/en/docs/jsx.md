@@ -6,13 +6,13 @@ title: JSX & TSX
 
 # JSX & TSX
 
-## 启用 JSX & TSX
+## Enabling JSX & TSX
 
-关于启用 JSX 和 TSX，请参考你使用的工具链的相关文档。
+To enable JSX and TSX, please refer to the documentation of your toolchain.
 
-## 使用组件
+## Using Components
 
-在JSX中，推荐直接引入的形式使用组件
+In JSX, we recommend using components via direct imports
 
 ```ts
 import { defineComponent } from 'vue'

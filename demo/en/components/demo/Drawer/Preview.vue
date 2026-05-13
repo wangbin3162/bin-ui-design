@@ -1,20 +1,20 @@
 <template>
   <div>
-    <b-button type="primary" @click="value = true">信息预览</b-button>
+    <b-button type="primary" @click="value = true">Info预览</b-button>
     <b-drawer v-model="value" :show-close="false" width="640">
-      <p :style="pStyle">用户信息</p>
-      <p :style="pStyle">个人信息</p>
+      <p :style="pStyle">用户Info</p>
+      <p :style="pStyle">个人Info</p>
       <div class="demo-drawer-profile">
         <p flex="box:mean" class="mb-10">
           <span>名称: wangbin</span>
           <span>手机号: +86 1762516xxxx</span>
         </p>
         <p flex="box:mean" class="mb-10">
-          <span>城市: 徐州市</span>
-          <span>区: 鼓楼区</span>
+          <span>City: XuzhouCity</span>
+          <span>区: Gulou District</span>
         </p>
         <p flex="box:mean" class="mb-10">
-          <span>出生年月: 1990-04</span>
+          <span>出生YearMonth: 1990-04</span>
           <span>职业: web前端</span>
         </p>
       </div>
@@ -26,8 +26,8 @@
           <span>手机号: +86 1762516xxxx</span>
         </p>
         <p flex="box:mean" class="mb-10">
-          <span>地址: 徐州市xx区xx街道88号</span>
-          <span>电话: +86 1762516xxxx</span>
+          <span>Address: XuzhouCityxx区xx街道88号</span>
+          <span>Phone: +86 1762516xxxx</span>
         </p>
       </div>
       <b-divider></b-divider>

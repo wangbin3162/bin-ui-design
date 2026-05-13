@@ -1,6 +1,6 @@
 <template>
   <div>
-    <b-checkbox v-model="value">多选框</b-checkbox>
+    <b-checkbox v-model="value">Multi-select框</b-checkbox>
     &nbsp;&nbsp;
     <span style="color: #ff4511">{{ value }}</span>
   </div>

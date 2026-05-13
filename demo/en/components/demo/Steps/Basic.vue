@@ -1,12 +1,12 @@
 <template>
   <div>
     <b-steps :current="current">
-      <b-step title="已完成" content="这里是该步骤的描述信息"></b-step>
-      <b-step title="进行中" content="这里是该步骤的描述信息"></b-step>
-      <b-step title="待进行" content="这里是该步骤的描述信息"></b-step>
-      <b-step title="待进行" content="这里是该步骤的描述信息"></b-step>
+      <b-step title="Completed" content="Description of this step"></b-step>
+      <b-step title="In Progress" content="Description of this step"></b-step>
+      <b-step title="Pending" content="Description of this step"></b-step>
+      <b-step title="Pending" content="Description of this step"></b-step>
     </b-steps>
-    <b-button type="primary" @click="next">下一步</b-button>
+    <b-button type="primary" @click="next">Next Step</b-button>
   </div>
 </template>
 
