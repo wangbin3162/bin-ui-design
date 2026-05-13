@@ -6,9 +6,9 @@ title: Icon
 
 # Icon
 
-icon这里use了阿里[iconfont](https://www.iconfont.cn/)icon库生成了icon，icon来源于开源项目 ionicons，结合整理添加了一些其他的icon。
+Icons here use the Alibaba [iconfont](https://www.iconfont.cn/) icon library. The icons are sourced from the open-source project ionicons, with additional icons curated and added.
 
-i tag可以直接设置style类名为 `b-iconfont b-icon-xxx` 来use即可。icon component可以只设置 name 来实用。 设置 `icon-is-rotating` Can enable 旋转
+You can use the i tag with style class names like `b-iconfont b-icon-xxx`. The icon component can be used by simply setting the `name` property. Set `icon-is-rotating` to enable rotation.
 
 <div class="demo-icon">
   <i class="b-iconfont b-icon-addteam"></i>
@@ -16,14 +16,14 @@ i tag可以直接设置style类名为 `b-iconfont b-icon-xxx` 来use即可。ico
   <b-icon name="loading" class="icon-is-rotating"></b-icon>
   <b-icon name="formatpainter" type="button" ></b-icon>
   <p flex="cross:center">
-    icon选择器：
+    Icon Selector:
   <div style="width: 220px;">
     <b-icon-select></b-icon-select>
   </div>
   </p>
 </div>
 
-## 所有icon
+## All Icons
 
 <script lang="ts" setup>
 import builtInIcons from '../.vitepress/utils/iconfont.json'
@@ -39,7 +39,7 @@ const copy = name =>  {
   const str = name
   Utils.util.copy(str)
   console.log(str)
-   Message.info(`已复制iconiconName [ ${str} ]`)
+   Message.info(`Icon name copied [ ${str} ]`)
 }
 
 const copyComp = name => {
@@ -47,14 +47,14 @@ const copyComp = name => {
   Utils.util.copy(str)
   console.log(str)
   
-   Message.info(`已复制iconcomponent [ ${str} ]`)
+   Message.info(`Icon component copied [ ${str} ]`)
 }
 
 </script>
 
-<p>  收录了  <span style="color: red">{{ baseIcons.length }}</span>  个icon</p>
+<p>  A total of <span style="color: red">{{ baseIcons.length }}</span> icons</p>
 
-<p class="tip">click复制iconName，右键复制component代码</p>
+<p class="tip">Click to copy icon name, right-click to copy component code</p>
 
 <ul class="icon-list">
   <li
@@ -75,10 +75,10 @@ const copyComp = name => {
 
 | Parameter  | Description                       | Type            | Options   | Default |
 | ----- | -------------------------- | --------------- | -------- | ------ |
-| name  | iconName                   | String          | icon集合 | —      |
-| size  | size                       | Number / String | 数字px | —      |
-| type  | 设置为button时可以hoverclick | String          | button   | —      |
-| color | iconcolor值                 | String          | —        | —      |
+| name  | Icon name                   | String          | Icon set | —      |
+| size  | Size                       | Number / String | Numeric px | —      |
+| type  | When set to button, it can be hovered and clicked | String          | button   | —      |
+| color | Icon color value                 | String          | —        | —      |
 
 <style scoped>
 .demo-icon {

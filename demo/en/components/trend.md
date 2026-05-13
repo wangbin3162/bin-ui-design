@@ -6,35 +6,35 @@ title: Trend
 
 # Trend
 
-trend符号，标记上升和下降trend。通常用绿色代表“好”，红色代表“不好”，股票涨跌场景除外。
+Trend symbol, marking upward and downward trends. Typically, green represents “good” and red represents “bad”, except in stock market scenarios.
 
 ## Basic Usage
 
-在数值背后添加一个小icon来标识涨跌情况。
+Add a small icon behind the value to indicate the trend direction.
 
 <preview path="./demo/Trend/Basic.vue"></preview>
 
-## color反转
+## Color Reversal
 
-设置property `reverse-color` 可以颠倒上升和下降的iconcolor。比如负值设置为红色，正值设置为绿色。
+Set `reverse-color` to reverse the icon colors for upward and downward trends. For example, negative values become red, and positive values become green.
 
 <preview path="./demo/Trend/Reverse.vue"></preview>
 
 ## Textcolor
 
-设置property `text-color` 文字也Can display color，该property受 `colorful` 和 `reverse-color` 的影响 。
+Set `text-color` to make the text display in color. This property is affected by `colorful` and `reverse-color`.
 
 <preview path="./demo/Trend/Text.vue"></preview>
 
 ## Custom Styles
 
-Can be set via style覆盖，设置 up 和 down 的color， or 者覆盖文字大小
+Can be overridden via styles, setting the colors for up and down, or overriding the text size.
 
 <preview path="./demo/Trend/Color.vue"></preview>
 
 ## Customicon
 
-Can set icon的icon
+Can set custom icon.
 
 <preview path="./demo/Trend/Icon.vue"></preview>
 
@@ -42,7 +42,7 @@ Can set icon的icon
 
 | Parameter          | Description                                                    | Type    | Options     | Default |
 | ------------- | ------------------------------------------------------- | ------- | ---------- | ------ |
-| title         | 上升下降标识                                            | String  | up  or  down | -      |
-| colorful      | Whether to 以彩色Show                                          | Boolean | -          | true   |
-| reverse-color | Whether to color反转                                            | Boolean | -          | false  |
-| text-color    | 文字Whether to show color（受 colorful 和 reverse-color 的影响） | Boolean | -          | false  |
+| title         | Upward or downward indicator                                            | String  | up  or  down | -      |
+| colorful      | Whether to display in color                                          | Boolean | -          | true   |
+| reverse-color | Whether to reverse color                                            | Boolean | -          | false  |
+| text-color    | Whether text shows color (affected by colorful and reverse-color) | Boolean | -          | false  |

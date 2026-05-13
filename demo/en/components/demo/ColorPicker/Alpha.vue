@@ -1,7 +1,7 @@
 <template>
   <div flex>
     <div class="block" style="width: 200px; margin-right: 20px">
-      <div class="demonstration mb-5">带Alpha/opacity</div>
+      <div class="demonstration mb-5">With Alpha/opacity</div>
       <b-color-picker v-model="color" show-alpha></b-color-picker>
     </div>
   </div>

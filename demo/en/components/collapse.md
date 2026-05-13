@@ -6,29 +6,29 @@ title: Collapse
 
 # Collapse
 
-需要进行分段Show时usecollapse面板
+Use collapse panels when content needs to be displayed in sections.
 
 ## Basic Usage
 
-Default可以同时expand多个面板，Can set Defaultexpand第几个。
+Multiple panels can be expanded at once by default. You can set which panel is expanded by default.
 
 <preview path="./demo/Collapse/Basic.vue"></preview>
 
 ## Accordion ModeMode
 
-设置 `accordion` 手风琴ModeDefault只能Enable一个
+Set `accordion` for accordion mode; only one panel can be expanded at a time.
 
 <preview path="./demo/Collapse/Accordion.vue"></preview>
 
-## 简单Mode和自定义头
+## Simple Mode and Custom Header
 
-`simple` 设置简单Mode，也Can be set via  slot自定义头部
+`simple` sets simple mode. You can also customize the header via slot.
 
 <preview path="./demo/Collapse/Simple.vue"></preview>
 
-## 容器component
+## Container Component
 
-use `b-collapse-wrap` component可以单独use独立的collapse面板
+Use the `b-collapse-wrap` component for standalone collapse panels.
 
 <preview path="./demo/Collapse/Wrap.vue"></preview>
 
@@ -36,21 +36,21 @@ use `b-collapse-wrap` component可以单独use独立的collapse面板
 
 | Parameter       | Description                                             | Type         | Options | Default |
 | ---------- | ------------------------------------------------ | ------------ | ------ | ------ |
-| modelValue | 当前激活的面板的 name，可以use v-model 双向绑定 | Array/String | —      | —      |
-| accordion  | Enable 手风琴Mode，Enable后每次至多expand一个面板   | Boolean      | —      | false  |
-| simple     | Enable 简洁Mode                                 | Boolean      | —      | false  |
+| modelValue | The name of the currently active panel; use v-model for two-way binding | Array/String | —      | —      |
+| accordion  | Enable accordion mode; only one panel can be expanded at a time   | Boolean      | —      | false  |
+| simple     | Enable simple mode                                 | Boolean      | —      | false  |
 
 ## Events
 
 | Event Name | Description                                                   | Return Value  |
 | ------ | ------------------------------------------------------ | ------- |
-| change | 切换面板时Trigger，返回Currently expand的面板的 key，格式为数组 | array[] |
+| change | Triggers when panels switch; returns the keys of currently expanded panels as an array | array[] |
 
 ## Slot
 
 | Name  | Description       |
 | ----- | ---------- |
-| title | 面板头Content |
+| title | Panel header content |
 
 ## CollapseWrap Props
 
@@ -58,12 +58,12 @@ use `b-collapse-wrap` component可以单独use独立的collapse面板
 | -------- | ---------------------------------- | ------- | ----------------- | ------ |
 | value    | Whether to expand                           | boolean | —                 | true   |
 | title    | Title                               | string  | —                 | —      |
-| collapse | Whether to 可以expand收起                   | boolean | —                 | false  |
-| shadow   | shadow，设置为noneCan enable 简单Mode | string  | none/自定义shadow | —      |
+| collapse | Whether to expand/collapse                   | boolean | —                 | false  |
+| shadow   | Shadow; set to none to enable simple mode | string  | none/custom shadow | —      |
 
 ## CollapseWrap Slot
 
 | Name  | Description             |
 | ----- | ---------------- |
-| title | 面板头Content       |
-| right | 右侧插入Content区域 |
+| title | Panel header content       |
+| right | Right side content area |

@@ -78,7 +78,7 @@ Use `children` in column definitions to group table headers. For merged headers 
 
 ## Row & Column Merging
 
-Configure `mergeMethod` to specify row/column merging logic.，methodparameter为四个对象`row`，`column`，`rowIndex`，`columnIndex`，
+Configure `mergeMethod` to specify row/column merging logic. The method parameters are four objects: `row`, `column`, `rowIndex`, `columnIndex`.
 The method returns an array of two elements: the first is `rowspan`, the second is `colspan`. It is recommended to use `border` mode for merged cells.
 
 <preview path="./demo/Table/Merge.vue"></preview>
@@ -138,13 +138,13 @@ Set `noDataText` for the empty data state.
 | loading              | Table loading state                                                                                                  | Boolean       | —             | false    |
 | disabled-hover       | Disable hover highlight                                                                                                  | Boolean       | —             | false    |
 | highlight-row        | Enable row highlight / single-selection mode.                                                                                  | Boolean       | —             | false    |
-| highlight-row-cancel | 单选高亮Whether to 可以cancel，如果Yes则再次clickselect的行会cancelselect                                                      | Boolean       | —             | false    |
+| highlight-row-cancel | Whether single-selection highlight can be canceled. If true, clicking the selected row again will deselect it                                                      | Boolean       | —             | false    |
 | size                 | Table size                                                                                                      | string        | large / small | default  |
 | no-data-text         | Empty data placeholder text                                                                                                    | string        | —             | is not data |
 | loading-text         | Loading text                                                                                                  | string        | —             | Loading... |
-| draggable            | Enable drag to reorder rows，同步元数据需要usev-model:datause or 需配合 @drag-drop eventupdatedata都可以                  | Boolean       | —             | false    |
+| draggable            | Enable drag to reorder rows. To sync metadata, use v-model:data or handle the @drag-drop event to update data                  | Boolean       | —             | false    |
 | drag-handle          | Drag handle icon                                                                                              | String        | —             | —        |
-| row-key              | Whether to 强制use内置row-key刷新                                                                                   | Boolean       | —             | false    |
+| row-key              | Whether to force refresh using built-in row-key                                                                                   | Boolean       | —             | false    |
 | merge-method         | Merge method for row/column spanning                                                                                        | Function      | —             | false    |
 
 ## Table events
@@ -157,11 +157,11 @@ Set `noDataText` for the empty data state.
 | select-all        | Triggers when all items are selected                                                  | selected items                                                         |
 | select-all-cancel | cancelTriggers when all items are selected                                              | selected items                                                         |
 | selection-change  | Triggers when the selection changes                                    | selected items                                                         |
-| sort-change       | Effective when sortable; triggers when sorting is clicked                                | column：当前列数据 key：sort依据的指标 order(值为 asc  or  desc) |
-| row-click         | Triggers when a row is clicked                                            | 当前行的数据,index                                             |
-| row-dblclick      | Triggers when a row is double-clicked                                            | 当前行的数据,index                                             |
-| expand            | Triggers when a row is expanded or collapsed                                        | row：当前行的数据,status：当前的状态                           |
-| drag-drop         | Triggers when drag sort is released                                          | 置换的两行数据索引和update后的数据 newData, newIndex, oldIndex   |
+| sort-change       | Effective when sortable; triggers when sorting is clicked                                | column: current column data, key: sort indicator, order (asc or desc) |
+| row-click         | Triggers when a row is clicked                                            | Current row data, index                                             |
+| row-dblclick      | Triggers when a row is double-clicked                                            | Current row data, index                                             |
+| expand            | Triggers when a row is expanded or collapsed                                        | row: current row data, status: current state                           |
+| drag-drop         | Triggers when drag sort is released                                          | The two rows' data indices and updated data: newData, newIndex, oldIndex   |
 
 ## Table slot
 
@@ -188,15 +188,15 @@ Set `noDataText` for the empty data state.
 | title       | Column header text                                                      | String            | -                                     | #      |
 | key         | Field name for column data                                                | String            | -                                     | -      |
 | width       | Column width                                                              | Number            | -                                     | -      |
-| minWidth    | 最小Column width                                                          | Number            | -                                     | -      |
-| maxWidth    | 最大Column width                                                          | Number            | -                                     | -      |
+| minWidth    | Minimum column width                                                          | Number            | -                                     | -      |
+| maxWidth    | Maximum column width                                                          | Number            | -                                     | -      |
 | align       | Alignment                                                          | String            | right,center                          | left   |
 | className   | CSS class name for the column                                                      | String            | -                                     | -      |
-| fixed       | 列Whether to 固定在左侧 or 者右侧                                          | String            | left,right                            | -      |
+| fixed       | Whether the column is fixed to the left or right                                          | String            | left,right                            | -      |
 | ellipsis    | When enabled, text will not wrap                                              | Boolean           | -                                     | false  |
-| tooltip     | When enabled, text will not wrap,并用 Tooltip componentShow完整Content                | Boolean           | -                                     | false  |
-| render      | Custom render function for the column ,第一个is h，第二个为对象，包含 row、column 和 index | Function          | -                                     | -      |
-| indexMethod | type 为 index 时可用，Custom index method ,parameter row 为当前行Content           | Function          | -                                     | -      |
-| sortable    | 对应列Whether to 可以sort                                                | Boolean ,'custom' | -                                     | false  |
-| sortMethod  | Custom sort method,三个parameter a 、 b 和 type                      | Function          | -                                     | -      |
+| tooltip     | When enabled, text will not wrap and shows full content via Tooltip component                | Boolean           | -                                     | false  |
+| render      | Custom render function for the column; the first parameter is h, the second is an object containing row, column, and index | Function          | -                                     | -      |
+| indexMethod | Available when type is index. Custom index method; the row parameter is the current row content           | Function          | -                                     | -      |
+| sortable    | Whether the corresponding column can be sorted                                                | Boolean ,'custom' | -                                     | false  |
+| sortMethod  | Custom sort method; three parameters: a, b, and type                      | Function          | -                                     | -      |
 | sortType    | Set initial sort order. Accepted values: asc, desc                                  | String            | -                                     | -      |

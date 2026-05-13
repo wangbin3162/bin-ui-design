@@ -3,8 +3,8 @@
     <div style="width: 220px; margin-right: 20px">
       <b-time-picker
         v-model="value1"
-        format="HH点mm分ssSecond"
-        placeholder="任意时间点"
+        format="HH:mm:ss"
+        placeholder="Any time"
       ></b-time-picker>
     </div>
     <div style="width: 220px; margin-right: 20px">
@@ -12,11 +12,11 @@
         v-model="value2"
         is-range
         arrow-control
-        format="HH’mm’ss"
+        format="HH:mm:ss"
         range-separator="~"
         start-placeholder="Start time"
         end-placeholder="End time"
-        placeholder="选择Time range"
+        placeholder="Select time range"
       >
         >
       </b-time-picker>

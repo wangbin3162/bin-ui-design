@@ -71,7 +71,7 @@ Can be used with form validation.
 To render extremely large tree structures, use the extended component `<b-big-tree>`. It reuses all tree APIs and optimizes performance by filtering and operating on nodes within the visible viewport.
 However, to maintain performance, some user experience trade-offs are necessary. Large data trees do not support animated expand/collapse effects.
 
-DefaultNode height为`28px`，Use `visible-count` to specify the number of nodes shown in the visible area (default: 15, i.e., `420px`). Since this is optimized for viewport scrolling, you must specify the container height.
+Default node height is `28px`. Use `visible-count` to specify the number of nodes shown in the visible area (default: 15, i.e., `420px`). Since this is optimized for viewport scrolling, you must specify the container height.
 
 <preview path="./demo/Tree/Big.vue"></preview>
 

@@ -6,29 +6,29 @@ title: loading Loading
 
 # loading Loading
 
-Get data or Loading...时Show，Tip用户正在等待中。
+Displayed when fetching data or loading to indicate the user should wait.
 
 ## Basic Usage
 
-最简单的Loading
+The simplest loading indicator.
 
 <preview path="./demo/Loading/Basic.vue"></preview>
 
-## center固定
+## Center Fixed
 
-可以在父级元素中center固定 Defaults to 剧中固定的，fix设置为false后Used for loading类似下拉loading的功能
+Can be fixed at the center of the parent element. Defaults to centered fixed. When `fix` is set to false, it's used for scenarios like pull-down loading.
 
 <preview path="./demo/Loading/Center.vue"></preview>
 
 ## Custom content
 
-可以自定义文字和Content
+Custom text and content can be configured.
 
 <preview path="./demo/Loading/Custom.vue"></preview>
 
-## 切换Show状态
+## Toggle Display State
 
-切换Show状态
+Toggle the display state.
 
 <preview path="./demo/Loading/Ctrl.vue"></preview>
 
@@ -37,6 +37,6 @@ Get data or Loading...时Show，Tip用户正在等待中。
 | Parameter     | Description               | Type    | Options  | Default |
 | -------- | ------------------ | ------- | ------- | ------ |
 | showIcon | Showloadingicon       | String  | loading | —      |
-| showText | Showloading的文字     | String  | loading | —      |
-| fix      | Whether to 固定于父级中心 | Boolean | —       | true   |
-| size     | 文字Show的大小     | Number  | —       | —      |
+| showText | Text displayed while loading     | String  | loading | —      |
+| fix      | Whether to fix at the center of the parent | Boolean | —       | true   |
+| size     | Text display size     | Number  | —       | —      |

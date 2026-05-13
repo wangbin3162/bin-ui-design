@@ -14,7 +14,7 @@
         <b-option value="beijing" label="Beijing"></b-option>
         <b-option value="shanghai" label="Shanghai"></b-option>
       </b-option-group>
-      <b-option-group label="热门City">
+      <b-option-group label="Popular Cities">
         <b-option value="xuzhou" label="Xuzhou"></b-option>
         <b-option value="nanjing" label="Nanjing"></b-option>
         <b-option value="suzhou" label="Guangzhou"></b-option>

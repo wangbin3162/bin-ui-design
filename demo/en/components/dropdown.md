@@ -16,7 +16,7 @@ Used for displaying empty data state.
 
 <preview path="./demo/Dropdown/Trigger.vue"></preview>
 
-## Nesting用法
+## Nesting Usage
 
 <preview path="./demo/Dropdown/Nest.vue"></preview>
 
@@ -28,34 +28,34 @@ Used for displaying empty data state.
 
 | Parameter          | Description                                                                                                                  | Type    | Options                                                                                                    | Default |
 | ------------- | --------------------------------------------------------------------------------------------------------------------- | ------- | --------------------------------------------------------------------------------------------------------- | ------ |
-| trigger       | Trigger mode                                                                                                              | String  | hover / clickcontextMenu（右键）                                                             | click  |
-| placement     | 下拉menuappear的position                                                                                                    | String  | top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end | bottom |
-| appendToBody  | Whether to 放置于 body 内, 在 Tabs、带有 fixed 的 Table 列内use时，建议添加此property，它将不受父级style影响，从而达到更好的效果 | Boolean |                                                                                                           | true   |
-| hide-on-click | Whether to clickmenu项后Hidemenu                                                                                            | Boolean | -                                                                                                         | true   |
-| show-timeout  | expand下拉menu的延时（仅在 trigger 为 hover 时有效）                                                                    | Number  | -                                                                                                         | 150    |
-| hide-timeout  | Whether to clickmenu项后Hidemenu                                                                                            | Number  | -                                                                                                         | 150    |
-| tabindex      | Dropdown component的 tabindex                                                                                              | Number  | -                                                                                                         | 0      |
+| trigger       | Trigger mode                                                                                                              | String  | hover / click / contextMenu (right click)                                                             | click  |
+| placement     | Position where the dropdown menu appears                                                                                                    | String  | top top-start top-end bottom bottom-start bottom-end left left-start left-end right right-start right-end | bottom |
+| appendToBody  | Whether to place in body. Recommended when used in Tabs or fixed Table columns, as it won't be affected by parent styles for better results | Boolean |                                                                                                           | true   |
+| hide-on-click | Whether to hide menu after clicking a menu item                                                                                            | Boolean | -                                                                                                         | true   |
+| show-timeout  | Delay before expanding the dropdown menu (only effective when trigger is hover)                                                                    | Number  | -                                                                                                         | 150    |
+| hide-timeout  | Delay before hiding the dropdown menu (only effective when trigger is hover)                                                                                            | Number  | -                                                                                                         | 150    |
+| tabindex      | Tabindex of the dropdown component                                                                                              | Number  | -                                                                                                         | 0      |
 
 ## Dropdown events
 
 | Event Name         | Description                   | Return Value                                             |
 | -------------- | ---------------------- | -------------------------------------------------- |
-| command        | clickmenu项时Trigger       | DropdownItem 的 name 值,需要设置name才可以统一监听 |
-| visible-change | menuShow状态改变时call | visible                                            |
+| command        | Triggers when a menu item is clicked       | The name value of DropdownItem; name must be set for unified listening |
+| visible-change | Called when menu visibility changes | visible                                            |
 
 ## Dropdown Slot
 
 | Name     | Description                                  |
 | -------- | ------------------------------------- |
-| default  | 主体Content                              |
-| dropdown | 列表Content，一般由 b-dropdown-menu 填充 |
+| default  | Main content                              |
+| dropdown | List content, typically filled by b-dropdown-menu |
 
 ## Dropdown Item props
 
 | Parameter     | Description               | Type                   | Options | Default |
 | -------- | ------------------ | ---------------------- | ------ | ------ |
-| name     | 用来标识这一项     | Object, String, Number | -      | -      |
-| disabled | Disabled该项           | Boolean                | -      | false  |
-| divided  | Showdivider         | Boolean                | -      | false  |
-| selected | 标记该项为select状态 | Boolean                | -      | false  |
+| name     | Used to identify this item     | Object, String, Number | -      | -      |
+| disabled | Disables this item           | Boolean                | -      | false  |
+| divided  | Show divider         | Boolean                | -      | false  |
+| selected | Mark this item as selected | Boolean                | -      | false  |
 | icon     | icon               | String                 | -      | -      |

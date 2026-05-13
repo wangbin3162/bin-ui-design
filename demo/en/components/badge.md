@@ -1,22 +1,22 @@
 ---
-title: 标记 Badge
+title: Badge
 ---
 
 <b-back-top></b-back-top>
 
-# 标记 Badge
+# Badge
 
 Used for displaying empty data state.
 
 ## Basic Usage
 
-基础的badge用法
+Basic badge usage.
 
 <preview path="./demo/Badge/Basic.vue"></preview>
 
 ## CustomTipContent
 
-可以Tip非数字的badge
+Can display non-numeric badge content.
 
 <preview path="./demo/Badge/Custom.vue"></preview>
 
@@ -24,8 +24,8 @@ Used for displaying empty data state.
 
 | Parameter   | Description                              | Type           | Options                                      | Default |
 | ------ | --------------------------------- | -------------- | ------------------------------------------- | ------ |
-| value  | Show值                            | string, number | —                                           | —      |
-| max    | Maximum value，超过Maximum value会Show '{max}+' | number         | —                                           | —      |
-| is-dot | 小圆点                            | boolean        | —                                           | false  |
+| value  | Display value                            | string, number | —                                           | —      |
+| max    | Maximum value; exceeding the maximum will display '{max}+' | number         | —                                           | —      |
+| is-dot | Small dot                            | boolean        | —                                           | false  |
 | hidden | Hide badge                        | boolean        | —                                           | false  |
 | type   | Type                              | string         | primary / success / warning / danger / info | —      |

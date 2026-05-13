@@ -6,33 +6,33 @@ title: ColorPicker
 
 # ColorPicker
 
-Used for 选择color色值
+Used for color value selection
 
 ## Basic Usage
 
 <preview path="./demo/ColorPicker/Basic.vue"></preview>
 
-## 带Alpha/opacity
+## With Alpha/opacity
 
-可以选择Alpha/opacity
+Supports Alpha/opacity selection
 
 <preview path="./demo/ColorPicker/Alpha.vue"></preview>
 
-## 带有预设色卡
+## With Preset Colors
 
-可以提供预设的色卡
+Provides preset color swatches
 
 <preview path="./demo/ColorPicker/Colors.vue"></preview>
 
 ## Disabled State
 
-可设置Disabled state
+Sets the disabled state
 
 <preview path="./demo/ColorPicker/Disabled.vue"></preview>
 
-## 不同的大小
+## Different Sizes
 
-四个不同大小
+Four different sizes
 
 <preview path="./demo/ColorPicker/Size.vue"></preview>
 
@@ -43,14 +43,14 @@ Used for 选择color色值
 | value / v-model | Bound value                    | string  | —                     | —                                                     |
 | disabled        | Disable d                  | boolean | —                     | false                                                 |
 | size            | size                      | string  | —                     | medium / small / mini                                 |
-| show-alpha      | Whether to 支持Alpha/opacity选择        | boolean | —                     | false                                                 |
-| color-format    | 写入 v-model 的color的格式 | string  | hsl / hsv / hex / rgb | hex（show-alpha as false）/ rgb（show-alpha as true） |
-| popper-class    | ColorPicker Dropdown的类名  | string  | —                     | —                                                     |
-| colors          | 预定义color                | array   | —                     | —                                                     |
+| show-alpha      | Whether to support Alpha/opacity selection        | boolean | —                     | false                                                 |
+| color-format    | Color format written to v-model | string  | hsl / hsv / hex / rgb | hex (when show-alpha is false) / rgb (when show-alpha is true) |
+| popper-class    | Custom class name for ColorPicker dropdown  | string  | —                     | —                                                     |
+| colors          | Preset colors                | array   | —                     | —                                                     |
 
 ## Events
 
 | Event Name      | Description                               | Callback Parameters         |
 | ------------- | ---------------------------------- | ---------------- |
-| change        | 当Bound value变化时Trigger                 | Current value           |
-| active-change | 面板中当前Show的color发生改变时Trigger | 当前Show的color值 |
+| change        | Triggers when bound value changes                 | Current value           |
+| active-change | Triggers when the currently displayed color in the panel changes | Currently displayed color value |

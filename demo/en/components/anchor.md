@@ -6,29 +6,29 @@ title: Anchor
 
 # Anchor
 
-anchor主要应Used for 滚动navigation
+Anchor is primarily used for scroll navigation.
 
 ## Basic Usage
 
-Defaults to window滚动，也Can set 滚动区域的 target，并且Can set `b-affix`来固定
+Defaults to window scrolling; you can also set the scrolling area's target and use `b-affix` to fix it in place.
 
 <preview path="./demo/Anchor/Basic.vue"></preview>
 
 ## Customicon
 
-Can be set via 设置`icon`来设置小圆点为自定义icon，推荐use实心icon以达到最好的Show效果
+Set `icon` to customize the dot as a custom icon. Solid icons are recommended for the best visual effect.
 
 <preview path="./demo/Anchor/Icon.vue"></preview>
 
 ## Customcolor
 
-Can be set via 设置`activeColor`来设置自定义icon的color
+Set `activeColor` to customize the icon color
 
 <preview path="./demo/Anchor/Color.vue"></preview>
 
-## 指定滚动容器
+## Specify Scroll Container
 
-Can be set via 设置`target`来指定滚动区域的标识，设置的滚动容器需要设置定位
+Set `target` to specify the scroll area identifier; the scroll container must be positioned.
 
 <preview path="./demo/Anchor/Target.vue"></preview>
 
@@ -36,20 +36,20 @@ Can be set via 设置`target`来指定滚动区域的标识，设置的滚动容
 
 | Parameter          | Description                                                             | Type    | Options                                     | Default |
 | ------------- | ---------------------------------------------------------------- | ------- | ------------------------------------------ | ------ |
-| icon          | Whether to 设置自定义icon                                               | string  | —                                          | —      |
-| icon-size     | 自定义icon大小                                                   | Number  | —                                          | —      |
-| active-color  | selectcolor                                                         | string  | primary,info,success,warning,danger,自定义 | —      |
-| offset-top    | 距离窗口顶部达到指定offset量后Trigger                                 | Number  | —                                          | 0      |
-| bounds        | anchor区域边界                                                     | Number  | —                                          | 5      |
-| showInk       | Whether to show 小圆点                                                   | Boolean | —                                          | false  |
-| scroll-offset | click滚动的额外距离                                               | Number  | —                                          | 0      |
-| target        | 指定滚动容器的标识，滚动容器需要设置position定位Used for 计算滚动offset | string  | —                                          | —      |
+| icon          | Whether to set a custom icon                                               | string  | —                                          | —      |
+| icon-size     | Custom icon size                                                   | Number  | —                                          | —      |
+| active-color  | Active color                                                         | string  | primary,info,success,warning,danger,custom | —      |
+| offset-top    | Triggers when the specified offset from the window top is reached                                 | Number  | —                                          | 0      |
+| bounds        | Anchor area boundary                                                     | Number  | —                                          | 5      |
+| showInk       | Whether to show the small dot                                                   | Boolean | —                                          | false  |
+| scroll-offset | Extra scroll distance on click                                               | Number  | —                                          | 0      |
+| target        | Specifies the scroll container identifier; the scroll container must be positioned for calculating scroll offset | string  | —                                          | —      |
 
 ## Events
 
 | Event Name | Description                     | Return Value |
 | ------ | ------------------------ | ------ |
-| select | clickanchor时Trigger，返回link | href   |
+| select | Triggers when anchor is clicked, returns link | href   |
 
 ## AnchorLink Props
 

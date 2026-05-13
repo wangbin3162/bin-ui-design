@@ -15,7 +15,7 @@
         <b-button type="warning">Warning</b-button>
         <b-button type="danger">Danger</b-button>
       </div>
-      <div>[plain]简约button</div>
+      <div>[plain]Plain Button</div>
       <div class="demo-button">
         <b-button type="primary" plain>Primary</b-button>
         <b-button type="success" plain>Success</b-button>
@@ -29,7 +29,7 @@
         <b-button type="warning" round>Warning</b-button>
         <b-button type="danger" round>Danger</b-button>
       </div>
-      <div>[dashed]虚线button</div>
+      <div>[dashed]Dashed Button</div>
       <div class="demo-button">
         <b-button type="primary" dashed>Primary</b-button>
         <b-button type="success" dashed>Success</b-button>

@@ -2,7 +2,7 @@
   <div>
     <div class="locale-actions">
       <b-button size="small" :type="locale === 'zh-CN' ? 'primary' : 'default'" @click="locale = 'zh-CN'">
-        中文
+        Chinese
       </b-button>
       <b-button size="small" :type="locale === 'en-US' ? 'primary' : 'default'" @click="locale = 'en-US'">
         English

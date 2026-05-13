@@ -6,7 +6,7 @@ title: carousel Carousel
 
 # carousel Carousel
 
-carouselcomponent，Used for 滚动Showimage等
+Carousel component, used for scrolling display of images etc.
 
 ## Basic Usage
 
@@ -14,25 +14,25 @@ Simply insert content using the default slot.
 
 <preview path="./demo/Carousel/Basic.vue"></preview>
 
-## 自动切换和速度
+## Auto Switch and Speed
 
-Can set `autoplay`自动切换，`trigger="hover"`hover切换
+Can set `autoplay` for auto switching, and `trigger="hover"` for hover switching
 
 <preview path="./demo/Carousel/Auto.vue"></preview>
 
-## Indicatorsstyle和position
+## Indicator Style and Position
 
 <preview path="./demo/Carousel/Style.vue"></preview>
 
-## card风格
+## Card Style
 
-Can set `card`card风格
+Can set `card` for card style
 
 <preview path="./demo/Carousel/Card.vue"></preview>
 
 ## Direction
 
-Can set `direction`方向为竖直方向
+Can set `direction` to vertical
 
 <preview path="./demo/Carousel/Direction.vue"></preview>
 
@@ -40,19 +40,19 @@ Can set `direction`方向为竖直方向
 
 | Parameter               | Description                                            | Type            | Options                                           | Default     |
 | ------------------ | ----------------------------------------------- | --------------- | ------------------------------------------------ | ---------- |
-| initial-index      | carousel的索引，从 0 开始，                         | Number          | —                                                | 0          |
-| height             | 走马灯的Height，可填 auto  or 具体Height数值，in px | String / Number | —                                                | 200px      |
-| loop               | Enable 循环                                    | Boolean         | —                                                | false      |
-| autoplay           | Whether to 自动切换                                    | Boolean         | —                                                | false      |
-| interval           | 自动切换的时间间隔，单位为毫秒                  | Number          | —                                                | 3000       |
-| indicator-position | 指示器的position                                    | String          | inside （内部），outside（外部），none（不Show） | inside     |
-| trigger            | Trigger mode                                        | String          | click，hover                                     | click      |
-| arrow              | 切换箭头的Show时机                              | String          | hover，always，never                             | hover      |
-| direction          | 方向                                            | String          | horizontal、vertical                             | horizontal |
+| initial-index      | Index of the carousel, starting from 0                         | Number          | —                                                | 0          |
+| height             | Carousel height, can be `auto` or a specific pixel value | String / Number | —                                                | 200px      |
+| loop               | Enable looping                                    | Boolean         | —                                                | false      |
+| autoplay           | Whether to auto switch                                    | Boolean         | —                                                | false      |
+| interval           | Auto switch interval, in milliseconds                  | Number          | —                                                | 3000       |
+| indicator-position | Position of indicators                                    | String          | inside, outside, none | inside     |
+| trigger            | Trigger mode                                        | String          | click, hover                                     | click      |
+| arrow              | When to show switch arrows                              | String          | hover, always, never                             | hover      |
+| direction          | Direction                                            | String          | horizontal, vertical                             | horizontal |
 | type               | Type                                            | String          | card                                             | —          |
 
 ### Events
 
 | Event Name | Description                                     | Return Value          |
 | ------ | ---------------------------------------- | --------------- |
-| change | carousel切换时Trigger，目前激活的索引，原的索引 | oldValue, value |
+| change | Triggers when carousel switches, returns the currently active index and the original index | oldValue, value |

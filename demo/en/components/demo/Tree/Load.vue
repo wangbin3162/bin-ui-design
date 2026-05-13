@@ -34,7 +34,7 @@ function loadData(item, callback) {
         children: []
       }
     ]
-    // 模拟请求数据有子项的时候
+    // Simulate requesting data when there are child items
     if (item.title === 'have-child') {
       data = [
         {
@@ -51,9 +51,9 @@ function loadData(item, callback) {
         }
       ]
     } else if (item.title === 'no-child') {
-      // on-demand自Row设置是否是叶子节点或者不设置
+      // Set whether it's a leaf node on demand, or leave it unset
       item['isLeaf'] = true
-      // 不设置会保留箭头可以再次click
+      // If not set, the arrow is retained and can be clicked again
       // data = []
     }
 

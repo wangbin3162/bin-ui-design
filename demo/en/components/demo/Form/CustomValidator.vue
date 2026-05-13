@@ -34,10 +34,10 @@ const checkAge = (rule, value, callback) => {
   }
   setTimeout(() => {
     if (!Number.isInteger(value)) {
-      callback(new Error('Please enter数字值'))
+      callback(new Error('Please enter a numeric value'))
     } else {
       if (value < 18) {
-        callback(new Error('必须Year满18岁'))
+        callback(new Error('Must be at least 18 years old'))
       } else {
         callback()
       }
@@ -56,9 +56,9 @@ const validatePass = (rule, value, callback) => {
 }
 const validatePass2 = (rule, value, callback) => {
   if (value === '') {
-    callback(new Error('请再次输入Password'))
+    callback(new Error('Please enter the password again'))
   } else if (value !== ruleForm.value.pass) {
-    callback(new Error('两次输入Password不一致!'))
+    callback(new Error('The two passwords do not match!'))
   } else {
     callback()
   }

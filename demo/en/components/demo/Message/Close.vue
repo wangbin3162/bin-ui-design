@@ -1,7 +1,7 @@
 <template>
   <div>
-    <b-button @click="message">create三条不会Close的Message</b-button>
-    <b-button @click="closeAll">Close所有</b-button>
+    <b-button @click="message">Create three messages that won't close</b-button>
+    <b-button @click="closeAll">Close All</b-button>
   </div>
 </template>
 

@@ -8,31 +8,31 @@ title: Tag
 
 ## Basic Usage
 
-直接useDefaultslot即可
+Simply use the default slot.
 
 <preview path="./demo/Tag/Basic.vue"></preview>
 
-## 多种color
+## Multiple Colors
 
-由`dark`property来设置深色Mode,并Can set 更多colorType的tag
+Use the `dark` property to set dark mode, and you can set tags with more color types
 
 <preview path="./demo/Tag/Colors.vue"></preview>
 
-## 可选择tag
+## Selectable Tag
 
-设置`checkable`property可以定义一个tagWhether to 可可选择。
+Set the `checkable` property to define whether a tag is selectable.
 
 <preview path="./demo/Tag/Checked.vue"></preview>
 
-## 可移除tag
+## Removable Tag
 
-设置`closable`property可以定义一个tagWhether to 可移除。
+Set the `closable` property to define whether a tag is removable.
 
 <preview path="./demo/Tag/Closed.vue"></preview>
 
-## 小圆点Mode
+## Dot Mode
 
-设置 `dot` Mode可以简单Show带有Tip小圆点等Content
+Set `dot` mode to simply display content with a small indicator dot
 
 <preview path="./demo/Tag/Dots.vue"></preview>
 
@@ -42,7 +42,7 @@ title: Tag
 
 ## Custom Styles
 
-具有多种自定义style的方式可供选择
+Multiple customizable style options are available
 
 <preview path="./demo/Tag/Custom.vue"></preview>
 
@@ -50,20 +50,20 @@ title: Tag
 
 | Parameter       | Description                             | Type    | Options                      | Default |
 | ---------- | -------------------------------- | ------- | --------------------------- | ------ |
-| closable   | Whether to 可Disable                       | Boolean | —                           | false  |
-| type       | theme                             | String  | success/info/warning/danger | —      |
-| dot        | Whether to show Yes小圆点                 | Boolean | —                           | false  |
+| closable   | Whether it can be dismissed                       | Boolean | —                           | false  |
+| type       | Theme                             | String  | success/info/warning/danger | —      |
+| dot        | Whether to show as a small dot                 | Boolean | —                           | false  |
 | no-border  | Disable border                     | Boolean | —                           | false  |
-| color      | backgroundcolor(可自定义)               | String  | —                           | —      |
-| fontSize   | 字体大小                         | String  | —                           | —      |
-| tag-style  | tagstyle(完全控制，尽量不要设置) | String  | —                           | —      |
-| checkable  | Whether to 可select                       | Boolean | —                           | false  |
-| modelValue | select状态可以usev-model双向绑定  | Boolean | —                           | true   |
+| color      | Background color (customizable)               | String  | —                           | —      |
+| fontSize   | Font size                         | String  | —                           | —      |
+| tag-style  | Tag style (full control, avoid setting if possible) | String  | —                           | —      |
+| checkable  | Whether it can be selected                       | Boolean | —                           | false  |
+| modelValue | Selection state, use v-model for two-way binding  | Boolean | —                           | true   |
 
 ## Events
 
 | Event Name | Description                              | Return Value       |
 | ------ | --------------------------------- | ------------ |
-| close  | DisableeventCallback                      | event        |
-| click  | clickeventCallback                      | event        |
-| change | selecteventCallback,第二项需要设置name值 | checked,name |
+| close  | Close event callback                      | event        |
+| click  | Click event callback                      | event        |
+| change | Selection event callback, the name value must be set as the second parameter | checked,name |

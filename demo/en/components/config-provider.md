@@ -4,24 +4,24 @@ title: globalconfiguration  ConfigProvider
 
 <b-back-top></b-back-top>
 
-# 基础用法
+# Basic Usage
 
-可以借助globalconfigurationcomponent，来进行style覆盖
+Use the global configuration component for style overrides.
 
 <preview path="./demo/ConfigProvider/Basic.vue"></preview>
 
-# 抽象容器
+# Abstract Container
 
-可以use抽象tag来注入，这里会Default注入到html ，进行global覆盖(谨慎use，避免冲突和覆盖，一般Used for globalconfigurationthemeuse)
+Can be injected using an abstract tag, which will be injected into the HTML by default for global overrides (use with caution to avoid conflicts; generally used for global theme configuration).
 
 <preview path="./demo/ConfigProvider/Abstract.vue"></preview>
 
-# 国际化
+# Internationalization
 
-可通过 `locale` property切换语言，当前支持 `zh-CN` 和 `en-US`。
+You can switch languages via the `locale` property. Currently, `zh-CN` and `en-US` are supported.
 
-国际化能力建议在业务项目外部统一管理（e.g. 由应用层 i18n 方案负责），component库侧通过 `ConfigProvider` 进行语言注入。
+It is recommended to manage internationalization uniformly outside of business projects (e.g., via the application-layer i18n solution), while the component library injects language settings through `ConfigProvider`.
 
-更多Description请参见 [国际化](/en/docs/internationalization.html)。
+For more details, see [Internationalization](/en/docs/internationalization.html).
 
 <preview path="./demo/ConfigProvider/Locale.vue"></preview>

@@ -62,31 +62,30 @@ The `ImagePreview` component can also be used standalone.
 | scroll-container | Scroll container                                                    | String , HTMLElement | —      | false                                                                      |
 | append-to-body   | Append the overlay to body                                    | Boolean              | —      | false                                                                      |
 | mask-closable    | Allow clicking the mask to close                                      | Boolean              | —      | true                                                                       |
-| preview-tip      | Whether to show 预览Tip和mask                                      | Boolean              | —      | true                                                                       |
-| preview          | Whether to image预览                                                | Boolean              | —      | false                                                                      |
-| preview-list     | image预览列表                                                | Array                | —      | []                                                                         |
-| infinite         | Whether to 循环切换                                                | Boolean              | —      | true                                                                       |
-| initial-index    | open预览的第一项                                            | Number               | —      | 0                                                                          |
-| toolbar          | image预览操作栏option，按数组顺序sort                          | Array                | —      | ['zoomIn', 'zoomOut', 'original', 'rotateLeft', 'rotateRight', 'download'] |
-| initial-index    | open预览的第一项                                            | Number               | —      | 0                                                                          |
-| failText         | 失败文字                                                    | String               | —      | 失败                                                                       |
+| preview-tip      | Whether to show preview tip and mask                                      | Boolean              | —      | true                                                                       |
+| preview          | Whether to enable image preview                                                | Boolean              | —      | false                                                                      |
+| preview-list     | Image preview list                                                | Array                | —      | []                                                                         |
+| infinite         | Whether to loop switching                                                | Boolean              | —      | true                                                                       |
+| initial-index    | Initial index when opening preview                                            | Number               | —      | 0                                                                          |
+| toolbar          | Image preview toolbar options, sorted by array order                          | Array                | —      | ['zoomIn', 'zoomOut', 'original', 'rotateLeft', 'rotateRight', 'download'] |
+| failText         | Failure text                                                    | String               | —      | Failed                                                                       |
 | loadingText      | Loading text                                                    | String               | —      | Loading...                                                                     |
-| previewText      | 预览文字                                                    | String               | —      | 预览                                                                       |
+| previewText      | Preview text                                                    | String               | —      | Preview                                                                       |
 
 ## Events
 
 | Event Name | Description         | Return Value       |
 | -------- | ------------ | ------------ |
-| load     | imageloading成功 | -            |
-| error    | imageloading失败 | -            |
-| switch   | image预览切换 | -            |
-| close    | image预览Disable | Object       |
-| click    | imageclick     | initialIndex |
+| load     | Image loaded successfully | -            |
+| error    | Image failed to load | -            |
+| switch   | Image preview switch | -            |
+| close    | Image preview closed | Object       |
+| click    | Image click     | initialIndex |
 
 ## Slots
 
 | Name        | Description               |
 | ----------- | ------------------ |
-| placeholder | 自定义imageLoading...   |
-| error       | 自定义imageloading失败 |
-| preview     | 自定义image预览     |
+| placeholder | Custom image loading placeholder   |
+| error       | Custom image loading failure |
+| preview     | Custom image preview     |

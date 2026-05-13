@@ -1,41 +1,41 @@
 <template>
   <div>
-    <b-button type="primary" @click="value = true">Info预览</b-button>
+    <b-button type="primary" @click="value = true">Info Preview</b-button>
     <b-drawer v-model="value" :show-close="false" width="640">
-      <p :style="pStyle">用户Info</p>
-      <p :style="pStyle">个人Info</p>
+      <p :style="pStyle">User Info</p>
+      <p :style="pStyle">Personal Info</p>
       <div class="demo-drawer-profile">
         <p flex="box:mean" class="mb-10">
-          <span>名称: wangbin</span>
-          <span>手机号: +86 1762516xxxx</span>
+          <span>Name: wangbin</span>
+          <span>Phone: +86 1762516xxxx</span>
         </p>
         <p flex="box:mean" class="mb-10">
           <span>City: XuzhouCity</span>
-          <span>区: Gulou District</span>
+          <span>District: Gulou District</span>
         </p>
         <p flex="box:mean" class="mb-10">
-          <span>出生YearMonth: 1990-04</span>
-          <span>职业: web前端</span>
+          <span>Date of Birth: 1990-04</span>
+          <span>Occupation: Web Frontend</span>
         </p>
       </div>
       <b-divider></b-divider>
-      <p :style="pStyle">公司</p>
+      <p :style="pStyle">Company</p>
       <div class="demo-drawer-profile">
         <p flex="box:mean" class="mb-10">
-          <span>名称: xxxx有限公司</span>
-          <span>手机号: +86 1762516xxxx</span>
+          <span>Name: xxxx Co., Ltd.</span>
+          <span>Phone: +86 1762516xxxx</span>
         </p>
         <p flex="box:mean" class="mb-10">
-          <span>Address: XuzhouCityxx区xx街道88号</span>
+          <span>Address: No.88, xx Street, xx District, Xuzhou City</span>
           <span>Phone: +86 1762516xxxx</span>
         </p>
       </div>
       <b-divider></b-divider>
-      <p :style="pStyle">联系我们</p>
+      <p :style="pStyle">Contact Us</p>
       <div class="demo-drawer-profile">
         <p flex="box:mean" class="mb-10">
           <span>Email: 316281400@qq.com</span>
-          <span>手机号: +86 1762516xxxx</span>
+          <span>Phone: +86 1762516xxxx</span>
         </p>
         <p class="mb-10">
           github:

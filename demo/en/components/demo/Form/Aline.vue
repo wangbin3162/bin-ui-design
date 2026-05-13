@@ -20,7 +20,7 @@
     <div style="width: 500px; margin-top: 20px">
       <b-form :label-position="labelPosition" label-width="100px" :model="formObj" :size="size">
         <b-form-item label="Name">
-          <b-input v-if="!onlyText" v-model="formObj.name" placeholder="输入Name"></b-input>
+          <b-input v-if="!onlyText" v-model="formObj.name" placeholder="Enter Name"></b-input>
           <label v-else>{{ formObj.name }}</label>
         </b-form-item>
         <b-form-item label="Age">

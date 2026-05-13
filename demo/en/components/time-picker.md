@@ -58,27 +58,27 @@ Different sizes can be configured.
 | is-range          | Is a time range selection               | boolean                                | —                                                     | false             |
 | arrow-control     | Use arrow buttons for time selection         | boolean                                | —                                                     | false             |
 | align             | Alignment                         | string                                 | left / center / right                                 | left              |
-| popper-class      | TimePicker Dropdown的类名          | string                                 | —                                                     | —                 |
+| popper-class      | Custom class name for TimePicker dropdown          | string                                 | —                                                     | —                 |
 | range-separator   | Separator for range selection               | string                                 | -                                                     | '-'               |
-| format            | Show在input中的格式             | string                                 | -                                                     | HH:mm:ss          |
-| default-value     | 可选，选择器open时DefaultShow的时间 | Date(TimePicker) / string(TimeSelect)  | 可被`new Date()`解析(TimePicker) / Options(TimeSelect) | —                 |
+| format            | Display format in the input             | string                                 | -                                                     | HH:mm:ss          |
+| default-value     | Optional, default time displayed when the picker opens | Date(TimePicker) / string(TimeSelect)  | Parseable by `new Date()`(TimePicker) / Options(TimeSelect) | —                 |
 | name              | Native attribute                         | string                                 | —                                                     | —                 |
-| prefix-icon       | 自定义Prefix icon的类名             | string                                 | —                                                     | time-circle       |
-| clear-icon        | 自定义Clear icon class name             | string                                 | —                                                     | close-circle-fill |
-| disabledHours     | 禁止选择部分小时option             | function                               | —                                                     | -                 |
-| disabledMinutes   | 禁止选择部分分钟option             | function(selectedHour)                 | —                                                     | -                 |
-| disabledSeconds   | 禁止选择部分秒option               | function(selectedHour, selectedMinute) | —                                                     | -                 |
+| prefix-icon       | Custom prefix icon class name             | string                                 | —                                                     | time-circle       |
+| clear-icon        | Custom clear icon class name             | string                                 | —                                                     | close-circle-fill |
+| disabledHours     | Disable specific hour options             | function                               | —                                                     | -                 |
+| disabledMinutes   | Disable specific minute options             | function(selectedHour)                 | —                                                     | -                 |
+| disabledSeconds   | Disable specific second options               | function(selectedHour, selectedMinute) | —                                                     | -                 |
 
 ## Events
 
 | Event Name | Description                    | Parameter       |
 | ------ | ----------------------- | ---------- |
-| change | 用户confirm选定的值时Trigger  | componentBound value |
-| blur   | 当 input 失去焦点时Trigger | component实例   |
-| focus  | 当 input 获得焦点时Trigger | component实例   |
+| change | Triggers when the user confirms the selected value  | Component bound value |
+| blur   | Triggers when input loses focus | Component instance   |
+| focus  | Triggers when input gains focus | Component instance   |
 
 ## Methods
 
 | Method Name | Description              | Parameter |
 | ------ | ----------------- | ---- |
-| focus  | 使 input 获取焦点 | -    |
+| focus  | Make input gain focus | -    |

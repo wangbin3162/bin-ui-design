@@ -1,12 +1,12 @@
 ---
-title: 返回顶部 Backtop
+title: Backtop
 ---
 
 <b-back-top></b-back-top>
 
-# 返回顶部 Backtop
+# Backtop
 
-Used when page content is long and needs a quick way to scroll back to the top，Typically placed at the bottom-right corner of the page。如果指定 `target` use则Yes针对某个容器的滚动
+Used when page content is long and needs a quick way to scroll back to the top, typically placed at the bottom-right corner of the page. If `target` is specified, it monitors scrolling within a specific container.
 
 ## Basic Usage
 
@@ -14,11 +14,11 @@ Simply insert content using the default slot.
 
 <preview path="./demo/Backtop/Basic.vue"></preview>
 
-## scrollbar用法
+## Usage with Scrollbar
 
-如果结合 `scrollbar` use则不需要configurationOther项
+When used with `scrollbar`, no additional configuration is needed.
 
-Note：If nested inside a custom scroll component, you need to `BackTop` component放置于 `Scrollbar` component内部
+Note: If nested inside a custom scroll component, you need to place the `BackTop` component inside the `Scrollbar` component.
 
 <preview path="./demo/Backtop/Scrollbar.vue"></preview>
 
@@ -26,14 +26,14 @@ Note：If nested inside a custom scroll component, you need to `BackTop` compone
 
 | Parameter           | Description                                                        | Type   | Options | Default |
 | -------------- | ----------------------------------------------------------- | ------ | ------ | ------ |
-| visible-height | 页面滚动Height达到该值时才ShowBackTop                         | Number | —      | 400    |
-| target         | 目标容器标识，可设置目标的class、id标识来制定滚动监听的Content | String | —      | —      |
-| bottom         | component距离底部的距离                                          | Number | —      | 50     |
-| right          | component距离右部的距离                                          | Number | —      | 50     |
-| duration       | 滚动animation持续时间，Unit 毫秒                                 | Number | —      | 1000   |
+| visible-height | The BackTop button is shown when the page scroll height reaches this value                         | Number | —      | 400    |
+| target         | Target container identifier; specify the target's class or id to set the scroll listener | String | —      | —      |
+| bottom         | Distance from the bottom of the component                                          | Number | —      | 50     |
+| right          | Distance from the right of the component                                          | Number | —      | 50     |
+| duration       | Scroll animation duration, in milliseconds                                 | Number | —      | 1000   |
 
 ## Events
 
 | Event Name | Description           | Return Value |
 | ------ | -------------- | ------ |
-| click  | clickbutton时Trigger | —     |
+| click  | Triggers when the button is clicked | —     |

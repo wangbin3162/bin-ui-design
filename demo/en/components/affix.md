@@ -1,20 +1,20 @@
 ---
-title: 图钉 Affix
+title: Affix
 ---
 
 <b-back-top></b-back-top>
 
-# 图钉 Affix
+# Affix
 
 ## Basic Usage
 
-原生滚动相对于window窗口固定，也可以结合scrollbar进行configuration
+Fixes elements relative to the window during native scrolling; can also be configured with scrollbar.
 
 <preview path="./demo/Affix/Basic.vue"></preview>
 
-## 固定position
+## Fixed Position
 
-Can set 固定距离底部的position
+Can set a fixed position at a distance from the bottom
 
 <preview path="./demo/Affix/Position.vue"></preview>
 
@@ -22,16 +22,16 @@ Can set 固定距离底部的position
 
 | Parameter     | Description                 | Type   | Options      | Default |
 | -------- | -------------------- | ------ | ----------- | ------ |
-| offset   | 距离窗口positionTrigger     | Number | —           | 0      |
-| position | 可设置距离顶部 or 底部 | String | top、bottom | top    |
+| offset   | Trigger offset from window position     | Number | —           | 0      |
+| position | Can be set to offset from top or bottom | String | top、bottom | top    |
 | z-index  | Z-index level                 | Number | —           | 10     |
 
 ## Events
 
 | Event Name | Description                                       | Return Value     |
 | ------ | ------------------------------------------ | ---------- |
-| change | 在固定状态发生改变时Trigger                   | true/false |
-| scroll | 滚动响应event ,返回对象包含scrollTop, fixed | Object     |
+| change | Triggers when fixed state changes                   | true/false |
+| scroll | Scroll response event, returns an object containing scrollTop and fixed | Object     |
 
 ## Slot
 

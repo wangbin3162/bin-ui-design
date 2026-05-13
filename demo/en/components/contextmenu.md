@@ -6,11 +6,11 @@ title: Contextmenu
 
 # Contextmenu
 
-通用的context menucomponent，只需要插入Defaultoption即可
+A general-purpose context menu component; simply insert default options to use.
 
 ## Basic Usage
 
-Simply insert content using the default slot.,需要监听property并进行dialogcall。Note，这里必须需要传入$event这个parameter，No则无法获取正确position。
+Simply insert content using the default slot. You need to listen to the property and make a dialog call. Note: you must pass the `$event` parameter, otherwise the correct position cannot be obtained.
 
 <preview path="./demo/Contextmenu/Basic.vue"></preview>
 

@@ -1,6 +1,6 @@
 <template>
   <b-popover v-model:visible="visible">
-    <b-button type="text" @click="close">点我Openoverlay</b-button>
+    <b-button type="text" @click="close">Click me to open overlay</b-button>
     <a style="margin-left: 30px">Click</a>
     <template #content>
       <b-button type="text" @click="close">Close</b-button>

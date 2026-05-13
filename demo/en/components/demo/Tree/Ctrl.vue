@@ -1,14 +1,14 @@
 <template>
   <div>
     <div class="mb-16">
-      <b-button size="small" @click="expandAll">Expand全部</b-button>
-      <b-button size="small" @click="collapseAll">Collapse全部</b-button>
-      <b-button size="small" @click="setExpand">Expand三级</b-button>
-      <b-button size="small" @click="checkAll">选择全部</b-button>
-      <b-button size="small" @click="uncheckAll">Cancel全选</b-button>
-      <b-button size="small" @click="setChecked">设置select1-2及以下</b-button>
+      <b-button size="small" @click="expandAll">Expand All</b-button>
+      <b-button size="small" @click="collapseAll">Collapse All</b-button>
+      <b-button size="small" @click="setExpand">Expand Level 3</b-button>
+      <b-button size="small" @click="checkAll">Select All</b-button>
+      <b-button size="small" @click="uncheckAll">Deselect All</b-button>
+      <b-button size="small" @click="setChecked">Select 1-2 and below</b-button>
       <b-button size="small" @click="setSelected">Single select 1-2-1</b-button>
-      <b-button size="small" @click="clear">清空Single select和Multi-select</b-button>
+      <b-button size="small" @click="clear">Clear single select and multi-select</b-button>
     </div>
     <div style="width: 300px">
       <b-tree ref="treeRef" :data="data" show-checkbox></b-tree>
@@ -60,7 +60,7 @@ function uncheckAll() {
   treeRef.value.uncheckAll()
 }
 function setChecked() {
-  // Default是获取了nodeKey索引，如有特殊判断，如id，则可以自Row根据flatState.find所有nodeKey值
+  // Default gets the nodeKey index. For special cases like id, you can search all nodeKey values from flatState
   treeRef.value.setChecked([5, 6])
 }
 function setSelected() {

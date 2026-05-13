@@ -63,53 +63,53 @@ Validation rules can be configured dynamically.
 | status-icon             | Whether to show validation result icon in the input                                                      | boolean        | —                        | false  |
 | validate (Date)-on-rule-change | Whether to trigger validation immediately after rules change                                                 | boolean        | —                        | true   |
 | size                    | Controls the size of components within this form                                                              | string         | large,default,small,mini | —      |
-| disabled                | Disable d该form内的所有component。若设置为 true，则form内component上的 disabled property不再生效       | —              | false                    |
+| disabled                | Disables all components within the form. If set to true, the disabled property on individual components inside the form will no longer take effect       | boolean              | false                    |
 
 ## Form Methods
 
 | Method Name        | Description                                                                                                                                                                 | Return Value                                                                   |
 | ------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------ |
-| validate (Date)      | 对整个form进行validation的method，parameter为一个Callback function。该Callback function会在validation结束后被call，并传入两个parameter：Whether to validation成功和未通过validation的字段。若不传入Callback function，则会返回一个 promise | Function(callback: Function(boolean, object))                            |
-| validate (Date)Field | 对部分form字段进行validation的method                                                                                                                                         | Function(props: array、string, callback: Function(errorMessage: string)) |
-| resetFields   | 对整个form进行reset，将所有字段值reset为Initial value并移除validation结果                                                                                                           | —                                                                        |
-| clearValidate (Date) | 移除form项的validation结果。传入待移除的form项的 prop property or 者 prop 组成的数组，如不传则移除整个form的validation结果                                                             | Function(props: array 、 string)                                         |
+| validate | Method to validate the entire form. The parameter is a callback function that is invoked after validation completes, receiving two parameters: whether validation succeeded and the fields that failed validation. If no callback is provided, it returns a promise | Function(callback: Function(boolean, object))                            |
+| validateField | Method to validate specific form fields                                                                                                                                         | Function(props: array / string, callback: Function(errorMessage: string)) |
+| resetFields   | Resets the entire form, restoring all field values to their initial values and removing validation results                                                                                                           | —                                                                        |
+| clearValidate | Removes validation results for form items. Pass the prop property of the form item(s) or an array of props; if not passed, removes validation results for the entire form                                                             | Function(props: array / string)                                         |
 
 ## Form Events
 
 | Method Name   | Description                   | Return Value                                                     |
 | -------- | ---------------------- | ---------------------------------------------------------- |
-| validate (Date) | 任一form项被validation后Trigger | 被validation的form项 prop 值，validationWhether to 通过，错误message（如果存在） |
+| validate | Triggers after any form item is validated | The prop value of the validated form item, whether validation passed, and the error message (if any) |
 
 ## FormItem Props
 
 | Parameter           | Description                                                                         | Type    | Options                          | Default |
 | -------------- | ---------------------------------------------------------------------------- | ------- | ------------------------------- | ------ |
-| prop           | form item model 字段，在use validate (Date)、resetFields method的情况下，该propertyYes必填的 | string  | 传入 Form component的 model 中的字段 | —      |
-| label          | tag文本                                                                     | string  | —                               | —      |
-| label-width    | form itemtag的的Width，e.g.  '80px'。支持 auto。                                 | string  | —                               | —      |
-| required       | Whether to 必填，如不设置，则会根据validation规则自动生成                                 | boolean | —                               | false  |
+| prop           | Form item model field; required when using validate or resetFields methods | string  | Field in the model passed to the Form component | —      |
+| label          | Label text                                                                     | string  | —                               | —      |
+| label-width    | Width of form item label, e.g. `'80px'`. Supports `auto`.                                 | string  | —                               | —      |
+| required       | Whether it is required. If not set, it will be auto-generated based on validation rules                                 | boolean | —                               | false  |
 | rules          | Form validation rules                                                                 | object  | —                               | —      |
-| error          | form itemvalidate错误信息, 设置该值会使formvalidate状态变为error，并Show该错误信息      | string  | —                               | —      |
+| error          | Form item validation error message. Setting this value will change the form validation state to error and display the error message      | string  | —                               | —      |
 | show-message   | Show validation error message                                                         | boolean | —                               | true   |
-| inline-message | 以行内形式展示validation信息                                                       | boolean | —                               | false  |
-| size           | Controls 该form item下component的size                                                 | string  | large,default,small,mini        | —      |
+| inline-message | Display validation messages inline                                                       | boolean | —                               | false  |
+| size           | Controls the size of components under this form item                                                 | string  | large,default,small,mini        | —      |
 
 ## FormItem Slot
 
 | Name    | Description           |
 | ------- | -------------- |
 | default | DefaultContent       |
-| label   | tag文本的Content |
+| label   | Label text content |
 
 ## FormItem Scoped Slot
 
 | Name  | Description                                           |
 | ----- | ---------------------------------------------- |
-| error | 自定义formvalidation信息的Show方式，parameter为 { error } |
+| error | Custom display of form validation info, parameter is { error } |
 
 ## FormItem Methods
 
 | Name          | Description                                                 |
 | ------------- | ---------------------------------------------------- |
-| resetField    | 对该form项进行reset，将其值reset为Initial value并移除validation结果 |
-| clearValidate (Date) | 移除该form项的validation结果                               |
+| resetField    | Resets this form item, restoring its value to the initial value and removing validation results |
+| clearValidate | Removes the validation result for this form item                               |

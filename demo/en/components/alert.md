@@ -6,7 +6,7 @@ title: Alert
 
 # Alert
 
-静态的展示一些区块，Tip or 者Warning，可以动态的去delete
+Statically display blocks for tips or warnings, which can be dynamically dismissed.
 
 ## Basic Usage
 
@@ -14,27 +14,27 @@ Simply insert content using the default slot.
 
 <preview path="./demo/Alert/Basic.vue"></preview>
 
-## 包含描述信息
+## With Description
 
-自定义`#desc`插入描述Content。
+Customize description content by inserting via `#desc`.
 
 <preview path="./demo/Alert/Desc.vue"></preview>
 
 ## icon
 
-根据 `type` property自动添加不同icon， or 者自定义icon `slot` 。
+Different icons are automatically added based on the `type` property, or you can customize icons via the `slot`.
 
 <preview path="./demo/Alert/Icon.vue"></preview>
 
 ## Can disable 
 
-设置property `closable` Can set Tip可Disable
+Set `closable` to make the alert dismissible
 
 <preview path="./demo/Alert/Close.vue"></preview>
 
-## 顶部公告style
+## Top Banner Style
 
-设置property `banner` 可以应用顶部公告的style。
+Set `banner` to apply a top banner style.
 
 <preview path="./demo/Alert/Banner.vue"></preview>
 
@@ -43,20 +43,20 @@ Simply insert content using the default slot.
 | Parameter      | Description         | Type    | Options                        | Default |
 | --------- | ------------ | ------- | ----------------------------- | ------ |
 | type      | WarningTipstyle | String  | info、success、warning、error | info   |
-| closable  | Whether to 可Disable   | Boolean | —                             | false  |
+| closable  | Whether it can be dismissed   | Boolean | —                             | false  |
 | show-icon | Whether to show icon | Boolean | —                             | false  |
 
 ## Events
 
 | Event Name | Description       | Return Value |
 | ------ | ---------- | ------ |
-| close  | Disable时Trigger | event  |
+| close  | Triggers when dismissed | event  |
 
 ## Slot
 
 | Name    | Description                   |
 | ------- | ---------------------- |
 | default | Warning/alert content           |
-| desc    | WarningTip辅助性文字介绍 |
-| icon    | 自定义iconContent         |
-| close   | 自定义DisableContent         |
+| desc    | Supplementary description text |
+| icon    | Custom icon content         |
+| close   | Custom close content         |

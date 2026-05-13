@@ -1,7 +1,7 @@
 <template>
   <div style="width: 500px">
     <b-form ref="ruleForm" :model="formObj" status-icon label-width="100px" :rules="ruleValidate">
-      <b-form-item prop="name" label="名称">
+      <b-form-item prop="name" label="Name">
         <b-input v-model="formObj.name" placeholder="Username"></b-input>
       </b-form-item>
       <b-form-item prop="mail" label="Email">
@@ -66,12 +66,12 @@ const ruleValidate = {
   name: [{ required: true, message: 'UsernameCannot be empty', trigger: 'blur' }],
   region: [{ required: true, message: 'HometownCannot be empty', trigger: 'change' }],
   age: [
-    { required: true, type: 'number', message: 'Age不为空', trigger: 'change' },
-    { type: 'number', min: 18, trigger: 'change', message: 'Age必须在18以上' }
+    { required: true, type: 'number', message: 'Age cannot be empty', trigger: 'change' },
+    { type: 'number', min: 18, trigger: 'change', message: 'Age must be 18 or above' }
   ],
-  hobby: [{ type: 'array', required: true, message: '请to少选择一个Hobby', trigger: 'change' }],
-  sex: [{ required: true, message: 'Gender必选', trigger: 'change' }],
-  birthday: [{ required: true, type: 'date', message: 'Birthday必选', trigger: 'blur' }],
+  hobby: [{ type: 'array', required: true, message: 'Please select at least one hobby', trigger: 'change' }],
+  sex: [{ required: true, message: 'Gender is required', trigger: 'change' }],
+  birthday: [{ required: true, type: 'date', message: 'Birthday is required', trigger: 'blur' }],
   mail: [
     { required: true, message: 'EmailCannot be empty', trigger: 'blur' },
     { type: 'email', message: 'EmailInvalid format', trigger: 'blur' }

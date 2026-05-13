@@ -19,7 +19,7 @@
       </b-form-item>
       <b-form-item>
         <b-button type="primary" @click="submitForm">Submit</b-button>
-        <b-button @click="addDomain">New增Domain</b-button>
+        <b-button @click="addDomain">Add Domain</b-button>
         <b-button @click="resetForm">Reset</b-button>
       </b-form-item>
     </b-form>

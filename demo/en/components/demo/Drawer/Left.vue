@@ -1,8 +1,8 @@
 <template>
   <div>
-    <b-button type="primary" @click="value = true">左侧Open</b-button>
+    <b-button type="primary" @click="value = true">Open from Left</b-button>
     <b-drawer v-model="value" title="drawerTitle" placement="left" width="500px">
-      <p>我是左侧的drawer</p>
+      <p>I am the left-side drawer</p>
     </b-drawer>
   </div>
 </template>

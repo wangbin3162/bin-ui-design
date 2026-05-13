@@ -14,9 +14,9 @@ Simply insert content using the default slot.
 
 <preview path="./demo/Empty/Basic.vue"></preview>
 
-## directive方式
+## Directive Usage
 
-可以usev-no-datadirective动态指定，并可以绑定Show文字
+Use the v-no-data directive for dynamic assignment, with customizable display text.
 
 <preview path="./demo/Empty/Directive.vue"></preview>
 
@@ -24,11 +24,11 @@ Simply insert content using the default slot.
 
 | Parameter  | Description     | Type   | Options | Default   |
 | ----- | -------- | ------ | ------ | -------- |
-| title | Show文字 | String | —      | is not data |
+| title | Display text | String | —      | is not data |
 
 ## Slot
 
 | Name    | Description                         |
 | ------- | ---------------------------- |
-| icon    | 可插入icon                   |
-| default | Defaultslot，可替换文字Showposition |
+| icon    | Insert custom icon                   |
+| default | Default slot, can replace text display area |

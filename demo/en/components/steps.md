@@ -6,35 +6,35 @@ title: Step Steps
 
 # Step Steps
 
-Tip某个任务的Step
+Shows the steps of a task.
 
 ## Basic Usage
 
-基本用法，component会根据current自动判断各Step状态。
+Basic usage. The component automatically determines the state of each step based on the current value.
 
 <preview path="./demo/Steps/Basic.vue"></preview>
 
-## 小型steps
+## Small Steps
 
-设置 `size="small"`EnableShow小型steps
+Set `size="small"` to display small steps
 
 <preview path="./demo/Steps/Small.vue"></preview>
 
 ## Customicon
 
-设置 `icon`自定义设置icon
+Set `icon` to customize icons
 
 <preview path="./demo/Steps/Icon.vue"></preview>
 
-## 竖型Step
+## Vertical Steps
 
-设置`direction="vertical"`Can enable 竖向的Step
+Set `direction="vertical"` to enable vertical steps
 
 <preview path="./demo/Steps/Vertical.vue"></preview>
 
-## 设置状态
+## Set Status
 
-基本用法，component会根据current自动判断各Step状态。
+Basic usage. The component automatically determines the state of each step based on the current value.
 
 <preview path="./demo/Steps/Status.vue"></preview>
 
@@ -42,24 +42,24 @@ Tip某个任务的Step
 
 | Parameter      | Description           | Type   | Options                                | Default     |
 | --------- | -------------- | ------ | ------------------------------------- | ---------- |
-| current   | 当前Step       | Number | —                                     | 0          |
-| status    | 当前Step的状态 | String | wait、process、finish、error、success | process    |
-| size      | 大小           | String | small                                 | —          |
-| direction | 方向           | String | horizontal（水平） or vertical（垂直）  | horizontal |
+| current   | Current step       | Number | —                                     | 0          |
+| status    | Current step status | String | wait、process、finish、error、success | process    |
+| size      | Size           | String | small                                 | —          |
+| direction | Direction           | String | horizontal or vertical  | horizontal |
 
 ## Step Props
 
 | Parameter    | Description           | Type   | Options                                | Default  |
 | ------- | -------------- | ------ | ------------------------------------- | ------- |
 | title   | Title           | String | —                                     | —       |
-| status  | 当前Step的状态 | String | wait、process、finish、error、success | process |
-| content | 详细Content(可选) | String | —                                     | —       |
-| icon    | 自定义icon     | String | —                                     | —       |
+| status  | Current step status | String | wait、process、finish、error、success | process |
+| content | Detailed content (optional) | String | —                                     | —       |
+| icon    | Custom icon     | String | —                                     | —       |
 
 ## Step Slot
 
 | Event Name  | Description       |
 | ------- | ---------- |
 | title   | Title       |
-| content | 详细Content   |
-| icon    | 自定义icon |
+| content | Detailed content   |
+| icon    | Custom icon |

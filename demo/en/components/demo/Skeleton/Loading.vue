@@ -20,11 +20,11 @@
         <div style="width: 350px">
           <div flex="cross:center" style="margin-bottom: 8px">
             <b-skeleton-item variant="circle" style="width: 36px; margin-right: 8px" />
-            <div style="width: 200px">用户Info</div>
+            <div style="width: 200px">User Info</div>
           </div>
-          <p>用户InfoContent</p>
-          <p>用户InfoContent</p>
-          <p>用户InfoContent</p>
+          <p>User Info Content</p>
+          <p>User Info Content</p>
+          <p>User Info Content</p>
           <p>{{ currentDate }}</p>
         </div>
       </template>

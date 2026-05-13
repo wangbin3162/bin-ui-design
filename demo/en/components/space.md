@@ -6,7 +6,7 @@ title: Space
 
 # Space
 
-Can set component和不同dom之间的spacing，Sets 相同间隔，方便use
+Sets spacing between components and different DOM elements with consistent intervals for easy use.
 
 ## Basic Usage
 
@@ -16,15 +16,15 @@ Can set component和不同dom之间的spacing，Sets 相同间隔，方便use
 
 <preview path="./demo/Space/Vertical.vue"></preview>
 
-## spacing大小
+## Spacing Size
 
 <preview path="./demo/Space/Size.vue"></preview>
 
-## 任意数字大小
+## Custom Number Size
 
 <preview path="./demo/Space/Number.vue"></preview>
 
-## 换行
+## Wrap
 
 <preview path="./demo/Space/Wrap.vue"></preview>
 
@@ -34,7 +34,7 @@ Can set component和不同dom之间的spacing，Sets 相同间隔，方便use
 
 ## Alignment
 
-设置该值可以调整所有子节点在容器内的Alignment, 可设置的值与 [align-items](https://developer.mozilla.org/zh-CN/docs/Web/CSS/align-items) 一致
+Set this value to adjust the alignment of all child nodes within the container. Available values are consistent with [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items).
 
 <preview path="./demo/Space/Align.vue"></preview>
 
@@ -42,17 +42,17 @@ Can set component和不同dom之间的spacing，Sets 相同间隔，方便use
 
 | Parameter      | Description                      | Type                                      | Options              | Default     |
 | --------- | ------------------------- | ----------------------------------------- | ------------------- | ---------- |
-| alignment | alignment的方式                | String                                    | -                   | 'center'   |
-| class     | 类名                      | String / Array<Object \| String> / Object | -                   | -          |
-| direction | 排列的方向                | String                                    | vertical/horizontal | horizontal |
-| prefixCls | 给 space-items 的类名前缀 | String                                    | bin-space           | -          |
-| style     | 额外style                  | String / Array<Object \| String> / Object | -                   | -          |
-| spacer    | 间隔符                    | String / Number / VNode                   | -                   | -          |
-| size      | 间隔大小                  | String / Number / [Number, Number]        | -                   | 'small'    |
-| wrap      | 设置Whether to 自动折行          | Boolean                                   | true / false        | false      |
+| alignment | Alignment mode                | String                                    | -                   | 'center'   |
+| class     | Class name                      | String / Array<Object \| String> / Object | -                   | -          |
+| direction | Arrangement direction                | String                                    | vertical/horizontal | horizontal |
+| prefixCls | Class name prefix for space-items | String                                    | bin-space           | -          |
+| style     | Additional styles                  | String / Array<Object \| String> / Object | -                   | -          |
+| spacer    | Spacer                    | String / Number / VNode                   | -                   | -          |
+| size      | Spacing size                  | String / Number / [Number, Number]        | -                   | 'small'    |
+| wrap      | Whether to auto wrap          | Boolean                                   | true / false        | false      |
 
 ## Space Slot
 
 | name    | Description               |
 | ------- | ------------------ |
-| default | 需要添加间隔的元素 |
+| default | Elements to which spacing should be added |

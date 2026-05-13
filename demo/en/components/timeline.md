@@ -1,34 +1,34 @@
 ---
-title: 时间线 Timeline
+title: Timeline
 ---
 
 <b-back-top></b-back-top>
 
-# 时间线 Timeline
+# Timeline
 
-时间线component
+Timeline component.
 
 ## Basic Usage
 
-简单定义一个timeline的method
+A simple way to define a timeline
 
 <preview path="./demo/Timeline/Basic.vue"></preview>
 
-## 设置color
+## Set Color
 
-用各种color来标识不同状态，可以usesuccess、info、warning, danger or 自定义的color，Defaultis primary 。
+Use various colors to indicate different states. You can use success, info, warning, danger, or a custom color. The default is primary.
 
 <preview path="./demo/Timeline/Color.vue"></preview>
 
-## 最后一个节点设置
+## Last Node Setting
 
-通过添加`pending`property来标记最后一个为节点
+Add the `pending` property to mark the last node
 
 <preview path="./demo/Timeline/Pending.vue"></preview>
 
-## Custom节点icon
+## Custom Node Icon
 
-Defaults to 空心远点，可以自定义轴点icon
+Defaults to a hollow circle; you can customize the axis point icon
 
 <preview path="./demo/Timeline/CustomIcon.vue"></preview>
 
@@ -36,18 +36,18 @@ Defaults to 空心远点，可以自定义轴点icon
 
 | Parameter    | Description                 | Type    | Options | Default |
 | ------- | -------------------- | ------- | ------ | ------ |
-| pending | 指定Whether to 最后一个节点 | Boolean | —      | false  |
+| pending | Specifies whether it is the last node | Boolean | —      | false  |
 
 ## TimelineItem Props
 
 | Parameter    | Description        | Type   | Options                                               | Default  |
 | ------- | ----------- | ------ | ---------------------------------------------------- | ------- |
-| color   | 圆圈color    | String | primary,success,info,warning,danger, or 者自定义color值 | primary |
-| dot-top | dot顶部offset | String | 自定义dot距离顶部的offset量                            | —       |
+| color   | Circle color    | String | primary,success,info,warning,danger, or custom color value | primary |
+| dot-top | Dot top offset | String | Custom offset from the dot to the top                            | —       |
 
 ## TimelineItem Slot
 
 | Name    | Description               |
 | ------- | ------------------ |
-| default | 基本Content           |
-| dot     | 自定义timeline点Content |
+| default | Basic content           |
+| dot     | Custom timeline dot content |

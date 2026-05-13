@@ -6,35 +6,35 @@ title: Skeleton
 
 # Skeleton
 
-在需要等待loadingContent的position设置一个skeleton，某些场景下比 Loading 的视觉效果更好。
+Place a skeleton where content is loading. In some scenarios, it provides a better visual experience than a loading spinner.
 
 ## Basic Usage
 
-基础的骨架效果
+Basic skeleton effect.
 
 <preview path="./demo/Skeleton/Basic.vue"></preview>
 
-## 更多parameter
+## More Parameters
 
-可以configurationskeleton段落数量，以便更接近真实render效果。Show的数量会比传入的数量多 1，首行会被render一个长度 33% 的段首。
+Configure the number of skeleton paragraph rows to more closely match the real rendering. The displayed count will be one more than the number passed in; the first row is rendered as a leading paragraph at 33% width.
 
 <preview path="./demo/Skeleton/Rows.vue"></preview>
 
-## animation效果
+## Animation Effect
 
-Can display animation效果
+Can display animation effects.
 
 <preview path="./demo/Skeleton/Animation.vue"></preview>
 
 ## Custom
 
-可以useslotslot来自己设定模板，可以根据真实dom来构建差不多的骨架
+Use slots to define custom templates, allowing you to build a skeleton that closely matches the real DOM structure.
 
 <preview path="./demo/Skeleton/Custom.vue"></preview>
 
 ## Loading loading
 
-loading结束后loading真实的ui，通过slot设置之后的ui
+After loading completes, display the real UI via the slot.
 
 <preview path="./demo/Skeleton/Loading.vue"></preview>
 
@@ -43,20 +43,20 @@ loading结束后loading真实的ui，通过slot设置之后的ui
 | Parameter     | Description                                        | Type    | Options       | Default |
 | -------- | ------------------------------------------- | ------- | ------------ | ------ |
 | animated | Whether to useanimation                                | boolean | true / false | false  |
-| count    | render多少个 template, 建议use尽可能小的数字 | number  | integer      | 1      |
-| loading  | Whether to show 真实的 DOM 结构                     | boolean | true / false | false  |
-| rows     | skeleton段落数量                              | number  | 正整数       | 3      |
-| throttle | 延迟占位 DOM render的时间, 单位Yes毫秒         | number  | 正整数       | 0      |
+| count    | Number of templates to render; use the smallest number possible | number  | integer      | 1      |
+| loading  | Whether to show the real DOM structure                     | boolean | true / false | false  |
+| rows     | Number of skeleton paragraph rows                              | number  | Positive integer       | 3      |
+| throttle | Delay before rendering the placeholder DOM, in milliseconds         | number  | Positive integer       | 0      |
 
 ## Skeleton Item Attributes
 
 | Parameter    | Description                     | Type         | Options                                                                    | Default |
 | ------- | ------------------------ | ------------ | ------------------------------------------------------------------------- | ------ |
-| variant | 当前Show的占位元素的style | Enum(string) | p / text / h1 / h2 / h5 / text / caption / button / image / circle / rect | text   |
+| variant | Style of the currently displayed placeholder element | Enum(string) | p / text / h1 / h2 / h5 / text / caption / button / image / circle / rect | text   |
 
 ## Skeleton Slots
 
 | name     | description          |
 | -------- | -------------------- |
-| default  | 用来展示真实 UI      |
-| template | 用来展示自定义占位符 |
+| default  | Used to display the real UI      |
+| template | Used to display custom placeholders |

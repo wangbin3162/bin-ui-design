@@ -27,25 +27,25 @@ Simply insert content using the default slot.
 | Parameter                     | Description                                                                    | Type    | Options | Default                                   |
 | ------------------------ | ----------------------------------------------------------------------- | ------- | ------ | ---------------------------------------- |
 | value / v-model          | Bound value                                                                  | number  | —      | 0                                        |
-| max                      | 最大分值                                                                | number  | —      | 5                                        |
-| disabled                 | Whether to 为readonly                                                              | boolean | —      | false                                    |
-| allow-half               | Whether to 允许半选                                                            | boolean | —      | false                                    |
-| low-threshold            | 低分和中等分数的界限值，值本身被划分在低分中                            | number  | —      | 2                                        |
-| high-threshold           | 高分和中等分数的界限值，值本身被划分在高分中                            | number  | —      | 4                                        |
-| colors                   | icon 的color数组，共有 3 个元素，为 3 个分段所对应的color                 | array   | —      | ['#F7BA2A', '#F7BA2A', '#F7BA2A']        |
-| void-color               | 未select icon 的color                                                      | string  | —      | #C6D1DE                                  |
-| disabled-void-color      | readonly时未select icon 的color                                                | string  | —      | #EFF2F7                                  |
-| icon-classes             | icon 的类名数组，共有 3 个元素，为 3 个分段所对应的类名                 | array   | —      | ['star', 'star', 'star']                 |
-| void-icon-class          | 未select icon 的类名                                                      | string  | —      | star                                     |
-| disabled-void-icon-class | readonly时未select icon 的类名                                                | string  | —      | star                                     |
-| show-text                | Whether to show 辅助文字，若为真，则会从 texts 数组中选取当前分数对应的Text content | boolean | —      | false                                    |
-| show-score               | Whether to show 当前分数，show-score 和 show-text 不能同时为真                  | boolean | —      | false                                    |
-| text-color               | 辅助文字的color                                                          | string  | —      | #1F2D3D                                  |
-| texts                    | 辅助文字数组                                                            | array   | —      | ['极差', '失望', '一般', '满意', '惊喜'] |
-| score-template           | 分数Show模板                                                            | string  | —      | {value}                                  |
+| max                      | Maximum score                                                                | number  | —      | 5                                        |
+| disabled                 | Whether read-only                                                              | boolean | —      | false                                    |
+| allow-half               | Whether to allow half selection                                                            | boolean | —      | false                                    |
+| low-threshold            | Threshold between low and medium scores; the value itself falls into the low category                            | number  | —      | 2                                        |
+| high-threshold           | Threshold between high and medium scores; the value itself falls into the high category                            | number  | —      | 4                                        |
+| colors                   | Icon color array with 3 elements, corresponding to 3 score levels                 | array   | —      | ['#F7BA2A', '#F7BA2A', '#F7BA2A']        |
+| void-color               | Color of unselected icons                                                      | string  | —      | #C6D1DE                                  |
+| disabled-void-color      | Color of unselected icons when read-only                                                | string  | —      | #EFF2F7                                  |
+| icon-classes             | Icon class name array with 3 elements, corresponding to 3 score levels                 | array   | —      | ['star', 'star', 'star']                 |
+| void-icon-class          | Class name of unselected icons                                                      | string  | —      | star                                     |
+| disabled-void-icon-class | Class name of unselected icons when read-only                                                | string  | —      | star                                     |
+| show-text                | Whether to show auxiliary text. If true, the text content corresponding to the current score is selected from the texts array | boolean | —      | false                                    |
+| show-score               | Whether to show current score. show-score and show-text cannot both be true                  | boolean | —      | false                                    |
+| text-color               | Color of auxiliary text                                                          | string  | —      | #1F2D3D                                  |
+| texts                    | Auxiliary text array                                                            | array   | —      | ['Terrible', 'Disappointed', 'Average', 'Satisfied', 'Amazing'] |
+| score-template           | Score display template                                                            | string  | —      | {value}                                  |
 
 ## Events
 
 | Event Name | Description           | Callback Parameters     |
 | -------- | -------------- | ------------ |
-| change   | 分值改变时Trigger | 改变后的分值 |
+| change   | Triggers when score changes | Changed score |

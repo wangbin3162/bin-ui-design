@@ -71,7 +71,7 @@ const getColorPane = color => Utils.color.getPalette(color)
 const copyColor = color => Utils.util.copy(color)
 </script>
 
-## 主色
+## Primary Colors
 
 <div class="color-wrap">
   <div

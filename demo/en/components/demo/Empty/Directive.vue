@@ -6,5 +6,5 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-const dataText = ref('抱歉，暂时没有数据')
+const dataText = ref('Sorry, no data available at the moment')
 </script>

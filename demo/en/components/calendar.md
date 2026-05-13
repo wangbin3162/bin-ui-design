@@ -8,13 +8,13 @@ title: calendarcomponent Calendar
 
 ## Basic Usage
 
-简单的calendarcomponentUsed for 装饰页面
+A simple calendar component for decorating pages
 
 <preview path="./demo/Calendar/Basic.vue"></preview>
 
 ## miniShow
 
-简单的calendarcomponentUsed for 装饰页面
+A simple calendar component for decorating pages
 
 <preview path="./demo/Calendar/Mini.vue"></preview>
 
@@ -22,17 +22,17 @@ title: calendarcomponent Calendar
 
 | Parameter        | Description                  | Type    | Options            | Default |
 | ----------- | --------------------- | ------- | ----------------- | ------ |
-| grid-height | 日期Height，不填Default 80 | String  | —                 | 80px   |
-| text-align  | 日期对其方式          | String  | left center right | left   |
-| mini        | 迷你Mode              | Boolean | l—                | —      |
-| body-style  | 日期表bodystyle        | Object  | —                 | —      |
-| day-style   | 每天style              | Object  | —                 | —      |
+| grid-height | Date cell height, default 80 if not set | String  | —                 | 80px   |
+| text-align  | Date text alignment          | String  | left center right | left   |
+| mini        | Mini mode              | Boolean | —                | —      |
+| body-style  | Date table body style        | Object  | —                 | —      |
+| day-style   | Per-day style              | Object  | —                 | —      |
 
 ## Events
 
 | Event Name   | Description           | Return Value |
 | -------- | -------------- | ------ |
-| prev     | 上个月buttonevent | —      |
-| next     | 下个月buttonevent | —      |
-| today    | 今天buttonevent   | —      |
-| selected | Selected某一天event | day    |
+| prev     | Previous month button event | —      |
+| next     | Next month button event | —      |
+| today    | Today button event   | —      |
+| selected | Event when a day is selected | day    |

@@ -3,12 +3,12 @@
     <div flex="main:justify box:mean">
       <div style="padding: 0 10px">
         <b-card class="box-card" header="cardTitle" :bordered="false">
-          <div>bordered 设置是否含有border</div>
+          <div>bordered controls whether to show a border</div>
         </b-card>
       </div>
       <div style="padding: 0 10px">
         <b-card class="box-card" header="cardTitle" radius="10px">
-          <div>radius 设置border radius弧度</div>
+          <div>radius sets the border radius value</div>
         </b-card>
       </div>
     </div>

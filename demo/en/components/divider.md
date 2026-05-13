@@ -6,23 +6,23 @@ title: Divider
 
 # Divider
 
-区隔Content的divider。可以对对不同文本段落进行分割。可以对行内文字/link进行分割。
+A divider for separating content. Can separate different text paragraphs, inline text, and links.
 
-## 水平divider
+## Horizontal Divider
 
-Default is 水平divider，可在中间加入文字。 可以Yes虚线
+The default is a horizontal divider. Text can be placed in the middle. Dashed lines are supported.
 
 <preview path="./demo/Divider/Basic.vue"></preview>
 
 ## Verticaldivider
 
-use type="vertical" 设置为行内的垂直divider。
+Use type="vertical" to set an inline vertical divider.
 
 <preview path="./demo/Divider/Vertical.vue"></preview>
 
 ## Titleposition
 
-alignpropertyCan set Titleposition use align="left" 设置为行内的垂直divider。
+The `align` property sets the title position. Use align="left" for left-aligned title.
 
 <preview path="./demo/Divider/Align.vue"></preview>
 
@@ -30,6 +30,6 @@ alignpropertyCan set Titleposition use align="left" 设置为行内的垂直divi
 
 | Parameter   | Description             | Type    | Options                | Default     |
 | ------ | ---------------- | ------- | --------------------- | ---------- |
-| type   | 水平还Yes垂直Type | String  | horizontal / vertical | horizontal |
-| align  | dividerTitle的position | String  | left / right / center | center     |
-| dashed | Whether to 虚线         | Boolean | false / true          | false      |
+| type   | Horizontal or vertical type | String  | horizontal / vertical | horizontal |
+| align  | Divider title position | String  | left / right / center | center     |
+| dashed | Whether to use dashed line         | Boolean | false / true          | false      |

@@ -6,29 +6,29 @@ title: messageTip Message
 
 # messageTip Message
 
-轻量级的信息反馈component，在顶部centerShow，并自动消失。有多种不同的Tip状态可选择。
+A lightweight information feedback component that appears centered at the top and disappears automatically. Multiple tip states are available.
 
 ## Basic Usage
 
-基本用法，Default在 3 秒后Disable
+Basic usage, closes automatically after 3 seconds by default.
 
 <preview path="./demo/Message/Basic.vue"></preview>
 
-## 不同类别
+## Different Types
 
-用来Show「成功、Warning、message、错误」类的操作反馈。
+Used to show operation feedback for "success, warning, info, error" categories.
 
 <preview path="./demo/Message/Types.vue"></preview>
 
-## 其他parameter
+## Other Parameters
 
-Can set configurationparameter来render
+Can set configuration parameters for rendering
 
 <preview path="./demo/Message/Options.vue"></preview>
 
-## 手动Disable
+## Manual Close
 
-可以callMessage模块的 `closeAll()` 函数来手动Disable
+You can call the `closeAll()` function from the Message module to manually close all messages.
 
 <preview path="./demo/Message/Close.vue"></preview>
 
@@ -47,14 +47,14 @@ Message.warning(options)
 Message.error(options)
 ```
 
-## Options 对象
+## Options Object
 
 | Function      | Description                                                                         | Type     | Default |
 | --------- | ---------------------------------------------------------------------------- | -------- | ------ |
-| message   | notice提醒的Content                                                               | String   | —      |
-| duration  | 自动Disable的延时，单位秒，不Disable可以写 0                                       | Number   | 3      |
-| onClose   | Disable时的Callback                                                                 | Function | —      |
-| showClose | Whether to show Disablebutton                                                             | Boolean  | true   |
-| useHTML   | Whether to 将message转换成HTML片段插入，此操作需谨慎                                | Boolean  | false  |
-| offset    | 距离顶部的offset量，设置后可以固定某个message距离窗口顶部的position（不进行向下追加） | Number   | —      |
-| zIndex    | Z-index level，Default2000以后追加                                                       | Number   | —      |
+| message   | Notice content                                                               | String   | —      |
+| duration  | Auto-close delay in seconds. Set to 0 to disable auto-close                                       | Number   | 3      |
+| onClose   | Callback when closed                                                                 | Function | —      |
+| showClose | Whether to show close button                                                             | Boolean  | true   |
+| useHTML   | Whether to insert the message as an HTML fragment. Use with caution                                | Boolean  | false  |
+| offset    | Offset from the top. Setting this fixes a message at a specific position from the window top (no downward stacking) | Number   | —      |
+| zIndex    | Z-index level, incrementing from 2000 by default                                                       | Number   | —      |

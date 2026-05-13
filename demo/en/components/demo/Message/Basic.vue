@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-button @click="message1">info</b-button>
-    <b-button @click="message2">render函数</b-button>
+    <b-button @click="message2">render function</b-button>
   </div>
 </template>
 
@@ -10,7 +10,7 @@ import { h } from 'vue'
 import { Message } from 'bin-ui-design'
 
 function message1() {
-  Message('普通的MessageWarning！')
+  Message('A normal message notification!')
 }
 
 function message2() {

@@ -1,7 +1,7 @@
 <template>
   <b-config-provider abstract :theme="config">
     <b-button type="primary" @click="setGlobal">
-      click应用（应用后主color会变更，会影响global）
+      Click to apply (primary color will change, affecting global)
     </b-button>
   </b-config-provider>
 </template>

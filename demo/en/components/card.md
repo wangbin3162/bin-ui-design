@@ -6,23 +6,23 @@ title: Card
 
 # Card
 
-按照一个区块来展示
+Display content in a card block.
 
 ## Basic Usage
 
-头部可以 Enable高亮Tip，如不需要头部则不用插入header Can enable `head-tip`来高亮header的前头
+The header can enable a highlight tip. If no header is needed, omit the header slot. You can enable `head-tip` to highlight the front of the header.
 
 <preview path="./demo/Card/Basic.vue"></preview>
 
-## DefaultTitle和divider
+## Default Title and Divider
 
-直接传入header可以生成DefaultTitle,configurationdivider="no"可以消除DefaultTitle和Content的divider
+Passing a header directly generates a default title; set `divider="no"` to remove the divider between the default title and content.
 
 <preview path="./demo/Card/TitleDivider.vue"></preview>
 
-## Border和border radius
+## Border and Border Radius
 
-无border适合在有background的情况下use
+No border is suitable when used with a background.
 
 <preview path="./demo/Card/BorderRadius.vue"></preview>
 
@@ -34,12 +34,12 @@ title: Card
 
 | Parameter       | Description                              | Type    | Options                 | Default |
 | ---------- | --------------------------------- | ------- | ---------------------- | ------ |
-| header     | 设置 header，也可以已slot形式插入 | String  | —                      | —      |
-| body-style | 设置 body 的style                  | Object  | —                      | —      |
-| shadow     | shadow的Show                        | String  | always / hover / never | hover  |
-| bordered   | 设置Whether to 有border                    | Boolean | false                  | true   |
-| width      | 设置cardDefaultWidth                  | String  | —                      | 100%   |
-| radius     | 设置border radius值                        | String  | 0 / percentage / px      | 4px    |
-| divider    | header和body之间的divider          | String  | no / has               | has    |
-| head-tip   | 头部的高亮Tip                    | Boolean | true / false           | false  |
-| bg-color   | 整体的background色                      | String  | —                      | #fff   |
+| header     | Set header, can also be inserted via slot | String  | —                      | —      |
+| body-style | Set body styles                  | Object  | —                      | —      |
+| shadow     | Shadow display                        | String  | always / hover / never | hover  |
+| bordered   | Whether to show border                    | Boolean | false                  | true   |
+| width      | Set default card width                  | String  | —                      | 100%   |
+| radius     | Set border radius value                        | String  | 0 / percentage / px      | 4px    |
+| divider    | Divider between header and body          | String  | no / has               | has    |
+| head-tip   | Highlight tip for header                    | Boolean | true / false           | false  |
+| bg-color   | Overall background color                      | String  | —                      | #fff   |

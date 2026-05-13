@@ -1,7 +1,7 @@
 <template>
   <div>
     <div style="margin-bottom: 10px">Input content：{{ value }}</div>
-    <b-input v-model="value" placeholder="Please enter一些文字..." class="input-item"></b-input>
+    <b-input v-model="value" placeholder="Please enter some text..." class="input-item"></b-input>
   </div>
 </template>
 

@@ -6,7 +6,7 @@ title: Checkbox
 
 # Checkbox
 
-基本component-checkboxes。主要Used for 一组可option多项选择， or 者单独Used for 标记切换某种状态。
+Basic checkboxes. Mainly used for multiple selection from a group of options, or used individually to toggle a state.
 
 ## Basic Usage
 
@@ -24,9 +24,9 @@ title: Checkbox
 
 <preview path="./demo/Checkbox/All.vue"></preview>
 
-## Restrictions数量
+## Limit Count
 
-可以控制被check的数量限制
+Control the limit on the number of checked items
 
 <preview path="./demo/Checkbox/Limit.vue"></preview>
 
@@ -34,30 +34,30 @@ title: Checkbox
 
 | Parameter          | Description                                                            | Type                  | Options | Default |
 | ------------- | --------------------------------------------------------------- | --------------------- | ------ | ------ |
-| modelValue    | 只在单独use时有效。可以use v-model 双向绑定数据               | Boolean               | —      | false  |
-| label         | 组合use时有效。指定当前option的 value 值，组合会自动判断Whether to select | String/Number/Boolean | —      | —      |
-| disabled      | Disable d当前项                                                  | Boolean               | —      | false  |
-| true-label    | select值                                                          | String、Number        | —      | —      |
-| false-label   | 没select的值                                                      | String、Number        | —      | —      |
-| indeterminate | 设置 indeterminate 状态，只负责style控制                         | Boolean               | —      | false  |
+| modelValue    | Only effective when used alone. Use v-model for two-way binding               | Boolean               | —      | false  |
+| label         | Effective when used in a group. Specifies the value of the current option; the group automatically determines whether it is selected | String/Number/Boolean | —      | —      |
+| disabled      | Disables the current item                                                  | Boolean               | —      | false  |
+| true-label    | Selected value                                                          | String、Number        | —      | —      |
+| false-label   | Unselected value                                                      | String、Number        | —      | —      |
+| indeterminate | Set indeterminate state, only responsible for style control                         | Boolean               | —      | false  |
 
 ## Checkbox events
 
 | Event Name | Description                                                                           | Return Value     |
 | ------ | ------------------------------------------------------------------------------ | ---------- |
-| change | 只在单独use时有效。在option状态发生改变时Trigger，通过modify外部的数据改变时不会Trigger | true/false |
+| change | Only effective when used alone. Triggers when option state changes; will not trigger when external data is modified | true/false |
 
 ## CheckboxGroup props
 
 | Parameter     | Description                                              | Type           | Options | Default |
 | -------- | ------------------------------------------------- | -------------- | ------ | ------ |
-| value    | 指定select项目的集合，可以use v-model 双向绑定数据 | String/ Number | —      | ''     |
-| disabled | Disable d所有option                                  | Boolean        | —      | false  |
-| min      | 最小数量                                          | Number         | —      | —      |
-| max      | 最大数量                                          | Number         | —      | —      |
+| value    | Specifies the set of selected items; use v-model for two-way binding | String/ Number | —      | ''     |
+| disabled | Disables all options                                  | Boolean        | —      | false  |
+| min      | Minimum count                                          | Number         | —      | —      |
+| max      | Maximum count                                          | Number         | —      | —      |
 
 ## CheckboxGroup events
 
 | Event Name | Description                                                                         | Return Value |
 | ------ | ---------------------------------------------------------------------------- | ------ |
-| change | 在option状态发生改变时Trigger，返回已select的数组。通过modify外部的数据改变时不会Trigger | [...]  |
+| change | Triggers when option state changes, returns an array of selected items. Will not trigger when external data is modified | [...]  |

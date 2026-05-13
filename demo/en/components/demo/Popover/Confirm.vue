@@ -1,6 +1,6 @@
 <template>
   <b-popover v-model:visible="visible" :width="240">
-    <b-button type="danger" plain>Confirmpopover框</b-button>
+    <b-button type="danger" plain>Confirm popover</b-button>
     <template #content>
       <p>
         <b-icon name="question-circle" size="16" color="#f5222d"></b-icon>
@@ -22,10 +22,10 @@ const visible = ref(false)
 
 function ok() {
   visible.value = false
-  Message('click了 [Confirm]')
+  Message('Clicked [Confirm]')
 }
 function cancel() {
   visible.value = false
-  Message('click了 [Cancel]')
+  Message('Clicked [Cancel]')
 }
 </script>

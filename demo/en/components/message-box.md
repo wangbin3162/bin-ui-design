@@ -55,5 +55,5 @@ Message.confirm(options)
 | showConfirmButton | Whether to show the confirm button                                                                       | Boolean                | true                 |
 | cancelText        | Cancel button text                                                                           | String                 | cancel                 |
 | confirmText       | Confirm button text                                                                           | String                 | Confirm                 |
-| maskClosable      | Whether clicking the mask closes the dialog                                                                   | Boolean                | true ,alert时为false |
-| escClosable       | Whether pressing ESC closes the dialog                                                                            | Boolean                | true ,alert时为false |
+| maskClosable      | Whether clicking the mask closes the dialog                                                                   | Boolean                | true, false for alert |
+| escClosable       | Whether pressing ESC closes the dialog                                                                            | Boolean                | true, false for alert |

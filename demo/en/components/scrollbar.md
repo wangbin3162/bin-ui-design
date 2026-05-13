@@ -1,49 +1,49 @@
 ---
-title: 滚动component Scrollbar
+title: Scrollbar
 ---
 
 <b-back-top></b-back-top>
 
-# 滚动component Scrollbar
+# Scrollbar
 
-由于Default浏览器scrollbar极为丑陋切不同浏览器之间style不统一，故封装一个滚动componentUsed for 实现滚动
+Since default browser scrollbars are unattractive and inconsistent across different browsers, this scroll component is provided for implementing scrolling.
 
 ## Basic Usage
 
-use`b-scrollbar`进行包裹，Default`slot`为ContentShow区域,如当前示例所包含的滚动结构如下:
+Wrap content with `b-scrollbar`; the default `slot` is the content display area. The scroll structure of the current example is as follows:
 
 <preview path="./demo/Scrollbar/Basic.vue"></preview>
 
-Note：如果Content区域不超过容器Height则不会生成scrollbar
+Note: If the content area does not exceed the container height, no scrollbar will be generated.
 
-## 始终Show
+## Always Show
 
-use`always`可以让scrollbar始终Show出来
+Use `always` to keep the scrollbar always visible
 
 <preview path="./demo/Scrollbar/Always.vue"></preview>
 
-## 定制scrollbar的style
+## Custom Scrollbar Styles
 
-可以借助不同的props来定制scrollbar的style，也可以usecss来实现stylemodify。
+You can customize scrollbar styles using different props, or use CSS for style modifications.
 
 <preview path="./demo/Scrollbar/Custom.vue"></preview>
 
-## Note事项
+## Notes
 
-- b-scrollbar的父层要有固定Height
-- b-scrollbar的Height要设成100%
-- 如果appear横scrollbar，请添加css（.bin-scrollbar\_\_wrap{overflow-x:hidden;}）
+- The parent layer of b-scrollbar must have a fixed height
+- The height of b-scrollbar must be set to 100%
+- If a horizontal scrollbar appears, add CSS (.bin-scrollbar\_\_wrap{overflow-x:hidden;})
 
 ## Props
 
 | Parameter         | Description                                                    | Type    | Options | Default |
 | ------------ | ------------------------------------------------------- | ------- | ------ | ------ |
-| native       | Whether to 采用原生滚动 (Hide原生scrollbar)                       | Boolean | true   | false  |
-| always       | Whether to 一直Show，而非hover to show                              | Boolean | true   | false  |
-| wrapStyle    | 内联方式 自定义wrap容器的style                           | Object  | -      | {}     |
-| wrapClass    | 类名方式 自定义wrap容器的style                           | Object  | -      | {}     |
-| viewClass    | 类名方式 自定义view容器的style                           | Object  | -      | {}     |
-| viewStyle    | 内联方式 自定义view容器的style                           | Object  | -      | {}     |
-| barStyle     | scrollbarthumbstyle                                         | Object  | -      | {}     |
-| barWrapStyle | scrollbarbarstyle                                           | Object  | -      | {}     |
-| noresize     | 如果 container size不会发生变化，最好设置它可以优化性能 | Boolean | true   | false  |
+| native       | Whether to use native scrolling (hide native scrollbar)                       | Boolean | true   | false  |
+| always       | Whether to always show, rather than show on hover                              | Boolean | true   | false  |
+| wrapStyle    | Inline style for custom wrap container                           | Object  | -      | {}     |
+| wrapClass    | Class name for custom wrap container style                           | Object  | -      | {}     |
+| viewClass    | Class name for custom view container style                           | Object  | -      | {}     |
+| viewStyle    | Inline style for custom view container                           | Object  | -      | {}     |
+| barStyle     | Scrollbar thumb style                                         | Object  | -      | {}     |
+| barWrapStyle | Scrollbar bar style                                           | Object  | -      | {}     |
+| noresize     | If the container size does not change, setting this to true can optimize performance | Boolean | true   | false  |

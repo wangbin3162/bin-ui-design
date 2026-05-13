@@ -1,5 +1,5 @@
 <template>
   <b-affix :offset="80">
-    <b-button type="primary">固定在顶部80的position</b-button>
+    <b-button type="primary">Fixed at 80px from the top</b-button>
   </b-affix>
 </template>

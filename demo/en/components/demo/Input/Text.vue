@@ -8,7 +8,7 @@
       ></b-input>
     </div>
     <div class="input-item">
-      <b-input type="textarea" :rows="4" placeholder="Disabled拖动，Default4Row" no-resize></b-input>
+      <b-input type="textarea" :rows="4" placeholder="Resize disabled, default 4 rows" no-resize></b-input>
     </div>
   </div>
 </template>

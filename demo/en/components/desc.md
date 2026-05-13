@@ -1,22 +1,22 @@
 ---
-title: 描述 Desc
+title: Desc
 ---
 
 <b-back-top></b-back-top>
 
-# 描述 Desc
+# Desc
 
-按照一个区块来展示一些描述详情
+Display descriptive details in a block layout.
 
 ## Basic Usage
 
-日常Show列表的Showcomponent
+A component for displaying list details in daily use.
 
 <preview path="./demo/Desc/Basic.vue"></preview>
 
 ## Sizes
 
-Can display 不同size的信息
+Can display information in different sizes
 
 <preview path="./demo/Desc/Size.vue"></preview>
 
@@ -24,29 +24,29 @@ Can display 不同size的信息
 
 | Parameter        | Description                                 | Type    | Options                       | Default  |
 | ----------- | ------------------------------------ | ------- | ---------------------------- | ------- |
-| border      | Whether to 带有border                         | Boolean | —                            | false   |
-| column      | 一行Show几个                         | Number  | —                            | 3       |
-| label-width | labelWidth(percentage)                    | Number  | —                            | —       |
-| size        | size                                 | String  | large ，default，small，mini | default |
-| title       | Title文本                             | String  | —                            | —       |
-| extra       | 操作区文本，Show在右上方，可slot插入 | String  | —                            | —       |
+| border      | Whether to show border                         | Boolean | —                            | false   |
+| column      | Number of columns displayed per row                         | Number  | —                            | 3       |
+| label-width | Label width (percentage)                    | Number  | —                            | —       |
+| size        | Size                                 | String  | large ，default，small，mini | default |
+| title       | Title text                             | String  | —                            | —       |
+| extra       | Action area text, displayed in the upper right, can be inserted via slot | String  | —                            | —       |
 
 ## Slot
 
 | Name  | Description         |
 | ----- | ------------ |
-| title | Title文本slot |
-| extra | 操作区域slot |
+| title | Title text slot |
+| extra | Action area slot |
 
 ## ItemProps
 
 | Parameter  | Description     | Type   | Options | Default |
 | ----- | -------- | ------ | ------ | ------ |
-| label | tag文本 | String | —      | —      |
-| span  | 列的数量 | Number | —      | —      |
+| label | Label text | String | —      | —      |
+| span  | Column count | Number | —      | —      |
 
 ## ItemSlot
 
 | Name  | Description     |
 | ----- | -------- |
-| label | 文本slot |
+| label | Text slot |

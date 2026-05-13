@@ -6,35 +6,35 @@ title: Tip Tooltip
 
 # Tip Tooltip
 
-文字Tippopover框，在mousehover时Show，代替了系统的titleTip。tooltip的default slot应该保证Yes一个dom or 者一个component
+A text tip popover that appears on mouse hover, replacing the system title tooltip. The default slot of the tooltip should contain a single DOM element or component.
 
 ## Basic Usage
 
-直接useDefaultslot即可
+Simply use the default slot.
 
 <preview path="./demo/Tooltip/Basic.vue"></preview>
 
-## 多种position
+## Multiple Positions
 
-use `placement` 来设置不同的position
+Use `placement` to set different positions.
 
 <preview path="./demo/Tooltip/Placement.vue"></preview>
 
-## 不同theme
+## Different Themes
 
-设置 `theme` 来设置不同styletheme
+Set `theme` to apply different style themes.
 
 <preview path="./demo/Tooltip/Theme.vue"></preview>
 
-## 多行&长文本
+## Multi-line & Long Text
 
-可以useslot or 者长文本
+Can use slots or long text.
 
 <preview path="./demo/Tooltip/Slot.vue"></preview>
 
-## 延时&Trigger时机&DisabledTip
+## Delay & Trigger Timing & Disabled Tip
 
-可以use不同的parameter设置。
+Can be configured using different parameters.
 
 <preview path="./demo/Tooltip/More.vue"></preview>
 
@@ -42,11 +42,11 @@ use `placement` 来设置不同的position
 
 | Parameter            | Description                     | Type    | Options                                                                                                    | Default         |
 | --------------- | ------------------------ | ------- | --------------------------------------------------------------------------------------------------------- | -------------- |
-| v-model:visible | 状态Whether to 可见             | Boolean | —                                                                                                         | false          |
-| content         | Show的Content               | String  | —                                                                                                         | —              |
-| placement       | Position of the position         | String  | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | —              |
-| disabled        | Disable dTip框           | Boolean | —                                                                                                         | false          |
-| transition      | 自定义渐变animation           | String  | —                                                                                                         | fade-in-linear |
+| v-model:visible | Whether visible             | Boolean | —                                                                                                         | false          |
+| content         | Display content               | String  | —                                                                                                         | —              |
+| placement       | Position of the tooltip         | String  | top/top-start/top-end/bottom/bottom-start/bottom-end/left/left-start/left-end/right/right-start/right-end | —              |
+| disabled        | Disable tooltip           | Boolean | —                                                                                                         | false          |
+| transition      | Custom transition animation           | String  | —                                                                                                         | fade-in-linear |
 | show-arrow      | Whether to show arrow             | Boolean | —                                                                                                         | true           |
 | theme           | theme                     | String  | dark  or  light                                                                                             | dark           |
 | open-delay      | Delay before showing, in milliseconds       | Number  | —                                                                                                         | 0              |

@@ -8,7 +8,7 @@ title: layoutcomponent Layout
 
 ## Basic Usage
 
-目前暂时为简易左右layout，后续扩展
+Currently a simple left-right layout, with extensions planned.
 
 <preview path="./demo/Layout/Basic.vue"></preview>
 
@@ -16,9 +16,9 @@ title: layoutcomponent Layout
 
 | Parameter                 | Description                       | Type    | Options | Default |
 | -------------------- | -------------------------- | ------- | ------ | ------ |
-| hasSider             | Whether to 又侧边栏（目前为左侧） | Boolean | —      | —      |
-| siderWidth           | 侧边栏Width                 | Number  | —      | 240    |
-| collapsedWidth       | 侧边栏collapse后Width           | Number  | —      | 40     |
-| showToggle           | Whether to show collapsebutton           | Boolean | —      | true   |
-| showCollapsedContent | Whether to show collapse后的内部区域   | Boolean | —      | false  |
-| contentStyle         | 右侧容器style               | Object  | —      | {}     |
+| hasSider             | Whether to have a sidebar (currently left side) | Boolean | —      | —      |
+| siderWidth           | Sidebar width                 | Number  | —      | 240    |
+| collapsedWidth       | Sidebar collapsed width           | Number  | —      | 40     |
+| showToggle           | Whether to show collapse button           | Boolean | —      | true   |
+| showCollapsedContent | Whether to show inner content after collapsing   | Boolean | —      | false  |
+| contentStyle         | Right container style               | Object  | —      | {}     |

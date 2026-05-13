@@ -6,17 +6,17 @@ title: Breadcrumb
 
 # Breadcrumb
 
-Show当前页面的路径，快速返回之前的任意页面 or 者跳转link
+Shows the current page path, allowing quick navigation back to any previous page or link.
 
 ## Basic Usage
 
-breadcrumb的用法，separator设置分隔符 不设置toproperty，一切都需要自行在slot中灵活运用
+Basic breadcrumb usage. The separator property sets the separator. Everything else should be flexibly handled in slots.
 
 <preview path="./demo/Breadcrumb/Basic.vue"></preview>
 
 ## Separator
 
-Can set 分隔符
+You can configure the separator.
 
 <preview path="./demo/Breadcrumb/Separator.vue"></preview>
 
@@ -24,5 +24,5 @@ Can set 分隔符
 
 | Parameter           | Description           | Type   | Options | Default |
 | -------------- | -------------- | ------ | ------ | ------ |
-| separator      | 分隔           | string | —      | '/'    |
-| separator-icon | icon分隔符icon | string | —      | —      |
+| separator      | Separator           | string | —      | '/'    |
+| separator-icon | Separator icon | string | —      | —      |
