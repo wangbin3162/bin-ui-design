@@ -10,11 +10,11 @@ import 'bin-ui-design/_styles/index.css'
 
 export default {
   ...DefaultTheme,
-  Layout() {
-    return h(DefaultTheme.Layout, null, {
-      'nav-bar-content-after': () => h(LocaleSwitch)
-    })
-  },
+  // Layout() {
+  //   return h(DefaultTheme.Layout, null, {
+  //     'nav-bar-content-after': () => h(LocaleSwitch)
+  //   })
+  // },
   enhanceApp({ app }) {
     app.use(BinUI)
     app.component('demo-preview', ElementPlusContainer)

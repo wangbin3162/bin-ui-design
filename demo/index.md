@@ -5,27 +5,27 @@ title: 'Home'
 
 hero:
   name: 'BIN UI DESIGN'
-  text: '一个vue3的组件库'
-  tagline: 使用Typescript+Vue3，可定制主题
+  text: '面向 Vue 3 的企业级组件库'
+  tagline: 'TypeScript 驱动，开箱可用，主题可定制，帮助团队稳定构建中后台产品。'
   image:
     src: /logo.svg
     alt: Bin UI Logo
   actions:
     - theme: brand
-      text: 开始使用
+      text: 快速开始
       link: /docs/introduction
     - theme: alt
-      text: View on GitHub
+      text: GitHub 仓库
       link: 'https://github.com/wangbin3162/bin-ui-design'
 
 features:
   - icon: ⚡️
-    title: 快速上手，易定制
-    details: 使用typescript开发，支持按需引入，可以定制主题配色。
-  - icon: 🖖
-    title: 组件较全，开箱即用
-    details: 60+ 组件和扩展使用，方便快速进行中后台框架搭建。
-  - icon: 🛠️
-    title: 灵活，可扩展
-    details: 丰富且灵活的API设计，可以支持多种用法，组件可进行组合使用，灵活扩展。
+    title: 快速接入，平滑落地
+    details: 提供清晰的安装与按需引入方案，降低项目接入成本，并保持构建体积可控。
+  - icon: 🧩
+    title: 组件完备，覆盖常见场景
+    details: 60+ 组件与扩展能力，覆盖表单、数据展示、反馈与布局等中后台核心需求。
+  - icon: 🎨
+    title: 主题一致，品牌可控
+    details: 基于主题变量体系进行样式定制，帮助设计规范与业务界面保持长期一致。
 ---

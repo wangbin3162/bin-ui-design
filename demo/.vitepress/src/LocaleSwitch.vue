@@ -58,19 +58,28 @@ watch(
 
 <style scoped>
 .locale-switch {
-  height: 28px;
-  padding: 0 10px;
-  border-radius: 6px;
+  height: 30px;
+  padding: 0 11px;
+  border-radius: 8px;
   border: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
+  background: var(--vp-c-bg-elv);
+  color: var(--vp-c-text-2);
   font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  transition: all 0.2s;
+  transition: border-color 0.2s ease, color 0.2s ease, background-color 0.2s ease;
 }
 
 .locale-switch:hover {
-  border-color: var(--vp-c-brand-1);
   color: var(--vp-c-brand-1);
+  border-color: #4f94ff;
+  background: var(--vp-c-default-soft);
+}
+
+.locale-switch:focus-visible {
+  outline: none;
+  box-shadow: var(--bin-doc-accent-ring);
 }
 </style>

@@ -6,26 +6,42 @@ title: Introduction
 
 # Bin UI Design
 
-Bin UI Design is a Vue 3 component library.
+<div class="doc-intro">
+  <div class="intro-lead">
+    <p>
+      Bin UI Design is a Vue 3 component library focused on reliable interactions, engineering efficiency,
+      and long-term visual consistency for admin and business management systems.
+    </p>
+  </div>
 
-To get started, see [Installation](/en/docs/installation.html)
+  <div class="intro-grid">
+    <div class="intro-card">
+      <h3>Fast Adoption</h3>
+      <p>Supports direct installation, SFC usage, and on-demand imports to fit smoothly into existing projects.</p>
+    </div>
+    <div class="intro-card">
+      <h3>Comprehensive Coverage</h3>
+      <p>Includes 60+ components and extensions for forms, data display, feedback, navigation, and layout.</p>
+    </div>
+    <div class="intro-card">
+      <h3>Theme Customization</h3>
+      <p>Built with typed theme variables so product UI can stay aligned with brand and design standards.</p>
+    </div>
+  </div>
 
-It is built upon [bin-ui-next](https://wangbin3162.github.io/bin-ui-next/#/guide) and allows for smooth migration and switching.
+  <div class="intro-actions">
+    <a class="intro-link" href="/en/docs/installation.html">Installation</a>
+    <a class="intro-link" href="/en/docs/usage-sfc.html">Use in SFC</a>
+    <a class="intro-link" href="/en/docs/custom-theme.html">Customize Theme</a>
+  </div>
+</div>
 
-## Latest Version
+## Version
 
 [![NPM version](https://img.shields.io/npm/v/bin-ui-design.svg)](https://www.npmjs.com/package/bin-ui-design)
 
-## Rich Components
+## Foundations
 
-We provide over 60 components, which should cover most daily development needs.
+Bin UI Design evolves from [bin-ui-next](https://wangbin3162.github.io/bin-ui-next/#/guide), making migration and upgrades easier.
 
-By the way, nearly all of them support tree-shaking.
-
-## Written in TypeScript
-
-Rebuilt with TypeScript — faster and better. Plus, you don't need to import any CSS for components to work properly.
-
-## Theming
-
-Styles have been rebuilt with PostCSS, with more theme color options. We provide a type-safe theming system built with TypeScript. You just need to export a config override object to customize as needed.
+Its component and styling systems were rebuilt with TypeScript and PostCSS for maintainability and extensibility.

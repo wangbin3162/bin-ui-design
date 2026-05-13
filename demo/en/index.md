@@ -5,27 +5,27 @@ title: 'Home'
 
 hero:
   name: 'BIN UI DESIGN'
-  text: 'A Vue 3 Component Library'
-  tagline: Built with TypeScript + Vue 3, customizable themes
+  text: 'An Enterprise UI Library for Vue 3'
+  tagline: 'Built with TypeScript, production-ready by default, and designed for consistent theming at scale.'
   image:
     src: /logo.svg
     alt: Bin UI Logo
   actions:
     - theme: brand
       text: Get Started
-      link: /docs/introduction
+      link: /en/docs/introduction
     - theme: alt
-      text: View on GitHub
+      text: GitHub Repository
       link: 'https://github.com/wangbin3162/bin-ui-design'
 
 features:
   - icon: ⚡️
-    title: Quick Start, Easy Customization
-    details: Built with TypeScript, supports on-demand imports, customizable theme colors.
-  - icon: 🖖
-    title: Comprehensive Components, Ready to Use
-    details: 60+ components and extensions for quickly building admin and middle-platform applications.
-  - icon: 🛠️
-    title: Flexible and Extensible
-    details: Rich and flexible API design supporting multiple usage patterns. Components can be combined for flexible extension.
+    title: Fast Integration, Smooth Adoption
+    details: Clear setup and on-demand import workflows help teams integrate quickly while keeping bundles lean.
+  - icon: 🧩
+    title: Comprehensive Components for Real Apps
+    details: 60+ components and extensions cover form flows, data display, feedback, and layout patterns.
+  - icon: 🎨
+    title: Consistent Theming, Brand Alignment
+    details: Theme variables make it easy to keep product interfaces aligned with design systems over time.
 ---
