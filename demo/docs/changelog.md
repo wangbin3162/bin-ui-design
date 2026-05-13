@@ -7,6 +7,19 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.8.0" class="version">0.8.0</h2>
+  <div class="date">2026-05-13</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>新增国际化方案</p>
+  <p class="log-item"><i>🍀</i>新增黑色模式</p>
+  <div class="type">Update</div>
+  <p class="log-item"><i>🛠️</i>优化 TypeScript 校验</p>
+  <p class="log-item"><i>🛠️</i>优化部分组件实现</p>
+  <p class="log-item"><i>🛠️</i>更新组件样式</p>
+  <p class="log-item"><i>🛠️</i>更新文档样式</p>
+  <p class="log-item"><i>🛠️</i>更新依赖包</p>
+</div>
+<div class="change-log">
   <h2 id="0.7.1" class="version">0.7.1</h2>
   <div class="date">2025-09-01</div>
   <div class="type">update</div>

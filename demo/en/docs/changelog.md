@@ -7,6 +7,19 @@ title: Changelog
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.8.0" class="version">0.8.0</h2>
+  <div class="date">2026-05-13</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>Add internationalization solution</p>
+  <p class="log-item"><i>🍀</i>Add dark mode</p>
+  <div class="type">Update</div>
+  <p class="log-item"><i>🛠️</i>Optimize TypeScript checks</p>
+  <p class="log-item"><i>🛠️</i>Optimize implementation of some components</p>
+  <p class="log-item"><i>🛠️</i>Update component styles</p>
+  <p class="log-item"><i>🛠️</i>Update documentation styles</p>
+  <p class="log-item"><i>🛠️</i>Update dependencies</p>
+</div>
+<div class="change-log">
   <h2 id="0.7.1" class="version">0.7.1</h2>
   <div class="date">2025-09-01</div>
   <div class="type">update</div>

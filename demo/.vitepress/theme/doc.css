@@ -1,5 +1,8 @@
 .vp-doc {
   color: var(--bin-color-text-default, var(--vp-c-text-1));
+  .version{
+    margin-top: 0;
+  }
 }
 
 .vp-doc p {
