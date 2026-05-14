@@ -183,4 +183,51 @@ describe('BTable', () => {
     expect(headerEl.scrollLeft).toBe(32)
     expect(fixedBodyEl.scrollTop).toBe(48)
   })
+
+  test('does not render extra header gutter cells when vertical scrolling is present', async () => {
+    const wrapper = mount(Table, {
+      props: {
+        columns: [
+          { title: 'Name', key: 'name', width: 160 },
+          { title: 'Value', key: 'value', width: 160 }
+        ],
+        data: Array.from({ length: 4 }).map((_, index) => ({
+          name: `Row ${index + 1}`,
+          value: index + 1
+        })),
+        height: 180
+      },
+      attachTo: document.body
+    })
+
+    await nextTick()
+
+    wrapper.vm.showVerticalScrollBar = true
+    await nextTick()
+
+    expect(wrapper.findAll('.bin-table-header th')).toHaveLength(2)
+  })
+
+  test('passes max-height to scrollbar wrap instead of outer body shell', async () => {
+    const wrapper = mount(Table, {
+      props: {
+        columns: [
+          { title: 'Name', key: 'name', width: 160 },
+          { title: 'Value', key: 'value', width: 160 }
+        ],
+        data: Array.from({ length: 6 }).map((_, index) => ({
+          name: `Row ${index + 1}`,
+          value: index + 1
+        })),
+        maxHeight: 200
+      },
+      attachTo: document.body
+    })
+
+    await nextTick()
+    await nextTick()
+
+    expect(wrapper.find('.bin-table-body').attributes('style') || '').not.toContain('max-height')
+    expect(wrapper.find('.bin-table-body__wrap').attributes('style') || '').toContain('max-height')
+  })
 })

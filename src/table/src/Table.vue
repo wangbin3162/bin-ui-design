@@ -25,6 +25,9 @@
         <b-scrollbar
           ref="bodyScrollbarRef"
           wrap-class="bin-table-body__wrap"
+          :height="height ? bodyHeight : ''"
+          :max-height="maxHeight ? bodyHeight : ''"
+          :view-style="bodyViewStyle"
           @scroll="handleBodyScroll"
         >
           <table-body
@@ -123,11 +126,6 @@
           ></table-body>
         </div>
       </div>
-      <div
-        v-if="isRightFixed"
-        :class="['bin-table-fixed-right-header']"
-        :style="fixedRightHeaderStyle"
-      ></div>
     </div>
   </div>
 </template>
@@ -212,6 +210,7 @@ export default defineComponent({
     const headerWidth = ref(0)
     const headerHeight = ref(0)
     const bodyHeight = ref(0)
+    const bodyViewportHeight = ref(0)
     const columnsWidth = ref({})
 
     const cloneData = ref<any[]>(deepCopy(props.data))
@@ -285,9 +284,6 @@ export default defineComponent({
         if (props.height) {
           // @ts-ignore
           style.height = `${height}px`
-        } else if (props.maxHeight) {
-          // @ts-ignore
-          style.maxHeight = `${height}px`
         }
       }
       return style
@@ -304,18 +300,20 @@ export default defineComponent({
     const tableStyle = computed(() => {
       let style = {}
       const _tableWidth = tableWidth.value
-      const _bodyHeight = bodyHeight.value
       if (_tableWidth !== 0) {
-        let width = ''
-        if (_bodyHeight === 0) {
-          // @ts-ignore
-          width = _tableWidth
-        } else {
-          // @ts-ignore
-          width = _tableWidth - (showVerticalScrollBar.value ? scrollBarWidth.value : 0)
-        }
         // @ts-ignore
-        style.width = `${width}px`
+        style.width = `${_tableWidth}px`
+      }
+      return style
+    })
+    const bodyViewStyle = computed(() => {
+      let style = {}
+      const _tableWidth = tableWidth.value
+      if (_tableWidth !== 0) {
+        // @ts-ignore
+        style.width = `${_tableWidth}px`
+        // @ts-ignore
+        style.minWidth = '100%'
       }
       return style
     })
@@ -356,30 +354,15 @@ export default defineComponent({
       // @ts-ignore
       style.width = `${width}px`
       // @ts-ignore
-      style.right = `${showVerticalScrollBar.value ? scrollBarWidth.value : 0}px`
-      return style
-    })
-    const fixedRightHeaderStyle = computed(() => {
-      let style = {}
-      let width = 0
-      let height = headerHeight.value + 1
-      if (showVerticalScrollBar.value) {
-        width = scrollBarWidth.value
-      }
-      // @ts-ignore
-      style.width = `${width}px`
-      // @ts-ignore
-      style.height = `${height}px`
+      style.right = '0'
       return style
     })
     const fixedBodyStyle = computed(() => {
       let style = {}
-      const _bodyHeight = bodyHeight.value
-      const _showHorizontalScrollBar = showHorizontalScrollBar.value
+      const _bodyHeight = bodyViewportHeight.value || bodyHeight.value
       if (_bodyHeight !== 0) {
-        let height = _bodyHeight - (_showHorizontalScrollBar ? scrollBarWidth.value : 0)
         // @ts-ignore
-        style.height = _showHorizontalScrollBar ? `${height}px` : `${height - 1}px`
+        style.height = `${_bodyHeight}px`
       }
       return style
     })
@@ -641,20 +624,19 @@ export default defineComponent({
       }
       if (!tbody || !props.data || props.data.length === 0) {
         showVerticalScrollBar.value = false
+        showHorizontalScrollBar.value = false
+        bodyViewportHeight.value = bodyHeight.value
       } else {
-        // @ts-ignore
-        let bodyContentEl = tbody.$el
-        let bodyEl = bodyWrapEl
-        let bodyContentHeight = bodyContentEl.offsetHeight
-        let offsetHeight = bodyEl?.offsetHeight || 0
+        const bodyEl = bodyWrapEl
+        const clientHeight = bodyEl?.clientHeight || 0
+        const clientWidth = bodyEl?.clientWidth || 0
+        const scrollHeight = bodyEl?.scrollHeight || 0
+        const scrollWidth = bodyEl?.scrollWidth || 0
 
-        const showHBar = (showHorizontalScrollBar.value =
-          (bodyEl?.offsetWidth || 0) <
-          bodyContentEl.offsetWidth + (showVerticalScrollBar.value ? scrollBarWidth.value : 0))
+        bodyViewportHeight.value = clientHeight || bodyHeight.value
 
-        showVerticalScrollBar.value = bodyHeight.value
-          ? offsetHeight - (showHBar ? scrollBarWidth.value : 0) < bodyContentHeight
-          : false
+        showHorizontalScrollBar.value = scrollWidth > clientWidth
+        showVerticalScrollBar.value = bodyHeight.value ? scrollHeight > clientHeight : false
 
         if (showVerticalScrollBar.value && bodyEl) {
           bodyEl.classList.add('bin-table-overflowY')
@@ -709,7 +691,6 @@ export default defineComponent({
         offsetWidth -
         unUsableWidth -
         sumMinWidth -
-        (showVerticalScrollBar.value ? scrollBarWidth.value : 0) -
         1
       let usableLength = noWidthColumns.length
       let columnWidth = 0
@@ -794,9 +775,7 @@ export default defineComponent({
       }
       tableWidth.value =
         // @ts-ignore
-        cloneColumnsBuf.map(cell => cell._width).reduce((a, b) => a + b, 0) +
-        (showVerticalScrollBar.value ? scrollBarWidth.value : 0) +
-        1
+        cloneColumnsBuf.map(cell => cell._width).reduce((a, b) => a + b, 0) + 1
       columnsWidth.value = columnsWidthObj
       fixedHeader()
     }
@@ -1269,6 +1248,7 @@ export default defineComponent({
       classes,
       tableHeaderStyle,
       tableStyle,
+      bodyViewStyle,
       bodyStyle,
       isLeftFixed,
       isRightFixed,
@@ -1280,7 +1260,6 @@ export default defineComponent({
       fixedRightTableStyle,
       fixedHeaderClasses,
       fixedBodyStyle,
-      fixedRightHeaderStyle,
       handleSort,
       handleMouseIn,
       handleMouseOut,

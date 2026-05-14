@@ -64,12 +64,6 @@
     overflow: hidden;
   }
 
-  &-body {
-    .bin-scrollbar {
-      height: 100%;
-    }
-  }
-
   &-overflowX {
     overflow-x: scroll;
 
@@ -408,15 +402,6 @@
     left: auto;
     right: 0;
     box-shadow: var(--bin-shadow-table-fixed-right);
-  }
-
-  &-fixed-right-header {
-    position: absolute;
-    top: -1px;
-    right: 0;
-    background-color: var(--b-table-header-bg);
-    border-top: var(--bin-table-border);
-    border-bottom: var(--bin-table-border);
   }
 
   &-fixed-header {

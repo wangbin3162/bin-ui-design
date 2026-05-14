@@ -2,7 +2,6 @@
   <table cellspacing="0" cellpadding="0" border="0" :style="styles">
     <colgroup>
       <col v-for="(column, index) in columns" :key="index" :width="setCellWidth(column)" />
-      <col v-if="showVerticalScrollBar" :width="scrollBarWidth" />
     </colgroup>
     <thead>
       <tr v-for="(cols, rowIndex) in headRows" :key="rowIndex">
@@ -60,11 +59,6 @@
             </template>
           </div>
         </th>
-        <th
-          v-if="showVerticalScrollBar && rowIndex === 0"
-          :class="scrollBarCellClass()"
-          :rowspan="headRows.length"
-        ></th>
       </tr>
     </thead>
   </table>
@@ -170,25 +164,6 @@ export default defineComponent({
       parentRef.selectAll(status)
     }
 
-    function scrollBarCellClass() {
-      let hasRightFixed = false
-      const head = headRows.value
-      for (let i in head) {
-        for (let j in head[i]) {
-          if (head[i][j].fixed === 'right') {
-            hasRightFixed = true
-            break
-          }
-          if (hasRightFixed) break
-        }
-      }
-      return [
-        {
-          [`${this.prefixCls}-hidden`]: hasRightFixed
-        }
-      ]
-    }
-
     // 因为表头嵌套不是深拷贝，所以没有 _ 开头的方法，在 isGroup 下用此列
     function getColumn(rowIndex, index) {
       //@ts-ignore
@@ -238,16 +213,11 @@ export default defineComponent({
     }
 
     return {
-      //@ts-ignore
-      showVerticalScrollBar: parentRef.showVerticalScrollBar,
-      //@ts-ignore
-      scrollBarWidth: parentRef.scrollBarWidth,
       isSelectAll,
       indeterminate,
       headRows,
       setCellWidth,
       alignCls,
-      scrollBarCellClass,
       cellClasses,
       selectAll,
       getColumn,
