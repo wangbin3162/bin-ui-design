@@ -3,7 +3,7 @@
     <template v-if="renderType === 'index'">
       <span>{{ column.indexMethod ? column.indexMethod(row) : naturalIndex + 1 }}</span>
     </template>
-    <template v-if="renderType === 'selection'">
+    <template v-else-if="renderType === 'selection'">
       <b-checkbox
         :model-value="checked"
         :disabled="disabled"
@@ -11,10 +11,55 @@
         @change="toggleSelect"
       ></b-checkbox>
     </template>
-    <template v-if="renderType === 'html'">
+    <template v-else-if="renderType === 'expand' && !row._disableExpand">
+      <div :class="expandCls" @click="toggleExpand">
+        <i class="b-iconfont b-icon-right"></i>
+      </div>
+    </template>
+    <div v-else-if="isTreeCell" :class="treeCellCls">
+      <span :class="`${prefixCls}-tree-indent`" :style="treeIndentStyle"></span>
+      <span :class="treeExpandCls" @click.stop="toggleExpand">
+        <i v-if="isTreeExpandable" class="b-iconfont b-icon-caret-right"></i>
+      </span>
+      <template v-if="renderType === 'html'">
+        <span v-html="row[column.key]"></span>
+      </template>
+      <template v-else-if="renderType === 'normal'">
+        <template v-if="column.tooltip && tooltipTheme">
+          <b-tooltip class="bin-table-cell-tooltip-content" append-to-body :theme="tooltipTheme">
+            <span>{{ row[column.key] }}</span>
+            <template #content>
+              <div>{{ row[column.key] }}</div>
+            </template>
+          </b-tooltip>
+        </template>
+        <span
+          v-else-if="column.tooltip && !tooltipTheme"
+          class="bin-table-cell-tooltip-content"
+          :title="row[column.key]"
+        >
+          {{ row[column.key] }}
+        </span>
+        <span v-else>{{ row[column.key] }}</span>
+      </template>
+      <table-expand
+        v-else-if="renderType === 'render'"
+        :row="row"
+        :column="column"
+        :index="index"
+        :render="column.render"
+      ></table-expand>
+      <table-slot
+        v-else-if="renderType === 'slot'"
+        :row="row"
+        :column="column"
+        :index="index"
+      ></table-slot>
+    </div>
+    <template v-else-if="renderType === 'html'">
       <span v-html="row[column.key]"></span>
     </template>
-    <template v-if="renderType === 'normal'">
+    <template v-else-if="renderType === 'normal'">
       <template v-if="column.tooltip && tooltipTheme">
         <b-tooltip class="bin-table-cell-tooltip-content" append-to-body :theme="tooltipTheme">
           <span>{{ row[column.key] }}</span>
@@ -32,20 +77,15 @@
       </span>
       <span v-else>{{ row[column.key] }}</span>
     </template>
-    <template v-if="renderType === 'expand' && !row._disableExpand">
-      <div :class="expandCls" @click="toggleExpand">
-        <i class="b-iconfont b-icon-right"></i>
-      </div>
-    </template>
     <table-expand
-      v-if="renderType === 'render'"
+      v-else-if="renderType === 'render'"
       :row="row"
       :column="column"
       :index="index"
       :render="column.render"
     ></table-expand>
     <table-slot
-      v-if="renderType === 'slot'"
+      v-else-if="renderType === 'slot'"
       :row="row"
       :column="column"
       :index="index"
@@ -57,7 +97,7 @@
 import TableExpand from './main/expand'
 import TableSlot from './main/slot'
 import { BCheckbox } from '../../checkbox'
-import { defineComponent, inject, ref } from 'vue'
+import { computed, defineComponent, inject, ref } from 'vue'
 import { BTooltip } from '../../tooltip'
 
 export default defineComponent({
@@ -86,6 +126,14 @@ export default defineComponent({
     const tooltipContentRef = ref(null)
     const TableRoot = inject('BTable', {})
     const renderType = ref(getRenderType())
+    //@ts-ignore
+    const isTreeCell = computed(
+      () => TableRoot.isTreeMode?.value && TableRoot.props.expandColumnKey === props.column.key
+    )
+    const isTreeExpandable = computed(() => !!props.row?._hasChildren)
+    const treeIndentStyle = computed(() => ({
+      width: `${(props.row?._depth || 0) * TableRoot.props.indentSize}px`
+    }))
 
     function getRenderType() {
       const column = props.column
@@ -118,6 +166,7 @@ export default defineComponent({
     }
 
     function toggleExpand() {
+      if (isTreeCell.value && !isTreeExpandable.value) return
       //@ts-ignore
       TableRoot.toggleExpand(props.index)
     }
@@ -126,6 +175,9 @@ export default defineComponent({
       //@ts-ignore
       tooltipTheme: TableRoot.props.tooltipTheme,
       renderType,
+      isTreeCell,
+      isTreeExpandable,
+      treeIndentStyle,
       tooltipContentRef,
       toggleSelect,
       toggleExpand
@@ -143,6 +195,7 @@ export default defineComponent({
           [`${this.prefixCls}-cell-ellipsis`]: this.column.ellipsis || false,
           [`${this.prefixCls}-cell-tooltip`]: this.column.tooltip || false,
           [`${this.prefixCls}-cell-with-expand`]: this.renderType === 'expand',
+          [`${this.prefixCls}-cell-with-tree`]: this.isTreeCell,
           [`${this.prefixCls}-cell-with-selection`]: this.renderType === 'selection'
         }
       ]
@@ -151,6 +204,18 @@ export default defineComponent({
       return [
         `${this.prefixCls}-cell-expand`,
         { [`${this.prefixCls}-cell-expand-expanded`]: this.expanded }
+      ]
+    },
+    treeCellCls() {
+      return [`${this.prefixCls}-tree-cell`]
+    },
+    treeExpandCls() {
+      return [
+        `${this.prefixCls}-tree-toggle`,
+        {
+          [`${this.prefixCls}-tree-toggle-expanded`]: this.expanded,
+          [`${this.prefixCls}-tree-toggle-disabled`]: !this.isTreeExpandable
+        }
       ]
     }
   }

@@ -9,13 +9,17 @@
     </colgroup>
     <tbody v-if="!isExpandModel" :class="[prefixCls + '-tbody']">
       <!--v-for的内容需要保持只有一个元素，这样拖拽的时候才会更新正确的dom-->
-      <template v-for="(row, index) in data" :key="rowKey ? row._rowKey : row._index">
+      <template v-for="(row, index) in data" :key="getRowRenderKey(row)">
         <table-tr
           :draggable="draggable"
           :row="row"
           :prefix-cls="prefixCls"
           :row-key="row._rowKey"
-          :class="rowExpanded(row._index) ? { [prefixCls + '-expanded-hidden']: fixed } : null"
+          :class="
+            isExpandModel && rowExpanded(row._index)
+              ? { [prefixCls + '-expanded-hidden']: fixed }
+              : null
+          "
           @mouseenter.stop="handleMouseIn(row._index)"
           @mouseleave.stop="handleMouseOut(row._index)"
           @click="clickCurrentRow(row._index)"
@@ -47,7 +51,7 @@
     </tbody>
     <!--需要展开行的模式无法拖拽排序-->
     <tbody v-else :class="[prefixCls + '-tbody']">
-      <template v-for="(row, index) in data" :key="rowKey ? row._rowKey : row._index">
+      <template v-for="(row, index) in data" :key="getRowRenderKey(row)">
         <table-tr
           :row="row"
           :prefix-cls="prefixCls"
@@ -80,12 +84,12 @@
         </table-tr>
         <tr
           v-if="rowExpanded(row._index)"
-          :key="row._index"
+          :key="`${getRowRenderKey(row)}-expanded`"
           :class="{ [prefixCls + '-expanded-hidden']: fixed }"
         >
           <td :colspan="columns.length" :class="prefixCls + '-expanded-cell'">
             <expand
-              :key="rowKey ? row._rowKey : index"
+              :key="`${getRowRenderKey(row)}-panel`"
               :row="row"
               :render="expandRender"
               :index="row._index"
@@ -129,7 +133,7 @@ export default defineComponent({
       default: false
     },
     rowKey: {
-      type: Boolean,
+      type: [Boolean, String],
       default: false
     }
   },
@@ -155,7 +159,9 @@ export default defineComponent({
       return render
     })
     //@ts-ignore
-    const isExpandModel = computed(() => props.columns.some(v => v.type === 'expand'))
+    const isExpandModel = computed(
+      () => !parentRef.isTreeMode?.value && props.columns.some(v => v.type === 'expand')
+    )
 
     function getSpan(row, column, rowIndex, columnIndex) {
       const fn = parentRef.props.mergeMethod
@@ -225,6 +231,10 @@ export default defineComponent({
       parentRef.dblclickCurrentRow(_index)
     }
 
+    function getRowRenderKey(row) {
+      return props.rowKey ? row._rowKey : row._index
+    }
+
     return {
       setCellWidth,
       alignCls,
@@ -238,7 +248,8 @@ export default defineComponent({
       handleMouseIn,
       handleMouseOut,
       clickCurrentRow,
-      dblclickCurrentRow
+      dblclickCurrentRow,
+      getRowRenderKey
     }
   }
 })

@@ -64,6 +64,12 @@
     overflow: hidden;
   }
 
+  &-body {
+    .bin-scrollbar {
+      height: 100%;
+    }
+  }
+
   &-overflowX {
     overflow-x: scroll;
 
@@ -102,7 +108,7 @@
   th,
   td {
     min-width: 0;
-    height: 50px;
+    height: 40px;
     box-sizing: border-box;
     text-align: left;
     text-overflow: ellipsis;
@@ -111,7 +117,7 @@
   }
 
   th {
-    height: 50px;
+    height: 40px;
     white-space: nowrap;
     overflow: hidden;
     background-color: var(--b-table-header-bg);
@@ -213,8 +219,8 @@
     }
 
     &-with-expand {
-      height: 47px;
-      line-height: 47px;
+      height: 40px;
+      line-height: 40px;
       padding: 0;
       text-align: center;
     }
@@ -246,6 +252,46 @@
 
     > .bin-tag {
       margin-bottom: 0;
+    }
+  }
+
+  &-tree-cell {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-width: 0;
+  }
+
+  &-tree-indent {
+    flex-shrink: 0;
+    display: inline-block;
+    height: 1px;
+  }
+
+  &-tree-toggle {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 4px;
+    cursor: pointer;
+    color: var(--bin-color-text-default);
+
+    i {
+      font-size: 12px;
+      transition: transform var(--bin-animation-duration-base) ease-in-out;
+    }
+
+    &-expanded {
+      i {
+        transform: rotateZ(90deg);
+      }
+    }
+
+    &-disabled {
+      cursor: default;
     }
   }
 
@@ -309,22 +355,22 @@
 
   &-small {
     th {
-      height: 40px;
+      height: 36px;
     }
 
     td {
-      height: 40px;
+      height: 36px;
     }
 
     &-title,
     &-footer {
-      height: 40px;
-      line-height: 40px;
+      height: 36px;
+      line-height: 36px;
     }
 
     .bin-table-cell-with-expand {
-      height: 39px;
-      line-height: 39px;
+      height: 36px;
+      line-height: 36px;
     }
   }
 

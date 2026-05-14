@@ -18,29 +18,32 @@
         ></table-head>
       </div>
       <div
-        v-show="!(!!noDataText && (!data || data.length === 0))"
-        ref="bodyRef"
+        v-show="hasData"
         :class="['bin-table-body']"
         :style="bodyStyle"
-        @scroll="handleBodyScroll"
       >
-        <table-body
-          ref="tbodyRef"
-          prefix-cls="bin-table"
-          :draggable="draggable"
-          :style-object="tableStyle"
-          :columns="cloneColumns"
-          :data="rebuildData"
-          :row-key="rowKey"
-          :columns-width="columnsWidth"
-          :obj-data="objData"
-        ></table-body>
+        <b-scrollbar
+          ref="bodyScrollbarRef"
+          wrap-class="bin-table-body__wrap"
+          @scroll="handleBodyScroll"
+        >
+          <table-body
+            ref="tbodyRef"
+            prefix-cls="bin-table"
+            :draggable="isDraggable"
+            :style-object="tableStyle"
+            :columns="cloneColumns"
+            :data="rebuildData"
+            :row-key="rowKey"
+            :columns-width="columnsWidth"
+            :obj-data="objData"
+          ></table-body>
+        </b-scrollbar>
       </div>
       <div
-        v-show="!data || data.length === 0"
+        v-show="!hasData"
         :class="['bin-table-tip']"
         :style="bodyStyle"
-        @scroll="handleBodyScroll"
       >
         <table cellspacing="0" cellpadding="0" border="0">
           <tbody>
@@ -75,7 +78,7 @@
         >
           <table-body
             fixed="left"
-            :draggable="draggable"
+            :draggable="isDraggable"
             prefix-cls="bin-table"
             :style-object="fixedTableStyle"
             :columns="leftFixedColumns"
@@ -109,7 +112,7 @@
         >
           <table-body
             fixed="right"
-            :draggable="draggable"
+            :draggable="isDraggable"
             prefix-cls="bin-table"
             :style-object="fixedRightTableStyle"
             :columns="rightFixedColumns"
@@ -139,6 +142,12 @@ import { getStyle, on, off, getScrollBarWidth } from '../../_utils/dom'
 import { addResizeListener, removeResizeListener } from '../../_utils/resize-event'
 import { generateId } from '../../_utils/util-helper'
 import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './main/util'
+import {
+  collectExpandedTreeKeys,
+  flattenVisibleTreeRows,
+  sortTreeRows,
+  walkTreeRows
+} from './main/tree'
 import { Loading } from '../../_directives'
 
 import {
@@ -152,6 +161,7 @@ import {
   watch
 } from 'vue'
 import { BEmpty } from '../../_internal/empty'
+import { BScrollbar } from '../../_internal/scrollbar'
 
 const prefixCls = 'bin-table'
 
@@ -160,7 +170,7 @@ let columnKey = 1
 
 export default defineComponent({
   name: 'BTable',
-  components: { BEmpty, TableBody, TableHead },
+  components: { BEmpty, BScrollbar, TableBody, TableHead },
   directives: { Loading },
   props: tableProps,
   emits: [
@@ -175,14 +185,16 @@ export default defineComponent({
     'select-all-cancel',
     'selection-change',
     'expand',
+    'expand-change',
     'drag-drop',
-    'update:data'
+    'update:data',
+    'update:expandedRowKeys'
   ],
   setup(props, { emit, slots }) {
     const containerRef = ref(null)
     const titleRef = ref(null)
     const headerRef = ref(null)
-    const bodyRef = ref(null)
+    const bodyScrollbarRef = ref(null)
     const tbodyRef = ref(null)
     const footerRef = ref(null)
     const fixedBodyRef = ref(null)
@@ -202,13 +214,28 @@ export default defineComponent({
     const bodyHeight = ref(0)
     const columnsWidth = ref({})
 
-    const cloneData = ref(deepCopy(props.data))
-    const rebuildData = ref(makeDataWithSort())
-    const objData = ref(makeObjData())
+    const cloneData = ref<any[]>(deepCopy(props.data))
+    const preparedData = ref<any[]>([])
+    const sourceDataMap = ref<Record<number, any>>({})
+    const rebuildData = ref<any[]>([])
+    const objData = ref<Record<number, any>>({})
+    const internalExpandedRowKeys = ref<any[]>(makeDefaultExpandedRowKeys(props.data))
 
     const showVerticalScrollBar = ref(false)
     const showHorizontalScrollBar = ref(false)
     const scrollBarWidth = ref(getScrollBarWidth())
+    const hasExpandColumn = computed(() => cloneColumns.value.some(column => column.type === 'expand'))
+    const isTreeMode = computed(
+      () =>
+        !!props.expandColumnKey &&
+        typeof props.rowKey === 'string' &&
+        !hasExpandColumn.value
+    )
+    const isDraggable = computed(() => props.draggable && !isTreeMode.value)
+    const activeExpandedRowKeys = computed(() =>
+      Array.isArray(props.expandedRowKeys) ? props.expandedRowKeys : internalExpandedRowKeys.value
+    )
+    const hasData = computed(() => rebuildData.value.length > 0)
 
     // computed
     const wrapClasses = computed(() => {
@@ -407,66 +434,81 @@ export default defineComponent({
       return convertToRows(cols, fixedType)
     }
 
+    function makeDefaultExpandedRowKeys(data) {
+      if (typeof props.rowKey !== 'string') return []
+
+      const expandedKeys = [...props.defaultExpandedRowKeys]
+      const innerExpandedKeys = collectExpandedTreeKeys(data, props.rowKey)
+
+      return Array.from(new Set(expandedKeys.concat(innerExpandedKeys)))
+    }
+
     function makeData() {
-      let data = deepCopy(props.data)
-      data.forEach((row, index) => {
-        row._index = index
+      const data = deepCopy(props.data)
+      const nextSourceDataMap = {}
+      let nextIndex = 0
+
+      const annotateRow = (row, depth = 0, parentRow = null) => {
+        const sourceRow = deepCopy(row)
+        row._index = nextIndex++
         row._rowKey = generateId() + rowKey++
-      })
+
+        if (isTreeMode.value && typeof props.rowKey === 'string') {
+          row._depth = depth
+          row._parentTreeKey = parentRow ? parentRow[props.rowKey] : null
+          row._hasChildren = Array.isArray(row.children) && row.children.length > 0
+        }
+
+        nextSourceDataMap[row._index] = sourceRow
+      }
+
+      if (isTreeMode.value) {
+        walkTreeRows(data, annotateRow)
+      } else {
+        data.forEach(row => annotateRow(row))
+      }
+
+      sourceDataMap.value = nextSourceDataMap
+
       return data
     }
 
-    function makeObjData() {
-      let data = {}
-      props.data.forEach((row, index) => {
-        const newRow = deepCopy(row) // todo 直接替换
-        newRow._isHover = false
-        if (newRow._disabled) {
-          newRow._isDisabled = newRow._disabled
-        } else {
-          newRow._isDisabled = false
-        }
-        if (newRow._checked) {
-          newRow._isChecked = newRow._checked
-        } else {
-          newRow._isChecked = false
-        }
-        if (newRow._expanded) {
-          newRow._isExpanded = newRow._expanded
-        } else {
-          newRow._isExpanded = false
-        }
-        if (newRow._highlight) {
-          newRow._isHighlight = newRow._highlight
-        } else {
-          newRow._isHighlight = false
-        }
-        data[index] = newRow
-      })
+    function makeObjData(dataRows, previousState = {}) {
+      const data = {}
+      const expandedKeySet = new Set(activeExpandedRowKeys.value)
+
+      const createState = row => {
+        const sourceRow = sourceDataMap.value[row._index] || row
+        const newRow = deepCopy(sourceRow)
+        const prevRow = previousState[row._index]
+
+        newRow._isHover = prevRow?._isHover || false
+        newRow._isDisabled =
+          typeof prevRow?._isDisabled === 'boolean' ? prevRow._isDisabled : !!newRow._disabled
+        newRow._isChecked =
+          typeof prevRow?._isChecked === 'boolean' ? prevRow._isChecked : !!newRow._checked
+        newRow._isHighlight =
+          typeof prevRow?._isHighlight === 'boolean' ? prevRow._isHighlight : !!newRow._highlight
+        newRow._isExpanded =
+          isTreeMode.value && typeof props.rowKey === 'string'
+            ? expandedKeySet.has(row[props.rowKey])
+            : typeof prevRow?._isExpanded === 'boolean'
+              ? prevRow._isExpanded
+              : !!newRow._expanded
+
+        data[row._index] = newRow
+      }
+
+      if (isTreeMode.value) {
+        walkTreeRows(dataRows, createState)
+      } else {
+        dataRows.forEach(createState)
+      }
+
       return data
     }
 
-    // 排序函数
-    function sortData(data, type, index) {
-      const key = cloneColumns.value[index].key
-      data.sort((a, b) => {
-        const method = cloneColumns.value[index]['sortMethod']
-        if (method) {
-          // @ts-ignore
-          return method(a[key], b[key], type)
-        } else {
-          if (type === 'asc') {
-            return a[key] > b[key] ? 1 : -1
-          } else if (type === 'desc') {
-            return a[key] < b[key] ? 1 : -1
-          }
-        }
-      })
-      return data
-    }
-
-    function makeDataWithSort() {
-      let data = makeData()
+    function getSortColumnState() {
       let sortType = 'normal'
       let sortIndex = -1
       let isCustom = false
@@ -480,8 +522,88 @@ export default defineComponent({
           break
         }
       }
-      if (sortType !== 'normal' && !isCustom) data = sortData(data, sortType, sortIndex)
+
+      return {
+        sortType,
+        sortIndex,
+        isCustom
+      }
+    }
+
+    // 排序函数
+    function compareRowData(a, b, type, index) {
+      const key = cloneColumns.value[index].key
+      const method = cloneColumns.value[index]['sortMethod']
+
+      if (method) {
+        // @ts-ignore
+        return method(a[key], b[key], type)
+      }
+
+      if (type === 'asc') {
+        return a[key] > b[key] ? 1 : -1
+      }
+      if (type === 'desc') {
+        return a[key] < b[key] ? 1 : -1
+      }
+
+      return 0
+    }
+
+    function sortData(data, type, index) {
+      if (isTreeMode.value) {
+        return sortTreeRows(data, (a, b) => compareRowData(a, b, type, index))
+      }
+
+      data.sort((a, b) => compareRowData(a, b, type, index))
       return data
+    }
+
+    function makeDataWithSort(dataRows = makeData()) {
+      let data = dataRows
+      const { sortType, sortIndex, isCustom } = getSortColumnState()
+
+      if (sortType !== 'normal' && !isCustom) {
+        data = sortData(data, sortType, sortIndex)
+      }
+
+      if (isTreeMode.value && typeof props.rowKey === 'string') {
+        return flattenVisibleTreeRows(data, {
+          expandedKeySet: new Set(activeExpandedRowKeys.value),
+          rowKey: props.rowKey
+        })
+      }
+
+      return data
+    }
+
+    function syncTreeExpandedState(dataRows = rebuildData.value) {
+      if (!isTreeMode.value || typeof props.rowKey !== 'string') return
+
+      const expandedKeySet = new Set(activeExpandedRowKeys.value)
+      const sourceRows = Array.isArray(dataRows) ? dataRows : []
+
+      sourceRows.forEach(row => {
+        if (objData.value[row._index]) {
+          objData.value[row._index]._isExpanded = expandedKeySet.has(row[props.rowKey])
+        }
+      })
+    }
+
+    function rebuildTableData() {
+      rebuildData.value = makeDataWithSort(preparedData.value)
+      syncTreeExpandedState(rebuildData.value)
+    }
+
+    function prepareTableData(previousState = {}) {
+      preparedData.value = makeData()
+      objData.value = makeObjData(preparedData.value, previousState)
+      rebuildTableData()
+    }
+
+    function getSourceRowByIndex(index) {
+      const sourceRow = sourceDataMap.value[index]
+      return sourceRow ? JSON.parse(JSON.stringify(sourceRow)) : null
     }
 
     function fixedHeader() {
@@ -510,6 +632,7 @@ export default defineComponent({
     function fixedBody() {
       const header = headerRef.value
       const tbody = tbodyRef.value
+      const bodyWrapEl = getBodyWrapEl()
       if (header) {
         // @ts-ignore
         headerWidth.value = header.children[0].offsetWidth
@@ -521,28 +644,30 @@ export default defineComponent({
       } else {
         // @ts-ignore
         let bodyContentEl = tbody.$el
-        let bodyEl = bodyContentEl.parentElement
+        let bodyEl = bodyWrapEl
         let bodyContentHeight = bodyContentEl.offsetHeight
-        let offsetHeight = bodyEl.offsetHeight
+        let offsetHeight = bodyEl?.offsetHeight || 0
 
         const showHBar = (showHorizontalScrollBar.value =
-          bodyEl.offsetWidth <
+          (bodyEl?.offsetWidth || 0) <
           bodyContentEl.offsetWidth + (showVerticalScrollBar.value ? scrollBarWidth.value : 0))
 
         showVerticalScrollBar.value = bodyHeight.value
           ? offsetHeight - (showHBar ? scrollBarWidth.value : 0) < bodyContentHeight
           : false
 
-        if (showVerticalScrollBar.value) {
+        if (showVerticalScrollBar.value && bodyEl) {
           bodyEl.classList.add('bin-table-overflowY')
-        } else {
+        } else if (bodyEl) {
           bodyEl.classList.remove('bin-table-overflowY')
         }
-        if (showHorizontalScrollBar.value) {
+        if (showHorizontalScrollBar.value && bodyEl) {
           bodyEl.classList.add('bin-table-overflowX')
-        } else {
+        } else if (bodyEl) {
           bodyEl.classList.remove('bin-table-overflowX')
         }
+
+        bodyScrollbarRef.value?.update?.()
       }
     }
 
@@ -692,16 +817,15 @@ export default defineComponent({
       // @ts-ignore
       const key = columns[index].key
       // @ts-ignore
+      columns[index]._sortType = type
+      // @ts-ignore
       if (columns[index].sortable !== 'custom') {
-        // custom is for remote sort
         if (type === 'normal') {
-          rebuildData.value = makeDataWithSort()
+          prepareTableData(objData.value)
         } else {
-          rebuildData.value = sortData(rebuildData.value, type, index)
+          rebuildTableData()
         }
       }
-      // @ts-ignore
-      columns[index]._sortType = type
 
       emit('sort-change', {
         // @ts-ignore
@@ -722,13 +846,17 @@ export default defineComponent({
       objData.value[_index]._isHover = false
     }
 
-    function handleBodyScroll(event) {
+    function getBodyWrapEl() {
+      return bodyScrollbarRef.value?.wrapRef?.value || bodyScrollbarRef.value?.wrapRef || null
+    }
+
+    function handleBodyScroll({ scrollTop, scrollLeft }) {
       // @ts-ignore
-      if (props.showHeader) headerRef.value.scrollLeft = event.target.scrollLeft
+      if (props.showHeader) headerRef.value.scrollLeft = scrollLeft
       // @ts-ignore
-      if (isLeftFixed.value) fixedBodyRef.value.scrollTop = event.target.scrollTop
+      if (isLeftFixed.value) fixedBodyRef.value.scrollTop = scrollTop
       // @ts-ignore
-      if (isRightFixed.value) fixedRightBodyRef.value.scrollTop = event.target.scrollTop
+      if (isRightFixed.value) fixedRightBodyRef.value.scrollTop = scrollTop
     }
 
     function handleFixedMousewheel(e) {
@@ -743,7 +871,8 @@ export default defineComponent({
         deltaY = -e.wheelDelta
       }
       if (!deltaY) return
-      const body = bodyRef.value
+      const body = getBodyWrapEl()
+      if (!body) return
       // @ts-ignore
       const currentScrollTop = body.scrollTop
       if (deltaY < 0 && currentScrollTop !== 0) {
@@ -772,7 +901,8 @@ export default defineComponent({
 
     function handleMouseWheel(e) {
       const deltaX = e.deltaX
-      const $body = bodyRef.value
+      const $body = getBodyWrapEl()
+      if (!$body) return
       if (deltaX > 0) {
         // @ts-ignore
         $body.scrollLeft = $body.scrollLeft + 10
@@ -786,7 +916,6 @@ export default defineComponent({
     function handleCurrentRow(type, _index) {
       let oldIndex = -1
       const _objData = objData.value
-      const _cloneData = cloneData.value
       for (let i in _objData) {
         if (_objData[i]._isHighlight) {
           oldIndex = parseInt(i)
@@ -798,8 +927,8 @@ export default defineComponent({
         return
       }
       if (type === 'highlight') _objData[_index]._isHighlight = true
-      const oldData = oldIndex < 0 ? null : JSON.parse(JSON.stringify(_cloneData[oldIndex]))
-      const newData = type === 'highlight' ? JSON.parse(JSON.stringify(_cloneData[_index])) : null
+      const oldData = oldIndex < 0 ? null : getSourceRowByIndex(oldIndex)
+      const newData = type === 'highlight' ? getSourceRowByIndex(_index) : null
       emit('current-change', newData, oldData, _index)
     }
 
@@ -818,18 +947,17 @@ export default defineComponent({
     }
 
     function clickCurrentRow(_index) {
-      const _cloneData = cloneData.value
-      if (_index === _cloneData.length) return
+      const row = getSourceRowByIndex(_index)
+      if (!row) return
       highlightCurrentRow(_index)
-      emit('row-click', JSON.parse(JSON.stringify(_cloneData[_index])), _index)
+      emit('row-click', row, _index)
     }
 
     function dblclickCurrentRow(_index) {
-      const _cloneData = cloneData.value
-      if (!_cloneData) return
+      const row = getSourceRowByIndex(_index)
+      if (!row) return
       highlightCurrentRow(_index)
-      if (!_cloneData[_index]) return
-      emit('row-dblclick', JSON.parse(JSON.stringify(_cloneData[_index])), _index)
+      emit('row-dblclick', row, _index)
     }
 
     function getSelection() {
@@ -839,10 +967,10 @@ export default defineComponent({
         // @ts-ignore
         if (_objData[i]._isChecked) selectionIndexes.push(parseInt(i))
       }
-      return JSON.parse(
-        // @ts-ignore
-        JSON.stringify(props.data.filter((data, index) => selectionIndexes.indexOf(index) > -1))
-      )
+      return selectionIndexes
+        .sort((a, b) => a - b)
+        .map(index => getSourceRowByIndex(index))
+        .filter(Boolean)
     }
 
     function toggleSelect(_index) {
@@ -863,7 +991,7 @@ export default defineComponent({
       emit(
         status ? 'select' : 'select-cancel',
         selection,
-        JSON.parse(JSON.stringify(props.data[_index]))
+        getSourceRowByIndex(_index)
       )
       emit('selection-change', selection)
     }
@@ -879,9 +1007,36 @@ export default defineComponent({
       }
       // @ts-ignore
       const status = !data._isExpanded
-      // @ts-ignore
-      data._isExpanded = status
-      emit('expand', JSON.parse(JSON.stringify(cloneData.value[_index])), status)
+      const row = getSourceRowByIndex(_index)
+
+      if (isTreeMode.value && typeof props.rowKey === 'string') {
+        const currentRow = rebuildData.value.find(item => item._index === _index)
+        if (!currentRow || !currentRow._hasChildren) return
+
+        const nextExpandedRowKeys = [...activeExpandedRowKeys.value]
+        const treeKey = currentRow[props.rowKey]
+        const currentKeyIndex = nextExpandedRowKeys.indexOf(treeKey)
+
+        if (status && currentKeyIndex === -1) {
+          nextExpandedRowKeys.push(treeKey)
+        } else if (!status && currentKeyIndex > -1) {
+          nextExpandedRowKeys.splice(currentKeyIndex, 1)
+        }
+
+        if (!Array.isArray(props.expandedRowKeys)) {
+          internalExpandedRowKeys.value = nextExpandedRowKeys
+        }
+        // @ts-ignore
+        data._isExpanded = status
+        emit('update:expandedRowKeys', nextExpandedRowKeys)
+        emit('expand-change', row, status, nextExpandedRowKeys)
+        rebuildTableData()
+      } else {
+        // @ts-ignore
+        data._isExpanded = status
+        emit('expand', row, status)
+      }
+
       if (props.height || props.maxHeight) {
         nextTick(() => fixedBody())
       }
@@ -911,6 +1066,7 @@ export default defineComponent({
 
     provide('BTable', {
       props,
+      isTreeMode,
       showVerticalScrollBar,
       scrollBarWidth,
       objData,
@@ -926,6 +1082,9 @@ export default defineComponent({
       selectAll,
       toggleExpand
     })
+
+    prepareTableData()
+
     // 钩子函数
     onMounted(() => {
       handleResize()
@@ -937,13 +1096,14 @@ export default defineComponent({
       nextTick(() => {
         read.value = true
       })
-      if (props.draggable) {
+      if (isDraggable.value) {
         setSort()
       }
     })
 
     // 初始化拖拽
     function setSort() {
+      if (!isDraggable.value) return
       // @ts-ignore
       if (sortInstance) sortInstance.destroy()
       // @ts-ignore
@@ -994,10 +1154,12 @@ export default defineComponent({
       newData => {
         // 缓存原始list-data，用于拖拽时更新数据
         const oldDataLen = rebuildData.value.length
-        objData.value = makeObjData()
-        rebuildData.value = makeDataWithSort()
+        if (!Array.isArray(props.expandedRowKeys)) {
+          internalExpandedRowKeys.value = makeDefaultExpandedRowKeys(newData)
+        }
         if (!oldDataLen) fixedHeader()
         cloneData.value = deepCopy(newData)
+        prepareTableData()
         nextTick(() => {
           handleResize()
         })
@@ -1008,18 +1170,43 @@ export default defineComponent({
     watch(
       () => props.columns,
       newColumns => {
-        const colsWithId = makeColumnsId(newColumns)
+        const colsWithId = makeColumnsId(deepCopy(newColumns))
         allColumns.value = getAllColumns(colsWithId)
         cloneColumns.value = makeColumns(colsWithId)
         columnRows.value = makeColumnRows(false, colsWithId)
         leftFixedColumnRows.value = makeColumnRows('left', colsWithId)
         rightFixedColumnRows.value = makeColumnRows('right', colsWithId)
-        rebuildData.value = makeDataWithSort()
+        rebuildTableData()
         nextTick(() => {
           handleResize()
         })
       },
       { deep: true }
+    )
+
+    watch(
+      () => props.expandedRowKeys,
+      newKeys => {
+        if (!Array.isArray(newKeys)) return
+        rebuildTableData()
+        nextTick(() => {
+          fixedBody()
+        })
+      },
+      { deep: true }
+    )
+
+    watch(
+      () => [props.rowKey, props.expandColumnKey],
+      () => {
+        if (!Array.isArray(props.expandedRowKeys)) {
+          internalExpandedRowKeys.value = makeDefaultExpandedRowKeys(props.data)
+        }
+        prepareTableData()
+        nextTick(() => {
+          handleResize()
+        })
+      }
     )
 
     watch(
@@ -1036,12 +1223,26 @@ export default defineComponent({
       }
     )
 
+    watch(
+      () => isDraggable.value,
+      enabled => {
+        nextTick(() => {
+          if (enabled) {
+            setSort()
+          } else if (sortInstance) {
+            sortInstance.destroy()
+            sortInstance = null
+          }
+        })
+      }
+    )
+
     return {
       containerRef,
       handleResize,
       titleRef,
       headerRef,
-      bodyRef,
+      bodyScrollbarRef,
       tbodyRef,
       footerRef,
       fixedBodyRef,
@@ -1060,6 +1261,8 @@ export default defineComponent({
       cloneData,
       showVerticalScrollBar,
       scrollBarWidth,
+      hasData,
+      isDraggable,
       // computed
       wrapClasses,
       wrapStyles,

@@ -70,6 +70,18 @@ Enable expandable rows by adding a column with `type: 'expand'`.
 
 <preview path="./demo/Table/Expand.vue"></preview>
 
+## Tree Table
+
+Tree table mode uses `children` as the nested field and is enabled with `row-key` plus
+`expand-column-key`.
+
+First release limits:
+- Not supported together with `type: 'expand'`
+- Not supported together with `draggable`
+- Not recommended together with `mergeMethod`
+
+<preview path="./demo/Table/Tree.vue"></preview>
+
 ## Grouped Header
 
 Use `children` in column definitions to group table headers. For merged headers and cells, the `border` mode is recommended.
@@ -113,7 +125,8 @@ To update (Date) data, use `v-model:data` for two-way binding, or handle update 
 
 ## Sizes
 
-Set `size` to `large` or `small` to adjust table size. The default is `default` (same as not specifying).
+Set `size` to `large` or `small` to adjust table size. The default row height is `40px`, and
+`small` uses `36px`. The default is `default` (same as not specifying).
 
 <preview path="./demo/Table/Size.vue"></preview>
 
@@ -144,7 +157,11 @@ Set `noDataText` for the empty data state.
 | loading-text         | Loading text                                                                                                  | string        | —             | Loading... |
 | draggable            | Enable drag to reorder rows. To sync metadata, use v-model:data or handle the @drag-drop event to update data                  | Boolean       | —             | false    |
 | drag-handle          | Drag handle icon                                                                                              | String        | —             | —        |
-| row-key              | Whether to force refresh using built-in row-key                                                                                   | Boolean       | —             | false    |
+| row-key              | Whether to force refresh using the built-in row-key; pass a business key field name in tree table mode                           | Boolean/String | —            | false    |
+| expand-column-key    | Column key used to render the tree expand control. Tree mode starts when this is set and `row-key` is a string                  | String        | —             | —        |
+| default-expanded-row-keys | Default expanded row keys in tree table mode                                                                              | Array         | —             | []       |
+| expanded-row-keys    | Controlled expanded row keys in tree table mode                                                                                   | Array         | —             | —        |
+| indent-size          | Indent width for tree table rows                                                                                                   | Number        | —             | 16       |
 | merge-method         | Merge method for row/column spanning                                                                                        | Function      | —             | false    |
 
 ## Table events
@@ -161,6 +178,8 @@ Set `noDataText` for the empty data state.
 | row-click         | Triggers when a row is clicked                                            | Current row data, index                                             |
 | row-dblclick      | Triggers when a row is double-clicked                                            | Current row data, index                                             |
 | expand            | Triggers when a row is expanded or collapsed                                        | row: current row data, status: current state                           |
+| update:expandedRowKeys | Triggers when controlled tree expanded keys update                         | expandedRowKeys                                                    |
+| expand-change     | Triggers when a tree row expand state changes                                 | row, expanded, expandedRowKeys                                     |
 | drag-drop         | Triggers when drag sort is released                                          | The two rows' data indices and updated data: newData, newIndex, oldIndex   |
 
 ## Table slot

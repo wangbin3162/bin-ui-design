@@ -81,8 +81,25 @@ export const tableProps = {
     }
   },
   rowKey: {
-    type: Boolean,
+    type: [Boolean, String],
     default: false
+  },
+  expandColumnKey: {
+    type: String,
+    default: ''
+  },
+  defaultExpandedRowKeys: {
+    type: Array,
+    default() {
+      return []
+    }
+  },
+  expandedRowKeys: {
+    type: Array
+  },
+  indentSize: {
+    type: Number,
+    default: 16
   },
   mergeMethod: {
     type: Function
