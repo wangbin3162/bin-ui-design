@@ -19,6 +19,7 @@
       <Bar
         :class="{ always }"
         :move="moveX"
+        :ratio="ratioX"
         :size="sizeWidth"
         :bar-style="barStyle"
         :bar-wrap-style="barWrapStyle"
@@ -27,6 +28,7 @@
         :class="{ always }"
         vertical
         :move="moveY"
+        :ratio="ratioY"
         :size="sizeHeight"
         :bar-style="barStyle"
         :bar-wrap-style="barWrapStyle"
@@ -40,7 +42,7 @@ import { toObject } from './utils'
 import { addResizeListener, removeResizeListener } from '../../../_utils/resize-event'
 import { on, off } from '../../../_utils/dom'
 import { scrollbarProps } from './types'
-import { ref, onMounted, onBeforeUnmount, nextTick, provide, computed } from 'vue'
+import { ref, onMounted, onBeforeUnmount, nextTick, provide, computed, watch } from 'vue'
 import Bar from './bar'
 
 defineOptions({
@@ -48,31 +50,62 @@ defineOptions({
 })
 
 const props = defineProps(scrollbarProps)
+const emit = defineEmits(['scroll'])
 
 const sizeWidth = ref('0')
 const sizeHeight = ref('0')
 const moveX = ref(0)
 const moveY = ref(0)
+const ratioX = ref(1)
+const ratioY = ref(1)
 const wrap = ref<HTMLElement | null>(null)
 const resize = ref<HTMLElement | null>(null)
+const GAP = 4
 
 provide('scroll-bar-wrap', wrap)
 
 const handleScroll = () => {
   if (!props.native && wrap.value) {
-    moveY.value = (wrap.value.scrollTop * 100) / wrap.value.clientHeight
-    moveX.value = (wrap.value.scrollLeft * 100) / wrap.value.clientWidth
+    const offsetHeight = wrap.value.offsetHeight - GAP
+    const offsetWidth = wrap.value.offsetWidth - GAP
+
+    moveY.value = offsetHeight > 0 ? ((wrap.value.scrollTop * 100) / offsetHeight) * ratioY.value : 0
+    moveX.value = offsetWidth > 0 ? ((wrap.value.scrollLeft * 100) / offsetWidth) * ratioX.value : 0
+  }
+
+  if (wrap.value) {
+    emit('scroll', {
+      scrollTop: wrap.value.scrollTop,
+      scrollLeft: wrap.value.scrollLeft
+    })
   }
 }
 
 const update = () => {
   if (!wrap.value) return
 
-  const heightPercentage = (wrap.value.clientHeight * 100) / wrap.value.scrollHeight
-  const widthPercentage = (wrap.value.clientWidth * 100) / wrap.value.scrollWidth
+  const offsetHeight = wrap.value.offsetHeight - GAP
+  const offsetWidth = wrap.value.offsetWidth - GAP
+  const scrollHeight = wrap.value.scrollHeight
+  const scrollWidth = wrap.value.scrollWidth
+  const originalHeight = scrollHeight > 0 ? offsetHeight ** 2 / scrollHeight : 0
+  const originalWidth = scrollWidth > 0 ? offsetWidth ** 2 / scrollWidth : 0
+  const height = Math.max(originalHeight, props.minSize)
+  const width = Math.max(originalWidth, props.minSize)
 
-  sizeHeight.value = heightPercentage < 100 ? heightPercentage + '%' : ''
-  sizeWidth.value = widthPercentage < 100 ? widthPercentage + '%' : ''
+  ratioY.value =
+    originalHeight && offsetHeight > height
+      ? originalHeight / (offsetHeight - originalHeight) / (height / (offsetHeight - height))
+      : 1
+  ratioX.value =
+    originalWidth && offsetWidth > width
+      ? originalWidth / (offsetWidth - originalWidth) / (width / (offsetWidth - width))
+      : 1
+
+  sizeHeight.value = height + GAP < offsetHeight ? `${height}px` : ''
+  sizeWidth.value = width + GAP < offsetWidth ? `${width}px` : ''
+
+  handleScroll()
 }
 
 onMounted(() => {
@@ -91,16 +124,76 @@ onBeforeUnmount(() => {
     removeResizeListener(resize.value, update)
   }
 })
+
 const style = computed(() => {
-  let style = props.wrapStyle
-  if (Array.isArray(props.wrapStyle)) {
-    style = toObject(props.wrapStyle)
+  const height = normalizeUnit(props.height)
+  const maxHeight = normalizeUnit(props.maxHeight)
+  const sizeStyle: Record<string, string> = {}
+
+  if (height) {
+    sizeStyle.height = height
   }
-  return style
+  if (maxHeight) {
+    sizeStyle.maxHeight = maxHeight
+  }
+
+  if (Array.isArray(props.wrapStyle)) {
+    return [toObject(props.wrapStyle), sizeStyle]
+  }
+  if (props.wrapStyle && typeof props.wrapStyle === 'object') {
+    return {
+      ...props.wrapStyle,
+      ...sizeStyle
+    }
+  }
+  if (props.wrapStyle) {
+    return [props.wrapStyle, sizeStyle]
+  }
+  return sizeStyle
 })
 
+watch(
+  () => [props.height, props.maxHeight],
+  () => {
+    if (!props.native) {
+      nextTick(update)
+    }
+  }
+)
+
+function normalizeUnit(value: string | number) {
+  if (value === '' || value === undefined || value === null) return ''
+  return typeof value === 'number' ? `${value}px` : value
+}
+
+function scrollTo(xCord: number, yCord?: number): void
+function scrollTo(options: ScrollToOptions): void
+function scrollTo(arg1: number | ScrollToOptions, arg2?: number) {
+  if (!wrap.value) return
+
+  if (typeof arg1 === 'object') {
+    wrap.value.scrollTo(arg1)
+  } else if (typeof arg1 === 'number') {
+    wrap.value.scrollTo(arg1, typeof arg2 === 'number' ? arg2 : wrap.value.scrollTop)
+  }
+}
+
+function setScrollTop(value: number) {
+  if (!wrap.value) return
+  wrap.value.scrollTop = value
+}
+
+function setScrollLeft(value: number) {
+  if (!wrap.value) return
+  wrap.value.scrollLeft = value
+}
+
 defineExpose({
+  wrapRef: wrap,
   handleScroll,
-  update
+  update,
+  scrollTo,
+  setScrollTop,
+  setScrollLeft
 })
 </script>
