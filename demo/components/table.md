@@ -27,6 +27,7 @@ title: 表格 Table
 ## 超出隐藏
 
 可以通过给`columns`设置属性`tooltip`来设置超出隐藏并悬停显示, 如仅有一张表格则可以设置`tooltip`皮肤`tooltip-theme`来开启优化样式
+（注意：开启`tooltip`的列必须设置固定宽度，如 `width`，否则在自适应列宽场景下可能出现文本与 tooltip 显示错位。）
 （注意：因表格单元格存在超出隐藏样式所以必须将tooltip标签插入至body元素，会成多余标签，如有多个表格缓存则会插入过多标签造成性能问题，所以是否开启需要根据需求确定）
 
 <preview path="./demo/Table/Tooltip.vue"></preview>

@@ -1,5 +1,5 @@
 <template>
-  <div ref="cell" :class="classes">
+  <div ref="cell" :class="classes" :style="cellStyle">
     <template v-if="renderType === 'index'">
       <span>{{ column.indexMethod ? column.indexMethod(row) : naturalIndex + 1 }}</span>
     </template>
@@ -26,8 +26,10 @@
       </template>
       <template v-else-if="renderType === 'normal'">
         <template v-if="column.tooltip && tooltipTheme">
-          <b-tooltip class="bin-table-cell-tooltip-content" append-to-body :theme="tooltipTheme">
-            <span>{{ row[column.key] }}</span>
+          <b-tooltip append-to-body :theme="tooltipTheme">
+            <span class="bin-table-cell-tooltip-content" :style="tooltipContentStyle">
+              {{ row[column.key] }}
+            </span>
             <template #content>
               <div>{{ row[column.key] }}</div>
             </template>
@@ -36,6 +38,7 @@
         <span
           v-else-if="column.tooltip && !tooltipTheme"
           class="bin-table-cell-tooltip-content"
+          :style="tooltipContentStyle"
           :title="row[column.key]"
         >
           {{ row[column.key] }}
@@ -61,8 +64,10 @@
     </template>
     <template v-else-if="renderType === 'normal'">
       <template v-if="column.tooltip && tooltipTheme">
-        <b-tooltip class="bin-table-cell-tooltip-content" append-to-body :theme="tooltipTheme">
-          <span>{{ row[column.key] }}</span>
+        <b-tooltip append-to-body :theme="tooltipTheme">
+          <span class="bin-table-cell-tooltip-content" :style="tooltipContentStyle">
+            {{ row[column.key] }}
+          </span>
           <template #content>
             <div>{{ row[column.key] }}</div>
           </template>
@@ -71,6 +76,7 @@
       <span
         v-else-if="column.tooltip && !tooltipTheme"
         class="bin-table-cell-tooltip-content"
+        :style="tooltipContentStyle"
         :title="row[column.key]"
       >
         {{ row[column.key] }}
@@ -134,6 +140,28 @@ export default defineComponent({
     const treeIndentStyle = computed(() => ({
       width: `${(props.row?._depth || 0) * TableRoot.props.indentSize}px`
     }))
+    const tooltipContentStyle = computed(() => {
+      if (!props.column?.tooltip) return undefined
+
+      return {
+        width: '100%'
+      }
+    })
+    const cellStyle = computed(() => {
+      if (!props.column?.tooltip) return undefined
+
+      const columnWidth = props.column?.width || TableRoot.columnsWidth?.value?.[props.column?._index]?.width
+      if (!columnWidth) return undefined
+
+      const horizontalPadding = 32
+      const treeIndent = isTreeCell.value ? (props.row?._depth || 0) * TableRoot.props.indentSize : 0
+      const treeToggle = isTreeCell.value ? 20 : 0
+      const availableWidth = Number(columnWidth) - horizontalPadding - treeIndent - treeToggle
+
+      return {
+        width: `${Math.max(availableWidth, 0)}px`
+      }
+    })
 
     function getRenderType() {
       const column = props.column
@@ -177,7 +205,9 @@ export default defineComponent({
       renderType,
       isTreeCell,
       isTreeExpandable,
+      cellStyle,
       treeIndentStyle,
+      tooltipContentStyle,
       tooltipContentRef,
       toggleSelect,
       toggleExpand

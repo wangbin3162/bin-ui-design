@@ -14,7 +14,7 @@ const columns = [
   { title: 'Age', key: 'age' },
   { title: 'Birthday', key: 'birthday' },
   { title: 'Address', key: 'address' },
-  { title: 'Remarks', key: 'remark', tooltip: true }
+  { title: 'Remarks', key: 'remark', width: 300, tooltip: true }
 ]
 const data = ref([
   {

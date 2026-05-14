@@ -14,7 +14,7 @@ const columns = [
   { title: '年龄', key: 'age' },
   { title: '出生日期', key: 'birthday' },
   { title: '地址', key: 'address' },
-  { title: '备注', key: 'remark', tooltip: true }
+  { title: '备注', key: 'remark', width: 300, tooltip: true }
 ]
 const data = ref([
   {

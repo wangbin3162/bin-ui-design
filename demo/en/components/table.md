@@ -27,6 +27,7 @@ Set `border` to enable vertical borders.
 ## Text Overflow Tooltip
 
 Set `tooltip` on columns to truncate text and show full content on hover. If only one table exists, you can also configure the `tooltip-theme` skin for optimized styles.
+(Note: Columns with `tooltip` enabled must use a fixed width such as `width`; otherwise text truncation and tooltip alignment may become inconsistent in auto-width layouts.)
 (Note: Since table cells have overflow:hidden, tooltip tags must be appended to the body element. Multiple table instances may create too many tags and cause performance issues, so enable this based on your needs.)
 
 <preview path="./demo/Table/Tooltip.vue"></preview>
