@@ -166,7 +166,9 @@ export default defineComponent({
     function getSpan(row, column, rowIndex, columnIndex) {
       const fn = parentRef.props.mergeMethod
       if (typeof fn === 'function') {
-        const result = fn({ row, column, rowIndex, columnIndex })
+        const tableColumnIndex =
+          typeof column?._renderIndex === 'number' ? column._renderIndex : columnIndex
+        const result = fn({ row, column, rowIndex, columnIndex: tableColumnIndex })
         let rowspan = 1
         let colspan = 1
         if (Array.isArray(result)) {
@@ -176,6 +178,19 @@ export default defineComponent({
           rowspan = result.rowspan
           colspan = result.colspan
         }
+
+        if (props.fixed && colspan > 1) {
+          const startIndex = tableColumnIndex
+          const endIndex = startIndex + colspan
+          const visibleColumns = props.columns.filter(item => {
+            const itemIndex =
+              typeof item?._renderIndex === 'number' ? item._renderIndex : props.columns.indexOf(item)
+            return itemIndex >= startIndex && itemIndex < endIndex
+          })
+
+          colspan = visibleColumns.length
+        }
+
         return {
           rowspan,
           colspan

@@ -15,6 +15,34 @@ const convertColumnOrder = (columns, fixedType) => {
 
 export { convertColumnOrder }
 
+const filterFixedColumns = (columns, fixedType, inheritedFixed = '') => {
+  const list = []
+
+  columns.forEach(column => {
+    const currentFixed = column.fixed || inheritedFixed
+
+    if (column.children) {
+      const children = filterFixedColumns(column.children, fixedType, currentFixed)
+      if (children.length) {
+        list.push({
+          ...deepCopy(column),
+          children
+        })
+      }
+    } else if (currentFixed === fixedType) {
+      const nextColumn = deepCopy(column)
+      if (!nextColumn.fixed) {
+        nextColumn.fixed = currentFixed
+      }
+      list.push(nextColumn)
+    }
+  })
+
+  return list
+}
+
+export { filterFixedColumns }
+
 // 转换时将tablehead设置为true，正常情况下为false，如table.vue
 const getAllColumns = (cols, forTableHead = false) => {
   const columns = deepCopy(cols)
@@ -34,10 +62,9 @@ export { getAllColumns }
 
 const convertToRows = (columns, fixedType = false) => {
   const originColumns = fixedType
-    ? fixedType === 'left'
-      ? deepCopy(convertColumnOrder(columns, 'left'))
-      : deepCopy(convertColumnOrder(columns, 'right'))
+    ? filterFixedColumns(columns, fixedType)
     : deepCopy(columns)
+  if (!originColumns.length) return []
   let maxLevel = 1
   const traverse = (column, parent) => {
     if (parent) {

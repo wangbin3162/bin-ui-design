@@ -139,7 +139,7 @@ import { deepCopy } from '../../_utils/util'
 import { getStyle, on, off, getScrollBarWidth } from '../../_utils/dom'
 import { addResizeListener, removeResizeListener } from '../../_utils/resize-event'
 import { generateId } from '../../_utils/util-helper'
-import { getAllColumns, convertToRows, convertColumnOrder, getRandomStr } from './main/util'
+import { getAllColumns, convertToRows, getRandomStr } from './main/util'
 import {
   collectExpandedTreeKeys,
   flattenVisibleTreeRows,
@@ -321,14 +321,14 @@ export default defineComponent({
     let sortInstance = null
 
     // fixed table
-    // @ts-ignore
-    const isLeftFixed = computed(() => props.columns.some(col => col.fixed && col.fixed === 'left'))
-    const isRightFixed = computed(() =>
-      // @ts-ignore
-      props.columns.some(col => col.fixed && col.fixed === 'right')
+    const isLeftFixed = computed(() => cloneColumns.value.some(col => col.fixed === 'left'))
+    const isRightFixed = computed(() => cloneColumns.value.some(col => col.fixed === 'right'))
+    const leftFixedColumns = computed(() =>
+      cloneColumns.value.filter(column => column.fixed === 'left')
     )
-    const leftFixedColumns = computed(() => convertColumnOrder(cloneColumns.value, 'left'))
-    const rightFixedColumns = computed(() => convertColumnOrder(cloneColumns.value, 'right'))
+    const rightFixedColumns = computed(() =>
+      cloneColumns.value.filter(column => column.fixed === 'right')
+    )
 
     const fixedTableStyle = computed(() => {
       let style = {}
@@ -338,9 +338,9 @@ export default defineComponent({
         if (col.fixed && col.fixed === 'left') width += col._width
       })
       // @ts-ignore
-      style.width = `${width - 1}px`
+      style.width = `${width}px`
       // @ts-ignore
-      style.left = `1px`
+      style.left = '0'
       return style
     })
     const fixedRightTableStyle = computed(() => {
@@ -375,20 +375,41 @@ export default defineComponent({
 
     // methods
     // 修改列，设置一个隐藏的 id，便于后面的多级表头寻找对应的列，否则找不到
-    function makeColumnsId(columns) {
+    function makeColumnsId(columns, inheritedFixed = '') {
       return columns.map(item => {
-        if ('children' in item) makeColumnsId(item.children)
+        const currentFixed = item.fixed || inheritedFixed
+        if (!item.fixed && currentFixed) {
+          item.fixed = currentFixed
+        }
+        if ('children' in item) makeColumnsId(item.children, currentFixed)
         item.__id = getRandomStr(6)
         return item
       })
     }
 
     function makeColumns(cols) {
-      // 在 data 时，this.allColumns 暂时为 undefined
-      let columns = deepCopy(getAllColumns(cols))
+      const columns = []
       let left = []
       let right = []
       let center = []
+
+      const collectLeafColumns = (list, inheritedFixed = '') => {
+        list.forEach(column => {
+          const currentFixed = column.fixed || inheritedFixed
+          if (column.children) {
+            collectLeafColumns(column.children, currentFixed)
+          } else {
+            const nextColumn = deepCopy(column)
+            if (!nextColumn.fixed && currentFixed) {
+              nextColumn.fixed = currentFixed
+            }
+            columns.push(nextColumn)
+          }
+        })
+      }
+
+      collectLeafColumns(cols)
+
       columns.forEach((column, index) => {
         column._index = index
         column._columnKey = columnKey++
@@ -409,7 +430,11 @@ export default defineComponent({
           center.push(column)
         }
       })
-      return left.concat(center).concat(right)
+      const nextColumns = left.concat(center).concat(right)
+      nextColumns.forEach((column, index) => {
+        column._renderIndex = index
+      })
+      return nextColumns
     }
 
     // create a multiple table-head
@@ -651,6 +676,63 @@ export default defineComponent({
 
         bodyScrollbarRef.value?.update?.()
       }
+
+      nextTick(() => syncFixedRowHeights())
+    }
+
+    function getTableRows(section, fixedType = false) {
+      const rowSelector = section === 'header' ? 'thead > tr' : 'tbody > tr'
+
+      if (!fixedType) {
+        if (section === 'header') {
+          return headerRef.value
+            ? (Array.from(headerRef.value.querySelectorAll(rowSelector)) as HTMLElement[])
+            : []
+        }
+
+        // @ts-ignore
+        const bodyEl = tbodyRef.value?.$el || tbodyRef.value
+        return bodyEl ? (Array.from(bodyEl.querySelectorAll(rowSelector)) as HTMLElement[]) : []
+      }
+
+      const fixedSelector = fixedType === 'left' ? '.bin-table-fixed' : '.bin-table-fixed-right'
+      const fixedRoot = containerRef.value?.querySelector(fixedSelector)
+
+      return fixedRoot ? (Array.from(fixedRoot.querySelectorAll(rowSelector)) as HTMLElement[]) : []
+    }
+
+    function syncSectionRowHeights(section) {
+      const rowGroups = [
+        getTableRows(section),
+        getTableRows(section, 'left'),
+        getTableRows(section, 'right')
+      ]
+      const allRows = rowGroups.flat()
+
+      allRows.forEach(row => {
+        row.style.height = ''
+        row.style.minHeight = ''
+      })
+
+      const maxLength = Math.max(...rowGroups.map(rows => rows.length), 0)
+
+      for (let index = 0; index < maxLength; index++) {
+        const rows = rowGroups.map(group => group[index]).filter(Boolean)
+        if (rows.length < 2) continue
+
+        const height = Math.max(...rows.map(row => row.offsetHeight))
+        if (!height) continue
+
+        rows.forEach(row => {
+          row.style.height = `${height}px`
+          row.style.minHeight = `${height}px`
+        })
+      }
+    }
+
+    function syncFixedRowHeights() {
+      syncSectionRowHeights('header')
+      syncSectionRowHeights('body')
     }
 
     function handleResize() {

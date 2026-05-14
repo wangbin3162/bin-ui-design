@@ -230,4 +230,100 @@ describe('BTable', () => {
     expect(wrapper.find('.bin-table-body').attributes('style') || '').not.toContain('max-height')
     expect(wrapper.find('.bin-table-body__wrap').attributes('style') || '').toContain('max-height')
   })
+
+  test('renders only fixed columns inside fixed panes for grouped headers', async () => {
+    const wrapper = mount(Table, {
+      props: {
+        columns: [
+          {
+            title: '用户信息',
+            fixed: 'left',
+            children: [
+              { title: '姓名', key: 'name', width: 160 },
+              { title: '年龄', key: 'age', width: 120 }
+            ]
+          },
+          { title: '地址', key: 'address', width: 220 },
+          { title: '状态', key: 'status', fixed: 'right', width: 120 }
+        ],
+        data: [
+          { name: '王小明', age: 18, address: '上海', status: '正常' },
+          { name: '李小红', age: 20, address: '北京', status: '活跃' }
+        ],
+        height: 180,
+        border: true
+      },
+      attachTo: document.body
+    })
+
+    await nextTick()
+    await nextTick()
+
+    expect(wrapper.findAll('.bin-table-fixed .bin-table-fixed-header col')).toHaveLength(2)
+    expect(wrapper.findAll('.bin-table-fixed .bin-table-fixed-body col')).toHaveLength(2)
+    expect(wrapper.findAll('.bin-table-fixed-right .bin-table-fixed-header col')).toHaveLength(1)
+    expect(wrapper.findAll('.bin-table-fixed-right .bin-table-fixed-body col')).toHaveLength(1)
+    expect(wrapper.findAll('.bin-table-fixed .bin-table-hidden')).toHaveLength(0)
+    expect(wrapper.findAll('.bin-table-fixed-right .bin-table-hidden')).toHaveLength(0)
+  })
+
+  test('keeps mergeMethod column indexes stable inside fixed panes', async () => {
+    const wrapper = mount(Table, {
+      props: {
+        columns: [
+          { title: '姓名', key: 'name', fixed: 'left', width: 160 },
+          { title: '城市', key: 'city', width: 160 },
+          { title: '状态', key: 'status', fixed: 'right', width: 120 }
+        ],
+        data: [
+          { name: '王小明', city: '上海', status: '正常' },
+          { name: '李小红', city: '北京', status: '正常' }
+        ],
+        mergeMethod: ({ rowIndex, columnIndex }) => {
+          if (columnIndex === 2) {
+            if (rowIndex === 0) return { rowspan: 2, colspan: 1 }
+            if (rowIndex === 1) return { rowspan: 0, colspan: 0 }
+          }
+
+          return { rowspan: 1, colspan: 1 }
+        }
+      },
+      attachTo: document.body
+    })
+
+    await nextTick()
+
+    const rightRows = wrapper.findAll('.bin-table-fixed-right tbody tr')
+    expect(rightRows[0].find('td').attributes('rowspan')).toBe('2')
+    expect(rightRows[1].findAll('td')).toHaveLength(0)
+  })
+
+  test('clips fixed-pane colspan when merge spans across panes', async () => {
+    const wrapper = mount(Table, {
+      props: {
+        columns: [
+          { title: '姓名', key: 'name', fixed: 'left', width: 160 },
+          { title: '城市', key: 'city', width: 160 },
+          { title: '状态', key: 'status', fixed: 'right', width: 120 }
+        ],
+        data: [{ name: '王小明', city: '上海', status: '正常' }],
+        mergeMethod: ({ rowIndex, columnIndex }) => {
+          if (rowIndex === 0 && columnIndex === 0) {
+            return { rowspan: 1, colspan: 2 }
+          }
+          if (rowIndex === 0 && columnIndex === 1) {
+            return { rowspan: 0, colspan: 0 }
+          }
+
+          return { rowspan: 1, colspan: 1 }
+        }
+      },
+      attachTo: document.body
+    })
+
+    await nextTick()
+
+    const fixedCell = wrapper.find('.bin-table-fixed tbody td')
+    expect(fixedCell.attributes('colspan')).toBe('1')
+  })
 })
