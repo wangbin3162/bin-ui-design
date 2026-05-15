@@ -173,6 +173,23 @@ describe('BTable', () => {
     expect(wrapper.find('.bin-table-body .bin-scrollbar').exists()).toBe(true)
 
     const wrapEl = bodyWrap.element as HTMLElement
+
+    Object.defineProperty(wrapEl, 'clientWidth', {
+      configurable: true,
+      value: 200
+    })
+    Object.defineProperty(wrapEl, 'scrollWidth', {
+      configurable: true,
+      value: 500
+    })
+
+    wrapper.vm.handleResize()
+    await nextTick()
+
+    wrapEl.scrollLeft = 0
+    await bodyWrap.trigger('scroll')
+    expect(wrapper.find('.bin-table').classes()).toContain('bin-table-scrolling-left')
+
     wrapEl.scrollTop = 48
     wrapEl.scrollLeft = 32
     await bodyWrap.trigger('scroll')
@@ -182,6 +199,11 @@ describe('BTable', () => {
 
     expect(headerEl.scrollLeft).toBe(32)
     expect(fixedBodyEl.scrollTop).toBe(48)
+    expect(wrapper.find('.bin-table').classes()).toContain('bin-table-scrolling-middle')
+
+    wrapEl.scrollLeft = 320
+    await bodyWrap.trigger('scroll')
+    expect(wrapper.find('.bin-table').classes()).toContain('bin-table-scrolling-right')
   })
 
   test('does not render extra header gutter cells when vertical scrolling is present', async () => {

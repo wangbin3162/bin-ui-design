@@ -295,3 +295,19 @@ p {
 .divider-line {
   display: none;
 }
+
+html.dark {
+  .Layout {
+    .VPSidebar {
+      border-right-color: var(--vp-c-divider);
+    }
+  }
+
+  .VPNav {
+    .VPNavBar {
+      &.has-sidebar {
+        border-bottom-color: var(--vp-c-divider);
+      }
+    }
+  }
+}

@@ -1,5 +1,5 @@
 <template>
-  <b-table :columns="columns" :data="data" no-data-text="No Data"></b-table>
+  <b-table :columns="columns" :data="data" no-data-text="No Data" border></b-table>
 </template>
 
 <script setup lang="ts">

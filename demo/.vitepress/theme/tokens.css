@@ -52,7 +52,7 @@
   --vp-home-hero-image-background-image: radial-gradient(circle at 50% 45%, #9ad2ff 0%, #4ea1ff 38%, #c7ddff 100%);
   --vp-home-hero-image-filter: blur(72px);
 
-  --vp-nav-bg-color: rgba(255, 255, 255, 0.82);
+  --vp-nav-bg-color: #ffffff;
   --vp-nav-screen-bg-color: rgba(248, 251, 255, 0.92);
   --vp-sidebar-bg-color: #ffffff;
 

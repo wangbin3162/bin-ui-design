@@ -45,7 +45,7 @@
   --bin-page-hover-bg: var(--bin-fill-color-2);
   --bin-page-active-bg: var(--bin-color-primary-alpha6);
 
-  --bin-table-header-bg: var(--bin-fill-color-2);
+  --bin-table-header-bg: var(--bin-fill-color-3);
   --bin-table-header-text: var(--bin-color-text-primary);
   --bin-table-border-color: var(--bin-border-color-base);
 

@@ -222,6 +222,7 @@ export default defineComponent({
 
     const showVerticalScrollBar = ref(false)
     const showHorizontalScrollBar = ref(false)
+    const horizontalScrollPosition = ref('none')
     const scrollBarWidth = ref(getScrollBarWidth())
     const hasExpandColumn = computed(() => cloneColumns.value.some(column => column.type === 'expand'))
     const isTreeMode = computed(
@@ -272,7 +273,11 @@ export default defineComponent({
           [`${prefixCls}-${props.size}`]: !!props.size,
           [`${prefixCls}-border`]: props.border,
           [`${prefixCls}-stripe`]: props.stripe,
-          [`${prefixCls}-with-fixed-top`]: !!props.height
+          [`${prefixCls}-with-fixed-top`]: !!props.height,
+          [`${prefixCls}-scrolling-left`]: horizontalScrollPosition.value === 'left',
+          [`${prefixCls}-scrolling-middle`]: horizontalScrollPosition.value === 'middle',
+          [`${prefixCls}-scrolling-right`]: horizontalScrollPosition.value === 'right',
+          [`${prefixCls}-scrolling-none`]: horizontalScrollPosition.value === 'none'
         }
       ]
     })
@@ -677,6 +682,7 @@ export default defineComponent({
         bodyScrollbarRef.value?.update?.()
       }
 
+      syncHorizontalScrollPosition()
       nextTick(() => syncFixedRowHeights())
     }
 
@@ -911,6 +917,32 @@ export default defineComponent({
       return bodyScrollbarRef.value?.wrapRef?.value || bodyScrollbarRef.value?.wrapRef || null
     }
 
+    function syncHorizontalScrollPosition(scrollLeft?: number) {
+      const bodyEl = getBodyWrapEl()
+      if (!bodyEl) {
+        horizontalScrollPosition.value = 'none'
+        return
+      }
+
+      const clientWidth = bodyEl.clientWidth || 0
+      const scrollWidth = bodyEl.scrollWidth || 0
+      if (scrollWidth <= clientWidth + 1) {
+        horizontalScrollPosition.value = 'none'
+        return
+      }
+
+      const currentLeft = typeof scrollLeft === 'number' ? scrollLeft : bodyEl.scrollLeft || 0
+      const maxScrollLeft = scrollWidth - clientWidth - 1
+
+      if (currentLeft <= 0) {
+        horizontalScrollPosition.value = 'left'
+      } else if (currentLeft >= maxScrollLeft) {
+        horizontalScrollPosition.value = 'right'
+      } else {
+        horizontalScrollPosition.value = 'middle'
+      }
+    }
+
     function handleBodyScroll({ scrollTop, scrollLeft }) {
       // @ts-ignore
       if (props.showHeader) headerRef.value.scrollLeft = scrollLeft
@@ -918,6 +950,7 @@ export default defineComponent({
       if (isLeftFixed.value) fixedBodyRef.value.scrollTop = scrollTop
       // @ts-ignore
       if (isRightFixed.value) fixedRightBodyRef.value.scrollTop = scrollTop
+      syncHorizontalScrollPosition(scrollLeft)
     }
 
     function handleFixedMousewheel(e) {
