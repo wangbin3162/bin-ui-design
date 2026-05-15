@@ -28,6 +28,11 @@
   border-spacing: 0;
 }
 
+/* Exclude Bin Table from VitePress default doc table zebra rows */
+.vp-doc .bin-table-wrapper tr:nth-child(2n) {
+  background-color: transparent;
+}
+
 .doc-intro {
   margin-top: 12px;
 }
