@@ -68,8 +68,8 @@
   --bin-border-radius-default: 4px;
   --bin-border-radius-medium: 6px;
   /* font-size */
-  --bin-font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei,
-    SimSun, sans-serif;
+  --bin-font-family:
+    Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, SimSun, sans-serif;
   --bin-base-font-weight: 400;
   --bin-font-size-small: 12px;
   --bin-font-size-default: 14px;
@@ -88,7 +88,8 @@
   --bin-animation-duration-slow: 0.35s;
   --bin-animation-duration-base: 0.25s;
   /* shadow-duration */
-  --bin-shadow-down: 0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0px rgba(0, 0, 0, 0.08),
+  --bin-shadow-down:
+    0px 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0px rgba(0, 0, 0, 0.08),
     0 9px 28px 8px rgba(0, 0, 0, 0.05);
   --bin-shadow-popper: 0 2px 8px rgba(0, 0, 0, 0.15);
   --bin-shadow-message: 0 1px 6px 1px rgba(0, 0, 0, 0.15);
@@ -98,11 +99,13 @@
   --bin-shadow-table-fixed-right: -2px 0 6px -2px rgba(0, 0, 0, 0.2);
   --bin-shadow-table-fixed-line: 1px 0 6px rgba(0, 0, 0, 0.2);
   /* scrollbar */
-  --bin-scrollbar-width: 5px;
-  --bin-scrollbar-radius: 5px;
+  --bin-scrollbar-width: 6px;
+  --bin-scrollbar-radius: 6px;
   --bin-scrollbar-color: rgba(0, 0, 0, 0.2);
   --bin-scrollbar-color-hover: rgba(0, 0, 0, 0.3);
   --bin-scrollbar-track: rgba(0, 0, 0, 0.05);
+  --b-scrollbar-margin: 4px;
+  --b-scrollbar-index: 2;
   /* tag-style */
   --bin-tag-height: 22px;
   --bin-tag-font-size: 12px;
@@ -189,9 +192,7 @@
   --bin-color-picker-thumb-border: #f0f0f0;
   --bin-color-picker-thumb-shadow: 0 0 2px rgba(0, 0, 0, 0.6);
   --bin-color-picker-cursor-shadow:
-    0 0 0 1.5px #fff,
-    inset 0 0 1px 1px rgba(0, 0, 0, 0.3),
-    0 0 1px 2px rgba(0, 0, 0, 0.4);
+    0 0 0 1.5px #fff, inset 0 0 1px 1px rgba(0, 0, 0, 0.3), 0 0 1px 2px rgba(0, 0, 0, 0.4);
   --bin-color-picker-inner-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.15);
   --bin-color-picker-value-color: #000;
 }

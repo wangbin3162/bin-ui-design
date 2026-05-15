@@ -1,6 +1,4 @@
 .bin-scrollbar {
-  --b-scrollbar-margin: 2px;
-  --b-scrollbar-index: 2;
   position: relative;
   overflow: hidden;
   height: 100%;

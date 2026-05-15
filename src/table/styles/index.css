@@ -1,7 +1,7 @@
 .bin-table {
   --b-table-header-bg: #fafafa;
   --b-table-header-text: var(--bin-table-header-text);
-  --b-table-row-hover-bg: rgba(0, 0, 0, 0.04);
+  --b-table-row-hover-bg: var(--b-table-header-bg);
   --b-table-fixed-shadow: 2px 0 8px -2px rgba(0, 0, 0, 0.12);
   --b-table-fixed-shadow-right: -2px 0 8px -2px rgba(0, 0, 0, 0.12);
   --b-table-fixed-shadow-line: 1px 0 6px rgba(0, 0, 0, 0.12);
