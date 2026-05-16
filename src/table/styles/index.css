@@ -28,7 +28,7 @@
     position: relative;
     border-bottom: 0;
     border-right: 0;
-    overflow: hidden;
+    /* overflow: hidden; */
   }
 
   &-hide {

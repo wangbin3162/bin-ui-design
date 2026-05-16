@@ -9,28 +9,23 @@
     </b-scrollbar>
 
     <div style="margin-top: 16px">
-      <b-slider v-model="value" :max="max" :format-tooltip="formatTooltip" @input="handleInput"></b-slider>
+      <b-slider v-model="value" :max="max" :format-tooltip="formatTooltip"></b-slider>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
+import { nextTick, onMounted, ref, watch } from 'vue'
 
 const max = ref(0)
 const value = ref(0)
 const innerRef = ref<HTMLElement | null>(null)
 const scrollbarRef = ref<{
   setScrollTop: (scrollTop: number) => void
+  wrapRef?: {
+    value: HTMLElement | null
+  }
 } | null>(null)
-
-onMounted(() => {
-  max.value = Math.max((innerRef.value?.clientHeight || 0) - 300, 0)
-})
-
-function handleInput(currentValue: number) {
-  scrollbarRef.value?.setScrollTop(currentValue)
-}
 
 function handleScroll({ scrollTop }: { scrollTop: number }) {
   value.value = scrollTop
@@ -39,6 +34,23 @@ function handleScroll({ scrollTop }: { scrollTop: number }) {
 function formatTooltip(currentValue: number) {
   return `${currentValue}px`
 }
+
+function updateMaxScroll() {
+  const wrapElement = scrollbarRef.value?.wrapRef?.value
+  const contentHeight = innerRef.value?.clientHeight || 0
+  const viewportHeight = wrapElement?.clientHeight || 0
+
+  max.value = Math.max(contentHeight - viewportHeight, 0)
+}
+
+watch(value, currentValue => {
+  scrollbarRef.value?.setScrollTop(currentValue)
+})
+
+onMounted(async () => {
+  await nextTick()
+  updateMaxScroll()
+})
 </script>
 
 <style scoped>
