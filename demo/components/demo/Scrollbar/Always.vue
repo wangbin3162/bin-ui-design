@@ -1,7 +1,27 @@
 <template>
   <div style="height: 300px">
     <b-scrollbar ref="componentScrollBar" always noresize>
-      <p v-for="i in 40" :key="i">我是填充内容....</p>
+      <div class="scrollbar-demo-list">
+        <div v-for="i in 12" :key="i" class="scrollbar-demo-item">始终显示滚动块 {{ i }}</div>
+      </div>
     </b-scrollbar>
   </div>
 </template>
+
+<style scoped>
+.scrollbar-demo-list {
+  padding: 4px;
+}
+
+.scrollbar-demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 56px;
+  margin: 10px 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%);
+  color: #3a4a66;
+  font-weight: 500;
+}
+</style>

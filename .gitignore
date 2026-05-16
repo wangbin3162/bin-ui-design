@@ -16,6 +16,7 @@ dist-ssr
 coverage
 *.local
 .pnpm-store
+.npm-cache
 
 /cypress/videos/
 /cypress/screenshots/

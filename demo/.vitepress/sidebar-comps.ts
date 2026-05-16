@@ -16,6 +16,17 @@ export default formatSidebar(
       ]
     },
     {
+      text: '配置组件',
+      items: [
+        {
+          text: '全局配置',
+          link: '/components/config-provider',
+          icon: 'setting',
+          alias: 'ConfigProvider'
+        }
+      ]
+    },
+    {
       text: '布局组件',
       items: [
         { text: '布局组件', link: '/components/layout', icon: 'layout', alias: 'Layout' },
@@ -115,17 +126,6 @@ export default formatSidebar(
         { text: '滚动组件', link: '/components/scrollbar', icon: 'container', alias: 'Scrollbar' },
         { text: '弹层', link: '/components/popper', icon: 'pic-center', alias: 'Popper' },
         { text: '右键菜单', link: '/components/contextmenu', icon: 'menu', alias: 'Contextmenu' }
-      ]
-    },
-    {
-      text: '配置组件',
-      items: [
-        {
-          text: '全局配置',
-          link: '/components/config-provider',
-          icon: 'setting',
-          alias: 'ConfigProvider'
-        }
       ]
     }
   ],

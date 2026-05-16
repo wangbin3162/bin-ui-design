@@ -1,4 +1,5 @@
 export interface ScrollbarPropsInstance {
+  distance?: number
   height?: string | number
   maxHeight?: string | number
   native?: boolean
@@ -10,11 +11,23 @@ export interface ScrollbarPropsInstance {
   noresize?: boolean // 如果 container 尺寸不会发生变化，最好设置它可以优化性能
   tag: string
   minSize?: number
+  tabindex?: string | number
   barStyle?: object // bar的样式
   barWrapStyle?: object // bar容器样式
 }
 
+export type ScrollbarDirection = 'top' | 'bottom' | 'left' | 'right'
+
+export interface ScrollbarScrollData {
+  scrollTop: number
+  scrollLeft: number
+}
+
 export const scrollbarProps = {
+  distance: {
+    type: Number,
+    default: 0
+  },
   height: {
     type: [String, Number],
     default: ''
@@ -56,6 +69,10 @@ export const scrollbarProps = {
   minSize: {
     type: Number,
     default: 20
+  },
+  tabindex: {
+    type: [String, Number],
+    default: undefined
   },
   barStyle: {
     type: Object,

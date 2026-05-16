@@ -4,6 +4,7 @@
       ref="wrap"
       :class="[wrapClass, 'bin-scrollbar__wrap', 'bin-scrollbar__wrap--hidden-default']"
       :style="style"
+      :tabindex="tabindex"
       @scroll="handleScroll"
     >
       <component
@@ -44,13 +45,17 @@ import { on, off } from '../../../_utils/dom'
 import { scrollbarProps } from './types'
 import { ref, onMounted, onBeforeUnmount, nextTick, provide, computed, watch } from 'vue'
 import Bar from './bar'
+import type { ScrollbarDirection, ScrollbarScrollData } from './types'
 
 defineOptions({
   name: 'BScrollbar'
 })
 
 const props = defineProps(scrollbarProps)
-const emit = defineEmits(['scroll'])
+const emit = defineEmits<{
+  (e: 'scroll', payload: ScrollbarScrollData): void
+  (e: 'end-reached', direction: ScrollbarDirection): void
+}>()
 
 const sizeWidth = ref('0')
 const sizeHeight = ref('0')
@@ -61,8 +66,44 @@ const ratioY = ref(1)
 const wrap = ref<HTMLElement | null>(null)
 const resize = ref<HTMLElement | null>(null)
 const GAP = 4
+const DIRECTION_PAIRS: Record<ScrollbarDirection, ScrollbarDirection> = {
+  top: 'bottom',
+  bottom: 'top',
+  left: 'right',
+  right: 'left'
+}
+const distanceScrollState: Record<ScrollbarDirection, boolean> = {
+  top: false,
+  bottom: false,
+  left: false,
+  right: false
+}
+let wrapScrollTop = 0
+let wrapScrollLeft = 0
+let direction = '' as ScrollbarDirection | ''
 
 provide('scroll-bar-wrap', wrap)
+
+const shouldSkipDirection = (currentDirection: ScrollbarDirection | '') => {
+  if (!currentDirection) return false
+  return distanceScrollState[currentDirection]
+}
+
+const updateTriggerStatus = (arrivedStates: Record<ScrollbarDirection, boolean>) => {
+  if (!direction) return
+
+  const oppositeDirection = DIRECTION_PAIRS[direction]
+  const arrived = arrivedStates[direction]
+  const oppositeArrived = arrivedStates[oppositeDirection]
+
+  if (arrived && !distanceScrollState[direction]) {
+    distanceScrollState[direction] = true
+  }
+
+  if (!oppositeArrived && distanceScrollState[oppositeDirection]) {
+    distanceScrollState[oppositeDirection] = false
+  }
+}
 
 const handleScroll = () => {
   if (!props.native && wrap.value) {
@@ -74,10 +115,45 @@ const handleScroll = () => {
   }
 
   if (wrap.value) {
+    const prevTop = wrapScrollTop
+    const prevLeft = wrapScrollLeft
+
+    wrapScrollTop = wrap.value.scrollTop
+    wrapScrollLeft = wrap.value.scrollLeft
+
     emit('scroll', {
-      scrollTop: wrap.value.scrollTop,
-      scrollLeft: wrap.value.scrollLeft
+      scrollTop: wrapScrollTop,
+      scrollLeft: wrapScrollLeft
     })
+
+    if (prevTop !== wrapScrollTop) {
+      direction = wrapScrollTop > prevTop ? 'bottom' : 'top'
+    }
+    if (prevLeft !== wrapScrollLeft) {
+      direction = wrapScrollLeft > prevLeft ? 'right' : 'left'
+    }
+
+    if (!direction) return
+
+    const arrivedStates: Record<ScrollbarDirection, boolean> = {
+      bottom: wrap.value.scrollHeight - props.distance <= wrap.value.clientHeight + wrapScrollTop,
+      top: wrapScrollTop <= props.distance && prevTop !== 0,
+      right:
+        wrap.value.scrollWidth - props.distance <= wrap.value.clientWidth + wrapScrollLeft &&
+        prevLeft !== wrapScrollLeft,
+      left: wrapScrollLeft <= props.distance && prevLeft !== 0
+    }
+
+    if (props.distance > 0) {
+      if (shouldSkipDirection(direction)) {
+        return
+      }
+      updateTriggerStatus(arrivedStates)
+    }
+
+    if (arrivedStates[direction]) {
+      emit('end-reached', direction)
+    }
   }
 }
 
@@ -104,6 +180,10 @@ const update = () => {
 
   sizeHeight.value = height + GAP < offsetHeight ? `${height}px` : ''
   sizeWidth.value = width + GAP < offsetWidth ? `${width}px` : ''
+
+  if (direction) {
+    distanceScrollState[direction] = false
+  }
 
   handleScroll()
 }

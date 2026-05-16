@@ -16,6 +16,16 @@ export default formatSidebar(
       ]
     },
     {
+      text: 'Config',
+      items: [
+        {
+          text: 'ConfigProvider',
+          link: '/en/components/config-provider',
+          icon: 'setting'
+        }
+      ]
+    },
+    {
       text: 'Layout',
       items: [
         { text: 'Layout', link: '/en/components/layout', icon: 'layout' },
@@ -95,16 +105,6 @@ export default formatSidebar(
         { text: 'Scrollbar', link: '/en/components/scrollbar', icon: 'container' },
         { text: 'Popper', link: '/en/components/popper', icon: 'pic-center' },
         { text: 'Contextmenu', link: '/en/components/contextmenu', icon: 'menu' }
-      ]
-    },
-    {
-      text: 'Config',
-      items: [
-        {
-          text: 'ConfigProvider',
-          link: '/en/components/config-provider',
-          icon: 'setting'
-        }
       ]
     }
   ],

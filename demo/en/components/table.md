@@ -34,7 +34,7 @@ Set `tooltip` on columns to truncate text and show full content on hover. If onl
 
 ## Fixed Header
 
-Use `height` and `maxHeight` to set a fixed table header.
+Use `height` or `max-height` to fix the table header. The table body scrolls through the built-in scrollbar, and fixed columns stay in sync with the body scroll position.
 
 <preview path="./demo/Table/FixedHeader.vue"></preview>
 
@@ -73,10 +73,16 @@ Enable expandable rows by adding a column with `type: 'expand'`.
 
 ## Tree Table
 
-Tree table mode uses `children` as the nested field and is enabled with `row-key` plus
-`expand-column-key`.
+Tree table mode always uses `children` as the nested field. It is enabled only when
+`row-key` is a string and `expand-column-key` is also provided.
 
-First release limits:
+Supports:
+- `default-expanded-row-keys` for uncontrolled default expansion
+- `expanded-row-keys` + `@update:expanded-row-keys` for controlled expansion
+- Sorting within sibling groups while preserving the tree hierarchy
+- Fixed columns and fixed-height scrolling
+
+Current limits:
 - Not supported together with `type: 'expand'`
 - Not supported together with `draggable`
 - Not recommended together with `mergeMethod`
@@ -126,8 +132,7 @@ To update (Date) data, use `v-model:data` for two-way binding, or handle update 
 
 ## Sizes
 
-Set `size` to `large` or `small` to adjust table size. The default row height is `40px`, and
-`small` uses `36px`. The default is `default` (same as not specifying).
+Set `size` to `large`, `default`, or `small` to adjust the table size. The default row height is `40px`, and `small` uses `36px`. Leaving it unset is the same as `default`.
 
 <preview path="./demo/Table/Size.vue"></preview>
 
@@ -145,25 +150,28 @@ Set `noDataText` for the empty data state.
 | columns              | Column configuration, see below for details                                                                                | Array         | —             | []       |
 | stripe               | Show stripe rows alternately                                                                                                    | Boolean       | false/true    | false    |
 | border               | Show vertical border                                                                                                      | Boolean       | false/true    | false    |
-| show-header          | Whether to show Table header                                                                                                  | Boolean       | false/true    | false    |
+| show-header          | Whether to show the table header                                                                                              | Boolean       | false/true    | true     |
 | width                | Table width in px                                                                                             | Number/String | —             | auto     |
-| height               | Table height in px; if content exceeds this value, the header becomes fixed                                                   | Number/String | —             | —        |
-| max-height           | Max table height                                                                                                  | Number/String | —             | —        |
+| height               | Table height in px. When set, the body scrolls through the built-in scrollbar and the header stays fixed                    | Number/String | —             | —        |
+| max-height           | Max table height in px. When exceeded, the body scrolls through the built-in scrollbar and the header stays fixed           | Number/String | —             | —        |
 | loading              | Table loading state                                                                                                  | Boolean       | —             | false    |
 | disabled-hover       | Disable hover highlight                                                                                                  | Boolean       | —             | false    |
 | highlight-row        | Enable row highlight / single-selection mode.                                                                                  | Boolean       | —             | false    |
 | highlight-row-cancel | Whether single-selection highlight can be canceled. If true, clicking the selected row again will deselect it                                                      | Boolean       | —             | false    |
-| size                 | Table size                                                                                                      | string        | large / small | default  |
-| no-data-text         | Empty data placeholder text                                                                                                    | string        | —             | is not data |
-| loading-text         | Loading text                                                                                                  | string        | —             | Loading... |
+| size                 | Table size                                                                                                      | String        | large / default / small | default  |
+| no-data-text         | Empty state text                                                                                                             | String        | —             | No Data  |
+| loading-text         | Loading text                                                                                                  | String        | —             | Loading  |
 | draggable            | Enable drag to reorder rows. To sync metadata, use v-model:data or handle the @drag-drop event to update data                  | Boolean       | —             | false    |
 | drag-handle          | Drag handle icon                                                                                              | String        | —             | —        |
+| tooltip-theme        | Tooltip theme used when a column enables `tooltip`                                                                          | String        | dark / light  | —        |
 | row-key              | Whether to force refresh using the built-in row-key; pass a business key field name in tree table mode                           | Boolean/String | —            | false    |
-| expand-column-key    | Column key used to render the tree expand control. Tree mode starts when this is set and `row-key` is a string                  | String        | —             | —        |
-| default-expanded-row-keys | Default expanded row keys in tree table mode                                                                              | Array         | —             | []       |
-| expanded-row-keys    | Controlled expanded row keys in tree table mode                                                                                   | Array         | —             | —        |
+| expand-column-key    | Column key used to render the tree expand control. Tree mode starts only when this is set and `row-key` is a string         | String        | —             | ''       |
+| default-expanded-row-keys | Default expanded row keys in tree table mode, used in uncontrolled mode                                                   | Array         | —             | []       |
+| expanded-row-keys    | Controlled expanded row keys in tree table mode, used with `update:expandedRowKeys`                                          | Array         | —             | —        |
 | indent-size          | Indent width for tree table rows                                                                                                   | Number        | —             | 16       |
 | merge-method         | Merge method for row/column spanning                                                                                        | Function      | —             | false    |
+| edit-table           | Enable edit-table styling                                                                                                     | Boolean       | false/true    | false    |
+| edit-table-detail    | Enable a denser detail editing style on top of `edit-table`                                                                  | Boolean       | false/true    | false    |
 
 ## Table events
 
@@ -178,8 +186,8 @@ Set `noDataText` for the empty data state.
 | sort-change       | Effective when sortable; triggers when sorting is clicked                                | column: current column data, key: sort indicator, order (asc or desc) |
 | row-click         | Triggers when a row is clicked                                            | Current row data, index                                             |
 | row-dblclick      | Triggers when a row is double-clicked                                            | Current row data, index                                             |
-| expand            | Triggers when a row is expanded or collapsed                                        | row: current row data, status: current state                           |
-| update:expandedRowKeys | Triggers when controlled tree expanded keys update                         | expandedRowKeys                                                    |
+| expand            | Triggers when an expandable row with `type: 'expand'` is expanded or collapsed | row: current row data, status: current state                           |
+| update:expandedRowKeys | Triggers when controlled tree expanded keys update. Use `@update:expanded-row-keys` in templates | expandedRowKeys                |
 | expand-change     | Triggers when a tree row expand state changes                                 | row, expanded, expandedRowKeys                                     |
 | drag-drop         | Triggers when drag sort is released                                          | The two rows' data indices and updated data: newData, newIndex, oldIndex   |
 
@@ -193,12 +201,13 @@ Set `noDataText` for the empty data state.
 
 ## Table methods
 
-| Method Name          | Description                 | Parameter  |
-| --------------- | -------------------- | ----- |
-| clickCurrentRow | Select a row by index           | index |
-| clearCurrentRow | Clear highlighted row | —    |
-| handleResize    | Refresh table dimensions       | —    |
-| getSelection    | Get selected rows     | —    |
+| Method Name          | Description                                                                 | Parameter  |
+| --------------- | --------------------------------------------------------------------------- | ----- |
+| clickCurrentRow | Select a row by index                                                       | index |
+| clearCurrentRow | Clear the highlighted row; only works when `highlight-row` is enabled       | —    |
+| handleResize    | Recalculate column widths, fixed panes, and scrollbar layout manually       | —    |
+| getSelection    | Get selected rows                                                           | —    |
+| selectAll       | Set all currently selectable rows to selected or deselected                 | status |
 
 ## column
 
@@ -215,8 +224,11 @@ Set `noDataText` for the empty data state.
 | fixed       | Whether the column is fixed to the left or right                                          | String            | left,right                            | -      |
 | ellipsis    | When enabled, text will not wrap                                              | Boolean           | -                                     | false  |
 | tooltip     | When enabled, text will not wrap and shows full content via Tooltip component                | Boolean           | -                                     | false  |
+| slot        | Render the column with a named slot. Slot params are `row`, `column`, and `index`           | String            | -                                     | -      |
 | render      | Custom render function for the column; the first parameter is h, the second is an object containing row, column, and index | Function          | -                                     | -      |
+| renderHeader | Custom header render function. Params: `{ column, index }`                                 | Function          | -                                     | -      |
 | indexMethod | Available when type is index. Custom index method; the row parameter is the current row content           | Function          | -                                     | -      |
 | sortable    | Whether the corresponding column can be sorted                                                | Boolean ,'custom' | -                                     | false  |
 | sortMethod  | Custom sort method; three parameters: a, b, and type                      | Function          | -                                     | -      |
 | sortType    | Set initial sort order. Accepted values: asc, desc                                  | String            | -                                     | -      |
+| children    | Child column definitions for grouped headers; parent `fixed` is inherited by children       | Array             | -                                     | -      |

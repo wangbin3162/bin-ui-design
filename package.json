@@ -52,6 +52,7 @@
     "build:lib": "vite build",
     "build:style": "node --experimental-strip-types build/build-style.ts",
     "test": "vitest",
+    "test:run": "vitest run",
     "type-check": "run-s type-check:core type-check:build",
     "type-check:core": "tsc -p tsconfig.core.json --noEmit",
     "type-check:build": "tsc -p tsconfig.build.json --noEmit",
@@ -59,7 +60,11 @@
     "lint:oxlint": "oxlint eslint.config.js vite.config.ts vitest.config.ts build --fix",
     "lint:eslint": "eslint eslint.config.js vite.config.ts vitest.config.ts build --fix --cache",
     "format": "prettier --write .",
-    "gen-version": "node --experimental-strip-types build/gen-version.ts"
+    "gen-version": "node --experimental-strip-types build/gen-version.ts",
+    "release:prepare": "node --experimental-strip-types build/release.ts prepare",
+    "release:version": "node --experimental-strip-types build/release.ts version",
+    "release:publish": "node --experimental-strip-types build/release.ts manual-publish",
+    "release:ci": "node --experimental-strip-types build/release.ts ci"
   },
   "dependencies": {
     "@popperjs/core": "^2.11.8",
