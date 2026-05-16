@@ -7,6 +7,19 @@ title: Changelog
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.8.1" class="version">0.8.1</h2>
+  <div class="date">2026-05-16</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>Add tree table support with default expansion, controlled expansion, sibling sorting, and compatibility with fixed columns / fixed height layouts</p>
+  <p class="log-item"><i>🍀</i>Add <code>max-height</code>, manual scrolling methods, and the <code>end-reached</code> edge event to Scrollbar</p>
+  <div class="type">Update</div>
+  <p class="log-item"><i>🛠️</i>Optimize fixed header behavior, fixed column scroll syncing, and scroll placeholder handling in Table</p>
+  <p class="log-item"><i>🛠️</i>Optimize table tooltip rendering, empty-state behavior, and related styles</p>
+  <p class="log-item"><i>🛠️</i>Improve scrollbar styles, scrolling experience, and demo coverage</p>
+  <div class="type">Doc</div>
+  <p class="log-item"><i>📖</i>Update the Chinese and English documentation for Table and Scrollbar</p>
+</div>
+<div class="change-log">
   <h2 id="0.8.0" class="version">0.8.0</h2>
   <div class="date">2026-05-13</div>
   <div class="type">Feats</div>

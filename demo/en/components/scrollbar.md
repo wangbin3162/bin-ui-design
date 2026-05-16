@@ -6,15 +6,15 @@ title: Scrollbar
 
 # Scrollbar
 
-Since default browser scrollbars are unattractive and inconsistent across different browsers, this scroll component is provided for implementing scrolling.
+This component provides a unified scrollbar experience because native browser scrollbars often look inconsistent across browsers.
 
 ## Basic Usage
 
-Wrap content with `b-scrollbar`; the default `slot` is the content display area. The scroll structure of the current example is as follows:
+Wrap content with `b-scrollbar`. The default slot is the content area, as shown below:
 
 <preview path="./demo/Scrollbar/Basic.vue"></preview>
 
-Note: If the content area does not exceed the container height, no scrollbar will be generated.
+Note: If the content does not exceed the container height, no scrollbar is rendered.
 
 ## Max Height
 
@@ -30,13 +30,13 @@ Use the exposed `setScrollTop` and `setScrollLeft` methods to control the scroll
 
 ## Always Show
 
-Use `always` to keep the scrollbar always visible
+Use `always` to keep the scrollbar visible instead of showing it only on hover.
 
 <preview path="./demo/Scrollbar/Always.vue"></preview>
 
 ## Custom Scrollbar Styles
 
-You can customize scrollbar styles using different props, or use CSS for style modifications.
+You can customize the scrollbar with props or override its styles with CSS.
 
 <preview path="./demo/Scrollbar/Custom.vue"></preview>
 
@@ -48,9 +48,9 @@ You can customize scrollbar styles using different props, or use CSS for style m
 
 ## Notes
 
-- The parent layer of b-scrollbar must have a fixed height
-- The height of b-scrollbar must be set to 100%
-- If a horizontal scrollbar appears, add CSS (.bin-scrollbar\_\_wrap{overflow-x:hidden;})
+- The parent container of `b-scrollbar` should have a fixed height
+- `b-scrollbar` itself should usually be set to `height: 100%`
+- If an unwanted horizontal scrollbar appears, add `.bin-scrollbar__wrap { overflow-x: hidden; }`
 
 ## Props
 
@@ -60,7 +60,7 @@ You can customize scrollbar styles using different props, or use CSS for style m
 | height       | Height of the scroll area                                       | String / Number | - | — |
 | maxHeight    | Maximum height of the scroll area                               | String / Number | - | — |
 | native       | Whether to use native scrolling                                 | Boolean | true   | false  |
-| always       | Whether to always show, rather than show on hover               | Boolean | true   | false  |
+| always       | Whether to always show the scrollbar instead of only on hover   | Boolean | true   | false  |
 | wrapStyle    | Inline style for the wrap container                             | String / Object / Array | - | — |
 | wrapClass    | Class name for the wrap container                               | String / Array | - | — |
 | viewClass    | Class name for the view container                               | String / Array | - | — |

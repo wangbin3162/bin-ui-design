@@ -7,6 +7,19 @@ title: 变更日志
 # CHANGELOG
 
 <div class="change-log">
+  <h2 id="0.8.1" class="version">0.8.1</h2>
+  <div class="date">2026-05-16</div>
+  <div class="type">Feats</div>
+  <p class="log-item"><i>🍀</i>新增树形表格，支持默认展开、受控展开、同级排序以及固定列/固定高度场景</p>
+  <p class="log-item"><i>🍀</i>滚动组件新增 <code>max-height</code>、手动滚动方法和 <code>end-reached</code> 边界触达事件</p>
+  <div class="type">Update</div>
+  <p class="log-item"><i>🛠️</i>优化表格固定表头、固定列同步滚动和滚动占位处理</p>
+  <p class="log-item"><i>🛠️</i>优化表格 tooltip 展示、空状态表现和相关样式</p>
+  <p class="log-item"><i>🛠️</i>优化滚动条样式、滚动体验与示例展示</p>
+  <div class="type">Doc</div>
+  <p class="log-item"><i>📖</i>更新表格与滚动组件中英文文档</p>
+</div>
+<div class="change-log">
   <h2 id="0.8.0" class="version">0.8.0</h2>
   <div class="date">2026-05-13</div>
   <div class="type">Feats</div>

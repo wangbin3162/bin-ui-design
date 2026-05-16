@@ -6,7 +6,7 @@ title: Table
 
 # Table
 
-A basic table component for displaying list data.
+A table component for displaying structured list data.
 
 ## Basic Usage
 
@@ -26,9 +26,11 @@ Set `border` to enable vertical borders.
 
 ## Text Overflow Tooltip
 
-Set `tooltip` on columns to truncate text and show full content on hover. If only one table exists, you can also configure the `tooltip-theme` skin for optimized styles.
-(Note: Columns with `tooltip` enabled must use a fixed width such as `width`; otherwise text truncation and tooltip alignment may become inconsistent in auto-width layouts.)
-(Note: Since table cells have overflow:hidden, tooltip tags must be appended to the body element. Multiple table instances may create too many tags and cause performance issues, so enable this based on your needs.)
+Set `tooltip` on a column to truncate long text and show the full content on hover. If there is only one table on the page, you can also set `tooltip-theme` for a more polished tooltip style.
+
+Note: Columns with `tooltip` enabled should use a fixed width such as `width`; otherwise text truncation and tooltip alignment may become inconsistent in auto-width layouts.
+
+Note: Table cells use `overflow: hidden`, so tooltip nodes must be appended to `body`. When many table instances are cached at the same time, this can create extra nodes and affect performance, so enable it only when needed.
 
 <preview path="./demo/Table/Tooltip.vue"></preview>
 
@@ -73,8 +75,7 @@ Enable expandable rows by adding a column with `type: 'expand'`.
 
 ## Tree Table
 
-Tree table mode always uses `children` as the nested field. It is enabled only when
-`row-key` is a string and `expand-column-key` is also provided.
+Tree table mode always uses `children` as the nested field. It is enabled only when `row-key` is a string and `expand-column-key` is also provided.
 
 Supports:
 - `default-expanded-row-keys` for uncontrolled default expansion
@@ -120,9 +121,9 @@ Enable the edit table style to hide input borders, making inline table editing e
 
 Set `draggable` to enable drag sorting.
 
-Note: When drag sorting is enabled, mouse drag also covers text selection. You can set `handle` to specify a drag handle element.
+Note: When drag sorting is enabled, mouse dragging also takes over text selection. You can set `handle` to limit dragging to a specific element.
 
-To update (Date) data, use `v-model:data` for two-way binding, or handle update (Date)s in the `@drag-drop` event.
+To update the data order, use `v-model:data` for two-way binding, or handle the update manually in the `@drag-drop` event.
 
 <preview path="./demo/Table/Drag.vue"></preview>
 
@@ -181,13 +182,13 @@ Set `noDataText` for the empty data state.
 | select            | Effective in multi-select mode; triggers when an item is selected                          | selected items, recently selected                                                 |
 | select-cancel     | Effective in multi-select mode; triggers when an item is deselected                      | selected items, deselected                                               |
 | select-all        | Triggers when all items are selected                                                  | selected items                                                         |
-| select-all-cancel | cancelTriggers when all items are selected                                              | selected items                                                         |
+| select-all-cancel | Triggers when all items are deselected                                                | selected items                                                         |
 | selection-change  | Triggers when the selection changes                                    | selected items                                                         |
 | sort-change       | Effective when sortable; triggers when sorting is clicked                                | column: current column data, key: sort indicator, order (asc or desc) |
 | row-click         | Triggers when a row is clicked                                            | Current row data, index                                             |
 | row-dblclick      | Triggers when a row is double-clicked                                            | Current row data, index                                             |
 | expand            | Triggers when an expandable row with `type: 'expand'` is expanded or collapsed | row: current row data, status: current state                           |
-| update:expandedRowKeys | Triggers when controlled tree expanded keys update. Use `@update:expanded-row-keys` in templates | expandedRowKeys                |
+| update:expandedRowKeys | Triggers when the controlled tree expansion keys update. Use `@update:expanded-row-keys` in templates | expandedRowKeys                |
 | expand-change     | Triggers when a tree row expand state changes                                 | row, expanded, expandedRowKeys                                     |
 | drag-drop         | Triggers when drag sort is released                                          | The two rows' data indices and updated data: newData, newIndex, oldIndex   |
 
