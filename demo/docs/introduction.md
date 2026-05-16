@@ -29,9 +29,9 @@ title: 介绍
   </div>
 
   <div class="intro-actions">
-    <a class="intro-link" href="/docs/installation.html">查看安装</a>
-    <a class="intro-link" href="/docs/usage-sfc.html">在 SFC 中使用</a>
-    <a class="intro-link" href="/docs/custom-theme.html">调整主题</a>
+    <a class="intro-link" href="./installation.html">查看安装</a>
+    <a class="intro-link" href="./usage-sfc.html">在 SFC 中使用</a>
+    <a class="intro-link" href="./custom-theme.html">调整主题</a>
   </div>
 </div>
 

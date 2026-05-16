@@ -30,9 +30,9 @@ title: Introduction
   </div>
 
   <div class="intro-actions">
-    <a class="intro-link" href="/en/docs/installation.html">Installation</a>
-    <a class="intro-link" href="/en/docs/usage-sfc.html">Use in SFC</a>
-    <a class="intro-link" href="/en/docs/custom-theme.html">Customize Theme</a>
+    <a class="intro-link" href="./installation.html">Installation</a>
+    <a class="intro-link" href="./usage-sfc.html">Use in SFC</a>
+    <a class="intro-link" href="./custom-theme.html">Customize Theme</a>
   </div>
 </div>
 
